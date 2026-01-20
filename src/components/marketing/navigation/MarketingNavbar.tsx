@@ -38,8 +38,8 @@ export function MarketingNavbar() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled
-            ? "bg-deep-space/95 backdrop-blur-md border-b border-graphite/50 shadow-lg"
-            : "bg-transparent"
+            ? "bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm"
+            : "bg-white/80 backdrop-blur-sm"
         )}
       >
         <Container>
@@ -62,7 +62,7 @@ export function MarketingNavbar() {
                         "flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors",
                         activeDropdown === item.label
                           ? "text-electric-cyan"
-                          : "text-silver hover:text-white"
+                          : "text-slate-600 hover:text-slate-900"
                       )}
                     >
                       {item.label}
@@ -80,7 +80,7 @@ export function MarketingNavbar() {
                         "px-4 py-2 text-sm font-medium rounded-lg transition-colors",
                         pathname === item.href
                           ? "text-electric-cyan"
-                          : "text-silver hover:text-white"
+                          : "text-slate-600 hover:text-slate-900"
                       )}
                     >
                       {item.label}
@@ -101,7 +101,7 @@ export function MarketingNavbar() {
             {/* CTA Button */}
             <div className="flex items-center gap-4">
               <Link href="/contact" className="hidden lg:block">
-                <Button className="bg-gradient-to-r from-electric-cyan to-cyan-dark hover:from-cyan-light hover:to-electric-cyan text-deep-space font-semibold px-6 shadow-glow-sm hover:shadow-glow-md transition-all">
+                <Button className="bg-electric-cyan hover:bg-cyan-dark text-white font-semibold px-6 shadow-sm hover:shadow-md transition-all">
                   Book a Call
                 </Button>
               </Link>
@@ -109,7 +109,7 @@ export function MarketingNavbar() {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 text-silver hover:text-white rounded-lg transition-colors"
+                className="lg:hidden p-2 text-slate-600 hover:text-slate-900 rounded-lg transition-colors"
               >
                 {isMobileMenuOpen ? (
                   <X className="h-6 w-6" />

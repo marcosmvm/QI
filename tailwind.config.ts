@@ -1,7 +1,6 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,13 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Quantum Insights Brand Colors (from CLAUDE.md)
-        "deep-space": "#0A1628",
-        "midnight-blue": "#1A2D4A",
-        "slate-900": "#0A1628",
-        "slate-800": "#1A2D4A",
+        // Light Mode Base Colors
+        "light-bg": "#FFFFFF",
+        "light-bg-secondary": "#F8FAFC",
+        "light-bg-tertiary": "#F1F5F9",
 
-        // Primary accent - Electric Cyan
+        // Legacy dark colors (keep for reference/transition)
+        "deep-space": "#0F172A",
+        "midnight-blue": "#1E293B",
+
+        // Primary accent - Electric Cyan (unchanged)
         "electric-cyan": "#00D4FF",
         "cyan": {
           DEFAULT: "#00D4FF",
@@ -24,7 +26,7 @@ const config: Config = {
           dark: "#00A8CC",
         },
 
-        // Secondary accent - Quantum Violet
+        // Secondary accent - Quantum Violet (unchanged)
         "quantum-violet": "#7B61FF",
         "violet": {
           DEFAULT: "#7B61FF",
@@ -32,37 +34,34 @@ const config: Config = {
           dark: "#6248CC",
         },
 
-        // Status colors
+        // Status colors (unchanged)
         "neon-mint": "#00FFB2",
         "success": {
-          DEFAULT: "#00FFB2",
-          light: "#33FFC4",
-          dark: "#00CC8E",
+          DEFAULT: "#10B981",
+          light: "#34D399",
+          dark: "#059669",
         },
-        "energy-orange": "#FF6B35",
+        "energy-orange": "#F59E0B",
         "warning": {
-          DEFAULT: "#FF6B35",
-          light: "#FF8A5C",
-          dark: "#CC5529",
+          DEFAULT: "#F59E0B",
+          light: "#FBBF24",
+          dark: "#D97706",
         },
         "rose": {
-          DEFAULT: "#ef4444",
-          light: "#f87171",
-          dark: "#dc2626",
+          DEFAULT: "#EF4444",
+          light: "#F87171",
+          dark: "#DC2626",
         },
 
-        // Text colors - High contrast
-        "silver": "#E8EDF5",
-        "steel": "#94A3B8",
-        "graphite": "#334155",
-        "slate-400": "#94A3B8",
-        "slate-500": "#64748b",
-        "slate-600": "#475569",
+        // Text colors - Light Mode
+        "silver": "#0F172A",
+        "steel": "#64748B",
+        "graphite": "#E2E8F0",
 
-        // Semantic color mapping
+        // Semantic color mapping - Light Mode
         primary: {
           DEFAULT: "#00D4FF",
-          foreground: "#0A1628",
+          foreground: "#FFFFFF",
           50: "#E6FAFF",
           100: "#CCF5FF",
           200: "#99EBFF",
@@ -74,32 +73,32 @@ const config: Config = {
         },
         secondary: {
           DEFAULT: "#7B61FF",
-          foreground: "#ffffff",
+          foreground: "#FFFFFF",
         },
-        background: "#0A1628",
-        foreground: "#E8EDF5",
+        background: "#FFFFFF",
+        foreground: "#0F172A",
         card: {
-          DEFAULT: "#1A2D4A",
-          foreground: "#E8EDF5",
+          DEFAULT: "#FFFFFF",
+          foreground: "#0F172A",
         },
-        border: "#334155",
+        border: "#E2E8F0",
         muted: {
-          DEFAULT: "#1A2D4A",
-          foreground: "#94A3B8",
+          DEFAULT: "#F8FAFC",
+          foreground: "#64748B",
         },
         accent: {
           DEFAULT: "#7B61FF",
-          foreground: "#ffffff",
+          foreground: "#FFFFFF",
         },
         popover: {
-          DEFAULT: "#1A2D4A",
-          foreground: "#E8EDF5",
+          DEFAULT: "#FFFFFF",
+          foreground: "#0F172A",
         },
-        input: "rgba(255, 255, 255, 0.1)",
+        input: "#F1F5F9",
         ring: "#00D4FF",
         destructive: {
-          DEFAULT: "#ef4444",
-          foreground: "#ffffff",
+          DEFAULT: "#EF4444",
+          foreground: "#FFFFFF",
         },
       },
       fontFamily: {
@@ -108,31 +107,21 @@ const config: Config = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-quantum": "linear-gradient(160deg, #0A1628 0%, #1A2D4A 50%, #0A1628 100%)",
-        "gradient-subtle": "linear-gradient(180deg, #0A1628 0%, #1A2D4A 100%)",
-        "gradient-card": "linear-gradient(145deg, rgba(26, 45, 74, 0.95) 0%, rgba(10, 22, 40, 0.98) 100%)",
-        "glow-cyan": "radial-gradient(ellipse at top right, rgba(0, 212, 255, 0.15) 0%, transparent 50%)",
-        "glow-violet": "radial-gradient(ellipse at bottom left, rgba(123, 97, 255, 0.1) 0%, transparent 50%)",
-        "glow-mint": "radial-gradient(ellipse at center, rgba(0, 255, 178, 0.08) 0%, transparent 60%)",
+        "gradient-light": "linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%)",
+        "gradient-subtle-light": "linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%)",
+        "glow-cyan": "radial-gradient(ellipse at top right, rgba(0, 212, 255, 0.08) 0%, transparent 50%)",
+        "glow-violet": "radial-gradient(ellipse at bottom left, rgba(123, 97, 255, 0.06) 0%, transparent 50%)",
         "accent-gradient": "linear-gradient(90deg, #00D4FF, #7B61FF)",
-        "accent-gradient-vertical": "linear-gradient(180deg, #00D4FF, #7B61FF)",
-        "button-primary": "linear-gradient(135deg, #00D4FF 0%, #00A8CC 100%)",
-        "button-secondary": "linear-gradient(135deg, #7B61FF 0%, #6248CC 100%)",
       },
       boxShadow: {
         "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
-        "md": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)",
-        "lg": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)",
-        "xl": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
-        "glow-sm": "0 0 15px rgba(0, 212, 255, 0.2)",
-        "glow-md": "0 0 25px rgba(0, 212, 255, 0.3)",
-        "glow-lg": "0 0 40px rgba(0, 212, 255, 0.35)",
-        "glow-cyan": "0 0 20px rgba(0, 212, 255, 0.3)",
-        "glow-violet": "0 0 20px rgba(123, 97, 255, 0.25)",
-        "glow-mint": "0 0 20px rgba(0, 255, 178, 0.25)",
-        "card": "0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -2px rgba(0, 0, 0, 0.1)",
-        "card-hover": "0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 212, 255, 0.15)",
-        "inner-glow": "inset 0 1px 0 rgba(255, 255, 255, 0.05)",
+        "md": "0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.06)",
+        "lg": "0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05)",
+        "xl": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.08)",
+        "card": "0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06)",
+        "card-hover": "0 4px 12px rgba(0, 0, 0, 0.1)",
+        "glow-sm": "0 0 10px rgba(0, 212, 255, 0.15)",
+        "glow-md": "0 0 15px rgba(0, 212, 255, 0.2)",
       },
       animation: {
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",

@@ -16,10 +16,10 @@ export function SectionWrapper({
   id,
 }: SectionWrapperProps) {
   const variants = {
-    default: "bg-deep-space",
-    dark: "bg-slate-900",
-    gradient: "bg-gradient-quantum",
-    accent: "bg-gradient-to-br from-electric-cyan/10 to-quantum-violet/10",
+    default: "bg-white",
+    dark: "bg-slate-50",
+    gradient: "bg-gradient-to-b from-slate-50 to-white",
+    accent: "bg-slate-50",
   };
 
   const paddings = {

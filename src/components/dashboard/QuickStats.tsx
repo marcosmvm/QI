@@ -55,7 +55,7 @@ export function QuickStats({
     return (
       <div
         className={cn(
-          "flex items-center divide-x divide-graphite rounded-xl border border-graphite bg-midnight-blue/60 overflow-hidden",
+          "flex items-center divide-x divide-slate-200 rounded-xl border border-slate-200 bg-white overflow-hidden",
           className
         )}
       >
@@ -80,13 +80,13 @@ export function QuickStats({
                 </div>
               )}
               <div>
-                <p className="text-xs text-steel">{stat.label}</p>
+                <p className="text-xs text-slate-500">{stat.label}</p>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-lg font-bold text-white">
+                  <span className="text-lg font-bold text-slate-900">
                     {stat.value}
                   </span>
                   {stat.suffix && (
-                    <span className="text-sm text-steel">{stat.suffix}</span>
+                    <span className="text-sm text-slate-500">{stat.suffix}</span>
                   )}
                   {stat.change !== undefined && (
                     <span
@@ -96,7 +96,7 @@ export function QuickStats({
                           ? "text-neon-mint"
                           : stat.change < 0
                           ? "text-rose"
-                          : "text-steel"
+                          : "text-slate-500"
                       )}
                     >
                       {stat.change > 0 ? (
@@ -122,7 +122,7 @@ export function QuickStats({
     return (
       <div
         className={cn(
-          "space-y-3 rounded-xl border border-graphite bg-midnight-blue/60 p-4",
+          "space-y-3 rounded-xl border border-slate-200 bg-white p-4",
           className
         )}
       >
@@ -133,7 +133,7 @@ export function QuickStats({
           return (
             <div
               key={index}
-              className="flex items-center justify-between py-2 border-b border-graphite last:border-0"
+              className="flex items-center justify-between py-2 border-b border-slate-100 last:border-0"
             >
               <div className="flex items-center gap-3">
                 {Icon && (
@@ -147,12 +147,12 @@ export function QuickStats({
                     <Icon className={cn("h-4 w-4", color.icon)} />
                   </div>
                 )}
-                <span className="text-sm text-steel">{stat.label}</span>
+                <span className="text-sm text-slate-500">{stat.label}</span>
               </div>
               <div className="flex items-baseline gap-1">
-                <span className="text-lg font-bold text-white">{stat.value}</span>
+                <span className="text-lg font-bold text-slate-900">{stat.value}</span>
                 {stat.suffix && (
-                  <span className="text-sm text-steel">{stat.suffix}</span>
+                  <span className="text-sm text-slate-500">{stat.suffix}</span>
                 )}
                 {stat.change !== undefined && (
                   <span
@@ -162,7 +162,7 @@ export function QuickStats({
                         ? "text-neon-mint"
                         : stat.change < 0
                         ? "text-rose"
-                        : "text-steel"
+                        : "text-slate-500"
                     )}
                   >
                     {stat.change > 0 ? (
@@ -198,10 +198,10 @@ export function QuickStats({
         return (
           <div
             key={index}
-            className="rounded-xl border border-graphite bg-midnight-blue/60 p-4"
+            className="rounded-xl border border-slate-200 bg-white p-4"
           >
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs text-steel">{stat.label}</span>
+              <span className="text-xs text-slate-500">{stat.label}</span>
               {Icon && (
                 <div
                   className={cn(
@@ -215,9 +215,9 @@ export function QuickStats({
               )}
             </div>
             <div className="flex items-baseline gap-1">
-              <span className="text-2xl font-bold text-white">{stat.value}</span>
+              <span className="text-2xl font-bold text-slate-900">{stat.value}</span>
               {stat.suffix && (
-                <span className="text-sm text-steel">{stat.suffix}</span>
+                <span className="text-sm text-slate-500">{stat.suffix}</span>
               )}
             </div>
             {stat.change !== undefined && (
@@ -228,7 +228,7 @@ export function QuickStats({
                     ? "text-neon-mint"
                     : stat.change < 0
                     ? "text-rose"
-                    : "text-steel"
+                    : "text-slate-500"
                 )}
               >
                 {stat.change > 0 ? (

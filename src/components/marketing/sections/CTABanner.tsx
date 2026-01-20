@@ -28,16 +28,15 @@ export function CTABanner({
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-electric-cyan/10 via-quantum-violet/10 to-electric-cyan/10" />
-      <div className="absolute inset-0 bg-deep-space/80" />
+      <div className="absolute inset-0 bg-slate-50" />
 
-      {/* Animated Orbs */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-64 h-64 bg-electric-cyan/20 rounded-full blur-[80px] animate-pulse" />
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-64 h-64 bg-quantum-violet/20 rounded-full blur-[80px] animate-pulse delay-500" />
+      {/* Subtle Orbs */}
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-64 h-64 bg-electric-cyan/5 rounded-full blur-[80px]" />
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-64 h-64 bg-quantum-violet/5 rounded-full blur-[80px]" />
 
       {/* Border Lines */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-electric-cyan/50 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-quantum-violet/50 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
       <Container className="relative z-10">
         <motion.div
@@ -48,17 +47,17 @@ export function CTABanner({
           className="text-center max-w-3xl mx-auto"
         >
           {/* Icon */}
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-electric-cyan/20 to-quantum-violet/20 border border-electric-cyan/30 mb-8">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white border border-slate-200 shadow-sm mb-8">
             <Calendar className="w-8 h-8 text-electric-cyan" />
           </div>
 
           {/* Headline */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 mb-6">
             {title}
           </h2>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-silver mb-10 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
             {description}
           </p>
 
@@ -67,7 +66,7 @@ export function CTABanner({
             <Link href={primaryCTA.href}>
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-electric-cyan to-cyan-dark hover:from-cyan-light hover:to-electric-cyan text-deep-space font-semibold px-8 py-6 text-lg shadow-glow-md hover:shadow-glow-lg transition-all"
+                className="bg-electric-cyan hover:bg-cyan-dark text-white font-semibold px-8 py-6 text-lg shadow-md hover:shadow-lg transition-all"
               >
                 {primaryCTA.text}
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -77,7 +76,7 @@ export function CTABanner({
               <Button
                 variant="outline"
                 size="lg"
-                className="border-electric-cyan/30 hover:border-electric-cyan/60 text-white hover:bg-electric-cyan/10 px-8 py-6 text-lg"
+                className="border-slate-300 hover:border-electric-cyan text-slate-700 hover:text-electric-cyan px-8 py-6 text-lg"
               >
                 {secondaryCTA.text}
               </Button>

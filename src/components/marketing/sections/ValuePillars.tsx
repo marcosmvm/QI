@@ -46,22 +46,22 @@ const pillars = [
 
 const colorClasses = {
   "electric-cyan": {
-    bg: "bg-electric-cyan/10",
-    border: "border-electric-cyan/20",
+    bg: "bg-slate-50",
+    border: "border-slate-200",
     text: "text-electric-cyan",
-    glow: "group-hover:shadow-[0_0_30px_rgba(0,212,255,0.2)]",
+    hover: "hover:border-electric-cyan/50",
   },
   "quantum-violet": {
-    bg: "bg-quantum-violet/10",
-    border: "border-quantum-violet/20",
-    text: "text-quantum-violet",
-    glow: "group-hover:shadow-[0_0_30px_rgba(123,97,255,0.2)]",
+    bg: "bg-slate-50",
+    border: "border-slate-200",
+    text: "text-electric-cyan",
+    hover: "hover:border-electric-cyan/50",
   },
   "neon-mint": {
-    bg: "bg-neon-mint/10",
-    border: "border-neon-mint/20",
-    text: "text-neon-mint",
-    glow: "group-hover:shadow-[0_0_30px_rgba(0,255,178,0.2)]",
+    bg: "bg-slate-50",
+    border: "border-slate-200",
+    text: "text-electric-cyan",
+    hover: "hover:border-electric-cyan/50",
   },
 };
 
@@ -77,13 +77,13 @@ export function ValuePillars() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 mb-6">
             Why Companies Choose{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric-cyan to-quantum-violet">
+            <span className="text-electric-cyan">
               Quantum Insights
             </span>
           </h2>
-          <p className="text-lg text-silver">
+          <p className="text-lg text-slate-600">
             Our AI-first approach delivers predictable pipeline growth with industry-leading deliverability and conversion rates.
           </p>
         </motion.div>
@@ -99,7 +99,7 @@ export function ValuePillars() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`group relative p-6 rounded-2xl border ${colors.border} bg-gradient-to-br from-midnight-blue/50 to-deep-space/50 hover:border-opacity-50 transition-all duration-300 ${colors.glow}`}
+                className={`group relative p-6 rounded-2xl border ${colors.border} bg-white ${colors.hover} hover:shadow-md transition-all duration-300`}
               >
                 {/* Icon */}
                 <div className={`inline-flex p-3 rounded-xl ${colors.bg} ${colors.border} border mb-4`}>
@@ -107,10 +107,10 @@ export function ValuePillars() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-sora font-semibold text-white mb-2">
+                <h3 className="text-xl font-sora font-semibold text-slate-900 mb-2">
                   {pillar.title}
                 </h3>
-                <p className="text-silver text-sm leading-relaxed">
+                <p className="text-slate-600 text-sm leading-relaxed">
                   {pillar.description}
                 </p>
               </motion.div>

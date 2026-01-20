@@ -54,13 +54,13 @@ export function FAQ() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-2xl mx-auto mb-12"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 mb-6">
             Frequently Asked{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric-cyan to-quantum-violet">
+            <span className="text-electric-cyan">
               Questions
             </span>
           </h2>
-          <p className="text-lg text-silver">
+          <p className="text-lg text-slate-600">
             Everything you need to know about working with Quantum Insights.
           </p>
         </motion.div>
@@ -77,16 +77,16 @@ export function FAQ() {
               <Accordion.Item
                 key={index}
                 value={`item-${index}`}
-                className="group rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/50 to-deep-space/50 overflow-hidden data-[state=open]:border-electric-cyan/30 transition-colors"
+                className="group rounded-xl border border-slate-200 bg-white overflow-hidden data-[state=open]:border-electric-cyan/50 transition-colors"
               >
                 <Accordion.Header>
                   <Accordion.Trigger className="flex w-full items-center justify-between px-6 py-5 text-left">
-                    <span className="text-white font-medium pr-4">{faq.question}</span>
+                    <span className="text-slate-900 font-medium pr-4">{faq.question}</span>
                     <ChevronDown className="h-5 w-5 text-electric-cyan shrink-0 transition-transform duration-200 group-data-[state=open]:rotate-180" />
                   </Accordion.Trigger>
                 </Accordion.Header>
                 <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                  <div className="px-6 pb-5 text-silver leading-relaxed">
+                  <div className="px-6 pb-5 text-slate-600 leading-relaxed">
                     {faq.answer}
                   </div>
                 </Accordion.Content>

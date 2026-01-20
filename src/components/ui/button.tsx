@@ -5,20 +5,20 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-deep-space disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         default:
-          "bg-electric-cyan text-deep-space hover:shadow-glow-md hover:-translate-y-0.5",
+          "bg-electric-cyan text-white hover:bg-cyan-dark hover:shadow-md",
         destructive:
-          "bg-energy-orange text-white hover:bg-energy-orange/90",
+          "bg-rose text-white hover:bg-rose-dark",
         outline:
-          "border border-electric-cyan/50 bg-transparent text-electric-cyan hover:bg-electric-cyan/10 hover:border-electric-cyan",
+          "border border-slate-300 bg-transparent text-slate-700 hover:bg-slate-100 hover:border-electric-cyan hover:text-electric-cyan",
         secondary:
-          "bg-quantum-violet text-white hover:bg-quantum-violet/90 hover:shadow-glow-violet",
+          "bg-quantum-violet text-white hover:bg-violet-dark",
         ghost:
-          "text-silver hover:bg-midnight-blue hover:text-white",
+          "text-slate-600 hover:bg-slate-100 hover:text-slate-900",
         link:
           "text-electric-cyan underline-offset-4 hover:underline",
       },

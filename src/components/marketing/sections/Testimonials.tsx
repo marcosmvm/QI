@@ -61,13 +61,13 @@ export function Testimonials() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 mb-6">
             Trusted by{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric-cyan to-quantum-violet">
+            <span className="text-electric-cyan">
               Growth Leaders
             </span>
           </h2>
-          <p className="text-lg text-silver">
+          <p className="text-lg text-slate-600">
             See what our clients say about working with Quantum Insights.
           </p>
         </motion.div>
@@ -83,9 +83,9 @@ export function Testimonials() {
               transition={{ duration: 0.3 }}
               className="relative"
             >
-              <div className="relative p-8 md:p-12 rounded-3xl border border-electric-cyan/20 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90">
+              <div className="relative p-8 md:p-12 rounded-3xl border border-slate-200 bg-white shadow-sm">
                 {/* Quote Icon */}
-                <div className="absolute -top-6 left-8 p-4 rounded-2xl bg-gradient-to-br from-electric-cyan/20 to-quantum-violet/20 border border-electric-cyan/30">
+                <div className="absolute -top-6 left-8 p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
                   <Quote className="h-6 w-6 text-electric-cyan" />
                 </div>
 
@@ -97,21 +97,21 @@ export function Testimonials() {
                 </div>
 
                 {/* Quote */}
-                <blockquote className="text-xl md:text-2xl text-white font-medium leading-relaxed mb-8">
+                <blockquote className="text-xl md:text-2xl text-slate-900 font-medium leading-relaxed mb-8">
                   &ldquo;{testimonials[current].quote}&rdquo;
                 </blockquote>
 
                 {/* Author */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-electric-cyan/30 to-quantum-violet/30 border border-electric-cyan/20 flex items-center justify-center">
-                      <span className="text-lg font-semibold text-white">
+                    <div className="w-14 h-14 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center">
+                      <span className="text-lg font-semibold text-slate-700">
                         {testimonials[current].author.charAt(0)}
                       </span>
                     </div>
                     <div>
-                      <p className="font-semibold text-white">{testimonials[current].author}</p>
-                      <p className="text-steel text-sm">
+                      <p className="font-semibold text-slate-900">{testimonials[current].author}</p>
+                      <p className="text-slate-500 text-sm">
                         {testimonials[current].title}, {testimonials[current].company}
                       </p>
                     </div>
@@ -119,10 +119,10 @@ export function Testimonials() {
 
                   {/* Metric */}
                   <div className="hidden sm:block text-right">
-                    <p className="text-3xl font-sora font-bold text-transparent bg-clip-text bg-gradient-to-r from-electric-cyan to-quantum-violet">
+                    <p className="text-3xl font-sora font-bold text-electric-cyan">
                       {testimonials[current].metric.value}
                     </p>
-                    <p className="text-steel text-sm">{testimonials[current].metric.label}</p>
+                    <p className="text-slate-500 text-sm">{testimonials[current].metric.label}</p>
                   </div>
                 </div>
               </div>
@@ -133,7 +133,7 @@ export function Testimonials() {
           <div className="flex items-center justify-center gap-4 mt-8">
             <button
               onClick={prev}
-              className="p-3 rounded-full border border-electric-cyan/20 hover:border-electric-cyan/40 hover:bg-electric-cyan/10 text-steel hover:text-white transition-all"
+              className="p-3 rounded-full border border-slate-200 hover:border-electric-cyan hover:bg-slate-50 text-slate-500 hover:text-electric-cyan transition-all"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="h-5 w-5" />
@@ -147,7 +147,7 @@ export function Testimonials() {
                   className={`w-2.5 h-2.5 rounded-full transition-all ${
                     index === current
                       ? "bg-electric-cyan w-8"
-                      : "bg-steel/30 hover:bg-steel/50"
+                      : "bg-slate-300 hover:bg-slate-400"
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
@@ -156,7 +156,7 @@ export function Testimonials() {
 
             <button
               onClick={next}
-              className="p-3 rounded-full border border-electric-cyan/20 hover:border-electric-cyan/40 hover:bg-electric-cyan/10 text-steel hover:text-white transition-all"
+              className="p-3 rounded-full border border-slate-200 hover:border-electric-cyan hover:bg-slate-50 text-slate-500 hover:text-electric-cyan transition-all"
               aria-label="Next testimonial"
             >
               <ChevronRight className="h-5 w-5" />

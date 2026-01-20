@@ -23,7 +23,7 @@ export function Logo({ className, showText = true, size = "md" }: LogoProps) {
     <Link href="/" className={cn("flex items-center gap-3", className)}>
       <div
         className={cn(
-          "flex items-center justify-center rounded-xl bg-gradient-to-br from-electric-cyan to-quantum-violet shadow-glow-sm",
+          "flex items-center justify-center rounded-xl bg-electric-cyan shadow-sm",
           s.icon
         )}
       >
@@ -31,10 +31,10 @@ export function Logo({ className, showText = true, size = "md" }: LogoProps) {
       </div>
       {showText && (
         <div>
-          <h1 className={cn("font-sora font-bold text-white tracking-tight", s.text)}>
+          <h1 className={cn("font-sora font-bold text-slate-900 tracking-tight", s.text)}>
             Quantum
           </h1>
-          <p className={cn("text-steel font-medium -mt-0.5", s.subtext)}>Insights</p>
+          <p className={cn("text-slate-500 font-medium -mt-0.5", s.subtext)}>Insights</p>
         </div>
       )}
     </Link>
@@ -45,7 +45,7 @@ export function LogoIcon({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-electric-cyan to-quantum-violet shadow-glow-sm",
+        "flex h-10 w-10 items-center justify-center rounded-xl bg-electric-cyan shadow-sm",
         className
       )}
     >

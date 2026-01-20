@@ -36,8 +36,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${sora.variable} ${inter.variable} antialiased bg-deep-space text-white min-h-screen`}>
+    <html lang="en">
+      <body className={`${sora.variable} ${inter.variable} antialiased bg-white text-slate-900 min-h-screen`}>
         <MarketingNavbar />
         <main>{children}</main>
         <Footer />

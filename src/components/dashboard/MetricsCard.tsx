@@ -58,24 +58,18 @@ export function MetricsCard({
   return (
     <div
       className={cn(
-        "relative rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6 transition-all duration-300 hover:border-electric-cyan/30 hover:shadow-card-hover group overflow-hidden",
+        "relative rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-300 hover:border-electric-cyan/50 hover:shadow-md group overflow-hidden",
         className
       )}
     >
-      {/* Subtle top accent line */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-electric-cyan/40 to-transparent" />
-
-      {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-electric-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
       <div className="relative flex items-start justify-between">
         <div className="space-y-1">
-          <p className="text-sm font-medium text-steel">{title}</p>
+          <p className="text-sm font-medium text-slate-500">{title}</p>
           <div className="flex items-baseline gap-1.5">
-            <span className="text-3xl font-sora font-bold text-white tracking-tight">
+            <span className="text-3xl font-sora font-bold text-slate-900 tracking-tight">
               {value}
             </span>
-            {suffix && <span className="text-lg font-medium text-steel">{suffix}</span>}
+            {suffix && <span className="text-lg font-medium text-slate-500">{suffix}</span>}
           </div>
         </div>
         <div className={cn(
@@ -93,13 +87,13 @@ export function MetricsCard({
           <div
             className={cn(
               "flex items-center gap-1.5 text-sm font-semibold",
-              change > 0 ? "text-neon-mint" : change < 0 ? "text-rose" : "text-steel"
+              change > 0 ? "text-neon-mint" : change < 0 ? "text-rose" : "text-slate-500"
             )}
           >
             <TrendIcon className="h-4 w-4" />
             <span>{Math.abs(change)}%</span>
           </div>
-          <span className="text-xs text-steel">{changeLabel}</span>
+          <span className="text-xs text-slate-500">{changeLabel}</span>
         </div>
       )}
     </div>
