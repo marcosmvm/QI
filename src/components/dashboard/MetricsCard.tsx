@@ -25,22 +25,22 @@ export function MetricsCard({
 }: MetricsCardProps) {
   const statusColors = {
     success: {
-      bg: "bg-neon-mint/10",
-      border: "border-neon-mint/20",
-      text: "text-neon-mint",
-      icon: "text-neon-mint",
+      bg: "bg-emerald/10",
+      border: "border-emerald/20",
+      text: "text-emerald",
+      icon: "text-emerald",
     },
     warning: {
-      bg: "bg-energy-orange/10",
-      border: "border-energy-orange/20",
-      text: "text-energy-orange",
-      icon: "text-energy-orange",
+      bg: "bg-accent-yellow/10",
+      border: "border-accent-yellow/20",
+      text: "text-accent-yellow",
+      icon: "text-accent-yellow",
     },
     critical: {
-      bg: "bg-red-500/10",
-      border: "border-red-500/20",
-      text: "text-red-400",
-      icon: "text-red-400",
+      bg: "bg-rose/10",
+      border: "border-rose/20",
+      text: "text-rose",
+      icon: "text-rose",
     },
   };
 
@@ -58,31 +58,39 @@ export function MetricsCard({
   return (
     <div
       className={cn(
-        "rounded-xl border border-graphite bg-midnight-blue/60 backdrop-blur-sm p-6 transition-all duration-200 hover:border-electric-cyan/30 hover:shadow-glow-sm",
+        "relative rounded-2xl border border-white/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6 transition-all duration-300 hover:border-primary-blue/30 hover:shadow-card-hover group overflow-hidden",
         className
       )}
     >
-      <div className="flex items-start justify-between">
+      {/* Subtle gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+      <div className="relative flex items-start justify-between">
         <div className="space-y-1">
           <p className="text-sm font-medium text-steel">{title}</p>
-          <div className="flex items-baseline gap-1">
-            <span className="text-3xl font-sora font-bold text-white">
+          <div className="flex items-baseline gap-1.5">
+            <span className="text-3xl font-poppins font-bold text-white tracking-tight">
               {value}
             </span>
-            {suffix && <span className="text-lg text-steel">{suffix}</span>}
+            {suffix && <span className="text-lg font-medium text-steel">{suffix}</span>}
           </div>
         </div>
-        <div className={cn("rounded-lg p-2.5", colors.bg, "border", colors.border)}>
+        <div className={cn(
+          "rounded-xl p-3 border transition-all duration-300",
+          colors.bg,
+          colors.border,
+          "group-hover:shadow-sm"
+        )}>
           <Icon className={cn("h-5 w-5", colors.icon)} />
         </div>
       </div>
 
       {change !== undefined && TrendIcon && (
-        <div className="mt-4 flex items-center gap-2">
+        <div className="relative mt-4 flex items-center gap-2">
           <div
             className={cn(
-              "flex items-center gap-1 text-sm font-medium",
-              change > 0 ? "text-neon-mint" : change < 0 ? "text-red-400" : "text-steel"
+              "flex items-center gap-1.5 text-sm font-semibold",
+              change > 0 ? "text-emerald" : change < 0 ? "text-rose" : "text-steel"
             )}
           >
             <TrendIcon className="h-4 w-4" />

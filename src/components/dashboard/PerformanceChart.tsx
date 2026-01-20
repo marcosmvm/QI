@@ -10,6 +10,7 @@ import {
   ResponsiveContainer,
   Legend,
 } from "recharts";
+import { TrendingUp } from "lucide-react";
 
 interface DataPoint {
   date: string;
@@ -25,8 +26,16 @@ interface PerformanceChartProps {
 
 export function PerformanceChart({ data, title = "Campaign Performance" }: PerformanceChartProps) {
   return (
-    <div className="rounded-xl border border-graphite bg-midnight-blue/60 backdrop-blur-sm p-6">
-      <h3 className="text-lg font-sora font-semibold text-white mb-6">{title}</h3>
+    <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6 transition-all duration-300 hover:border-primary-blue/20 hover:shadow-card-hover">
+      <div className="flex items-center gap-3 mb-6">
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-blue/10 border border-primary-blue/20">
+          <TrendingUp className="h-5 w-5 text-primary-blue" />
+        </div>
+        <div>
+          <h3 className="text-lg font-poppins font-semibold text-white">{title}</h3>
+          <p className="text-xs text-steel">Last 7 days</p>
+        </div>
+      </div>
       <div className="h-80">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart
@@ -35,52 +44,53 @@ export function PerformanceChart({ data, title = "Campaign Performance" }: Perfo
           >
             <defs>
               <linearGradient id="colorSent" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#00D4FF" stopOpacity={0.3} />
-                <stop offset="95%" stopColor="#00D4FF" stopOpacity={0} />
+                <stop offset="5%" stopColor="#0b81ff" stopOpacity={0.3} />
+                <stop offset="95%" stopColor="#0b81ff" stopOpacity={0} />
               </linearGradient>
               <linearGradient id="colorOpened" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#7B61FF" stopOpacity={0.3} />
-                <stop offset="95%" stopColor="#7B61FF" stopOpacity={0} />
+                <stop offset="5%" stopColor="#ffb902" stopOpacity={0.3} />
+                <stop offset="95%" stopColor="#ffb902" stopOpacity={0} />
               </linearGradient>
               <linearGradient id="colorReplied" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#00FFB2" stopOpacity={0.3} />
-                <stop offset="95%" stopColor="#00FFB2" stopOpacity={0} />
+                <stop offset="5%" stopColor="#22c55e" stopOpacity={0.3} />
+                <stop offset="95%" stopColor="#22c55e" stopOpacity={0} />
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="#334155" vertical={false} />
+            <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
             <XAxis
               dataKey="date"
-              tick={{ fill: "#94A3B8", fontSize: 12 }}
+              tick={{ fill: "#94A3B8", fontSize: 11, fontWeight: 500 }}
               tickLine={false}
-              axisLine={{ stroke: "#334155" }}
+              axisLine={{ stroke: "rgba(255,255,255,0.1)" }}
             />
             <YAxis
-              tick={{ fill: "#94A3B8", fontSize: 12 }}
+              tick={{ fill: "#94A3B8", fontSize: 11, fontWeight: 500 }}
               tickLine={false}
               axisLine={false}
               tickFormatter={(value) => value.toLocaleString()}
             />
             <Tooltip
               contentStyle={{
-                backgroundColor: "#1A2D4A",
-                border: "1px solid #334155",
-                borderRadius: "8px",
-                boxShadow: "0 0 20px rgba(0, 212, 255, 0.1)",
+                backgroundColor: "#0a2e52",
+                border: "1px solid rgba(255,255,255,0.1)",
+                borderRadius: "12px",
+                boxShadow: "0 10px 40px rgba(0, 0, 0, 0.3)",
+                padding: "12px 16px",
               }}
-              labelStyle={{ color: "#FFFFFF", fontWeight: 600 }}
-              itemStyle={{ color: "#E8EDF5" }}
+              labelStyle={{ color: "#FFFFFF", fontWeight: 600, marginBottom: "8px" }}
+              itemStyle={{ color: "#E8EDF5", fontSize: "12px" }}
             />
             <Legend
               wrapperStyle={{ paddingTop: "20px" }}
               formatter={(value) => (
-                <span style={{ color: "#E8EDF5", fontSize: "12px" }}>{value}</span>
+                <span style={{ color: "#94A3B8", fontSize: "12px", fontWeight: 500 }}>{value}</span>
               )}
             />
             <Area
               type="monotone"
               dataKey="sent"
               name="Sent"
-              stroke="#00D4FF"
+              stroke="#0b81ff"
               strokeWidth={2}
               fillOpacity={1}
               fill="url(#colorSent)"
@@ -89,7 +99,7 @@ export function PerformanceChart({ data, title = "Campaign Performance" }: Perfo
               type="monotone"
               dataKey="opened"
               name="Opened"
-              stroke="#7B61FF"
+              stroke="#ffb902"
               strokeWidth={2}
               fillOpacity={1}
               fill="url(#colorOpened)"
@@ -98,7 +108,7 @@ export function PerformanceChart({ data, title = "Campaign Performance" }: Perfo
               type="monotone"
               dataKey="replied"
               name="Replied"
-              stroke="#00FFB2"
+              stroke="#22c55e"
               strokeWidth={2}
               fillOpacity={1}
               fill="url(#colorReplied)"
