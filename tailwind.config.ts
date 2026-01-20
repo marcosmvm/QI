@@ -9,24 +9,53 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Light Mode Base Colors
-        "light-bg": "#FFFFFF",
-        "light-bg-secondary": "#F8FAFC",
-        "light-bg-tertiary": "#F1F5F9",
+        // New Modern Light Theme Colors
+        background: {
+          DEFAULT: "#F5F7FA",
+          secondary: "#FFFFFF",
+          tertiary: "#EEF2F6",
+          card: "#FFFFFF",
+        },
 
-        // Legacy dark colors (keep for reference/transition)
-        "deep-space": "#0F172A",
-        "midnight-blue": "#1E293B",
+        // Primary - Fresh Green
+        primary: {
+          DEFAULT: "#4ADE80",
+          light: "#86EFAC",
+          dark: "#22C55E",
+          50: "#F0FDF4",
+          100: "#DCFCE7",
+          200: "#BBF7D0",
+          300: "#86EFAC",
+          400: "#4ADE80",
+          500: "#22C55E",
+          600: "#16A34A",
+          700: "#15803D",
+          foreground: "#FFFFFF",
+        },
 
-        // Primary accent - Electric Cyan (unchanged)
+        // Secondary - Navy Blue
+        secondary: {
+          DEFAULT: "#1E3A5F",
+          light: "#2D4A6F",
+          dark: "#0F2847",
+          foreground: "#FFFFFF",
+        },
+
+        // Accent - Soft Blue
+        accent: {
+          DEFAULT: "#60A5FA",
+          light: "#93C5FD",
+          dark: "#3B82F6",
+          foreground: "#FFFFFF",
+        },
+
+        // Legacy brand colors (kept for compatibility)
         "electric-cyan": "#00D4FF",
         "cyan": {
           DEFAULT: "#00D4FF",
           light: "#33DDFF",
           dark: "#00A8CC",
         },
-
-        // Secondary accent - Quantum Violet (unchanged)
         "quantum-violet": "#7B61FF",
         "violet": {
           DEFAULT: "#7B61FF",
@@ -34,68 +63,80 @@ const config: Config = {
           dark: "#6248CC",
         },
 
-        // Status colors (unchanged)
-        "neon-mint": "#00FFB2",
-        "success": {
-          DEFAULT: "#10B981",
-          light: "#34D399",
-          dark: "#059669",
+        // Status colors
+        success: {
+          DEFAULT: "#22C55E",
+          light: "#86EFAC",
+          dark: "#16A34A",
         },
-        "energy-orange": "#F59E0B",
-        "warning": {
+        warning: {
           DEFAULT: "#F59E0B",
-          light: "#FBBF24",
+          light: "#FCD34D",
           dark: "#D97706",
         },
-        "rose": {
+        error: {
+          DEFAULT: "#EF4444",
+          light: "#FCA5A5",
+          dark: "#DC2626",
+        },
+        info: {
+          DEFAULT: "#3B82F6",
+          light: "#93C5FD",
+          dark: "#2563EB",
+        },
+
+        // Text colors
+        "text-primary": "#1E293B",
+        "text-secondary": "#475569",
+        "text-muted": "#94A3B8",
+        "text-light": "#CBD5E1",
+
+        // Border colors
+        border: {
+          DEFAULT: "#E2E8F0",
+          light: "#F1F5F9",
+          dark: "#CBD5E1",
+        },
+
+        // Special colors from design
+        navy: {
+          DEFAULT: "#1E3A5F",
+          light: "#2D4A6F",
+          dark: "#0F2847",
+        },
+        cream: "#FDF8F3",
+        peach: "#FECACA",
+        mint: "#D1FAE5",
+
+        // Legacy semantic colors
+        "deep-space": "#0F172A",
+        "midnight-blue": "#1E293B",
+        silver: "#1E293B",
+        steel: "#94A3B8",
+        graphite: "#E2E8F0",
+        "neon-mint": "#22C55E",
+        "energy-orange": "#F59E0B",
+        rose: {
           DEFAULT: "#EF4444",
           light: "#F87171",
           dark: "#DC2626",
         },
 
-        // Text colors - Light Mode
-        "silver": "#0F172A",
-        "steel": "#64748B",
-        "graphite": "#E2E8F0",
-
-        // Semantic color mapping - Light Mode
-        primary: {
-          DEFAULT: "#00D4FF",
-          foreground: "#FFFFFF",
-          50: "#E6FAFF",
-          100: "#CCF5FF",
-          200: "#99EBFF",
-          300: "#66E1FF",
-          400: "#33D8FF",
-          500: "#00D4FF",
-          600: "#00A8CC",
-          700: "#007A99",
-        },
-        secondary: {
-          DEFAULT: "#7B61FF",
-          foreground: "#FFFFFF",
-        },
-        background: "#FFFFFF",
-        foreground: "#0F172A",
+        // Card and popover
         card: {
           DEFAULT: "#FFFFFF",
-          foreground: "#0F172A",
-        },
-        border: "#E2E8F0",
-        muted: {
-          DEFAULT: "#F8FAFC",
-          foreground: "#64748B",
-        },
-        accent: {
-          DEFAULT: "#7B61FF",
-          foreground: "#FFFFFF",
+          foreground: "#1E293B",
         },
         popover: {
           DEFAULT: "#FFFFFF",
-          foreground: "#0F172A",
+          foreground: "#1E293B",
+        },
+        muted: {
+          DEFAULT: "#F5F7FA",
+          foreground: "#64748B",
         },
         input: "#F1F5F9",
-        ring: "#00D4FF",
+        ring: "#4ADE80",
         destructive: {
           DEFAULT: "#EF4444",
           foreground: "#FFFFFF",
@@ -107,40 +148,37 @@ const config: Config = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-light": "linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%)",
-        "gradient-subtle-light": "linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%)",
-        "glow-cyan": "radial-gradient(ellipse at top right, rgba(0, 212, 255, 0.08) 0%, transparent 50%)",
-        "glow-violet": "radial-gradient(ellipse at bottom left, rgba(123, 97, 255, 0.06) 0%, transparent 50%)",
-        "accent-gradient": "linear-gradient(90deg, #00D4FF, #7B61FF)",
+        "gradient-light": "linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%)",
+        "gradient-subtle": "linear-gradient(180deg, #F5F7FA 0%, #FFFFFF 100%)",
+        "gradient-card": "linear-gradient(145deg, #FFFFFF 0%, #F8FAFC 100%)",
+        "gradient-primary": "linear-gradient(135deg, #4ADE80 0%, #22C55E 100%)",
+        "gradient-secondary": "linear-gradient(135deg, #1E3A5F 0%, #2D4A6F 100%)",
+        "gradient-accent": "linear-gradient(135deg, #60A5FA 0%, #3B82F6 100%)",
+        "glow-green": "radial-gradient(ellipse at top right, rgba(74, 222, 128, 0.1) 0%, transparent 50%)",
+        "glow-blue": "radial-gradient(ellipse at bottom left, rgba(96, 165, 250, 0.08) 0%, transparent 50%)",
       },
       boxShadow: {
-        "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
-        "md": "0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.06)",
-        "lg": "0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05)",
-        "xl": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.08)",
-        "card": "0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06)",
-        "card-hover": "0 4px 12px rgba(0, 0, 0, 0.1)",
-        "glow-sm": "0 0 10px rgba(0, 212, 255, 0.15)",
-        "glow-md": "0 0 15px rgba(0, 212, 255, 0.2)",
+        "xs": "0 1px 2px rgba(0, 0, 0, 0.04)",
+        "sm": "0 2px 4px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06)",
+        "md": "0 4px 8px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.06)",
+        "lg": "0 8px 16px rgba(0, 0, 0, 0.06), 0 4px 8px rgba(0, 0, 0, 0.04)",
+        "xl": "0 16px 32px rgba(0, 0, 0, 0.08), 0 8px 16px rgba(0, 0, 0, 0.04)",
+        "card": "0 2px 8px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.02)",
+        "card-hover": "0 4px 12px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.04)",
+        "primary": "0 4px 12px rgba(74, 222, 128, 0.3)",
+        "secondary": "0 4px 12px rgba(30, 58, 95, 0.2)",
+        "glow-sm": "0 0 10px rgba(74, 222, 128, 0.15)",
+        "glow-md": "0 0 15px rgba(74, 222, 128, 0.2)",
       },
       animation: {
-        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
-        "pulse-subtle": "pulse-subtle 2s ease-in-out infinite",
         "fade-in": "fade-in 0.3s ease-out",
         "slide-up": "slide-up 0.3s ease-out",
         "slide-in-right": "slide-in-right 0.3s ease-out",
-        "shimmer": "shimmer 2s infinite",
-        "orbital": "orbital 20s linear infinite",
+        "count-up": "count-up 0.5s ease-out",
+        "pulse-subtle": "pulse-subtle 2s ease-in-out infinite",
+        "bounce-soft": "bounce-soft 2s ease-in-out infinite",
       },
       keyframes: {
-        "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 15px rgba(0, 212, 255, 0.2)" },
-          "50%": { boxShadow: "0 0 30px rgba(0, 212, 255, 0.4)" },
-        },
-        "pulse-subtle": {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.6" },
-        },
         "fade-in": {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
@@ -153,22 +191,32 @@ const config: Config = {
           "0%": { opacity: "0", transform: "translateX(-10px)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
-        "shimmer": {
-          "0%": { backgroundPosition: "-200% 0" },
-          "100%": { backgroundPosition: "200% 0" },
+        "count-up": {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
-        "orbital": {
-          "0%": { transform: "rotate(0deg)" },
-          "100%": { transform: "rotate(360deg)" },
+        "pulse-subtle": {
+          "0%, 100%": { opacity: "0.3", transform: "scale(1)" },
+          "50%": { opacity: "0.6", transform: "scale(1.1)" },
+        },
+        "bounce-soft": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-5px)" },
         },
       },
       borderRadius: {
         "xl": "12px",
         "2xl": "16px",
-        "3xl": "24px",
+        "3xl": "20px",
+        "4xl": "24px",
       },
       transitionTimingFunction: {
         "smooth": "cubic-bezier(0.4, 0, 0.2, 1)",
+      },
+      spacing: {
+        "18": "4.5rem",
+        "88": "22rem",
+        "128": "32rem",
       },
     },
   },
