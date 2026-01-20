@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Sora, Inter } from "next/font/google";
 import "./globals.css";
+import { MarketingNavbar } from "@/components/marketing/navigation";
+import { Footer } from "@/components/marketing/navigation";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -15,10 +17,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Quantum Insights | Client Portal",
-  description: "B2B Cold Email Automation - Campaign Management & Analytics",
+  title: "Quantum Insights | AI-Powered B2B Lead Generation",
+  description: "Transform your outbound sales with AI-powered cold email automation. Book qualified meetings on autopilot with our 5 specialized AI engines.",
+  keywords: ["B2B lead generation", "cold email automation", "AI sales", "appointment setting", "outbound marketing"],
   icons: {
     icon: "/favicon.ico",
+  },
+  openGraph: {
+    title: "Quantum Insights | AI-Powered B2B Lead Generation",
+    description: "Transform your outbound sales with AI-powered cold email automation.",
+    type: "website",
   },
 };
 
@@ -29,8 +37,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${sora.variable} ${inter.variable} antialiased`}>
-        {children}
+      <body className={`${sora.variable} ${inter.variable} antialiased bg-deep-space text-white min-h-screen`}>
+        <MarketingNavbar />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

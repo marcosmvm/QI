@@ -1,0 +1,95 @@
+"use client";
+
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { type NavSection } from "@/lib/content/navigation";
+
+interface MegaMenuProps {
+  sections: NavSection[];
+  featured?: {
+    title: string;
+    description: string;
+    href: string;
+    image?: string;
+  };
+}
+
+export function MegaMenu({ sections, featured }: MegaMenuProps) {
+  return (
+    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 z-50">
+      <div className="bg-midnight-blue/95 backdrop-blur-md border border-graphite/50 rounded-2xl shadow-xl overflow-hidden min-w-[600px]">
+        <div className="p-6">
+          <div className={cn(
+            "grid gap-8",
+            featured ? "grid-cols-4" : `grid-cols-${Math.min(sections.length, 3)}`
+          )}>
+            {sections.map((section) => (
+              <div key={section.title}>
+                <h3 className="text-xs font-semibold uppercase tracking-widest text-steel/70 mb-4">
+                  {section.title}
+                </h3>
+                <ul className="space-y-1">
+                  {section.items.map((item) => (
+                    <li key={item.label}>
+                      <Link
+                        href={item.href}
+                        className="group flex items-start gap-3 p-2 -mx-2 rounded-lg hover:bg-electric-cyan/5 transition-colors"
+                      >
+                        {item.icon && (
+                          <div className="flex-shrink-0 mt-0.5">
+                            <item.icon className="h-4 w-4 text-steel group-hover:text-electric-cyan transition-colors" />
+                          </div>
+                        )}
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2">
+                            <span className="text-sm font-medium text-silver group-hover:text-white transition-colors">
+                              {item.label}
+                            </span>
+                            {item.badge && (
+                              <span className="px-1.5 py-0.5 text-[10px] font-semibold bg-electric-cyan/20 text-electric-cyan rounded">
+                                {item.badge}
+                              </span>
+                            )}
+                          </div>
+                          {item.description && (
+                            <p className="text-xs text-steel mt-0.5 line-clamp-2">
+                              {item.description}
+                            </p>
+                          )}
+                        </div>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+
+            {/* Featured Card */}
+            {featured && (
+              <div className="col-span-1">
+                <Link
+                  href={featured.href}
+                  className="group block h-full p-4 rounded-xl bg-gradient-to-br from-electric-cyan/10 to-quantum-violet/10 border border-electric-cyan/20 hover:border-electric-cyan/40 transition-all"
+                >
+                  <div className="flex flex-col h-full">
+                    <h4 className="text-sm font-semibold text-white mb-2">
+                      {featured.title}
+                    </h4>
+                    <p className="text-xs text-steel flex-1">
+                      {featured.description}
+                    </p>
+                    <div className="flex items-center gap-1 mt-4 text-xs font-medium text-electric-cyan group-hover:gap-2 transition-all">
+                      Learn more
+                      <ArrowRight className="h-3 w-3" />
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
