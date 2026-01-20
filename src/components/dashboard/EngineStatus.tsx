@@ -35,17 +35,17 @@ const engineConfig: Record<
 
 const statusColors = {
   operational: {
-    dot: "bg-emerald",
-    text: "text-emerald",
-    bg: "bg-emerald/10",
-    border: "border-emerald/20",
+    dot: "bg-neon-mint",
+    text: "text-neon-mint",
+    bg: "bg-neon-mint/10",
+    border: "border-neon-mint/20",
     label: "Operational",
   },
   degraded: {
-    dot: "bg-accent-yellow",
-    text: "text-accent-yellow",
-    bg: "bg-accent-yellow/10",
-    border: "border-accent-yellow/20",
+    dot: "bg-energy-orange",
+    text: "text-energy-orange",
+    bg: "bg-energy-orange/10",
+    border: "border-energy-orange/20",
     label: "Degraded",
   },
   offline: {
@@ -65,14 +65,17 @@ export function EngineStatus({ engines }: EngineStatusProps) {
   const operationalCount = engines.filter(e => e.status === "operational").length;
 
   return (
-    <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6 transition-all duration-300 hover:border-primary-blue/20 hover:shadow-card-hover">
+    <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6 transition-all duration-300 hover:border-electric-cyan/20 hover:shadow-card-hover">
+      {/* Subtle top accent line */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-electric-cyan/40 to-transparent rounded-t-2xl" />
+
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-blue/10 border border-primary-blue/20">
-            <Activity className="h-5 w-5 text-primary-blue" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-electric-cyan/10 border border-electric-cyan/20">
+            <Activity className="h-5 w-5 text-electric-cyan" />
           </div>
           <div>
-            <h3 className="text-lg font-poppins font-semibold text-white">
+            <h3 className="text-lg font-sora font-semibold text-white">
               Engine Status
             </h3>
             <p className="text-xs text-steel">
@@ -80,12 +83,12 @@ export function EngineStatus({ engines }: EngineStatusProps) {
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-2 text-xs text-steel bg-deep-space/50 px-3 py-1.5 rounded-lg border border-white/5">
+        <div className="flex items-center gap-2 text-xs text-steel bg-deep-space/50 px-3 py-1.5 rounded-lg border border-electric-cyan/10">
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-mint opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-neon-mint"></span>
           </span>
-          Live
+          Last checked: Just now
         </div>
       </div>
 
@@ -102,13 +105,13 @@ export function EngineStatus({ engines }: EngineStatusProps) {
                 "flex items-center gap-4 rounded-xl border p-4 transition-all duration-200 group",
                 status.border,
                 status.bg,
-                "hover:border-primary-blue/30 hover:bg-primary-blue/5"
+                "hover:border-electric-cyan/30 hover:bg-electric-cyan/5"
               )}
             >
               <div
                 className={cn(
                   "flex h-10 w-10 items-center justify-center rounded-xl",
-                  "bg-deep-space/60 border border-white/10 group-hover:border-white/20 transition-colors"
+                  "bg-deep-space/60 border border-electric-cyan/10 group-hover:border-electric-cyan/20 transition-colors"
                 )}
               >
                 <Icon className={cn("h-5 w-5", status.text)} />
@@ -116,7 +119,7 @@ export function EngineStatus({ engines }: EngineStatusProps) {
 
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2">
-                  <span className="font-mono text-[10px] px-2 py-0.5 rounded-md bg-slate-800 text-steel border border-white/5">
+                  <span className="font-mono text-[10px] px-2 py-0.5 rounded-md bg-midnight-blue text-electric-cyan border border-electric-cyan/20">
                     {config.codename}
                   </span>
                   <h4 className="font-medium text-white">{engine.name}</h4>
@@ -124,7 +127,7 @@ export function EngineStatus({ engines }: EngineStatusProps) {
                 <p className="text-sm text-steel truncate mt-0.5">{config.description}</p>
               </div>
 
-              <div className="flex items-center gap-2.5 bg-deep-space/40 px-3 py-1.5 rounded-lg border border-white/5">
+              <div className="flex items-center gap-2.5 bg-deep-space/40 px-3 py-1.5 rounded-lg border border-electric-cyan/10">
                 <span className={cn(
                   "h-2 w-2 rounded-full",
                   status.dot,

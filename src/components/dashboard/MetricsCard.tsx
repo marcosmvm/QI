@@ -25,16 +25,16 @@ export function MetricsCard({
 }: MetricsCardProps) {
   const statusColors = {
     success: {
-      bg: "bg-emerald/10",
-      border: "border-emerald/20",
-      text: "text-emerald",
-      icon: "text-emerald",
+      bg: "bg-neon-mint/10",
+      border: "border-neon-mint/20",
+      text: "text-neon-mint",
+      icon: "text-neon-mint",
     },
     warning: {
-      bg: "bg-accent-yellow/10",
-      border: "border-accent-yellow/20",
-      text: "text-accent-yellow",
-      icon: "text-accent-yellow",
+      bg: "bg-energy-orange/10",
+      border: "border-energy-orange/20",
+      text: "text-energy-orange",
+      icon: "text-energy-orange",
     },
     critical: {
       bg: "bg-rose/10",
@@ -58,18 +58,21 @@ export function MetricsCard({
   return (
     <div
       className={cn(
-        "relative rounded-2xl border border-white/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6 transition-all duration-300 hover:border-primary-blue/30 hover:shadow-card-hover group overflow-hidden",
+        "relative rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6 transition-all duration-300 hover:border-electric-cyan/30 hover:shadow-card-hover group overflow-hidden",
         className
       )}
     >
+      {/* Subtle top accent line */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-electric-cyan/40 to-transparent" />
+
       {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute inset-0 bg-gradient-to-br from-electric-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
       <div className="relative flex items-start justify-between">
         <div className="space-y-1">
           <p className="text-sm font-medium text-steel">{title}</p>
           <div className="flex items-baseline gap-1.5">
-            <span className="text-3xl font-poppins font-bold text-white tracking-tight">
+            <span className="text-3xl font-sora font-bold text-white tracking-tight">
               {value}
             </span>
             {suffix && <span className="text-lg font-medium text-steel">{suffix}</span>}
@@ -90,7 +93,7 @@ export function MetricsCard({
           <div
             className={cn(
               "flex items-center gap-1.5 text-sm font-semibold",
-              change > 0 ? "text-emerald" : change < 0 ? "text-rose" : "text-steel"
+              change > 0 ? "text-neon-mint" : change < 0 ? "text-rose" : "text-steel"
             )}
           >
             <TrendIcon className="h-4 w-4" />

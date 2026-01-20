@@ -16,38 +16,47 @@ const statusConfig = {
   },
   active: {
     label: "Active",
-    className: "bg-emerald/15 text-emerald border border-emerald/20",
+    className: "bg-neon-mint/15 text-neon-mint border border-neon-mint/20",
   },
   paused: {
     label: "Paused",
-    className: "bg-accent-yellow/15 text-accent-yellow border border-accent-yellow/20",
+    className: "bg-energy-orange/15 text-energy-orange border border-energy-orange/20",
   },
   completed: {
     label: "Completed",
-    className: "bg-primary-blue/15 text-primary-blue border border-primary-blue/20",
+    className: "bg-electric-cyan/15 text-electric-cyan border border-electric-cyan/20",
   },
 };
 
 export function CampaignTable({ campaigns }: CampaignTableProps) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 overflow-hidden">
+    <div className="relative rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 overflow-hidden">
+      {/* Subtle top accent line */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-electric-cyan/40 to-transparent z-10" />
+
       {/* Header */}
-      <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
+      <div className="flex items-center justify-between px-6 py-4 border-b border-electric-cyan/10">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-blue/10 border border-primary-blue/20">
-            <Mail className="h-5 w-5 text-primary-blue" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-electric-cyan/10 border border-electric-cyan/20">
+            <Mail className="h-5 w-5 text-electric-cyan" />
           </div>
           <div>
-            <h3 className="text-lg font-poppins font-semibold text-white">Active Campaigns</h3>
+            <h3 className="text-lg font-sora font-semibold text-white">Active Campaigns</h3>
             <p className="text-xs text-steel">{campaigns.length} campaigns</p>
           </div>
         </div>
+        <Link
+          href="/dashboard/campaigns"
+          className="text-sm text-electric-cyan hover:text-cyan-light transition-colors font-medium"
+        >
+          View all campaigns →
+        </Link>
       </div>
 
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead>
-            <tr className="border-b border-white/5 bg-deep-space/30">
+            <tr className="border-b border-electric-cyan/5 bg-deep-space/30">
               <th className="px-6 py-3.5 text-left text-[10px] font-semibold uppercase tracking-widest text-steel/70">
                 Campaign
               </th>
@@ -71,18 +80,18 @@ export function CampaignTable({ campaigns }: CampaignTableProps) {
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-white/5">
+          <tbody className="divide-y divide-electric-cyan/5">
             {campaigns.map((campaign) => {
               const status = statusConfig[campaign.status];
               return (
                 <tr
                   key={campaign.id}
-                  className="hover:bg-primary-blue/5 transition-colors group"
+                  className="hover:bg-electric-cyan/5 transition-colors group"
                 >
                   <td className="px-6 py-4">
                     <Link
                       href={`/dashboard/campaigns/${campaign.id}`}
-                      className="font-medium text-white hover:text-primary-blue transition-colors"
+                      className="font-medium text-white hover:text-electric-cyan transition-colors"
                     >
                       {campaign.name}
                     </Link>
@@ -105,14 +114,14 @@ export function CampaignTable({ campaigns }: CampaignTableProps) {
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-2.5">
-                      <div className="flex-1 h-1.5 max-w-16 rounded-full bg-slate-800 overflow-hidden">
+                      <div className="flex-1 h-1.5 max-w-16 rounded-full bg-midnight-blue overflow-hidden">
                         <div
                           className={cn(
                             "h-full rounded-full transition-all",
                             campaign.metrics.openRate >= 30
-                              ? "bg-emerald"
+                              ? "bg-neon-mint"
                               : campaign.metrics.openRate >= 15
-                              ? "bg-accent-yellow"
+                              ? "bg-energy-orange"
                               : "bg-rose"
                           )}
                           style={{ width: `${Math.min(campaign.metrics.openRate, 100)}%` }}
@@ -125,14 +134,14 @@ export function CampaignTable({ campaigns }: CampaignTableProps) {
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-2.5">
-                      <div className="flex-1 h-1.5 max-w-16 rounded-full bg-slate-800 overflow-hidden">
+                      <div className="flex-1 h-1.5 max-w-16 rounded-full bg-midnight-blue overflow-hidden">
                         <div
                           className={cn(
                             "h-full rounded-full transition-all",
                             campaign.metrics.replyRate >= 3
-                              ? "bg-emerald"
+                              ? "bg-neon-mint"
                               : campaign.metrics.replyRate >= 1
-                              ? "bg-accent-yellow"
+                              ? "bg-energy-orange"
                               : "bg-rose"
                           )}
                           style={{ width: `${Math.min(campaign.metrics.replyRate * 10, 100)}%` }}
@@ -145,14 +154,14 @@ export function CampaignTable({ campaigns }: CampaignTableProps) {
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-2.5">
-                      <div className="flex-1 h-1.5 max-w-16 rounded-full bg-slate-800 overflow-hidden">
+                      <div className="flex-1 h-1.5 max-w-16 rounded-full bg-midnight-blue overflow-hidden">
                         <div
                           className={cn(
                             "h-full rounded-full transition-all",
                             campaign.metrics.deliverabilityRate >= 90
-                              ? "bg-emerald"
+                              ? "bg-electric-cyan"
                               : campaign.metrics.deliverabilityRate >= 85
-                              ? "bg-accent-yellow"
+                              ? "bg-energy-orange"
                               : "bg-rose"
                           )}
                           style={{ width: `${campaign.metrics.deliverabilityRate}%` }}
@@ -166,17 +175,17 @@ export function CampaignTable({ campaigns }: CampaignTableProps) {
                   <td className="px-6 py-4">
                     <div className="flex items-center justify-end gap-1 opacity-60 group-hover:opacity-100 transition-opacity">
                       {campaign.status === "active" ? (
-                        <button className="p-2 text-steel hover:text-accent-yellow hover:bg-accent-yellow/10 rounded-lg transition-colors">
+                        <button className="p-2 text-steel hover:text-energy-orange hover:bg-energy-orange/10 rounded-lg transition-colors">
                           <Pause className="h-4 w-4" />
                         </button>
                       ) : campaign.status === "paused" || campaign.status === "draft" ? (
-                        <button className="p-2 text-steel hover:text-emerald hover:bg-emerald/10 rounded-lg transition-colors">
+                        <button className="p-2 text-steel hover:text-neon-mint hover:bg-neon-mint/10 rounded-lg transition-colors">
                           <Play className="h-4 w-4" />
                         </button>
                       ) : null}
                       <Link
                         href={`/dashboard/campaigns/${campaign.id}`}
-                        className="p-2 text-steel hover:text-primary-blue hover:bg-primary-blue/10 rounded-lg transition-colors"
+                        className="p-2 text-steel hover:text-electric-cyan hover:bg-electric-cyan/10 rounded-lg transition-colors"
                       >
                         <Eye className="h-4 w-4" />
                       </Link>

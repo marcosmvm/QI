@@ -28,15 +28,15 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="fixed left-0 top-0 z-40 h-screen w-64 border-r border-white/10 bg-slate-900">
+    <aside className="fixed left-0 top-0 z-40 h-screen w-64 border-r border-graphite/50 bg-deep-space">
       <div className="flex h-full flex-col">
         {/* Logo */}
-        <div className="flex h-16 items-center gap-3 border-b border-white/10 px-6">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary-blue to-primary-blue-dark shadow-glow-sm">
+        <div className="flex h-16 items-center gap-3 border-b border-graphite/50 px-6">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-electric-cyan to-quantum-violet shadow-glow-sm">
             <Zap className="h-5 w-5 text-white" />
           </div>
           <div>
-            <h1 className="text-lg font-poppins font-bold text-white tracking-tight">
+            <h1 className="text-lg font-sora font-bold text-white tracking-tight">
               Quantum
             </h1>
             <p className="text-xs text-steel font-medium">Insights Portal</p>
@@ -59,17 +59,17 @@ export function Sidebar() {
                 className={cn(
                   "group flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium transition-all duration-200",
                   isActive
-                    ? "bg-primary-blue/15 text-primary-blue shadow-sm"
-                    : "text-steel hover:bg-white/5 hover:text-white"
+                    ? "bg-electric-cyan/15 text-electric-cyan shadow-sm"
+                    : "text-steel hover:bg-electric-cyan/5 hover:text-white"
                 )}
               >
                 <item.icon className={cn(
                   "h-5 w-5 transition-colors",
-                  isActive ? "text-primary-blue" : "text-steel group-hover:text-white"
+                  isActive ? "text-electric-cyan" : "text-steel group-hover:text-electric-cyan"
                 )} />
                 <span className="flex-1">{item.name}</span>
                 {isActive && (
-                  <ChevronRight className="h-4 w-4 text-primary-blue" />
+                  <ChevronRight className="h-4 w-4 text-electric-cyan" />
                 )}
               </Link>
             );
@@ -77,11 +77,11 @@ export function Sidebar() {
         </nav>
 
         {/* Engine Status Indicator */}
-        <div className="mx-3 mb-4 rounded-xl border border-white/10 bg-deep-space/50 p-4">
+        <div className="mx-3 mb-4 rounded-xl border border-electric-cyan/20 bg-midnight-blue/50 p-4">
           <div className="flex items-center gap-2 mb-3">
             <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-mint opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-neon-mint"></span>
             </span>
             <span className="text-xs font-semibold text-silver">All Engines Operational</span>
           </div>
@@ -89,7 +89,7 @@ export function Sidebar() {
             {["A", "B", "C", "G", "H"].map((engine) => (
               <div
                 key={engine}
-                className="flex h-7 w-full items-center justify-center rounded-lg bg-emerald/10 text-xs font-mono font-bold text-emerald border border-emerald/20"
+                className="flex h-7 w-full items-center justify-center rounded-lg bg-neon-mint/10 text-xs font-mono font-bold text-neon-mint border border-neon-mint/20"
                 title={`Engine ${engine}`}
               >
                 {engine}
@@ -99,16 +99,16 @@ export function Sidebar() {
         </div>
 
         {/* User section */}
-        <div className="border-t border-white/10 p-4">
+        <div className="border-t border-graphite/50 p-4">
           <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-accent-yellow to-accent-yellow-dark flex items-center justify-center shadow-sm">
-              <span className="text-sm font-bold text-deep-space">MM</span>
+            <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-quantum-violet to-violet-dark flex items-center justify-center shadow-glow-violet">
+              <span className="text-sm font-bold text-white">MM</span>
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-sm font-semibold text-white truncate">Marcos Matthews</p>
               <p className="text-xs text-steel truncate">marcos@quantumins...</p>
             </div>
-            <button className="p-2 text-steel hover:text-white hover:bg-white/5 rounded-lg transition-colors">
+            <button className="p-2 text-steel hover:text-electric-cyan hover:bg-electric-cyan/5 rounded-lg transition-colors">
               <LogOut className="h-4 w-4" />
             </button>
           </div>

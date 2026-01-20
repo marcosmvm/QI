@@ -24,15 +24,18 @@ interface PerformanceChartProps {
   title?: string;
 }
 
-export function PerformanceChart({ data, title = "Campaign Performance" }: PerformanceChartProps) {
+export function PerformanceChart({ data, title = "7-Day Performance" }: PerformanceChartProps) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6 transition-all duration-300 hover:border-primary-blue/20 hover:shadow-card-hover">
+    <div className="relative rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6 transition-all duration-300 hover:border-electric-cyan/20 hover:shadow-card-hover overflow-hidden">
+      {/* Subtle top accent line */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-electric-cyan/40 to-transparent" />
+
       <div className="flex items-center gap-3 mb-6">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-blue/10 border border-primary-blue/20">
-          <TrendingUp className="h-5 w-5 text-primary-blue" />
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-electric-cyan/10 border border-electric-cyan/20">
+          <TrendingUp className="h-5 w-5 text-electric-cyan" />
         </div>
         <div>
-          <h3 className="text-lg font-poppins font-semibold text-white">{title}</h3>
+          <h3 className="text-lg font-sora font-semibold text-white">{title}</h3>
           <p className="text-xs text-steel">Last 7 days</p>
         </div>
       </div>
@@ -43,25 +46,28 @@ export function PerformanceChart({ data, title = "Campaign Performance" }: Perfo
             margin={{ top: 10, right: 10, left: 0, bottom: 0 }}
           >
             <defs>
+              {/* Sent - Electric Cyan */}
               <linearGradient id="colorSent" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#0b81ff" stopOpacity={0.3} />
-                <stop offset="95%" stopColor="#0b81ff" stopOpacity={0} />
+                <stop offset="5%" stopColor="#00D4FF" stopOpacity={0.3} />
+                <stop offset="95%" stopColor="#00D4FF" stopOpacity={0} />
               </linearGradient>
+              {/* Opened - Quantum Violet */}
               <linearGradient id="colorOpened" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#ffb902" stopOpacity={0.3} />
-                <stop offset="95%" stopColor="#ffb902" stopOpacity={0} />
+                <stop offset="5%" stopColor="#7B61FF" stopOpacity={0.3} />
+                <stop offset="95%" stopColor="#7B61FF" stopOpacity={0} />
               </linearGradient>
+              {/* Replied - Neon Mint */}
               <linearGradient id="colorReplied" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#22c55e" stopOpacity={0.3} />
-                <stop offset="95%" stopColor="#22c55e" stopOpacity={0} />
+                <stop offset="5%" stopColor="#00FFB2" stopOpacity={0.3} />
+                <stop offset="95%" stopColor="#00FFB2" stopOpacity={0} />
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
+            <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,212,255,0.08)" vertical={false} />
             <XAxis
               dataKey="date"
               tick={{ fill: "#94A3B8", fontSize: 11, fontWeight: 500 }}
               tickLine={false}
-              axisLine={{ stroke: "rgba(255,255,255,0.1)" }}
+              axisLine={{ stroke: "rgba(0,212,255,0.15)" }}
             />
             <YAxis
               tick={{ fill: "#94A3B8", fontSize: 11, fontWeight: 500 }}
@@ -71,10 +77,10 @@ export function PerformanceChart({ data, title = "Campaign Performance" }: Perfo
             />
             <Tooltip
               contentStyle={{
-                backgroundColor: "#0a2e52",
-                border: "1px solid rgba(255,255,255,0.1)",
+                backgroundColor: "#1A2D4A",
+                border: "1px solid rgba(0,212,255,0.2)",
                 borderRadius: "12px",
-                boxShadow: "0 10px 40px rgba(0, 0, 0, 0.3)",
+                boxShadow: "0 10px 40px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0,212,255,0.1)",
                 padding: "12px 16px",
               }}
               labelStyle={{ color: "#FFFFFF", fontWeight: 600, marginBottom: "8px" }}
@@ -90,7 +96,7 @@ export function PerformanceChart({ data, title = "Campaign Performance" }: Perfo
               type="monotone"
               dataKey="sent"
               name="Sent"
-              stroke="#0b81ff"
+              stroke="#00D4FF"
               strokeWidth={2}
               fillOpacity={1}
               fill="url(#colorSent)"
@@ -99,7 +105,7 @@ export function PerformanceChart({ data, title = "Campaign Performance" }: Perfo
               type="monotone"
               dataKey="opened"
               name="Opened"
-              stroke="#ffb902"
+              stroke="#7B61FF"
               strokeWidth={2}
               fillOpacity={1}
               fill="url(#colorOpened)"
@@ -108,7 +114,7 @@ export function PerformanceChart({ data, title = "Campaign Performance" }: Perfo
               type="monotone"
               dataKey="replied"
               name="Replied"
-              stroke="#22c55e"
+              stroke="#00FFB2"
               strokeWidth={2}
               fillOpacity={1}
               fill="url(#colorReplied)"
