@@ -12,20 +12,39 @@ import {
   LogOut,
   Zap,
   ChevronRight,
+  Cpu,
+  FlaskConical,
+  Users,
+  Calendar,
+  ChevronDown,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useState } from "react";
 
-const navigation = [
+const mainNavigation = [
   { name: "Overview", href: "/dashboard", icon: LayoutDashboard },
   { name: "Campaigns", href: "/dashboard/campaigns", icon: Mail },
+  { name: "Leads", href: "/dashboard/leads", icon: Users },
+  { name: "Appointments", href: "/dashboard/appointments", icon: Calendar },
   { name: "Analytics", href: "/dashboard/analytics", icon: BarChart3 },
-  { name: "Compliance", href: "/dashboard/compliance", icon: Shield },
   { name: "Reports", href: "/dashboard/reports", icon: FileText },
+];
+
+const aiEngines = [
+  { name: "Guardian", href: "/dashboard/ai-engines/guardian", icon: Shield, description: "Compliance & Deliverability" },
+  { name: "Architect", href: "/dashboard/ai-engines/architect", icon: Cpu, description: "Campaign Creation" },
+  { name: "Scientist", href: "/dashboard/ai-engines/scientist", icon: FlaskConical, description: "Optimization" },
+];
+
+const settingsNav = [
   { name: "Settings", href: "/dashboard/settings", icon: Settings },
 ];
 
 export function Sidebar() {
   const pathname = usePathname();
+  const [aiEnginesOpen, setAiEnginesOpen] = useState(true);
+
+  const isAiEnginePath = pathname?.startsWith("/dashboard/ai-engines");
 
   return (
     <aside className="fixed left-0 top-0 z-40 h-screen w-64 border-r border-graphite/50 bg-deep-space">
@@ -44,11 +63,11 @@ export function Sidebar() {
         </div>
 
         {/* Navigation */}
-        <nav className="flex-1 space-y-1 px-3 py-6">
+        <nav className="flex-1 overflow-y-auto px-3 py-6">
           <p className="px-3 mb-3 text-[10px] font-semibold uppercase tracking-widest text-steel/60">
             Main Menu
           </p>
-          {navigation.map((item) => {
+          {mainNavigation.map((item) => {
             const isActive = pathname === item.href ||
               (item.href !== "/dashboard" && pathname?.startsWith(item.href));
 
@@ -74,6 +93,86 @@ export function Sidebar() {
               </Link>
             );
           })}
+
+          {/* AI Engines Section */}
+          <div className="mt-6">
+            <button
+              onClick={() => setAiEnginesOpen(!aiEnginesOpen)}
+              className={cn(
+                "w-full flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium transition-all duration-200",
+                isAiEnginePath
+                  ? "bg-quantum-violet/15 text-quantum-violet"
+                  : "text-steel hover:bg-electric-cyan/5 hover:text-white"
+              )}
+            >
+              <Zap className={cn(
+                "h-5 w-5 transition-colors",
+                isAiEnginePath ? "text-quantum-violet" : "text-steel"
+              )} />
+              <span className="flex-1 text-left">AI Engines</span>
+              <ChevronDown className={cn(
+                "h-4 w-4 transition-transform duration-200",
+                aiEnginesOpen ? "rotate-180" : ""
+              )} />
+            </button>
+
+            {aiEnginesOpen && (
+              <div className="mt-1 ml-4 space-y-1 border-l border-graphite/50 pl-4">
+                {aiEngines.map((engine) => {
+                  const isActive = pathname === engine.href;
+
+                  return (
+                    <Link
+                      key={engine.name}
+                      href={engine.href}
+                      className={cn(
+                        "group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-200",
+                        isActive
+                          ? "bg-quantum-violet/15 text-quantum-violet"
+                          : "text-steel hover:bg-electric-cyan/5 hover:text-white"
+                      )}
+                    >
+                      <engine.icon className={cn(
+                        "h-4 w-4 transition-colors",
+                        isActive ? "text-quantum-violet" : "text-steel group-hover:text-quantum-violet"
+                      )} />
+                      <span className="flex-1">{engine.name}</span>
+                    </Link>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+
+          {/* Settings */}
+          <div className="mt-6 pt-6 border-t border-graphite/30">
+            {settingsNav.map((item) => {
+              const isActive = pathname === item.href ||
+                (item.href !== "/dashboard" && pathname?.startsWith(item.href));
+
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={cn(
+                    "group flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium transition-all duration-200",
+                    isActive
+                      ? "bg-electric-cyan/15 text-electric-cyan shadow-sm"
+                      : "text-steel hover:bg-electric-cyan/5 hover:text-white"
+                  )}
+                >
+                  <item.icon className={cn(
+                    "h-5 w-5 transition-colors",
+                    isActive ? "text-electric-cyan" : "text-steel group-hover:text-electric-cyan"
+                  )} />
+                  <span className="flex-1">{item.name}</span>
+                  {isActive && (
+                    <ChevronRight className="h-4 w-4 text-electric-cyan" />
+                  )}
+                </Link>
+              );
+            })}
+          </div>
         </nav>
 
         {/* Engine Status Indicator */}

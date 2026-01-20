@@ -1,7 +1,7 @@
 "use client";
 
 import { Header } from "@/components/navigation/Header";
-import { MetricsCard } from "@/components/dashboard/MetricsCard";
+import { MetricsCard, ProgressRing, QuickStats } from "@/components/dashboard";
 import {
   AreaChart,
   Area,
@@ -16,6 +16,9 @@ import {
   Tooltip,
   ResponsiveContainer,
   Legend,
+  FunnelChart,
+  Funnel,
+  LabelList,
 } from "recharts";
 import {
   Mail,
@@ -25,6 +28,14 @@ import {
   Target,
   Users,
   Calendar,
+  UserCheck,
+  Video,
+  Phone,
+  MapPin,
+  ArrowRight,
+  Shield,
+  Cpu,
+  FlaskConical,
 } from "lucide-react";
 
 // Mock data
@@ -58,6 +69,36 @@ const hourlyEngagement = [
   { hour: "4pm", opens: 410 },
   { hour: "6pm", opens: 280 },
   { hour: "8pm", opens: 150 },
+];
+
+// Lead funnel data
+const leadFunnelData = [
+  { name: "Contacted", value: 2450, fill: "#00D4FF" },
+  { name: "Engaged", value: 1280, fill: "#7B61FF" },
+  { name: "Qualified", value: 547, fill: "#00FFB2" },
+  { name: "Meeting Set", value: 156, fill: "#FF6B35" },
+  { name: "Won", value: 48, fill: "#10B981" },
+];
+
+// Appointment metrics
+const appointmentData = [
+  { week: "Week 1", scheduled: 32, completed: 28, noShow: 4 },
+  { week: "Week 2", scheduled: 38, completed: 35, noShow: 3 },
+  { week: "Week 3", scheduled: 29, completed: 26, noShow: 3 },
+  { week: "Week 4", scheduled: 45, completed: 42, noShow: 3 },
+];
+
+const meetingTypeData = [
+  { name: "Video", value: 65, color: "#00D4FF" },
+  { name: "Phone", value: 25, color: "#7B61FF" },
+  { name: "In-Person", value: 10, color: "#00FFB2" },
+];
+
+// AI Engine performance
+const enginePerformance = [
+  { name: "Guardian", metric: "Deliverability", value: 94.5, target: 90, color: "cyan" },
+  { name: "Architect", metric: "Campaigns Created", value: 12, target: 10, color: "violet" },
+  { name: "Scientist", metric: "A/B Tests Won", value: 8, target: 5, color: "mint" },
 ];
 
 export default function AnalyticsPage() {
@@ -307,6 +348,200 @@ export default function AnalyticsPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Lead Conversion Funnel Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Lead Funnel */}
+          <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-6">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-neon-mint/10 border border-neon-mint/20">
+                <Target className="h-5 w-5 text-neon-mint" />
+              </div>
+              <div>
+                <h3 className="text-lg font-sora font-semibold text-white">Lead Conversion Funnel</h3>
+                <p className="text-xs text-steel">Last 30 days</p>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              {leadFunnelData.map((stage, index) => {
+                const prevValue = index > 0 ? leadFunnelData[index - 1].value : stage.value;
+                const conversionRate = index > 0 ? ((stage.value / prevValue) * 100).toFixed(1) : "100";
+                const widthPercentage = (stage.value / leadFunnelData[0].value) * 100;
+
+                return (
+                  <div key={stage.name} className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium text-white">{stage.name}</span>
+                      <div className="flex items-center gap-3">
+                        <span className="text-lg font-bold text-white">{stage.value.toLocaleString()}</span>
+                        {index > 0 && (
+                          <span className="text-xs px-2 py-0.5 rounded bg-deep-space text-steel">
+                            {conversionRate}% conv.
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <div className="h-3 rounded-full bg-deep-space overflow-hidden">
+                      <div
+                        className="h-full rounded-full transition-all duration-500"
+                        style={{
+                          width: `${widthPercentage}%`,
+                          backgroundColor: stage.fill
+                        }}
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-graphite">
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-steel">Overall Conversion Rate</span>
+                <span className="text-neon-mint font-bold">
+                  {((leadFunnelData[leadFunnelData.length - 1].value / leadFunnelData[0].value) * 100).toFixed(1)}%
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Appointment Analytics */}
+          <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-6">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-quantum-violet/10 border border-quantum-violet/20">
+                <Calendar className="h-5 w-5 text-quantum-violet" />
+              </div>
+              <div>
+                <h3 className="text-lg font-sora font-semibold text-white">Appointment Analytics</h3>
+                <p className="text-xs text-steel">Meeting performance</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-3 gap-4 mb-6">
+              <div className="text-center p-4 rounded-lg bg-deep-space/50 border border-graphite">
+                <p className="text-2xl font-bold text-white">144</p>
+                <p className="text-xs text-steel">Total Meetings</p>
+              </div>
+              <div className="text-center p-4 rounded-lg bg-deep-space/50 border border-graphite">
+                <p className="text-2xl font-bold text-neon-mint">91%</p>
+                <p className="text-xs text-steel">Show Rate</p>
+              </div>
+              <div className="text-center p-4 rounded-lg bg-deep-space/50 border border-graphite">
+                <p className="text-2xl font-bold text-quantum-violet">32 min</p>
+                <p className="text-xs text-steel">Avg Duration</p>
+              </div>
+            </div>
+
+            <div className="h-48">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={appointmentData}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#334155" vertical={false} />
+                  <XAxis dataKey="week" tick={{ fill: "#94A3B8", fontSize: 11 }} axisLine={{ stroke: "#334155" }} />
+                  <YAxis tick={{ fill: "#94A3B8", fontSize: 11 }} axisLine={false} />
+                  <Tooltip
+                    contentStyle={{
+                      backgroundColor: "#1A2D4A",
+                      border: "1px solid #334155",
+                      borderRadius: "8px",
+                    }}
+                    labelStyle={{ color: "#FFFFFF" }}
+                  />
+                  <Bar dataKey="completed" name="Completed" fill="#00FFB2" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="noShow" name="No Show" fill="#F43F5E" radius={[4, 4, 0, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+
+            <div className="mt-4 flex items-center justify-center gap-6">
+              {meetingTypeData.map((type) => (
+                <div key={type.name} className="flex items-center gap-2">
+                  <div className="h-3 w-3 rounded-full" style={{ backgroundColor: type.color }} />
+                  <span className="text-sm text-steel">{type.name}</span>
+                  <span className="text-sm font-medium text-white">{type.value}%</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* AI Engine Performance */}
+        <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-6">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-electric-cyan/10 border border-electric-cyan/20">
+              <Cpu className="h-5 w-5 text-electric-cyan" />
+            </div>
+            <div>
+              <h3 className="text-lg font-sora font-semibold text-white">AI Engine Performance</h3>
+              <p className="text-xs text-steel">Engine metrics vs targets</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Guardian */}
+            <div className="p-4 rounded-lg border border-graphite bg-deep-space/50">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="h-10 w-10 rounded-lg bg-electric-cyan/10 flex items-center justify-center">
+                  <Shield className="h-5 w-5 text-electric-cyan" />
+                </div>
+                <div>
+                  <h4 className="font-medium text-white">Guardian</h4>
+                  <p className="text-xs text-steel">Compliance Engine</p>
+                </div>
+              </div>
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm text-steel">Deliverability</p>
+                  <p className="text-2xl font-bold text-electric-cyan">94.5%</p>
+                  <p className="text-xs text-neon-mint">+4.5% above target</p>
+                </div>
+                <ProgressRing value={94.5} size="md" color="cyan" />
+              </div>
+            </div>
+
+            {/* Architect */}
+            <div className="p-4 rounded-lg border border-graphite bg-deep-space/50">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="h-10 w-10 rounded-lg bg-quantum-violet/10 flex items-center justify-center">
+                  <Cpu className="h-5 w-5 text-quantum-violet" />
+                </div>
+                <div>
+                  <h4 className="font-medium text-white">Architect</h4>
+                  <p className="text-xs text-steel">Campaign Engine</p>
+                </div>
+              </div>
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm text-steel">Campaigns Created</p>
+                  <p className="text-2xl font-bold text-quantum-violet">12</p>
+                  <p className="text-xs text-neon-mint">+2 above target</p>
+                </div>
+                <ProgressRing value={120} size="md" color="violet" label="of goal" />
+              </div>
+            </div>
+
+            {/* Scientist */}
+            <div className="p-4 rounded-lg border border-graphite bg-deep-space/50">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="h-10 w-10 rounded-lg bg-neon-mint/10 flex items-center justify-center">
+                  <FlaskConical className="h-5 w-5 text-neon-mint" />
+                </div>
+                <div>
+                  <h4 className="font-medium text-white">Scientist</h4>
+                  <p className="text-xs text-steel">Optimization Engine</p>
+                </div>
+              </div>
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm text-steel">A/B Tests Won</p>
+                  <p className="text-2xl font-bold text-neon-mint">8</p>
+                  <p className="text-xs text-neon-mint">+3 above target</p>
+                </div>
+                <ProgressRing value={160} size="md" color="mint" label="of goal" />
+              </div>
+            </div>
           </div>
         </div>
       </div>

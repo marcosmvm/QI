@@ -1,9 +1,34 @@
+"use client";
+
+import Link from "next/link";
 import { Header } from "@/components/navigation/Header";
-import { MetricsCard } from "@/components/dashboard/MetricsCard";
-import { CampaignTable } from "@/components/dashboard/CampaignTable";
-import { PerformanceChart } from "@/components/dashboard/PerformanceChart";
-import { EngineStatus } from "@/components/dashboard/EngineStatus";
-import { Mail, Eye, MessageSquare, CheckCircle, AlertTriangle, TrendingUp } from "lucide-react";
+import {
+  MetricsCard,
+  CampaignTable,
+  PerformanceChart,
+  EngineStatus,
+  LeadCard,
+  AppointmentCard,
+  ActivityFeed,
+  QuickStats,
+} from "@/components/dashboard";
+import { Button } from "@/components/ui/button";
+import {
+  Mail,
+  Eye,
+  MessageSquare,
+  CheckCircle,
+  AlertTriangle,
+  TrendingUp,
+  Users,
+  Calendar,
+  Plus,
+  ArrowRight,
+  Zap,
+  Target,
+  Video,
+  Phone,
+} from "lucide-react";
 import { type Campaign, type EngineStatus as EngineStatusType } from "@/types";
 
 // Mock data - replace with real API calls
@@ -108,6 +133,142 @@ const mockEngineStatus: EngineStatusType[] = [
   { name: "Sentinel", codename: "H", status: "operational", lastCheck: new Date().toISOString() },
 ];
 
+// Mock leads data
+const mockLeads = [
+  {
+    id: "1",
+    name: "Sarah Chen",
+    email: "sarah.chen@techcorp.com",
+    company: "TechCorp Industries",
+    title: "VP of Sales",
+    status: "qualified" as const,
+    score: 92,
+    lastActivity: "2 hours ago",
+    createdAt: "2024-01-18",
+  },
+  {
+    id: "2",
+    name: "Michael Rodriguez",
+    email: "m.rodriguez@innovate.io",
+    company: "Innovate Solutions",
+    title: "CRO",
+    status: "contacted" as const,
+    score: 85,
+    lastActivity: "5 hours ago",
+    createdAt: "2024-01-17",
+  },
+  {
+    id: "3",
+    name: "Emily Watson",
+    email: "ewatson@globaltech.com",
+    company: "GlobalTech Inc",
+    title: "Director of Operations",
+    status: "new" as const,
+    score: 78,
+    lastActivity: "1 day ago",
+    createdAt: "2024-01-19",
+  },
+  {
+    id: "4",
+    name: "David Park",
+    email: "dpark@nexusventures.com",
+    company: "Nexus Ventures",
+    title: "Head of Growth",
+    status: "proposal" as const,
+    score: 95,
+    lastActivity: "30 minutes ago",
+    createdAt: "2024-01-15",
+  },
+];
+
+// Mock appointments data
+const mockAppointments = [
+  {
+    id: "1",
+    title: "Discovery Call - TechCorp",
+    type: "video" as const,
+    date: "2024-01-22",
+    time: "10:00 AM",
+    duration: 30,
+    lead: { id: "1", name: "Sarah Chen", company: "TechCorp Industries" },
+    status: "upcoming" as const,
+    meetingLink: "https://zoom.us/j/123456789",
+  },
+  {
+    id: "2",
+    title: "Follow-up - Innovate Solutions",
+    type: "phone" as const,
+    date: "2024-01-22",
+    time: "2:00 PM",
+    duration: 15,
+    lead: { id: "2", name: "Michael Rodriguez", company: "Innovate Solutions" },
+    status: "upcoming" as const,
+  },
+  {
+    id: "3",
+    title: "Proposal Review - Nexus Ventures",
+    type: "video" as const,
+    date: "2024-01-23",
+    time: "11:00 AM",
+    duration: 45,
+    lead: { id: "4", name: "David Park", company: "Nexus Ventures" },
+    status: "upcoming" as const,
+    meetingLink: "https://meet.google.com/abc-defg-hij",
+  },
+];
+
+// Mock activity data
+const mockActivities = [
+  {
+    id: "1",
+    type: "email_replied" as const,
+    title: "New reply from Sarah Chen",
+    description: "Interested in scheduling a demo call this week",
+    timestamp: "10 minutes ago",
+    link: "/dashboard/leads/1",
+    metadata: { campaignName: "Q1 Enterprise", leadName: "Sarah Chen" },
+  },
+  {
+    id: "2",
+    type: "appointment_scheduled" as const,
+    title: "Meeting scheduled with David Park",
+    description: "Proposal review call on Jan 23rd",
+    timestamp: "1 hour ago",
+    link: "/dashboard/appointments",
+  },
+  {
+    id: "3",
+    type: "email_opened" as const,
+    title: "Email opened by 45 recipients",
+    timestamp: "2 hours ago",
+    metadata: { campaignName: "SaaS Decision Makers", count: 45 },
+  },
+  {
+    id: "4",
+    type: "lead_created" as const,
+    title: "New lead added to pipeline",
+    description: "Emily Watson from GlobalTech Inc",
+    timestamp: "3 hours ago",
+    link: "/dashboard/leads/3",
+  },
+  {
+    id: "5",
+    type: "milestone_reached" as const,
+    title: "Campaign milestone reached",
+    description: "Q1 Enterprise Outreach hit 10,000 emails sent",
+    timestamp: "5 hours ago",
+    link: "/dashboard/campaigns/1",
+  },
+  {
+    id: "6",
+    type: "email_sent" as const,
+    title: "Batch email sent",
+    description: "500 emails sent to Healthcare IT Leaders",
+    timestamp: "6 hours ago",
+    metadata: { campaignName: "Healthcare IT Leaders", count: 500 },
+  },
+];
+
 // Calculate aggregate metrics
 const totalSent = mockCampaigns.reduce((sum, c) => sum + c.metrics.sent, 0);
 const totalOpened = mockCampaigns.reduce((sum, c) => sum + c.metrics.opened, 0);
@@ -123,8 +284,35 @@ export default function DashboardPage() {
       <Header title="Dashboard" subtitle="Welcome back, Marcos" />
 
       <div className="p-6 space-y-6">
+        {/* Quick Actions */}
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-neon-mint/10 border border-neon-mint/20">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-mint opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-neon-mint"></span>
+              </span>
+              <span className="text-sm text-neon-mint font-medium">All systems operational</span>
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <Link href="/dashboard/leads">
+              <Button variant="outline" size="sm" className="gap-2">
+                <Users className="h-4 w-4" />
+                View Leads
+              </Button>
+            </Link>
+            <Link href="/dashboard/campaigns/new">
+              <Button size="sm" className="gap-2">
+                <Plus className="h-4 w-4" />
+                New Campaign
+              </Button>
+            </Link>
+          </div>
+        </div>
+
         {/* Metrics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
           <MetricsCard
             title="Total Emails Sent"
             value={totalSent.toLocaleString()}
@@ -148,6 +336,20 @@ export default function DashboardPage() {
             icon={MessageSquare}
           />
           <MetricsCard
+            title="Active Leads"
+            value="547"
+            change={22.4}
+            status="success"
+            icon={Users}
+          />
+          <MetricsCard
+            title="Meetings This Week"
+            value="8"
+            change={33.3}
+            status="success"
+            icon={Calendar}
+          />
+          <MetricsCard
             title="Avg Deliverability"
             value={avgDeliverability.toFixed(1)}
             suffix="%"
@@ -167,20 +369,87 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        {/* Campaign Table */}
-        <div>
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-sora font-semibold text-white">
-              Active Campaigns
-            </h2>
-            <a
-              href="/dashboard/campaigns"
-              className="text-sm text-electric-cyan hover:underline"
-            >
-              View all campaigns →
-            </a>
+        {/* Campaigns and Appointments Row */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Campaign Table - Takes 2 columns */}
+          <div className="lg:col-span-2">
+            <CampaignTable campaigns={mockCampaigns.slice(0, 3)} />
           </div>
-          <CampaignTable campaigns={mockCampaigns} />
+
+          {/* Upcoming Appointments */}
+          <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-electric-cyan/40 to-transparent" />
+            <div className="flex items-center justify-between px-6 py-4 border-b border-electric-cyan/10">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-quantum-violet/10 border border-quantum-violet/20">
+                  <Calendar className="h-5 w-5 text-quantum-violet" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-sora font-semibold text-white">Upcoming Meetings</h3>
+                  <p className="text-xs text-steel">{mockAppointments.length} scheduled</p>
+                </div>
+              </div>
+              <Link
+                href="/dashboard/appointments"
+                className="text-sm text-electric-cyan hover:text-cyan-light transition-colors font-medium flex items-center gap-1"
+              >
+                View all
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+            <div className="p-4 space-y-3">
+              {mockAppointments.map((appointment) => (
+                <AppointmentCard
+                  key={appointment.id}
+                  appointment={appointment}
+                  variant="compact"
+                  showActions={false}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Leads and Activity Row */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Recent Leads */}
+          <div className="lg:col-span-2 rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-electric-cyan/40 to-transparent" />
+            <div className="flex items-center justify-between px-6 py-4 border-b border-electric-cyan/10">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-neon-mint/10 border border-neon-mint/20">
+                  <Target className="h-5 w-5 text-neon-mint" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-sora font-semibold text-white">Hot Leads</h3>
+                  <p className="text-xs text-steel">High-scoring prospects</p>
+                </div>
+              </div>
+              <Link
+                href="/dashboard/leads"
+                className="text-sm text-electric-cyan hover:text-cyan-light transition-colors font-medium flex items-center gap-1"
+              >
+                View all leads
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+            <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-3">
+              {mockLeads.map((lead) => (
+                <LeadCard
+                  key={lead.id}
+                  lead={lead}
+                  variant="compact"
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Activity Feed */}
+          <ActivityFeed
+            activities={mockActivities}
+            title="Recent Activity"
+            maxItems={5}
+          />
         </div>
       </div>
     </div>

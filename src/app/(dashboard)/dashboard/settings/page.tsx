@@ -14,6 +14,15 @@ import {
   Save,
   Eye,
   EyeOff,
+  Link2,
+  Check,
+  X,
+  RefreshCw,
+  ExternalLink,
+  Calendar,
+  MessageSquare,
+  Database,
+  Zap,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -23,7 +32,148 @@ const tabs = [
   { id: "notifications", label: "Notifications", icon: Bell },
   { id: "security", label: "Security", icon: Shield },
   { id: "api", label: "API Keys", icon: Key },
+  { id: "integrations", label: "Integrations", icon: Link2 },
 ];
+
+interface Integration {
+  id: string;
+  name: string;
+  description: string;
+  category: "crm" | "email" | "calendar" | "communication" | "automation";
+  icon: string;
+  connected: boolean;
+  lastSync?: string;
+  status?: "active" | "error" | "syncing";
+}
+
+const integrations: Integration[] = [
+  {
+    id: "hubspot",
+    name: "HubSpot",
+    description: "Sync leads and contacts with HubSpot CRM",
+    category: "crm",
+    icon: "🟠",
+    connected: true,
+    lastSync: "2 hours ago",
+    status: "active",
+  },
+  {
+    id: "salesforce",
+    name: "Salesforce",
+    description: "Connect your Salesforce CRM for lead management",
+    category: "crm",
+    icon: "☁️",
+    connected: false,
+  },
+  {
+    id: "pipedrive",
+    name: "Pipedrive",
+    description: "Sync deals and contacts with Pipedrive",
+    category: "crm",
+    icon: "🟢",
+    connected: false,
+  },
+  {
+    id: "gmail",
+    name: "Gmail",
+    description: "Connect Gmail for email sending and tracking",
+    category: "email",
+    icon: "📧",
+    connected: true,
+    lastSync: "30 minutes ago",
+    status: "active",
+  },
+  {
+    id: "outlook",
+    name: "Microsoft Outlook",
+    description: "Connect Outlook for email integration",
+    category: "email",
+    icon: "📨",
+    connected: false,
+  },
+  {
+    id: "sendgrid",
+    name: "SendGrid",
+    description: "Use SendGrid for high-volume email delivery",
+    category: "email",
+    icon: "📬",
+    connected: true,
+    lastSync: "1 hour ago",
+    status: "active",
+  },
+  {
+    id: "google-calendar",
+    name: "Google Calendar",
+    description: "Sync appointments with Google Calendar",
+    category: "calendar",
+    icon: "📅",
+    connected: true,
+    lastSync: "15 minutes ago",
+    status: "active",
+  },
+  {
+    id: "calendly",
+    name: "Calendly",
+    description: "Connect Calendly for appointment scheduling",
+    category: "calendar",
+    icon: "🗓️",
+    connected: true,
+    lastSync: "1 hour ago",
+    status: "active",
+  },
+  {
+    id: "outlook-calendar",
+    name: "Outlook Calendar",
+    description: "Sync with Microsoft Outlook Calendar",
+    category: "calendar",
+    icon: "📆",
+    connected: false,
+  },
+  {
+    id: "slack",
+    name: "Slack",
+    description: "Get notifications and alerts in Slack",
+    category: "communication",
+    icon: "💬",
+    connected: true,
+    lastSync: "5 minutes ago",
+    status: "active",
+  },
+  {
+    id: "teams",
+    name: "Microsoft Teams",
+    description: "Receive notifications in Microsoft Teams",
+    category: "communication",
+    icon: "👥",
+    connected: false,
+  },
+  {
+    id: "zapier",
+    name: "Zapier",
+    description: "Connect to 5,000+ apps via Zapier",
+    category: "automation",
+    icon: "⚡",
+    connected: true,
+    lastSync: "3 hours ago",
+    status: "active",
+  },
+  {
+    id: "make",
+    name: "Make (Integromat)",
+    description: "Build advanced automations with Make",
+    category: "automation",
+    icon: "🔄",
+    connected: false,
+  },
+];
+
+const categoryLabels = {
+  crm: { label: "CRM", icon: Database },
+  email: { label: "Email Providers", icon: Mail },
+  calendar: { label: "Calendar", icon: Calendar },
+  communication: { label: "Communication", icon: MessageSquare },
+  automation: { label: "Automation", icon: Zap },
+};
 
 export default function SettingsPage() {
   const [activeTab, setActiveTab] = useState("profile");
@@ -395,6 +545,171 @@ export default function SettingsPage() {
                     <Key className="h-4 w-4" />
                     Regenerate API Key
                   </Button>
+                </div>
+              </div>
+            )}
+
+            {activeTab === "integrations" && (
+              <div className="space-y-6">
+                {/* Integration Stats */}
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-4">
+                    <div className="flex items-center gap-3">
+                      <div className="h-10 w-10 rounded-lg bg-neon-mint/20 flex items-center justify-center">
+                        <Check className="h-5 w-5 text-neon-mint" />
+                      </div>
+                      <div>
+                        <p className="text-2xl font-bold text-white">
+                          {integrations.filter((i) => i.connected).length}
+                        </p>
+                        <p className="text-sm text-steel">Connected</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-4">
+                    <div className="flex items-center gap-3">
+                      <div className="h-10 w-10 rounded-lg bg-steel/20 flex items-center justify-center">
+                        <Link2 className="h-5 w-5 text-steel" />
+                      </div>
+                      <div>
+                        <p className="text-2xl font-bold text-white">
+                          {integrations.filter((i) => !i.connected).length}
+                        </p>
+                        <p className="text-sm text-steel">Available</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-4">
+                    <div className="flex items-center gap-3">
+                      <div className="h-10 w-10 rounded-lg bg-electric-cyan/20 flex items-center justify-center">
+                        <RefreshCw className="h-5 w-5 text-electric-cyan" />
+                      </div>
+                      <div>
+                        <p className="text-2xl font-bold text-white">5 min</p>
+                        <p className="text-sm text-steel">Last Sync</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Integrations by Category */}
+                {(Object.keys(categoryLabels) as Array<keyof typeof categoryLabels>).map(
+                  (category) => {
+                    const categoryIntegrations = integrations.filter(
+                      (i) => i.category === category
+                    );
+                    const CategoryIcon = categoryLabels[category].icon;
+
+                    return (
+                      <div
+                        key={category}
+                        className="rounded-xl border border-graphite bg-midnight-blue/60 p-6"
+                      >
+                        <div className="flex items-center gap-2 mb-4">
+                          <CategoryIcon className="h-5 w-5 text-electric-cyan" />
+                          <h3 className="text-lg font-sora font-semibold text-white">
+                            {categoryLabels[category].label}
+                          </h3>
+                          <span className="ml-2 px-2 py-0.5 rounded-full bg-deep-space text-xs text-steel">
+                            {categoryIntegrations.filter((i) => i.connected).length}/
+                            {categoryIntegrations.length} connected
+                          </span>
+                        </div>
+
+                        <div className="grid grid-cols-1 gap-3">
+                          {categoryIntegrations.map((integration) => (
+                            <div
+                              key={integration.id}
+                              className={cn(
+                                "flex items-center justify-between p-4 rounded-lg border transition-colors",
+                                integration.connected
+                                  ? "border-neon-mint/30 bg-neon-mint/5"
+                                  : "border-graphite bg-deep-space/50 hover:border-electric-cyan/30"
+                              )}
+                            >
+                              <div className="flex items-center gap-4">
+                                <div className="h-12 w-12 rounded-lg bg-midnight-blue flex items-center justify-center text-2xl">
+                                  {integration.icon}
+                                </div>
+                                <div>
+                                  <div className="flex items-center gap-2">
+                                    <h4 className="font-medium text-white">
+                                      {integration.name}
+                                    </h4>
+                                    {integration.connected && (
+                                      <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-neon-mint/20 text-neon-mint text-xs">
+                                        <Check className="h-3 w-3" />
+                                        Connected
+                                      </span>
+                                    )}
+                                  </div>
+                                  <p className="text-sm text-steel">
+                                    {integration.description}
+                                  </p>
+                                  {integration.lastSync && (
+                                    <p className="text-xs text-steel mt-1">
+                                      Last synced: {integration.lastSync}
+                                    </p>
+                                  )}
+                                </div>
+                              </div>
+
+                              <div className="flex items-center gap-2">
+                                {integration.connected ? (
+                                  <>
+                                    <Button
+                                      variant="outline"
+                                      size="sm"
+                                      className="gap-1"
+                                    >
+                                      <RefreshCw className="h-3 w-3" />
+                                      Sync
+                                    </Button>
+                                    <Button
+                                      variant="outline"
+                                      size="sm"
+                                      className="gap-1"
+                                    >
+                                      <ExternalLink className="h-3 w-3" />
+                                      Configure
+                                    </Button>
+                                    <Button
+                                      variant="outline"
+                                      size="sm"
+                                      className="text-rose hover:text-rose hover:border-rose/50"
+                                    >
+                                      <X className="h-4 w-4" />
+                                    </Button>
+                                  </>
+                                ) : (
+                                  <Button size="sm" className="gap-1">
+                                    <Link2 className="h-3 w-3" />
+                                    Connect
+                                  </Button>
+                                )}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  }
+                )}
+
+                {/* Request Integration */}
+                <div className="rounded-xl border border-dashed border-graphite bg-deep-space/30 p-6">
+                  <div className="text-center">
+                    <div className="h-12 w-12 rounded-lg bg-quantum-violet/20 flex items-center justify-center mx-auto mb-3">
+                      <Zap className="h-6 w-6 text-quantum-violet" />
+                    </div>
+                    <h4 className="font-medium text-white mb-1">
+                      Need a different integration?
+                    </h4>
+                    <p className="text-sm text-steel mb-4">
+                      We're always adding new integrations. Let us know what you need.
+                    </p>
+                    <Button variant="outline">Request Integration</Button>
+                  </div>
                 </div>
               </div>
             )}

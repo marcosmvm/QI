@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Header } from "@/components/navigation/Header";
 import { Button } from "@/components/ui/button";
+import { ProgressRing, StatusBadge } from "@/components/dashboard";
 import {
   Shield,
   CheckCircle,
@@ -15,6 +17,11 @@ import {
   Server,
   Search,
   ExternalLink,
+  TrendingUp,
+  Activity,
+  ArrowRight,
+  Clock,
+  BarChart3,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -89,6 +96,45 @@ const recentAlerts = [
   },
 ];
 
+// Campaign compliance data
+const campaignCompliance = [
+  {
+    id: "1",
+    name: "Q1 Enterprise Outreach",
+    status: "compliant",
+    bounceRate: 1.5,
+    complaintRate: 0.02,
+    unsubscribeRate: 0.8,
+    lastChecked: "2 hours ago",
+  },
+  {
+    id: "2",
+    name: "SaaS Decision Makers",
+    status: "compliant",
+    bounceRate: 2.0,
+    complaintRate: 0.03,
+    unsubscribeRate: 1.1,
+    lastChecked: "3 hours ago",
+  },
+  {
+    id: "3",
+    name: "Healthcare IT Leaders",
+    status: "warning",
+    bounceRate: 3.2,
+    complaintRate: 0.08,
+    unsubscribeRate: 1.5,
+    lastChecked: "1 hour ago",
+  },
+];
+
+// Compliance trends
+const complianceTrends = {
+  deliverability: { current: 94.5, previous: 92.1, trend: "up" },
+  bounceRate: { current: 1.8, previous: 2.1, trend: "down" },
+  complaintRate: { current: 0.03, previous: 0.04, trend: "down" },
+  dncCompliance: { current: 100, previous: 100, trend: "stable" },
+};
+
 export default function CompliancePage() {
   const [isChecking, setIsChecking] = useState(false);
   const [dncEmail, setDncEmail] = useState("");
@@ -132,6 +178,37 @@ export default function CompliancePage() {
       <Header title="Compliance" subtitle="Guardian Engine - Domain health & compliance monitoring" />
 
       <div className="p-6 space-y-6">
+        {/* Guardian Engine Status Banner */}
+        <div className="rounded-xl border border-neon-mint/30 bg-gradient-to-r from-neon-mint/10 to-transparent p-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <div className="h-12 w-12 rounded-xl bg-neon-mint/20 flex items-center justify-center">
+                <Shield className="h-6 w-6 text-neon-mint" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2">
+                  <h3 className="font-sora font-semibold text-white">Guardian Engine</h3>
+                  <StatusBadge variant="success" label="Operational" pulse />
+                </div>
+                <p className="text-sm text-steel">Continuously monitoring compliance across all campaigns</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="text-right">
+                <p className="text-sm text-steel">Overall Health Score</p>
+                <p className="text-2xl font-bold text-neon-mint">92/100</p>
+              </div>
+              <ProgressRing value={92} size="md" color="mint" />
+              <Link href="/dashboard/ai-engines/guardian">
+                <Button variant="outline" size="sm" className="gap-2">
+                  View Details
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+
         {/* Quick stats */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {complianceMetrics.map((metric, index) => (
@@ -384,6 +461,153 @@ export default function CompliancePage() {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Campaign Compliance Status */}
+        <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-6">
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center gap-3">
+              <BarChart3 className="h-5 w-5 text-electric-cyan" />
+              <h3 className="text-lg font-sora font-semibold text-white">
+                Campaign Compliance Status
+              </h3>
+            </div>
+            <Link
+              href="/dashboard/campaigns"
+              className="text-sm text-electric-cyan hover:text-cyan-light transition-colors flex items-center gap-1"
+            >
+              View all campaigns
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="border-b border-graphite">
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-steel">
+                    Campaign
+                  </th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-steel">
+                    Status
+                  </th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-steel">
+                    Bounce Rate
+                  </th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-steel">
+                    Complaint Rate
+                  </th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-steel">
+                    Unsubscribe Rate
+                  </th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-steel">
+                    Last Checked
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-graphite">
+                {campaignCompliance.map((campaign) => (
+                  <tr key={campaign.id} className="hover:bg-deep-space/30 transition-colors">
+                    <td className="px-4 py-4">
+                      <Link
+                        href={`/dashboard/campaigns/${campaign.id}`}
+                        className="font-medium text-white hover:text-electric-cyan transition-colors"
+                      >
+                        {campaign.name}
+                      </Link>
+                    </td>
+                    <td className="px-4 py-4">
+                      <StatusBadge
+                        variant={campaign.status === "compliant" ? "success" : "warning"}
+                        label={campaign.status === "compliant" ? "Compliant" : "Warning"}
+                      />
+                    </td>
+                    <td className="px-4 py-4">
+                      <span
+                        className={cn(
+                          "font-medium",
+                          campaign.bounceRate < 2
+                            ? "text-neon-mint"
+                            : campaign.bounceRate < 5
+                            ? "text-energy-orange"
+                            : "text-rose"
+                        )}
+                      >
+                        {campaign.bounceRate}%
+                      </span>
+                      <span className="text-xs text-steel ml-1">(target &lt;2%)</span>
+                    </td>
+                    <td className="px-4 py-4">
+                      <span
+                        className={cn(
+                          "font-medium",
+                          campaign.complaintRate < 0.05
+                            ? "text-neon-mint"
+                            : campaign.complaintRate < 0.1
+                            ? "text-energy-orange"
+                            : "text-rose"
+                        )}
+                      >
+                        {campaign.complaintRate}%
+                      </span>
+                      <span className="text-xs text-steel ml-1">(target &lt;0.05%)</span>
+                    </td>
+                    <td className="px-4 py-4">
+                      <span className="text-silver">{campaign.unsubscribeRate}%</span>
+                    </td>
+                    <td className="px-4 py-4">
+                      <div className="flex items-center gap-1.5 text-sm text-steel">
+                        <Clock className="h-3.5 w-3.5" />
+                        {campaign.lastChecked}
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Compliance Trends */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-4">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-sm text-steel">Deliverability</span>
+              <TrendingUp className="h-4 w-4 text-neon-mint" />
+            </div>
+            <p className="text-2xl font-bold text-neon-mint">{complianceTrends.deliverability.current}%</p>
+            <p className="text-xs text-steel">
+              +{(complianceTrends.deliverability.current - complianceTrends.deliverability.previous).toFixed(1)}% from last week
+            </p>
+          </div>
+          <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-4">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-sm text-steel">Bounce Rate</span>
+              <TrendingUp className="h-4 w-4 text-neon-mint rotate-180" />
+            </div>
+            <p className="text-2xl font-bold text-neon-mint">{complianceTrends.bounceRate.current}%</p>
+            <p className="text-xs text-steel">
+              -{(complianceTrends.bounceRate.previous - complianceTrends.bounceRate.current).toFixed(1)}% from last week
+            </p>
+          </div>
+          <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-4">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-sm text-steel">Complaint Rate</span>
+              <TrendingUp className="h-4 w-4 text-neon-mint rotate-180" />
+            </div>
+            <p className="text-2xl font-bold text-neon-mint">{complianceTrends.complaintRate.current}%</p>
+            <p className="text-xs text-steel">
+              -{(complianceTrends.complaintRate.previous - complianceTrends.complaintRate.current).toFixed(2)}% from last week
+            </p>
+          </div>
+          <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-4">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-sm text-steel">DNC Compliance</span>
+              <CheckCircle className="h-4 w-4 text-neon-mint" />
+            </div>
+            <p className="text-2xl font-bold text-neon-mint">{complianceTrends.dncCompliance.current}%</p>
+            <p className="text-xs text-steel">All contacts verified</p>
           </div>
         </div>
       </div>

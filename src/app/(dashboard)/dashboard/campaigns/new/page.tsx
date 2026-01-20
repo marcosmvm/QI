@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Header } from "@/components/navigation/Header";
 import { Button } from "@/components/ui/button";
+import { StatusBadge, ProgressRing } from "@/components/dashboard";
 import {
   ArrowLeft,
   ArrowRight,
@@ -17,19 +18,38 @@ import {
   Users,
   MessageSquare,
   Zap,
+  Upload,
+  FileSpreadsheet,
+  Database,
+  Search,
+  Filter,
+  AlertCircle,
+  Info,
+  Cpu,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const steps = [
   { id: 1, name: "Campaign Details", icon: Target },
-  { id: 2, name: "AI Generation", icon: Sparkles },
-  { id: 3, name: "Review & Launch", icon: CheckCircle },
+  { id: 2, name: "Select Leads", icon: Users },
+  { id: 3, name: "AI Generation", icon: Sparkles },
+  { id: 4, name: "Review & Launch", icon: CheckCircle },
+];
+
+// Mock lead lists for selection
+const mockLeadLists = [
+  { id: "1", name: "Enterprise Tech Leaders", count: 2450, industry: "Technology", lastUpdated: "2 days ago" },
+  { id: "2", name: "SaaS Decision Makers", count: 1820, industry: "SaaS", lastUpdated: "1 week ago" },
+  { id: "3", name: "Healthcare IT Directors", count: 956, industry: "Healthcare", lastUpdated: "3 days ago" },
+  { id: "4", name: "Fintech CFOs", count: 412, industry: "Finance", lastUpdated: "5 days ago" },
+  { id: "5", name: "E-commerce Managers", count: 1245, industry: "E-commerce", lastUpdated: "1 day ago" },
 ];
 
 export default function NewCampaignPage() {
   const router = useRouter();
   const [currentStep, setCurrentStep] = useState(1);
   const [isGenerating, setIsGenerating] = useState(false);
+  const [selectedLeadLists, setSelectedLeadLists] = useState<string[]>([]);
   const [generatedContent, setGeneratedContent] = useState<{
     sequences: Array<{ step: number; subject: string; body: string; delay: number }>;
   } | null>(null);
@@ -41,6 +61,18 @@ export default function NewCampaignPage() {
     valueProposition: "",
     callToAction: "",
   });
+
+  const totalSelectedLeads = mockLeadLists
+    .filter((list) => selectedLeadLists.includes(list.id))
+    .reduce((sum, list) => sum + list.count, 0);
+
+  const toggleLeadList = (listId: string) => {
+    setSelectedLeadLists((prev) =>
+      prev.includes(listId)
+        ? prev.filter((id) => id !== listId)
+        : [...prev, listId]
+    );
+  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -82,7 +114,7 @@ export default function NewCampaignPage() {
     });
 
     setIsGenerating(false);
-    setCurrentStep(3);
+    setCurrentStep(4);
   };
 
   const handleLaunch = async () => {
@@ -280,6 +312,117 @@ export default function NewCampaignPage() {
           {currentStep === 2 && (
             <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-8">
               <div className="flex items-center gap-3 mb-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-neon-mint/10 border border-neon-mint/30">
+                  <Users className="h-6 w-6 text-neon-mint" />
+                </div>
+                <div>
+                  <h2 className="text-xl font-sora font-semibold text-white">
+                    Select Lead Lists
+                  </h2>
+                  <p className="text-steel">
+                    Choose which leads to include in this campaign
+                  </p>
+                </div>
+              </div>
+
+              {/* Lead source options */}
+              <div className="grid grid-cols-3 gap-4 mb-6">
+                <button className="p-4 rounded-lg border border-electric-cyan/30 bg-electric-cyan/10 text-center">
+                  <Database className="h-6 w-6 text-electric-cyan mx-auto mb-2" />
+                  <p className="text-sm font-medium text-white">Existing Lists</p>
+                  <p className="text-xs text-steel">Select from saved lists</p>
+                </button>
+                <button className="p-4 rounded-lg border border-graphite bg-deep-space/50 text-center hover:border-electric-cyan/30 transition-colors">
+                  <Upload className="h-6 w-6 text-steel mx-auto mb-2" />
+                  <p className="text-sm font-medium text-silver">Upload CSV</p>
+                  <p className="text-xs text-steel">Import new contacts</p>
+                </button>
+                <button className="p-4 rounded-lg border border-graphite bg-deep-space/50 text-center hover:border-electric-cyan/30 transition-colors">
+                  <Search className="h-6 w-6 text-steel mx-auto mb-2" />
+                  <p className="text-sm font-medium text-silver">Build List</p>
+                  <p className="text-xs text-steel">Create from filters</p>
+                </button>
+              </div>
+
+              {/* Lead list selection */}
+              <div className="space-y-3 mb-6">
+                {mockLeadLists.map((list) => (
+                  <div
+                    key={list.id}
+                    onClick={() => toggleLeadList(list.id)}
+                    className={cn(
+                      "flex items-center justify-between p-4 rounded-lg border cursor-pointer transition-all",
+                      selectedLeadLists.includes(list.id)
+                        ? "border-electric-cyan/50 bg-electric-cyan/10"
+                        : "border-graphite bg-deep-space/50 hover:border-electric-cyan/30"
+                    )}
+                  >
+                    <div className="flex items-center gap-4">
+                      <div
+                        className={cn(
+                          "h-5 w-5 rounded border-2 flex items-center justify-center transition-colors",
+                          selectedLeadLists.includes(list.id)
+                            ? "border-electric-cyan bg-electric-cyan"
+                            : "border-graphite"
+                        )}
+                      >
+                        {selectedLeadLists.includes(list.id) && (
+                          <CheckCircle className="h-3 w-3 text-deep-space" />
+                        )}
+                      </div>
+                      <div>
+                        <p className="font-medium text-white">{list.name}</p>
+                        <div className="flex items-center gap-3 text-sm text-steel">
+                          <span>{list.industry}</span>
+                          <span>•</span>
+                          <span>Updated {list.lastUpdated}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-lg font-bold text-white">{list.count.toLocaleString()}</p>
+                      <p className="text-xs text-steel">contacts</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Summary */}
+              <div className="rounded-lg border border-graphite bg-deep-space/50 p-4 mb-6">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <Info className="h-5 w-5 text-electric-cyan" />
+                    <span className="text-silver">
+                      {selectedLeadLists.length} list{selectedLeadLists.length !== 1 ? "s" : ""} selected
+                    </span>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-2xl font-bold text-white">{totalSelectedLeads.toLocaleString()}</span>
+                    <span className="text-steel ml-2">total contacts</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex justify-between pt-4 border-t border-graphite">
+                <Button variant="outline" onClick={() => setCurrentStep(1)}>
+                  <ArrowLeft className="h-4 w-4 mr-2" />
+                  Back
+                </Button>
+                <Button
+                  onClick={() => setCurrentStep(3)}
+                  disabled={selectedLeadLists.length === 0}
+                  className="gap-2"
+                >
+                  Continue
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+          )}
+
+          {currentStep === 3 && (
+            <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-8">
+              <div className="flex items-center gap-3 mb-6">
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-quantum-violet/10 border border-quantum-violet/30">
                   <Sparkles className="h-6 w-6 text-quantum-violet" />
                 </div>
@@ -348,7 +491,7 @@ export default function NewCampaignPage() {
               </div>
 
               <div className="flex justify-between pt-4 border-t border-graphite">
-                <Button variant="outline" onClick={() => setCurrentStep(1)}>
+                <Button variant="outline" onClick={() => setCurrentStep(2)}>
                   <ArrowLeft className="h-4 w-4 mr-2" />
                   Back
                 </Button>
@@ -356,7 +499,7 @@ export default function NewCampaignPage() {
             </div>
           )}
 
-          {currentStep === 3 && generatedContent && (
+          {currentStep === 4 && generatedContent && (
             <div className="space-y-6">
               <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-8">
                 <div className="flex items-center gap-3 mb-6">
@@ -401,7 +544,7 @@ export default function NewCampaignPage() {
               </div>
 
               <div className="flex justify-between">
-                <Button variant="outline" onClick={() => setCurrentStep(2)}>
+                <Button variant="outline" onClick={() => setCurrentStep(3)}>
                   <ArrowLeft className="h-4 w-4 mr-2" />
                   Regenerate
                 </Button>
