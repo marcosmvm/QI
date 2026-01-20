@@ -10,7 +10,12 @@
     "lint": "next lint",
     "type-check": "tsc --noEmit"
   },
-  "keywords": ["nextjs", "typescript", "dashboard", "email-automation"],
+  "keywords": [
+    "nextjs",
+    "typescript",
+    "dashboard",
+    "email-automation"
+  ],
   "author": "Marcos Matthews",
   "license": "UNLICENSED",
   "dependencies": {
@@ -21,6 +26,7 @@
     "next": "^16.1.4",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
+    "recharts": "^3.6.0",
     "tailwind-merge": "^3.3.0"
   },
   "devDependencies": {
