@@ -17,6 +17,9 @@ import {
   Users,
   Calendar,
   ChevronDown,
+  Target,
+  Eye,
+  CheckCircle,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
@@ -28,12 +31,15 @@ const mainNavigation = [
   { name: "Appointments", href: "/dashboard/appointments", icon: Calendar },
   { name: "Analytics", href: "/dashboard/analytics", icon: BarChart3 },
   { name: "Reports", href: "/dashboard/reports", icon: FileText },
+  { name: "Compliance", href: "/dashboard/compliance", icon: CheckCircle },
 ];
 
 const aiEngines = [
   { name: "Guardian", href: "/dashboard/ai-engines/guardian", icon: Shield, description: "Compliance & Deliverability" },
   { name: "Architect", href: "/dashboard/ai-engines/architect", icon: Cpu, description: "Campaign Creation" },
   { name: "Scientist", href: "/dashboard/ai-engines/scientist", icon: FlaskConical, description: "Optimization" },
+  { name: "Hunter", href: "/dashboard/ai-engines/hunter", icon: Target, description: "Lead Expansion" },
+  { name: "Sentinel", href: "/dashboard/ai-engines/sentinel", icon: Eye, description: "Visitor Intelligence" },
 ];
 
 const settingsNav = [
