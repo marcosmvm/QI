@@ -16,6 +16,7 @@ import {
   UserCog,
   CreditCard,
   Inbox,
+  Cpu,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { createClient } from "@/lib/supabase/client";
@@ -36,6 +37,7 @@ const adminNavigation = [
   { name: "Dashboard", href: "/admin", icon: LayoutDashboard },
   { name: "Clients", href: "/admin/clients", icon: Building2 },
   { name: "Campaigns", href: "/admin/campaigns", icon: Mail },
+  { name: "Engines", href: "/admin/engines", icon: Cpu },
   { name: "Team", href: "/admin/team", icon: UserCog },
   { name: "Support Inbox", href: "/admin/support", icon: Inbox },
   { name: "Billing", href: "/admin/billing", icon: CreditCard },
