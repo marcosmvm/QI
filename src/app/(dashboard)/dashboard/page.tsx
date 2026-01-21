@@ -18,6 +18,7 @@ interface MembershipWithOrg {
     id: string;
     name: string;
     status: string;
+    onboarding_completed: boolean;
   } | null;
 }
 
@@ -178,7 +179,7 @@ function getMetricStatus(metric: string, value: number): "success" | "warning" |
 export default async function DashboardPage() {
   const { organization, organizationId } = await getUserOrganization();
 
-  // If user has no organization, show onboarding message
+  // If user has no organization, show welcome message
   if (!organizationId) {
     return (
       <div className="min-h-screen bg-deep-space p-8 flex items-center justify-center relative overflow-hidden">
@@ -220,6 +221,11 @@ export default async function DashboardPage() {
         </div>
       </div>
     );
+  }
+
+  // Redirect to onboarding if not completed
+  if (!organization?.onboarding_completed) {
+    redirect("/dashboard/onboarding");
   }
 
   const { campaigns, leads, totals, weeklyData } = await getDashboardData(organizationId);
@@ -317,8 +323,14 @@ export default async function DashboardPage() {
           <div className="space-y-3">
             {campaigns.length === 0 ? (
               <div className="text-center py-8">
-                <Mail className="h-8 w-8 text-steel mx-auto mb-2" />
-                <p className="text-steel text-sm">No campaigns yet</p>
+                <Mail className="h-8 w-8 text-steel mx-auto mb-3" />
+                <p className="text-steel text-sm mb-3">No campaigns yet</p>
+                <Link
+                  href="/dashboard/campaigns/new"
+                  className="inline-flex items-center gap-2 text-sm text-electric-cyan hover:underline"
+                >
+                  Create your first campaign
+                </Link>
               </div>
             ) : (
               campaigns.slice(0, 4).map((campaign) => (
@@ -366,8 +378,14 @@ export default async function DashboardPage() {
           <div className="space-y-3">
             {leads.length === 0 ? (
               <div className="text-center py-8">
-                <Users className="h-8 w-8 text-steel mx-auto mb-2" />
-                <p className="text-steel text-sm">No leads yet</p>
+                <Users className="h-8 w-8 text-steel mx-auto mb-3" />
+                <p className="text-steel text-sm mb-3">No leads yet</p>
+                <Link
+                  href="/dashboard/leads"
+                  className="inline-flex items-center gap-2 text-sm text-electric-cyan hover:underline"
+                >
+                  Import leads
+                </Link>
               </div>
             ) : (
               leads.map((lead) => (
