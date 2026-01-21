@@ -11,6 +11,9 @@ import {
   Plane,
   Cpu,
   Leaf,
+  Megaphone,
+  Shield,
+  Users,
   type LucideIcon,
 } from "lucide-react";
 
@@ -69,7 +72,7 @@ export const industries: Industry[] = [
   },
   {
     id: "healthcare",
-    name: "Healthcare",
+    name: "HealthTech",
     tagline: "Navigate Complex Healthcare Sales",
     shortDescription: "Compliant outreach to healthcare providers, payers, and health tech buyers.",
     longDescription: "Healthcare sales require specialized knowledge of compliance requirements, buying committees, and industry-specific pain points. Our team has deep experience selling to hospitals, health systems, payers, and healthcare technology companies.",
@@ -97,7 +100,7 @@ export const industries: Industry[] = [
   },
   {
     id: "finance",
-    name: "Financial Services",
+    name: "FinTech",
     tagline: "Reach Financial Decision-Makers",
     shortDescription: "Compliant outreach to banks, asset managers, fintech, and insurance companies.",
     longDescription: "Financial services buyers demand precision, compliance, and clear value. We help fintech companies, banks, and financial services providers reach CFOs, treasurers, and financial operations leaders with messaging that speaks their language.",
@@ -122,6 +125,90 @@ export const industries: Industry[] = [
       "Executive-level relationship building",
     ],
     targetTitles: ["CFO", "Treasurer", "VP Finance", "Head of Operations", "Chief Risk Officer"],
+  },
+  {
+    id: "martech",
+    name: "MarTech",
+    tagline: "Connect with Marketing Leaders",
+    shortDescription: "Reach CMOs and marketing directors with data-driven messaging that demonstrates clear ROI.",
+    longDescription: "Marketing technology buyers are sophisticated and data-driven. They evaluate solutions based on ROI, integration capabilities, and scalability. We help martech companies cut through the noise and reach marketing leaders with compelling value propositions.",
+    icon: Megaphone,
+    color: "quantum-violet",
+    stats: [
+      { value: "55+", label: "MarTech Clients" },
+      { value: "ROI", label: "Focused Messaging" },
+      { value: "36%", label: "Avg Open Rate" },
+      { value: "CMO", label: "Level Access" },
+    ],
+    challenges: [
+      { title: "Tool Overload", description: "Marketing teams already use dozens of tools." },
+      { title: "Integration Needs", description: "Must work with existing marketing stack." },
+      { title: "ROI Pressure", description: "Every tool must demonstrate clear business impact." },
+      { title: "Fast Evaluation", description: "Marketers move quickly—or not at all." },
+    ],
+    solutions: [
+      "ROI-focused messaging with clear metrics",
+      "Integration capability highlights",
+      "Case studies from similar marketing teams",
+      "Quick-value demonstration approaches",
+    ],
+    targetTitles: ["CMO", "VP Marketing", "Director of Marketing Ops", "Head of Demand Gen", "Marketing Director"],
+  },
+  {
+    id: "cybersecurity",
+    name: "Cybersecurity",
+    tagline: "Engage Security Buyers",
+    shortDescription: "Target CISOs and IT leaders with security-focused messaging that addresses threat landscapes.",
+    longDescription: "Cybersecurity vendors face the challenge of reaching risk-averse buyers who are bombarded with vendor outreach. We help security companies cut through the noise and reach decision-makers with messaging that demonstrates expertise and addresses real security concerns.",
+    icon: Shield,
+    color: "energy-orange",
+    stats: [
+      { value: "45+", label: "Security Clients" },
+      { value: "Enterprise", label: "Focus" },
+      { value: "33%", label: "Avg Open Rate" },
+      { value: "CISO", label: "Level Access" },
+    ],
+    challenges: [
+      { title: "Vendor Fatigue", description: "Security leaders are overwhelmed with vendor outreach." },
+      { title: "Trust Barrier", description: "Security purchases require deep trust and validation." },
+      { title: "Technical Buyers", description: "Security teams evaluate solutions rigorously." },
+      { title: "Compliance Requirements", description: "Must navigate complex procurement processes." },
+    ],
+    solutions: [
+      "Thought leadership positioning",
+      "Technical credibility content",
+      "Compliance-focused messaging",
+      "Executive relationship building",
+    ],
+    targetTitles: ["CISO", "VP Security", "Security Director", "Head of InfoSec", "CTO"],
+  },
+  {
+    id: "hr-tech",
+    name: "HR Tech",
+    tagline: "Reach People Leaders",
+    shortDescription: "Connect with CHROs and talent acquisition teams through campaigns focused on employee experience.",
+    longDescription: "HR technology companies need to reach HR leaders who are focused on employee experience, talent acquisition, and workforce transformation. We help HR tech vendors connect with decision-makers during budget cycles and strategic planning windows.",
+    icon: Users,
+    color: "electric-cyan",
+    stats: [
+      { value: "35+", label: "HR Tech Clients" },
+      { value: "CHRO", label: "Level Targeting" },
+      { value: "29%", label: "Avg Open Rate" },
+      { value: "Enterprise", label: "& SMB Coverage" },
+    ],
+    challenges: [
+      { title: "Budget Timing", description: "HR budgets are set annually with specific windows." },
+      { title: "Multiple Stakeholders", description: "HR, IT, and Finance all involved in decisions." },
+      { title: "ROI Pressure", description: "Must demonstrate clear workforce impact." },
+      { title: "Change Management", description: "HR tools require organizational buy-in." },
+    ],
+    solutions: [
+      "Budget cycle timing optimization",
+      "Multi-stakeholder engagement",
+      "ROI and productivity messaging",
+      "Change management support content",
+    ],
+    targetTitles: ["CHRO", "VP HR", "Head of People", "HR Director", "Chief People Officer"],
   },
   {
     id: "manufacturing",
@@ -379,4 +466,20 @@ export const industries: Industry[] = [
 
 export function getIndustryById(id: string): Industry | undefined {
   return industries.find((industry) => industry.id === id);
+}
+
+// Featured industries shown on the main industries page
+export const featuredIndustryIds = [
+  "saas",
+  "finance",
+  "healthcare",
+  "martech",
+  "cybersecurity",
+  "hr-tech",
+];
+
+export function getFeaturedIndustries(): Industry[] {
+  return featuredIndustryIds
+    .map((id) => industries.find((i) => i.id === id))
+    .filter((i): i is Industry => i !== undefined);
 }

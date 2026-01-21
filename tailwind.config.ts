@@ -9,6 +9,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Brand Colors (Quantum Insights Dark Theme)
+        "deep-space": "#0A1628",
+        "electric-cyan": "#00D4FF",
+        "cyan-dark": "#00B8D9",
+        "quantum-violet": "#7B61FF",
+        "midnight-blue": "#1A2D4A",
+        "neon-mint": "#00FFB2",
+        "energy-orange": "#FF6B35",
+        "silver": "#E8EDF5",
+        "steel": "#94A3B8",
+        "graphite": "#334155",
+
         // Minimal Design System - Backgrounds
         background: {
           DEFAULT: "#FAFBFC",
