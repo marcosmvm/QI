@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { MetricsCard } from "@/components/dashboard";
 import {
   LineChart,
@@ -41,11 +42,16 @@ const hourlyEngagement = [
 
 export default function AnalyticsPage() {
   return (
-    <div className="min-h-screen p-8">
+    <div className="min-h-screen bg-deep-space p-8">
       {/* Page Header */}
       <div className="mb-8">
-        <h1 className="text-2xl font-semibold text-foreground">Analytics</h1>
-        <p className="text-sm text-foreground-secondary mt-1">
+        <div className="flex items-center gap-2 text-sm text-steel mb-2">
+          <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
+          <span>/</span>
+          <span className="text-white">Analytics</span>
+        </div>
+        <h1 className="text-2xl font-sora font-bold text-white">Analytics</h1>
+        <p className="text-sm text-steel mt-1">
           Campaign performance insights
         </p>
       </div>
@@ -79,50 +85,54 @@ export default function AnalyticsPage() {
       {/* Charts */}
       <div className="grid grid-cols-2 gap-6 mb-8">
         {/* Weekly Trend */}
-        <div className="rounded-lg border border-border bg-white p-6">
-          <h3 className="text-base font-semibold text-foreground mb-6">
+        <div className="rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+          <h3 className="text-base font-semibold text-white mb-6">
             Weekly Trend
           </h3>
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={weeklyData}>
-                <CartesianGrid stroke="#F3F4F6" strokeDasharray="0" vertical={false} />
-                <XAxis dataKey="week" tick={{ fill: "#9CA3AF", fontSize: 11 }} axisLine={false} tickLine={false} />
-                <YAxis tick={{ fill: "#9CA3AF", fontSize: 11 }} axisLine={false} tickLine={false} />
+                <CartesianGrid stroke="#334155" strokeDasharray="0" vertical={false} />
+                <XAxis dataKey="week" tick={{ fill: "#94A3B8", fontSize: 11 }} axisLine={false} tickLine={false} />
+                <YAxis tick={{ fill: "#94A3B8", fontSize: 11 }} axisLine={false} tickLine={false} />
                 <Tooltip
                   contentStyle={{
-                    backgroundColor: "#FFFFFF",
-                    border: "1px solid #E5E7EB",
+                    backgroundColor: "#1A2D4A",
+                    border: "1px solid #334155",
                     borderRadius: "8px",
+                    color: "#E8EDF5",
                   }}
+                  labelStyle={{ color: "#E8EDF5" }}
                 />
-                <Line type="monotone" dataKey="sent" name="Sent" stroke="#3B82F6" strokeWidth={1.5} dot={false} />
-                <Line type="monotone" dataKey="opened" name="Opened" stroke="#9CA3AF" strokeWidth={1.5} dot={false} />
-                <Line type="monotone" dataKey="replied" name="Replied" stroke="#10B981" strokeWidth={1.5} dot={false} />
+                <Line type="monotone" dataKey="sent" name="Sent" stroke="#00D4FF" strokeWidth={2} dot={false} />
+                <Line type="monotone" dataKey="opened" name="Opened" stroke="#7B61FF" strokeWidth={2} dot={false} />
+                <Line type="monotone" dataKey="replied" name="Replied" stroke="#00FFB2" strokeWidth={2} dot={false} />
               </LineChart>
             </ResponsiveContainer>
           </div>
         </div>
 
         {/* Hourly Engagement */}
-        <div className="rounded-lg border border-border bg-white p-6">
-          <h3 className="text-base font-semibold text-foreground mb-6">
+        <div className="rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+          <h3 className="text-base font-semibold text-white mb-6">
             Hourly Engagement
           </h3>
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={hourlyEngagement}>
-                <CartesianGrid stroke="#F3F4F6" strokeDasharray="0" vertical={false} />
-                <XAxis dataKey="hour" tick={{ fill: "#9CA3AF", fontSize: 11 }} axisLine={false} tickLine={false} />
-                <YAxis tick={{ fill: "#9CA3AF", fontSize: 11 }} axisLine={false} tickLine={false} />
+                <CartesianGrid stroke="#334155" strokeDasharray="0" vertical={false} />
+                <XAxis dataKey="hour" tick={{ fill: "#94A3B8", fontSize: 11 }} axisLine={false} tickLine={false} />
+                <YAxis tick={{ fill: "#94A3B8", fontSize: 11 }} axisLine={false} tickLine={false} />
                 <Tooltip
                   contentStyle={{
-                    backgroundColor: "#FFFFFF",
-                    border: "1px solid #E5E7EB",
+                    backgroundColor: "#1A2D4A",
+                    border: "1px solid #334155",
                     borderRadius: "8px",
+                    color: "#E8EDF5",
                   }}
+                  labelStyle={{ color: "#E8EDF5" }}
                 />
-                <Bar dataKey="opens" fill="#3B82F6" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="opens" fill="#00D4FF" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -130,24 +140,26 @@ export default function AnalyticsPage() {
       </div>
 
       {/* Campaign Performance */}
-      <div className="rounded-lg border border-border bg-white p-6">
-        <h3 className="text-base font-semibold text-foreground mb-6">
+      <div className="rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+        <h3 className="text-base font-semibold text-white mb-6">
           Campaign Performance
         </h3>
         <div className="h-64">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={campaignPerformance} layout="vertical">
-              <CartesianGrid stroke="#F3F4F6" strokeDasharray="0" horizontal={false} />
-              <XAxis type="number" tick={{ fill: "#9CA3AF", fontSize: 11 }} axisLine={false} tickLine={false} />
-              <YAxis dataKey="name" type="category" tick={{ fill: "#6B7280", fontSize: 12 }} axisLine={false} tickLine={false} width={100} />
+              <CartesianGrid stroke="#334155" strokeDasharray="0" horizontal={false} />
+              <XAxis type="number" tick={{ fill: "#94A3B8", fontSize: 11 }} axisLine={false} tickLine={false} />
+              <YAxis dataKey="name" type="category" tick={{ fill: "#E8EDF5", fontSize: 12 }} axisLine={false} tickLine={false} width={100} />
               <Tooltip
                 contentStyle={{
-                  backgroundColor: "#FFFFFF",
-                  border: "1px solid #E5E7EB",
+                  backgroundColor: "#1A2D4A",
+                  border: "1px solid #334155",
                   borderRadius: "8px",
+                  color: "#E8EDF5",
                 }}
+                labelStyle={{ color: "#E8EDF5" }}
               />
-              <Bar dataKey="openRate" name="Open Rate %" fill="#3B82F6" radius={[0, 4, 4, 0]} />
+              <Bar dataKey="openRate" name="Open Rate %" fill="#7B61FF" radius={[0, 4, 4, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>

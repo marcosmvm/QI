@@ -1,6 +1,5 @@
 "use client";
 
-import { Header } from "@/components/navigation/Header";
 import { cn } from "@/lib/utils";
 import {
   ArrowLeft,
@@ -166,10 +165,19 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
   const maxSent = Math.max(...dailyPerformance.map(d => d.sent));
 
   return (
-    <div className="min-h-screen bg-deep-space">
-      <Header title={campaignData.name} subtitle="Campaign Details" />
+    <div className="min-h-screen bg-deep-space p-8">
+      {/* Page Header */}
+      <div className="mb-6">
+        <div className="flex items-center gap-2 text-sm text-steel mb-2">
+          <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
+          <span>/</span>
+          <Link href="/dashboard/campaigns" className="hover:text-electric-cyan transition-colors">Campaigns</Link>
+          <span>/</span>
+          <span className="text-white">{campaignData.name}</span>
+        </div>
+      </div>
 
-      <main className="p-6">
+      <div>
         {/* Back Button */}
         <Link
           href="/dashboard/campaigns"
@@ -557,7 +565,7 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
             </div>
           </div>
         )}
-      </main>
+      </div>
     </div>
   );
 }

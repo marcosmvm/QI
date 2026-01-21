@@ -1,6 +1,6 @@
 "use client";
 
-import { Header } from "@/components/navigation/Header";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
@@ -202,10 +202,18 @@ export default function ReportsPage() {
   const [selectedReport, setSelectedReport] = useState(weeklyReports[0]);
 
   return (
-    <div className="min-h-screen bg-deep-space">
-      <Header title="Reports" subtitle="Automated reports and performance insights" />
+    <div className="min-h-screen bg-deep-space p-8">
+      {/* Page Header */}
+      <div className="mb-8">
+        <div className="flex items-center gap-2 text-sm text-steel mb-2">
+          <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
+          <span>/</span>
+          <span className="text-white">Reports</span>
+        </div>
+        <h1 className="text-2xl font-sora font-bold text-white">Automated reports and performance insights</h1>
+      </div>
 
-      <main className="p-6 space-y-6">
+      <div className="space-y-6">
         {/* Quick Stats */}
         <div className="grid grid-cols-4 gap-4">
           {[
@@ -538,7 +546,7 @@ export default function ReportsPage() {
             </div>
           </div>
         </div>
-      </main>
+      </div>
     </div>
   );
 }

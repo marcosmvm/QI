@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Header } from "@/components/navigation/Header";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   User,
@@ -202,10 +202,18 @@ export default function SettingsPage() {
   });
 
   return (
-    <div className="min-h-screen">
-      <Header title="Settings" subtitle="Manage your account and preferences" />
+    <div className="min-h-screen bg-deep-space p-8">
+      {/* Page Header */}
+      <div className="mb-8">
+        <div className="flex items-center gap-2 text-sm text-steel mb-2">
+          <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
+          <span>/</span>
+          <span className="text-white">Settings</span>
+        </div>
+        <h1 className="text-2xl font-sora font-bold text-white">Manage your account and preferences</h1>
+      </div>
 
-      <div className="p-6">
+      <div>
         <div className="flex gap-6">
           {/* Sidebar tabs */}
           <div className="w-64 shrink-0">

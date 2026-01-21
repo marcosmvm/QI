@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Sora, Inter } from "next/font/google";
 import "./globals.css";
-import { MarketingNavbar } from "@/components/marketing/navigation";
-import { Footer } from "@/components/marketing/navigation";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -37,10 +35,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${sora.variable} ${inter.variable} antialiased bg-[#0a0f1c] text-[#f0f0f5] min-h-screen`}>
-        <MarketingNavbar />
-        <main>{children}</main>
-        <Footer />
+      <body className={`${sora.variable} ${inter.variable} antialiased bg-deep-space text-silver min-h-screen`}>
+        {children}
       </body>
     </html>
   );

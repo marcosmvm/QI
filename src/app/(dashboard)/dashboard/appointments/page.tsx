@@ -1,6 +1,6 @@
 "use client";
 
-import { Header } from "@/components/navigation/Header";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import {
   Calendar,
@@ -33,7 +33,6 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import Link from "next/link";
 
 // Mock appointments data
 const appointmentsData = [
@@ -223,10 +222,18 @@ export default function AppointmentsPage() {
   const todayString = "2026-01-20"; // Mock today
 
   return (
-    <div className="min-h-screen bg-deep-space">
-      <Header title="Appointments" subtitle="Meeting scheduling and calendar management" />
+    <div className="min-h-screen bg-deep-space p-8">
+      {/* Page Header */}
+      <div className="mb-8">
+        <div className="flex items-center gap-2 text-sm text-steel mb-2">
+          <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
+          <span>/</span>
+          <span className="text-white">Appointments</span>
+        </div>
+        <h1 className="text-2xl font-sora font-bold text-white">Meeting scheduling and calendar management</h1>
+      </div>
 
-      <main className="p-6 space-y-6">
+      <div className="space-y-6">
         {/* Quick Stats */}
         <div className="grid grid-cols-5 gap-4">
           {[
@@ -636,7 +643,7 @@ export default function AppointmentsPage() {
             </div>
           </div>
         )}
-      </main>
+      </div>
     </div>
   );
 }

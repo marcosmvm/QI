@@ -1,6 +1,6 @@
 "use client";
 
-import { Header } from "@/components/navigation/Header";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import {
   Cpu,
@@ -188,10 +188,18 @@ export default function ArchitectPage() {
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
-    <div className="min-h-screen bg-deep-space">
-      <Header title="Architect Engine" subtitle="AI-Powered Campaign Design & Sequence Building" />
+    <div className="min-h-screen bg-deep-space p-8">
+      {/* Page Header */}
+      <div className="mb-8">
+        <div className="flex items-center gap-2 text-sm text-steel mb-2">
+          <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
+          <span>/</span>
+          <span className="text-white">Architect Engine</span>
+        </div>
+        <h1 className="text-2xl font-sora font-bold text-white">AI-Powered Campaign Design & Sequence Building</h1>
+      </div>
 
-      <main className="p-6 space-y-6">
+      <div className="space-y-6">
         {/* Engine Status Banner */}
         <div className="relative rounded-2xl border border-quantum-violet/20 bg-gradient-to-r from-quantum-violet/10 via-midnight-blue/50 to-quantum-violet/5 p-6 overflow-hidden">
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-quantum-violet/60 to-transparent" />
@@ -687,7 +695,7 @@ export default function ArchitectPage() {
             </div>
           </div>
         )}
-      </main>
+      </div>
     </div>
   );
 }

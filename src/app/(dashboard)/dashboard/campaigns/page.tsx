@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { Header } from "@/components/navigation/Header";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
@@ -34,7 +33,7 @@ import {
   ArrowUpRight,
   ArrowDownRight,
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { type Campaign } from "@/types";
 
 // Enhanced mock data
@@ -175,12 +174,71 @@ const statusConfig = {
 export default function CampaignsPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [statusFilter, setStatusFilter] = useState<string | null>(null);
+  const [campaigns, setCampaigns] = useState<Campaign[]>(mockCampaigns);
+  const [isRefreshing, setIsRefreshing] = useState(false);
 
-  const filteredCampaigns = mockCampaigns.filter((campaign) => {
+  const filteredCampaigns = campaigns.filter((campaign) => {
     const matchesSearch = campaign.name.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesStatus = !statusFilter || campaign.status === statusFilter;
     return matchesSearch && matchesStatus;
   });
+
+  // Export campaigns to CSV
+  const handleExport = useCallback(() => {
+    const headers = ["Name", "Status", "Sent", "Delivered", "Opened", "Replied", "Open Rate", "Reply Rate", "Created"];
+    const rows = filteredCampaigns.map(c => [
+      c.name,
+      c.status,
+      c.metrics.sent,
+      c.metrics.delivered,
+      c.metrics.opened,
+      c.metrics.replied,
+      `${c.metrics.openRate}%`,
+      `${c.metrics.replyRate}%`,
+      new Date(c.createdAt).toLocaleDateString()
+    ]);
+
+    const csvContent = [headers.join(","), ...rows.map(r => r.join(","))].join("\n");
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = `campaigns-export-${new Date().toISOString().split("T")[0]}.csv`;
+    link.click();
+  }, [filteredCampaigns]);
+
+  // Refresh campaigns data
+  const handleRefresh = useCallback(async () => {
+    setIsRefreshing(true);
+    // Simulate API call - in production this would fetch from your backend
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    setCampaigns([...mockCampaigns]);
+    setIsRefreshing(false);
+  }, []);
+
+  // Toggle campaign status (pause/play)
+  const handleToggleStatus = useCallback((campaignId: string) => {
+    setCampaigns(prev => prev.map(c => {
+      if (c.id === campaignId) {
+        const newStatus = c.status === "active" ? "paused" : c.status === "paused" ? "active" : c.status;
+        return { ...c, status: newStatus };
+      }
+      return c;
+    }));
+  }, []);
+
+  // Copy campaign
+  const handleCopyCampaign = useCallback((campaign: Campaign) => {
+    const newCampaign: Campaign = {
+      ...campaign,
+      id: `${Date.now()}`,
+      name: `${campaign.name} (Copy)`,
+      status: "draft",
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+      metrics: { ...campaign.metrics, sent: 0, delivered: 0, opened: 0, replied: 0, bounced: 0, complaints: 0 }
+    };
+    setCampaigns(prev => [newCampaign, ...prev]);
+  }, []);
 
   const activeCampaigns = mockCampaigns.filter((c) => c.status === "active").length;
   const totalSent = mockCampaigns.reduce((sum, c) => sum + c.metrics.sent, 0);
@@ -189,10 +247,18 @@ export default function CampaignsPage() {
     .reduce((sum, c) => sum + c.metrics.openRate, 0) / mockCampaigns.filter(c => c.metrics.sent > 0).length;
 
   return (
-    <div className="min-h-screen bg-deep-space">
-      <Header title="Campaigns" subtitle="Manage and monitor your email campaigns" />
+    <div className="min-h-screen bg-deep-space p-8">
+      {/* Page Header */}
+      <div className="mb-8">
+        <div className="flex items-center gap-2 text-sm text-steel mb-2">
+          <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
+          <span>/</span>
+          <span className="text-white">Campaigns</span>
+        </div>
+        <h1 className="text-2xl font-sora font-bold text-white">Manage and monitor your email campaigns</h1>
+      </div>
 
-      <main className="p-6 space-y-6">
+      <div className="space-y-6">
         {/* Quick Stats */}
         <div className="grid grid-cols-5 gap-4">
           {[
@@ -282,13 +348,24 @@ export default function CampaignsPage() {
           </div>
 
           <div className="flex items-center gap-3">
-            <Button variant="outline" size="sm" className="border-electric-cyan/20 text-steel hover:text-white">
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-electric-cyan/20 text-steel hover:text-white hover:border-electric-cyan/40"
+              onClick={handleExport}
+            >
               <Download className="h-4 w-4 mr-2" />
               Export
             </Button>
-            <Button variant="outline" size="sm" className="border-electric-cyan/20 text-steel hover:text-white">
-              <RefreshCw className="h-4 w-4 mr-2" />
-              Refresh
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-electric-cyan/20 text-steel hover:text-white hover:border-electric-cyan/40"
+              onClick={handleRefresh}
+              disabled={isRefreshing}
+            >
+              <RefreshCw className={cn("h-4 w-4 mr-2", isRefreshing && "animate-spin")} />
+              {isRefreshing ? "Refreshing..." : "Refresh"}
             </Button>
             <Link href="/dashboard/campaigns/new">
               <Button
@@ -389,27 +466,44 @@ export default function CampaignsPage() {
                       <td className="px-6 py-4">
                         <div className="flex items-center justify-end gap-1">
                           {campaign.status === "active" ? (
-                            <button className="p-2 text-steel hover:text-energy-orange hover:bg-energy-orange/10 rounded-lg transition-colors">
+                            <button
+                              onClick={() => handleToggleStatus(campaign.id)}
+                              className="p-2 text-steel hover:text-energy-orange hover:bg-energy-orange/10 rounded-lg transition-colors"
+                              title="Pause campaign"
+                            >
                               <Pause className="h-4 w-4" />
                             </button>
                           ) : campaign.status === "paused" ? (
-                            <button className="p-2 text-steel hover:text-neon-mint hover:bg-neon-mint/10 rounded-lg transition-colors">
+                            <button
+                              onClick={() => handleToggleStatus(campaign.id)}
+                              className="p-2 text-steel hover:text-neon-mint hover:bg-neon-mint/10 rounded-lg transition-colors"
+                              title="Resume campaign"
+                            >
                               <Play className="h-4 w-4" />
                             </button>
                           ) : null}
                           <Link
                             href={`/dashboard/campaigns/${campaign.id}`}
                             className="p-2 text-steel hover:text-electric-cyan hover:bg-electric-cyan/10 rounded-lg transition-colors"
+                            title="View campaign"
                           >
                             <Eye className="h-4 w-4" />
                           </Link>
-                          <button className="p-2 text-steel hover:text-electric-cyan hover:bg-electric-cyan/10 rounded-lg transition-colors">
+                          <Link
+                            href={`/dashboard/campaigns/${campaign.id}/edit`}
+                            className="p-2 text-steel hover:text-electric-cyan hover:bg-electric-cyan/10 rounded-lg transition-colors"
+                            title="Edit campaign"
+                          >
                             <Edit3 className="h-4 w-4" />
-                          </button>
-                          <button className="p-2 text-steel hover:text-electric-cyan hover:bg-electric-cyan/10 rounded-lg transition-colors">
+                          </Link>
+                          <button
+                            onClick={() => handleCopyCampaign(campaign)}
+                            className="p-2 text-steel hover:text-electric-cyan hover:bg-electric-cyan/10 rounded-lg transition-colors"
+                            title="Copy campaign"
+                          >
                             <Copy className="h-4 w-4" />
                           </button>
-                          <button className="p-2 text-steel hover:text-white hover:bg-electric-cyan/10 rounded-lg transition-colors">
+                          <button className="p-2 text-steel hover:text-white hover:bg-electric-cyan/10 rounded-lg transition-colors" title="More options">
                             <MoreHorizontal className="h-4 w-4" />
                           </button>
                         </div>
@@ -425,7 +519,7 @@ export default function CampaignsPage() {
           <div className="flex items-center justify-between px-6 py-4 border-t border-electric-cyan/10">
             <p className="text-sm text-steel">
               Showing <span className="text-white font-medium">{filteredCampaigns.length}</span> of{" "}
-              <span className="text-white font-medium">{mockCampaigns.length}</span> campaigns
+              <span className="text-white font-medium">{campaigns.length}</span> campaigns
             </p>
             <div className="flex items-center gap-2">
               <Button variant="outline" size="sm" className="border-electric-cyan/20 text-steel hover:text-white" disabled>
@@ -519,7 +613,7 @@ export default function CampaignsPage() {
             </div>
           </div>
         </div>
-      </main>
+      </div>
     </div>
   );
 }

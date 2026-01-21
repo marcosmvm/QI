@@ -1,6 +1,5 @@
 "use client";
 
-import { Header } from "@/components/navigation/Header";
 import { cn } from "@/lib/utils";
 import {
   Users,
@@ -184,10 +183,18 @@ export default function LeadsPage() {
     : leadsData;
 
   return (
-    <div className="min-h-screen bg-deep-space">
-      <Header title="Leads" subtitle="Pipeline management and lead tracking" />
+    <div className="min-h-screen bg-deep-space p-8">
+      {/* Page Header */}
+      <div className="mb-8">
+        <div className="flex items-center gap-2 text-sm text-steel mb-2">
+          <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
+          <span>/</span>
+          <span className="text-white">Leads</span>
+        </div>
+        <h1 className="text-2xl font-sora font-bold text-white">Pipeline management and lead tracking</h1>
+      </div>
 
-      <main className="p-6 space-y-6">
+      <div className="space-y-6">
         {/* Quick Stats */}
         <div className="grid grid-cols-5 gap-4">
           {[
@@ -540,7 +547,7 @@ export default function LeadsPage() {
             </div>
           </div>
         )}
-      </main>
+      </div>
     </div>
   );
 }

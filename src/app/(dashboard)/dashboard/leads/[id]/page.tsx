@@ -1,6 +1,5 @@
 "use client";
 
-import { Header } from "@/components/navigation/Header";
 import { cn } from "@/lib/utils";
 import {
   ArrowLeft,
@@ -175,10 +174,19 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
   const [activeTab, setActiveTab] = useState<"activity" | "emails" | "notes">("activity");
 
   return (
-    <div className="min-h-screen bg-deep-space">
-      <Header title="Lead Details" subtitle={`${leadData.firstName} ${leadData.lastName}`} />
+    <div className="min-h-screen bg-deep-space p-8">
+      {/* Page Header */}
+      <div className="mb-6">
+        <div className="flex items-center gap-2 text-sm text-steel mb-2">
+          <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
+          <span>/</span>
+          <Link href="/dashboard/leads" className="hover:text-electric-cyan transition-colors">Leads</Link>
+          <span>/</span>
+          <span className="text-white">{leadData.firstName} {leadData.lastName}</span>
+        </div>
+      </div>
 
-      <main className="p-6">
+      <div>
         {/* Back Button */}
         <Link
           href="/dashboard/leads"
@@ -582,7 +590,7 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
             </div>
           </div>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
