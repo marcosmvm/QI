@@ -3,23 +3,56 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Zap, Mail, Lock, ArrowRight } from "lucide-react";
+import { Zap, Mail, Lock, ArrowRight, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { createClient } from "@/lib/supabase/client";
 
 export default function LoginPage() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    setError(null);
 
-    // TODO: Replace with actual NextAuth signIn
-    // Simulate login for now
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    router.push("/dashboard");
+    try {
+      const supabase = createClient();
+
+      const { data, error: signInError } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+      if (signInError) {
+        setError(signInError.message);
+        setIsLoading(false);
+        return;
+      }
+
+      if (data.user) {
+        // Check user role to redirect appropriately
+        const { data: profile } = await supabase
+          .from('profiles')
+          .select('role')
+          .eq('id', data.user.id)
+          .single();
+
+        const userRole = (profile as { role: string } | null)?.role;
+        if (userRole === 'admin' || userRole === 'team_member') {
+          router.push("/admin");
+        } else {
+          router.push("/dashboard");
+        }
+        router.refresh();
+      }
+    } catch {
+      setError("An unexpected error occurred. Please try again.");
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -48,8 +81,8 @@ export default function LoginPage() {
             <span className="text-electric-cyan">Amplify your results.</span>
           </h1>
           <p className="text-lg text-silver max-w-md">
-            Access your campaign dashboard, monitor deliverability, and leverage
-            AI-powered automation to scale your B2B outreach.
+            Access your campaign dashboard, monitor performance, and track
+            your results in real-time.
           </p>
           <div className="flex items-center gap-8 pt-4">
             <div>
@@ -61,8 +94,8 @@ export default function LoginPage() {
               <p className="text-sm text-steel">Reply Rate Increase</p>
             </div>
             <div>
-              <p className="text-3xl font-sora font-bold text-white">5</p>
-              <p className="text-sm text-steel">AI Engines</p>
+              <p className="text-3xl font-sora font-bold text-white">24/7</p>
+              <p className="text-sm text-steel">Support Available</p>
             </div>
           </div>
         </div>
@@ -92,6 +125,13 @@ export default function LoginPage() {
               </h2>
               <p className="text-steel">Sign in to access your dashboard</p>
             </div>
+
+            {error && (
+              <div className="mb-6 p-4 rounded-lg bg-energy-orange/10 border border-energy-orange/30 flex items-start gap-3">
+                <AlertCircle className="h-5 w-5 text-energy-orange flex-shrink-0 mt-0.5" />
+                <p className="text-sm text-energy-orange">{error}</p>
+              </div>
+            )}
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
