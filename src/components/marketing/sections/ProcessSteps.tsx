@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { Search, PenTool, Send, MessageSquare, CalendarCheck } from "lucide-react";
 import { Container } from "@/components/marketing/layout/Container";
-import { SectionWrapper } from "@/components/marketing/layout/SectionWrapper";
 
 const steps = [
   {
@@ -40,7 +39,7 @@ const steps = [
 
 export function ProcessSteps() {
   return (
-    <SectionWrapper variant="dark">
+    <section className="py-24 bg-midnight-blue/50">
       <Container>
         {/* Section Header */}
         <motion.div
@@ -50,13 +49,13 @@ export function ProcessSteps() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
             How It{" "}
-            <span className="text-electric-cyan">
+            <span className="bg-gradient-to-r from-electric-cyan to-quantum-violet bg-clip-text text-transparent">
               Works
             </span>
           </h2>
-          <p className="text-lg text-slate-600">
+          <p className="text-lg text-steel">
             Our proven 5-step process transforms cold outreach into a predictable meeting machine.
           </p>
         </motion.div>
@@ -64,7 +63,7 @@ export function ProcessSteps() {
         {/* Steps */}
         <div className="relative">
           {/* Connection Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-px bg-slate-200 hidden md:block" />
+          <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-electric-cyan/50 via-quantum-violet/50 to-electric-cyan/50 hidden md:block" />
 
           <div className="space-y-8">
             {steps.map((step, index) => (
@@ -78,7 +77,7 @@ export function ProcessSteps() {
               >
                 {/* Step Number */}
                 <div className="relative z-10 flex-shrink-0">
-                  <div className="w-16 h-16 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-2xl bg-midnight-blue border border-graphite flex items-center justify-center">
                     <step.icon className="h-7 w-7 text-electric-cyan" />
                   </div>
                 </div>
@@ -87,11 +86,11 @@ export function ProcessSteps() {
                 <div className="flex-1 pb-8">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-electric-cyan font-mono text-sm">{step.number}</span>
-                    <h3 className="text-xl md:text-2xl font-sora font-semibold text-slate-900">
+                    <h3 className="text-xl md:text-2xl font-sora font-semibold text-white">
                       {step.title}
                     </h3>
                   </div>
-                  <p className="text-slate-600 max-w-2xl">
+                  <p className="text-steel max-w-2xl">
                     {step.description}
                   </p>
                 </div>
@@ -100,6 +99,6 @@ export function ProcessSteps() {
           </div>
         </div>
       </Container>
-    </SectionWrapper>
+    </section>
   );
 }

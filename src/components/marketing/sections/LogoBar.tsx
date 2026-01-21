@@ -14,7 +14,7 @@ const clients = [
 
 export function LogoBar() {
   return (
-    <section className="py-16 border-y border-slate-200 bg-slate-50">
+    <section className="py-16 border-y border-graphite bg-midnight-blue/30">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -23,7 +23,7 @@ export function LogoBar() {
           transition={{ duration: 0.5 }}
           className="text-center mb-10"
         >
-          <p className="text-slate-500 text-sm uppercase tracking-widest font-medium">
+          <p className="text-steel text-sm uppercase tracking-widest font-medium">
             Trusted by 200+ B2B Companies
           </p>
         </motion.div>
@@ -45,8 +45,8 @@ export function LogoBar() {
               className="group"
             >
               {/* Placeholder logo - replace with actual logos */}
-              <div className="h-10 w-32 bg-white border border-slate-200 rounded-lg flex items-center justify-center opacity-60 group-hover:opacity-100 transition-opacity">
-                <span className="text-slate-600 text-sm font-medium">{client.name}</span>
+              <div className="h-10 w-32 bg-midnight-blue border border-graphite rounded-lg flex items-center justify-center opacity-50 group-hover:opacity-80 group-hover:border-electric-cyan/30 transition-all">
+                <span className="text-steel text-sm font-medium">{client.name}</span>
               </div>
             </motion.div>
           ))}

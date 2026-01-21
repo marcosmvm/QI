@@ -12,7 +12,7 @@ const stats = [
 
 export function StatsBar() {
   return (
-    <section className="py-20 bg-slate-50 border-y border-slate-200">
+    <section className="py-20 bg-deep-space border-y border-graphite">
       <Container>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
@@ -32,7 +32,7 @@ export function StatsBar() {
                   {stat.suffix}
                 </span>
               </div>
-              <p className="text-slate-600 mt-2 text-sm md:text-base font-medium">
+              <p className="text-steel mt-2 text-sm md:text-base font-medium">
                 {stat.label}
               </p>
             </motion.div>

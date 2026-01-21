@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 import * as Accordion from "@radix-ui/react-accordion";
 import { ChevronDown } from "lucide-react";
 import { Container } from "@/components/marketing/layout/Container";
-import { SectionWrapper } from "@/components/marketing/layout/SectionWrapper";
-import { cn } from "@/lib/utils";
 
 const faqs = [
   {
@@ -44,7 +42,7 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <SectionWrapper variant="default">
+    <section className="py-24 bg-deep-space">
       <Container size="md">
         {/* Section Header */}
         <motion.div
@@ -54,13 +52,13 @@ export function FAQ() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-2xl mx-auto mb-12"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
             Frequently Asked{" "}
-            <span className="text-electric-cyan">
+            <span className="bg-gradient-to-r from-electric-cyan to-quantum-violet bg-clip-text text-transparent">
               Questions
             </span>
           </h2>
-          <p className="text-lg text-slate-600">
+          <p className="text-lg text-steel">
             Everything you need to know about working with Quantum Insights.
           </p>
         </motion.div>
@@ -77,16 +75,16 @@ export function FAQ() {
               <Accordion.Item
                 key={index}
                 value={`item-${index}`}
-                className="group rounded-xl border border-slate-200 bg-white overflow-hidden data-[state=open]:border-electric-cyan/50 transition-colors"
+                className="group rounded-xl border border-graphite bg-midnight-blue/50 overflow-hidden data-[state=open]:border-electric-cyan/30 transition-colors"
               >
                 <Accordion.Header>
                   <Accordion.Trigger className="flex w-full items-center justify-between px-6 py-5 text-left">
-                    <span className="text-slate-900 font-medium pr-4">{faq.question}</span>
+                    <span className="text-white font-medium pr-4">{faq.question}</span>
                     <ChevronDown className="h-5 w-5 text-electric-cyan shrink-0 transition-transform duration-200 group-data-[state=open]:rotate-180" />
                   </Accordion.Trigger>
                 </Accordion.Header>
                 <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                  <div className="px-6 pb-5 text-slate-600 leading-relaxed">
+                  <div className="px-6 pb-5 text-steel leading-relaxed">
                     {faq.answer}
                   </div>
                 </Accordion.Content>
@@ -95,6 +93,6 @@ export function FAQ() {
           </Accordion.Root>
         </motion.div>
       </Container>
-    </SectionWrapper>
+    </section>
   );
 }

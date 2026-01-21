@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { Target, Zap, TrendingUp, Shield, Users, BarChart3 } from "lucide-react";
 import { Container } from "@/components/marketing/layout/Container";
-import { SectionWrapper } from "@/components/marketing/layout/SectionWrapper";
 
 const pillars = [
   {
@@ -46,28 +45,22 @@ const pillars = [
 
 const colorClasses = {
   "electric-cyan": {
-    bg: "bg-slate-50",
-    border: "border-slate-200",
+    bg: "bg-electric-cyan/10",
     text: "text-electric-cyan",
-    hover: "hover:border-electric-cyan/50",
   },
   "quantum-violet": {
-    bg: "bg-slate-50",
-    border: "border-slate-200",
-    text: "text-electric-cyan",
-    hover: "hover:border-electric-cyan/50",
+    bg: "bg-quantum-violet/10",
+    text: "text-quantum-violet",
   },
   "neon-mint": {
-    bg: "bg-slate-50",
-    border: "border-slate-200",
-    text: "text-electric-cyan",
-    hover: "hover:border-electric-cyan/50",
+    bg: "bg-neon-mint/10",
+    text: "text-neon-mint",
   },
 };
 
 export function ValuePillars() {
   return (
-    <SectionWrapper variant="default">
+    <section className="py-24 bg-deep-space">
       <Container>
         {/* Section Header */}
         <motion.div
@@ -77,13 +70,13 @@ export function ValuePillars() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
             Why Companies Choose{" "}
-            <span className="text-electric-cyan">
+            <span className="bg-gradient-to-r from-electric-cyan to-quantum-violet bg-clip-text text-transparent">
               Quantum Insights
             </span>
           </h2>
-          <p className="text-lg text-slate-600">
+          <p className="text-lg text-steel">
             Our AI-first approach delivers predictable pipeline growth with industry-leading deliverability and conversion rates.
           </p>
         </motion.div>
@@ -99,18 +92,18 @@ export function ValuePillars() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`group relative p-6 rounded-2xl border ${colors.border} bg-white ${colors.hover} hover:shadow-md transition-all duration-300`}
+                className="group relative p-6 rounded-2xl border border-graphite bg-midnight-blue/50 hover:border-electric-cyan/30 hover:bg-midnight-blue/80 transition-all duration-300"
               >
                 {/* Icon */}
-                <div className={`inline-flex p-3 rounded-xl ${colors.bg} ${colors.border} border mb-4`}>
+                <div className={`inline-flex p-3 rounded-xl ${colors.bg} mb-4`}>
                   <pillar.icon className={`h-6 w-6 ${colors.text}`} />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-sora font-semibold text-slate-900 mb-2">
+                <h3 className="text-xl font-sora font-semibold text-white mb-2 group-hover:text-electric-cyan transition-colors">
                   {pillar.title}
                 </h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
+                <p className="text-steel text-sm leading-relaxed">
                   {pillar.description}
                 </p>
               </motion.div>
@@ -118,6 +111,6 @@ export function ValuePillars() {
           })}
         </div>
       </Container>
-    </SectionWrapper>
+    </section>
   );
 }

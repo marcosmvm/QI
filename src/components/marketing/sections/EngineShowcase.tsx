@@ -4,7 +4,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Shield, Cpu, FlaskConical, Crosshair, Eye, ArrowRight } from "lucide-react";
 import { Container } from "@/components/marketing/layout/Container";
-import { SectionWrapper } from "@/components/marketing/layout/SectionWrapper";
 import { Button } from "@/components/ui/button";
 
 const engines = [
@@ -62,30 +61,26 @@ const engines = [
 
 const colorClasses = {
   "electric-cyan": {
-    bg: "bg-slate-50",
-    border: "border-slate-200",
+    bg: "bg-electric-cyan/10",
     text: "text-electric-cyan",
   },
   "quantum-violet": {
-    bg: "bg-slate-50",
-    border: "border-slate-200",
-    text: "text-electric-cyan",
+    bg: "bg-quantum-violet/10",
+    text: "text-quantum-violet",
   },
   "neon-mint": {
-    bg: "bg-slate-50",
-    border: "border-slate-200",
-    text: "text-electric-cyan",
+    bg: "bg-neon-mint/10",
+    text: "text-neon-mint",
   },
   "energy-orange": {
-    bg: "bg-slate-50",
-    border: "border-slate-200",
-    text: "text-electric-cyan",
+    bg: "bg-energy-orange/10",
+    text: "text-energy-orange",
   },
 };
 
 export function EngineShowcase() {
   return (
-    <SectionWrapper variant="gradient">
+    <section className="py-24 bg-deep-space">
       <Container>
         {/* Section Header */}
         <motion.div
@@ -95,17 +90,17 @@ export function EngineShowcase() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 border border-slate-200 mb-6">
-            <Cpu className="w-4 h-4 text-electric-cyan" />
-            <span className="text-sm font-medium text-slate-700">Our Technology</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-quantum-violet/10 border border-quantum-violet/30 mb-6">
+            <Cpu className="w-4 h-4 text-quantum-violet" />
+            <span className="text-sm font-medium text-quantum-violet">Our Technology</span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
             5 AI Engines Working{" "}
-            <span className="text-electric-cyan">
+            <span className="bg-gradient-to-r from-electric-cyan to-quantum-violet bg-clip-text text-transparent">
               In Harmony
             </span>
           </h2>
-          <p className="text-lg text-slate-600">
+          <p className="text-lg text-steel">
             Each specialized engine handles a critical part of the outbound process, working together to maximize your meeting output.
           </p>
         </motion.div>
@@ -123,24 +118,24 @@ export function EngineShowcase() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <Link href={engine.href} className="block group">
-                  <div className={`relative h-full p-6 rounded-2xl border ${colors.border} bg-white hover:border-electric-cyan/50 hover:shadow-md transition-all duration-300 overflow-hidden`}>
+                  <div className="relative h-full p-6 rounded-2xl border border-graphite bg-midnight-blue/50 hover:border-electric-cyan/30 hover:bg-midnight-blue/80 transition-all duration-300 overflow-hidden">
                     {/* Header */}
                     <div className="relative flex items-start justify-between mb-4">
-                      <div className={`p-3 rounded-xl ${colors.bg} ${colors.border} border`}>
+                      <div className={`p-3 rounded-xl ${colors.bg}`}>
                         <engine.icon className={`h-6 w-6 ${colors.text}`} />
                       </div>
-                      <span className="text-xs font-mono text-slate-400">
+                      <span className="text-xs font-mono text-steel">
                         ENGINE {engine.codename}
                       </span>
                     </div>
 
                     {/* Content */}
                     <div className="relative">
-                      <h3 className="text-xl font-sora font-semibold text-slate-900 mb-1">
+                      <h3 className="text-xl font-sora font-semibold text-white mb-1 group-hover:text-electric-cyan transition-colors">
                         {engine.name}
                       </h3>
                       <p className={`text-sm ${colors.text} mb-3`}>{engine.tagline}</p>
-                      <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                      <p className="text-steel text-sm leading-relaxed mb-4">
                         {engine.description}
                       </p>
 
@@ -169,7 +164,7 @@ export function EngineShowcase() {
             <Button
               variant="outline"
               size="lg"
-              className="border-slate-300 hover:border-electric-cyan text-slate-700 hover:text-electric-cyan"
+              className="border-graphite hover:border-electric-cyan/50 text-white hover:text-electric-cyan bg-transparent"
             >
               Explore All Engines
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -177,6 +172,6 @@ export function EngineShowcase() {
           </Link>
         </motion.div>
       </Container>
-    </SectionWrapper>
+    </section>
   );
 }
