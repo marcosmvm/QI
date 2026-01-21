@@ -5,22 +5,22 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-deep-space disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         default:
-          "bg-primary text-white hover:bg-primary-hover",
+          "bg-electric-cyan text-deep-space hover:bg-electric-cyan/90",
         secondary:
-          "bg-muted text-foreground hover:bg-muted/80",
+          "bg-midnight-blue text-silver hover:bg-midnight-blue/80",
         outline:
-          "border border-border bg-white text-foreground hover:bg-muted",
+          "border border-electric-cyan/20 bg-transparent text-steel hover:bg-electric-cyan/10 hover:text-white hover:border-electric-cyan/40",
         ghost:
-          "text-foreground-secondary hover:bg-muted hover:text-foreground",
+          "text-steel hover:bg-midnight-blue/50 hover:text-white",
         destructive:
           "bg-error text-white hover:bg-error/90",
         link:
-          "text-primary underline-offset-4 hover:underline",
+          "text-electric-cyan underline-offset-4 hover:underline",
       },
       size: {
         default: "h-9 px-4 py-2",
