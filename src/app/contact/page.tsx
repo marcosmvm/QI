@@ -42,10 +42,10 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-white" />
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-electric-cyan/5 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-quantum-violet/5 rounded-full blur-[100px]" />
+      <section className="relative py-24 overflow-hidden bg-deep-space">
+        <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-deep-space to-midnight-blue" />
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-electric-cyan/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-quantum-violet/10 rounded-full blur-[100px]" />
 
         <Container className="relative z-10">
           <motion.div
@@ -54,19 +54,19 @@ export default function ContactPage() {
             transition={{ duration: 0.5 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 border border-slate-200 mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-electric-cyan/10 border border-electric-cyan/30 mb-6">
               <Calendar className="w-4 h-4 text-electric-cyan" />
-              <span className="text-sm font-medium text-slate-700">Let&apos;s Talk</span>
+              <span className="text-sm font-medium text-electric-cyan">Let&apos;s Talk</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-slate-900 mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white mb-6">
               Start Your{" "}
-              <span className="text-electric-cyan">
+              <span className="bg-gradient-to-r from-electric-cyan to-quantum-violet bg-clip-text text-transparent">
                 Growth Journey
               </span>
             </h1>
 
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            <p className="text-xl text-steel max-w-2xl mx-auto">
               Book a strategy call with our team to discuss how we can help fill your pipeline with qualified meetings.
             </p>
           </motion.div>
@@ -85,23 +85,23 @@ export default function ContactPage() {
               transition={{ duration: 0.5 }}
               className="lg:col-span-2"
             >
-              <h2 className="text-2xl font-sora font-bold text-slate-900 mb-6">
+              <h2 className="text-2xl font-sora font-bold text-white mb-6">
                 Get in Touch
               </h2>
-              <p className="text-slate-600 mb-8">
+              <p className="text-steel mb-8">
                 Have questions? Want to learn more about how we can help your business grow? Reach out and we&apos;ll get back to you within 24 hours.
               </p>
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                  <div className="p-3 rounded-xl bg-electric-cyan/10 border border-electric-cyan/30">
                     <Mail className="h-5 w-5 text-electric-cyan" />
                   </div>
                   <div>
-                    <p className="text-slate-900 font-medium">Email</p>
+                    <p className="text-white font-medium">Email</p>
                     <a
                       href={`mailto:${contactInfo.email}`}
-                      className="text-electric-cyan hover:text-cyan-dark transition-colors"
+                      className="text-electric-cyan hover:text-cyan-light transition-colors"
                     >
                       {contactInfo.email}
                     </a>
@@ -109,14 +109,14 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                  <div className="p-3 rounded-xl bg-electric-cyan/10 border border-electric-cyan/30">
                     <Phone className="h-5 w-5 text-electric-cyan" />
                   </div>
                   <div>
-                    <p className="text-slate-900 font-medium">Phone</p>
+                    <p className="text-white font-medium">Phone</p>
                     <a
                       href={`tel:${contactInfo.phone}`}
-                      className="text-electric-cyan hover:text-cyan-dark transition-colors"
+                      className="text-electric-cyan hover:text-cyan-light transition-colors"
                     >
                       {contactInfo.phone}
                     </a>
@@ -124,22 +124,22 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                  <div className="p-3 rounded-xl bg-electric-cyan/10 border border-electric-cyan/30">
                     <MapPin className="h-5 w-5 text-electric-cyan" />
                   </div>
                   <div>
-                    <p className="text-slate-900 font-medium">Location</p>
-                    <p className="text-slate-600">{contactInfo.address}</p>
+                    <p className="text-white font-medium">Location</p>
+                    <p className="text-steel">{contactInfo.address}</p>
                   </div>
                 </div>
               </div>
 
               {/* What to Expect */}
-              <div className="mt-12 p-6 rounded-2xl border border-slate-200 bg-slate-50">
-                <h3 className="text-lg font-sora font-semibold text-slate-900 mb-4">
+              <div className="mt-12 p-6 rounded-2xl border border-graphite bg-midnight-blue/50">
+                <h3 className="text-lg font-sora font-semibold text-white mb-4">
                   What to Expect
                 </h3>
-                <ul className="space-y-3 text-slate-600 text-sm">
+                <ul className="space-y-3 text-steel text-sm">
                   <li className="flex items-start gap-2">
                     <ArrowRight className="h-4 w-4 text-electric-cyan flex-shrink-0 mt-0.5" />
                     30-minute discovery call
@@ -168,16 +168,16 @@ export default function ContactPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="lg:col-span-3"
             >
-              <div className="p-8 rounded-3xl border border-slate-200 bg-white shadow-sm">
+              <div className="p-8 rounded-3xl border border-graphite bg-midnight-blue">
                 {submitted ? (
                   <div className="text-center py-12">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-electric-cyan/10 border border-electric-cyan/20 mb-6">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-electric-cyan/10 border border-electric-cyan/30 mb-6">
                       <Send className="h-8 w-8 text-electric-cyan" />
                     </div>
-                    <h3 className="text-2xl font-sora font-bold text-slate-900 mb-4">
+                    <h3 className="text-2xl font-sora font-bold text-white mb-4">
                       Thanks for reaching out!
                     </h3>
-                    <p className="text-slate-600 max-w-md mx-auto">
+                    <p className="text-steel max-w-md mx-auto">
                       We&apos;ve received your message and will get back to you within 24 hours. In the meantime, feel free to explore our case studies.
                     </p>
                   </div>
@@ -185,7 +185,7 @@ export default function ContactPage() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="firstName" className="block text-sm font-medium text-slate-900 mb-2">
+                        <label htmlFor="firstName" className="block text-sm font-medium text-white mb-2">
                           First Name *
                         </label>
                         <input
@@ -195,12 +195,12 @@ export default function ContactPage() {
                           required
                           value={formState.firstName}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:border-electric-cyan focus:ring-1 focus:ring-electric-cyan transition-all outline-none"
+                          className="w-full px-4 py-3 rounded-xl bg-deep-space border border-graphite text-white placeholder-steel focus:border-electric-cyan focus:ring-1 focus:ring-electric-cyan transition-all outline-none"
                           placeholder="John"
                         />
                       </div>
                       <div>
-                        <label htmlFor="lastName" className="block text-sm font-medium text-slate-900 mb-2">
+                        <label htmlFor="lastName" className="block text-sm font-medium text-white mb-2">
                           Last Name *
                         </label>
                         <input
@@ -210,14 +210,14 @@ export default function ContactPage() {
                           required
                           value={formState.lastName}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:border-electric-cyan focus:ring-1 focus:ring-electric-cyan transition-all outline-none"
+                          className="w-full px-4 py-3 rounded-xl bg-deep-space border border-graphite text-white placeholder-steel focus:border-electric-cyan focus:ring-1 focus:ring-electric-cyan transition-all outline-none"
                           placeholder="Smith"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-slate-900 mb-2">
+                      <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
                         Work Email *
                       </label>
                       <input
@@ -227,14 +227,14 @@ export default function ContactPage() {
                         required
                         value={formState.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:border-electric-cyan focus:ring-1 focus:ring-electric-cyan transition-all outline-none"
+                        className="w-full px-4 py-3 rounded-xl bg-deep-space border border-graphite text-white placeholder-steel focus:border-electric-cyan focus:ring-1 focus:ring-electric-cyan transition-all outline-none"
                         placeholder="john@company.com"
                       />
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="company" className="block text-sm font-medium text-slate-900 mb-2">
+                        <label htmlFor="company" className="block text-sm font-medium text-white mb-2">
                           Company *
                         </label>
                         <input
@@ -244,12 +244,12 @@ export default function ContactPage() {
                           required
                           value={formState.company}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:border-electric-cyan focus:ring-1 focus:ring-electric-cyan transition-all outline-none"
+                          className="w-full px-4 py-3 rounded-xl bg-deep-space border border-graphite text-white placeholder-steel focus:border-electric-cyan focus:ring-1 focus:ring-electric-cyan transition-all outline-none"
                           placeholder="Acme Inc."
                         />
                       </div>
                       <div>
-                        <label htmlFor="phone" className="block text-sm font-medium text-slate-900 mb-2">
+                        <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">
                           Phone
                         </label>
                         <input
@@ -258,14 +258,14 @@ export default function ContactPage() {
                           name="phone"
                           value={formState.phone}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:border-electric-cyan focus:ring-1 focus:ring-electric-cyan transition-all outline-none"
+                          className="w-full px-4 py-3 rounded-xl bg-deep-space border border-graphite text-white placeholder-steel focus:border-electric-cyan focus:ring-1 focus:ring-electric-cyan transition-all outline-none"
                           placeholder="+1 (555) 000-0000"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label htmlFor="source" className="block text-sm font-medium text-slate-900 mb-2">
+                      <label htmlFor="source" className="block text-sm font-medium text-white mb-2">
                         How did you hear about us?
                       </label>
                       <select
@@ -273,7 +273,7 @@ export default function ContactPage() {
                         name="source"
                         value={formState.source}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:border-electric-cyan focus:ring-1 focus:ring-electric-cyan transition-all outline-none"
+                        className="w-full px-4 py-3 rounded-xl bg-deep-space border border-graphite text-white focus:border-electric-cyan focus:ring-1 focus:ring-electric-cyan transition-all outline-none"
                       >
                         <option value="">Select an option</option>
                         <option value="google">Google Search</option>
@@ -285,7 +285,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-slate-900 mb-2">
+                      <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
                         Tell us about your goals
                       </label>
                       <textarea
@@ -294,7 +294,7 @@ export default function ContactPage() {
                         rows={4}
                         value={formState.message}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:border-electric-cyan focus:ring-1 focus:ring-electric-cyan transition-all outline-none resize-none"
+                        className="w-full px-4 py-3 rounded-xl bg-deep-space border border-graphite text-white placeholder-steel focus:border-electric-cyan focus:ring-1 focus:ring-electric-cyan transition-all outline-none resize-none"
                         placeholder="What are you looking to achieve with outbound lead generation?"
                       />
                     </div>
@@ -302,7 +302,7 @@ export default function ContactPage() {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-electric-cyan hover:bg-cyan-dark text-white font-semibold py-6 disabled:opacity-50"
+                      className="w-full bg-electric-cyan hover:bg-electric-cyan/90 text-deep-space font-semibold py-6 disabled:opacity-50"
                     >
                       {isSubmitting ? (
                         "Sending..."
@@ -314,7 +314,7 @@ export default function ContactPage() {
                       )}
                     </Button>
 
-                    <p className="text-center text-slate-500 text-sm">
+                    <p className="text-center text-steel text-sm">
                       By submitting this form, you agree to our{" "}
                       <a href="/legal/privacy-policy" className="text-electric-cyan hover:underline">
                         Privacy Policy
