@@ -9,6 +9,8 @@ import {
   ExternalLink,
 } from "lucide-react";
 
+export const dynamic = 'force-dynamic';
+
 interface SubscriptionWithOrg {
   id: string;
   organization_id: string;

@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { buildCampaign } from "@/lib/n8n";
 import { type BuildCampaignRequest } from "@/types";
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(request: NextRequest) {
   try {
     const body: BuildCampaignRequest = await request.json();

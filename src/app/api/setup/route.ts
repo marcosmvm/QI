@@ -1,6 +1,8 @@
 import { createServiceClient } from "@/lib/supabase/server";
 import { NextResponse } from "next/server";
 
+export const dynamic = 'force-dynamic';
+
 // Admin user details
 const ADMIN_USER_ID = "a34e21f8-71d2-48a8-a09a-09d09fd04166";
 const ADMIN_EMAIL = "marcosmvm1515@gmail.com";

@@ -4,6 +4,8 @@ import { ChatMessages } from "@/components/chat/ChatMessages";
 import { MessageSquare, Plus } from "lucide-react";
 import Link from "next/link";
 
+export const dynamic = 'force-dynamic';
+
 interface Membership {
   organization_id: string;
 }

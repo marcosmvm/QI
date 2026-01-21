@@ -9,6 +9,8 @@ import {
   AlertCircle,
 } from "lucide-react";
 
+export const dynamic = 'force-dynamic';
+
 interface OrgStatus {
   id: string;
   status: string;

@@ -10,6 +10,8 @@ import {
   TrendingUp,
 } from "lucide-react";
 
+export const dynamic = 'force-dynamic';
+
 interface Organization {
   id: string;
   name: string;
