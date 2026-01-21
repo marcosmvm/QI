@@ -1,16 +1,14 @@
 "use client";
 
 import {
-  AreaChart,
-  Area,
+  LineChart,
+  Line,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-  Legend,
 } from "recharts";
-import { TrendingUp, MoreHorizontal } from "lucide-react";
 
 interface DataPoint {
   date: string;
@@ -24,126 +22,85 @@ interface PerformanceChartProps {
   title?: string;
 }
 
-export function PerformanceChart({ data, title = "7-Day Performance" }: PerformanceChartProps) {
+export function PerformanceChart({ data, title = "Performance" }: PerformanceChartProps) {
   return (
-    <div className="relative rounded-3xl bg-white p-6 shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden">
+    <div className="rounded-lg border border-border bg-white p-6">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
-        <div className="flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10">
-            <TrendingUp className="h-5 w-5 text-primary" />
+      <div className="mb-6">
+        <h3 className="text-base font-semibold text-foreground">{title}</h3>
+        <div className="mt-2 flex items-center gap-6">
+          <div className="flex items-center gap-2">
+            <span className="h-0.5 w-4 bg-primary rounded" />
+            <span className="text-xs text-foreground-muted">Sent</span>
           </div>
-          <div>
-            <h3 className="text-lg font-sora font-semibold text-slate-900">{title}</h3>
-            <p className="text-xs text-slate-500">Campaign performance overview</p>
+          <div className="flex items-center gap-2">
+            <span className="h-0.5 w-4 bg-foreground-muted rounded" />
+            <span className="text-xs text-foreground-muted">Opened</span>
           </div>
-        </div>
-        <button className="p-2 hover:bg-slate-50 rounded-xl transition-colors">
-          <MoreHorizontal className="h-5 w-5 text-slate-400" />
-        </button>
-      </div>
-
-      {/* Legend Pills */}
-      <div className="flex items-center gap-4 mb-6">
-        <div className="flex items-center gap-2 px-3 py-1.5 bg-primary/10 rounded-full">
-          <span className="w-2.5 h-2.5 rounded-full bg-primary" />
-          <span className="text-xs font-medium text-slate-700">Sent</span>
-        </div>
-        <div className="flex items-center gap-2 px-3 py-1.5 bg-secondary/10 rounded-full">
-          <span className="w-2.5 h-2.5 rounded-full bg-secondary" />
-          <span className="text-xs font-medium text-slate-700">Opened</span>
-        </div>
-        <div className="flex items-center gap-2 px-3 py-1.5 bg-emerald-50 rounded-full">
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
-          <span className="text-xs font-medium text-slate-700">Replied</span>
+          <div className="flex items-center gap-2">
+            <span className="h-0.5 w-4 bg-success rounded" />
+            <span className="text-xs text-foreground-muted">Replied</span>
+          </div>
         </div>
       </div>
 
       {/* Chart */}
-      <div className="h-72">
+      <div className="h-64">
         <ResponsiveContainer width="100%" height="100%">
-          <AreaChart
+          <LineChart
             data={data}
-            margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
+            margin={{ top: 5, right: 5, left: -20, bottom: 0 }}
           >
-            <defs>
-              {/* Sent - Primary Green */}
-              <linearGradient id="colorSent" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#4ADE80" stopOpacity={0.25} />
-                <stop offset="95%" stopColor="#4ADE80" stopOpacity={0} />
-              </linearGradient>
-              {/* Opened - Secondary Navy */}
-              <linearGradient id="colorOpened" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#1E3A5F" stopOpacity={0.2} />
-                <stop offset="95%" stopColor="#1E3A5F" stopOpacity={0} />
-              </linearGradient>
-              {/* Replied - Emerald */}
-              <linearGradient id="colorReplied" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#10B981" stopOpacity={0.2} />
-                <stop offset="95%" stopColor="#10B981" stopOpacity={0} />
-              </linearGradient>
-            </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="#F1F5F9" vertical={false} />
+            <CartesianGrid stroke="#F3F4F6" strokeDasharray="0" vertical={false} />
             <XAxis
               dataKey="date"
-              tick={{ fill: "#94A3B8", fontSize: 11, fontWeight: 500 }}
+              tick={{ fill: "#9CA3AF", fontSize: 11 }}
               tickLine={false}
-              axisLine={{ stroke: "#F1F5F9" }}
+              axisLine={false}
               dy={10}
             />
             <YAxis
-              tick={{ fill: "#94A3B8", fontSize: 11, fontWeight: 500 }}
+              tick={{ fill: "#9CA3AF", fontSize: 11 }}
               tickLine={false}
               axisLine={false}
               tickFormatter={(value) => value.toLocaleString()}
-              dx={-5}
             />
             <Tooltip
               contentStyle={{
                 backgroundColor: "#FFFFFF",
-                border: "none",
-                borderRadius: "16px",
-                boxShadow: "0 10px 40px rgba(0, 0, 0, 0.12)",
-                padding: "16px",
+                border: "1px solid #E5E7EB",
+                borderRadius: "8px",
+                boxShadow: "0 1px 3px rgba(0, 0, 0, 0.06)",
+                padding: "12px",
               }}
-              labelStyle={{ color: "#1E293B", fontWeight: 600, marginBottom: "12px", fontSize: "13px" }}
-              itemStyle={{ color: "#64748B", fontSize: "12px", padding: "4px 0" }}
-              cursor={{ stroke: "#E2E8F0", strokeWidth: 1 }}
+              labelStyle={{ color: "#111827", fontWeight: 500, marginBottom: "8px", fontSize: "13px" }}
+              itemStyle={{ color: "#6B7280", fontSize: "12px", padding: "2px 0" }}
             />
-            <Area
+            <Line
               type="monotone"
               dataKey="sent"
               name="Sent"
-              stroke="#4ADE80"
-              strokeWidth={2.5}
-              fillOpacity={1}
-              fill="url(#colorSent)"
+              stroke="#3B82F6"
+              strokeWidth={1.5}
               dot={false}
-              activeDot={{ r: 6, fill: "#4ADE80", stroke: "#FFFFFF", strokeWidth: 2 }}
             />
-            <Area
+            <Line
               type="monotone"
               dataKey="opened"
               name="Opened"
-              stroke="#1E3A5F"
-              strokeWidth={2.5}
-              fillOpacity={1}
-              fill="url(#colorOpened)"
+              stroke="#9CA3AF"
+              strokeWidth={1.5}
               dot={false}
-              activeDot={{ r: 6, fill: "#1E3A5F", stroke: "#FFFFFF", strokeWidth: 2 }}
             />
-            <Area
+            <Line
               type="monotone"
               dataKey="replied"
               name="Replied"
               stroke="#10B981"
-              strokeWidth={2.5}
-              fillOpacity={1}
-              fill="url(#colorReplied)"
+              strokeWidth={1.5}
               dot={false}
-              activeDot={{ r: 6, fill: "#10B981", stroke: "#FFFFFF", strokeWidth: 2 }}
             />
-          </AreaChart>
+          </LineChart>
         </ResponsiveContainer>
       </div>
     </div>

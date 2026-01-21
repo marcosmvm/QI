@@ -10,10 +10,8 @@ import {
   Calendar,
   CheckCircle2,
   AlertTriangle,
-  XCircle,
   Clock,
   Activity,
-  ArrowRight,
 } from "lucide-react";
 
 type ActivityType =
@@ -35,170 +33,70 @@ interface ActivityItem {
   description?: string;
   timestamp: string;
   link?: string;
-  metadata?: {
-    campaignName?: string;
-    leadName?: string;
-    count?: number;
-  };
 }
 
 interface ActivityFeedProps {
   activities: ActivityItem[];
   title?: string;
-  showViewAll?: boolean;
   maxItems?: number;
   className?: string;
 }
 
-const activityConfig: Record<
-  ActivityType,
-  { icon: typeof Mail; color: string; bg: string }
-> = {
-  email_sent: {
-    icon: Mail,
-    color: "text-electric-cyan",
-    bg: "bg-electric-cyan/10",
-  },
-  email_opened: {
-    icon: MailOpen,
-    color: "text-quantum-violet",
-    bg: "bg-quantum-violet/10",
-  },
-  email_replied: {
-    icon: Reply,
-    color: "text-neon-mint",
-    bg: "bg-neon-mint/10",
-  },
-  lead_created: {
-    icon: UserPlus,
-    color: "text-electric-cyan",
-    bg: "bg-electric-cyan/10",
-  },
-  appointment_scheduled: {
-    icon: Calendar,
-    color: "text-quantum-violet",
-    bg: "bg-quantum-violet/10",
-  },
-  appointment_completed: {
-    icon: CheckCircle2,
-    color: "text-neon-mint",
-    bg: "bg-neon-mint/10",
-  },
-  campaign_started: {
-    icon: Activity,
-    color: "text-neon-mint",
-    bg: "bg-neon-mint/10",
-  },
-  campaign_paused: {
-    icon: Clock,
-    color: "text-energy-orange",
-    bg: "bg-energy-orange/10",
-  },
-  compliance_alert: {
-    icon: AlertTriangle,
-    color: "text-energy-orange",
-    bg: "bg-energy-orange/10",
-  },
-  milestone_reached: {
-    icon: CheckCircle2,
-    color: "text-neon-mint",
-    bg: "bg-neon-mint/10",
-  },
+const activityConfig: Record<ActivityType, { icon: typeof Mail }> = {
+  email_sent: { icon: Mail },
+  email_opened: { icon: MailOpen },
+  email_replied: { icon: Reply },
+  lead_created: { icon: UserPlus },
+  appointment_scheduled: { icon: Calendar },
+  appointment_completed: { icon: CheckCircle2 },
+  campaign_started: { icon: Activity },
+  campaign_paused: { icon: Clock },
+  compliance_alert: { icon: AlertTriangle },
+  milestone_reached: { icon: CheckCircle2 },
 };
 
 export function ActivityFeed({
   activities,
   title = "Recent Activity",
-  showViewAll = true,
   maxItems = 5,
   className,
 }: ActivityFeedProps) {
   const displayedActivities = activities.slice(0, maxItems);
 
   return (
-    <div
-      className={cn(
-        "relative rounded-2xl border border-slate-200 bg-white overflow-hidden",
-        className
-      )}
-    >
+    <div className={cn("rounded-lg border border-border bg-white", className)}>
       {/* Header */}
-      <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200">
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-50 border border-slate-200">
-            <Activity className="h-5 w-5 text-electric-cyan" />
-          </div>
-          <div>
-            <h3 className="text-lg font-sora font-semibold text-slate-900">
-              {title}
-            </h3>
-            <p className="text-xs text-slate-500">
-              {activities.length} activities today
-            </p>
-          </div>
+      <div className="flex items-center justify-between px-6 py-4 border-b border-border">
+        <div>
+          <h3 className="text-base font-semibold text-foreground">{title}</h3>
+          <p className="text-xs text-foreground-muted">{activities.length} activities</p>
         </div>
-        {showViewAll && (
-          <Link
-            href="/dashboard/analytics"
-            className="text-sm text-electric-cyan hover:text-cyan-dark transition-colors font-medium flex items-center gap-1"
-          >
-            View all
-            <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
-        )}
+        <Link
+          href="/dashboard/analytics"
+          className="text-sm text-primary hover:underline"
+        >
+          View all
+        </Link>
       </div>
 
       {/* Activity List */}
-      <div className="divide-y divide-slate-100">
-        {displayedActivities.map((activity, index) => {
+      <div className="divide-y divide-border">
+        {displayedActivities.map((activity) => {
           const config = activityConfig[activity.type];
           const Icon = config.icon;
 
           const content = (
-            <div
-              className={cn(
-                "flex items-start gap-4 px-6 py-4 transition-colors",
-                activity.link && "hover:bg-slate-50 cursor-pointer"
-              )}
-            >
-              <div
-                className={cn(
-                  "h-10 w-10 rounded-lg flex items-center justify-center shrink-0",
-                  config.bg
-                )}
-              >
-                <Icon className={cn("h-5 w-5", config.color)} />
-              </div>
-
+            <div className="flex items-start gap-3 px-6 py-4">
+              <Icon className="h-4 w-4 text-foreground-muted mt-0.5 shrink-0" />
               <div className="flex-1 min-w-0">
-                <p className="font-medium text-slate-900">{activity.title}</p>
+                <p className="text-sm text-foreground">{activity.title}</p>
                 {activity.description && (
-                  <p className="text-sm text-slate-500 mt-0.5 line-clamp-2">
+                  <p className="text-xs text-foreground-muted mt-0.5 line-clamp-1">
                     {activity.description}
                   </p>
                 )}
-                {activity.metadata && (
-                  <div className="flex items-center gap-2 mt-1.5">
-                    {activity.metadata.campaignName && (
-                      <span className="text-xs px-2 py-0.5 rounded bg-slate-100 text-electric-cyan border border-slate-200">
-                        {activity.metadata.campaignName}
-                      </span>
-                    )}
-                    {activity.metadata.leadName && (
-                      <span className="text-xs text-slate-500">
-                        {activity.metadata.leadName}
-                      </span>
-                    )}
-                    {activity.metadata.count !== undefined && (
-                      <span className="text-xs font-medium text-slate-600">
-                        +{activity.metadata.count}
-                      </span>
-                    )}
-                  </div>
-                )}
               </div>
-
-              <span className="text-xs text-slate-500 whitespace-nowrap">
+              <span className="text-xs text-foreground-muted whitespace-nowrap">
                 {activity.timestamp}
               </span>
             </div>
@@ -206,7 +104,7 @@ export function ActivityFeed({
 
           if (activity.link) {
             return (
-              <Link key={activity.id} href={activity.link}>
+              <Link key={activity.id} href={activity.link} className="block hover:bg-muted/50">
                 {content}
               </Link>
             );
@@ -218,8 +116,8 @@ export function ActivityFeed({
 
       {activities.length === 0 && (
         <div className="px-6 py-12 text-center">
-          <Activity className="h-12 w-12 text-slate-300 mx-auto mb-3" />
-          <p className="text-slate-500">No recent activity</p>
+          <Activity className="h-8 w-8 text-foreground-muted mx-auto mb-2" />
+          <p className="text-sm text-foreground-muted">No recent activity</p>
         </div>
       )}
     </div>
