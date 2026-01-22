@@ -19,18 +19,31 @@ const buttonVariants = cva(
         destructive:
           "bg-alert-red text-white hover:bg-alert-red/90",
         outline:
-          "border border-electric-cyan text-electric-cyan bg-transparent hover:bg-electric-cyan/10 hover:shadow-[0_0_20px_rgba(0,212,255,0.15)]",
+          "border border-electric-cyan text-electric-cyan bg-transparent hover:bg-electric-cyan/10 hover:shadow-glow-cyan-sm",
         secondary:
           "bg-graphite text-silver hover:bg-slate hover:text-white",
         ghost:
           "text-steel hover:bg-graphite/50 hover:text-white",
         link:
           "text-electric-cyan underline-offset-4 hover:underline",
+        // Premium glow variant - pulsing glow effect
+        glow:
+          "bg-electric-cyan text-deep-space btn-pulse-glow hover:-translate-y-0.5 active:translate-y-0 hover:shadow-glow-cyan-xl",
+        // Premium shine variant - sweep animation
+        shine:
+          "bg-electric-cyan text-deep-space btn-shine hover:shadow-glow-cyan-lg hover:-translate-y-0.5 active:translate-y-0",
+        // Violet glow variant
+        glowViolet:
+          "bg-quantum-violet text-white hover:shadow-glow-violet-lg hover:-translate-y-0.5 active:translate-y-0",
+        // Glass variant - glassmorphism button
+        glass:
+          "bg-midnight-blue/60 text-white border border-electric-cyan/20 backdrop-blur-sm hover:bg-midnight-blue/80 hover:border-electric-cyan/40 hover:shadow-glow-cyan-sm",
       },
       size: {
         default: "h-11 px-6 py-3",
         sm: "h-9 px-4 py-2 text-xs",
         lg: "h-12 px-8 py-3",
+        xl: "h-14 px-10 py-4 text-base",
         icon: "h-10 w-10",
       },
     },

@@ -168,8 +168,11 @@ const config: Config = {
         "glow-cyan": "0 0 20px rgba(0, 212, 255, 0.25)",
         "glow-cyan-sm": "0 0 10px rgba(0, 212, 255, 0.2)",
         "glow-cyan-lg": "0 0 30px rgba(0, 212, 255, 0.35)",
+        "glow-cyan-xl": "0 0 50px rgba(0, 212, 255, 0.5), 0 0 100px rgba(0, 212, 255, 0.2)",
         "glow-violet": "0 0 20px rgba(123, 97, 255, 0.25)",
+        "glow-violet-lg": "0 0 30px rgba(123, 97, 255, 0.35)",
         "glow-mint": "0 0 20px rgba(0, 255, 178, 0.25)",
+        "glow-mint-lg": "0 0 30px rgba(0, 255, 178, 0.35)",
 
         // Depth shadows
         "depth-sm": "0 1px 2px rgba(0, 0, 0, 0.3)",
@@ -180,8 +183,13 @@ const config: Config = {
         // Focus ring
         "focus-ring": "0 0 0 3px rgba(0, 212, 255, 0.2)",
 
-        // Card hover
+        // Card effects - premium
         "card-hover": "0 8px 25px -5px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 212, 255, 0.08)",
+        "card-glow": "0 0 0 1px rgba(0, 212, 255, 0.15), 0 8px 30px -5px rgba(0, 0, 0, 0.3)",
+        "card-glow-active": "0 0 0 1px rgba(0, 212, 255, 0.4), 0 0 30px rgba(0, 212, 255, 0.15), 0 12px 40px -10px rgba(0, 0, 0, 0.4)",
+
+        // Inner glow for buttons
+        "inner-glow-cyan": "inset 0 1px 0 0 rgba(0, 212, 255, 0.2)",
       },
 
       // ============================================
@@ -224,6 +232,16 @@ const config: Config = {
         "pulse-dot": "pulse-dot 2s ease-in-out infinite",
         // Spin (for loaders)
         "spin-slow": "spin 1.5s linear infinite",
+        // Gradient orb floating
+        "orb-float": "orb-float 20s ease-in-out infinite",
+        "orb-float-reverse": "orb-float 25s ease-in-out infinite reverse",
+        "orb-pulse": "orb-pulse 8s ease-in-out infinite",
+        // Button shine sweep
+        "shine": "shine 3s ease-in-out infinite",
+        // Glow pulse for CTAs
+        "glow-pulse": "glow-pulse 2s ease-in-out infinite",
+        // Chart bar grow
+        "bar-grow": "bar-grow 0.6s ease-out forwards",
       },
 
       keyframes: {
@@ -246,6 +264,28 @@ const config: Config = {
         "pulse-dot": {
           "0%, 100%": { opacity: "1", transform: "scale(1)" },
           "50%": { opacity: "0.5", transform: "scale(1.2)" },
+        },
+        "orb-float": {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "25%": { transform: "translate(30px, 30px) scale(1.05)" },
+          "50%": { transform: "translate(15px, -20px) scale(0.95)" },
+          "75%": { transform: "translate(-20px, 15px) scale(1.02)" },
+        },
+        "orb-pulse": {
+          "0%, 100%": { opacity: "0.6" },
+          "50%": { opacity: "1" },
+        },
+        shine: {
+          "0%": { left: "-100%" },
+          "50%, 100%": { left: "100%" },
+        },
+        "glow-pulse": {
+          "0%, 100%": { boxShadow: "0 0 20px rgba(0, 212, 255, 0.3)" },
+          "50%": { boxShadow: "0 0 35px rgba(0, 212, 255, 0.5)" },
+        },
+        "bar-grow": {
+          "0%": { transform: "scaleY(0)", transformOrigin: "bottom" },
+          "100%": { transform: "scaleY(1)", transformOrigin: "bottom" },
         },
       },
 

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { MetricsCard } from "@/components/dashboard";
 import {
   LineChart,
@@ -13,6 +14,28 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.16, 1, 0.3, 1] as const,
+    },
+  },
+};
 
 // Mock data
 const weeklyData = [
@@ -42,9 +65,14 @@ const hourlyEngagement = [
 
 export default function AnalyticsPage() {
   return (
-    <div className="min-h-screen bg-deep-space p-8">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className="min-h-screen p-8"
+    >
       {/* Page Header */}
-      <div className="mb-8">
+      <motion.div variants={itemVariants} className="mb-8">
         <div className="flex items-center gap-2 text-sm text-steel mb-2">
           <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
           <span>/</span>
@@ -54,53 +82,72 @@ export default function AnalyticsPage() {
         <p className="text-sm text-steel mt-1">
           Campaign performance insights
         </p>
-      </div>
+      </motion.div>
 
-      {/* Top metrics */}
+      {/* Top metrics - using enhanced MetricsCard with staggered animation */}
       <div className="grid grid-cols-4 gap-6 mb-8">
         <MetricsCard
           title="Total Sent"
-          value="36,000"
+          value={36000}
           change={18.5}
+          accent="cyan"
+          delay={0}
         />
         <MetricsCard
           title="Avg Open Rate"
-          value="34.2"
+          value={34.2}
           suffix="%"
           change={4.2}
+          accent="violet"
+          delay={0.1}
         />
         <MetricsCard
           title="Avg Reply Rate"
-          value="3.8"
+          value={3.8}
           suffix="%"
           change={12.1}
+          accent="mint"
+          delay={0.2}
         />
         <MetricsCard
           title="Leads Generated"
-          value="1,500"
+          value={1500}
           change={22.3}
+          accent="orange"
+          delay={0.3}
         />
       </div>
 
       {/* Charts */}
       <div className="grid grid-cols-2 gap-6 mb-8">
         {/* Weekly Trend */}
-        <div className="rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6 hover:border-electric-cyan/20 hover:shadow-depth-lg transition-all duration-200">
+        <motion.div
+          variants={itemVariants}
+          className="glass-premium p-6 hover:shadow-card-glow-active transition-all duration-300"
+        >
           <h3 className="text-base font-semibold text-white mb-6">
             Weekly Trend
           </h3>
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={weeklyData}>
+                <defs>
+                  <linearGradient id="cyanGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#00D4FF" stopOpacity={0.3}/>
+                    <stop offset="95%" stopColor="#00D4FF" stopOpacity={0}/>
+                  </linearGradient>
+                </defs>
                 <CartesianGrid stroke="#334155" strokeDasharray="0" vertical={false} />
                 <XAxis dataKey="week" tick={{ fill: "#94A3B8", fontSize: 11 }} axisLine={false} tickLine={false} />
                 <YAxis tick={{ fill: "#94A3B8", fontSize: 11 }} axisLine={false} tickLine={false} />
                 <Tooltip
                   contentStyle={{
-                    backgroundColor: "#1A2D4A",
-                    border: "1px solid #334155",
-                    borderRadius: "8px",
+                    backgroundColor: "rgba(26, 45, 74, 0.9)",
+                    backdropFilter: "blur(8px)",
+                    border: "1px solid rgba(0, 212, 255, 0.2)",
+                    borderRadius: "12px",
                     color: "#E8EDF5",
+                    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.3)",
                   }}
                   labelStyle={{ color: "#E8EDF5" }}
                 />
@@ -110,60 +157,97 @@ export default function AnalyticsPage() {
               </LineChart>
             </ResponsiveContainer>
           </div>
-        </div>
+          {/* Chart legend */}
+          <div className="flex items-center justify-center gap-6 mt-4 pt-4 border-t border-graphite/30">
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-full bg-electric-cyan" />
+              <span className="text-xs text-steel">Sent</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-full bg-quantum-violet" />
+              <span className="text-xs text-steel">Opened</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-full bg-neon-mint" />
+              <span className="text-xs text-steel">Replied</span>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Hourly Engagement */}
-        <div className="rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6 hover:border-electric-cyan/20 hover:shadow-depth-lg transition-all duration-200">
+        <motion.div
+          variants={itemVariants}
+          className="glass-premium p-6 hover:shadow-card-glow-active transition-all duration-300"
+        >
           <h3 className="text-base font-semibold text-white mb-6">
             Hourly Engagement
           </h3>
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={hourlyEngagement}>
+                <defs>
+                  <linearGradient id="barGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#00D4FF" stopOpacity={1}/>
+                    <stop offset="100%" stopColor="#00D4FF" stopOpacity={0.4}/>
+                  </linearGradient>
+                </defs>
                 <CartesianGrid stroke="#334155" strokeDasharray="0" vertical={false} />
                 <XAxis dataKey="hour" tick={{ fill: "#94A3B8", fontSize: 11 }} axisLine={false} tickLine={false} />
                 <YAxis tick={{ fill: "#94A3B8", fontSize: 11 }} axisLine={false} tickLine={false} />
                 <Tooltip
                   contentStyle={{
-                    backgroundColor: "#1A2D4A",
-                    border: "1px solid #334155",
-                    borderRadius: "8px",
+                    backgroundColor: "rgba(26, 45, 74, 0.9)",
+                    backdropFilter: "blur(8px)",
+                    border: "1px solid rgba(0, 212, 255, 0.2)",
+                    borderRadius: "12px",
                     color: "#E8EDF5",
+                    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.3)",
                   }}
                   labelStyle={{ color: "#E8EDF5" }}
                 />
-                <Bar dataKey="opens" fill="#00D4FF" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="opens" fill="url(#barGradient)" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Campaign Performance */}
-      <div className="rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6 hover:border-electric-cyan/20 hover:shadow-depth-lg transition-all duration-200">
+      <motion.div
+        variants={itemVariants}
+        className="glass-premium p-6 hover:shadow-card-glow-active transition-all duration-300"
+      >
         <h3 className="text-base font-semibold text-white mb-6">
           Campaign Performance
         </h3>
         <div className="h-64">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={campaignPerformance} layout="vertical">
+              <defs>
+                <linearGradient id="violetBarGradient" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="#7B61FF" stopOpacity={0.6}/>
+                  <stop offset="100%" stopColor="#7B61FF" stopOpacity={1}/>
+                </linearGradient>
+              </defs>
               <CartesianGrid stroke="#334155" strokeDasharray="0" horizontal={false} />
               <XAxis type="number" tick={{ fill: "#94A3B8", fontSize: 11 }} axisLine={false} tickLine={false} />
               <YAxis dataKey="name" type="category" tick={{ fill: "#E8EDF5", fontSize: 12 }} axisLine={false} tickLine={false} width={100} />
               <Tooltip
                 contentStyle={{
-                  backgroundColor: "#1A2D4A",
-                  border: "1px solid #334155",
-                  borderRadius: "8px",
+                  backgroundColor: "rgba(26, 45, 74, 0.9)",
+                  backdropFilter: "blur(8px)",
+                  border: "1px solid rgba(123, 97, 255, 0.2)",
+                  borderRadius: "12px",
                   color: "#E8EDF5",
+                  boxShadow: "0 4px 20px rgba(0, 0, 0, 0.3)",
                 }}
                 labelStyle={{ color: "#E8EDF5" }}
               />
-              <Bar dataKey="openRate" name="Open Rate %" fill="#7B61FF" radius={[0, 4, 4, 0]} />
+              <Bar dataKey="openRate" name="Open Rate %" fill="url(#violetBarGradient)" radius={[0, 4, 4, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
