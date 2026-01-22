@@ -12,34 +12,53 @@ export function Hero() {
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-deep-space to-midnight-blue" />
 
-      {/* Enhanced Ambient Glow Orbs - More visible */}
+      {/* Enhanced Ambient Glow Orbs - HIGHLY VISIBLE */}
       <motion.div
-        className="absolute -top-20 -left-20 w-[600px] h-[600px] bg-electric-cyan/12 rounded-full blur-[100px] pointer-events-none"
+        className="absolute -top-40 -left-40 w-[700px] h-[700px] rounded-full blur-[120px] pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(0, 212, 255, 0.35) 0%, rgba(0, 212, 255, 0) 70%)' }}
         animate={{
-          scale: [1, 1.1, 1],
-          opacity: [0.12, 0.18, 0.12]
+          scale: [1, 1.15, 1],
+          opacity: [0.8, 1, 0.8],
+          x: [0, 30, 0],
+          y: [0, 20, 0],
         }}
         transition={{
-          duration: 8,
+          duration: 12,
           repeat: Infinity,
           ease: "easeInOut"
         }}
       />
       <motion.div
-        className="absolute -bottom-40 -right-20 w-[500px] h-[500px] bg-quantum-violet/10 rounded-full blur-[100px] pointer-events-none"
+        className="absolute -bottom-60 -right-40 w-[600px] h-[600px] rounded-full blur-[120px] pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(123, 97, 255, 0.3) 0%, rgba(123, 97, 255, 0) 70%)' }}
         animate={{
-          scale: [1, 1.15, 1],
-          opacity: [0.1, 0.16, 0.1]
+          scale: [1, 1.2, 1],
+          opacity: [0.7, 1, 0.7],
+          x: [0, -20, 0],
+          y: [0, -30, 0],
+        }}
+        transition={{
+          duration: 15,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 3
+        }}
+      />
+      {/* Third orb - mint accent */}
+      <motion.div
+        className="absolute top-1/3 right-1/4 w-[400px] h-[400px] rounded-full blur-[100px] pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(0, 255, 178, 0.15) 0%, rgba(0, 255, 178, 0) 70%)' }}
+        animate={{
+          scale: [1, 1.1, 0.95, 1],
+          opacity: [0.5, 0.8, 0.6, 0.5],
         }}
         transition={{
           duration: 10,
           repeat: Infinity,
           ease: "easeInOut",
-          delay: 2
+          delay: 5
         }}
       />
-      {/* Secondary smaller orb for depth */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-electric-cyan/5 rounded-full blur-[80px] pointer-events-none" />
 
       {/* Grid Pattern - Slightly more visible */}
       <div
@@ -95,8 +114,9 @@ export function Hero() {
           >
             <Link href="/contact">
               <Button
-                size="lg"
-                className="bg-electric-cyan hover:bg-electric-cyan/90 text-deep-space font-semibold px-8 py-6 text-lg shadow-lg shadow-electric-cyan/25 hover:shadow-[0_0_30px_rgba(0,212,255,0.4)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+                variant="glow"
+                size="xl"
+                className="font-semibold text-lg"
               >
                 Book a Strategy Call
                 <ArrowRight className="ml-2 h-5 w-5" />
