@@ -47,20 +47,52 @@ const colorClasses = {
   "electric-cyan": {
     bg: "bg-electric-cyan/10",
     text: "text-electric-cyan",
+    border: "group-hover:border-electric-cyan/40",
+    glow: "group-hover:shadow-glow-cyan-sm",
+    accent: "bg-electric-cyan",
   },
   "quantum-violet": {
     bg: "bg-quantum-violet/10",
     text: "text-quantum-violet",
+    border: "group-hover:border-quantum-violet/40",
+    glow: "group-hover:shadow-glow-violet-lg",
+    accent: "bg-quantum-violet",
   },
   "neon-mint": {
     bg: "bg-neon-mint/10",
     text: "text-neon-mint",
+    border: "group-hover:border-neon-mint/40",
+    glow: "group-hover:shadow-glow-mint-lg",
+    accent: "bg-neon-mint",
+  },
+};
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: [0.16, 1, 0.3, 1] as const,
+    },
   },
 };
 
 export function ValuePillars() {
   return (
-    <section className="py-24 bg-deep-space">
+    <section className="py-24 relative">
       <Container>
         {/* Section Header */}
         <motion.div
@@ -82,20 +114,26 @@ export function ValuePillars() {
         </motion.div>
 
         {/* Pillars Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {pillars.map((pillar, index) => {
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          {pillars.map((pillar) => {
             const colors = colorClasses[pillar.color as keyof typeof colorClasses];
             return (
               <motion.div
                 key={pillar.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative p-6 rounded-2xl border border-graphite bg-midnight-blue/50 hover:border-electric-cyan/30 hover:bg-midnight-blue/80 transition-all duration-300"
+                variants={itemVariants}
+                className={`group relative p-6 rounded-2xl border border-graphite/50 bg-midnight-blue/30 backdrop-blur-sm ${colors.border} ${colors.glow} hover:-translate-y-1 transition-all duration-300`}
               >
+                {/* Accent line at top */}
+                <div className={`absolute top-0 left-0 right-0 h-[2px] ${colors.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+
                 {/* Icon */}
-                <div className={`inline-flex p-3 rounded-xl ${colors.bg} mb-4`}>
+                <div className={`inline-flex p-3 rounded-xl ${colors.bg} mb-4 border border-transparent group-hover:border-current/20 transition-all duration-300`}>
                   <pillar.icon className={`h-6 w-6 ${colors.text}`} />
                 </div>
 
@@ -103,13 +141,13 @@ export function ValuePillars() {
                 <h3 className="text-xl font-sora font-semibold text-white mb-2 group-hover:text-electric-cyan transition-colors">
                   {pillar.title}
                 </h3>
-                <p className="text-steel text-sm leading-relaxed">
+                <p className="text-steel text-sm leading-relaxed group-hover:text-silver/80 transition-colors">
                   {pillar.description}
                 </p>
               </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </Container>
     </section>
   );

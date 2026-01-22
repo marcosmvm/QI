@@ -50,8 +50,11 @@ export function Testimonials() {
   };
 
   return (
-    <section className="py-24 bg-midnight-blue/50">
-      <Container>
+    <section className="py-24 relative">
+      {/* Subtle background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-midnight-blue/20 to-transparent" />
+
+      <Container className="relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -76,22 +79,29 @@ export function Testimonials() {
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, x: 50, scale: 0.98 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              exit={{ opacity: 0, x: -50, scale: 0.98 }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as const }}
               className="relative"
             >
-              <div className="relative p-8 md:p-12 rounded-3xl border border-graphite bg-midnight-blue">
+              <div className="relative p-8 md:p-12 rounded-3xl border border-graphite/50 bg-midnight-blue/40 backdrop-blur-sm hover:border-electric-cyan/30 transition-all duration-300">
                 {/* Quote Icon */}
-                <div className="absolute -top-6 left-8 p-4 rounded-2xl bg-midnight-blue border border-graphite">
+                <div className="absolute -top-6 left-8 p-4 rounded-2xl bg-midnight-blue border border-graphite/50 backdrop-blur-sm">
                   <Quote className="h-6 w-6 text-electric-cyan" />
                 </div>
 
                 {/* Rating */}
                 <div className="flex gap-1 mb-6 mt-4">
                   {[...Array(testimonials[current].rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-electric-cyan text-electric-cyan" />
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: i * 0.1, duration: 0.3 }}
+                    >
+                      <Star className="h-5 w-5 fill-electric-cyan text-electric-cyan" />
+                    </motion.div>
                   ))}
                 </div>
 
@@ -118,9 +128,15 @@ export function Testimonials() {
 
                   {/* Metric */}
                   <div className="hidden sm:block text-right">
-                    <p className="text-3xl font-sora font-bold text-electric-cyan">
+                    <motion.p
+                      key={`metric-${current}`}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.2 }}
+                      className="text-3xl font-sora font-bold text-electric-cyan"
+                    >
                       {testimonials[current].metric.value}
-                    </p>
+                    </motion.p>
                     <p className="text-steel text-sm">{testimonials[current].metric.label}</p>
                   </div>
                 </div>
@@ -132,7 +148,7 @@ export function Testimonials() {
           <div className="flex items-center justify-center gap-4 mt-8">
             <button
               onClick={prev}
-              className="p-3 rounded-full border border-graphite hover:border-electric-cyan/50 bg-midnight-blue text-steel hover:text-electric-cyan transition-all"
+              className="p-3 rounded-full border border-graphite/50 hover:border-electric-cyan/50 bg-midnight-blue/50 backdrop-blur-sm text-steel hover:text-electric-cyan hover:shadow-glow-cyan-sm transition-all duration-300"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="h-5 w-5" />
@@ -143,10 +159,10 @@ export function Testimonials() {
                 <button
                   key={index}
                   onClick={() => setCurrent(index)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all ${
+                  className={`h-2.5 rounded-full transition-all duration-300 ${
                     index === current
-                      ? "bg-electric-cyan w-8"
-                      : "bg-graphite hover:bg-steel"
+                      ? "bg-electric-cyan w-8 shadow-glow-cyan-sm"
+                      : "bg-graphite hover:bg-steel w-2.5"
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
@@ -155,7 +171,7 @@ export function Testimonials() {
 
             <button
               onClick={next}
-              className="p-3 rounded-full border border-graphite hover:border-electric-cyan/50 bg-midnight-blue text-steel hover:text-electric-cyan transition-all"
+              className="p-3 rounded-full border border-graphite/50 hover:border-electric-cyan/50 bg-midnight-blue/50 backdrop-blur-sm text-steel hover:text-electric-cyan hover:shadow-glow-cyan-sm transition-all duration-300"
               aria-label="Next testimonial"
             >
               <ChevronRight className="h-5 w-5" />

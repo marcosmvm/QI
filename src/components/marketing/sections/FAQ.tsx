@@ -40,9 +40,31 @@ const faqs = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.05,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 15 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      ease: [0.16, 1, 0.3, 1] as const,
+    },
+  },
+};
+
 export function FAQ() {
   return (
-    <section className="py-24 bg-deep-space">
+    <section className="py-24 relative">
       <Container size="md">
         {/* Section Header */}
         <motion.div
@@ -65,30 +87,33 @@ export function FAQ() {
 
         {/* Accordion */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
         >
           <Accordion.Root type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
-              <Accordion.Item
-                key={index}
-                value={`item-${index}`}
-                className="group rounded-xl border border-graphite bg-midnight-blue/50 overflow-hidden data-[state=open]:border-electric-cyan/30 transition-colors"
-              >
-                <Accordion.Header>
-                  <Accordion.Trigger className="flex w-full items-center justify-between px-6 py-5 text-left">
-                    <span className="text-white font-medium pr-4">{faq.question}</span>
-                    <ChevronDown className="h-5 w-5 text-electric-cyan shrink-0 transition-transform duration-200 group-data-[state=open]:rotate-180" />
-                  </Accordion.Trigger>
-                </Accordion.Header>
-                <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                  <div className="px-6 pb-5 text-steel leading-relaxed">
-                    {faq.answer}
-                  </div>
-                </Accordion.Content>
-              </Accordion.Item>
+              <motion.div key={index} variants={itemVariants}>
+                <Accordion.Item
+                  value={`item-${index}`}
+                  className="group rounded-xl border border-graphite/50 bg-midnight-blue/30 backdrop-blur-sm overflow-hidden data-[state=open]:border-electric-cyan/30 data-[state=open]:shadow-glow-cyan-sm hover:border-electric-cyan/20 transition-all duration-300"
+                >
+                  <Accordion.Header>
+                    <Accordion.Trigger className="flex w-full items-center justify-between px-6 py-5 text-left">
+                      <span className="text-white font-medium pr-4 group-hover:text-electric-cyan transition-colors">{faq.question}</span>
+                      <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-electric-cyan/10 border border-electric-cyan/20 flex items-center justify-center group-data-[state=open]:bg-electric-cyan/20 transition-all duration-300">
+                        <ChevronDown className="h-4 w-4 text-electric-cyan shrink-0 transition-transform duration-300 group-data-[state=open]:rotate-180" />
+                      </div>
+                    </Accordion.Trigger>
+                  </Accordion.Header>
+                  <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
+                    <div className="px-6 pb-5 text-steel leading-relaxed">
+                      {faq.answer}
+                    </div>
+                  </Accordion.Content>
+                </Accordion.Item>
+              </motion.div>
             ))}
           </Accordion.Root>
         </motion.div>

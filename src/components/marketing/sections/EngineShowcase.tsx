@@ -63,24 +63,58 @@ const colorClasses = {
   "electric-cyan": {
     bg: "bg-electric-cyan/10",
     text: "text-electric-cyan",
+    border: "group-hover:border-electric-cyan/40",
+    glow: "group-hover:shadow-glow-cyan-sm",
+    accent: "bg-electric-cyan",
   },
   "quantum-violet": {
     bg: "bg-quantum-violet/10",
     text: "text-quantum-violet",
+    border: "group-hover:border-quantum-violet/40",
+    glow: "group-hover:shadow-glow-violet-lg",
+    accent: "bg-quantum-violet",
   },
   "neon-mint": {
     bg: "bg-neon-mint/10",
     text: "text-neon-mint",
+    border: "group-hover:border-neon-mint/40",
+    glow: "group-hover:shadow-glow-mint-lg",
+    accent: "bg-neon-mint",
   },
   "energy-orange": {
     bg: "bg-energy-orange/10",
     text: "text-energy-orange",
+    border: "group-hover:border-energy-orange/40",
+    glow: "group-hover:shadow-[0_0_30px_rgba(255,107,53,0.2)]",
+    accent: "bg-energy-orange",
+  },
+};
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.16, 1, 0.3, 1] as const,
+    },
   },
 };
 
 export function EngineShowcase() {
   return (
-    <section className="py-24 bg-deep-space">
+    <section className="py-24 relative">
       <Container>
         {/* Section Header */}
         <motion.div
@@ -90,7 +124,7 @@ export function EngineShowcase() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-quantum-violet/10 border border-quantum-violet/30 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-quantum-violet/10 border border-quantum-violet/30 mb-6 backdrop-blur-sm">
             <Cpu className="w-4 h-4 text-quantum-violet" />
             <span className="text-sm font-medium text-quantum-violet">Our Technology</span>
           </div>
@@ -106,43 +140,49 @@ export function EngineShowcase() {
         </motion.div>
 
         {/* Engines Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {engines.map((engine, index) => {
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
+        >
+          {engines.map((engine) => {
             const colors = colorClasses[engine.color as keyof typeof colorClasses];
             return (
               <motion.div
                 key={engine.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                variants={itemVariants}
               >
-                <Link href={engine.href} className="block group">
-                  <div className="relative h-full p-6 rounded-2xl border border-graphite bg-midnight-blue/50 hover:border-electric-cyan/30 hover:bg-midnight-blue/80 transition-all duration-300 overflow-hidden">
+                <Link href={engine.href} className="block group h-full">
+                  <div className={`relative h-full p-6 rounded-2xl border border-graphite/50 bg-midnight-blue/30 backdrop-blur-sm ${colors.border} ${colors.glow} hover:-translate-y-1 transition-all duration-300 overflow-hidden`}>
+                    {/* Accent line at top */}
+                    <div className={`absolute top-0 left-0 right-0 h-[2px] ${colors.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+
                     {/* Header */}
                     <div className="relative flex items-start justify-between mb-4">
-                      <div className={`p-3 rounded-xl ${colors.bg}`}>
+                      <div className={`p-3 rounded-xl ${colors.bg} border border-transparent group-hover:border-current/20 transition-all duration-300`}>
                         <engine.icon className={`h-6 w-6 ${colors.text}`} />
                       </div>
-                      <span className="text-xs font-mono text-steel">
+                      <span className="text-xs font-mono text-steel group-hover:text-silver transition-colors">
                         ENGINE {engine.codename}
                       </span>
                     </div>
 
                     {/* Content */}
                     <div className="relative">
-                      <h3 className="text-xl font-sora font-semibold text-white mb-1 group-hover:text-electric-cyan transition-colors">
+                      <h3 className={`text-xl font-sora font-semibold text-white mb-1 group-hover:${colors.text.replace('text-', '')} transition-colors`}>
                         {engine.name}
                       </h3>
                       <p className={`text-sm ${colors.text} mb-3`}>{engine.tagline}</p>
-                      <p className="text-steel text-sm leading-relaxed mb-4">
+                      <p className="text-steel text-sm leading-relaxed mb-4 group-hover:text-silver/80 transition-colors">
                         {engine.description}
                       </p>
 
                       {/* Learn More */}
                       <div className={`flex items-center gap-2 ${colors.text} text-sm font-medium group-hover:gap-3 transition-all`}>
                         Learn more
-                        <ArrowRight className="h-4 w-4" />
+                        <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
                   </div>
@@ -150,7 +190,7 @@ export function EngineShowcase() {
               </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* CTA */}
         <motion.div
@@ -162,12 +202,12 @@ export function EngineShowcase() {
         >
           <Link href="/engines">
             <Button
-              variant="outline"
+              variant="glass"
               size="lg"
-              className="border-graphite hover:border-electric-cyan/50 text-white hover:text-electric-cyan bg-transparent"
+              className="group"
             >
               Explore All Engines
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>
         </motion.div>

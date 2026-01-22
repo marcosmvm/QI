@@ -37,10 +37,35 @@ const steps = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -30 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.16, 1, 0.3, 1] as const,
+    },
+  },
+};
+
 export function ProcessSteps() {
   return (
-    <section className="py-24 bg-midnight-blue/50">
-      <Container>
+    <section className="py-24 relative">
+      {/* Subtle background effect */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-midnight-blue/30 to-transparent" />
+
+      <Container className="relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -61,43 +86,57 @@ export function ProcessSteps() {
         </motion.div>
 
         {/* Steps */}
-        <div className="relative">
-          {/* Connection Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-electric-cyan/50 via-quantum-violet/50 to-electric-cyan/50 hidden md:block" />
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="relative"
+        >
+          {/* Connection Line - Animated gradient */}
+          <div className="absolute left-8 top-0 bottom-0 w-px hidden md:block overflow-hidden">
+            <motion.div
+              className="h-full w-full bg-gradient-to-b from-electric-cyan via-quantum-violet to-electric-cyan"
+              initial={{ scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, ease: "easeOut" }}
+              style={{ transformOrigin: "top" }}
+            />
+          </div>
 
           <div className="space-y-8">
             {steps.map((step, index) => (
               <motion.div
                 key={step.number}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative flex gap-6 md:gap-8"
+                variants={itemVariants}
+                className="relative flex gap-6 md:gap-8 group"
               >
-                {/* Step Number */}
+                {/* Step Icon */}
                 <div className="relative z-10 flex-shrink-0">
-                  <div className="w-16 h-16 rounded-2xl bg-midnight-blue border border-graphite flex items-center justify-center">
-                    <step.icon className="h-7 w-7 text-electric-cyan" />
+                  <div className="w-16 h-16 rounded-2xl bg-midnight-blue/60 backdrop-blur-sm border border-graphite/50 flex items-center justify-center group-hover:border-electric-cyan/40 group-hover:shadow-glow-cyan-sm transition-all duration-300">
+                    <step.icon className="h-7 w-7 text-electric-cyan group-hover:scale-110 transition-transform duration-300" />
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 pb-8">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="text-electric-cyan font-mono text-sm">{step.number}</span>
-                    <h3 className="text-xl md:text-2xl font-sora font-semibold text-white">
-                      {step.title}
-                    </h3>
+                  <div className="p-5 rounded-xl bg-midnight-blue/30 backdrop-blur-sm border border-graphite/30 group-hover:border-electric-cyan/30 group-hover:bg-midnight-blue/50 transition-all duration-300">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-electric-cyan font-mono text-sm font-semibold">{step.number}</span>
+                      <h3 className="text-xl md:text-2xl font-sora font-semibold text-white group-hover:text-electric-cyan transition-colors">
+                        {step.title}
+                      </h3>
+                    </div>
+                    <p className="text-steel max-w-2xl group-hover:text-silver/80 transition-colors">
+                      {step.description}
+                    </p>
                   </div>
-                  <p className="text-steel max-w-2xl">
-                    {step.description}
-                  </p>
                 </div>
               </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </Container>
     </section>
   );

@@ -35,20 +35,20 @@ export function MarketingNavbar() {
     <>
       <header
         className={cn(
-          "sticky top-0 z-50 transition-all duration-200 border-b border-graphite",
+          "sticky top-0 z-50 transition-all duration-300 border-b",
           isScrolled
-            ? "bg-deep-space/95 backdrop-blur-sm"
-            : "bg-deep-space"
+            ? "bg-deep-space/80 backdrop-blur-xl border-graphite/50 shadow-lg shadow-black/10"
+            : "bg-transparent border-transparent"
         )}
       >
         <Container>
           <nav className="flex h-16 items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-electric-cyan rounded-lg flex items-center justify-center">
+            <Link href="/" className="flex items-center space-x-2 group">
+              <div className="w-10 h-10 bg-electric-cyan rounded-lg flex items-center justify-center group-hover:shadow-glow-cyan-sm transition-all duration-300">
                 <span className="text-deep-space font-bold text-xl">Q</span>
               </div>
-              <span className="text-xl font-bold text-white">Quantum Insights</span>
+              <span className="text-xl font-bold text-white group-hover:text-electric-cyan transition-colors">Quantum Insights</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -107,14 +107,14 @@ export function MarketingNavbar() {
               {/* Ghost Button for Login */}
               <Link
                 href="/login"
-                className="hidden lg:block text-steel hover:text-white font-medium px-4 py-2 rounded-lg hover:bg-graphite transition-all duration-200"
+                className="hidden lg:block text-steel hover:text-white font-medium px-4 py-2 rounded-lg hover:bg-graphite/50 transition-all duration-200"
               >
                 Login
               </Link>
-              {/* Primary Button */}
+              {/* Primary Button with Glow */}
               <Link
                 href="/contact"
-                className="hidden lg:block bg-electric-cyan text-deep-space px-6 py-2.5 rounded-lg font-semibold transition-all duration-200 hover:bg-electric-cyan/90 hover:shadow-glow-cyan"
+                className="hidden lg:block bg-electric-cyan text-deep-space px-6 py-2.5 rounded-lg font-semibold transition-all duration-300 hover:shadow-glow-cyan hover:-translate-y-0.5 active:translate-y-0"
               >
                 Book a Call
               </Link>
@@ -122,7 +122,7 @@ export function MarketingNavbar() {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 text-steel hover:text-white hover:bg-graphite rounded-lg transition-colors duration-150"
+                className="lg:hidden p-2 text-steel hover:text-white hover:bg-graphite/50 rounded-lg transition-all duration-150"
               >
                 {isMobileMenuOpen ? (
                   <X className="h-6 w-6" />

@@ -339,6 +339,11 @@ export default async function AdminDashboardPage() {
     <div className="p-8">
       {/* Header */}
       <div className="mb-8">
+        <div className="flex items-center gap-2 text-sm text-steel mb-2">
+          <span className="text-white">Admin</span>
+          <span>/</span>
+          <span className="text-quantum-violet">Dashboard</span>
+        </div>
         <h1 className="text-2xl font-sora font-bold text-white">Admin Dashboard</h1>
         <p className="text-steel mt-1">Overview of your business operations</p>
       </div>
@@ -349,7 +354,7 @@ export default async function AdminDashboardPage() {
           {alerts.map((alert, idx) => (
             <div
               key={idx}
-              className={`flex items-center gap-3 rounded-lg p-4 ${
+              className={`flex items-center gap-3 rounded-xl p-4 backdrop-blur-sm ${
                 alert.type === "error"
                   ? "bg-energy-orange/10 border border-energy-orange/30"
                   : "bg-quantum-violet/10 border border-quantum-violet/30"
@@ -408,36 +413,36 @@ export default async function AdminDashboardPage() {
       <div className="mb-8">
         <h2 className="text-lg font-sora font-semibold text-white mb-4">Today&apos;s Activity</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-4">
+          <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-4 backdrop-blur-sm hover:border-electric-cyan/30 hover:-translate-y-0.5 hover:shadow-glow-cyan-sm transition-all duration-300">
             <div className="flex items-center gap-2 text-steel mb-2">
-              <Send className="h-4 w-4" />
+              <Send className="h-4 w-4 text-electric-cyan" />
               <span className="text-xs">Emails Sent</span>
             </div>
             <p className="text-xl font-sora font-bold text-white">
               {stats.todayStats.sent.toLocaleString()}
             </p>
           </div>
-          <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-4">
+          <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-4 backdrop-blur-sm hover:border-quantum-violet/30 hover:-translate-y-0.5 hover:shadow-glow-violet-lg transition-all duration-300">
             <div className="flex items-center gap-2 text-steel mb-2">
-              <Eye className="h-4 w-4" />
+              <Eye className="h-4 w-4 text-quantum-violet" />
               <span className="text-xs">Opens</span>
             </div>
             <p className="text-xl font-sora font-bold text-white">
               {stats.todayStats.opened.toLocaleString()}
             </p>
           </div>
-          <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-4">
+          <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-4 backdrop-blur-sm hover:border-neon-mint/30 hover:-translate-y-0.5 hover:shadow-glow-mint-lg transition-all duration-300">
             <div className="flex items-center gap-2 text-steel mb-2">
-              <Reply className="h-4 w-4" />
+              <Reply className="h-4 w-4 text-neon-mint" />
               <span className="text-xs">Replies</span>
             </div>
             <p className="text-xl font-sora font-bold text-white">
               {stats.todayStats.replied.toLocaleString()}
             </p>
           </div>
-          <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-4">
+          <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-4 backdrop-blur-sm hover:border-energy-orange/30 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(255,107,53,0.2)] transition-all duration-300">
             <div className="flex items-center gap-2 text-steel mb-2">
-              <UserPlus className="h-4 w-4" />
+              <UserPlus className="h-4 w-4 text-energy-orange" />
               <span className="text-xs">New Leads</span>
             </div>
             <p className="text-xl font-sora font-bold text-white">
@@ -453,7 +458,7 @@ export default async function AdminDashboardPage() {
           <RevenueChart data={mrrTrend} title="Revenue Trend (12 Months)" />
         </div>
 
-        <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
+        <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6 backdrop-blur-sm hover:border-quantum-violet/30 transition-all duration-300">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-sora font-semibold text-white">Engine Status</h3>
             <Link href="/admin/engines" className="text-sm text-electric-cyan hover:underline">
@@ -512,7 +517,7 @@ export default async function AdminDashboardPage() {
       {/* Two Column Layout: Recent Clients + Open Support */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Recent Clients */}
-        <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
+        <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6 backdrop-blur-sm hover:border-electric-cyan/30 transition-all duration-300">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-lg font-sora font-semibold text-white">Recent Clients</h2>
             <Link href="/admin/clients" className="text-sm text-electric-cyan hover:underline">
@@ -533,7 +538,7 @@ export default async function AdminDashboardPage() {
                   <Link
                     key={client.id}
                     href={`/admin/clients/${client.id}`}
-                    className="flex items-center justify-between p-3 rounded-lg bg-deep-space/50 border border-graphite/30 hover:border-graphite/50 transition-colors"
+                    className="flex items-center justify-between p-3 rounded-lg bg-deep-space/50 border border-graphite/30 hover:border-electric-cyan/30 hover:-translate-y-0.5 hover:shadow-card-hover transition-all duration-200"
                   >
                     <div className="flex items-center gap-3">
                       <div className="h-9 w-9 rounded-full bg-quantum-violet/20 border border-quantum-violet/30 flex items-center justify-center">
@@ -558,7 +563,7 @@ export default async function AdminDashboardPage() {
         </div>
 
         {/* Open Support Tickets */}
-        <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
+        <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6 backdrop-blur-sm hover:border-quantum-violet/30 transition-all duration-300">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-lg font-sora font-semibold text-white">Open Support</h2>
             <Link href="/admin/support" className="text-sm text-electric-cyan hover:underline">
@@ -579,7 +584,7 @@ export default async function AdminDashboardPage() {
                 <Link
                   key={conv.id}
                   href={`/admin/support?conversation=${conv.id}`}
-                  className="flex items-center justify-between p-3 rounded-lg bg-deep-space/50 border border-graphite/30 hover:border-graphite/50 transition-colors"
+                  className="flex items-center justify-between p-3 rounded-lg bg-deep-space/50 border border-graphite/30 hover:border-quantum-violet/30 hover:-translate-y-0.5 hover:shadow-card-hover transition-all duration-200"
                 >
                   <div className="flex items-center gap-3">
                     <div

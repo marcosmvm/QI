@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
@@ -35,6 +36,28 @@ import {
 } from "lucide-react";
 import { useState, useCallback } from "react";
 import { type Campaign } from "@/types";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.16, 1, 0.3, 1] as const,
+    },
+  },
+};
 
 // Enhanced mock data
 const mockCampaigns: Campaign[] = [
@@ -247,30 +270,39 @@ export default function CampaignsPage() {
     .reduce((sum, c) => sum + c.metrics.openRate, 0) / mockCampaigns.filter(c => c.metrics.sent > 0).length;
 
   return (
-    <div className="min-h-screen bg-deep-space p-8">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className="min-h-screen p-8"
+    >
       {/* Page Header */}
-      <div className="mb-8">
+      <motion.div variants={itemVariants} className="mb-8">
         <div className="flex items-center gap-2 text-sm text-steel mb-2">
           <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
           <span>/</span>
-          <span className="text-white">Campaigns</span>
+          <span className="text-electric-cyan">Campaigns</span>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-white">Manage and monitor your email campaigns</h1>
-      </div>
+        <h1 className="text-2xl font-sora font-bold text-white">Campaigns</h1>
+        <p className="text-steel mt-1">Manage and monitor your email campaigns</p>
+      </motion.div>
 
       <div className="space-y-6">
         {/* Quick Stats */}
-        <div className="grid grid-cols-5 gap-4">
+        <motion.div variants={itemVariants} className="grid grid-cols-5 gap-4">
           {[
             { label: "Total Campaigns", value: mockCampaigns.length.toString(), change: "+2", icon: Mail, color: "electric-cyan" },
             { label: "Active", value: activeCampaigns.toString(), icon: Play, color: "neon-mint" },
             { label: "Total Sent", value: totalSent.toLocaleString(), change: "+1.2k", icon: Users, color: "quantum-violet" },
             { label: "Total Replies", value: totalReplies.toLocaleString(), change: "+89", icon: MessageSquare, color: "energy-orange" },
             { label: "Avg Open Rate", value: `${avgOpenRate.toFixed(1)}%`, change: "+2.3%", icon: TrendingUp, color: "rose" },
-          ].map((stat) => (
-            <div
+          ].map((stat, index) => (
+            <motion.div
               key={stat.label}
-              className="rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-4 hover:border-electric-cyan/20 transition-all"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="rounded-xl border border-graphite/50 bg-midnight-blue/30 backdrop-blur-sm p-4 hover:border-electric-cyan/30 hover:-translate-y-0.5 hover:shadow-glow-cyan-sm transition-all duration-300"
             >
               <div className="flex items-center justify-between">
                 <div>
@@ -301,9 +333,9 @@ export default function CampaignsPage() {
                   {stat.change} this week
                 </p>
               )}
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Actions Bar */}
         <div className="flex items-center justify-between">
@@ -380,7 +412,7 @@ export default function CampaignsPage() {
         </div>
 
         {/* Campaigns Table */}
-        <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 overflow-hidden">
+        <motion.div variants={itemVariants} className="rounded-2xl border border-graphite/50 bg-midnight-blue/30 backdrop-blur-sm overflow-hidden hover:border-electric-cyan/20 transition-all duration-300">
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
@@ -516,26 +548,26 @@ export default function CampaignsPage() {
           </div>
 
           {/* Pagination */}
-          <div className="flex items-center justify-between px-6 py-4 border-t border-electric-cyan/10">
+          <div className="flex items-center justify-between px-6 py-4 border-t border-graphite/30">
             <p className="text-sm text-steel">
               Showing <span className="text-white font-medium">{filteredCampaigns.length}</span> of{" "}
               <span className="text-white font-medium">{campaigns.length}</span> campaigns
             </p>
             <div className="flex items-center gap-2">
-              <Button variant="outline" size="sm" className="border-electric-cyan/20 text-steel hover:text-white" disabled>
+              <Button variant="outline" size="sm" className="border-graphite/50 text-steel hover:text-white hover:border-electric-cyan/30" disabled>
                 Previous
               </Button>
-              <Button variant="outline" size="sm" className="border-electric-cyan/20 text-steel hover:text-white">
+              <Button variant="outline" size="sm" className="border-graphite/50 text-steel hover:text-white hover:border-electric-cyan/30">
                 Next
               </Button>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Campaign Performance Overview */}
-        <div className="grid grid-cols-2 gap-6">
+        <motion.div variants={itemVariants} className="grid grid-cols-2 gap-6">
           {/* Top Performing Campaigns */}
-          <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+          <div className="rounded-2xl border border-graphite/50 bg-midnight-blue/30 backdrop-blur-sm p-6 hover:border-neon-mint/30 hover:shadow-glow-mint-lg transition-all duration-300">
             <div className="flex items-center justify-between mb-6">
               <h3 className="font-semibold text-white">Top Performing</h3>
               <span className="text-xs text-steel">By reply rate</span>
@@ -573,7 +605,7 @@ export default function CampaignsPage() {
           </div>
 
           {/* Campaigns Needing Attention */}
-          <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+          <div className="rounded-2xl border border-graphite/50 bg-midnight-blue/30 backdrop-blur-sm p-6 hover:border-energy-orange/30 hover:shadow-[0_0_30px_rgba(255,107,53,0.15)] transition-all duration-300">
             <div className="flex items-center justify-between mb-6">
               <h3 className="font-semibold text-white">Needs Attention</h3>
               <span className="text-xs text-steel">Low performance</span>
@@ -612,8 +644,8 @@ export default function CampaignsPage() {
               )}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }
