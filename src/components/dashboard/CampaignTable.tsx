@@ -12,38 +12,38 @@ interface CampaignTableProps {
 const statusConfig = {
   draft: {
     label: "Draft",
-    dot: "bg-foreground-muted",
-    text: "text-foreground-muted",
+    dot: "bg-steel",
+    text: "text-steel",
   },
   active: {
     label: "Active",
-    dot: "bg-success",
-    text: "text-success",
+    dot: "bg-neon-mint",
+    text: "text-neon-mint",
   },
   paused: {
     label: "Paused",
-    dot: "bg-warning",
-    text: "text-warning",
+    dot: "bg-energy-orange",
+    text: "text-energy-orange",
   },
   completed: {
     label: "Completed",
-    dot: "bg-primary",
-    text: "text-primary",
+    dot: "bg-electric-cyan",
+    text: "text-electric-cyan",
   },
 };
 
 export function CampaignTable({ campaigns }: CampaignTableProps) {
   return (
-    <div className="rounded-lg border border-border bg-white">
+    <div className="rounded-xl border border-graphite bg-midnight-blue/60 backdrop-blur-sm">
       {/* Header */}
-      <div className="flex items-center justify-between px-6 py-4 border-b border-border">
+      <div className="flex items-center justify-between px-6 py-4 border-b border-graphite">
         <div>
-          <h3 className="text-base font-semibold text-foreground">Campaigns</h3>
-          <p className="text-xs text-foreground-muted">{campaigns.length} active</p>
+          <h3 className="text-base font-semibold text-white font-sora">Campaigns</h3>
+          <p className="text-xs text-steel">{campaigns.length} active</p>
         </div>
         <Link
           href="/dashboard/campaigns"
-          className="text-sm text-primary hover:underline"
+          className="text-sm text-electric-cyan hover:text-electric-cyan/80 transition-colors"
         >
           View all
         </Link>
@@ -52,39 +52,39 @@ export function CampaignTable({ campaigns }: CampaignTableProps) {
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead>
-            <tr className="border-b border-border">
-              <th className="px-6 py-3 text-left text-2xs font-medium uppercase tracking-wider text-foreground-muted">
+            <tr className="border-b border-graphite">
+              <th className="px-6 py-3 text-left text-2xs font-medium uppercase tracking-wider text-steel">
                 Campaign
               </th>
-              <th className="px-6 py-3 text-left text-2xs font-medium uppercase tracking-wider text-foreground-muted">
+              <th className="px-6 py-3 text-left text-2xs font-medium uppercase tracking-wider text-steel">
                 Status
               </th>
-              <th className="px-6 py-3 text-left text-2xs font-medium uppercase tracking-wider text-foreground-muted">
+              <th className="px-6 py-3 text-left text-2xs font-medium uppercase tracking-wider text-steel">
                 Sent
               </th>
-              <th className="px-6 py-3 text-left text-2xs font-medium uppercase tracking-wider text-foreground-muted">
+              <th className="px-6 py-3 text-left text-2xs font-medium uppercase tracking-wider text-steel">
                 Opens
               </th>
-              <th className="px-6 py-3 text-left text-2xs font-medium uppercase tracking-wider text-foreground-muted">
+              <th className="px-6 py-3 text-left text-2xs font-medium uppercase tracking-wider text-steel">
                 Replies
               </th>
-              <th className="px-6 py-3 text-left text-2xs font-medium uppercase tracking-wider text-foreground-muted">
+              <th className="px-6 py-3 text-left text-2xs font-medium uppercase tracking-wider text-steel">
                 Delivery
               </th>
-              <th className="px-6 py-3 text-right text-2xs font-medium uppercase tracking-wider text-foreground-muted">
+              <th className="px-6 py-3 text-right text-2xs font-medium uppercase tracking-wider text-steel">
                 Actions
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-border">
+          <tbody className="divide-y divide-graphite">
             {campaigns.map((campaign) => {
               const status = statusConfig[campaign.status];
               return (
-                <tr key={campaign.id} className="group">
+                <tr key={campaign.id} className="group hover:bg-deep-space/30 transition-colors">
                   <td className="px-6 py-4">
                     <Link
                       href={`/dashboard/campaigns/${campaign.id}`}
-                      className="text-sm font-medium text-foreground hover:text-primary"
+                      className="text-sm font-medium text-white hover:text-electric-cyan transition-colors"
                     >
                       {campaign.name}
                     </Link>
@@ -96,7 +96,7 @@ export function CampaignTable({ campaigns }: CampaignTableProps) {
                     </span>
                   </td>
                   <td className="px-6 py-4">
-                    <span className="text-sm text-foreground">
+                    <span className="text-sm text-silver">
                       {campaign.metrics.sent.toLocaleString()}
                     </span>
                   </td>
@@ -105,9 +105,9 @@ export function CampaignTable({ campaigns }: CampaignTableProps) {
                       className={cn(
                         "text-sm font-medium",
                         campaign.metrics.openRate >= 30
-                          ? "text-success"
+                          ? "text-neon-mint"
                           : campaign.metrics.openRate >= 15
-                          ? "text-warning"
+                          ? "text-energy-orange"
                           : "text-error"
                       )}
                     >
@@ -119,9 +119,9 @@ export function CampaignTable({ campaigns }: CampaignTableProps) {
                       className={cn(
                         "text-sm font-medium",
                         campaign.metrics.replyRate >= 3
-                          ? "text-success"
+                          ? "text-neon-mint"
                           : campaign.metrics.replyRate >= 1
-                          ? "text-warning"
+                          ? "text-energy-orange"
                           : "text-error"
                       )}
                     >
@@ -133,9 +133,9 @@ export function CampaignTable({ campaigns }: CampaignTableProps) {
                       className={cn(
                         "text-sm font-medium",
                         campaign.metrics.deliverabilityRate >= 90
-                          ? "text-success"
+                          ? "text-neon-mint"
                           : campaign.metrics.deliverabilityRate >= 85
-                          ? "text-warning"
+                          ? "text-energy-orange"
                           : "text-error"
                       )}
                     >
@@ -145,24 +145,24 @@ export function CampaignTable({ campaigns }: CampaignTableProps) {
                   <td className="px-6 py-4">
                     <div className="flex items-center justify-end gap-1">
                       {campaign.status === "active" ? (
-                        <button className="p-1.5 text-foreground-muted hover:text-foreground rounded">
+                        <button className="p-1.5 text-steel hover:text-white rounded transition-colors">
                           <Pause className="h-4 w-4" />
                         </button>
                       ) : campaign.status === "paused" || campaign.status === "draft" ? (
-                        <button className="p-1.5 text-foreground-muted hover:text-foreground rounded">
+                        <button className="p-1.5 text-steel hover:text-white rounded transition-colors">
                           <Play className="h-4 w-4" />
                         </button>
                       ) : null}
                       <Link
                         href={`/dashboard/campaigns/${campaign.id}`}
-                        className="p-1.5 text-foreground-muted hover:text-foreground rounded"
+                        className="p-1.5 text-steel hover:text-white rounded transition-colors"
                       >
                         <Eye className="h-4 w-4" />
                       </Link>
-                      <button className="p-1.5 text-foreground-muted hover:text-error rounded">
+                      <button className="p-1.5 text-steel hover:text-error rounded transition-colors">
                         <Trash2 className="h-4 w-4" />
                       </button>
-                      <button className="p-1.5 text-foreground-muted hover:text-foreground rounded">
+                      <button className="p-1.5 text-steel hover:text-white rounded transition-colors">
                         <MoreHorizontal className="h-4 w-4" />
                       </button>
                     </div>

@@ -21,74 +21,74 @@ const config: Config = {
         "steel": "#94A3B8",
         "graphite": "#334155",
 
-        // Minimal Design System - Backgrounds
+        // Dark Theme Semantic Mappings
         background: {
-          DEFAULT: "#FAFBFC",
-          secondary: "#FFFFFF",
-          hover: "#F4F5F7",
+          DEFAULT: "#0A1628",
+          secondary: "#1A2D4A",
+          hover: "#243B5C",
         },
 
-        // Text colors
+        // Text colors (light on dark)
         foreground: {
-          DEFAULT: "#111827",
-          secondary: "#6B7280",
-          muted: "#9CA3AF",
-          placeholder: "#D1D5DB",
+          DEFAULT: "#FFFFFF",
+          secondary: "#E8EDF5",
+          muted: "#94A3B8",
+          placeholder: "#64748B",
         },
 
         // Border colors
         border: {
-          DEFAULT: "#E5E7EB",
-          subtle: "#F3F4F6",
+          DEFAULT: "#334155",
+          subtle: "#1E3A5F",
         },
 
-        // Primary accent - Blue (used sparingly for actions)
+        // Primary accent - Electric Cyan
         primary: {
-          DEFAULT: "#3B82F6",
-          hover: "#2563EB",
-          light: "#EFF6FF",
-          foreground: "#FFFFFF",
+          DEFAULT: "#00D4FF",
+          hover: "#00B8D9",
+          light: "rgba(0, 212, 255, 0.1)",
+          foreground: "#0A1628",
         },
 
-        // Status colors (only for semantic meaning)
+        // Status colors (dark theme optimized)
         success: {
-          DEFAULT: "#10B981",
-          light: "#D1FAE5",
-          foreground: "#065F46",
+          DEFAULT: "#00FFB2",
+          light: "rgba(0, 255, 178, 0.1)",
+          foreground: "#0A1628",
         },
         warning: {
-          DEFAULT: "#F59E0B",
-          light: "#FEF3C7",
-          foreground: "#92400E",
+          DEFAULT: "#FF6B35",
+          light: "rgba(255, 107, 53, 0.1)",
+          foreground: "#0A1628",
         },
         error: {
           DEFAULT: "#EF4444",
-          light: "#FEE2E2",
-          foreground: "#991B1B",
+          light: "rgba(239, 68, 68, 0.1)",
+          foreground: "#FFFFFF",
         },
         info: {
-          DEFAULT: "#6366F1",
-          light: "#E0E7FF",
-          foreground: "#3730A3",
+          DEFAULT: "#7B61FF",
+          light: "rgba(123, 97, 255, 0.1)",
+          foreground: "#FFFFFF",
         },
 
-        // Card styling
+        // Card styling (dark glassmorphism)
         card: {
-          DEFAULT: "#FFFFFF",
-          foreground: "#111827",
+          DEFAULT: "rgba(26, 45, 74, 0.6)",
+          foreground: "#FFFFFF",
         },
 
         // Input styling
         input: {
-          DEFAULT: "#FFFFFF",
-          border: "#E5E7EB",
-          focus: "#3B82F6",
+          DEFAULT: "#1A2D4A",
+          border: "#334155",
+          focus: "#00D4FF",
         },
 
         // Muted backgrounds
         muted: {
-          DEFAULT: "#F4F5F7",
-          foreground: "#6B7280",
+          DEFAULT: "rgba(26, 45, 74, 0.4)",
+          foreground: "#94A3B8",
         },
 
         // Destructive actions
@@ -98,10 +98,11 @@ const config: Config = {
         },
 
         // Ring focus color
-        ring: "#3B82F6",
+        ring: "#00D4FF",
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
+        sora: ["Sora", "system-ui", "sans-serif"],
       },
       fontSize: {
         "2xs": ["11px", { lineHeight: "16px" }],
@@ -117,11 +118,16 @@ const config: Config = {
         normal: "400",
         medium: "500",
         semibold: "600",
+        bold: "700",
       },
       boxShadow: {
-        "xs": "0 1px 2px rgba(0, 0, 0, 0.04)",
-        "sm": "0 1px 3px rgba(0, 0, 0, 0.06)",
-        "card": "0 1px 3px rgba(0, 0, 0, 0.04)",
+        "xs": "0 1px 2px rgba(0, 0, 0, 0.2)",
+        "sm": "0 1px 3px rgba(0, 0, 0, 0.3)",
+        "card": "0 4px 6px rgba(0, 0, 0, 0.25)",
+        "glow-cyan": "0 0 20px rgba(0, 212, 255, 0.3)",
+        "glow-cyan-sm": "0 0 10px rgba(0, 212, 255, 0.2)",
+        "glow-violet": "0 0 20px rgba(123, 97, 255, 0.3)",
+        "glow-mint": "0 0 20px rgba(0, 255, 178, 0.3)",
       },
       borderRadius: {
         DEFAULT: "6px",
@@ -129,10 +135,14 @@ const config: Config = {
         md: "8px",
         lg: "12px",
         xl: "16px",
+        "2xl": "20px",
       },
       spacing: {
         "18": "4.5rem",
         "88": "22rem",
+      },
+      backdropBlur: {
+        xs: "2px",
       },
     },
   },

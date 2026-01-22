@@ -36,18 +36,18 @@ export function MarketingNavbar() {
         className={cn(
           "sticky top-0 z-50 transition-all duration-300 border-b",
           isScrolled
-            ? "bg-[#0a0f1c]/80 backdrop-blur-md border-[#1e293b]"
-            : "bg-[#0a0f1c]/80 backdrop-blur-md border-[#1e293b]"
+            ? "bg-deep-space/80 backdrop-blur-md border-graphite"
+            : "bg-deep-space/80 backdrop-blur-md border-graphite"
         )}
       >
         <Container>
           <nav className="flex h-16 items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#00d4ff] to-[#00d4ff]/60 rounded-lg flex items-center justify-center">
-                <span className="text-[#0a0f1c] font-bold text-xl font-sora">Q</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-electric-cyan to-electric-cyan/60 rounded-lg flex items-center justify-center">
+                <span className="text-deep-space font-bold text-xl font-sora">Q</span>
               </div>
-              <span className="text-xl font-bold text-[#f0f0f5] font-sora">Quantum Insights</span>
+              <span className="text-xl font-bold text-white font-sora">Quantum Insights</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -64,8 +64,8 @@ export function MarketingNavbar() {
                       className={cn(
                         "flex items-center gap-1 text-sm font-medium transition-colors",
                         activeDropdown === item.label
-                          ? "text-[#00d4ff]"
-                          : "text-[#9ca3af] hover:text-[#f0f0f5]"
+                          ? "text-electric-cyan"
+                          : "text-steel hover:text-white"
                       )}
                     >
                       {item.label}
@@ -82,8 +82,8 @@ export function MarketingNavbar() {
                       className={cn(
                         "text-sm font-medium transition-colors",
                         pathname === item.href || pathname.startsWith(item.href + "/")
-                          ? "text-[#00d4ff]"
-                          : "text-[#9ca3af] hover:text-[#f0f0f5]"
+                          ? "text-electric-cyan"
+                          : "text-steel hover:text-white"
                       )}
                     >
                       {item.label}
@@ -105,13 +105,13 @@ export function MarketingNavbar() {
             <div className="flex items-center gap-4">
               <Link
                 href="/login"
-                className="hidden lg:block text-[#9ca3af] hover:text-[#00d4ff] font-medium transition-colors"
+                className="hidden lg:block text-steel hover:text-electric-cyan font-medium transition-colors"
               >
                 Login
               </Link>
               <Link
                 href="/contact"
-                className="hidden lg:block bg-[#00d4ff] text-[#0a0f1c] px-6 py-2.5 rounded-lg font-semibold hover:shadow-lg hover:shadow-[#00d4ff]/30 transition-all"
+                className="hidden lg:block bg-electric-cyan text-deep-space px-6 py-2.5 rounded-lg font-semibold btn-glow transition-all"
               >
                 Book a Call
               </Link>
@@ -119,7 +119,7 @@ export function MarketingNavbar() {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 text-[#9ca3af] hover:text-[#f0f0f5] rounded-lg transition-colors"
+                className="lg:hidden p-2 text-steel hover:text-white rounded-lg transition-colors"
               >
                 {isMobileMenuOpen ? (
                   <X className="h-6 w-6" />

@@ -1,10 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
+/* CSS Custom Properties for Brand Colors */
+:root {
+  --color-deep-space: #0A1628;
+  --color-electric-cyan: #00D4FF;
+  --color-quantum-violet: #7B61FF;
+  --color-midnight-blue: #1A2D4A;
+  --color-neon-mint: #00FFB2;
+  --color-energy-orange: #FF6B35;
+  --color-silver: #E8EDF5;
+  --color-steel: #94A3B8;
+  --color-graphite: #334155;
+}
+
 /* Dark Theme Base Styles */
 body {
-  background-color: #0a0f1c;
-  color: #f0f0f5;
+  background-color: var(--color-deep-space);
+  color: var(--color-silver);
   font-family: "Inter", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -13,24 +26,38 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Sora", system-ui, sans-serif;
   font-weight: 600;
-  color: #f0f0f5;
+  color: #FFFFFF;
 }
 
 /* Focus States */
 :focus-visible {
-  outline: 2px solid #00d4ff;
+  outline: 2px solid var(--color-electric-cyan);
   outline-offset: 2px;
 }
 
 /* Selection */
 ::selection {
   background: rgba(0, 212, 255, 0.2);
-  color: #f0f0f5;
+  color: #FFFFFF;
 }
 
 /* Custom Scrollbar - Dark Theme */
 ::-webkit-scrollbar {
-  display: none;
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-deep-space);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-graphite);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-steel);
 }
 
 /* Font utilities */
@@ -40,4 +67,119 @@ h1, h2, h3, h4, h5, h6 {
 
 .font-inter {
   font-family: "Inter", system-ui, sans-serif;
+}
+
+/* Glassmorphism Card */
+.glass-card {
+  background: rgba(26, 45, 74, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-graphite);
+  border-radius: 12px;
+}
+
+.glass-card-hover:hover {
+  border-color: rgba(0, 212, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+}
+
+/* Glow Orbs for ambient backgrounds */
+.glow-orb-cyan {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.glow-orb-violet {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(123, 97, 255, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.glow-orb-mint {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0, 255, 178, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Gradient Text */
+.gradient-text-cyan-violet {
+  background: linear-gradient(135deg, var(--color-electric-cyan) 0%, var(--color-quantum-violet) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-cyan-mint {
+  background: linear-gradient(135deg, var(--color-electric-cyan) 0%, var(--color-neon-mint) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Button Glow Effect */
+.btn-glow {
+  transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-glow-violet:hover {
+  box-shadow: 0 0 20px rgba(123, 97, 255, 0.4);
+}
+
+.btn-glow-mint:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 178, 0.4);
+}
+
+/* Grid Pattern Background */
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(51, 65, 85, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(51, 65, 85, 0.3) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Gradient Borders */
+.border-gradient-cyan {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--color-midnight-blue), var(--color-midnight-blue)) padding-box,
+    linear-gradient(135deg, var(--color-electric-cyan), var(--color-quantum-violet)) border-box;
+}
+
+/* Status Pulse Animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Hover Lift Effect */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }

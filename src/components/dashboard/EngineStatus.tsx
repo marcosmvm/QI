@@ -27,12 +27,12 @@ const engineConfig: Record<EngineName, { icon: typeof Shield; description: strin
 
 const statusColors = {
   operational: {
-    dot: "bg-success",
-    text: "text-success",
+    dot: "bg-neon-mint",
+    text: "text-neon-mint",
   },
   degraded: {
-    dot: "bg-warning",
-    text: "text-warning",
+    dot: "bg-energy-orange",
+    text: "text-energy-orange",
   },
   offline: {
     dot: "bg-error",
@@ -48,11 +48,11 @@ export function EngineStatus({ engines }: EngineStatusProps) {
   const operationalCount = engines.filter(e => e.status === "operational").length;
 
   return (
-    <div className="rounded-lg border border-border bg-white p-6">
+    <div className="rounded-xl border border-graphite bg-midnight-blue/60 backdrop-blur-sm p-6">
       {/* Header */}
       <div className="mb-4">
-        <h3 className="text-base font-semibold text-foreground">AI Engines</h3>
-        <p className="text-xs text-foreground-muted">
+        <h3 className="text-base font-semibold text-white font-sora">AI Engines</h3>
+        <p className="text-xs text-steel">
           {operationalCount}/{engines.length} operational
         </p>
       </div>
@@ -69,10 +69,10 @@ export function EngineStatus({ engines }: EngineStatusProps) {
               key={engine.name}
               className="flex items-center gap-3"
             >
-              <Icon className="h-4 w-4 text-foreground-muted" />
+              <Icon className="h-4 w-4 text-electric-cyan" />
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium text-foreground">{engine.name}</p>
-                <p className="text-xs text-foreground-muted">{config.description}</p>
+                <p className="text-sm font-medium text-white">{engine.name}</p>
+                <p className="text-xs text-steel">{config.description}</p>
               </div>
               <span className={cn("h-2 w-2 rounded-full", status.dot)} />
             </div>

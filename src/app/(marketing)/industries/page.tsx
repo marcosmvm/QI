@@ -9,16 +9,16 @@ import { industries, getFeaturedIndustries } from "@/lib/content/industries";
 
 // Card-specific color mapping for visual variety
 const cardColors: Record<string, { bg: string; text: string; iconBg: string }> = {
-  saas: { bg: "bg-[#00d4ff]/20", text: "text-[#00d4ff]", iconBg: "bg-[#0a0f1c]/50" },
-  finance: { bg: "bg-[#10b981]/20", text: "text-[#10b981]", iconBg: "bg-[#0a0f1c]/50" },
-  healthcare: { bg: "bg-[#f43f5e]/20", text: "text-[#f43f5e]", iconBg: "bg-[#0a0f1c]/50" },
-  martech: { bg: "bg-[#7B61FF]/20", text: "text-[#7B61FF]", iconBg: "bg-[#0a0f1c]/50" },
-  cybersecurity: { bg: "bg-[#FF6B35]/20", text: "text-[#FF6B35]", iconBg: "bg-[#0a0f1c]/50" },
-  "hr-tech": { bg: "bg-[#0ea5e9]/20", text: "text-[#0ea5e9]", iconBg: "bg-[#0a0f1c]/50" },
+  saas: { bg: "bg-electric-cyan/20", text: "text-electric-cyan", iconBg: "bg-deep-space/50" },
+  finance: { bg: "bg-neon-mint/20", text: "text-neon-mint", iconBg: "bg-deep-space/50" },
+  healthcare: { bg: "bg-rose-500/20", text: "text-rose-500", iconBg: "bg-deep-space/50" },
+  martech: { bg: "bg-quantum-violet/20", text: "text-quantum-violet", iconBg: "bg-deep-space/50" },
+  cybersecurity: { bg: "bg-energy-orange/20", text: "text-energy-orange", iconBg: "bg-deep-space/50" },
+  "hr-tech": { bg: "bg-sky-500/20", text: "text-sky-500", iconBg: "bg-deep-space/50" },
 };
 
 // Default colors for industries not in the map
-const defaultCardColor = { bg: "bg-[#00d4ff]/20", text: "text-[#00d4ff]", iconBg: "bg-[#0a0f1c]/50" };
+const defaultCardColor = { bg: "bg-electric-cyan/20", text: "text-electric-cyan", iconBg: "bg-deep-space/50" };
 
 function getCardColor(id: string) {
   return cardColors[id] || defaultCardColor;
@@ -27,8 +27,8 @@ function getCardColor(id: string) {
 // Trust Badge Component
 function TrustBadge({ label }: { label: string }) {
   return (
-    <div className="bg-[#111827] border border-[#1e293b] rounded-lg px-6 py-3">
-      <span className="text-[#9ca3af] text-sm">{label}</span>
+    <div className="bg-midnight-blue border border-graphite rounded-lg px-6 py-3">
+      <span className="text-steel text-sm">{label}</span>
     </div>
   );
 }
@@ -41,7 +41,7 @@ export default function IndustriesPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="py-24 lg:py-32 bg-[#0a0f1c]">
+      <section className="py-24 lg:py-32 bg-deep-space">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -50,12 +50,12 @@ export default function IndustriesPage() {
             className="text-center max-w-4xl mx-auto"
           >
             {/* Main Headline */}
-            <h1 className="text-5xl md:text-6xl font-bold text-[#f0f0f5] mb-6 font-sora">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 font-sora">
               Industries We Serve
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg md:text-xl text-[#9ca3af] max-w-3xl mx-auto mb-12">
+            <p className="text-lg md:text-xl text-steel max-w-3xl mx-auto mb-12">
               We understand the unique challenges of B2B sales across verticals. Our
               AI-powered cold email campaigns are tailored to each industry&apos;s specific
               buyer personas and decision-making processes.
@@ -77,7 +77,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* Industries Grid */}
-      <section id="industries" className="py-20 bg-[#0a0f1c]">
+      <section id="industries" className="py-20 bg-deep-space">
         <Container>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {displayedIndustries.map((industry, index) => {
@@ -93,17 +93,17 @@ export default function IndustriesPage() {
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                 >
                   <Link href={`/industries/${industry.id}`} className="block group h-full">
-                    <div className="relative h-full p-8 rounded-2xl border border-[#1e293b] bg-[#111827] hover:border-[#1e293b]/60 transition-all duration-300">
+                    <div className="relative h-full p-8 rounded-2xl border border-graphite bg-midnight-blue hover:border-electric-cyan/30 hover:shadow-glow-cyan-sm transition-all duration-300">
                       {/* Icon and Arrow Row */}
                       <div className="flex justify-between items-start mb-6">
                         <div className={`w-12 h-12 ${colors.iconBg} rounded-lg flex items-center justify-center`}>
                           <Icon className={`h-5 w-5 ${colors.text}`} />
                         </div>
-                        <ArrowRight className="h-5 w-5 text-[#9ca3af] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:text-[#00d4ff] transition-all duration-300" />
+                        <ArrowRight className="h-5 w-5 text-steel opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:text-electric-cyan transition-all duration-300" />
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-xl font-bold text-[#f0f0f5] mb-1 font-sora group-hover:text-[#00d4ff] transition-colors">
+                      <h3 className="text-xl font-bold text-white mb-1 font-sora group-hover:text-electric-cyan transition-colors">
                         {industry.name}
                       </h3>
 
@@ -113,7 +113,7 @@ export default function IndustriesPage() {
                       </p>
 
                       {/* Description */}
-                      <p className="text-[#9ca3af] text-sm leading-relaxed">
+                      <p className="text-steel text-sm leading-relaxed">
                         {industry.shortDescription}
                       </p>
                     </div>
@@ -133,7 +133,7 @@ export default function IndustriesPage() {
             >
               <button
                 onClick={() => setShowAll(true)}
-                className="border border-[#1e293b] text-[#f0f0f5] px-8 py-4 rounded-lg font-semibold hover:border-[#00d4ff] hover:text-[#00d4ff] transition-all inline-flex items-center gap-2"
+                className="border border-graphite text-white px-8 py-4 rounded-lg font-semibold hover:border-electric-cyan hover:text-electric-cyan transition-all inline-flex items-center gap-2"
               >
                 View All {industries.length} Industries
                 <ArrowRight className="h-5 w-5" />
@@ -144,7 +144,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 lg:py-32 bg-[#0a0f1c]">
+      <section className="py-24 lg:py-32 bg-deep-space">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -153,22 +153,22 @@ export default function IndustriesPage() {
             transition={{ duration: 0.5 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#f0f0f5] mb-6 font-sora">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-sora">
               Ready to Dominate Your Industry?
             </h2>
-            <p className="text-xl text-[#9ca3af] mb-10">
+            <p className="text-xl text-steel mb-10">
               Join hundreds of B2B companies using our AI-powered cold email system to book more qualified meetings and accelerate growth.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link
                 href="/contact"
-                className="bg-[#00d4ff] text-[#0a0f1c] px-8 py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-[#00d4ff]/30 transition-all"
+                className="bg-electric-cyan text-deep-space px-8 py-4 rounded-lg font-semibold btn-glow transition-all"
               >
                 Book a Strategy Call
               </Link>
               <Link
                 href="/case-studies"
-                className="border border-[#1e293b] text-[#f0f0f5] px-8 py-4 rounded-lg font-semibold hover:border-[#00d4ff] transition-all"
+                className="border border-graphite text-white px-8 py-4 rounded-lg font-semibold hover:border-electric-cyan transition-all"
               >
                 View Case Studies
               </Link>

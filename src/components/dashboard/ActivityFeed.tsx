@@ -64,39 +64,39 @@ export function ActivityFeed({
   const displayedActivities = activities.slice(0, maxItems);
 
   return (
-    <div className={cn("rounded-lg border border-border bg-white", className)}>
+    <div className={cn("rounded-xl border border-graphite bg-midnight-blue/60 backdrop-blur-sm", className)}>
       {/* Header */}
-      <div className="flex items-center justify-between px-6 py-4 border-b border-border">
+      <div className="flex items-center justify-between px-6 py-4 border-b border-graphite">
         <div>
-          <h3 className="text-base font-semibold text-foreground">{title}</h3>
-          <p className="text-xs text-foreground-muted">{activities.length} activities</p>
+          <h3 className="text-base font-semibold text-white font-sora">{title}</h3>
+          <p className="text-xs text-steel">{activities.length} activities</p>
         </div>
         <Link
           href="/dashboard/analytics"
-          className="text-sm text-primary hover:underline"
+          className="text-sm text-electric-cyan hover:text-electric-cyan/80 transition-colors"
         >
           View all
         </Link>
       </div>
 
       {/* Activity List */}
-      <div className="divide-y divide-border">
+      <div className="divide-y divide-graphite">
         {displayedActivities.map((activity) => {
           const config = activityConfig[activity.type];
           const Icon = config.icon;
 
           const content = (
             <div className="flex items-start gap-3 px-6 py-4">
-              <Icon className="h-4 w-4 text-foreground-muted mt-0.5 shrink-0" />
+              <Icon className="h-4 w-4 text-electric-cyan mt-0.5 shrink-0" />
               <div className="flex-1 min-w-0">
-                <p className="text-sm text-foreground">{activity.title}</p>
+                <p className="text-sm text-white">{activity.title}</p>
                 {activity.description && (
-                  <p className="text-xs text-foreground-muted mt-0.5 line-clamp-1">
+                  <p className="text-xs text-steel mt-0.5 line-clamp-1">
                     {activity.description}
                   </p>
                 )}
               </div>
-              <span className="text-xs text-foreground-muted whitespace-nowrap">
+              <span className="text-xs text-steel whitespace-nowrap">
                 {activity.timestamp}
               </span>
             </div>
@@ -104,7 +104,7 @@ export function ActivityFeed({
 
           if (activity.link) {
             return (
-              <Link key={activity.id} href={activity.link} className="block hover:bg-muted/50">
+              <Link key={activity.id} href={activity.link} className="block hover:bg-deep-space/30 transition-colors">
                 {content}
               </Link>
             );
@@ -116,8 +116,8 @@ export function ActivityFeed({
 
       {activities.length === 0 && (
         <div className="px-6 py-12 text-center">
-          <Activity className="h-8 w-8 text-foreground-muted mx-auto mb-2" />
-          <p className="text-sm text-foreground-muted">No recent activity</p>
+          <Activity className="h-8 w-8 text-steel mx-auto mb-2" />
+          <p className="text-sm text-steel">No recent activity</p>
         </div>
       )}
     </div>
