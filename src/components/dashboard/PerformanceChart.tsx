@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import {
   LineChart,
@@ -8,38 +8,62 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-} from "recharts";
+  Area,
+  AreaChart,
+} from "recharts"
+import { chartColors, chartTheme, gridProps, xAxisProps, yAxisProps } from "@/lib/chart-config"
+
+// ============================================
+// QUANTUM INSIGHTS - ENHANCED PERFORMANCE CHART
+// Brand Board v1.0 - Dark Theme
+// ============================================
 
 interface DataPoint {
-  date: string;
-  sent: number;
-  opened: number;
-  replied: number;
+  date: string
+  sent: number
+  opened: number
+  replied: number
 }
 
 interface PerformanceChartProps {
-  data: DataPoint[];
-  title?: string;
+  data: DataPoint[]
+  title?: string
+  variant?: 'line' | 'area'
 }
 
-export function PerformanceChart({ data, title = "Performance" }: PerformanceChartProps) {
+export function PerformanceChart({
+  data,
+  title = "Performance",
+  variant = 'line'
+}: PerformanceChartProps) {
+  const ChartComponent = variant === 'area' ? AreaChart : LineChart
+
   return (
-    <div className="rounded-lg border border-border bg-white p-6">
+    <div className="chart-container">
       {/* Header */}
       <div className="mb-6">
-        <h3 className="text-base font-semibold text-foreground">{title}</h3>
-        <div className="mt-2 flex items-center gap-6">
+        <h3 className="text-base font-semibold text-white">{title}</h3>
+        <div className="mt-3 flex items-center gap-6">
           <div className="flex items-center gap-2">
-            <span className="h-0.5 w-4 bg-primary rounded" />
-            <span className="text-xs text-foreground-muted">Sent</span>
+            <span
+              className="h-0.5 w-4 rounded"
+              style={{ backgroundColor: chartColors.primary }}
+            />
+            <span className="text-xs text-steel">Sent</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="h-0.5 w-4 bg-foreground-muted rounded" />
-            <span className="text-xs text-foreground-muted">Opened</span>
+            <span
+              className="h-0.5 w-4 rounded"
+              style={{ backgroundColor: chartColors.secondary }}
+            />
+            <span className="text-xs text-steel">Opened</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="h-0.5 w-4 bg-success rounded" />
-            <span className="text-xs text-foreground-muted">Replied</span>
+            <span
+              className="h-0.5 w-4 rounded"
+              style={{ backgroundColor: chartColors.tertiary }}
+            />
+            <span className="text-xs text-steel">Replied</span>
           </div>
         </div>
       </div>
@@ -47,62 +71,104 @@ export function PerformanceChart({ data, title = "Performance" }: PerformanceCha
       {/* Chart */}
       <div className="h-64">
         <ResponsiveContainer width="100%" height="100%">
-          <LineChart
+          <ChartComponent
             data={data}
             margin={{ top: 5, right: 5, left: -20, bottom: 0 }}
           >
-            <CartesianGrid stroke="#F3F4F6" strokeDasharray="0" vertical={false} />
+            <defs>
+              <linearGradient id="sentGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor={chartColors.primary} stopOpacity={0.3} />
+                <stop offset="100%" stopColor={chartColors.primary} stopOpacity={0} />
+              </linearGradient>
+              <linearGradient id="openedGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor={chartColors.secondary} stopOpacity={0.3} />
+                <stop offset="100%" stopColor={chartColors.secondary} stopOpacity={0} />
+              </linearGradient>
+              <linearGradient id="repliedGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor={chartColors.tertiary} stopOpacity={0.3} />
+                <stop offset="100%" stopColor={chartColors.tertiary} stopOpacity={0} />
+              </linearGradient>
+            </defs>
+            <CartesianGrid {...gridProps} />
             <XAxis
               dataKey="date"
-              tick={{ fill: "#9CA3AF", fontSize: 11 }}
+              {...xAxisProps}
               tickLine={false}
               axisLine={false}
               dy={10}
             />
             <YAxis
-              tick={{ fill: "#9CA3AF", fontSize: 11 }}
+              {...yAxisProps}
               tickLine={false}
               axisLine={false}
               tickFormatter={(value) => value.toLocaleString()}
             />
             <Tooltip
-              contentStyle={{
-                backgroundColor: "#FFFFFF",
-                border: "1px solid #E5E7EB",
-                borderRadius: "8px",
-                boxShadow: "0 1px 3px rgba(0, 0, 0, 0.06)",
-                padding: "12px",
-              }}
-              labelStyle={{ color: "#111827", fontWeight: 500, marginBottom: "8px", fontSize: "13px" }}
-              itemStyle={{ color: "#6B7280", fontSize: "12px", padding: "2px 0" }}
+              contentStyle={chartTheme.tooltip.contentStyle}
+              labelStyle={chartTheme.tooltip.labelStyle}
+              itemStyle={chartTheme.tooltip.itemStyle}
             />
-            <Line
-              type="monotone"
-              dataKey="sent"
-              name="Sent"
-              stroke="#3B82F6"
-              strokeWidth={1.5}
-              dot={false}
-            />
-            <Line
-              type="monotone"
-              dataKey="opened"
-              name="Opened"
-              stroke="#9CA3AF"
-              strokeWidth={1.5}
-              dot={false}
-            />
-            <Line
-              type="monotone"
-              dataKey="replied"
-              name="Replied"
-              stroke="#10B981"
-              strokeWidth={1.5}
-              dot={false}
-            />
-          </LineChart>
+            {variant === 'area' ? (
+              <>
+                <Area
+                  type="monotone"
+                  dataKey="sent"
+                  name="Sent"
+                  stroke={chartColors.primary}
+                  fill="url(#sentGradient)"
+                  strokeWidth={2}
+                />
+                <Area
+                  type="monotone"
+                  dataKey="opened"
+                  name="Opened"
+                  stroke={chartColors.secondary}
+                  fill="url(#openedGradient)"
+                  strokeWidth={2}
+                />
+                <Area
+                  type="monotone"
+                  dataKey="replied"
+                  name="Replied"
+                  stroke={chartColors.tertiary}
+                  fill="url(#repliedGradient)"
+                  strokeWidth={2}
+                />
+              </>
+            ) : (
+              <>
+                <Line
+                  type="monotone"
+                  dataKey="sent"
+                  name="Sent"
+                  stroke={chartColors.primary}
+                  strokeWidth={2}
+                  dot={false}
+                  activeDot={{ r: 4, fill: chartColors.primary }}
+                />
+                <Line
+                  type="monotone"
+                  dataKey="opened"
+                  name="Opened"
+                  stroke={chartColors.secondary}
+                  strokeWidth={2}
+                  dot={false}
+                  activeDot={{ r: 4, fill: chartColors.secondary }}
+                />
+                <Line
+                  type="monotone"
+                  dataKey="replied"
+                  name="Replied"
+                  stroke={chartColors.tertiary}
+                  strokeWidth={2}
+                  dot={false}
+                  activeDot={{ r: 4, fill: chartColors.tertiary }}
+                />
+              </>
+            )}
+          </ChartComponent>
         </ResponsiveContainer>
       </div>
     </div>
-  );
+  )
 }
