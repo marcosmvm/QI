@@ -92,12 +92,15 @@ export default function IndustriesPage() {
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                 >
                   <Link href={`/industries/${industry.id}`} className="block group h-full">
-                    {/* Brand Board v1.0 - Interactive Card Pattern */}
-                    <div className="relative h-full p-6 rounded-xl border border-graphite bg-midnight-blue transition-all duration-200 hover:border-electric-cyan/50 hover:bg-graphite">
+                    {/* Brand Board v1.0 - Interactive Card Pattern with Enhanced Hover */}
+                    <div className="relative h-full p-6 rounded-xl border border-graphite bg-midnight-blue transition-all duration-200 hover:border-electric-cyan/50 hover:bg-graphite hover:-translate-y-1 hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.3),0_0_20px_rgba(0,212,255,0.1)] overflow-hidden">
+                      {/* Top accent line on hover */}
+                      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-electric-cyan to-quantum-violet opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+
                       {/* Icon and Arrow Row */}
                       <div className="flex justify-between items-start mb-6">
-                        <div className={`w-12 h-12 ${colors.iconBg} rounded-lg flex items-center justify-center`}>
-                          <Icon className={`h-5 w-5 ${colors.text}`} />
+                        <div className={`w-12 h-12 ${colors.iconBg} rounded-lg flex items-center justify-center transition-all duration-200 group-hover:bg-electric-cyan/10 group-hover:border group-hover:border-electric-cyan/30`}>
+                          <Icon className={`h-5 w-5 ${colors.text} transition-all duration-200 group-hover:text-electric-cyan group-hover:scale-110`} />
                         </div>
                         <ArrowRight className="h-5 w-5 text-steel opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:text-electric-cyan transition-all duration-200" />
                       </div>

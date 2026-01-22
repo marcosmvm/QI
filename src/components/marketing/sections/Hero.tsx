@@ -12,15 +12,40 @@ export function Hero() {
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-deep-space to-midnight-blue" />
 
-      {/* Subtle Ambient Glow */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-electric-cyan/8 rounded-full blur-[120px]" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-quantum-violet/8 rounded-full blur-[120px]" />
+      {/* Enhanced Ambient Glow Orbs - More visible */}
+      <motion.div
+        className="absolute -top-20 -left-20 w-[600px] h-[600px] bg-electric-cyan/12 rounded-full blur-[100px] pointer-events-none"
+        animate={{
+          scale: [1, 1.1, 1],
+          opacity: [0.12, 0.18, 0.12]
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
+      <motion.div
+        className="absolute -bottom-40 -right-20 w-[500px] h-[500px] bg-quantum-violet/10 rounded-full blur-[100px] pointer-events-none"
+        animate={{
+          scale: [1, 1.15, 1],
+          opacity: [0.1, 0.16, 0.1]
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 2
+        }}
+      />
+      {/* Secondary smaller orb for depth */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-electric-cyan/5 rounded-full blur-[80px] pointer-events-none" />
 
-      {/* Grid Pattern */}
+      {/* Grid Pattern - Slightly more visible */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.04]"
         style={{
-          backgroundImage: `linear-gradient(rgba(0,212,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.4) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(rgba(0,212,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.5) 1px, transparent 1px)`,
           backgroundSize: '60px 60px'
         }}
       />
@@ -71,7 +96,7 @@ export function Hero() {
             <Link href="/contact">
               <Button
                 size="lg"
-                className="bg-electric-cyan hover:bg-electric-cyan/90 text-deep-space font-semibold px-8 py-6 text-lg shadow-lg shadow-electric-cyan/20 hover:shadow-electric-cyan/30 transition-all"
+                className="bg-electric-cyan hover:bg-electric-cyan/90 text-deep-space font-semibold px-8 py-6 text-lg shadow-lg shadow-electric-cyan/25 hover:shadow-[0_0_30px_rgba(0,212,255,0.4)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
               >
                 Book a Strategy Call
                 <ArrowRight className="ml-2 h-5 w-5" />

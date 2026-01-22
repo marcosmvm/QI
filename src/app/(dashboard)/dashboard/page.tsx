@@ -337,7 +337,7 @@ export default async function DashboardPage() {
                 <Link
                   key={campaign.id}
                   href={`/dashboard/campaigns/${campaign.id}`}
-                  className="flex items-center justify-between p-3 rounded-lg bg-deep-space/50 border border-graphite/30 hover:border-electric-cyan/30 transition-colors"
+                  className="flex items-center justify-between p-3 rounded-lg bg-deep-space/50 border border-graphite/30 hover:border-electric-cyan/30 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.2)] transition-all duration-200"
                 >
                   <div className="flex items-center gap-3">
                     <div className={`h-2 w-2 rounded-full ${
@@ -392,7 +392,7 @@ export default async function DashboardPage() {
                 <Link
                   key={lead.id}
                   href={`/dashboard/leads/${lead.id}`}
-                  className="flex items-center justify-between p-3 rounded-lg bg-deep-space/50 border border-graphite/30 hover:border-electric-cyan/30 transition-colors"
+                  className="flex items-center justify-between p-3 rounded-lg bg-deep-space/50 border border-graphite/30 hover:border-electric-cyan/30 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.2)] transition-all duration-200"
                 >
                   <div className="flex items-center gap-3">
                     <div className="h-9 w-9 rounded-full bg-quantum-violet/20 border border-quantum-violet/30 flex items-center justify-center">
@@ -427,37 +427,37 @@ export default async function DashboardPage() {
       <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
         <Link
           href="/dashboard/reports"
-          className="flex items-center gap-4 p-4 bg-midnight-blue/30 border border-graphite/50 rounded-xl hover:border-electric-cyan/30 transition-colors"
+          className="flex items-center gap-4 p-4 bg-midnight-blue/30 border border-graphite/50 rounded-xl hover:border-electric-cyan/30 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_-5px_rgba(0,0,0,0.3),0_0_15px_rgba(0,212,255,0.08)] transition-all duration-200 group"
         >
-          <div className="h-10 w-10 rounded-lg bg-electric-cyan/10 border border-electric-cyan/30 flex items-center justify-center">
+          <div className="h-10 w-10 rounded-lg bg-electric-cyan/10 border border-electric-cyan/30 flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
             <Calendar className="h-5 w-5 text-electric-cyan" />
           </div>
           <div>
-            <p className="text-sm font-medium text-white">Weekly Reports</p>
+            <p className="text-sm font-medium text-white group-hover:text-electric-cyan transition-colors">Weekly Reports</p>
             <p className="text-xs text-steel">View your performance reports</p>
           </div>
         </Link>
         <Link
           href="/dashboard/support"
-          className="flex items-center gap-4 p-4 bg-midnight-blue/30 border border-graphite/50 rounded-xl hover:border-electric-cyan/30 transition-colors"
+          className="flex items-center gap-4 p-4 bg-midnight-blue/30 border border-graphite/50 rounded-xl hover:border-quantum-violet/30 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_-5px_rgba(0,0,0,0.3),0_0_15px_rgba(123,97,255,0.08)] transition-all duration-200 group"
         >
-          <div className="h-10 w-10 rounded-lg bg-quantum-violet/10 border border-quantum-violet/30 flex items-center justify-center">
+          <div className="h-10 w-10 rounded-lg bg-quantum-violet/10 border border-quantum-violet/30 flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
             <Reply className="h-5 w-5 text-quantum-violet" />
           </div>
           <div>
-            <p className="text-sm font-medium text-white">Contact Support</p>
+            <p className="text-sm font-medium text-white group-hover:text-quantum-violet transition-colors">Contact Support</p>
             <p className="text-xs text-steel">Chat with our team</p>
           </div>
         </Link>
         <Link
           href="/dashboard/analytics"
-          className="flex items-center gap-4 p-4 bg-midnight-blue/30 border border-graphite/50 rounded-xl hover:border-electric-cyan/30 transition-colors"
+          className="flex items-center gap-4 p-4 bg-midnight-blue/30 border border-graphite/50 rounded-xl hover:border-neon-mint/30 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_-5px_rgba(0,0,0,0.3),0_0_15px_rgba(0,255,178,0.08)] transition-all duration-200 group"
         >
-          <div className="h-10 w-10 rounded-lg bg-neon-mint/10 border border-neon-mint/30 flex items-center justify-center">
+          <div className="h-10 w-10 rounded-lg bg-neon-mint/10 border border-neon-mint/30 flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
             <TrendingUp className="h-5 w-5 text-neon-mint" />
           </div>
           <div>
-            <p className="text-sm font-medium text-white">Deep Analytics</p>
+            <p className="text-sm font-medium text-white group-hover:text-neon-mint transition-colors">Deep Analytics</p>
             <p className="text-xs text-steel">Detailed performance insights</p>
           </div>
         </Link>
@@ -484,9 +484,11 @@ function MetricCard({
   };
 
   return (
-    <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
+    <div className="relative bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6 hover:border-electric-cyan/30 hover:-translate-y-0.5 hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.3),0_0_20px_rgba(0,212,255,0.08)] transition-all duration-200 group overflow-hidden">
+      {/* Top accent line on hover */}
+      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-electric-cyan to-quantum-violet opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
       <div className="flex items-start justify-between">
-        <div className={`h-10 w-10 rounded-lg border flex items-center justify-center ${statusStyles[status]}`}>
+        <div className={`h-10 w-10 rounded-lg border flex items-center justify-center ${statusStyles[status]} group-hover:scale-105 transition-transform duration-200`}>
           <Icon className="h-5 w-5" />
         </div>
       </div>

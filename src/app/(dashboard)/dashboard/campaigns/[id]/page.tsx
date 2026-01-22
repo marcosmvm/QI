@@ -254,8 +254,10 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
             return (
               <div
                 key={metric.label}
-                className="rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-4 hover:border-electric-cyan/20 transition-all"
+                className="relative rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-4 hover:border-electric-cyan/30 hover:-translate-y-0.5 hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.3),0_0_20px_rgba(0,212,255,0.08)] transition-all duration-200 group overflow-hidden"
               >
+                {/* Top accent line on hover */}
+                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-electric-cyan to-quantum-violet opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                 <div className="flex items-center justify-between mb-2">
                   <p className="text-xs text-steel">{metric.label}</p>
                   <div className={cn(

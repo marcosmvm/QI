@@ -67,7 +67,7 @@ export default function CaseStudiesPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <Link href={`/case-studies/${study.id}`} className="block group h-full">
-                  <div className="relative h-full p-8 rounded-3xl border border-electric-cyan/20 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 hover:border-electric-cyan/40 transition-all duration-300 group-hover:shadow-[0_0_40px_rgba(0,212,255,0.15)]">
+                  <div className="relative h-full p-8 rounded-3xl border border-electric-cyan/20 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 hover:border-electric-cyan/40 transition-all duration-300 group-hover:shadow-[0_8px_40px_rgba(0,212,255,0.15)] group-hover:-translate-y-1">
                     {/* Top Accent */}
                     <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-electric-cyan via-quantum-violet to-neon-mint rounded-t-3xl" />
 
