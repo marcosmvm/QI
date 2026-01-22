@@ -85,7 +85,7 @@ export default function AnalyticsPage() {
       {/* Charts */}
       <div className="grid grid-cols-2 gap-6 mb-8">
         {/* Weekly Trend */}
-        <div className="rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6 hover:border-electric-cyan/20 hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.3)] transition-all duration-200">
+        <div className="rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6 hover:border-electric-cyan/20 hover:shadow-depth-lg transition-all duration-200">
           <h3 className="text-base font-semibold text-white mb-6">
             Weekly Trend
           </h3>
@@ -113,7 +113,7 @@ export default function AnalyticsPage() {
         </div>
 
         {/* Hourly Engagement */}
-        <div className="rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6 hover:border-electric-cyan/20 hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.3)] transition-all duration-200">
+        <div className="rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6 hover:border-electric-cyan/20 hover:shadow-depth-lg transition-all duration-200">
           <h3 className="text-base font-semibold text-white mb-6">
             Hourly Engagement
           </h3>
@@ -140,7 +140,7 @@ export default function AnalyticsPage() {
       </div>
 
       {/* Campaign Performance */}
-      <div className="rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6 hover:border-electric-cyan/20 hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.3)] transition-all duration-200">
+      <div className="rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6 hover:border-electric-cyan/20 hover:shadow-depth-lg transition-all duration-200">
         <h3 className="text-base font-semibold text-white mb-6">
           Campaign Performance
         </h3>

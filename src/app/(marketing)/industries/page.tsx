@@ -93,7 +93,7 @@ export default function IndustriesPage() {
                 >
                   <Link href={`/industries/${industry.id}`} className="block group h-full">
                     {/* Brand Board v1.0 - Interactive Card Pattern with Enhanced Hover */}
-                    <div className="relative h-full p-6 rounded-xl border border-graphite bg-midnight-blue transition-all duration-200 hover:border-electric-cyan/50 hover:bg-graphite hover:-translate-y-1 hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.3),0_0_20px_rgba(0,212,255,0.1)] overflow-hidden">
+                    <div className="relative h-full p-6 rounded-xl border border-graphite bg-midnight-blue transition-all duration-200 hover:border-electric-cyan/50 hover:bg-graphite hover:-translate-y-1 hover:shadow-card-hover overflow-hidden">
                       {/* Top accent line on hover */}
                       <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-electric-cyan to-quantum-violet opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
 
