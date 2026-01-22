@@ -142,14 +142,17 @@ export default function AnalyticsPage() {
                 <YAxis tick={{ fill: "#94A3B8", fontSize: 11 }} axisLine={false} tickLine={false} />
                 <Tooltip
                   contentStyle={{
-                    backgroundColor: "rgba(26, 45, 74, 0.9)",
-                    backdropFilter: "blur(8px)",
-                    border: "1px solid rgba(0, 212, 255, 0.2)",
+                    backgroundColor: "rgba(26, 45, 74, 0.95)",
+                    backdropFilter: "blur(12px)",
+                    border: "1px solid rgba(0, 212, 255, 0.3)",
                     borderRadius: "12px",
                     color: "#E8EDF5",
-                    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.3)",
+                    boxShadow: "0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 212, 255, 0.1)",
+                    padding: "12px 16px",
                   }}
-                  labelStyle={{ color: "#E8EDF5" }}
+                  labelStyle={{ color: "#00D4FF", fontWeight: 600, marginBottom: "4px" }}
+                  itemStyle={{ color: "#E8EDF5" }}
+                  cursor={{ stroke: "rgba(0, 212, 255, 0.3)", strokeWidth: 1, strokeDasharray: "4 4" }}
                 />
                 <Line type="monotone" dataKey="sent" name="Sent" stroke="#00D4FF" strokeWidth={2} dot={false} />
                 <Line type="monotone" dataKey="opened" name="Opened" stroke="#7B61FF" strokeWidth={2} dot={false} />
@@ -196,14 +199,17 @@ export default function AnalyticsPage() {
                 <YAxis tick={{ fill: "#94A3B8", fontSize: 11 }} axisLine={false} tickLine={false} />
                 <Tooltip
                   contentStyle={{
-                    backgroundColor: "rgba(26, 45, 74, 0.9)",
-                    backdropFilter: "blur(8px)",
-                    border: "1px solid rgba(0, 212, 255, 0.2)",
+                    backgroundColor: "rgba(26, 45, 74, 0.95)",
+                    backdropFilter: "blur(12px)",
+                    border: "1px solid rgba(0, 212, 255, 0.3)",
                     borderRadius: "12px",
                     color: "#E8EDF5",
-                    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.3)",
+                    boxShadow: "0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 212, 255, 0.1)",
+                    padding: "12px 16px",
                   }}
-                  labelStyle={{ color: "#E8EDF5" }}
+                  labelStyle={{ color: "#00D4FF", fontWeight: 600, marginBottom: "4px" }}
+                  itemStyle={{ color: "#E8EDF5" }}
+                  cursor={{ fill: "rgba(0, 212, 255, 0.08)" }}
                 />
                 <Bar dataKey="opens" fill="url(#barGradient)" radius={[4, 4, 0, 0]} />
               </BarChart>
@@ -234,14 +240,17 @@ export default function AnalyticsPage() {
               <YAxis dataKey="name" type="category" tick={{ fill: "#E8EDF5", fontSize: 12 }} axisLine={false} tickLine={false} width={100} />
               <Tooltip
                 contentStyle={{
-                  backgroundColor: "rgba(26, 45, 74, 0.9)",
-                  backdropFilter: "blur(8px)",
-                  border: "1px solid rgba(123, 97, 255, 0.2)",
+                  backgroundColor: "rgba(26, 45, 74, 0.95)",
+                  backdropFilter: "blur(12px)",
+                  border: "1px solid rgba(123, 97, 255, 0.3)",
                   borderRadius: "12px",
                   color: "#E8EDF5",
-                  boxShadow: "0 4px 20px rgba(0, 0, 0, 0.3)",
+                  boxShadow: "0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(123, 97, 255, 0.1)",
+                  padding: "12px 16px",
                 }}
-                labelStyle={{ color: "#E8EDF5" }}
+                labelStyle={{ color: "#7B61FF", fontWeight: 600, marginBottom: "4px" }}
+                itemStyle={{ color: "#E8EDF5" }}
+                cursor={{ fill: "rgba(123, 97, 255, 0.08)" }}
               />
               <Bar dataKey="openRate" name="Open Rate %" fill="url(#violetBarGradient)" radius={[0, 4, 4, 0]} />
             </BarChart>

@@ -22,10 +22,10 @@ interface MegaMenuProps {
 
 export function MegaMenu({ sections, featured }: MegaMenuProps) {
   return (
-    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 z-50">
+    <div className="absolute top-full left-0 pt-2 z-[100]">
       <div
-        className="bg-midnight-blue border border-graphite rounded-2xl overflow-hidden min-w-[600px]"
-        style={{ boxShadow: '0 20px 40px rgba(0, 0, 0, 0.4)' }}
+        className="bg-midnight-blue/95 backdrop-blur-xl border border-graphite/50 rounded-2xl overflow-hidden min-w-[600px]"
+        style={{ boxShadow: '0 20px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 212, 255, 0.1)' }}
       >
         <div className="p-6">
           <div className={cn(
