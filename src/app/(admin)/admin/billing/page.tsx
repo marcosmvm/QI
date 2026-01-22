@@ -82,7 +82,7 @@ export default async function BillingPage() {
     await getBillingStats();
 
   return (
-    <div className="p-8">
+    <div className="min-h-screen p-8">
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-2xl font-sora font-bold text-white">Billing</h1>
@@ -121,7 +121,7 @@ export default async function BillingPage() {
       {/* Two Column Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Subscriptions */}
-        <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
+        <div className="glass-premium p-6">
           <h2 className="text-lg font-sora font-semibold text-white mb-6">
             Active Subscriptions
           </h2>
@@ -170,7 +170,7 @@ export default async function BillingPage() {
         </div>
 
         {/* Recent Invoices */}
-        <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
+        <div className="glass-premium p-6">
           <h2 className="text-lg font-sora font-semibold text-white mb-6">
             Recent Invoices
           </h2>
@@ -267,8 +267,8 @@ function StatCard({
 }) {
   return (
     <div
-      className={`bg-midnight-blue/30 border rounded-xl p-6 ${
-        highlight ? "border-energy-orange/50" : "border-graphite/50"
+      className={`glass-premium p-6 ${
+        highlight ? "border-energy-orange/50" : ""
       }`}
     >
       <div className="flex items-start justify-between">

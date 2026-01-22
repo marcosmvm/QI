@@ -212,7 +212,7 @@ export default async function NotificationsPage() {
   const groupedByDate = groupNotificationsByDate(notifications);
 
   return (
-    <div className="min-h-screen bg-deep-space p-8">
+    <div className="min-h-screen p-8">
       {/* Page Header */}
       <div className="mb-8">
         <div className="flex items-center gap-2 text-sm text-steel mb-2">
@@ -223,7 +223,7 @@ export default async function NotificationsPage() {
             Portal
           </Link>
           <span>/</span>
-          <span className="text-white">Notifications</span>
+          <span className="text-electric-cyan">Notifications</span>
         </div>
         <div className="flex items-center justify-between">
           <div>
@@ -259,7 +259,7 @@ export default async function NotificationsPage() {
           return (
             <div
               key={type}
-              className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-4"
+              className="glass-premium p-4"
             >
               <div className="flex items-center gap-3">
                 <div
@@ -285,7 +285,7 @@ export default async function NotificationsPage() {
 
       {/* Notifications List */}
       {notifications.length === 0 ? (
-        <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-12 text-center">
+        <div className="glass-premium p-12 text-center">
           <Bell className="h-12 w-12 text-steel mx-auto mb-4" />
           <p className="text-steel">No notifications yet</p>
           <p className="text-sm text-steel/70 mt-1">
@@ -353,10 +353,10 @@ function NotificationCard({ notification }: { notification: Notification }) {
 
   return (
     <div
-      className={`flex items-start gap-4 p-4 rounded-xl border transition-colors ${
+      className={`flex items-start gap-4 p-4 rounded-xl border transition-all hover:-translate-y-0.5 hover:shadow-card-hover ${
         notification.is_read
           ? "bg-midnight-blue/20 border-graphite/30"
-          : "bg-midnight-blue/40 border-graphite/50"
+          : "bg-midnight-blue/40 border-electric-cyan/20"
       }`}
     >
       <div

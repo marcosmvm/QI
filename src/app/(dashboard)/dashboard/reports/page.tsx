@@ -1,8 +1,32 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { MetricsCard } from "@/components/dashboard";
 import { cn } from "@/lib/utils";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.16, 1, 0.3, 1] as const,
+    },
+  },
+};
 import {
   FileText,
   Download,
@@ -202,52 +226,55 @@ export default function ReportsPage() {
   const [selectedReport, setSelectedReport] = useState(weeklyReports[0]);
 
   return (
-    <div className="min-h-screen bg-deep-space p-8">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className="min-h-screen p-8"
+    >
       {/* Page Header */}
-      <div className="mb-8">
+      <motion.div variants={itemVariants} className="mb-8">
         <div className="flex items-center gap-2 text-sm text-steel mb-2">
           <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
           <span>/</span>
-          <span className="text-white">Reports</span>
+          <span className="text-electric-cyan">Reports</span>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-white">Automated reports and performance insights</h1>
-      </div>
+        <h1 className="text-2xl font-sora font-bold text-white">Reports</h1>
+        <p className="text-steel mt-1">Automated reports and performance insights</p>
+      </motion.div>
 
       <div className="space-y-6">
-        {/* Quick Stats */}
-        <div className="grid grid-cols-4 gap-4">
-          {[
-            { label: "Reports Generated", value: "24", sublabel: "This month", icon: FileText, color: "electric-cyan" },
-            { label: "Scheduled Reports", value: "4", sublabel: "3 active", icon: CalendarDays, color: "quantum-violet" },
-            { label: "Avg Open Rate", value: "33.5%", sublabel: "+2.3% vs last month", icon: Eye, color: "neon-mint" },
-            { label: "Avg Reply Rate", value: "3.6%", sublabel: "+0.4% vs last month", icon: MessageSquare, color: "energy-orange" },
-          ].map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-4 hover:border-electric-cyan/20 transition-all"
-            >
-              <div className="flex items-center justify-between mb-2">
-                <p className="text-xs text-steel">{stat.label}</p>
-                <div className={cn(
-                  "flex h-8 w-8 items-center justify-center rounded-lg border",
-                  stat.color === "electric-cyan" && "bg-electric-cyan/10 border-electric-cyan/20",
-                  stat.color === "quantum-violet" && "bg-quantum-violet/10 border-quantum-violet/20",
-                  stat.color === "neon-mint" && "bg-neon-mint/10 border-neon-mint/20",
-                  stat.color === "energy-orange" && "bg-energy-orange/10 border-energy-orange/20"
-                )}>
-                  <stat.icon className={cn(
-                    "h-4 w-4",
-                    stat.color === "electric-cyan" && "text-electric-cyan",
-                    stat.color === "quantum-violet" && "text-quantum-violet",
-                    stat.color === "neon-mint" && "text-neon-mint",
-                    stat.color === "energy-orange" && "text-energy-orange"
-                  )} />
-                </div>
-              </div>
-              <p className="text-2xl font-sora font-bold text-white">{stat.value}</p>
-              <p className="text-xs text-steel mt-1">{stat.sublabel}</p>
-            </div>
-          ))}
+        {/* Quick Stats - Using MetricsCard */}
+        <div className="grid grid-cols-4 gap-6">
+          <MetricsCard
+            title="Reports Generated"
+            value={24}
+            change={12}
+            accent="cyan"
+            delay={0}
+          />
+          <MetricsCard
+            title="Scheduled Reports"
+            value={4}
+            accent="violet"
+            delay={0.1}
+          />
+          <MetricsCard
+            title="Avg Open Rate"
+            value={33.5}
+            suffix="%"
+            change={2.3}
+            accent="mint"
+            delay={0.2}
+          />
+          <MetricsCard
+            title="Avg Reply Rate"
+            value={3.6}
+            suffix="%"
+            change={0.4}
+            accent="orange"
+            delay={0.3}
+          />
         </div>
 
         {/* Actions Bar */}
@@ -296,7 +323,7 @@ export default function ReportsPage() {
           {/* Reports List */}
           <div className="col-span-2 space-y-6">
             {/* Reports Table */}
-            <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 overflow-hidden">
+            <div className="glass-premium overflow-hidden">
               <div className="px-6 py-4 border-b border-electric-cyan/10">
                 <h3 className="font-semibold text-white">
                   {activeTab === "weekly" ? "Weekly Reports" : activeTab === "monthly" ? "Monthly Reports" : "Custom Reports"}
@@ -370,7 +397,7 @@ export default function ReportsPage() {
             </div>
 
             {/* Report Preview */}
-            <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+            <div className="glass-premium p-6">
               <div className="flex items-center justify-between mb-6">
                 <div>
                   <h3 className="text-lg font-semibold text-white">Report Preview</h3>
@@ -454,7 +481,7 @@ export default function ReportsPage() {
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Scheduled Reports */}
-            <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-5">
+            <div className="glass-premium p-5">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="font-semibold text-white">Scheduled Reports</h3>
                 <Button variant="ghost" size="sm" className="text-electric-cyan hover:bg-electric-cyan/10">
@@ -501,7 +528,7 @@ export default function ReportsPage() {
             </div>
 
             {/* Export Options */}
-            <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-5">
+            <div className="glass-premium p-5">
               <h3 className="font-semibold text-white mb-4">Export Options</h3>
               <div className="space-y-2">
                 {[
@@ -527,7 +554,7 @@ export default function ReportsPage() {
             </div>
 
             {/* Quick Actions */}
-            <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-5">
+            <div className="glass-premium p-5">
               <h3 className="font-semibold text-white mb-4">Quick Actions</h3>
               <div className="space-y-2">
                 <Button variant="outline" className="w-full justify-start border-electric-cyan/20 text-steel hover:text-white">
@@ -547,6 +574,6 @@ export default function ReportsPage() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

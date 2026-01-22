@@ -336,11 +336,11 @@ export default async function AdminDashboardPage() {
   }
 
   return (
-    <div className="p-8">
+    <div className="min-h-screen p-8">
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center gap-2 text-sm text-steel mb-2">
-          <span className="text-white">Admin</span>
+          <span className="text-electric-cyan">Admin</span>
           <span>/</span>
           <span className="text-quantum-violet">Dashboard</span>
         </div>
@@ -458,7 +458,7 @@ export default async function AdminDashboardPage() {
           <RevenueChart data={mrrTrend} title="Revenue Trend (12 Months)" />
         </div>
 
-        <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6 backdrop-blur-sm hover:border-quantum-violet/30 transition-all duration-300">
+        <div className="glass-premium p-6">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-sora font-semibold text-white">Engine Status</h3>
             <Link href="/admin/engines" className="text-sm text-electric-cyan hover:underline">
@@ -517,7 +517,7 @@ export default async function AdminDashboardPage() {
       {/* Two Column Layout: Recent Clients + Open Support */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Recent Clients */}
-        <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6 backdrop-blur-sm hover:border-electric-cyan/30 transition-all duration-300">
+        <div className="glass-premium p-6">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-lg font-sora font-semibold text-white">Recent Clients</h2>
             <Link href="/admin/clients" className="text-sm text-electric-cyan hover:underline">
@@ -563,7 +563,7 @@ export default async function AdminDashboardPage() {
         </div>
 
         {/* Open Support Tickets */}
-        <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6 backdrop-blur-sm hover:border-quantum-violet/30 transition-all duration-300">
+        <div className="glass-premium p-6">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-lg font-sora font-semibold text-white">Open Support</h2>
             <Link href="/admin/support" className="text-sm text-electric-cyan hover:underline">

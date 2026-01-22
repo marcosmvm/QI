@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import {
   Search,
   Filter,
@@ -18,6 +19,16 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { formatDistanceToNow } from "date-fns";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const } },
+};
 
 interface Message {
   id: string;
@@ -96,9 +107,9 @@ export function SupportInbox({ conversations, teamMembers }: SupportInboxProps) 
   };
 
   return (
-    <div className="h-[calc(100vh-64px)] flex flex-col">
+    <motion.div initial="hidden" animate="visible" variants={containerVariants} className="h-[calc(100vh-64px)] flex flex-col">
       {/* Header */}
-      <div className="px-8 py-6 border-b border-graphite/50">
+      <motion.div variants={itemVariants} className="px-8 py-6 border-b border-graphite/50">
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-sora font-bold text-white">
@@ -131,7 +142,7 @@ export function SupportInbox({ conversations, teamMembers }: SupportInboxProps) 
             />
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* 3-Column Layout */}
       <div className="flex-1 flex overflow-hidden">
@@ -322,7 +333,7 @@ export function SupportInbox({ conversations, teamMembers }: SupportInboxProps) 
                         "rounded-xl p-4",
                         message.isFromAdmin
                           ? "bg-electric-cyan/10 border border-electric-cyan/30"
-                          : "bg-midnight-blue/30 border border-graphite/50"
+                          : "glass-premium"
                       )}
                     >
                       <p className="text-sm text-silver whitespace-pre-wrap">
@@ -438,7 +449,7 @@ export function SupportInbox({ conversations, teamMembers }: SupportInboxProps) 
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -460,7 +471,7 @@ function QuickStat({
   };
 
   return (
-    <div className="flex items-center gap-2 px-3 py-1.5 bg-midnight-blue/30 border border-graphite/50 rounded-lg">
+    <div className="flex items-center gap-2 px-3 py-1.5 glass-premium rounded-lg">
       <Icon className={cn("h-4 w-4", colors[color])} />
       <span className={cn("text-sm font-semibold", colors[color])}>{value}</span>
       <span className="text-xs text-steel">{label}</span>

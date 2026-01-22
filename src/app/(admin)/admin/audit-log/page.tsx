@@ -1,4 +1,8 @@
-import { createClient } from "@/lib/supabase/server";
+"use client";
+
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { createClient } from "@/lib/supabase/client";
 import {
   Clock,
   User,
@@ -16,7 +20,15 @@ import {
   Shield,
 } from "lucide-react";
 
-export const dynamic = "force-dynamic";
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const } },
+};
 
 interface AuditLog {
   id: string;
@@ -35,7 +47,7 @@ interface AuditLog {
 }
 
 async function getAuditLogs(): Promise<AuditLog[]> {
-  const supabase = await createClient();
+  const supabase = createClient();
 
   const { data } = await supabase
     .from("audit_logs")
@@ -148,13 +160,27 @@ function formatTimeAgo(dateString: string): string {
   return date.toLocaleDateString();
 }
 
-export default async function AuditLogPage() {
-  let auditLogs = await getAuditLogs();
+export default function AuditLogPage() {
+  const [auditLogs, setAuditLogs] = useState<AuditLog[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  // Use mock data if no logs exist
-  if (auditLogs.length === 0) {
-    auditLogs = getMockAuditLogs();
-  }
+  useEffect(() => {
+    async function fetchLogs() {
+      try {
+        const logs = await getAuditLogs();
+        if (logs.length === 0) {
+          setAuditLogs(getMockAuditLogs());
+        } else {
+          setAuditLogs(logs);
+        }
+      } catch {
+        setAuditLogs(getMockAuditLogs());
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchLogs();
+  }, []);
 
   // Group logs by date
   const groupedLogs = auditLogs.reduce((acc, log) => {
@@ -173,10 +199,18 @@ export default async function AuditLogPage() {
     return acc;
   }, {} as Record<string, AuditLog[]>);
 
+  if (loading) {
+    return (
+      <div className="min-h-screen p-8 flex items-center justify-center">
+        <div className="text-steel">Loading audit logs...</div>
+      </div>
+    );
+  }
+
   return (
-    <div className="p-8">
+    <motion.div initial="hidden" animate="visible" variants={containerVariants} className="min-h-screen p-8">
       {/* Header */}
-      <div className="flex items-center justify-between mb-8">
+      <motion.div variants={itemVariants} className="flex items-center justify-between mb-8">
         <div>
           <h1 className="text-2xl font-sora font-bold text-white">Audit Log</h1>
           <p className="text-steel mt-1">
@@ -193,7 +227,7 @@ export default async function AuditLogPage() {
             Export
           </button>
         </div>
-      </div>
+      </motion.div>
 
       {/* Search and Filters */}
       <div className="flex items-center gap-4 mb-6">
@@ -266,7 +300,7 @@ export default async function AuditLogPage() {
       </div>
 
       {auditLogs.length === 0 && (
-        <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-12 text-center">
+        <div className="glass-premium p-12 text-center">
           <Clock className="h-12 w-12 text-steel mx-auto mb-4" />
           <p className="text-steel">No audit logs yet</p>
           <p className="text-sm text-steel/70 mt-1">
@@ -274,7 +308,7 @@ export default async function AuditLogPage() {
           </p>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }
 
@@ -313,7 +347,7 @@ function AuditLogRow({ log }: { log: AuditLog }) {
     (log.details as Record<string, string>)?.name || log.resource_type;
 
   return (
-    <div className="flex items-center gap-4 p-4 bg-midnight-blue/30 border border-graphite/50 rounded-xl hover:border-graphite/70 transition-colors">
+    <div className="flex items-center gap-4 p-4 glass-premium hover:border-graphite/70 transition-colors">
       {/* Action Icon */}
       <div
         className={`h-10 w-10 rounded-lg ${colors.bg} border ${colors.border} flex items-center justify-center flex-shrink-0`}
@@ -382,7 +416,7 @@ function StatCard({
   const colors = colorClasses[color] || colorClasses["electric-cyan"];
 
   return (
-    <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-4">
+    <div className="glass-premium p-4">
       <div className="flex items-center gap-3">
         <div
           className={`h-8 w-8 rounded-lg ${colors.bg} border ${colors.border} flex items-center justify-center`}

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { MetricsCard } from "@/components/dashboard";
 import {
   Plus,
   Filter,
@@ -288,54 +289,44 @@ export default function CampaignsPage() {
       </motion.div>
 
       <div className="space-y-6">
-        {/* Quick Stats */}
-        <motion.div variants={itemVariants} className="grid grid-cols-5 gap-4">
-          {[
-            { label: "Total Campaigns", value: mockCampaigns.length.toString(), change: "+2", icon: Mail, color: "electric-cyan" },
-            { label: "Active", value: activeCampaigns.toString(), icon: Play, color: "neon-mint" },
-            { label: "Total Sent", value: totalSent.toLocaleString(), change: "+1.2k", icon: Users, color: "quantum-violet" },
-            { label: "Total Replies", value: totalReplies.toLocaleString(), change: "+89", icon: MessageSquare, color: "energy-orange" },
-            { label: "Avg Open Rate", value: `${avgOpenRate.toFixed(1)}%`, change: "+2.3%", icon: TrendingUp, color: "rose" },
-          ].map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="rounded-xl border border-graphite/50 bg-midnight-blue/30 backdrop-blur-sm p-4 hover:border-electric-cyan/30 hover:-translate-y-0.5 hover:shadow-glow-cyan-sm transition-all duration-300"
-            >
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-xs text-steel mb-1">{stat.label}</p>
-                  <p className="text-2xl font-sora font-bold text-white">{stat.value}</p>
-                </div>
-                <div className={cn(
-                  "flex h-10 w-10 items-center justify-center rounded-xl border",
-                  stat.color === "electric-cyan" && "bg-electric-cyan/10 border-electric-cyan/20",
-                  stat.color === "neon-mint" && "bg-neon-mint/10 border-neon-mint/20",
-                  stat.color === "quantum-violet" && "bg-quantum-violet/10 border-quantum-violet/20",
-                  stat.color === "energy-orange" && "bg-energy-orange/10 border-energy-orange/20",
-                  stat.color === "rose" && "bg-rose/10 border-rose/20"
-                )}>
-                  <stat.icon className={cn(
-                    "h-5 w-5",
-                    stat.color === "electric-cyan" && "text-electric-cyan",
-                    stat.color === "neon-mint" && "text-neon-mint",
-                    stat.color === "quantum-violet" && "text-quantum-violet",
-                    stat.color === "energy-orange" && "text-energy-orange",
-                    stat.color === "rose" && "text-rose"
-                  )} />
-                </div>
-              </div>
-              {stat.change && (
-                <p className="text-xs text-neon-mint mt-2 flex items-center gap-1">
-                  <ArrowUpRight className="h-3 w-3" />
-                  {stat.change} this week
-                </p>
-              )}
-            </motion.div>
-          ))}
-        </motion.div>
+        {/* Quick Stats - Using MetricsCard like Analytics page */}
+        <div className="grid grid-cols-5 gap-4">
+          <MetricsCard
+            title="Total Campaigns"
+            value={mockCampaigns.length}
+            change={12}
+            accent="cyan"
+            delay={0}
+          />
+          <MetricsCard
+            title="Active"
+            value={activeCampaigns}
+            accent="mint"
+            delay={0.1}
+          />
+          <MetricsCard
+            title="Total Sent"
+            value={totalSent}
+            change={8.5}
+            accent="violet"
+            delay={0.2}
+          />
+          <MetricsCard
+            title="Total Replies"
+            value={totalReplies}
+            change={15.2}
+            accent="orange"
+            delay={0.3}
+          />
+          <MetricsCard
+            title="Avg Open Rate"
+            value={avgOpenRate}
+            suffix="%"
+            change={2.3}
+            accent="cyan"
+            delay={0.4}
+          />
+        </div>
 
         {/* Actions Bar */}
         <div className="flex items-center justify-between">
@@ -412,7 +403,7 @@ export default function CampaignsPage() {
         </div>
 
         {/* Campaigns Table */}
-        <motion.div variants={itemVariants} className="rounded-2xl border border-graphite/50 bg-midnight-blue/30 backdrop-blur-sm overflow-hidden hover:border-electric-cyan/20 transition-all duration-300">
+        <motion.div variants={itemVariants} className="glass-premium overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
@@ -567,7 +558,7 @@ export default function CampaignsPage() {
         {/* Campaign Performance Overview */}
         <motion.div variants={itemVariants} className="grid grid-cols-2 gap-6">
           {/* Top Performing Campaigns */}
-          <div className="rounded-2xl border border-graphite/50 bg-midnight-blue/30 backdrop-blur-sm p-6 hover:border-neon-mint/30 hover:shadow-glow-mint-lg transition-all duration-300">
+          <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-6">
               <h3 className="font-semibold text-white">Top Performing</h3>
               <span className="text-xs text-steel">By reply rate</span>
@@ -605,7 +596,7 @@ export default function CampaignsPage() {
           </div>
 
           {/* Campaigns Needing Attention */}
-          <div className="rounded-2xl border border-graphite/50 bg-midnight-blue/30 backdrop-blur-sm p-6 hover:border-energy-orange/30 hover:shadow-[0_0_30px_rgba(255,107,53,0.15)] transition-all duration-300">
+          <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-6">
               <h3 className="font-semibold text-white">Needs Attention</h3>
               <span className="text-xs text-steel">Low performance</span>

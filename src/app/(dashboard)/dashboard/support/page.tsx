@@ -138,8 +138,8 @@ export default async function SupportPage({
   return (
     <div className="min-h-screen flex">
       {/* Conversations Sidebar */}
-      <div className="w-80 border-r border-graphite/50 flex flex-col">
-        <div className="p-4 border-b border-graphite/50">
+      <div className="w-80 border-r border-graphite/50 flex flex-col bg-midnight-blue/30">
+        <div className="p-4 border-b border-graphite/50 bg-midnight-blue/50">
           <div className="flex items-center justify-between">
             <h1 className="text-lg font-sora font-semibold text-white">Support</h1>
             <form
@@ -237,11 +237,11 @@ export default async function SupportPage({
       </div>
 
       {/* Chat Area */}
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col bg-deep-space/50">
         {activeConversationId ? (
           <>
             {/* Chat Header */}
-            <div className="p-4 border-b border-graphite/50">
+            <div className="p-4 border-b border-graphite/50 bg-midnight-blue/30 backdrop-blur-sm">
               <div className="flex items-center gap-3">
                 <div className="h-10 w-10 rounded-full bg-quantum-violet/20 border border-quantum-violet/30 flex items-center justify-center">
                   <span className="text-sm font-medium text-quantum-violet">QI</span>

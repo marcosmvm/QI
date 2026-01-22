@@ -210,17 +210,20 @@ export default async function ClientDetailPage({ params }: PageProps) {
   }));
 
   return (
-    <div className="p-8">
+    <div className="min-h-screen p-8">
       {/* Back link */}
+      <div>
       <Link
         href="/admin/clients"
         className="inline-flex items-center gap-2 text-steel hover:text-white transition-colors mb-6"
       >
         <ArrowLeft className="h-4 w-4" />
-        Back to Clients
+        <span className="text-electric-cyan">Back to Clients</span>
       </Link>
+      </div>
 
       {/* Header */}
+      <div>
       <div className="flex items-start justify-between mb-8">
         <div className="flex items-center gap-4">
           <div className="h-16 w-16 rounded-xl bg-quantum-violet/20 border border-quantum-violet/30 flex items-center justify-center">
@@ -281,6 +284,7 @@ export default async function ClientDetailPage({ params }: PageProps) {
             <MoreHorizontal className="h-4 w-4" />
           </button>
         </div>
+      </div>
       </div>
 
       {/* Quick Stats */}
@@ -372,7 +376,7 @@ function QuickStat({
   highlight?: boolean;
 }) {
   return (
-    <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-4">
+    <div className="glass-premium p-4">
       <p className="text-xs text-steel mb-1">{label}</p>
       <p
         className={`text-xl font-sora font-bold capitalize ${

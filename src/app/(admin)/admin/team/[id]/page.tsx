@@ -226,8 +226,9 @@ export default async function TeamMemberDetailPage({ params }: PageProps) {
   const colors = colorClasses[role.color] || colorClasses.steel;
 
   return (
-    <div className="p-8">
+    <div className="min-h-screen p-8">
       {/* Back link */}
+      <div >
       <Link
         href="/admin/team"
         className="inline-flex items-center gap-2 text-steel hover:text-white transition-colors mb-6"
@@ -235,8 +236,10 @@ export default async function TeamMemberDetailPage({ params }: PageProps) {
         <ArrowLeft className="h-4 w-4" />
         Back to Team
       </Link>
+      </div>
 
       {/* Header */}
+      <div >
       <div className="flex items-start justify-between mb-8">
         <div className="flex items-center gap-4">
           <div className={`h-16 w-16 rounded-full ${colors.bg} border ${colors.border} flex items-center justify-center`}>
@@ -286,12 +289,13 @@ export default async function TeamMemberDetailPage({ params }: PageProps) {
           </button>
         </div>
       </div>
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left Column */}
         <div className="lg:col-span-2 space-y-6">
           {/* Permissions */}
-          <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
+          <div className="glass-premium p-6">
             <div className="flex items-center gap-3 mb-6">
               <div className="h-10 w-10 rounded-lg bg-electric-cyan/10 border border-electric-cyan/30 flex items-center justify-center">
                 <Shield className="h-5 w-5 text-electric-cyan" />
@@ -324,7 +328,7 @@ export default async function TeamMemberDetailPage({ params }: PageProps) {
           </div>
 
           {/* Assigned Clients */}
-          <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
+          <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-3">
                 <div className="h-10 w-10 rounded-lg bg-quantum-violet/10 border border-quantum-violet/30 flex items-center justify-center">
@@ -381,7 +385,7 @@ export default async function TeamMemberDetailPage({ params }: PageProps) {
         {/* Right Column */}
         <div className="space-y-6">
           {/* Activity Log */}
-          <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
+          <div className="glass-premium p-6">
             <div className="flex items-center gap-3 mb-6">
               <div className="h-10 w-10 rounded-lg bg-neon-mint/10 border border-neon-mint/30 flex items-center justify-center">
                 <Clock className="h-5 w-5 text-neon-mint" />

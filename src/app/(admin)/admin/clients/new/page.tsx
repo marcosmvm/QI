@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import {
   ArrowLeft,
   Building2,
@@ -45,6 +46,16 @@ const planTypes = [
   { value: "scale", label: "Scale", fee: 4997 },
   { value: "enterprise", label: "Enterprise", fee: null },
 ];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const } },
+};
 
 export default function NewClientPage() {
   const router = useRouter();
@@ -125,28 +136,30 @@ export default function NewClientPage() {
   }
 
   return (
-    <div className="p-8">
+    <motion.div initial="hidden" animate="visible" variants={containerVariants} className="min-h-screen p-8">
       {/* Back link */}
-      <Link
-        href="/admin/clients"
-        className="inline-flex items-center gap-2 text-steel hover:text-white transition-colors mb-6"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        Back to Clients
-      </Link>
+      <motion.div variants={itemVariants}>
+        <Link
+          href="/admin/clients"
+          className="inline-flex items-center gap-2 text-steel hover:text-electric-cyan transition-colors mb-6"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back to Clients
+        </Link>
 
-      {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-2xl font-sora font-bold text-white">Add New Client</h1>
-        <p className="text-steel mt-1">
-          Create a new client organization and subscription
-        </p>
-      </div>
+        {/* Header */}
+        <div className="mb-8">
+          <h1 className="text-2xl font-sora font-bold text-white">Add New Client</h1>
+          <p className="text-steel mt-1">
+            Create a new client organization and subscription
+          </p>
+        </div>
+      </motion.div>
 
       <form onSubmit={handleSubmit} className="max-w-2xl">
         <div className="space-y-6">
           {/* Company Information */}
-          <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
+          <div className="glass-premium p-6">
             <div className="flex items-center gap-3 mb-6">
               <div className="h-10 w-10 rounded-lg bg-electric-cyan/10 border border-electric-cyan/30 flex items-center justify-center">
                 <Building2 className="h-5 w-5 text-electric-cyan" />
@@ -233,7 +246,7 @@ export default function NewClientPage() {
           </div>
 
           {/* Contact Information */}
-          <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
+          <div className="glass-premium p-6">
             <div className="flex items-center gap-3 mb-6">
               <div className="h-10 w-10 rounded-lg bg-quantum-violet/10 border border-quantum-violet/30 flex items-center justify-center">
                 <Mail className="h-5 w-5 text-quantum-violet" />
@@ -266,7 +279,7 @@ export default function NewClientPage() {
           </div>
 
           {/* Subscription */}
-          <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
+          <div className="glass-premium p-6">
             <div className="flex items-center gap-3 mb-6">
               <div className="h-10 w-10 rounded-lg bg-neon-mint/10 border border-neon-mint/30 flex items-center justify-center">
                 <DollarSign className="h-5 w-5 text-neon-mint" />
@@ -336,7 +349,7 @@ export default function NewClientPage() {
           </div>
 
           {/* Notes */}
-          <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
+          <div className="glass-premium p-6">
             <div className="flex items-center gap-3 mb-6">
               <div className="h-10 w-10 rounded-lg bg-energy-orange/10 border border-energy-orange/30 flex items-center justify-center">
                 <FileText className="h-5 w-5 text-energy-orange" />
@@ -389,6 +402,6 @@ export default function NewClientPage() {
           </div>
         </div>
       </form>
-    </div>
+    </motion.div>
   );
 }

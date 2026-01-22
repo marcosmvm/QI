@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {
   User,
@@ -25,6 +26,28 @@ import {
   Zap,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.16, 1, 0.3, 1] as const,
+    },
+  },
+};
 
 const tabs = [
   { id: "profile", label: "Profile", icon: User },
@@ -202,22 +225,28 @@ export default function SettingsPage() {
   });
 
   return (
-    <div className="min-h-screen bg-deep-space p-8">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className="min-h-screen p-8"
+    >
       {/* Page Header */}
-      <div className="mb-8">
+      <motion.div variants={itemVariants} className="mb-8">
         <div className="flex items-center gap-2 text-sm text-steel mb-2">
           <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
           <span>/</span>
-          <span className="text-white">Settings</span>
+          <span className="text-electric-cyan">Settings</span>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-white">Manage your account and preferences</h1>
-      </div>
+        <h1 className="text-2xl font-sora font-bold text-white">Settings</h1>
+        <p className="text-steel mt-1">Manage your account and preferences</p>
+      </motion.div>
 
-      <div>
+      <motion.div variants={itemVariants}>
         <div className="flex gap-6">
           {/* Sidebar tabs */}
           <div className="w-64 shrink-0">
-            <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-2">
+            <div className="glass-premium p-2">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
@@ -239,7 +268,7 @@ export default function SettingsPage() {
           {/* Content area */}
           <div className="flex-1">
             {activeTab === "profile" && (
-              <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-6">
+              <div className="glass-premium p-6">
                 <h3 className="text-lg font-sora font-semibold text-white mb-6">
                   Profile Settings
                 </h3>
@@ -321,7 +350,7 @@ export default function SettingsPage() {
             )}
 
             {activeTab === "company" && (
-              <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-6">
+              <div className="glass-premium p-6">
                 <h3 className="text-lg font-sora font-semibold text-white mb-6">
                   Company Settings
                 </h3>
@@ -395,7 +424,7 @@ export default function SettingsPage() {
             )}
 
             {activeTab === "notifications" && (
-              <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-6">
+              <div className="glass-premium p-6">
                 <h3 className="text-lg font-sora font-semibold text-white mb-6">
                   Notification Preferences
                 </h3>
@@ -446,7 +475,7 @@ export default function SettingsPage() {
             )}
 
             {activeTab === "security" && (
-              <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-6">
+              <div className="glass-premium p-6">
                 <h3 className="text-lg font-sora font-semibold text-white mb-6">
                   Security Settings
                 </h3>
@@ -501,7 +530,7 @@ export default function SettingsPage() {
             )}
 
             {activeTab === "api" && (
-              <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-6">
+              <div className="glass-premium p-6">
                 <h3 className="text-lg font-sora font-semibold text-white mb-6">
                   API Keys
                 </h3>
@@ -561,7 +590,7 @@ export default function SettingsPage() {
               <div className="space-y-6">
                 {/* Integration Stats */}
                 <div className="grid grid-cols-3 gap-4">
-                  <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-4">
+                  <div className="glass-premium p-4">
                     <div className="flex items-center gap-3">
                       <div className="h-10 w-10 rounded-lg bg-neon-mint/20 flex items-center justify-center">
                         <Check className="h-5 w-5 text-neon-mint" />
@@ -574,7 +603,7 @@ export default function SettingsPage() {
                       </div>
                     </div>
                   </div>
-                  <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-4">
+                  <div className="glass-premium p-4">
                     <div className="flex items-center gap-3">
                       <div className="h-10 w-10 rounded-lg bg-steel/20 flex items-center justify-center">
                         <Link2 className="h-5 w-5 text-steel" />
@@ -587,7 +616,7 @@ export default function SettingsPage() {
                       </div>
                     </div>
                   </div>
-                  <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-4">
+                  <div className="glass-premium p-4">
                     <div className="flex items-center gap-3">
                       <div className="h-10 w-10 rounded-lg bg-electric-cyan/20 flex items-center justify-center">
                         <RefreshCw className="h-5 w-5 text-electric-cyan" />
@@ -611,7 +640,7 @@ export default function SettingsPage() {
                     return (
                       <div
                         key={category}
-                        className="rounded-xl border border-graphite bg-midnight-blue/60 p-6"
+                        className="glass-premium p-6"
                       >
                         <div className="flex items-center gap-2 mb-4">
                           <CategoryIcon className="h-5 w-5 text-electric-cyan" />
@@ -723,7 +752,7 @@ export default function SettingsPage() {
             )}
           </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

@@ -72,9 +72,9 @@ export default async function SettingsPage() {
   ]);
 
   return (
-    <div className="p-8 max-w-4xl">
+    <div className="min-h-screen p-8">
       {/* Header */}
-      <div className="mb-8">
+      <div className="mb-8 max-w-4xl">
         <h1 className="text-2xl font-sora font-bold text-white">Settings</h1>
         <p className="text-steel mt-1">
           Configure your admin portal and integrations
@@ -317,7 +317,7 @@ function SettingsSection({
   children: React.ReactNode;
 }) {
   return (
-    <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
+    <div className="glass-premium p-6">
       <div className="flex items-start gap-4 mb-6">
         <div className="h-10 w-10 rounded-lg bg-electric-cyan/10 border border-electric-cyan/30 flex items-center justify-center flex-shrink-0">
           <Icon className="h-5 w-5 text-electric-cyan" />

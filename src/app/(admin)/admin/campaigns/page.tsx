@@ -1,20 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
-import Link from "next/link";
-import {
-  Mail,
-  Search,
-  Filter,
-  Play,
-  Pause,
-  Eye,
-  TrendingUp,
-  TrendingDown,
-  AlertTriangle,
-  CheckCircle,
-  X,
-} from "lucide-react";
-import { CampaignsTable } from "./CampaignsTable";
 import { calculateHealthScore } from "@/components/admin/ClientHealthBadge";
+import CampaignsPageClient from "./CampaignsPageClient";
 
 export const dynamic = "force-dynamic";
 
@@ -196,78 +182,11 @@ export default async function CampaignsPage() {
   };
 
   return (
-    <div className="p-8">
-      {/* Header */}
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <h1 className="text-2xl font-sora font-bold text-white">Campaigns</h1>
-          <p className="text-steel mt-1">
-            Monitor and manage campaigns across all clients
-          </p>
-        </div>
-      </div>
-
-      {/* Stats */}
-      <div className="grid grid-cols-6 gap-4 mb-8">
-        <StatCard label="Total" value={stats.total} />
-        <StatCard label="Active" value={stats.active} color="neon-mint" />
-        <StatCard label="Paused" value={stats.paused} color="energy-orange" />
-        <StatCard label="Draft" value={stats.draft} color="steel" />
-        <StatCard
-          label="Healthy"
-          value={healthCounts.healthy}
-          color="neon-mint"
-          icon={CheckCircle}
-        />
-        <StatCard
-          label="At Risk"
-          value={healthCounts.warning + healthCounts.critical}
-          color="energy-orange"
-          icon={AlertTriangle}
-        />
-      </div>
-
-      {/* Campaigns Table */}
-      {campaigns.length === 0 ? (
-        <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-12 text-center">
-          <Mail className="h-12 w-12 text-steel mx-auto mb-4" />
-          <p className="text-steel">No campaigns yet</p>
-        </div>
-      ) : (
-        <CampaignsTable campaigns={campaignsWithHealth} clients={clients} />
-      )}
-    </div>
-  );
-}
-
-function StatCard({
-  label,
-  value,
-  color = "electric-cyan",
-  icon: Icon,
-}: {
-  label: string;
-  value: number;
-  color?: string;
-  icon?: typeof TrendingUp;
-}) {
-  const colorClasses: Record<string, string> = {
-    "electric-cyan": "text-electric-cyan",
-    "neon-mint": "text-neon-mint",
-    "energy-orange": "text-energy-orange",
-    "quantum-violet": "text-quantum-violet",
-    steel: "text-steel",
-  };
-
-  return (
-    <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-4">
-      <div className="flex items-center justify-between">
-        <p className={`text-2xl font-sora font-bold ${colorClasses[color]}`}>
-          {value}
-        </p>
-        {Icon && <Icon className={`h-5 w-5 ${colorClasses[color]}`} />}
-      </div>
-      <p className="text-sm text-steel mt-1">{label}</p>
-    </div>
+    <CampaignsPageClient
+      campaigns={campaignsWithHealth}
+      clients={clients}
+      stats={stats}
+      healthCounts={healthCounts}
+    />
   );
 }

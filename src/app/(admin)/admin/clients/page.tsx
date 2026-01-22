@@ -1,4 +1,8 @@
-import { createClient } from "@/lib/supabase/server";
+"use client";
+
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { createClient } from "@/lib/supabase/client";
 import Link from "next/link";
 import {
   Building2,
@@ -7,7 +11,16 @@ import {
 import { ClientsTable } from "./ClientsTable";
 import { calculateHealthScore } from "@/components/admin/ClientHealthBadge";
 
-export const dynamic = "force-dynamic";
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const } },
+};
+
 
 interface OrganizationWithMetrics {
   id: string;
@@ -30,7 +43,7 @@ interface OrganizationWithMetrics {
 }
 
 async function getClients(): Promise<OrganizationWithMetrics[]> {
-  const supabase = await createClient();
+  const supabase = createClient();
 
   const { data: organizations } = await supabase
     .from("organizations")
@@ -59,7 +72,7 @@ async function getClients(): Promise<OrganizationWithMetrics[]> {
 }
 
 async function getClientStats() {
-  const supabase = await createClient();
+  const supabase = createClient();
 
   const { data: organizations } = await supabase
     .from("organizations")
@@ -101,11 +114,44 @@ function getClientHealthScore(client: OrganizationWithMetrics): number | null {
   return calculateHealthScore(avgMetrics);
 }
 
-export default async function ClientsPage() {
-  const [clients, stats] = await Promise.all([getClients(), getClientStats()]);
+interface ClientWithHealth {
+  id: string;
+  name: string;
+  domain: string | null;
+  industry: string | null;
+  status: string;
+  createdAt: string;
+  planType: string | null;
+  monthlyFee: number | null;
+  campaignCount: number;
+  activeCampaigns: number;
+  healthScore: number | null;
+}
+
+interface Stats {
+  total: number;
+  active: number;
+  pilot: number;
+  paused: number;
+}
+
+export default function ClientsPage() {
+  const [clients, setClients] = useState<OrganizationWithMetrics[]>([]);
+  const [stats, setStats] = useState<Stats>({ total: 0, active: 0, pilot: 0, paused: 0 });
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadData() {
+      const [clientsData, statsData] = await Promise.all([getClients(), getClientStats()]);
+      setClients(clientsData);
+      setStats(statsData);
+      setLoading(false);
+    }
+    loadData();
+  }, []);
 
   // Transform clients with health scores
-  const clientsWithHealth = clients.map((client) => ({
+  const clientsWithHealth: ClientWithHealth[] = clients.map((client) => ({
     id: client.id,
     name: client.name,
     domain: client.domain,
@@ -124,10 +170,23 @@ export default async function ClientsPage() {
     new Set(clients.map((c) => c.industry).filter(Boolean))
   ) as string[];
 
+  if (loading) {
+    return (
+      <div className="min-h-screen p-8 flex items-center justify-center">
+        <div className="text-steel">Loading...</div>
+      </div>
+    );
+  }
+
   return (
-    <div className="p-8">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className="min-h-screen p-8"
+    >
       {/* Header */}
-      <div className="flex items-center justify-between mb-8">
+      <motion.div variants={itemVariants} className="flex items-center justify-between mb-8">
         <div>
           <h1 className="text-2xl font-sora font-bold text-white">Clients</h1>
           <p className="text-steel mt-1">Manage your client relationships</p>
@@ -139,32 +198,34 @@ export default async function ClientsPage() {
           <Plus className="h-4 w-4" />
           Add Client
         </Link>
-      </div>
+      </motion.div>
 
       {/* Stats */}
-      <div className="grid grid-cols-4 gap-4 mb-8">
+      <motion.div variants={itemVariants} className="grid grid-cols-4 gap-4 mb-8">
         <StatCard label="Total Clients" value={stats.total} />
         <StatCard label="Active" value={stats.active} color="neon-mint" />
         <StatCard label="Pilot" value={stats.pilot} color="electric-cyan" />
         <StatCard label="Paused" value={stats.paused} color="energy-orange" />
-      </div>
+      </motion.div>
 
       {/* Clients Table with Search/Filter */}
-      {clients.length === 0 ? (
-        <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-12 text-center">
-          <Building2 className="h-12 w-12 text-steel mx-auto mb-4" />
-          <p className="text-steel">No clients yet</p>
-          <Link
-            href="/admin/clients/new"
-            className="text-electric-cyan hover:underline text-sm mt-2 inline-block"
-          >
-            Add your first client
-          </Link>
-        </div>
-      ) : (
-        <ClientsTable clients={clientsWithHealth} industries={industries} />
-      )}
-    </div>
+      <motion.div variants={itemVariants}>
+        {clients.length === 0 ? (
+          <div className="glass-premium p-12 text-center">
+            <Building2 className="h-12 w-12 text-steel mx-auto mb-4" />
+            <p className="text-steel">No clients yet</p>
+            <Link
+              href="/admin/clients/new"
+              className="text-electric-cyan hover:underline text-sm mt-2 inline-block"
+            >
+              Add your first client
+            </Link>
+          </div>
+        ) : (
+          <ClientsTable clients={clientsWithHealth} industries={industries} />
+        )}
+      </motion.div>
+    </motion.div>
   );
 }
 
@@ -185,7 +246,7 @@ function StatCard({
   };
 
   return (
-    <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-4">
+    <div className="glass-premium p-4">
       <p className={`text-2xl font-sora font-bold ${colorClasses[color]}`}>
         {value}
       </p>

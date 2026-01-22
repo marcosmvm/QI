@@ -1,5 +1,9 @@
-import { createClient } from "@/lib/supabase/server";
+"use client";
+
+import { createClient } from "@/lib/supabase/client";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import {
   UserPlus,
   Users,
@@ -12,7 +16,15 @@ import {
   Building2,
 } from "lucide-react";
 
-export const dynamic = "force-dynamic";
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const } },
+};
 
 interface TeamMemberWithProfile {
   id: string;
@@ -29,60 +41,71 @@ interface TeamMemberWithProfile {
   };
 }
 
-async function getTeamMembers(): Promise<TeamMemberWithProfile[]> {
-  const supabase = await createClient();
-
-  const { data } = await supabase
-    .from("team_members")
-    .select(`
-      id,
-      user_id,
-      role,
-      permissions,
-      hired_at,
-      is_active,
-      profiles:user_id (
-        id,
-        email,
-        full_name,
-        avatar_url
-      )
-    `)
-    .eq("is_active", true)
-    .order("hired_at", { ascending: false });
-
-  return (data || []) as TeamMemberWithProfile[];
+interface TeamStats {
+  total: number;
+  admins: number;
+  accountManagers: number;
+  support: number;
+  viewers: number;
 }
 
-async function getTeamStats() {
-  const supabase = await createClient();
+export default function TeamPage() {
+  const [teamMembers, setTeamMembers] = useState<TeamMemberWithProfile[]>([]);
+  const [stats, setStats] = useState<TeamStats>({
+    total: 0,
+    admins: 0,
+    accountManagers: 0,
+    support: 0,
+    viewers: 0,
+  });
+  const [loading, setLoading] = useState(true);
 
-  const { data: members } = await supabase
-    .from("team_members")
-    .select("role, is_active")
-    .eq("is_active", true);
+  useEffect(() => {
+    async function fetchData() {
+      const supabase = createClient();
 
-  const teamMembers = (members || []) as { role: string; is_active: boolean }[];
+      // Fetch team members
+      const { data: membersData } = await supabase
+        .from("team_members")
+        .select(`
+          id,
+          user_id,
+          role,
+          permissions,
+          hired_at,
+          is_active,
+          profiles:user_id (
+            id,
+            email,
+            full_name,
+            avatar_url
+          )
+        `)
+        .eq("is_active", true)
+        .order("hired_at", { ascending: false });
 
-  return {
-    total: teamMembers.length,
-    admins: teamMembers.filter((m) => m.role === "admin").length,
-    accountManagers: teamMembers.filter((m) => m.role === "account_manager").length,
-    support: teamMembers.filter((m) => m.role === "support").length,
-    viewers: teamMembers.filter((m) => m.role === "viewer").length,
-  };
-}
+      const members = (membersData || []) as TeamMemberWithProfile[];
+      setTeamMembers(members);
 
-export default async function TeamPage() {
-  const [teamMembers, stats] = await Promise.all([
-    getTeamMembers(),
-    getTeamStats(),
-  ]);
+      // Calculate stats
+      setStats({
+        total: members.length,
+        admins: members.filter((m) => m.role === "admin").length,
+        accountManagers: members.filter((m) => m.role === "account_manager").length,
+        support: members.filter((m) => m.role === "support").length,
+        viewers: members.filter((m) => m.role === "viewer").length,
+      });
+
+      setLoading(false);
+    }
+
+    fetchData();
+  }, []);
 
   return (
-    <div className="p-8">
+    <motion.div initial="hidden" animate="visible" variants={containerVariants} className="min-h-screen p-8">
       {/* Header */}
-      <div className="flex items-center justify-between mb-8">
+      <motion.div variants={itemVariants} className="flex items-center justify-between mb-8">
         <div>
           <h1 className="text-2xl font-sora font-bold text-white">Team</h1>
           <p className="text-steel mt-1">Manage your team members and roles</p>
@@ -91,7 +114,7 @@ export default async function TeamPage() {
           <UserPlus className="h-4 w-4" />
           Invite Member
         </button>
-      </div>
+      </motion.div>
 
       {/* Stats */}
       <div className="grid grid-cols-5 gap-4 mb-8">
@@ -124,7 +147,7 @@ export default async function TeamPage() {
 
       {/* Team Members Grid */}
       {teamMembers.length === 0 ? (
-        <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-12 text-center">
+        <div className="glass-premium p-12 text-center">
           <Users className="h-12 w-12 text-steel mx-auto mb-4" />
           <p className="text-steel">No team members yet</p>
           <button className="text-electric-cyan hover:underline text-sm mt-2">
@@ -171,7 +194,7 @@ export default async function TeamPage() {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -212,7 +235,7 @@ function StatCard({
   const colors = colorClasses[color] || colorClasses["electric-cyan"];
 
   return (
-    <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-4">
+    <div className="glass-premium p-4">
       <div className="flex items-center justify-between mb-3">
         <div
           className={`h-8 w-8 rounded-lg ${colors.bg} border ${colors.border} flex items-center justify-center`}
@@ -253,7 +276,7 @@ function TeamMemberCard({ member }: { member: TeamMemberWithProfile }) {
   };
 
   return (
-    <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6 hover:border-graphite/80 transition-colors">
+    <div className="glass-premium p-6 hover:border-graphite/80 transition-colors">
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-3">
           <div className="h-12 w-12 rounded-full bg-quantum-violet/20 border border-quantum-violet/30 flex items-center justify-center">
@@ -346,7 +369,7 @@ function RoleCard({
   const colors = colorClasses[color] || colorClasses.steel;
 
   return (
-    <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-4">
+    <div className="glass-premium p-4">
       <div
         className={`h-10 w-10 rounded-lg ${colors.bg} border ${colors.border} flex items-center justify-center mb-3`}
       >

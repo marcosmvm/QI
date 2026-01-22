@@ -190,7 +190,7 @@ export default async function BillingPage() {
   const isNearLimit = usagePercentage >= 80;
 
   return (
-    <div className="min-h-screen bg-deep-space p-8">
+    <div className="min-h-screen p-8">
       {/* Page Header */}
       <div className="mb-8">
         <div className="flex items-center gap-2 text-sm text-steel mb-2">
@@ -201,7 +201,7 @@ export default async function BillingPage() {
             Portal
           </Link>
           <span>/</span>
-          <span className="text-white">Billing</span>
+          <span className="text-electric-cyan">Billing</span>
         </div>
         <h1 className="text-2xl font-sora font-bold text-white">
           Billing & Subscription
@@ -215,7 +215,7 @@ export default async function BillingPage() {
         {/* Left Column - Main Content */}
         <div className="lg:col-span-2 space-y-6">
           {/* Current Plan */}
-          <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
+          <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-3">
                 <div className="h-10 w-10 rounded-lg bg-electric-cyan/10 border border-electric-cyan/30 flex items-center justify-center">
@@ -288,7 +288,7 @@ export default async function BillingPage() {
           </div>
 
           {/* Payment Method */}
-          <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
+          <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-3">
                 <div className="h-10 w-10 rounded-lg bg-quantum-violet/10 border border-quantum-violet/30 flex items-center justify-center">
@@ -327,7 +327,7 @@ export default async function BillingPage() {
           </div>
 
           {/* Billing History */}
-          <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
+          <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-3">
                 <div className="h-10 w-10 rounded-lg bg-neon-mint/10 border border-neon-mint/30 flex items-center justify-center">
@@ -399,7 +399,7 @@ export default async function BillingPage() {
         {/* Right Column - Usage */}
         <div className="space-y-6">
           {/* Usage Stats */}
-          <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
+          <div className="glass-premium p-6">
             <div className="flex items-center gap-3 mb-6">
               <div className="h-10 w-10 rounded-lg bg-electric-cyan/10 border border-electric-cyan/30 flex items-center justify-center">
                 <Mail className="h-5 w-5 text-electric-cyan" />
@@ -451,7 +451,7 @@ export default async function BillingPage() {
           </div>
 
           {/* Quick Actions */}
-          <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
+          <div className="glass-premium p-6">
             <h3 className="text-lg font-sora font-semibold text-white mb-4">
               Quick Actions
             </h3>

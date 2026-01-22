@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -30,6 +31,28 @@ import {
   Layers,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.16, 1, 0.3, 1] as const,
+    },
+  },
+};
 
 // Mock data for Sentinel Engine
 const overallStats = {
@@ -200,16 +223,17 @@ export default function SentinelPage() {
     : recentVisitors.filter(v => v.status === statusFilter);
 
   return (
-    <div className="min-h-screen bg-deep-space p-8">
+    <motion.div initial="hidden" animate="visible" variants={containerVariants} className="min-h-screen p-8">
       {/* Page Header */}
-      <div className="mb-8">
+      <motion.div variants={itemVariants} className="mb-8">
         <div className="flex items-center gap-2 text-sm text-steel mb-2">
           <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
           <span>/</span>
-          <span className="text-white">The Sentinel</span>
+          <span className="text-electric-cyan">The Sentinel</span>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-white">Website Visitor Intelligence Engine</h1>
-      </div>
+        <h1 className="text-2xl font-sora font-bold text-white">The Sentinel</h1>
+        <p className="text-steel mt-1">Website Visitor Intelligence Engine</p>
+      </motion.div>
 
       <div className="space-y-6">
         {/* Engine Status Banner */}
@@ -261,7 +285,7 @@ export default function SentinelPage() {
 
         {/* Key Metrics */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+          <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-3">
               <Users className="h-5 w-5 text-electric-cyan" />
               <span className="text-neon-mint text-sm font-medium flex items-center gap-1">
@@ -273,7 +297,7 @@ export default function SentinelPage() {
             <p className="text-xs text-steel mt-2">Last 30 days</p>
           </div>
 
-          <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+          <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-3">
               <Building2 className="h-5 w-5 text-quantum-violet" />
               <span className="text-neon-mint text-sm font-medium flex items-center gap-1">
@@ -285,7 +309,7 @@ export default function SentinelPage() {
             <p className="text-xs text-steel mt-2">Unique organizations</p>
           </div>
 
-          <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+          <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-3">
               <Target className="h-5 w-5 text-neon-mint" />
               <span className="text-neon-mint text-sm font-medium flex items-center gap-1">
@@ -297,7 +321,7 @@ export default function SentinelPage() {
             <p className="text-xs text-steel mt-2">Score 80+</p>
           </div>
 
-          <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+          <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-3">
               <Activity className="h-5 w-5 text-energy-orange" />
               <span className="text-neon-mint text-sm font-medium flex items-center gap-1">
@@ -313,7 +337,7 @@ export default function SentinelPage() {
         {/* Visitor Intelligence and Intent Signals */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Recent Identified Visitors */}
-          <div className="lg:col-span-2 rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+          <div className="lg:col-span-2 glass-premium p-6">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-lg font-sora font-semibold text-white">Recently Identified Visitors</h3>
               <div className="flex items-center gap-2">
@@ -428,7 +452,7 @@ export default function SentinelPage() {
 
           {/* Intent Signals */}
           <div className="space-y-6">
-            <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+            <div className="glass-premium p-6">
               <h3 className="text-lg font-sora font-semibold text-white mb-4">Intent Signals Detected</h3>
               <div className="space-y-3">
                 {intentSignals.map((signal, index) => (
@@ -454,7 +478,7 @@ export default function SentinelPage() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+            <div className="glass-premium p-6">
               <h3 className="text-lg font-sora font-semibold text-white mb-4">Industry Breakdown</h3>
               <div className="space-y-3">
                 {industryBreakdown.map((item, index) => (
@@ -479,7 +503,7 @@ export default function SentinelPage() {
         {/* Top Pages and Quick Actions */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Top Converting Pages */}
-          <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+          <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-lg font-sora font-semibold text-white">Top Converting Pages</h3>
               <Button variant="ghost" size="sm" className="text-electric-cyan hover:text-electric-cyan/80">
@@ -512,7 +536,7 @@ export default function SentinelPage() {
           </div>
 
           {/* Quick Actions and Summary */}
-          <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+          <div className="glass-premium p-6">
             <h3 className="text-lg font-sora font-semibold text-white mb-6">Quick Actions</h3>
 
             <div className="grid grid-cols-2 gap-4 mb-6">
@@ -569,6 +593,6 @@ export default function SentinelPage() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { MetricsCard } from "@/components/dashboard";
 import { cn } from "@/lib/utils";
 import {
@@ -10,6 +11,28 @@ import {
   Globe,
   RefreshCw,
 } from "lucide-react";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.16, 1, 0.3, 1] as const,
+    },
+  },
+};
 
 // Mock domain health data
 const mockDomains = [
@@ -53,19 +76,24 @@ const recentAlerts = [
 
 export default function CompliancePage() {
   return (
-    <div className="min-h-screen bg-deep-space p-8">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className="min-h-screen p-8"
+    >
       {/* Page Header */}
-      <div className="mb-8">
+      <motion.div variants={itemVariants} className="mb-8">
         <div className="flex items-center gap-2 text-sm text-steel mb-2">
           <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
           <span>/</span>
-          <span className="text-white">Compliance</span>
+          <span className="text-electric-cyan">Compliance</span>
         </div>
         <h1 className="text-2xl font-sora font-bold text-white">Compliance</h1>
         <p className="text-sm text-steel mt-1">
           Domain health and deliverability monitoring
         </p>
-      </div>
+      </motion.div>
 
       {/* Top metrics */}
       <div className="grid grid-cols-4 gap-6 mb-8">
@@ -91,9 +119,9 @@ export default function CompliancePage() {
         />
       </div>
 
-      <div className="grid grid-cols-12 gap-6">
+      <motion.div variants={itemVariants} className="grid grid-cols-12 gap-6">
         {/* Domain Health Table */}
-        <div className="col-span-8 rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90">
+        <div className="col-span-8 glass-premium">
           <div className="flex items-center justify-between px-6 py-4 border-b border-electric-cyan/10">
             <div>
               <h3 className="text-base font-semibold text-white">Domain Health</h3>
@@ -145,7 +173,7 @@ export default function CompliancePage() {
         </div>
 
         {/* Recent Alerts */}
-        <div className="col-span-4 rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90">
+        <div className="col-span-4 glass-premium">
           <div className="px-6 py-4 border-b border-electric-cyan/10">
             <h3 className="text-base font-semibold text-white">Recent Alerts</h3>
             <p className="text-xs text-steel">{recentAlerts.length} alerts</p>
@@ -175,7 +203,7 @@ export default function CompliancePage() {
             ))}
           </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

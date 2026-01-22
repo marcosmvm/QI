@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {
   Shield,
@@ -23,6 +24,28 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.16, 1, 0.3, 1] as const,
+    },
+  },
+};
 
 // Mock data for Guardian Engine
 const overallHealth = {
@@ -160,20 +183,26 @@ export default function GuardianPage() {
   };
 
   return (
-    <div className="min-h-screen bg-deep-space p-8">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className="min-h-screen p-8"
+    >
       {/* Page Header */}
-      <div className="mb-8">
+      <motion.div variants={itemVariants} className="mb-8">
         <div className="flex items-center gap-2 text-sm text-steel mb-2">
           <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
           <span>/</span>
-          <span className="text-white">The Guardian</span>
+          <span className="text-electric-cyan">The Guardian</span>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-white">Compliance & Deliverability Engine</h1>
-      </div>
+        <h1 className="text-2xl font-sora font-bold text-white">The Guardian</h1>
+        <p className="text-steel mt-1">Compliance & Deliverability Engine</p>
+      </motion.div>
 
       <div className="space-y-6">
         {/* Engine Status Banner */}
-        <div className="relative rounded-2xl border border-neon-mint/20 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6 overflow-hidden">
+        <motion.div variants={itemVariants} className="relative glass-premium p-6 overflow-hidden border-neon-mint/20">
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-neon-mint/60 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-br from-neon-mint/5 to-transparent" />
 
@@ -217,12 +246,12 @@ export default function GuardianPage() {
               </Button>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Health Score and Quick Stats */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           {/* Overall Health Score - Larger card */}
-          <div className="lg:col-span-1 rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+          <div className="lg:col-span-1 glass-premium p-6">
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-electric-cyan/40 to-transparent" />
             <h3 className="text-sm font-medium text-steel mb-4">Overall Health Score</h3>
             <div className="flex flex-col items-center justify-center py-4">
@@ -266,7 +295,7 @@ export default function GuardianPage() {
 
           {/* Quick Stats */}
           <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+            <div className="glass-premium p-6">
               <div className="flex items-center justify-between mb-3">
                 <Mail className="h-5 w-5 text-electric-cyan" />
                 <span className="text-neon-mint text-sm font-medium flex items-center gap-1">
@@ -278,7 +307,7 @@ export default function GuardianPage() {
               <p className="text-xs text-steel mt-2">Target: &gt;98%</p>
             </div>
 
-            <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+            <div className="glass-premium p-6">
               <div className="flex items-center justify-between mb-3">
                 <AlertCircle className="h-5 w-5 text-electric-cyan" />
                 <span className="text-neon-mint text-sm font-medium flex items-center gap-1">
@@ -290,7 +319,7 @@ export default function GuardianPage() {
               <p className="text-xs text-steel mt-2">Target: &lt;1%</p>
             </div>
 
-            <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+            <div className="glass-premium p-6">
               <div className="flex items-center justify-between mb-3">
                 <Activity className="h-5 w-5 text-electric-cyan" />
                 <span className="text-steel text-sm font-medium">Same</span>
@@ -300,12 +329,12 @@ export default function GuardianPage() {
               <p className="text-xs text-steel mt-2">Target: &lt;2%</p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Mailbox Health and DNS/Blacklist */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Mailbox Health Table */}
-          <div className="lg:col-span-2 rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6 overflow-hidden">
+          <div className="lg:col-span-2 glass-premium p-6 overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-electric-cyan/40 to-transparent" />
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-lg font-sora font-semibold text-white">Mailbox Health</h3>
@@ -365,7 +394,7 @@ export default function GuardianPage() {
           {/* DNS Records and Blacklist */}
           <div className="space-y-6">
             {/* DNS Records */}
-            <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+            <div className="glass-premium p-6">
               <h3 className="text-lg font-sora font-semibold text-white mb-4">DNS Records</h3>
               <div className="space-y-3">
                 {dnsRecords.map((record, index) => {
@@ -394,7 +423,7 @@ export default function GuardianPage() {
             </div>
 
             {/* Blacklist Status */}
-            <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+            <div className="glass-premium p-6">
               <h3 className="text-lg font-sora font-semibold text-white mb-4">Blacklist Status</h3>
               <div className="text-center py-4">
                 <div className="flex items-center justify-center gap-2 mb-2">
@@ -419,12 +448,12 @@ export default function GuardianPage() {
               </Button>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Inbox Placement Test and DNC Checker */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Inbox Placement Test Results */}
-          <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+          <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-lg font-sora font-semibold text-white">Inbox Placement by Provider</h3>
               <Button variant="ghost" size="sm" className="text-electric-cyan hover:text-electric-cyan/80">
@@ -495,7 +524,7 @@ export default function GuardianPage() {
           </div>
 
           {/* DNC Checker */}
-          <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+          <div className="glass-premium p-6">
             <div className="flex items-center gap-3 mb-6">
               <Lock className="h-5 w-5 text-electric-cyan" />
               <h3 className="text-lg font-sora font-semibold text-white">Do Not Contact Check</h3>
@@ -589,8 +618,8 @@ export default function GuardianPage() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }

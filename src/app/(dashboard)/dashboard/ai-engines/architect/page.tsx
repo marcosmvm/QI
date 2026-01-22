@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import {
   Cpu,
@@ -36,7 +37,30 @@ import {
   Wand2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { MetricsCard } from "@/components/dashboard";
 import { useState } from "react";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.16, 1, 0.3, 1] as const,
+    },
+  },
+};
 
 // Mock data for campaigns
 const activeCampaigns = [
@@ -188,20 +212,26 @@ export default function ArchitectPage() {
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
-    <div className="min-h-screen bg-deep-space p-8">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className="min-h-screen p-8"
+    >
       {/* Page Header */}
-      <div className="mb-8">
+      <motion.div variants={itemVariants} className="mb-8">
         <div className="flex items-center gap-2 text-sm text-steel mb-2">
           <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
           <span>/</span>
-          <span className="text-white">Architect Engine</span>
+          <span className="text-electric-cyan">Architect Engine</span>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-white">AI-Powered Campaign Design & Sequence Building</h1>
-      </div>
+        <h1 className="text-2xl font-sora font-bold text-white">Architect Engine</h1>
+        <p className="text-steel mt-1">AI-Powered Campaign Design & Sequence Building</p>
+      </motion.div>
 
       <div className="space-y-6">
         {/* Engine Status Banner */}
-        <div className="relative rounded-2xl border border-quantum-violet/20 bg-gradient-to-r from-quantum-violet/10 via-midnight-blue/50 to-quantum-violet/5 p-6 overflow-hidden">
+        <motion.div variants={itemVariants} className="relative glass-premium p-6 overflow-hidden border-quantum-violet/20">
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-quantum-violet/60 to-transparent" />
           <div className="absolute -right-20 -top-20 w-64 h-64 bg-quantum-violet/10 rounded-full blur-3xl" />
 
@@ -246,43 +276,39 @@ export default function ArchitectPage() {
               </Button>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Quick Stats */}
+        {/* Quick Stats - Using MetricsCard */}
         <div className="grid grid-cols-4 gap-4">
-          {[
-            { label: "Active Campaigns", value: "12", icon: Play, color: "neon-mint" },
-            { label: "Total Sequences", value: "34", icon: GitBranch, color: "electric-cyan" },
-            { label: "AI Variants Generated", value: "156", icon: Sparkles, color: "quantum-violet" },
-            { label: "Avg Reply Rate", value: "8.4%", icon: MessageSquare, color: "energy-orange" },
-          ].map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-4 hover:border-electric-cyan/20 transition-all"
-            >
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-xs text-steel mb-1">{stat.label}</p>
-                  <p className="text-2xl font-sora font-bold text-white">{stat.value}</p>
-                </div>
-                <div className={cn(
-                  "flex h-10 w-10 items-center justify-center rounded-xl",
-                  stat.color === "neon-mint" && "bg-neon-mint/10 border border-neon-mint/20",
-                  stat.color === "electric-cyan" && "bg-electric-cyan/10 border border-electric-cyan/20",
-                  stat.color === "quantum-violet" && "bg-quantum-violet/10 border border-quantum-violet/20",
-                  stat.color === "energy-orange" && "bg-energy-orange/10 border border-energy-orange/20"
-                )}>
-                  <stat.icon className={cn(
-                    "h-5 w-5",
-                    stat.color === "neon-mint" && "text-neon-mint",
-                    stat.color === "electric-cyan" && "text-electric-cyan",
-                    stat.color === "quantum-violet" && "text-quantum-violet",
-                    stat.color === "energy-orange" && "text-energy-orange"
-                  )} />
-                </div>
-              </div>
-            </div>
-          ))}
+          <MetricsCard
+            title="Active Campaigns"
+            value={12}
+            icon={Play}
+            accent="mint"
+            delay={0}
+          />
+          <MetricsCard
+            title="Total Sequences"
+            value={34}
+            icon={GitBranch}
+            accent="cyan"
+            delay={0.1}
+          />
+          <MetricsCard
+            title="AI Variants Generated"
+            value={156}
+            icon={Sparkles}
+            accent="violet"
+            delay={0.2}
+          />
+          <MetricsCard
+            title="Avg Reply Rate"
+            value={8.4}
+            suffix="%"
+            icon={MessageSquare}
+            accent="orange"
+            delay={0.3}
+          />
         </div>
 
         {/* Tab Navigation */}
@@ -310,7 +336,7 @@ export default function ArchitectPage() {
 
         {/* Campaigns Tab */}
         {activeTab === "campaigns" && (
-          <div className="space-y-4">
+          <motion.div variants={itemVariants} className="space-y-4">
             {/* Search and Filters */}
             <div className="flex items-center justify-between">
               <div className="relative">
@@ -336,7 +362,7 @@ export default function ArchitectPage() {
             </div>
 
             {/* Campaigns Table */}
-            <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 overflow-hidden">
+            <div className="glass-premium overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
@@ -430,12 +456,12 @@ export default function ArchitectPage() {
                 </table>
               </div>
             </div>
-          </div>
+          </motion.div>
         )}
 
         {/* Sequences Tab */}
         {activeTab === "sequences" && (
-          <div className="space-y-6">
+          <motion.div variants={itemVariants} className="space-y-6">
             {/* Search and Create */}
             <div className="flex items-center justify-between">
               <div className="relative">
@@ -460,7 +486,7 @@ export default function ArchitectPage() {
               {sequenceTemplates.map((sequence) => (
                 <div
                   key={sequence.id}
-                  className="rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-5 hover:border-electric-cyan/30 transition-all group cursor-pointer"
+                  className="glass-premium p-5 hover:border-electric-cyan/30 transition-all group cursor-pointer"
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center gap-3">
@@ -517,15 +543,15 @@ export default function ArchitectPage() {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         )}
 
         {/* AI Generator Tab */}
         {activeTab === "generator" && (
-          <div className="grid grid-cols-3 gap-6">
+          <motion.div variants={itemVariants} className="grid grid-cols-3 gap-6">
             {/* Input Panel */}
             <div className="col-span-1 space-y-4">
-              <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-5">
+              <div className="glass-premium p-5">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-quantum-violet/10 border border-quantum-violet/20">
                     <Wand2 className="h-5 w-5 text-quantum-violet" />
@@ -594,7 +620,7 @@ export default function ArchitectPage() {
               </div>
 
               {/* Voice Settings */}
-              <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-5">
+              <div className="glass-premium p-5">
                 <h3 className="font-semibold text-white mb-3">Brand Voice Settings</h3>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between p-3 rounded-lg bg-deep-space/50 border border-electric-cyan/10">
@@ -632,7 +658,7 @@ export default function ArchitectPage() {
               {generatedVariants.map((variant, index) => (
                 <div
                   key={variant.id}
-                  className="rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-5 hover:border-electric-cyan/20 transition-all"
+                  className="glass-premium p-5 hover:border-electric-cyan/20 transition-all"
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center gap-3">
@@ -693,9 +719,9 @@ export default function ArchitectPage() {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }

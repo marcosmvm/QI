@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import {
   FlaskConical,
@@ -34,6 +35,28 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.16, 1, 0.3, 1] as const,
+    },
+  },
+};
 
 // Mock data for A/B tests
 const activeTests = [
@@ -179,16 +202,17 @@ export default function ScientistPage() {
   const maxOpens = Math.max(...hourlyPerformance.map(h => h.opens));
 
   return (
-    <div className="min-h-screen bg-deep-space p-8">
+    <motion.div initial="hidden" animate="visible" variants={containerVariants} className="min-h-screen p-8">
       {/* Page Header */}
-      <div className="mb-8">
+      <motion.div variants={itemVariants} className="mb-8">
         <div className="flex items-center gap-2 text-sm text-steel mb-2">
           <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
           <span>/</span>
-          <span className="text-white">Scientist Engine</span>
+          <span className="text-electric-cyan">Scientist Engine</span>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-white">Campaign Optimization & A/B Testing Intelligence</h1>
-      </div>
+        <h1 className="text-2xl font-sora font-bold text-white">Scientist Engine</h1>
+        <p className="text-steel mt-1">Campaign Optimization & A/B Testing Intelligence</p>
+      </motion.div>
 
       <div className="space-y-6">
         {/* Engine Status Banner */}
@@ -317,7 +341,7 @@ export default function ScientistPage() {
         {activeTab === "overview" && (
           <div className="grid grid-cols-3 gap-6">
             {/* Hourly Performance Chart */}
-            <div className="col-span-2 rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+            <div className="col-span-2 glass-premium p-6">
               <div className="flex items-center justify-between mb-6">
                 <div>
                   <h3 className="text-lg font-sora font-semibold text-white">Hourly Performance</h3>
@@ -446,7 +470,7 @@ export default function ScientistPage() {
               return (
                 <div
                   key={test.id}
-                  className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6 hover:border-electric-cyan/20 transition-all"
+                  className="glass-premium p-6 hover:border-electric-cyan/20 transition-all"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div>
@@ -640,6 +664,6 @@ export default function ScientistPage() {
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -27,6 +28,28 @@ import {
   Building2,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.16, 1, 0.3, 1] as const,
+    },
+  },
+};
 
 // Mock data for Hunter Engine
 const overallStats = {
@@ -229,16 +252,19 @@ export default function HunterPage() {
     : recentReplies.filter(r => r.sentiment === sentimentFilter);
 
   return (
-    <div className="min-h-screen bg-deep-space p-8">
+    <motion.div initial="hidden" animate="visible" variants={containerVariants} className="min-h-screen p-8">
       {/* Page Header */}
-      <div className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-steel mb-2">
-          <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
-          <span>/</span>
-          <span className="text-white">The Hunter</span>
+      <motion.div variants={itemVariants}>
+        <div className="mb-8">
+          <div className="flex items-center gap-2 text-sm text-steel mb-2">
+            <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
+            <span>/</span>
+            <span className="text-electric-cyan">The Hunter</span>
+          </div>
+          <h1 className="text-2xl font-sora font-bold text-white">The Hunter</h1>
+          <p className="text-steel mt-1">Reply-Based Lead Expansion Engine</p>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-white">Reply-Based Lead Expansion Engine</h1>
-      </div>
+      </motion.div>
 
       <div className="space-y-6">
         {/* Engine Status Banner */}
@@ -290,7 +316,7 @@ export default function HunterPage() {
 
         {/* Key Metrics */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+          <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-3">
               <MessageSquare className="h-5 w-5 text-electric-cyan" />
               <span className="text-neon-mint text-sm font-medium flex items-center gap-1">
@@ -302,7 +328,7 @@ export default function HunterPage() {
             <p className="text-xs text-steel mt-2">This month</p>
           </div>
 
-          <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+          <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-3">
               <ThumbsUp className="h-5 w-5 text-neon-mint" />
               <span className="text-neon-mint text-sm font-medium flex items-center gap-1">
@@ -314,7 +340,7 @@ export default function HunterPage() {
             <p className="text-xs text-steel mt-2">Industry avg: 45%</p>
           </div>
 
-          <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+          <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-3">
               <Users className="h-5 w-5 text-quantum-violet" />
               <span className="text-neon-mint text-sm font-medium flex items-center gap-1">
@@ -326,7 +352,7 @@ export default function HunterPage() {
             <p className="text-xs text-steel mt-2">From positive replies</p>
           </div>
 
-          <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+          <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-3">
               <UserPlus className="h-5 w-5 text-energy-orange" />
               <span className="text-neon-mint text-sm font-medium flex items-center gap-1">
@@ -342,7 +368,7 @@ export default function HunterPage() {
         {/* Reply Sentiment Breakdown */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Sentiment Overview */}
-          <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+          <div className="glass-premium p-6">
             <h3 className="text-lg font-sora font-semibold text-white mb-6">Reply Sentiment Analysis</h3>
 
             <div className="space-y-4">
@@ -410,7 +436,7 @@ export default function HunterPage() {
           </div>
 
           {/* Qualification Pipeline */}
-          <div className="lg:col-span-2 rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+          <div className="lg:col-span-2 glass-premium p-6">
             <h3 className="text-lg font-sora font-semibold text-white mb-6">Lead Qualification Pipeline</h3>
 
             <div className="flex items-center justify-between gap-4">
@@ -461,7 +487,7 @@ export default function HunterPage() {
         {/* Recent Replies and Referrals */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Recent Replies */}
-          <div className="lg:col-span-2 rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+          <div className="lg:col-span-2 glass-premium p-6">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-lg font-sora font-semibold text-white">Recent Replies</h3>
               <div className="flex items-center gap-2">
@@ -542,7 +568,7 @@ export default function HunterPage() {
           </div>
 
           {/* Referral Leads */}
-          <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+          <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-lg font-sora font-semibold text-white">Referral Leads</h3>
               <span className="text-xs px-2 py-1 rounded-full bg-energy-orange/10 text-energy-orange border border-energy-orange/20">
@@ -598,7 +624,7 @@ export default function HunterPage() {
         </div>
 
         {/* Campaign Performance */}
-        <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+        <div className="glass-premium p-6">
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-lg font-sora font-semibold text-white">Campaign Reply Performance</h3>
             <Button variant="ghost" size="sm" className="text-electric-cyan hover:text-electric-cyan/80">
@@ -648,6 +674,6 @@ export default function HunterPage() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

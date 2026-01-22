@@ -1,4 +1,6 @@
-import { createClient } from "@/lib/supabase/server";
+"use client";
+
+import { motion } from "framer-motion";
 import {
   Shield,
   Cpu,
@@ -15,7 +17,16 @@ import {
 import Link from "next/link";
 import { EngineStatusCard } from "@/components/admin/EngineStatusCard";
 
-export const dynamic = "force-dynamic";
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const } },
+};
+
 
 type EngineName = "Guardian" | "Architect" | "Scientist" | "Hunter" | "Sentinel";
 type EngineStatus = "operational" | "degraded" | "offline";
@@ -70,7 +81,7 @@ const engineConfig: Record<
 };
 
 // Fetch engine health from n8n or database
-async function getEngineHealth(): Promise<EngineInfo[]> {
+function getEngineHealth(): EngineInfo[] {
   // In production, this would query n8n API or engine_health table
   // For now, we'll simulate with realistic data
 
@@ -157,14 +168,14 @@ function getSystemHealth(engines: EngineInfo[]) {
   };
 }
 
-export default async function EnginesPage() {
-  const engines = await getEngineHealth();
+export default function EnginesPage() {
+  const engines = getEngineHealth();
   const systemHealth = getSystemHealth(engines);
 
   return (
-    <div className="p-8">
+    <motion.div initial="hidden" animate="visible" variants={containerVariants} className="min-h-screen p-8">
       {/* Header */}
-      <div className="flex items-center justify-between mb-8">
+      <motion.div variants={itemVariants} className="flex items-center justify-between mb-8">
         <div>
           <h1 className="text-2xl font-sora font-bold text-white">Engine Monitoring</h1>
           <p className="text-steel mt-1">
@@ -175,10 +186,10 @@ export default async function EnginesPage() {
           <RefreshCw className="h-4 w-4" />
           Refresh Status
         </button>
-      </div>
+      </motion.div>
 
       {/* System Health Overview */}
-      <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6 mb-8">
+      <div className="glass-premium p-6 mb-8">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-lg font-sora font-semibold text-white">
             System Health Overview
@@ -262,7 +273,7 @@ export default async function EnginesPage() {
       </div>
 
       {/* Engine Details Table */}
-      <div className="mt-8 bg-midnight-blue/30 border border-graphite/50 rounded-xl overflow-hidden">
+      <div className="mt-8 glass-premium overflow-hidden">
         <div className="px-6 py-4 border-b border-graphite/50">
           <h3 className="text-lg font-sora font-semibold text-white">
             Engine Details
@@ -352,7 +363,7 @@ export default async function EnginesPage() {
           </tbody>
         </table>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

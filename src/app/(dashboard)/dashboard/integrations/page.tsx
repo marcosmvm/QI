@@ -164,7 +164,7 @@ export default async function IntegrationsPage() {
   const connectedCount = integrations.filter((i) => i.connected).length;
 
   return (
-    <div className="min-h-screen bg-deep-space p-8">
+    <div className="min-h-screen p-8">
       {/* Page Header */}
       <div className="mb-8">
         <div className="flex items-center gap-2 text-sm text-steel mb-2">
@@ -175,7 +175,7 @@ export default async function IntegrationsPage() {
             Portal
           </Link>
           <span>/</span>
-          <span className="text-white">Integrations</span>
+          <span className="text-electric-cyan">Integrations</span>
         </div>
         <div className="flex items-center justify-between">
           <div>
@@ -207,7 +207,7 @@ export default async function IntegrationsPage() {
           return (
             <div
               key={category.id}
-              className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-4"
+              className="glass-premium p-4"
             >
               <p className="text-sm text-steel">{category.name}</p>
               <p className="text-lg font-sora font-bold text-white">
@@ -244,7 +244,7 @@ export default async function IntegrationsPage() {
       </div>
 
       {/* Help Section */}
-      <div className="mt-12 p-6 bg-midnight-blue/30 border border-graphite/50 rounded-xl">
+      <div className="mt-12 glass-premium p-6">
         <div className="flex items-start gap-4">
           <div className="h-10 w-10 rounded-lg bg-electric-cyan/10 border border-electric-cyan/30 flex items-center justify-center flex-shrink-0">
             <Link2 className="h-5 w-5 text-electric-cyan" />
@@ -276,10 +276,10 @@ function IntegrationCard({ integration }: { integration: Integration }) {
 
   return (
     <div
-      className={`p-6 rounded-xl border transition-colors ${
+      className={`p-6 rounded-xl border transition-all hover:-translate-y-0.5 hover:shadow-card-hover ${
         integration.connected
-          ? "bg-midnight-blue/40 border-neon-mint/30"
-          : "bg-midnight-blue/30 border-graphite/50 hover:border-electric-cyan/30"
+          ? "bg-midnight-blue/40 border-neon-mint/30 backdrop-blur-sm"
+          : "bg-midnight-blue/30 border-graphite/50 hover:border-electric-cyan/30 backdrop-blur-sm"
       }`}
     >
       <div className="flex items-start justify-between mb-4">

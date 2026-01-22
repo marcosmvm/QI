@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import {
   Calendar,
@@ -32,7 +33,30 @@ import {
   RefreshCw,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { MetricsCard } from "@/components/dashboard";
 import { useState } from "react";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.16, 1, 0.3, 1] as const,
+    },
+  },
+};
 
 // Mock appointments data
 const appointmentsData = [
@@ -222,56 +246,62 @@ export default function AppointmentsPage() {
   const todayString = "2026-01-20"; // Mock today
 
   return (
-    <div className="min-h-screen bg-deep-space p-8">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className="min-h-screen p-8"
+    >
       {/* Page Header */}
-      <div className="mb-8">
+      <motion.div variants={itemVariants} className="mb-8">
         <div className="flex items-center gap-2 text-sm text-steel mb-2">
           <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
           <span>/</span>
-          <span className="text-white">Appointments</span>
+          <span className="text-electric-cyan">Appointments</span>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-white">Meeting scheduling and calendar management</h1>
-      </div>
+        <h1 className="text-2xl font-sora font-bold text-white">Appointments</h1>
+        <p className="text-steel mt-1">Meeting scheduling and calendar management</p>
+      </motion.div>
 
       <div className="space-y-6">
-        {/* Quick Stats */}
+        {/* Quick Stats - Using MetricsCard */}
         <div className="grid grid-cols-5 gap-4">
-          {[
-            { label: "Today's Meetings", value: "2", icon: Calendar, color: "electric-cyan" },
-            { label: "This Week", value: "8", icon: CalendarDays, color: "quantum-violet" },
-            { label: "Pending Confirmation", value: "3", icon: AlertCircle, color: "energy-orange" },
-            { label: "Completed This Month", value: "24", icon: CheckCircle2, color: "neon-mint" },
-            { label: "Show Rate", value: "94%", icon: TrendingUp, color: "rose" },
-          ].map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-4 hover:border-electric-cyan/20 transition-all"
-            >
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-xs text-steel mb-1">{stat.label}</p>
-                  <p className="text-2xl font-sora font-bold text-white">{stat.value}</p>
-                </div>
-                <div className={cn(
-                  "flex h-10 w-10 items-center justify-center rounded-xl border",
-                  stat.color === "electric-cyan" && "bg-electric-cyan/10 border-electric-cyan/20",
-                  stat.color === "quantum-violet" && "bg-quantum-violet/10 border-quantum-violet/20",
-                  stat.color === "energy-orange" && "bg-energy-orange/10 border-energy-orange/20",
-                  stat.color === "neon-mint" && "bg-neon-mint/10 border-neon-mint/20",
-                  stat.color === "rose" && "bg-rose/10 border-rose/20"
-                )}>
-                  <stat.icon className={cn(
-                    "h-5 w-5",
-                    stat.color === "electric-cyan" && "text-electric-cyan",
-                    stat.color === "quantum-violet" && "text-quantum-violet",
-                    stat.color === "energy-orange" && "text-energy-orange",
-                    stat.color === "neon-mint" && "text-neon-mint",
-                    stat.color === "rose" && "text-rose"
-                  )} />
-                </div>
-              </div>
-            </div>
-          ))}
+          <MetricsCard
+            title="Today's Meetings"
+            value={2}
+            icon={Calendar}
+            accent="cyan"
+            delay={0}
+          />
+          <MetricsCard
+            title="This Week"
+            value={8}
+            icon={CalendarDays}
+            accent="violet"
+            delay={0.1}
+          />
+          <MetricsCard
+            title="Pending Confirmation"
+            value={3}
+            icon={AlertCircle}
+            accent="orange"
+            delay={0.2}
+          />
+          <MetricsCard
+            title="Completed This Month"
+            value={24}
+            icon={CheckCircle2}
+            accent="mint"
+            delay={0.3}
+          />
+          <MetricsCard
+            title="Show Rate"
+            value={94}
+            suffix="%"
+            icon={TrendingUp}
+            accent="cyan"
+            delay={0.4}
+          />
         </div>
 
         {/* Actions Bar */}
@@ -326,9 +356,9 @@ export default function AppointmentsPage() {
 
         {/* Calendar View */}
         {viewMode === "calendar" && (
-          <div className="grid grid-cols-3 gap-6">
+          <motion.div variants={itemVariants} className="grid grid-cols-3 gap-6">
             {/* Calendar */}
-            <div className="col-span-2 rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+            <div className="col-span-2 glass-premium p-6">
               {/* Calendar Header */}
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-xl font-sora font-bold text-white">
@@ -424,7 +454,7 @@ export default function AppointmentsPage() {
 
             {/* Selected Day Details */}
             <div className="space-y-4">
-              <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-5">
+              <div className="glass-premium p-5">
                 <h3 className="font-semibold text-white mb-4">
                   {selectedDate
                     ? new Date(selectedDate + "T00:00:00").toLocaleDateString("en-US", {
@@ -521,7 +551,7 @@ export default function AppointmentsPage() {
               </div>
 
               {/* Upcoming Appointments Quick View */}
-              <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-5">
+              <div className="glass-premium p-5">
                 <h3 className="font-semibold text-white mb-4">Upcoming This Week</h3>
                 <div className="space-y-2">
                   {appointmentsData.slice(0, 4).map((apt) => {
@@ -542,12 +572,12 @@ export default function AppointmentsPage() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         )}
 
         {/* List View */}
         {viewMode === "list" && (
-          <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 overflow-hidden">
+          <motion.div variants={itemVariants} className="glass-premium overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
@@ -641,9 +671,9 @@ export default function AppointmentsPage() {
                 </tbody>
               </table>
             </div>
-          </div>
+          </motion.div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }

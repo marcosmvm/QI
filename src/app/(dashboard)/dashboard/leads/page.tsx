@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 import {
   Users,
   Search,
@@ -35,8 +36,31 @@ import {
   SlidersHorizontal,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { MetricsCard } from "@/components/dashboard";
 import { useState } from "react";
 import Link from "next/link";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.16, 1, 0.3, 1] as const,
+    },
+  },
+};
 
 // Pipeline stages
 const pipelineStages = [
@@ -183,59 +207,67 @@ export default function LeadsPage() {
     : leadsData;
 
   return (
-    <div className="min-h-screen bg-deep-space p-8">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className="min-h-screen p-8"
+    >
       {/* Page Header */}
-      <div className="mb-8">
+      <motion.div variants={itemVariants} className="mb-8">
         <div className="flex items-center gap-2 text-sm text-steel mb-2">
           <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
           <span>/</span>
-          <span className="text-white">Leads</span>
+          <span className="text-electric-cyan">Leads</span>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-white">Pipeline management and lead tracking</h1>
-      </div>
+        <h1 className="text-2xl font-sora font-bold text-white">Leads</h1>
+        <p className="text-steel mt-1">Pipeline management and lead tracking</p>
+      </motion.div>
 
       <div className="space-y-6">
-        {/* Quick Stats */}
+        {/* Quick Stats - Using MetricsCard */}
         <div className="grid grid-cols-5 gap-4">
-          {[
-            { label: "Total Leads", value: "547", change: "+23", icon: Users, color: "electric-cyan" },
-            { label: "Hot Leads", value: "45", change: "+8", icon: Target, color: "neon-mint" },
-            { label: "Contacted Today", value: "78", change: "+12", icon: Mail, color: "quantum-violet" },
-            { label: "Meetings This Week", value: "12", change: "+3", icon: Calendar, color: "energy-orange" },
-            { label: "Conversion Rate", value: "4.2%", change: "+0.5%", icon: TrendingUp, color: "rose" },
-          ].map((stat) => (
-            <div
-              key={stat.label}
-              className="relative rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-4 hover:border-electric-cyan/30 hover:-translate-y-0.5 hover:shadow-card-hover transition-all duration-200 group overflow-hidden"
-            >
-              {/* Top accent line on hover */}
-              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-electric-cyan to-quantum-violet opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-xs text-steel mb-1">{stat.label}</p>
-                  <p className="text-2xl font-sora font-bold text-white">{stat.value}</p>
-                </div>
-                <div className={cn(
-                  "flex h-10 w-10 items-center justify-center rounded-xl border",
-                  stat.color === "electric-cyan" && "bg-electric-cyan/10 border-electric-cyan/20",
-                  stat.color === "neon-mint" && "bg-neon-mint/10 border-neon-mint/20",
-                  stat.color === "quantum-violet" && "bg-quantum-violet/10 border-quantum-violet/20",
-                  stat.color === "energy-orange" && "bg-energy-orange/10 border-energy-orange/20",
-                  stat.color === "rose" && "bg-rose/10 border-rose/20"
-                )}>
-                  <stat.icon className={cn(
-                    "h-5 w-5",
-                    stat.color === "electric-cyan" && "text-electric-cyan",
-                    stat.color === "neon-mint" && "text-neon-mint",
-                    stat.color === "quantum-violet" && "text-quantum-violet",
-                    stat.color === "energy-orange" && "text-energy-orange",
-                    stat.color === "rose" && "text-rose"
-                  )} />
-                </div>
-              </div>
-              <p className="text-xs text-neon-mint mt-2">{stat.change} this week</p>
-            </div>
-          ))}
+          <MetricsCard
+            title="Total Leads"
+            value={547}
+            change={23}
+            icon={Users}
+            accent="cyan"
+            delay={0}
+          />
+          <MetricsCard
+            title="Hot Leads"
+            value={45}
+            change={8}
+            icon={Target}
+            accent="mint"
+            delay={0.1}
+          />
+          <MetricsCard
+            title="Contacted Today"
+            value={78}
+            change={12}
+            icon={Mail}
+            accent="violet"
+            delay={0.2}
+          />
+          <MetricsCard
+            title="Meetings This Week"
+            value={12}
+            change={3}
+            icon={Calendar}
+            accent="orange"
+            delay={0.3}
+          />
+          <MetricsCard
+            title="Conversion Rate"
+            value={4.2}
+            suffix="%"
+            change={0.5}
+            icon={TrendingUp}
+            accent="cyan"
+            delay={0.4}
+          />
         </div>
 
         {/* Actions Bar */}
@@ -308,7 +340,7 @@ export default function LeadsPage() {
 
         {/* Pipeline View */}
         {viewMode === "pipeline" && (
-          <div className="grid grid-cols-5 gap-4">
+          <motion.div variants={itemVariants} className="grid grid-cols-5 gap-4">
             {pipelineStages.map((stage) => {
               const stageLeads = leadsData.filter(l => l.stage === stage.id);
               return (
@@ -413,12 +445,12 @@ export default function LeadsPage() {
                 </div>
               );
             })}
-          </div>
+          </motion.div>
         )}
 
         {/* List View */}
         {viewMode === "list" && (
-          <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 overflow-hidden">
+          <motion.div variants={itemVariants} className="glass-premium overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
@@ -547,9 +579,9 @@ export default function LeadsPage() {
                 </Button>
               </div>
             </div>
-          </div>
+          </motion.div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }
