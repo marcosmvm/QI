@@ -70,7 +70,7 @@ export default function TestimonialsPage() {
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white mb-6">
               What Our Clients{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric-cyan to-quantum-violet">
+              <span className="gradient-text-cyan-violet">
                 Say About Us
               </span>
             </h1>
@@ -120,7 +120,7 @@ export default function TestimonialsPage() {
                     </p>
                   </div>
                   <div className="text-right">
-                    <p className="text-2xl font-sora font-bold text-transparent bg-clip-text bg-gradient-to-r from-electric-cyan to-quantum-violet">
+                    <p className="text-2xl font-sora font-bold gradient-text-cyan-violet">
                       {testimonial.metric.value}
                     </p>
                     <p className="text-steel text-xs">{testimonial.metric.label}</p>

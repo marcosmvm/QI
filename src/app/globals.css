@@ -92,9 +92,19 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--white);
 }
 
-/* Gradient text utility */
+/* Gradient text utility - with fallback for better browser support */
 .text-gradient {
-  background: var(--gradient-cyan-violet);
+  color: var(--electric-cyan); /* Fallback color */
+  background: linear-gradient(135deg, #00D4FF 0%, #7B61FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Ensure gradient text renders properly with explicit webkit support */
+.gradient-text-cyan-violet {
+  color: #00D4FF; /* Fallback */
+  background: linear-gradient(to right, #00D4FF, #7B61FF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

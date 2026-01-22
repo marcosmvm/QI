@@ -65,7 +65,7 @@ export function Testimonials() {
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
             Trusted by{" "}
-            <span className="bg-gradient-to-r from-electric-cyan to-quantum-violet bg-clip-text text-transparent">
+            <span className="gradient-text-cyan-violet">
               Growth Leaders
             </span>
           </h2>

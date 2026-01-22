@@ -34,7 +34,7 @@ export default function PricingPage() {
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white mb-6">
               Invest in{" "}
-              <span className="bg-gradient-to-r from-electric-cyan to-quantum-violet bg-clip-text text-transparent">
+              <span className="gradient-text-cyan-violet">
                 Predictable Growth
               </span>
             </h1>
@@ -173,7 +173,7 @@ export default function PricingPage() {
           >
             <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-6">
               Pricing{" "}
-              <span className="bg-gradient-to-r from-electric-cyan to-quantum-violet bg-clip-text text-transparent">
+              <span className="gradient-text-cyan-violet">
                 FAQ
               </span>
             </h2>

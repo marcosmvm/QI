@@ -322,7 +322,7 @@ export default function CompetitorComparisonPage({ params }: PageProps) {
 
             <h1 className="text-4xl md:text-5xl font-sora font-bold text-white mb-6">
               Quantum Insights vs{" "}
-              <span className="bg-gradient-to-r from-electric-cyan to-quantum-violet bg-clip-text text-transparent">
+              <span className="gradient-text-cyan-violet">
                 {data.name}
               </span>
             </h1>
@@ -415,7 +415,7 @@ export default function CompetitorComparisonPage({ params }: PageProps) {
           >
             <h2 className="text-3xl font-sora font-bold text-white mb-4">
               Why Choose{" "}
-              <span className="bg-gradient-to-r from-electric-cyan to-quantum-violet bg-clip-text text-transparent">
+              <span className="gradient-text-cyan-violet">
                 Quantum Insights
               </span>
             </h2>

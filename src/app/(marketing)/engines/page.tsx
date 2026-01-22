@@ -63,7 +63,7 @@ export default function EnginesPage() {
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white mb-6">
               5 AI Engines.{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric-cyan to-quantum-violet">
+              <span className="gradient-text-cyan-violet">
                 One Powerful Platform.
               </span>
             </h1>
@@ -166,7 +166,7 @@ export default function EnginesPage() {
           >
             <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-6">
               How They Work{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric-cyan to-quantum-violet">
+              <span className="gradient-text-cyan-violet">
                 Together
               </span>
             </h2>

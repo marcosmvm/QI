@@ -149,7 +149,7 @@ export default function BookDemoPage() {
 
             <h1 className="text-4xl md:text-5xl font-sora font-bold text-white mb-6">
               Book a{" "}
-              <span className="bg-gradient-to-r from-electric-cyan to-quantum-violet bg-clip-text text-transparent">
+              <span className="gradient-text-cyan-violet">
                 Demo
               </span>
             </h1>

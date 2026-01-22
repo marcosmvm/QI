@@ -110,7 +110,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="text-center"
               >
-                <p className="text-4xl md:text-5xl font-sora font-bold text-transparent bg-clip-text bg-gradient-to-r from-electric-cyan to-quantum-violet">
+                <p className="text-4xl md:text-5xl font-sora font-bold gradient-text-cyan-violet">
                   {metric.value}
                 </p>
                 <p className="text-steel mt-1">{metric.label}</p>

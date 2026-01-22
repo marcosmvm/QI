@@ -168,7 +168,7 @@ export default function PilotProgramPage() {
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white mb-6">
               Experience the Future of{" "}
-              <span className="bg-gradient-to-r from-electric-cyan to-quantum-violet bg-clip-text text-transparent">
+              <span className="gradient-text-cyan-violet">
                 Cold Outreach
               </span>
             </h1>
@@ -214,7 +214,7 @@ export default function PilotProgramPage() {
           >
             <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
               What You Get in the{" "}
-              <span className="bg-gradient-to-r from-electric-cyan to-quantum-violet bg-clip-text text-transparent">
+              <span className="gradient-text-cyan-violet">
                 Pilot Program
               </span>
             </h2>
@@ -258,7 +258,7 @@ export default function PilotProgramPage() {
           >
             <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
               How the Pilot{" "}
-              <span className="bg-gradient-to-r from-electric-cyan to-quantum-violet bg-clip-text text-transparent">
+              <span className="gradient-text-cyan-violet">
                 Works
               </span>
             </h2>
@@ -347,7 +347,7 @@ export default function PilotProgramPage() {
           >
             <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
               Apply for the{" "}
-              <span className="bg-gradient-to-r from-electric-cyan to-quantum-violet bg-clip-text text-transparent">
+              <span className="gradient-text-cyan-violet">
                 Pilot Program
               </span>
             </h2>
@@ -510,7 +510,7 @@ export default function PilotProgramPage() {
           >
             <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
               Pilot Program{" "}
-              <span className="bg-gradient-to-r from-electric-cyan to-quantum-violet bg-clip-text text-transparent">
+              <span className="gradient-text-cyan-violet">
                 FAQ
               </span>
             </h2>

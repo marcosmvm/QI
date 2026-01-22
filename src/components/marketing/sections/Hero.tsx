@@ -8,66 +8,9 @@ import { Container } from "@/components/marketing/layout/Container";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-deep-space">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-deep-space to-midnight-blue" />
-
-      {/* Enhanced Ambient Glow Orbs - HIGHLY VISIBLE */}
-      <motion.div
-        className="absolute -top-40 -left-40 w-[700px] h-[700px] rounded-full blur-[120px] pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(0, 212, 255, 0.35) 0%, rgba(0, 212, 255, 0) 70%)' }}
-        animate={{
-          scale: [1, 1.15, 1],
-          opacity: [0.8, 1, 0.8],
-          x: [0, 30, 0],
-          y: [0, 20, 0],
-        }}
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
-      <motion.div
-        className="absolute -bottom-60 -right-40 w-[600px] h-[600px] rounded-full blur-[120px] pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(123, 97, 255, 0.3) 0%, rgba(123, 97, 255, 0) 70%)' }}
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.7, 1, 0.7],
-          x: [0, -20, 0],
-          y: [0, -30, 0],
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 3
-        }}
-      />
-      {/* Third orb - mint accent */}
-      <motion.div
-        className="absolute top-1/3 right-1/4 w-[400px] h-[400px] rounded-full blur-[100px] pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(0, 255, 178, 0.15) 0%, rgba(0, 255, 178, 0) 70%)' }}
-        animate={{
-          scale: [1, 1.1, 0.95, 1],
-          opacity: [0.5, 0.8, 0.6, 0.5],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 5
-        }}
-      />
-
-      {/* Grid Pattern - Slightly more visible */}
-      <div
-        className="absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0,212,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.5) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px'
-        }}
-      />
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      {/* Background Gradient - subtle enhancement over layout orbs */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-deep-space/50 to-midnight-blue/30" />
 
       <Container className="relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -90,7 +33,7 @@ export function Hero() {
             className="text-5xl md:text-6xl lg:text-7xl font-sora font-bold text-white leading-tight mb-6"
           >
             Book More Meetings{" "}
-            <span className="bg-gradient-to-r from-electric-cyan to-quantum-violet bg-clip-text text-transparent">
+            <span className="gradient-text-cyan-violet">
               On Autopilot
             </span>
           </motion.h1>

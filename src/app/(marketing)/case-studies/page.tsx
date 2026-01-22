@@ -32,7 +32,7 @@ export default function CaseStudiesPage() {
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white mb-6">
               Real Results from{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric-cyan to-quantum-violet">
+              <span className="gradient-text-cyan-violet">
                 Real Clients
               </span>
             </h1>
@@ -99,7 +99,7 @@ export default function CaseStudiesPage() {
                     <div className="grid grid-cols-2 gap-4 mb-6">
                       {study.metrics.map((metric) => (
                         <div key={metric.label} className="text-center p-3 rounded-xl bg-deep-space/50">
-                          <p className="text-2xl font-sora font-bold text-transparent bg-clip-text bg-gradient-to-r from-electric-cyan to-quantum-violet">
+                          <p className="text-2xl font-sora font-bold gradient-text-cyan-violet">
                             {metric.value}
                           </p>
                           <p className="text-steel text-xs">{metric.label}</p>

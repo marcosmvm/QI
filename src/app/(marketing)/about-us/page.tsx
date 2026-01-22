@@ -55,7 +55,7 @@ export default function AboutPage() {
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white mb-6">
               We&apos;re Building the Future of{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric-cyan to-quantum-violet">
+              <span className="gradient-text-cyan-violet">
                 B2B Outbound
               </span>
             </h1>

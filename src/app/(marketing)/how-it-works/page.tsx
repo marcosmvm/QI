@@ -170,7 +170,7 @@ export default function HowItWorksPage() {
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white mb-6">
               How{" "}
-              <span className="bg-gradient-to-r from-electric-cyan to-quantum-violet bg-clip-text text-transparent">
+              <span className="gradient-text-cyan-violet">
                 Quantum Insights
               </span>{" "}
               Works
@@ -217,7 +217,7 @@ export default function HowItWorksPage() {
           >
             <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
               The 4-Step{" "}
-              <span className="bg-gradient-to-r from-electric-cyan to-quantum-violet bg-clip-text text-transparent">
+              <span className="gradient-text-cyan-violet">
                 Process
               </span>
             </h2>
@@ -287,7 +287,7 @@ export default function HowItWorksPage() {
           >
             <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
               Powered by{" "}
-              <span className="bg-gradient-to-r from-electric-cyan to-quantum-violet bg-clip-text text-transparent">
+              <span className="gradient-text-cyan-violet">
                 5 AI Engines
               </span>
             </h2>
@@ -405,7 +405,7 @@ export default function HowItWorksPage() {
           >
             <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
               Why We&apos;re{" "}
-              <span className="bg-gradient-to-r from-electric-cyan to-quantum-violet bg-clip-text text-transparent">
+              <span className="gradient-text-cyan-violet">
                 Different
               </span>
             </h2>

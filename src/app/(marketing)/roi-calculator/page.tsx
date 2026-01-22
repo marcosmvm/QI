@@ -130,7 +130,7 @@ export default function ROICalculatorPage() {
 
             <h1 className="text-4xl md:text-5xl font-sora font-bold text-white mb-6">
               Calculate Your{" "}
-              <span className="bg-gradient-to-r from-electric-cyan to-quantum-violet bg-clip-text text-transparent">
+              <span className="gradient-text-cyan-violet">
                 ROI Potential
               </span>
             </h1>

@@ -72,7 +72,7 @@ export default function CareersPage() {
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white mb-6">
               Join the Team Building the{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric-cyan to-quantum-violet">
+              <span className="gradient-text-cyan-violet">
                 Future of Sales
               </span>
             </h1>
