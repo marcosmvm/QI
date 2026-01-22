@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Check, X, DollarSign, ChevronDown } from "lucide-react";
+import { ArrowRight, Check, X, DollarSign, ChevronDown, Sparkles, Zap } from "lucide-react";
 import * as Accordion from "@radix-ui/react-accordion";
 import { Container } from "@/components/marketing/layout/Container";
 import { SectionWrapper } from "@/components/marketing/layout/SectionWrapper";
@@ -14,120 +14,146 @@ import { cn } from "@/lib/utils";
 export default function PricingPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative py-24 overflow-hidden bg-deep-space">
-        <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-deep-space to-midnight-blue" />
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-electric-cyan/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-quantum-violet/10 rounded-full blur-[100px]" />
+      {/* Hero Section - Enhanced */}
+      <section className="relative py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-deep-space/50 to-midnight-blue/30" />
+
+        {/* Enhanced ambient orbs */}
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-neon-mint/10 rounded-full blur-[150px] animate-orb-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-quantum-violet/15 rounded-full blur-[120px] animate-orb-float-reverse" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-electric-cyan/5 rounded-full blur-[180px]" />
 
         <Container className="relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-4xl mx-auto"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neon-mint/10 border border-neon-mint/30 mb-6">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="tech-badge mb-8"
+            >
               <DollarSign className="w-4 h-4 text-neon-mint" />
               <span className="text-sm font-medium text-neon-mint">Transparent Pricing</span>
-            </div>
+              <Sparkles className="w-4 h-4 text-neon-mint" />
+            </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-white mb-8">
               Invest in{" "}
-              <span className="gradient-text-cyan-violet">
+              <span className="headline-underline gradient-text-cyan-violet">
                 Predictable Growth
               </span>
             </h1>
 
-            <p className="text-xl text-steel max-w-2xl mx-auto">
-              Choose the plan that matches your growth goals. All plans include setup, training, and ongoing optimization.
+            <p className="text-xl md:text-2xl text-silver/90 max-w-2xl mx-auto leading-relaxed">
+              Choose the plan that matches your growth goals. All plans include <span className="text-electric-cyan">setup</span>, <span className="text-quantum-violet">training</span>, and <span className="text-neon-mint">ongoing optimization</span>.
             </p>
           </motion.div>
         </Container>
       </section>
 
-      {/* Pricing Cards */}
+      {/* Pricing Cards - Premium Style */}
       <SectionWrapper variant="default">
         <Container>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-10 max-w-7xl mx-auto">
             {pricingTiers.map((tier, index) => (
               <motion.div
                 key={tier.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
                 className={cn(
-                  "relative p-8 rounded-3xl border bg-midnight-blue transition-all duration-300",
-                  tier.popular
-                    ? "border-electric-cyan shadow-lg shadow-electric-cyan/20 scale-105 z-10"
-                    : "border-graphite hover:border-electric-cyan/50"
+                  "pricing-card-premium relative p-8 lg:p-10",
+                  tier.popular && "popular md:scale-105 z-10"
                 )}
               >
-                {/* Popular Badge */}
+                {/* Popular Badge - Enhanced */}
                 {tier.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-electric-cyan text-deep-space text-sm font-semibold">
+                  <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 }}
+                    className="absolute -top-5 left-1/2 -translate-x-1/2 px-6 py-2 rounded-full bg-gradient-to-r from-electric-cyan to-quantum-violet text-deep-space text-sm font-bold shadow-lg shadow-electric-cyan/30 flex items-center gap-2"
+                  >
+                    <Zap className="w-4 h-4" />
                     Most Popular
-                  </div>
+                  </motion.div>
                 )}
 
                 {/* Header */}
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl font-sora font-bold text-white mb-1">
+                  <h3 className="text-2xl lg:text-3xl font-sora font-bold text-white mb-2">
                     {tier.name}
                   </h3>
                   <p className="text-steel text-sm">{tier.tagline}</p>
                 </div>
 
-                {/* Price */}
-                <div className="text-center mb-8">
+                {/* Price - Enhanced */}
+                <div className="text-center mb-10">
                   <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-5xl font-sora font-bold text-electric-cyan">
+                    <span className={cn(
+                      "text-5xl lg:text-6xl font-sora font-bold",
+                      tier.popular ? "text-gradient" : "text-electric-cyan"
+                    )}>
                       {tier.price}
                     </span>
-                    <span className="text-steel">{tier.priceSubtext}</span>
+                    <span className="text-steel text-lg">{tier.priceSubtext}</span>
                   </div>
-                  <p className="text-steel text-sm mt-2">{tier.description}</p>
+                  <p className="text-steel text-sm mt-3">{tier.description}</p>
                 </div>
 
-                {/* Features */}
-                <ul className="space-y-3 mb-8">
+                {/* Features - Enhanced */}
+                <ul className="space-y-4 mb-10">
                   {tier.features.map((feature, featureIndex) => (
-                    <li
+                    <motion.li
                       key={featureIndex}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.3 + featureIndex * 0.05 }}
                       className={cn(
-                        "flex items-start gap-3",
-                        !feature.included && "opacity-50"
+                        "flex items-start gap-3 group",
+                        !feature.included && "opacity-40"
                       )}
                     >
                       {feature.included ? (
-                        <Check className="h-5 w-5 text-electric-cyan flex-shrink-0 mt-0.5" />
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-neon-mint/10 border border-neon-mint/30 flex items-center justify-center mt-0.5 group-hover:bg-neon-mint/20 transition-colors">
+                          <Check className="h-3.5 w-3.5 text-neon-mint" />
+                        </div>
                       ) : (
-                        <X className="h-5 w-5 text-graphite flex-shrink-0 mt-0.5" />
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-graphite/20 border border-graphite/30 flex items-center justify-center mt-0.5">
+                          <X className="h-3.5 w-3.5 text-graphite" />
+                        </div>
                       )}
                       <span className={cn(
-                        "text-sm",
-                        feature.included ? "text-silver" : "text-graphite"
+                        "text-sm leading-relaxed",
+                        feature.included ? "text-silver group-hover:text-white transition-colors" : "text-graphite"
                       )}>
                         {feature.text}
                       </span>
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
 
-                {/* CTA */}
-                <Link href="/contact">
-                  <Button
-                    className={cn(
-                      "w-full font-semibold",
-                      tier.popular
-                        ? "bg-electric-cyan hover:bg-electric-cyan/90 text-deep-space"
-                        : "bg-transparent border border-graphite hover:border-electric-cyan/50 hover:text-electric-cyan text-white"
-                    )}
-                  >
-                    {tier.cta}
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
+                {/* CTA - Enhanced */}
+                <Link href="/contact" className="block">
+                  {tier.popular ? (
+                    <button className="cta-magnetic w-full">
+                      {tier.cta}
+                      <ArrowRight className="h-5 w-5" />
+                    </button>
+                  ) : (
+                    <Button
+                      className="w-full font-semibold bg-transparent border border-electric-cyan/30 hover:border-electric-cyan/60 hover:bg-electric-cyan/10 text-white hover:text-electric-cyan transition-all py-6"
+                    >
+                      {tier.cta}
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  )}
                 </Link>
               </motion.div>
             ))}
@@ -135,75 +161,94 @@ export default function PricingPage() {
         </Container>
       </SectionWrapper>
 
-      {/* Comparison Note */}
+      {/* Section Divider */}
+      <div className="section-divider max-w-4xl mx-auto" />
+
+      {/* Comparison Note - Enhanced */}
       <SectionWrapper variant="dark">
         <Container size="md">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center p-8 rounded-3xl border border-graphite bg-midnight-blue"
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="holographic-card p-10 lg:p-12 text-center"
           >
-            <h3 className="text-2xl font-sora font-bold text-white mb-4">
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+              className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-quantum-violet/10 border border-quantum-violet/30 flex items-center justify-center"
+            >
+              <Sparkles className="w-8 h-8 text-quantum-violet" />
+            </motion.div>
+            <h3 className="text-2xl lg:text-3xl font-sora font-bold text-white mb-4">
               Not sure which plan is right?
             </h3>
-            <p className="text-steel mb-6">
+            <p className="text-silver text-lg mb-8 max-w-xl mx-auto">
               Book a call with our team and we&apos;ll help you determine the best fit based on your goals, target market, and current pipeline.
             </p>
-            <Link href="/contact">
-              <Button className="bg-electric-cyan hover:bg-electric-cyan/90 text-deep-space font-semibold">
-                Schedule a Consultation
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
+            <button className="cta-magnetic">
+              Schedule a Consultation
+              <ArrowRight className="h-5 w-5" />
+            </button>
           </motion.div>
         </Container>
       </SectionWrapper>
 
-      {/* FAQ Section */}
+      {/* FAQ Section - Enhanced */}
       <SectionWrapper variant="default">
         <Container size="md">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center max-w-2xl mx-auto mb-12"
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="text-center max-w-2xl mx-auto mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
               Pricing{" "}
-              <span className="gradient-text-cyan-violet">
+              <span className="headline-underline gradient-text-cyan-violet">
                 FAQ
               </span>
             </h2>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
             <Accordion.Root type="single" collapsible className="space-y-4">
               {pricingFaqs.map((faq, index) => (
-                <Accordion.Item
+                <motion.div
                   key={index}
-                  value={`item-${index}`}
-                  className="group rounded-xl border border-graphite bg-midnight-blue/50 overflow-hidden data-[state=open]:border-electric-cyan/30 transition-colors"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
                 >
-                  <Accordion.Header>
-                    <Accordion.Trigger className="flex w-full items-center justify-between px-6 py-5 text-left">
-                      <span className="text-white font-medium pr-4">{faq.question}</span>
-                      <ChevronDown className="h-5 w-5 text-electric-cyan shrink-0 transition-transform duration-200 group-data-[state=open]:rotate-180" />
-                    </Accordion.Trigger>
-                  </Accordion.Header>
-                  <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                    <div className="px-6 pb-5 text-steel leading-relaxed">
-                      {faq.answer}
-                    </div>
-                  </Accordion.Content>
-                </Accordion.Item>
+                  <Accordion.Item
+                    value={`item-${index}`}
+                    className="group feature-grid-item !p-0 overflow-hidden data-[state=open]:!border-electric-cyan/30"
+                  >
+                    <Accordion.Header>
+                      <Accordion.Trigger className="flex w-full items-center justify-between px-6 py-6 text-left hover:bg-electric-cyan/5 transition-colors">
+                        <span className="text-white font-medium pr-4 text-lg">{faq.question}</span>
+                        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-electric-cyan/10 border border-electric-cyan/20 flex items-center justify-center group-hover:bg-electric-cyan/20 transition-colors">
+                          <ChevronDown className="h-4 w-4 text-electric-cyan transition-transform duration-300 group-data-[state=open]:rotate-180" />
+                        </div>
+                      </Accordion.Trigger>
+                    </Accordion.Header>
+                    <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
+                      <div className="px-6 pb-6 text-silver leading-relaxed border-t border-graphite/30 pt-4">
+                        {faq.answer}
+                      </div>
+                    </Accordion.Content>
+                  </Accordion.Item>
+                </motion.div>
               ))}
             </Accordion.Root>
           </motion.div>

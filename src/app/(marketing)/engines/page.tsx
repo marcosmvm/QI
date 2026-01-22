@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Cpu } from "lucide-react";
+import { ArrowRight, Cpu, Zap, CircuitBoard } from "lucide-react";
 import { Container } from "@/components/marketing/layout/Container";
 import { SectionWrapper } from "@/components/marketing/layout/SectionWrapper";
 import { CTABanner } from "@/components/marketing/sections/CTABanner";
@@ -15,134 +15,168 @@ const colorClasses = {
     border: "border-electric-cyan/30",
     text: "text-electric-cyan",
     gradient: "from-electric-cyan/20 to-transparent",
-    glow: "group-hover:shadow-[0_0_40px_rgba(0,212,255,0.2)]",
+    glow: "rgba(0,212,255,0.25)",
+    accentLine: "bg-electric-cyan",
+    iconBg: "cyan",
   },
   "quantum-violet": {
     bg: "bg-quantum-violet/10",
     border: "border-quantum-violet/30",
     text: "text-quantum-violet",
     gradient: "from-quantum-violet/20 to-transparent",
-    glow: "group-hover:shadow-[0_0_40px_rgba(123,97,255,0.2)]",
+    glow: "rgba(123,97,255,0.25)",
+    accentLine: "bg-quantum-violet",
+    iconBg: "violet",
   },
   "neon-mint": {
     bg: "bg-neon-mint/10",
     border: "border-neon-mint/30",
     text: "text-neon-mint",
     gradient: "from-neon-mint/20 to-transparent",
-    glow: "group-hover:shadow-[0_0_40px_rgba(0,255,178,0.2)]",
+    glow: "rgba(0,255,178,0.25)",
+    accentLine: "bg-neon-mint",
+    iconBg: "mint",
   },
   "energy-orange": {
     bg: "bg-energy-orange/10",
     border: "border-energy-orange/30",
     text: "text-energy-orange",
     gradient: "from-energy-orange/20 to-transparent",
-    glow: "group-hover:shadow-[0_0_40px_rgba(255,107,53,0.2)]",
+    glow: "rgba(255,107,53,0.25)",
+    accentLine: "bg-energy-orange",
+    iconBg: "orange",
   },
 };
 
 export default function EnginesPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-midnight-blue/30 to-deep-space" />
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-quantum-violet/20 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-electric-cyan/15 rounded-full blur-[100px]" />
+      {/* Hero Section - Enhanced */}
+      <section className="relative py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-deep-space/50 to-midnight-blue/30" />
+
+        {/* Enhanced ambient orbs */}
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-quantum-violet/15 rounded-full blur-[150px] animate-orb-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-electric-cyan/12 rounded-full blur-[130px] animate-orb-float-reverse" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neon-mint/5 rounded-full blur-[180px]" />
 
         <Container className="relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center max-w-4xl mx-auto"
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="text-center max-w-5xl mx-auto"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-quantum-violet/10 border border-quantum-violet/20 mb-6">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="tech-badge mb-8"
+            >
               <Cpu className="w-4 h-4 text-quantum-violet" />
               <span className="text-sm font-medium text-quantum-violet">Our Technology</span>
-            </div>
+              <CircuitBoard className="w-4 h-4 text-quantum-violet" />
+            </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-white mb-8">
               5 AI Engines.{" "}
-              <span className="gradient-text-cyan-violet">
+              <span className="headline-underline gradient-text-cyan-violet block mt-2">
                 One Powerful Platform.
               </span>
             </h1>
 
-            <p className="text-xl text-silver max-w-2xl mx-auto mb-10">
-              Each engine is specialized for a critical part of the outbound process. Together, they form an unstoppable lead generation machine.
+            <p className="text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto mb-12 leading-relaxed">
+              Each engine is specialized for a <span className="text-quantum-violet font-semibold">critical part</span> of the outbound process. Together, they form an <span className="text-electric-cyan font-semibold">unstoppable</span> lead generation machine.
             </p>
 
             <Link href="/contact">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-electric-cyan to-cyan-dark hover:from-cyan-light hover:to-electric-cyan text-deep-space font-semibold px-8"
-              >
+              <button className="cta-magnetic group">
                 See Them in Action
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+                <Zap className="h-5 w-5 group-hover:animate-pulse" />
+              </button>
             </Link>
           </motion.div>
         </Container>
       </section>
 
-      {/* Engines List */}
+      {/* Engines List - Enhanced with Engine Cards */}
       <SectionWrapper variant="default">
         <Container>
-          <div className="space-y-8">
+          <div className="space-y-6 lg:space-y-8">
             {engines.map((engine, index) => {
               const colors = colorClasses[engine.color];
               return (
                 <motion.div
                   key={engine.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 40, x: index % 2 === 0 ? -20 : 20 }}
+                  whileInView={{ opacity: 1, y: 0, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <Link href={`/engines/${engine.id}`} className="block group">
-                    <div className={`relative p-8 md:p-10 rounded-3xl border ${colors.border} bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 hover:border-opacity-60 transition-all duration-300 ${colors.glow} overflow-hidden`}>
+                    <div
+                      className="engine-card p-8 md:p-10 lg:p-12"
+                      style={{
+                        '--engine-color': colors.accentLine === 'bg-electric-cyan' ? 'var(--electric-cyan)' :
+                                         colors.accentLine === 'bg-quantum-violet' ? 'var(--quantum-violet)' :
+                                         colors.accentLine === 'bg-neon-mint' ? 'var(--neon-mint)' : 'var(--energy-orange)',
+                        '--engine-glow': colors.glow
+                      } as React.CSSProperties}
+                    >
                       {/* Background Gradient */}
-                      <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-radial ${colors.gradient} blur-3xl opacity-30`} />
+                      <div className={`absolute top-0 right-0 w-80 h-80 bg-gradient-radial ${colors.gradient} blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-500`} />
 
-                      <div className="relative flex flex-col md:flex-row md:items-center gap-6">
+                      <div className="relative flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
                         {/* Icon & Engine Info */}
                         <div className="flex items-center gap-6 flex-shrink-0">
-                          <div className={`p-4 rounded-2xl ${colors.bg} ${colors.border} border`}>
-                            <engine.icon className={`h-10 w-10 ${colors.text}`} />
+                          <div className={`icon-container-animated ${colors.iconBg}`}>
+                            <engine.icon className={`h-8 w-8 ${colors.text}`} />
                           </div>
                           <div>
-                            <span className={`text-xs font-mono ${colors.text} opacity-70`}>
+                            <motion.span
+                              initial={{ opacity: 0 }}
+                              whileInView={{ opacity: 1 }}
+                              transition={{ delay: 0.3 + index * 0.1 }}
+                              className={`inline-block text-xs font-mono ${colors.text} opacity-70 bg-current/10 px-2 py-1 rounded`}
+                            >
                               ENGINE {engine.codename}
-                            </span>
-                            <h2 className="text-2xl md:text-3xl font-sora font-bold text-white">
+                            </motion.span>
+                            <h2 className="text-2xl md:text-3xl font-sora font-bold text-white mt-1 group-hover:text-gradient transition-all">
                               {engine.name}
                             </h2>
-                            <p className={`${colors.text} font-medium`}>{engine.tagline}</p>
+                            <p className={`${colors.text} font-medium text-sm md:text-base`}>{engine.tagline}</p>
                           </div>
                         </div>
 
                         {/* Description */}
                         <div className="flex-1">
-                          <p className="text-silver leading-relaxed">
+                          <p className="text-silver leading-relaxed group-hover:text-white/90 transition-colors">
                             {engine.shortDescription}
                           </p>
                         </div>
 
-                        {/* Stats */}
-                        <div className="hidden lg:flex items-center gap-6 flex-shrink-0">
-                          {engine.stats.slice(0, 2).map((stat) => (
-                            <div key={stat.label} className="text-center">
+                        {/* Stats - Enhanced */}
+                        <div className="hidden lg:flex items-center gap-8 flex-shrink-0">
+                          {engine.stats.slice(0, 2).map((stat, statIndex) => (
+                            <motion.div
+                              key={stat.label}
+                              initial={{ opacity: 0, scale: 0.8 }}
+                              whileInView={{ opacity: 1, scale: 1 }}
+                              viewport={{ once: true }}
+                              transition={{ delay: 0.4 + index * 0.1 + statIndex * 0.1 }}
+                              className="text-center p-3 rounded-xl bg-deep-space/50 border border-graphite/30 group-hover:border-electric-cyan/20 transition-colors"
+                            >
                               <p className={`text-2xl font-sora font-bold ${colors.text}`}>
                                 {stat.value}
                               </p>
                               <p className="text-steel text-xs">{stat.label}</p>
-                            </div>
+                            </motion.div>
                           ))}
                         </div>
 
-                        {/* Arrow */}
-                        <div className={`flex items-center ${colors.text} group-hover:translate-x-2 transition-transform`}>
-                          <ArrowRight className="h-6 w-6" />
+                        {/* Arrow - Enhanced */}
+                        <div className={`flex items-center justify-center w-12 h-12 rounded-full ${colors.bg} border ${colors.border} ${colors.text} group-hover:scale-110 group-hover:translate-x-2 transition-all duration-300`}>
+                          <ArrowRight className="h-5 w-5" />
                         </div>
                       </div>
                     </div>
@@ -154,68 +188,101 @@ export default function EnginesPage() {
         </Container>
       </SectionWrapper>
 
-      {/* How They Work Together */}
+      {/* Section Divider */}
+      <div className="section-divider max-w-4xl mx-auto" />
+
+      {/* How They Work Together - Enhanced */}
       <SectionWrapper variant="dark">
         <Container>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
               How They Work{" "}
-              <span className="gradient-text-cyan-violet">
+              <span className="headline-underline gradient-text-cyan-violet">
                 Together
               </span>
             </h2>
-            <p className="text-lg text-silver">
-              Our engines don&apos;t operate in isolation. They share data, learn from each other, and continuously optimize the entire funnel.
+            <p className="text-lg md:text-xl text-silver leading-relaxed">
+              Our engines don&apos;t operate in isolation. They share data, learn from each other, and <span className="text-electric-cyan">continuously optimize</span> the entire funnel.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {[
               {
                 title: "Guardian + Architect",
                 description: "Guardian ensures optimal domain health while Architect designs campaigns that maximize deliverability.",
+                color: "cyan",
               },
               {
                 title: "Architect + Scientist",
                 description: "Architect creates variations that Scientist tests to find the highest-performing messages.",
+                color: "violet",
               },
               {
                 title: "Scientist + Hunter",
                 description: "Scientist identifies winning patterns that Hunter uses to find similar high-converting prospects.",
+                color: "mint",
               },
               {
                 title: "Hunter + Sentinel",
                 description: "Hunter expands from engaged leads while Sentinel captures warm website visitors.",
+                color: "orange",
               },
               {
                 title: "Sentinel + Guardian",
                 description: "Sentinel triggers personalized outreach that Guardian delivers to the inbox reliably.",
+                color: "cyan",
               },
               {
                 title: "All Five United",
                 description: "Data flows between all engines, creating a self-improving system that gets smarter with every interaction.",
+                color: "gradient",
               },
             ].map((combo, index) => (
               <motion.div
                 key={combo.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-6 rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/50 to-deep-space/50"
+                transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className={`feature-grid-item group ${combo.color === 'gradient' ? '!bg-gradient-to-br !from-electric-cyan/10 !to-quantum-violet/10' : ''}`}
               >
-                <h3 className="text-lg font-sora font-semibold text-white mb-2">
+                {/* Connection Line Indicator */}
+                <div className={`absolute top-0 left-0 right-0 h-1 rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity ${
+                  combo.color === 'cyan' ? 'bg-electric-cyan' :
+                  combo.color === 'violet' ? 'bg-quantum-violet' :
+                  combo.color === 'mint' ? 'bg-neon-mint' :
+                  combo.color === 'orange' ? 'bg-energy-orange' :
+                  'bg-gradient-to-r from-electric-cyan to-quantum-violet'
+                }`} />
+
+                <h3 className={`text-xl font-sora font-semibold mb-3 group-hover:text-gradient transition-all ${
+                  combo.color === 'cyan' ? 'text-electric-cyan' :
+                  combo.color === 'violet' ? 'text-quantum-violet' :
+                  combo.color === 'mint' ? 'text-neon-mint' :
+                  combo.color === 'orange' ? 'text-energy-orange' :
+                  'text-white'
+                }`}>
                   {combo.title}
                 </h3>
-                <p className="text-silver text-sm">
+                <p className="text-silver text-sm leading-relaxed group-hover:text-white/80 transition-colors">
                   {combo.description}
                 </p>
+
+                {/* Neural connection dots */}
+                {combo.color === 'gradient' && (
+                  <div className="absolute bottom-4 right-4 flex gap-1">
+                    <span className="w-2 h-2 rounded-full bg-electric-cyan animate-pulse" />
+                    <span className="w-2 h-2 rounded-full bg-quantum-violet animate-pulse" style={{ animationDelay: '0.2s' }} />
+                    <span className="w-2 h-2 rounded-full bg-neon-mint animate-pulse" style={{ animationDelay: '0.4s' }} />
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>

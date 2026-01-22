@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle, ChevronDown } from "lucide-react";
+import { ArrowRight, CheckCircle, ChevronDown, Sparkles } from "lucide-react";
 import * as Accordion from "@radix-ui/react-accordion";
 import { Container } from "@/components/marketing/layout/Container";
 import { SectionWrapper } from "@/components/marketing/layout/SectionWrapper";
@@ -21,6 +21,7 @@ const colorClasses = {
     text: "text-electric-cyan",
     gradient: "from-electric-cyan to-cyan-dark",
     glow: "shadow-[0_0_60px_rgba(0,212,255,0.3)]",
+    iconBg: "cyan",
   },
   "quantum-violet": {
     bg: "bg-quantum-violet/10",
@@ -28,6 +29,7 @@ const colorClasses = {
     text: "text-quantum-violet",
     gradient: "from-quantum-violet to-purple-600",
     glow: "shadow-[0_0_60px_rgba(123,97,255,0.3)]",
+    iconBg: "violet",
   },
   "neon-mint": {
     bg: "bg-neon-mint/10",
@@ -35,6 +37,7 @@ const colorClasses = {
     text: "text-neon-mint",
     gradient: "from-neon-mint to-emerald-500",
     glow: "shadow-[0_0_60px_rgba(0,255,178,0.3)]",
+    iconBg: "mint",
   },
   "energy-orange": {
     bg: "bg-energy-orange/10",
@@ -42,6 +45,7 @@ const colorClasses = {
     text: "text-energy-orange",
     gradient: "from-energy-orange to-orange-600",
     glow: "shadow-[0_0_60px_rgba(255,107,53,0.3)]",
+    iconBg: "orange",
   },
 };
 
@@ -57,50 +61,59 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-midnight-blue/30 to-deep-space" />
-        <div className={`absolute top-1/4 left-1/3 w-[500px] h-[500px] ${colors.bg} rounded-full blur-[150px] opacity-50`} />
+      {/* Hero Section - Enhanced */}
+      <section className="relative py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-deep-space/50 to-midnight-blue/30" />
+
+        {/* Enhanced ambient orbs */}
+        <div className={`absolute top-1/4 left-1/4 w-[600px] h-[600px] ${colors.bg} rounded-full blur-[180px] opacity-60 animate-orb-float`} />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-quantum-violet/10 rounded-full blur-[150px] animate-orb-float-reverse" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-electric-cyan/5 rounded-full blur-[180px]" />
 
         <Container className="relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Content */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              <div className={`inline-flex p-3 rounded-xl ${colors.bg} ${colors.border} border mb-6`}>
-                <Icon className={`h-8 w-8 ${colors.text}`} />
-              </div>
+              {/* Tech Badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                className="tech-badge mb-8 inline-flex"
+              >
+                <Icon className={`w-4 h-4 ${colors.text}`} />
+                <span className={`text-sm font-medium ${colors.text}`}>Premium Service</span>
+                <Sparkles className={`w-4 h-4 ${colors.text}`} />
+              </motion.div>
 
-              <h1 className="text-4xl md:text-5xl font-sora font-bold text-white mb-4">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white mb-6">
                 {service.name}
               </h1>
 
-              <p className={`text-xl ${colors.text} font-medium mb-4`}>
+              <p className={`text-xl md:text-2xl ${colors.text} font-medium mb-6`}>
                 {service.tagline}
               </p>
 
-              <p className="text-lg text-silver mb-8 leading-relaxed">
+              <p className="text-lg text-silver/90 mb-10 leading-relaxed">
                 {service.longDescription}
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-5">
                 <Link href="/contact">
-                  <Button
-                    size="lg"
-                    className={`bg-gradient-to-r ${colors.gradient} hover:opacity-90 text-white font-semibold px-8`}
-                  >
+                  <button className="cta-magnetic group">
                     Get Started
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
+                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </button>
                 </Link>
                 <Link href="/pricing">
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-electric-cyan/30 hover:border-electric-cyan/60 text-white hover:bg-electric-cyan/10"
+                    className="border-electric-cyan/30 hover:border-electric-cyan/60 text-white hover:text-electric-cyan bg-electric-cyan/5 hover:bg-electric-cyan/10 px-8 py-6 text-lg transition-all backdrop-blur-sm"
                   >
                     View Pricing
                   </Button>
@@ -108,23 +121,26 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
               </div>
             </motion.div>
 
-            {/* Stats */}
+            {/* Stats - Enhanced */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              <div className="grid grid-cols-2 gap-4">
-                {service.stats.map((stat) => (
-                  <div
+              <div className="grid grid-cols-2 gap-5">
+                {service.stats.map((stat, index) => (
+                  <motion.div
                     key={stat.label}
-                    className={`p-6 rounded-2xl border ${colors.border} bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 text-center`}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                    className="stat-display group"
                   >
-                    <p className={`text-4xl font-sora font-bold ${colors.text}`}>
+                    <p className={`stat-number text-3xl md:text-4xl ${colors.text}`}>
                       {stat.value}
                     </p>
-                    <p className="text-steel text-sm mt-1">{stat.label}</p>
-                  </div>
+                    <p className="text-steel text-sm mt-2">{stat.label}</p>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
@@ -132,39 +148,45 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
         </Container>
       </section>
 
-      {/* Features Section */}
+      {/* Section Divider */}
+      <div className="section-divider max-w-4xl mx-auto" />
+
+      {/* Features Section - Enhanced */}
       <SectionWrapper variant="default">
         <Container>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
               What&apos;s{" "}
-              <span className={colors.text}>Included</span>
+              <span className={`headline-underline ${colors.text}`}>Included</span>
             </h2>
-            <p className="text-lg text-silver">
+            <p className="text-lg md:text-xl text-silver/90">
               Everything you get with our {service.name.toLowerCase()} service.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {service.features.map((feature, index) => (
               <motion.div
                 key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`p-6 rounded-2xl border ${colors.border} bg-gradient-to-br from-midnight-blue/50 to-deep-space/50 hover:border-opacity-60 transition-all`}
+                transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="feature-grid-item group"
               >
-                <h3 className="text-lg font-sora font-semibold text-white mb-2">
+                {/* Accent line on hover */}
+                <div className={`absolute top-0 left-0 right-0 h-1 rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity ${colors.text.replace('text-', 'bg-')}`} />
+
+                <h3 className={`text-lg font-sora font-semibold text-white mb-3 group-hover:${colors.text} transition-colors`}>
                   {feature.title}
                 </h3>
-                <p className="text-silver text-sm leading-relaxed">
+                <p className="text-silver text-sm leading-relaxed group-hover:text-white/80 transition-colors">
                   {feature.description}
                 </p>
               </motion.div>
@@ -173,42 +195,43 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
         </Container>
       </SectionWrapper>
 
-      {/* Process Section */}
+      {/* Process Section - Enhanced */}
       <SectionWrapper variant="dark">
         <Container>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
               How It{" "}
-              <span className={colors.text}>Works</span>
+              <span className={`headline-underline ${colors.text}`}>Works</span>
             </h2>
-            <p className="text-lg text-silver">
+            <p className="text-lg md:text-xl text-silver/90">
               Our proven process for delivering results.
             </p>
           </motion.div>
 
-          <div className="relative">
-            {/* Connection Line */}
-            <div className={`absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b ${colors.gradient} hidden md:block`} />
+          <div className="relative max-w-4xl mx-auto">
+            {/* Enhanced Connection Line */}
+            <div className={`absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b ${colors.gradient} hidden md:block opacity-30`} />
+            <div className={`absolute left-8 top-0 w-px h-20 bg-gradient-to-b ${colors.gradient} hidden md:block animate-pulse`} />
 
-            <div className="space-y-8">
+            <div className="space-y-10">
               {service.process.map((step, index) => (
                 <motion.div
                   key={step.step}
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="relative flex gap-6 md:gap-8"
+                  transition={{ duration: 0.6, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                  className="relative flex gap-6 md:gap-10 group"
                 >
-                  {/* Step Number */}
+                  {/* Step Number - Enhanced */}
                   <div className="relative z-10 flex-shrink-0">
-                    <div className={`w-16 h-16 rounded-2xl ${colors.bg} ${colors.border} border flex items-center justify-center`}>
+                    <div className={`icon-container-animated ${colors.iconBg} !w-16 !h-16 !rounded-2xl`}>
                       <span className={`text-2xl font-sora font-bold ${colors.text}`}>
                         {step.step}
                       </span>
@@ -216,11 +239,11 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
                   </div>
 
                   {/* Content */}
-                  <div className="flex-1 pb-8">
-                    <h3 className="text-xl md:text-2xl font-sora font-semibold text-white mb-2">
+                  <div className="flex-1 pb-8 pt-2">
+                    <h3 className={`text-xl md:text-2xl font-sora font-semibold text-white mb-3 group-hover:${colors.text} transition-colors`}>
                       {step.title}
                     </h3>
-                    <p className="text-silver">
+                    <p className="text-silver leading-relaxed group-hover:text-white/80 transition-colors">
                       {step.description}
                     </p>
                   </div>
@@ -231,107 +254,123 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
         </Container>
       </SectionWrapper>
 
-      {/* Benefits Section */}
+      {/* Benefits Section - Enhanced */}
       <SectionWrapper variant="default">
         <Container>
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
                 Why Choose{" "}
-                <span className={colors.text}>Quantum Insights</span>
+                <span className={`headline-underline ${colors.text}`}>Quantum Insights</span>
               </h2>
-              <p className="text-lg text-silver mb-8">
+              <p className="text-lg md:text-xl text-silver/90 mb-10">
                 The benefits of working with us for {service.name.toLowerCase()}.
               </p>
 
-              <ul className="space-y-4">
+              <ul className="space-y-5">
                 {service.benefits.map((benefit, index) => (
                   <motion.li
                     key={index}
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                    className="flex items-start gap-3"
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="flex items-start gap-4 group"
                   >
-                    <CheckCircle className={`h-6 w-6 ${colors.text} flex-shrink-0 mt-0.5`} />
-                    <span className="text-silver text-lg">{benefit}</span>
+                    <div className={`flex-shrink-0 w-8 h-8 rounded-full ${colors.bg} border ${colors.border} flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                      <CheckCircle className={`h-5 w-5 ${colors.text}`} />
+                    </div>
+                    <span className="text-silver text-lg leading-relaxed group-hover:text-white transition-colors">{benefit}</span>
                   </motion.li>
                 ))}
               </ul>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className={`p-8 rounded-3xl border ${colors.border} bg-gradient-to-br from-midnight-blue/80 to-deep-space/90`}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="holographic-card p-10 lg:p-12"
             >
-              <Icon className={`h-12 w-12 ${colors.text} mb-6`} />
-              <h3 className="text-2xl font-sora font-bold text-white mb-4">
+              <div className={`icon-container-animated ${colors.iconBg} mb-8`}>
+                <Icon className={`h-8 w-8 ${colors.text}`} />
+              </div>
+              <h3 className="text-2xl lg:text-3xl font-sora font-bold text-white mb-4">
                 Ready to get started?
               </h3>
-              <p className="text-silver mb-6">
+              <p className="text-silver text-lg mb-8">
                 Book a call with our team to discuss how {service.name.toLowerCase()} can help grow your business.
               </p>
               <Link href="/contact">
-                <Button className={`bg-gradient-to-r ${colors.gradient} hover:opacity-90 text-white font-semibold w-full`}>
+                <button className="cta-magnetic w-full">
                   Book a Strategy Call
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                  <ArrowRight className="h-5 w-5" />
+                </button>
               </Link>
             </motion.div>
           </div>
         </Container>
       </SectionWrapper>
 
-      {/* FAQ Section */}
+      {/* Section Divider */}
+      <div className="section-divider max-w-4xl mx-auto" />
+
+      {/* FAQ Section - Enhanced */}
       <SectionWrapper variant="dark">
         <Container size="md">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center max-w-2xl mx-auto mb-12"
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="text-center max-w-2xl mx-auto mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
               Frequently Asked{" "}
-              <span className={colors.text}>Questions</span>
+              <span className={`headline-underline ${colors.text}`}>Questions</span>
             </h2>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
             <Accordion.Root type="single" collapsible className="space-y-4">
               {service.faqs.map((faq, index) => (
-                <Accordion.Item
+                <motion.div
                   key={index}
-                  value={`item-${index}`}
-                  className={`group rounded-xl border ${colors.border} bg-gradient-to-br from-midnight-blue/50 to-deep-space/50 overflow-hidden data-[state=open]:border-opacity-60 transition-colors`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
                 >
-                  <Accordion.Header>
-                    <Accordion.Trigger className="flex w-full items-center justify-between px-6 py-5 text-left">
-                      <span className="text-white font-medium pr-4">{faq.question}</span>
-                      <ChevronDown className={`h-5 w-5 ${colors.text} shrink-0 transition-transform duration-200 group-data-[state=open]:rotate-180`} />
-                    </Accordion.Trigger>
-                  </Accordion.Header>
-                  <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                    <div className="px-6 pb-5 text-silver leading-relaxed">
-                      {faq.answer}
-                    </div>
-                  </Accordion.Content>
-                </Accordion.Item>
+                  <Accordion.Item
+                    value={`item-${index}`}
+                    className={`group feature-grid-item !p-0 overflow-hidden data-[state=open]:!border-${colors.text.replace('text-', '')}/30`}
+                  >
+                    <Accordion.Header>
+                      <Accordion.Trigger className="flex w-full items-center justify-between px-6 py-6 text-left hover:bg-electric-cyan/5 transition-colors">
+                        <span className="text-white font-medium pr-4 text-lg">{faq.question}</span>
+                        <div className={`flex-shrink-0 w-8 h-8 rounded-full ${colors.bg} border ${colors.border} flex items-center justify-center group-hover:scale-110 transition-all`}>
+                          <ChevronDown className={`h-4 w-4 ${colors.text} transition-transform duration-300 group-data-[state=open]:rotate-180`} />
+                        </div>
+                      </Accordion.Trigger>
+                    </Accordion.Header>
+                    <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
+                      <div className="px-6 pb-6 text-silver leading-relaxed border-t border-graphite/30 pt-4">
+                        {faq.answer}
+                      </div>
+                    </Accordion.Content>
+                  </Accordion.Item>
+                </motion.div>
               ))}
             </Accordion.Root>
           </motion.div>

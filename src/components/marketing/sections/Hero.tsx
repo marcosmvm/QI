@@ -2,74 +2,103 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Play, Sparkles } from "lucide-react";
+import { ArrowRight, Play, Sparkles, Zap, Shield, Target, Brain, Radar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/marketing/layout/Container";
 
+// Animated stats for the hero
+const heroStats = [
+  { value: "5", label: "AI Engines", icon: Brain },
+  { value: "24/7", label: "Automation", icon: Zap },
+  { value: "99%", label: "Deliverability", icon: Shield },
+  { value: "3x", label: "More Meetings", icon: Target },
+];
+
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Background Gradient - subtle enhancement over layout orbs */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-deep-space/50 to-midnight-blue/30" />
+    <section className="hero-enhanced relative min-h-[100vh] flex items-center overflow-hidden pt-20">
+      {/* Enhanced Background Effects */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-deep-space/30 to-midnight-blue/50" />
+
+      {/* Hero-specific ambient glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full blur-[200px] bg-[radial-gradient(circle,rgba(0,212,255,0.08)_0%,transparent_60%)]" />
+
+      {/* Floating geometric shapes */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <motion.div
+          className="absolute top-20 left-10 w-20 h-20 border border-electric-cyan/20 rounded-lg"
+          animate={{ rotate: 360, y: [0, -20, 0] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div
+          className="absolute top-40 right-20 w-16 h-16 border border-quantum-violet/20 rounded-full"
+          animate={{ rotate: -360, scale: [1, 1.2, 1] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div
+          className="absolute bottom-40 left-20 w-12 h-12 border border-neon-mint/20"
+          style={{ clipPath: "polygon(50% 0%, 100% 100%, 0% 100%)" }}
+          animate={{ rotate: 180, y: [0, 15, 0] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+        />
+      </div>
 
       <Container className="relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
+        <div className="max-w-5xl mx-auto text-center">
+          {/* Animated Tech Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-electric-cyan/10 border border-electric-cyan/30 mb-8"
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="tech-badge mb-10"
           >
             <Sparkles className="w-4 h-4 text-electric-cyan" />
-            <span className="text-sm font-medium text-electric-cyan">AI-Powered Lead Generation</span>
+            <span className="text-sm font-medium text-electric-cyan">AI-Powered Lead Generation Platform</span>
+            <Radar className="w-4 h-4 text-electric-cyan animate-pulse" />
           </motion.div>
 
-          {/* Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+          {/* Main Headline with Glitch Effect */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-sora font-bold text-white leading-tight mb-6"
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
-            Book More Meetings{" "}
-            <span className="gradient-text-cyan-violet">
-              On Autopilot
-            </span>
-          </motion.h1>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-sora font-bold text-white leading-[1.1] mb-8">
+              <span className="block">Book More Meetings</span>
+              <span className="headline-underline gradient-text-cyan-violet block mt-2">
+                On Autopilot
+              </span>
+            </h1>
+          </motion.div>
 
-          {/* Subheadline */}
+          {/* Enhanced Subheadline */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl md:text-2xl text-silver/80 max-w-2xl mx-auto mb-10"
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto mb-12 leading-relaxed"
           >
-            Our 5 AI engines work 24/7 to find, engage, and convert your ideal prospects into qualified sales meetings.
+            Our <span className="text-electric-cyan font-semibold">5 AI engines</span> work 24/7 to find, engage, and convert your ideal prospects into <span className="text-neon-mint font-semibold">qualified sales meetings</span>.
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons with Premium Effects */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col sm:flex-row gap-5 justify-center mb-16"
           >
             <Link href="/contact">
-              <Button
-                variant="glow"
-                size="xl"
-                className="font-semibold text-lg"
-              >
+              <button className="cta-magnetic group">
                 Book a Strategy Call
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </button>
             </Link>
             <Link href="/case-studies">
               <Button
                 variant="outline"
                 size="lg"
-                className="border-graphite hover:border-electric-cyan/50 text-white hover:text-electric-cyan bg-transparent hover:bg-electric-cyan/5 px-8 py-6 text-lg transition-all"
+                className="border-electric-cyan/30 hover:border-electric-cyan/60 text-white hover:text-electric-cyan bg-electric-cyan/5 hover:bg-electric-cyan/10 px-8 py-6 text-lg transition-all backdrop-blur-sm"
               >
                 <Play className="mr-2 h-5 w-5" />
                 See Case Studies
@@ -77,23 +106,54 @@ export function Hero() {
             </Link>
           </motion.div>
 
+          {/* Hero Stats Grid */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto mb-16"
+          >
+            {heroStats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                className="stat-display group"
+              >
+                <stat.icon className="w-6 h-6 text-electric-cyan mx-auto mb-2 group-hover:scale-110 transition-transform" />
+                <div className="stat-number text-2xl md:text-3xl">{stat.value}</div>
+                <div className="text-steel text-sm mt-1">{stat.label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
+
           {/* Trust Indicators */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-16 pt-8 border-t border-graphite"
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="pt-8 border-t border-electric-cyan/10"
           >
             <p className="text-steel text-sm mb-6">Trusted by innovative B2B companies</p>
-            <div className="flex flex-wrap justify-center items-center gap-8 opacity-30">
-              {/* Placeholder for client logos */}
+            <div className="flex flex-wrap justify-center items-center gap-8">
               {[1, 2, 3, 4, 5].map((i) => (
-                <div key={i} className="h-8 w-24 bg-steel rounded" />
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 0.4 }}
+                  transition={{ delay: 0.8 + i * 0.1 }}
+                  whileHover={{ opacity: 0.8, scale: 1.05 }}
+                  className="h-10 w-28 bg-gradient-to-r from-steel/20 to-steel/10 rounded-lg backdrop-blur-sm border border-graphite/30 transition-all"
+                />
               ))}
             </div>
           </motion.div>
         </div>
       </Container>
+
+      {/* Bottom Gradient Fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-deep-space to-transparent pointer-events-none" />
     </section>
   );
 }
