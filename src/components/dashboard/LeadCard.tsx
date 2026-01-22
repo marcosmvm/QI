@@ -22,15 +22,17 @@ interface LeadCardProps {
   className?: string;
 }
 
+// Brand Board v1.0 - Status Badge Colors
 const statusConfig = {
   new: { label: "New", dot: "bg-electric-cyan", text: "text-electric-cyan" },
   contacted: { label: "Contacted", dot: "bg-quantum-violet", text: "text-quantum-violet" },
   qualified: { label: "Qualified", dot: "bg-neon-mint", text: "text-neon-mint" },
   proposal: { label: "Proposal", dot: "bg-energy-orange", text: "text-energy-orange" },
   won: { label: "Won", dot: "bg-neon-mint", text: "text-neon-mint" },
-  lost: { label: "Lost", dot: "bg-error", text: "text-error" },
+  lost: { label: "Lost", dot: "bg-alert-red", text: "text-alert-red" },
 };
 
+// Brand Board v1.0 - Interactive Card Pattern
 export function LeadCard({ lead, className }: LeadCardProps) {
   const status = statusConfig[lead.status];
 
@@ -38,12 +40,12 @@ export function LeadCard({ lead, className }: LeadCardProps) {
     <Link
       href={`/dashboard/leads/${lead.id}`}
       className={cn(
-        "block rounded-xl border border-graphite bg-midnight-blue/60 backdrop-blur-sm p-4 hover:border-electric-cyan/40 hover:shadow-glow-cyan-sm transition-all",
+        "block bg-midnight-blue border border-graphite rounded-xl p-6 transition-all duration-200 hover:border-electric-cyan/50 hover:bg-graphite",
         className
       )}
     >
       <div className="flex items-start gap-3">
-        <div className="h-10 w-10 rounded-full bg-deep-space/60 border border-graphite flex items-center justify-center shrink-0">
+        <div className="h-10 w-10 rounded-full bg-graphite flex items-center justify-center shrink-0">
           <span className="text-sm font-medium text-electric-cyan">
             {lead.name
               .split(" ")
@@ -59,18 +61,18 @@ export function LeadCard({ lead, className }: LeadCardProps) {
         </div>
       </div>
 
-      <div className="mt-3 space-y-1.5">
-        <div className="flex items-center gap-2 text-xs text-silver">
-          <Building2 className="h-3.5 w-3.5 text-steel" />
+      <div className="mt-4 space-y-2">
+        <div className="flex items-center gap-2 text-sm text-silver">
+          <Building2 className="h-4 w-4 text-steel" />
           <span className="truncate">{lead.company}</span>
         </div>
-        <div className="flex items-center gap-2 text-xs text-silver">
-          <Mail className="h-3.5 w-3.5 text-steel" />
+        <div className="flex items-center gap-2 text-sm text-silver">
+          <Mail className="h-4 w-4 text-steel" />
           <span className="truncate">{lead.email}</span>
         </div>
       </div>
 
-      <div className="mt-3 pt-3 border-t border-graphite flex items-center justify-between">
+      <div className="mt-4 pt-4 border-t border-graphite/50 flex items-center justify-between">
         <span className={cn("inline-flex items-center gap-1.5 text-xs font-medium", status.text)}>
           <span className={cn("h-1.5 w-1.5 rounded-full", status.dot)} />
           {status.label}

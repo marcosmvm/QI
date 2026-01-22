@@ -9,110 +9,117 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Brand Colors (Quantum Insights Dark Theme)
+        // Brand Board v1.0 - Primary Palette
+
+        // Backgrounds (Dark Theme)
         "deep-space": "#0A1628",
-        "electric-cyan": "#00D4FF",
-        "cyan-dark": "#00B8D9",
-        "quantum-violet": "#7B61FF",
         "midnight-blue": "#1A2D4A",
+        "graphite": "#2A3F5F",
+        "slate": "#3D5A80",
+
+        // Text Colors
+        "white": "#FFFFFF",
+        "silver": "#E8E8ED",
+        "steel": "#9CA3AF",
+        "muted-text": "#6B7280",
+
+        // Accent Colors
+        "electric-cyan": "#00D4FF",
+        "quantum-violet": "#7B61FF",
         "neon-mint": "#00FFB2",
         "energy-orange": "#FF6B35",
-        "silver": "#E8EDF5",
-        "steel": "#94A3B8",
-        "graphite": "#334155",
+        "alert-red": "#FF4757",
 
-        // Dark Theme Semantic Mappings
+        // Semantic Color Mappings
         background: {
           DEFAULT: "#0A1628",
-          secondary: "#1A2D4A",
-          hover: "#243B5C",
+          elevated: "#1A2D4A",
+          hover: "#2A3F5F",
         },
 
-        // Text colors (light on dark)
+        border: {
+          DEFAULT: "#2A3F5F",
+          light: "#3D5A80",
+        },
+
         foreground: {
           DEFAULT: "#FFFFFF",
-          secondary: "#E8EDF5",
-          muted: "#94A3B8",
-          placeholder: "#64748B",
+          secondary: "#E8E8ED",
+          muted: "#9CA3AF",
         },
 
-        // Border colors
-        border: {
-          DEFAULT: "#334155",
-          subtle: "#1E3A5F",
-        },
-
-        // Primary accent - Electric Cyan
+        // Semantic Status Colors
         primary: {
           DEFAULT: "#00D4FF",
-          hover: "#00B8D9",
-          light: "rgba(0, 212, 255, 0.1)",
+          hover: "#00D4FF/90",
           foreground: "#0A1628",
         },
-
-        // Status colors (dark theme optimized)
+        secondary: {
+          DEFAULT: "#7B61FF",
+          foreground: "#FFFFFF",
+        },
         success: {
           DEFAULT: "#00FFB2",
-          light: "rgba(0, 255, 178, 0.1)",
+          light: "rgba(0, 255, 178, 0.2)",
           foreground: "#0A1628",
         },
         warning: {
           DEFAULT: "#FF6B35",
-          light: "rgba(255, 107, 53, 0.1)",
+          light: "rgba(255, 107, 53, 0.2)",
           foreground: "#0A1628",
         },
-        error: {
-          DEFAULT: "#EF4444",
-          light: "rgba(239, 68, 68, 0.1)",
+        destructive: {
+          DEFAULT: "#FF4757",
+          light: "rgba(255, 71, 87, 0.2)",
           foreground: "#FFFFFF",
         },
         info: {
           DEFAULT: "#7B61FF",
-          light: "rgba(123, 97, 255, 0.1)",
+          light: "rgba(123, 97, 255, 0.2)",
           foreground: "#FFFFFF",
         },
 
-        // Card styling (dark glassmorphism)
+        // Component-specific
         card: {
-          DEFAULT: "rgba(26, 45, 74, 0.6)",
+          DEFAULT: "#1A2D4A",
+          hover: "#2A3F5F",
           foreground: "#FFFFFF",
         },
-
-        // Input styling
         input: {
           DEFAULT: "#1A2D4A",
-          border: "#334155",
-          focus: "#00D4FF",
+          focus: "#2A3F5F",
+          border: "#2A3F5F",
         },
-
-        // Muted backgrounds
         muted: {
-          DEFAULT: "rgba(26, 45, 74, 0.4)",
-          foreground: "#94A3B8",
+          DEFAULT: "#1A2D4A",
+          foreground: "#9CA3AF",
         },
 
-        // Destructive actions
-        destructive: {
-          DEFAULT: "#EF4444",
-          foreground: "#FFFFFF",
-        },
-
-        // Ring focus color
         ring: "#00D4FF",
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        sora: ["Sora", "system-ui", "sans-serif"],
+        sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        mono: ["JetBrains Mono", "Fira Code", "monospace"],
       },
       fontSize: {
-        "2xs": ["11px", { lineHeight: "16px" }],
-        xs: ["12px", { lineHeight: "16px" }],
-        sm: ["13px", { lineHeight: "18px" }],
-        base: ["14px", { lineHeight: "20px" }],
-        lg: ["16px", { lineHeight: "24px" }],
-        xl: ["20px", { lineHeight: "28px" }],
-        "2xl": ["24px", { lineHeight: "32px" }],
-        "3xl": ["32px", { lineHeight: "40px" }],
+        // Body Text
+        "2xs": ["0.75rem", { lineHeight: "1rem" }],      // 12px
+        xs: ["0.75rem", { lineHeight: "1rem" }],         // 12px
+        sm: ["0.875rem", { lineHeight: "1.25rem" }],     // 14px
+        base: ["1rem", { lineHeight: "1.5rem" }],        // 16px
+        lg: ["1.125rem", { lineHeight: "1.75rem" }],     // 18px
+
+        // Headings
+        xl: ["1.25rem", { lineHeight: "1.75rem" }],      // 20px - h5
+        "2xl": ["1.5rem", { lineHeight: "2rem" }],       // 24px - h4/h3
+        "3xl": ["1.875rem", { lineHeight: "2.25rem" }],  // 30px - h2
+        "4xl": ["2.25rem", { lineHeight: "2.5rem" }],    // 36px - h1
+
+        // Metric Numbers
+        "metric-sm": ["1.25rem", { lineHeight: "1.5rem" }],   // 20px
+        "metric-md": ["1.5rem", { lineHeight: "1.75rem" }],   // 24px
+        "metric-lg": ["2.25rem", { lineHeight: "2.5rem" }],   // 36px
+        "metric-xl": ["3rem", { lineHeight: "1" }],           // 48px
       },
       fontWeight: {
         normal: "400",
@@ -121,28 +128,27 @@ const config: Config = {
         bold: "700",
       },
       boxShadow: {
-        "xs": "0 1px 2px rgba(0, 0, 0, 0.2)",
-        "sm": "0 1px 3px rgba(0, 0, 0, 0.3)",
-        "card": "0 4px 6px rgba(0, 0, 0, 0.25)",
         "glow-cyan": "0 0 20px rgba(0, 212, 255, 0.3)",
         "glow-cyan-sm": "0 0 10px rgba(0, 212, 255, 0.2)",
         "glow-violet": "0 0 20px rgba(123, 97, 255, 0.3)",
         "glow-mint": "0 0 20px rgba(0, 255, 178, 0.3)",
+        "focus-ring": "0 0 0 1px rgba(0, 212, 255, 0.5)",
       },
       borderRadius: {
-        DEFAULT: "6px",
+        DEFAULT: "8px",
         sm: "4px",
         md: "8px",
         lg: "12px",
         xl: "16px",
-        "2xl": "20px",
       },
       spacing: {
         "18": "4.5rem",
         "88": "22rem",
       },
-      backdropBlur: {
-        xs: "2px",
+      transitionDuration: {
+        DEFAULT: "200ms",
+        fast: "150ms",
+        slow: "300ms",
       },
     },
   },

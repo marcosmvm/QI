@@ -10,6 +10,7 @@ import { mainNavigation } from "@/lib/content/navigation";
 import { MegaMenu } from "./MegaMenu";
 import { MobileMenu } from "./MobileMenu";
 
+// Brand Board v1.0 - Navigation Component
 export function MarketingNavbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -34,20 +35,20 @@ export function MarketingNavbar() {
     <>
       <header
         className={cn(
-          "sticky top-0 z-50 transition-all duration-300 border-b",
+          "sticky top-0 z-50 transition-all duration-200 border-b border-graphite",
           isScrolled
-            ? "bg-deep-space/80 backdrop-blur-md border-graphite"
-            : "bg-deep-space/80 backdrop-blur-md border-graphite"
+            ? "bg-deep-space/95 backdrop-blur-sm"
+            : "bg-deep-space"
         )}
       >
         <Container>
           <nav className="flex h-16 items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-electric-cyan to-electric-cyan/60 rounded-lg flex items-center justify-center">
-                <span className="text-deep-space font-bold text-xl font-sora">Q</span>
+              <div className="w-10 h-10 bg-electric-cyan rounded-lg flex items-center justify-center">
+                <span className="text-deep-space font-bold text-xl">Q</span>
               </div>
-              <span className="text-xl font-bold text-white font-sora">Quantum Insights</span>
+              <span className="text-xl font-bold text-white">Quantum Insights</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -62,7 +63,7 @@ export function MarketingNavbar() {
                   {item.dropdown ? (
                     <button
                       className={cn(
-                        "flex items-center gap-1 text-sm font-medium transition-colors",
+                        "flex items-center gap-1 text-sm font-medium transition-colors duration-150",
                         activeDropdown === item.label
                           ? "text-electric-cyan"
                           : "text-steel hover:text-white"
@@ -80,7 +81,7 @@ export function MarketingNavbar() {
                     <Link
                       href={item.href}
                       className={cn(
-                        "text-sm font-medium transition-colors",
+                        "text-sm font-medium transition-colors duration-150",
                         pathname === item.href || pathname.startsWith(item.href + "/")
                           ? "text-electric-cyan"
                           : "text-steel hover:text-white"
@@ -103,15 +104,17 @@ export function MarketingNavbar() {
 
             {/* CTA Buttons */}
             <div className="flex items-center gap-4">
+              {/* Ghost Button for Login */}
               <Link
                 href="/login"
-                className="hidden lg:block text-steel hover:text-electric-cyan font-medium transition-colors"
+                className="hidden lg:block text-steel hover:text-white font-medium px-4 py-2 rounded-lg hover:bg-graphite transition-all duration-200"
               >
                 Login
               </Link>
+              {/* Primary Button */}
               <Link
                 href="/contact"
-                className="hidden lg:block bg-electric-cyan text-deep-space px-6 py-2.5 rounded-lg font-semibold btn-glow transition-all"
+                className="hidden lg:block bg-electric-cyan text-deep-space px-6 py-2.5 rounded-lg font-semibold transition-all duration-200 hover:bg-electric-cyan/90 hover:shadow-glow-cyan"
               >
                 Book a Call
               </Link>
@@ -119,7 +122,7 @@ export function MarketingNavbar() {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 text-steel hover:text-white rounded-lg transition-colors"
+                className="lg:hidden p-2 text-steel hover:text-white hover:bg-graphite rounded-lg transition-colors duration-150"
               >
                 {isMobileMenuOpen ? (
                   <X className="h-6 w-6" />

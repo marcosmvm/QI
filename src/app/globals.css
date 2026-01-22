@@ -1,185 +1,281 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
-/* CSS Custom Properties for Brand Colors */
+/* ============================================
+   QUANTUM INSIGHTS BRAND BOARD v1.0
+   Single source of truth for UI styling
+   ============================================ */
+
+/* CSS Custom Properties - Brand Colors */
 :root {
-  --color-deep-space: #0A1628;
-  --color-electric-cyan: #00D4FF;
-  --color-quantum-violet: #7B61FF;
-  --color-midnight-blue: #1A2D4A;
-  --color-neon-mint: #00FFB2;
-  --color-energy-orange: #FF6B35;
-  --color-silver: #E8EDF5;
-  --color-steel: #94A3B8;
-  --color-graphite: #334155;
+  /* Backgrounds */
+  --deep-space: #0A1628;
+  --midnight-blue: #1A2D4A;
+  --graphite: #2A3F5F;
+  --slate: #3D5A80;
+
+  /* Text Colors */
+  --white: #FFFFFF;
+  --silver: #E8E8ED;
+  --steel: #9CA3AF;
+  --muted: #6B7280;
+
+  /* Accent Colors */
+  --electric-cyan: #00D4FF;
+  --quantum-violet: #7B61FF;
+  --neon-mint: #00FFB2;
+  --energy-orange: #FF6B35;
+  --alert-red: #FF4757;
 }
 
-/* Dark Theme Base Styles */
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
 body {
-  background-color: var(--color-deep-space);
-  color: var(--color-silver);
-  font-family: "Inter", system-ui, sans-serif;
+  background-color: var(--deep-space);
+  color: var(--silver);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Sora", system-ui, sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 600;
-  color: #FFFFFF;
+  color: var(--white);
+  line-height: 1.2;
 }
 
-/* Focus States */
+/* ============================================
+   FOCUS & SELECTION STATES
+   ============================================ */
+
 :focus-visible {
-  outline: 2px solid var(--color-electric-cyan);
+  outline: 2px solid var(--electric-cyan);
   outline-offset: 2px;
 }
 
-/* Selection */
 ::selection {
   background: rgba(0, 212, 255, 0.2);
-  color: #FFFFFF;
+  color: var(--white);
 }
 
-/* Custom Scrollbar - Dark Theme */
+/* ============================================
+   SCROLLBAR (Dark Theme)
+   ============================================ */
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-deep-space);
+  background: var(--deep-space);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-graphite);
+  background: var(--graphite);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-steel);
+  background: var(--slate);
 }
 
-/* Font utilities */
-.font-sora {
-  font-family: "Sora", system-ui, sans-serif;
+/* ============================================
+   BUTTON COMPONENTS
+   ============================================ */
+
+/* Primary Button */
+.btn-primary {
+  background-color: var(--electric-cyan);
+  color: var(--deep-space);
+  font-weight: 600;
+  padding: 12px 16px;
+  border-radius: 8px;
+  transition: all 200ms ease;
 }
 
-.font-inter {
-  font-family: "Inter", system-ui, sans-serif;
+.btn-primary:hover {
+  background-color: rgba(0, 212, 255, 0.9);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
 }
 
-/* Glassmorphism Card */
-.glass-card {
-  background: rgba(26, 45, 74, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--color-graphite);
-  border-radius: 12px;
+/* Secondary Button */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--electric-cyan);
+  font-weight: 600;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--electric-cyan);
+  transition: all 200ms ease;
 }
 
-.glass-card-hover:hover {
-  border-color: rgba(0, 212, 255, 0.3);
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+.btn-secondary:hover {
+  background-color: rgba(0, 212, 255, 0.1);
 }
 
-/* Glow Orbs for ambient backgrounds */
-.glow-orb-cyan {
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(0, 212, 255, 0.15) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
+/* Ghost Button */
+.btn-ghost {
+  background-color: transparent;
+  color: var(--steel);
+  font-weight: 500;
+  padding: 12px 16px;
+  border-radius: 8px;
+  transition: all 200ms ease;
 }
 
-.glow-orb-violet {
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(123, 97, 255, 0.15) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
+.btn-ghost:hover {
+  color: var(--white);
+  background-color: var(--graphite);
 }
 
-.glow-orb-mint {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(0, 255, 178, 0.1) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
+/* Destructive Button */
+.btn-destructive {
+  background-color: var(--alert-red);
+  color: var(--white);
+  font-weight: 600;
+  padding: 12px 16px;
+  border-radius: 8px;
+  transition: all 200ms ease;
 }
 
-/* Gradient Text */
-.gradient-text-cyan-violet {
-  background: linear-gradient(135deg, var(--color-electric-cyan) 0%, var(--color-quantum-violet) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.btn-destructive:hover {
+  background-color: rgba(255, 71, 87, 0.9);
 }
 
-.gradient-text-cyan-mint {
-  background: linear-gradient(135deg, var(--color-electric-cyan) 0%, var(--color-neon-mint) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Button Glow Effect */
+/* Button Glow Effect (use sparingly) */
 .btn-glow {
-  transition: all 0.3s ease;
+  transition: all 200ms ease;
 }
 
 .btn-glow:hover {
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
-  transform: translateY(-1px);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
 }
 
-.btn-glow-violet:hover {
-  box-shadow: 0 0 20px rgba(123, 97, 255, 0.4);
+/* ============================================
+   STATUS BADGES
+   ============================================ */
+
+.badge-success {
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 9999px;
+  background-color: rgba(0, 255, 178, 0.2);
+  color: var(--neon-mint);
 }
 
-.btn-glow-mint:hover {
-  box-shadow: 0 0 20px rgba(0, 255, 178, 0.4);
+.badge-warning {
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 9999px;
+  background-color: rgba(255, 107, 53, 0.2);
+  color: var(--energy-orange);
 }
 
-/* Grid Pattern Background */
-.grid-pattern {
-  background-image:
-    linear-gradient(rgba(51, 65, 85, 0.3) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(51, 65, 85, 0.3) 1px, transparent 1px);
-  background-size: 40px 40px;
+.badge-error {
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 9999px;
+  background-color: rgba(255, 71, 87, 0.2);
+  color: var(--alert-red);
 }
 
-/* Gradient Borders */
-.border-gradient-cyan {
-  border: 1px solid transparent;
-  background:
-    linear-gradient(var(--color-midnight-blue), var(--color-midnight-blue)) padding-box,
-    linear-gradient(135deg, var(--color-electric-cyan), var(--color-quantum-violet)) border-box;
+.badge-info {
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 9999px;
+  background-color: rgba(123, 97, 255, 0.2);
+  color: var(--quantum-violet);
 }
 
-/* Status Pulse Animation */
-@keyframes pulse-glow {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
+.badge-neutral {
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 9999px;
+  background-color: rgba(156, 163, 175, 0.2);
+  color: var(--steel);
 }
 
-.pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+/* ============================================
+   CARD HOVER STATES (Interactive Cards Only)
+   ============================================ */
+
+.card-interactive {
+  transition: all 200ms ease;
 }
 
-/* Hover Lift Effect */
-.hover-lift {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.card-interactive:hover {
+  border-color: rgba(0, 212, 255, 0.5);
+  background-color: var(--graphite);
 }
 
-.hover-lift:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+/* Selected Card */
+.card-selected {
+  box-shadow: 0 0 0 1px rgba(0, 212, 255, 0.5);
+}
+
+/* ============================================
+   FORM INPUTS
+   ============================================ */
+
+.input-field {
+  width: 100%;
+  background-color: var(--midnight-blue);
+  border: 1px solid var(--graphite);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: var(--white);
+  transition: all 200ms ease;
+}
+
+.input-field::placeholder {
+  color: var(--muted);
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--electric-cyan);
+  box-shadow: 0 0 0 1px rgba(0, 212, 255, 0.5);
+}
+
+/* ============================================
+   CHART COLORS (for reference in components)
+   ============================================ */
+
+.chart-series-1 { color: var(--electric-cyan); }
+.chart-series-2 { color: var(--quantum-violet); }
+.chart-series-3 { color: var(--neon-mint); }
+.chart-series-4 { color: var(--energy-orange); }
+.chart-series-5 { color: var(--steel); }
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Text utilities */
+.text-primary { color: var(--white); }
+.text-secondary { color: var(--silver); }
+.text-muted { color: var(--steel); }
+.text-accent { color: var(--electric-cyan); }
+
+/* Background utilities */
+.bg-card { background-color: var(--midnight-blue); }
+.bg-elevated { background-color: var(--graphite); }
+
+/* Transition default */
+.transition-default {
+  transition: all 200ms ease;
+}
+
+/* Color transition for hover states */
+.transition-colors {
+  transition: color 150ms ease, background-color 150ms ease;
 }

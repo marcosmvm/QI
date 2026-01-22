@@ -55,6 +55,7 @@ const activityConfig: Record<ActivityType, { icon: typeof Mail }> = {
   milestone_reached: { icon: CheckCircle2 },
 };
 
+// Brand Board v1.0 - Standard Card Pattern
 export function ActivityFeed({
   activities,
   title = "Recent Activity",
@@ -64,12 +65,12 @@ export function ActivityFeed({
   const displayedActivities = activities.slice(0, maxItems);
 
   return (
-    <div className={cn("rounded-xl border border-graphite bg-midnight-blue/60 backdrop-blur-sm", className)}>
+    <div className={cn("bg-midnight-blue border border-graphite rounded-xl", className)}>
       {/* Header */}
       <div className="flex items-center justify-between px-6 py-4 border-b border-graphite">
         <div>
-          <h3 className="text-base font-semibold text-white font-sora">{title}</h3>
-          <p className="text-xs text-steel">{activities.length} activities</p>
+          <h3 className="text-2xl font-semibold text-white">{title}</h3>
+          <p className="text-sm text-steel">{activities.length} activities</p>
         </div>
         <Link
           href="/dashboard/analytics"
@@ -80,14 +81,14 @@ export function ActivityFeed({
       </div>
 
       {/* Activity List */}
-      <div className="divide-y divide-graphite">
+      <div className="divide-y divide-graphite/50">
         {displayedActivities.map((activity) => {
           const config = activityConfig[activity.type];
           const Icon = config.icon;
 
           const content = (
             <div className="flex items-start gap-3 px-6 py-4">
-              <Icon className="h-4 w-4 text-electric-cyan mt-0.5 shrink-0" />
+              <Icon className="h-4 w-4 text-steel mt-0.5 shrink-0" />
               <div className="flex-1 min-w-0">
                 <p className="text-sm text-white">{activity.title}</p>
                 {activity.description && (
@@ -104,7 +105,7 @@ export function ActivityFeed({
 
           if (activity.link) {
             return (
-              <Link key={activity.id} href={activity.link} className="block hover:bg-deep-space/30 transition-colors">
+              <Link key={activity.id} href={activity.link} className="block hover:bg-graphite/30 transition-colors">
                 {content}
               </Link>
             );

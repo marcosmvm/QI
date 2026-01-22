@@ -12,16 +12,17 @@ interface QuickStatsProps {
   className?: string;
 }
 
+// Brand Board v1.0 - Stat Card Pattern
 export function QuickStats({ stats, className }: QuickStatsProps) {
   return (
     <div className={cn("grid grid-cols-2 md:grid-cols-4 gap-4", className)}>
       {stats.map((stat, index) => (
-        <div key={index} className="rounded-xl border border-graphite bg-midnight-blue/60 backdrop-blur-sm p-4 hover:border-electric-cyan/30 transition-colors">
-          <p className="text-xs font-medium uppercase tracking-wide text-steel">
+        <div key={index} className="bg-midnight-blue border border-graphite rounded-xl p-6">
+          <p className="text-sm text-steel font-medium uppercase tracking-wide">
             {stat.label}
           </p>
-          <div className="mt-1 flex items-baseline gap-1">
-            <span className="text-xl font-semibold text-white">
+          <div className="mt-2 flex items-baseline gap-1">
+            <span className="text-metric-lg font-bold text-white">
               {stat.value}
             </span>
             {stat.suffix && (
@@ -31,11 +32,11 @@ export function QuickStats({ stats, className }: QuickStatsProps) {
           {stat.change !== undefined && (
             <span
               className={cn(
-                "text-xs font-medium",
+                "text-sm mt-1",
                 stat.change > 0
                   ? "text-neon-mint"
                   : stat.change < 0
-                  ? "text-error"
+                  ? "text-alert-red"
                   : "text-steel"
               )}
             >

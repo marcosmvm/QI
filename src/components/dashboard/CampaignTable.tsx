@@ -9,6 +9,7 @@ interface CampaignTableProps {
   campaigns: Campaign[];
 }
 
+// Brand Board v1.0 - Status Badge Colors
 const statusConfig = {
   draft: {
     label: "Draft",
@@ -32,14 +33,15 @@ const statusConfig = {
   },
 };
 
+// Brand Board v1.0 - Table Pattern
 export function CampaignTable({ campaigns }: CampaignTableProps) {
   return (
-    <div className="rounded-xl border border-graphite bg-midnight-blue/60 backdrop-blur-sm">
+    <div className="bg-midnight-blue border border-graphite rounded-xl">
       {/* Header */}
       <div className="flex items-center justify-between px-6 py-4 border-b border-graphite">
         <div>
-          <h3 className="text-base font-semibold text-white font-sora">Campaigns</h3>
-          <p className="text-xs text-steel">{campaigns.length} active</p>
+          <h3 className="text-2xl font-semibold text-white">Campaigns</h3>
+          <p className="text-sm text-steel">{campaigns.length} active</p>
         </div>
         <Link
           href="/dashboard/campaigns"
@@ -53,54 +55,54 @@ export function CampaignTable({ campaigns }: CampaignTableProps) {
         <table className="w-full">
           <thead>
             <tr className="border-b border-graphite">
-              <th className="px-6 py-3 text-left text-2xs font-medium uppercase tracking-wider text-steel">
+              <th className="px-4 py-4 text-left text-xs font-medium text-steel uppercase tracking-wide">
                 Campaign
               </th>
-              <th className="px-6 py-3 text-left text-2xs font-medium uppercase tracking-wider text-steel">
+              <th className="px-4 py-4 text-left text-xs font-medium text-steel uppercase tracking-wide">
                 Status
               </th>
-              <th className="px-6 py-3 text-left text-2xs font-medium uppercase tracking-wider text-steel">
+              <th className="px-4 py-4 text-left text-xs font-medium text-steel uppercase tracking-wide">
                 Sent
               </th>
-              <th className="px-6 py-3 text-left text-2xs font-medium uppercase tracking-wider text-steel">
+              <th className="px-4 py-4 text-left text-xs font-medium text-steel uppercase tracking-wide">
                 Opens
               </th>
-              <th className="px-6 py-3 text-left text-2xs font-medium uppercase tracking-wider text-steel">
+              <th className="px-4 py-4 text-left text-xs font-medium text-steel uppercase tracking-wide">
                 Replies
               </th>
-              <th className="px-6 py-3 text-left text-2xs font-medium uppercase tracking-wider text-steel">
+              <th className="px-4 py-4 text-left text-xs font-medium text-steel uppercase tracking-wide">
                 Delivery
               </th>
-              <th className="px-6 py-3 text-right text-2xs font-medium uppercase tracking-wider text-steel">
+              <th className="px-4 py-4 text-right text-xs font-medium text-steel uppercase tracking-wide">
                 Actions
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-graphite">
+          <tbody>
             {campaigns.map((campaign) => {
               const status = statusConfig[campaign.status];
               return (
-                <tr key={campaign.id} className="group hover:bg-deep-space/30 transition-colors">
-                  <td className="px-6 py-4">
+                <tr key={campaign.id} className="border-b border-graphite/50 hover:bg-graphite/30 transition-colors">
+                  <td className="px-4 py-3">
                     <Link
                       href={`/dashboard/campaigns/${campaign.id}`}
-                      className="text-sm font-medium text-white hover:text-electric-cyan transition-colors"
+                      className="text-sm text-white hover:text-electric-cyan transition-colors"
                     >
                       {campaign.name}
                     </Link>
                   </td>
-                  <td className="px-6 py-4">
+                  <td className="px-4 py-3">
                     <span className={cn("inline-flex items-center gap-1.5 text-xs font-medium", status.text)}>
                       <span className={cn("h-1.5 w-1.5 rounded-full", status.dot)} />
                       {status.label}
                     </span>
                   </td>
-                  <td className="px-6 py-4">
-                    <span className="text-sm text-silver">
+                  <td className="px-4 py-3">
+                    <span className="text-sm text-white">
                       {campaign.metrics.sent.toLocaleString()}
                     </span>
                   </td>
-                  <td className="px-6 py-4">
+                  <td className="px-4 py-3">
                     <span
                       className={cn(
                         "text-sm font-medium",
@@ -108,13 +110,13 @@ export function CampaignTable({ campaigns }: CampaignTableProps) {
                           ? "text-neon-mint"
                           : campaign.metrics.openRate >= 15
                           ? "text-energy-orange"
-                          : "text-error"
+                          : "text-alert-red"
                       )}
                     >
                       {campaign.metrics.openRate.toFixed(1)}%
                     </span>
                   </td>
-                  <td className="px-6 py-4">
+                  <td className="px-4 py-3">
                     <span
                       className={cn(
                         "text-sm font-medium",
@@ -122,13 +124,13 @@ export function CampaignTable({ campaigns }: CampaignTableProps) {
                           ? "text-neon-mint"
                           : campaign.metrics.replyRate >= 1
                           ? "text-energy-orange"
-                          : "text-error"
+                          : "text-alert-red"
                       )}
                     >
                       {campaign.metrics.replyRate.toFixed(1)}%
                     </span>
                   </td>
-                  <td className="px-6 py-4">
+                  <td className="px-4 py-3">
                     <span
                       className={cn(
                         "text-sm font-medium",
@@ -136,13 +138,13 @@ export function CampaignTable({ campaigns }: CampaignTableProps) {
                           ? "text-neon-mint"
                           : campaign.metrics.deliverabilityRate >= 85
                           ? "text-energy-orange"
-                          : "text-error"
+                          : "text-alert-red"
                       )}
                     >
                       {campaign.metrics.deliverabilityRate.toFixed(1)}%
                     </span>
                   </td>
-                  <td className="px-6 py-4">
+                  <td className="px-4 py-3">
                     <div className="flex items-center justify-end gap-1">
                       {campaign.status === "active" ? (
                         <button className="p-1.5 text-steel hover:text-white rounded transition-colors">
@@ -159,7 +161,7 @@ export function CampaignTable({ campaigns }: CampaignTableProps) {
                       >
                         <Eye className="h-4 w-4" />
                       </Link>
-                      <button className="p-1.5 text-steel hover:text-error rounded transition-colors">
+                      <button className="p-1.5 text-steel hover:text-alert-red rounded transition-colors">
                         <Trash2 className="h-4 w-4" />
                       </button>
                       <button className="p-1.5 text-steel hover:text-white rounded transition-colors">
