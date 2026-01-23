@@ -49,154 +49,52 @@ export type NavLink = {
   dropdown: NavDropdown;
 };
 
+// Simplified navigation per UX audit recommendations
 export const mainNavigation: NavLink[] = [
   {
-    label: "Services & Solutions",
+    label: "How It Works",
+    href: "/how-it-works",
+  },
+  {
+    label: "Engines",
     dropdown: {
       sections: [
         {
-          title: "Lead Generation",
+          title: "Our 5 AI Engines",
           items: [
-            {
-              label: "Appointment Setting",
-              href: "/appointment-setting",
-              description: "Secure meetings with decision-makers",
-              icon: Calendar,
-            },
-            {
-              label: "Cold Email Outreach",
-              href: "/cold-email-services",
-              description: "AI-powered email campaigns that convert",
-              icon: Mail,
-            },
-            {
-              label: "Cold Calling",
-              href: "/cold-calling-services",
-              description: "Book 30% more appointments",
-              icon: Phone,
-            },
-            {
-              label: "LinkedIn Lead Generation",
-              href: "/linkedin-lead-generation-services",
-              description: "Expand reach on LinkedIn",
-              icon: Linkedin,
-            },
-            {
-              label: "Lead Research",
-              href: "/lead-research",
-              description: "Hand-picked, verified prospect lists",
-              icon: Search,
-            },
-          ],
-        },
-        {
-          title: "Other Services",
-          items: [
-            {
-              label: "Account-Based Marketing",
-              href: "/account-based-marketing-services",
-            },
-            {
-              label: "Deliverability Consulting",
-              href: "/deliverability-consulting",
-            },
-            {
-              label: "CRM Consulting",
-              href: "/crm-consulting-services",
-            },
-            {
-              label: "Outsourced SDR",
-              href: "/outsourced-sdr-services",
-            },
-          ],
-        },
-        {
-          title: "By Company Size",
-          items: [
-            {
-              label: "Enterprise",
-              href: "/enterprise-lead-generation",
-              icon: Building2,
-            },
-            {
-              label: "SMB",
-              href: "/smb-lead-generation",
-              icon: Briefcase,
-            },
-            {
-              label: "Startup",
-              href: "/startup-lead-generation",
-              icon: Zap,
-            },
+            { label: "The Guardian", href: "/engines/guardian", icon: Shield, description: "Compliance & Domain Health" },
+            { label: "The Architect", href: "/engines/architect", icon: Cpu, description: "AI Campaign Design" },
+            { label: "The Scientist", href: "/engines/scientist", icon: FlaskConical, description: "Campaign Optimization" },
+            { label: "The Hunter", href: "/engines/hunter", icon: Target, description: "Reply-Based Lead Expansion" },
+            { label: "The Sentinel", href: "/engines/sentinel", icon: Eye, description: "Website Visitor Intelligence" },
           ],
         },
       ],
       featured: {
-        title: "Our AI Engines",
-        description: "Discover how our 5 AI engines work together to deliver results",
+        title: "See All Engines",
+        description: "Learn how our 5 AI engines work together",
         href: "/engines",
       },
-    },
-  },
-  {
-    label: "Industries",
-    href: "/industries",
-  },
-  {
-    label: "Case Studies",
-    href: "/case-studies",
-  },
-  {
-    label: "About",
-    dropdown: {
-      sections: [
-        {
-          title: "Company",
-          items: [
-            { label: "About Us", href: "/about-us" },
-            { label: "Awards", href: "/awards" },
-            { label: "Testimonials", href: "/testimonials" },
-            { label: "Careers", href: "/careers", badge: "Hiring" },
-          ],
-        },
-        {
-          title: "Learn",
-          items: [
-            { label: "Blog", href: "/blog" },
-            { label: "Resources", href: "/resources" },
-            { label: "Webinars", href: "/webinars" },
-            { label: "Podcasts", href: "/podcasts" },
-          ],
-        },
-        {
-          title: "AI Engines",
-          items: [
-            { label: "The Guardian", href: "/engines/guardian", icon: Shield },
-            { label: "The Architect", href: "/engines/architect", icon: Cpu },
-            { label: "The Scientist", href: "/engines/scientist", icon: FlaskConical },
-            { label: "The Hunter", href: "/engines/hunter", icon: Target },
-            { label: "The Sentinel", href: "/engines/sentinel", icon: Eye },
-          ],
-        },
-      ],
     },
   },
   {
     label: "Pricing",
     href: "/pricing",
   },
+  {
+    label: "About",
+    href: "/about-us",
+  },
 ];
 
+// Simplified footer navigation per UX audit
 export const footerNavigation = {
-  services: {
-    title: "Services",
+  product: {
+    title: "Product",
     links: [
-      { label: "Appointment Setting", href: "/appointment-setting" },
-      { label: "Cold Email Outreach", href: "/cold-email-services" },
-      { label: "Cold Calling", href: "/cold-calling-services" },
-      { label: "LinkedIn Lead Gen", href: "/linkedin-lead-generation-services" },
-      { label: "Lead Research", href: "/lead-research" },
-      { label: "Account-Based Marketing", href: "/account-based-marketing-services" },
+      { label: "How It Works", href: "/how-it-works" },
+      { label: "AI Engines", href: "/engines" },
+      { label: "Pricing", href: "/pricing" },
     ],
   },
   engines: {
@@ -212,32 +110,17 @@ export const footerNavigation = {
   industries: {
     title: "Industries",
     links: [
-      { label: "SaaS", href: "/industries/saas" },
+      { label: "B2B SaaS", href: "/industries/saas" },
+      { label: "B2B Tech", href: "/industries/information-technology" },
       { label: "Healthcare", href: "/industries/healthcare" },
       { label: "Finance", href: "/industries/finance" },
-      { label: "Manufacturing", href: "/industries/manufacturing" },
-      { label: "IT Services", href: "/industries/information-technology" },
-      { label: "View All", href: "/industries" },
     ],
   },
   company: {
     title: "Company",
     links: [
       { label: "About Us", href: "/about-us" },
-      { label: "Case Studies", href: "/case-studies" },
-      { label: "Awards", href: "/awards" },
-      { label: "Testimonials", href: "/testimonials" },
-      { label: "Careers", href: "/careers" },
       { label: "Contact", href: "/contact" },
-    ],
-  },
-  resources: {
-    title: "Resources",
-    links: [
-      { label: "Blog", href: "/blog" },
-      { label: "Webinars", href: "/webinars" },
-      { label: "Podcasts", href: "/podcasts" },
-      { label: "ROI Calculator", href: "/roi-calculator" },
     ],
   },
   legal: {
@@ -245,8 +128,6 @@ export const footerNavigation = {
     links: [
       { label: "Terms of Use", href: "/legal/terms-of-use" },
       { label: "Privacy Policy", href: "/legal/privacy-policy" },
-      { label: "Cookie Policy", href: "/legal/cookie-policy" },
-      { label: "Accessibility", href: "/legal/accessibility-statement" },
     ],
   },
 };

@@ -2,64 +2,38 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Quote, Star } from "lucide-react";
+import { ArrowRight, Quote, Rocket, CheckCircle, MapPin, GraduationCap, Shield, Target, Zap } from "lucide-react";
 import { Container } from "@/components/marketing/layout/Container";
 import { SectionWrapper } from "@/components/marketing/layout/SectionWrapper";
 import { CTABanner } from "@/components/marketing/sections/CTABanner";
 import { Button } from "@/components/ui/button";
 
-const testimonials = [
+// Founder commitment instead of fake testimonials
+const founderCommitments = [
   {
-    quote: "Quantum Insights transformed our outbound. We went from 2-3 meetings a month to 15-20 qualified opportunities. The AI engines are genuinely impressive.",
-    author: "Sarah Chen",
-    title: "VP of Sales",
-    company: "TechScale SaaS",
-    metric: { value: "8x", label: "More Meetings" },
+    icon: Shield,
+    title: "Deliverability Guaranteed",
+    description: "99%+ inbox placement or we fix it at no extra cost. Your domain reputation is sacred.",
   },
   {
-    quote: "Finally, a lead gen partner that actually delivers. Their deliverability rates are the best we've ever seen, and the transparency is refreshing.",
-    author: "Michael Torres",
-    title: "CEO",
-    company: "DataFlow Analytics",
-    metric: { value: "96%", label: "Deliverability" },
+    icon: Target,
+    title: "Quality Over Volume",
+    description: "We measure success by qualified meetings booked, not emails sent.",
   },
   {
-    quote: "The ROI was obvious within the first month. Quantum Insights pays for itself many times over with the quality of meetings they book.",
-    author: "Jennifer Park",
-    title: "Head of Growth",
-    company: "CloudNine Solutions",
-    metric: { value: "340%", label: "ROI" },
-  },
-  {
-    quote: "We never thought we could compete for enterprise healthcare contracts. Quantum Insights made it possible.",
-    author: "Dr. Robert Kim",
-    title: "CEO",
-    company: "MedTech Health",
-    metric: { value: "3", label: "F500 Contracts" },
-  },
-  {
-    quote: "The pipeline numbers we built with Quantum Insights were crucial to closing our Series B.",
-    author: "Amanda Liu",
-    title: "Founder & CEO",
-    company: "PaymentPro",
-    metric: { value: "$30M", label: "Series B" },
-  },
-  {
-    quote: "Finally found a way to reach plant managers without flying to every facility. Game changer for our sales process.",
-    author: "Tom Henderson",
-    title: "VP Sales",
-    company: "IndustrialTech",
-    metric: { value: "15", label: "Active Pilots" },
+    icon: Zap,
+    title: "Performance-Based Pricing",
+    description: "We only win when you win. Our incentives are aligned with your success.",
   },
 ];
 
 export default function TestimonialsPage() {
   return (
     <>
-      {/* Hero Section */}
+      {/* Hero Section - Honest Pre-Launch Framing */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-midnight-blue/30 to-deep-space" />
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-neon-mint/20 rounded-full blur-[120px]" />
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-quantum-violet/20 rounded-full blur-[120px]" />
 
         <Container className="relative z-10">
           <motion.div
@@ -68,63 +42,150 @@ export default function TestimonialsPage() {
             transition={{ duration: 0.5 }}
             className="text-center max-w-4xl mx-auto"
           >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-quantum-violet/10 border border-quantum-violet/20 mb-6">
+              <Rocket className="w-4 h-4 text-quantum-violet" />
+              <span className="text-sm font-medium text-quantum-violet">Launching February 2026</span>
+            </div>
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white mb-6">
-              What Our Clients{" "}
+              Our Commitment to{" "}
               <span className="gradient-text-cyan-violet">
-                Say About Us
+                Founding Partners
               </span>
             </h1>
             <p className="text-xl text-silver max-w-2xl mx-auto">
-              Don&apos;t just take our word for it—hear from the companies we&apos;ve helped grow.
+              We&apos;re building something special. Here&apos;s what we promise to every founding partner who joins us.
             </p>
           </motion.div>
         </Container>
       </section>
 
-      {/* Testimonials Grid */}
+      {/* Founder Message */}
       <SectionWrapper variant="default">
+        <Container size="md">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="relative p-8 md:p-12 rounded-3xl border border-electric-cyan/20 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90"
+          >
+            {/* Quote Icon */}
+            <div className="absolute -top-6 left-8 p-4 rounded-2xl bg-midnight-blue border border-graphite/50 backdrop-blur-sm">
+              <Quote className="h-6 w-6 text-electric-cyan" />
+            </div>
+
+            {/* Quote */}
+            <blockquote className="text-xl md:text-2xl text-white font-medium leading-relaxed mb-8 mt-4">
+              &ldquo;I built Quantum Insights because I was tired of seeing B2B companies waste their best sales reps on cold outreach. Your closers should be closing, not prospecting. Our 5 AI engines do the heavy lifting so your team can focus on what they do best—building relationships and closing deals.&rdquo;
+            </blockquote>
+
+            {/* Author */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-electric-cyan to-quantum-violet flex items-center justify-center text-deep-space font-bold text-xl">
+                  MM
+                </div>
+                <div>
+                  <p className="font-semibold text-white text-lg">Marcos Matthews</p>
+                  <p className="text-electric-cyan text-sm font-medium">Founder & CEO</p>
+                  <div className="flex items-center gap-3 mt-1 text-steel text-xs">
+                    <span className="flex items-center gap-1">
+                      <MapPin className="h-3 w-3" />
+                      Los Angeles, CA
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <GraduationCap className="h-3 w-3" />
+                      CSUN Entrepreneurship
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </Container>
+      </SectionWrapper>
+
+      {/* Our Commitments */}
+      <SectionWrapper variant="dark">
         <Container>
-          <div className="grid md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, index) => (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
+              Our Promise to You
+            </h2>
+            <p className="text-silver max-w-2xl mx-auto">
+              These aren&apos;t marketing claims—they&apos;re commitments we stand behind.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {founderCommitments.map((commitment, index) => (
               <motion.div
-                key={index}
+                key={commitment.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative p-8 rounded-3xl border border-electric-cyan/20 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90"
+                className="text-center p-8 rounded-2xl border border-electric-cyan/20 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90"
               >
-                {/* Quote Icon */}
-                <div className="absolute -top-4 left-8 p-3 rounded-xl bg-gradient-to-br from-electric-cyan/20 to-quantum-violet/20 border border-electric-cyan/30">
-                  <Quote className="h-5 w-5 text-electric-cyan" />
-                </div>
-
-                {/* Rating */}
-                <div className="flex gap-1 mb-4 mt-2">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-electric-cyan text-electric-cyan" />
-                  ))}
-                </div>
-
-                {/* Quote */}
-                <blockquote className="text-lg text-white font-medium leading-relaxed mb-6">
-                  &ldquo;{testimonial.quote}&rdquo;
-                </blockquote>
-
-                {/* Author & Metric */}
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="font-semibold text-white">{testimonial.author}</p>
-                    <p className="text-steel text-sm">
-                      {testimonial.title}, {testimonial.company}
-                    </p>
+                <div className="flex justify-center mb-6">
+                  <div className="p-4 rounded-xl bg-electric-cyan/10 border border-electric-cyan/20">
+                    <commitment.icon className="h-8 w-8 text-electric-cyan" />
                   </div>
-                  <div className="text-right">
-                    <p className="text-2xl font-sora font-bold gradient-text-cyan-violet">
-                      {testimonial.metric.value}
-                    </p>
-                    <p className="text-steel text-xs">{testimonial.metric.label}</p>
-                  </div>
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">{commitment.title}</h3>
+                <p className="text-silver">{commitment.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </Container>
+      </SectionWrapper>
+
+      {/* Founding Partner Benefits */}
+      <SectionWrapper variant="default">
+        <Container size="md">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
+              Why Join as a Founding Partner?
+            </h2>
+            <p className="text-silver max-w-2xl mx-auto">
+              Early adopters get exclusive benefits that won&apos;t be available later.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              { title: "Lock in Founding Rates", description: "Up to 60% off standard pricing—forever, as long as you remain a client" },
+              { title: "Direct Founder Access", description: "Work directly with Marcos to customize your campaigns and strategy" },
+              { title: "Shape the Product", description: "Your feedback directly influences our roadmap and feature development" },
+              { title: "Be a Case Study", description: "Get featured prominently when we launch publicly with your success story" },
+              { title: "Extended Pilot Terms", description: "30-day extension or 50% credit if targets aren't met by week 8" },
+              { title: "Priority Support", description: "Dedicated Slack channel and weekly strategy calls with the team" },
+            ].map((benefit, index) => (
+              <motion.div
+                key={benefit.title}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex items-start gap-4 p-4 rounded-xl border border-electric-cyan/10 bg-deep-space/30"
+              >
+                <CheckCircle className="h-6 w-6 text-neon-mint flex-shrink-0" />
+                <div>
+                  <h4 className="font-semibold text-white mb-1">{benefit.title}</h4>
+                  <p className="text-steel text-sm">{benefit.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -133,7 +194,7 @@ export default function TestimonialsPage() {
       </SectionWrapper>
 
       {/* CTA */}
-      <SectionWrapper variant="dark">
+      <SectionWrapper variant="gradient">
         <Container size="md">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -143,14 +204,14 @@ export default function TestimonialsPage() {
             className="text-center"
           >
             <h2 className="text-3xl font-sora font-bold text-white mb-4">
-              Ready to Join Them?
+              Ready to Be a Founding Partner?
             </h2>
-            <p className="text-silver mb-8">
-              See detailed case studies showing exactly how we achieved these results.
+            <p className="text-silver mb-8 max-w-xl mx-auto">
+              Limited spots available. Book a call to discuss if we&apos;re a fit for each other.
             </p>
-            <Link href="/case-studies">
+            <Link href="/contact">
               <Button className="bg-gradient-to-r from-electric-cyan to-cyan-dark hover:from-cyan-light hover:to-electric-cyan text-deep-space font-semibold">
-                View Case Studies
+                Book a Consultation
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
@@ -158,7 +219,10 @@ export default function TestimonialsPage() {
         </Container>
       </SectionWrapper>
 
-      <CTABanner />
+      <CTABanner
+        title="Join Our Founding Partner Program"
+        description="Be among the first to experience AI-powered B2B outreach that actually works."
+      />
     </>
   );
 }

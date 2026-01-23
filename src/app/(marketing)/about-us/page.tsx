@@ -35,10 +35,11 @@ const values = [
   },
 ];
 
+// Honest capability stats (not inflated metrics)
 const stats = [
-  { value: "200+", label: "Clients Served" },
-  { value: "50M+", label: "Emails Delivered" },
-  { value: "95%", label: "Avg Deliverability" },
+  { value: "5", label: "AI Engines" },
+  { value: "24/7", label: "Automation" },
+  { value: "LA", label: "Based in Los Angeles" },
   { value: "2024", label: "Founded" },
 ];
 
@@ -176,7 +177,7 @@ export default function AboutPage() {
                 transition={{ delay: 0.4 }}
                 className="text-silver/90 leading-relaxed text-lg"
               >
-                Today, our <span className="text-neon-mint font-semibold">5 AI engines</span> power lead generation for hundreds of B2B companies across every industry. We&apos;re not just another agency—we&apos;re the infrastructure for modern outbound sales.
+                Today, our <span className="text-neon-mint font-semibold">5 AI engines</span> are ready to power lead generation for B2B companies. We&apos;re launching our founding partner program—join us in building the infrastructure for modern outbound sales.
               </motion.p>
             </div>
           </motion.div>

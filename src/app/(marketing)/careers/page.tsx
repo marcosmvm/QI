@@ -118,20 +118,20 @@ export default function CareersPage() {
             >
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
-                  <p className="text-4xl font-sora font-bold text-electric-cyan">25+</p>
-                  <p className="text-steel text-sm">Team Members</p>
+                  <p className="text-4xl font-sora font-bold text-electric-cyan">5</p>
+                  <p className="text-steel text-sm">AI Engines</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-4xl font-sora font-bold text-quantum-violet">5</p>
-                  <p className="text-steel text-sm">Countries</p>
+                  <p className="text-4xl font-sora font-bold text-quantum-violet">LA</p>
+                  <p className="text-steel text-sm">Based</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-4xl font-sora font-bold text-neon-mint">200+</p>
-                  <p className="text-steel text-sm">Clients Served</p>
+                  <p className="text-4xl font-sora font-bold text-neon-mint">2024</p>
+                  <p className="text-steel text-sm">Founded</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-4xl font-sora font-bold text-energy-orange">2x</p>
-                  <p className="text-steel text-sm">Growth YoY</p>
+                  <p className="text-4xl font-sora font-bold text-energy-orange">Remote</p>
+                  <p className="text-steel text-sm">First</p>
                 </div>
               </div>
             </motion.div>

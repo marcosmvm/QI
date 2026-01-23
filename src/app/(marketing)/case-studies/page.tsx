@@ -2,17 +2,42 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, TrendingUp } from "lucide-react";
+import { ArrowRight, Target, Shield, Zap, Clock, CheckCircle, Rocket } from "lucide-react";
 import { Container } from "@/components/marketing/layout/Container";
 import { SectionWrapper } from "@/components/marketing/layout/SectionWrapper";
 import { CTABanner } from "@/components/marketing/sections/CTABanner";
 import { Button } from "@/components/ui/button";
-import { caseStudies } from "@/lib/content/case-studies";
+
+// Target benchmarks we're building toward (honest pre-launch framing)
+const targetBenchmarks = [
+  { value: ">90%", label: "Deliverability Target", icon: Shield },
+  { value: ">30%", label: "Open Rate Target", icon: Target },
+  { value: ">3%", label: "Reply Rate Target", icon: Zap },
+  { value: "48h", label: "Campaign Launch Time", icon: Clock },
+];
+
+const methodology = [
+  {
+    title: "Guardian Engine Compliance",
+    description: "Every lead passes through our Guardian engine for DNC checks and domain health verification before any email is sent.",
+    icon: Shield,
+  },
+  {
+    title: "AI-Personalized Sequences",
+    description: "The Architect engine creates personalized email sequences based on your ICP, not generic templates.",
+    icon: Target,
+  },
+  {
+    title: "Continuous Optimization",
+    description: "The Scientist engine monitors performance 24/7 and automatically optimizes for better results.",
+    icon: Zap,
+  },
+];
 
 export default function CaseStudiesPage() {
   return (
     <>
-      {/* Hero Section */}
+      {/* Hero Section - Honest Pre-Launch Framing */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-midnight-blue/30 to-deep-space" />
         <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-neon-mint/20 rounded-full blur-[120px]" />
@@ -25,20 +50,20 @@ export default function CaseStudiesPage() {
             transition={{ duration: 0.5 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neon-mint/10 border border-neon-mint/20 mb-6">
-              <TrendingUp className="w-4 h-4 text-neon-mint" />
-              <span className="text-sm font-medium text-neon-mint">Success Stories</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-quantum-violet/10 border border-quantum-violet/20 mb-6">
+              <Rocket className="w-4 h-4 text-quantum-violet" />
+              <span className="text-sm font-medium text-quantum-violet">Founding Partner Program</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white mb-6">
-              Real Results from{" "}
+              Results We&apos;re{" "}
               <span className="gradient-text-cyan-violet">
-                Real Clients
+                Targeting
               </span>
             </h1>
 
             <p className="text-xl text-silver max-w-2xl mx-auto mb-10">
-              See how companies across industries have transformed their outbound with Quantum Insights.
+              We&apos;re launching with ambitious benchmarks backed by proven AI technology. Be among our founding partners and help us build case studies together.
             </p>
 
             <Link href="/contact">
@@ -46,7 +71,7 @@ export default function CaseStudiesPage() {
                 size="lg"
                 className="bg-gradient-to-r from-electric-cyan to-cyan-dark hover:from-cyan-light hover:to-electric-cyan text-deep-space font-semibold px-8"
               >
-                Get Similar Results
+                Become a Founding Partner
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
@@ -54,87 +79,135 @@ export default function CaseStudiesPage() {
         </Container>
       </section>
 
-      {/* Case Studies Grid */}
+      {/* Target Benchmarks */}
       <SectionWrapper variant="default">
         <Container>
-          <div className="grid md:grid-cols-2 gap-8">
-            {caseStudies.map((study, index) => (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
+              Our Performance Targets
+            </h2>
+            <p className="text-silver max-w-2xl mx-auto">
+              These are the benchmarks we&apos;re building our platform to achieve. Our pilot partners will help validate these targets.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-4 gap-6 mb-16">
+            {targetBenchmarks.map((benchmark, index) => (
               <motion.div
-                key={study.id}
+                key={benchmark.label}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="text-center p-6 rounded-2xl border border-electric-cyan/20 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90"
               >
-                <Link href={`/case-studies/${study.id}`} className="block group h-full">
-                  <div className="relative h-full p-8 rounded-3xl border border-electric-cyan/20 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 hover:border-electric-cyan/40 transition-all duration-300 group-hover:shadow-[0_8px_40px_rgba(0,212,255,0.15)] group-hover:-translate-y-1">
-                    {/* Top Accent */}
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-electric-cyan via-quantum-violet to-neon-mint rounded-t-3xl" />
-
-                    {/* Header */}
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="flex-1">
-                        <span className="text-electric-cyan text-sm font-medium">{study.company}</span>
-                        <p className="text-steel text-xs">{study.industry}</p>
-                      </div>
-                      <div className="flex gap-1">
-                        {study.tags.slice(0, 2).map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-2 py-1 rounded-md bg-electric-cyan/10 text-electric-cyan text-xs"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="text-2xl font-sora font-bold text-white mb-2 group-hover:text-electric-cyan transition-colors">
-                      {study.title}
-                    </h3>
-                    <p className="text-silver mb-6">{study.subtitle}</p>
-
-                    {/* Metrics */}
-                    <div className="grid grid-cols-2 gap-4 mb-6">
-                      {study.metrics.map((metric) => (
-                        <div key={metric.label} className="text-center p-3 rounded-xl bg-deep-space/50">
-                          <p className="text-2xl font-sora font-bold gradient-text-cyan-violet">
-                            {metric.value}
-                          </p>
-                          <p className="text-steel text-xs">{metric.label}</p>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Testimonial Preview */}
-                    {study.testimonial && (
-                      <div className="border-t border-electric-cyan/10 pt-4">
-                        <p className="text-silver text-sm italic line-clamp-2">
-                          &ldquo;{study.testimonial.quote}&rdquo;
-                        </p>
-                        <p className="text-steel text-xs mt-2">
-                          — {study.testimonial.author}, {study.testimonial.title}
-                        </p>
-                      </div>
-                    )}
-
-                    {/* Read More */}
-                    <div className="flex items-center gap-2 text-electric-cyan text-sm font-medium mt-4 group-hover:gap-3 transition-all">
-                      Read full case study
-                      <ArrowRight className="h-4 w-4" />
-                    </div>
+                <div className="flex justify-center mb-4">
+                  <div className="p-3 rounded-xl bg-electric-cyan/10 border border-electric-cyan/20">
+                    <benchmark.icon className="h-6 w-6 text-electric-cyan" />
                   </div>
-                </Link>
+                </div>
+                <p className="text-3xl font-sora font-bold text-electric-cyan mb-2">
+                  {benchmark.value}
+                </p>
+                <p className="text-steel text-sm">{benchmark.label}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Methodology Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
+              How We&apos;ll Achieve These Results
+            </h2>
+            <p className="text-silver max-w-2xl mx-auto">
+              Our 5 AI engines work together to maximize deliverability and conversions.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {methodology.map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="p-6 rounded-2xl border border-graphite/50 bg-deep-space/50 hover:border-electric-cyan/30 transition-colors"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-3 rounded-xl bg-electric-cyan/10 border border-electric-cyan/20">
+                    <item.icon className="h-6 w-6 text-electric-cyan" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                </div>
+                <p className="text-silver text-sm">{item.description}</p>
               </motion.div>
             ))}
           </div>
         </Container>
       </SectionWrapper>
 
+      {/* Founding Partner Benefits */}
+      <SectionWrapper variant="gradient">
+        <Container>
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
+                Why Become a Founding Partner?
+              </h2>
+              <p className="text-silver max-w-2xl mx-auto">
+                Early adopters get exclusive benefits while helping shape the future of B2B outreach.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                { title: "Exclusive Pricing", description: "Lock in founding partner rates—up to 60% off standard pricing, forever" },
+                { title: "Direct Access", description: "Work directly with our founder to customize your campaigns" },
+                { title: "Shape the Product", description: "Your feedback directly influences our roadmap and features" },
+                { title: "First Case Study", description: "Get featured as a success story when we hit our targets together" },
+              ].map((benefit, index) => (
+                <motion.div
+                  key={benefit.title}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="flex items-start gap-4 p-4 rounded-xl border border-electric-cyan/10 bg-deep-space/30"
+                >
+                  <CheckCircle className="h-6 w-6 text-neon-mint flex-shrink-0" />
+                  <div>
+                    <h4 className="font-semibold text-white mb-1">{benefit.title}</h4>
+                    <p className="text-steel text-sm">{benefit.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </SectionWrapper>
+
       <CTABanner
-        title="Want to Be Our Next Success Story?"
-        description="Book a call to discuss how we can deliver similar results for your business."
+        title="Be Part of Our First Success Stories"
+        description="Join our founding partner program and help us build the future of B2B outreach together."
       />
     </>
   );

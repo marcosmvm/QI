@@ -2,14 +2,13 @@
 
 import { motion } from "framer-motion";
 import { Container } from "@/components/marketing/layout/Container";
+import { CheckCircle, DollarSign, Users, TrendingUp, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
-const clients = [
-  { name: "TechCorp", logo: "/logos/placeholder.svg" },
-  { name: "SaaS Pro", logo: "/logos/placeholder.svg" },
-  { name: "DataFlow", logo: "/logos/placeholder.svg" },
-  { name: "CloudNine", logo: "/logos/placeholder.svg" },
-  { name: "ScaleUp", logo: "/logos/placeholder.svg" },
-  { name: "GrowthCo", logo: "/logos/placeholder.svg" },
+const idealClient = [
+  { icon: DollarSign, text: "$15K+ average contract values" },
+  { icon: TrendingUp, text: "Need predictable pipeline growth" },
+  { icon: Users, text: "Want to free up sales reps from cold outreach" },
 ];
 
 export function LogoBar() {
@@ -21,35 +20,47 @@ export function LogoBar() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-10"
+          className="max-w-3xl mx-auto"
         >
-          <p className="text-steel text-sm uppercase tracking-widest font-medium">
-            Trusted by 200+ B2B Companies
-          </p>
-        </motion.div>
+          <div className="text-center mb-8">
+            <p className="text-electric-cyan text-sm uppercase tracking-widest font-medium mb-2">
+              Built for B2B Companies Who
+            </p>
+          </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-wrap justify-center items-center gap-8 md:gap-16"
-        >
-          {clients.map((client, index) => (
-            <motion.div
-              key={client.name}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="group"
+          <div className="grid md:grid-cols-3 gap-6">
+            {idealClient.map((item, index) => (
+              <motion.div
+                key={item.text}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+                className="flex items-center gap-3 p-4 rounded-xl border border-graphite/50 bg-deep-space/50 hover:border-electric-cyan/30 transition-colors"
+              >
+                <div className="flex-shrink-0 p-2 rounded-lg bg-electric-cyan/10 border border-electric-cyan/20">
+                  <item.icon className="h-5 w-5 text-electric-cyan" />
+                </div>
+                <p className="text-silver text-sm font-medium">{item.text}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-center mt-8"
+          >
+            <Link
+              href="/pricing"
+              className="inline-flex items-center gap-2 text-electric-cyan hover:text-cyan-light text-sm font-medium transition-colors group"
             >
-              {/* Placeholder logo - replace with actual logos */}
-              <div className="h-10 w-32 bg-midnight-blue border border-graphite rounded-lg flex items-center justify-center opacity-50 group-hover:opacity-80 group-hover:border-electric-cyan/30 transition-all">
-                <span className="text-steel text-sm font-medium">{client.name}</span>
-              </div>
-            </motion.div>
-          ))}
+              See if you're a fit
+              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
         </motion.div>
       </Container>
     </section>

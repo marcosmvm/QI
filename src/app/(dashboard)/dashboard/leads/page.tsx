@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Users,
   Search,
@@ -34,11 +34,15 @@ import {
   LayoutGrid,
   List,
   SlidersHorizontal,
+  X,
+  ArrowUpDown,
+  FileSpreadsheet,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MetricsCard } from "@/components/dashboard";
-import { useState } from "react";
+import { useState, useCallback, useRef } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -198,13 +202,96 @@ const scoreColors = (score: number) => {
 };
 
 export default function LeadsPage() {
+  const router = useRouter();
   const [viewMode, setViewMode] = useState<"pipeline" | "list">("pipeline");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedStage, setSelectedStage] = useState<string | null>(null);
+  const [leads, setLeads] = useState(leadsData);
+  const [showFilterDropdown, setShowFilterDropdown] = useState(false);
+  const [showSortDropdown, setShowSortDropdown] = useState(false);
+  const [showAddLeadModal, setShowAddLeadModal] = useState(false);
+  const [sortBy, setSortBy] = useState<"score" | "name" | "company" | "activity">("score");
+  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("desc");
+  const [filterSource, setFilterSource] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const filteredLeads = selectedStage
-    ? leadsData.filter(l => l.stage === selectedStage)
-    : leadsData;
+  // Toggle star on lead
+  const toggleStar = useCallback((leadId: string) => {
+    setLeads(prev => prev.map(lead =>
+      lead.id === leadId ? { ...lead, starred: !lead.starred } : lead
+    ));
+  }, []);
+
+  // Export leads to CSV
+  const handleExport = useCallback(() => {
+    const headers = ["Name", "Email", "Company", "Title", "Stage", "Score", "Source", "Campaign"];
+    const rows = leads.map(lead => [
+      `${lead.firstName} ${lead.lastName}`,
+      lead.email,
+      lead.company,
+      lead.title,
+      lead.stage,
+      lead.score,
+      lead.source,
+      lead.campaign
+    ]);
+
+    const csvContent = [headers.join(","), ...rows.map(r => r.join(","))].join("\n");
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = `leads-export-${new Date().toISOString().split("T")[0]}.csv`;
+    link.click();
+  }, [leads]);
+
+  // Handle import (simulated)
+  const handleImportClick = useCallback(() => {
+    fileInputRef.current?.click();
+  }, []);
+
+  const handleFileUpload = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      // In production, this would parse the CSV and add leads
+      alert(`Importing ${file.name}... This feature will be connected to the backend.`);
+    }
+  }, []);
+
+  // Sort leads
+  const sortLeads = useCallback((leadsToSort: typeof leadsData) => {
+    return [...leadsToSort].sort((a, b) => {
+      let comparison = 0;
+      switch (sortBy) {
+        case "score":
+          comparison = a.score - b.score;
+          break;
+        case "name":
+          comparison = `${a.firstName} ${a.lastName}`.localeCompare(`${b.firstName} ${b.lastName}`);
+          break;
+        case "company":
+          comparison = a.company.localeCompare(b.company);
+          break;
+        case "activity":
+          // Sort by most recent activity (approximation)
+          comparison = a.lastActivityTime.localeCompare(b.lastActivityTime);
+          break;
+      }
+      return sortOrder === "desc" ? -comparison : comparison;
+    });
+  }, [sortBy, sortOrder]);
+
+  // Apply filters and sorting
+  const filteredLeads = sortLeads(
+    leads.filter(lead => {
+      const matchesSearch = searchQuery === "" ||
+        `${lead.firstName} ${lead.lastName}`.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        lead.company.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        lead.email.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesStage = !selectedStage || lead.stage === selectedStage;
+      const matchesSource = !filterSource || lead.source === filterSource;
+      return matchesSearch && matchesStage && matchesSource;
+    })
+  );
 
   return (
     <motion.div
@@ -283,14 +370,153 @@ export default function LeadsPage() {
                 className="h-10 w-80 rounded-xl border border-electric-cyan/20 bg-midnight-blue/50 pl-10 pr-4 text-sm text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-2 focus:ring-electric-cyan/20 transition-all"
               />
             </div>
-            <Button variant="outline" size="sm" className="border-electric-cyan/20 text-steel hover:text-white">
-              <Filter className="h-4 w-4 mr-2" />
-              Filter
-            </Button>
-            <Button variant="outline" size="sm" className="border-electric-cyan/20 text-steel hover:text-white">
-              <SlidersHorizontal className="h-4 w-4 mr-2" />
-              Sort
-            </Button>
+
+            {/* Filter Dropdown */}
+            <div className="relative">
+              <Button
+                variant="outline"
+                size="sm"
+                className={cn(
+                  "border-electric-cyan/20 text-steel hover:text-white",
+                  (filterSource || selectedStage) && "border-electric-cyan/50 text-electric-cyan"
+                )}
+                onClick={() => setShowFilterDropdown(!showFilterDropdown)}
+              >
+                <Filter className="h-4 w-4 mr-2" />
+                Filter
+                {(filterSource || selectedStage) && (
+                  <span className="ml-1 px-1.5 py-0.5 text-[10px] bg-electric-cyan/20 rounded">
+                    {[filterSource, selectedStage].filter(Boolean).length}
+                  </span>
+                )}
+              </Button>
+              <AnimatePresence>
+                {showFilterDropdown && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="absolute top-full left-0 mt-2 w-64 rounded-xl border border-electric-cyan/20 bg-midnight-blue/95 backdrop-blur-xl p-4 shadow-xl z-50"
+                  >
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-sm font-medium text-white">Filters</span>
+                      <button
+                        onClick={() => {
+                          setFilterSource(null);
+                          setSelectedStage(null);
+                        }}
+                        className="text-xs text-electric-cyan hover:underline"
+                      >
+                        Clear all
+                      </button>
+                    </div>
+
+                    <div className="space-y-3">
+                      <div>
+                        <label className="text-xs text-steel mb-2 block">Source</label>
+                        <div className="flex flex-wrap gap-1">
+                          {["LinkedIn", "Cold Email", "Website Visitor", "Referral"].map(source => (
+                            <button
+                              key={source}
+                              onClick={() => setFilterSource(filterSource === source ? null : source)}
+                              className={cn(
+                                "px-2 py-1 text-xs rounded-lg border transition-all",
+                                filterSource === source
+                                  ? "bg-electric-cyan/20 text-electric-cyan border-electric-cyan/30"
+                                  : "bg-deep-space/50 text-steel border-electric-cyan/10 hover:border-electric-cyan/30"
+                              )}
+                            >
+                              {source}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className="text-xs text-steel mb-2 block">Stage</label>
+                        <div className="flex flex-wrap gap-1">
+                          {pipelineStages.map(stage => (
+                            <button
+                              key={stage.id}
+                              onClick={() => setSelectedStage(selectedStage === stage.id ? null : stage.id)}
+                              className={cn(
+                                "px-2 py-1 text-xs rounded-lg border transition-all",
+                                selectedStage === stage.id
+                                  ? "bg-electric-cyan/20 text-electric-cyan border-electric-cyan/30"
+                                  : "bg-deep-space/50 text-steel border-electric-cyan/10 hover:border-electric-cyan/30"
+                              )}
+                            >
+                              {stage.name}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    <button
+                      onClick={() => setShowFilterDropdown(false)}
+                      className="w-full mt-4 px-3 py-2 text-sm bg-electric-cyan/10 text-electric-cyan rounded-lg hover:bg-electric-cyan/20 transition-colors"
+                    >
+                      Apply Filters
+                    </button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Sort Dropdown */}
+            <div className="relative">
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-electric-cyan/20 text-steel hover:text-white"
+                onClick={() => setShowSortDropdown(!showSortDropdown)}
+              >
+                <ArrowUpDown className="h-4 w-4 mr-2" />
+                Sort
+              </Button>
+              <AnimatePresence>
+                {showSortDropdown && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="absolute top-full left-0 mt-2 w-48 rounded-xl border border-electric-cyan/20 bg-midnight-blue/95 backdrop-blur-xl p-2 shadow-xl z-50"
+                  >
+                    {[
+                      { id: "score", label: "Lead Score" },
+                      { id: "name", label: "Name" },
+                      { id: "company", label: "Company" },
+                      { id: "activity", label: "Recent Activity" },
+                    ].map(option => (
+                      <button
+                        key={option.id}
+                        onClick={() => {
+                          if (sortBy === option.id) {
+                            setSortOrder(sortOrder === "asc" ? "desc" : "asc");
+                          } else {
+                            setSortBy(option.id as typeof sortBy);
+                            setSortOrder("desc");
+                          }
+                          setShowSortDropdown(false);
+                        }}
+                        className={cn(
+                          "w-full flex items-center justify-between px-3 py-2 text-sm rounded-lg transition-colors",
+                          sortBy === option.id
+                            ? "bg-electric-cyan/10 text-electric-cyan"
+                            : "text-steel hover:text-white hover:bg-electric-cyan/5"
+                        )}
+                      >
+                        {option.label}
+                        {sortBy === option.id && (
+                          <span className="text-xs">{sortOrder === "asc" ? "↑" : "↓"}</span>
+                        )}
+                      </button>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </div>
 
           <div className="flex items-center gap-3">
@@ -304,6 +530,7 @@ export default function LeadsPage() {
                     ? "bg-electric-cyan/10 text-electric-cyan"
                     : "text-steel hover:text-white"
                 )}
+                title="Pipeline View"
               >
                 <LayoutGrid className="h-4 w-4" />
               </button>
@@ -315,22 +542,41 @@ export default function LeadsPage() {
                     ? "bg-electric-cyan/10 text-electric-cyan"
                     : "text-steel hover:text-white"
                 )}
+                title="List View"
               >
                 <List className="h-4 w-4" />
               </button>
             </div>
 
-            <Button variant="outline" size="sm" className="border-electric-cyan/20 text-steel hover:text-white">
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-electric-cyan/20 text-steel hover:text-white"
+              onClick={handleExport}
+            >
               <Download className="h-4 w-4 mr-2" />
               Export
             </Button>
-            <Button variant="outline" size="sm" className="border-electric-cyan/20 text-steel hover:text-white">
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-electric-cyan/20 text-steel hover:text-white"
+              onClick={handleImportClick}
+            >
               <Upload className="h-4 w-4 mr-2" />
               Import
             </Button>
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept=".csv,.xlsx"
+              className="hidden"
+              onChange={handleFileUpload}
+            />
             <Button
               size="sm"
               className="bg-gradient-to-r from-electric-cyan to-cyan-dark hover:from-cyan-light hover:to-electric-cyan text-deep-space font-semibold"
+              onClick={() => setShowAddLeadModal(true)}
             >
               <UserPlus className="h-4 w-4 mr-2" />
               Add Lead
@@ -338,11 +584,22 @@ export default function LeadsPage() {
           </div>
         </div>
 
+        {/* Click outside to close dropdowns */}
+        {(showFilterDropdown || showSortDropdown) && (
+          <div
+            className="fixed inset-0 z-40"
+            onClick={() => {
+              setShowFilterDropdown(false);
+              setShowSortDropdown(false);
+            }}
+          />
+        )}
+
         {/* Pipeline View */}
         {viewMode === "pipeline" && (
           <motion.div variants={itemVariants} className="grid grid-cols-5 gap-4">
             {pipelineStages.map((stage) => {
-              const stageLeads = leadsData.filter(l => l.stage === stage.id);
+              const stageLeads = filteredLeads.filter(l => l.stage === stage.id);
               return (
                 <div key={stage.id} className="space-y-3">
                   {/* Stage Header */}
@@ -403,7 +660,8 @@ export default function LeadsPage() {
                             <button
                               onClick={(e) => {
                                 e.preventDefault();
-                                // Toggle star
+                                e.stopPropagation();
+                                toggleStar(lead.id);
                               }}
                               className="text-steel hover:text-energy-orange transition-colors"
                             >
@@ -475,7 +733,8 @@ export default function LeadsPage() {
                             <button
                               onClick={(e) => {
                                 e.preventDefault();
-                                // Toggle star
+                                e.stopPropagation();
+                                toggleStar(lead.id);
                               }}
                               className="text-steel hover:text-energy-orange transition-colors"
                             >
@@ -581,6 +840,151 @@ export default function LeadsPage() {
             </div>
           </motion.div>
         )}
+
+        {/* Add Lead Modal */}
+        <AnimatePresence>
+          {showAddLeadModal && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            >
+              <div
+                className="absolute inset-0 bg-deep-space/80 backdrop-blur-sm"
+                onClick={() => setShowAddLeadModal(false)}
+              />
+              <motion.div
+                initial={{ scale: 0.95, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.95, opacity: 0 }}
+                className="relative w-full max-w-lg rounded-2xl border border-electric-cyan/20 bg-gradient-to-br from-midnight-blue to-deep-space p-6 shadow-2xl"
+              >
+                <button
+                  onClick={() => setShowAddLeadModal(false)}
+                  className="absolute top-4 right-4 p-2 text-steel hover:text-white rounded-lg hover:bg-electric-cyan/10 transition-colors"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-electric-cyan/10 border border-electric-cyan/30">
+                    <UserPlus className="h-6 w-6 text-electric-cyan" />
+                  </div>
+                  <div>
+                    <h2 className="text-xl font-sora font-bold text-white">Add New Lead</h2>
+                    <p className="text-sm text-steel">Enter the lead details below</p>
+                  </div>
+                </div>
+
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    const formData = new FormData(e.target as HTMLFormElement);
+                    const newLead = {
+                      id: `lead-${Date.now()}`,
+                      firstName: formData.get("firstName") as string,
+                      lastName: formData.get("lastName") as string,
+                      email: formData.get("email") as string,
+                      phone: formData.get("phone") as string || "",
+                      company: formData.get("company") as string,
+                      title: formData.get("title") as string,
+                      location: "",
+                      stage: "new",
+                      score: 50,
+                      starred: false,
+                      lastActivity: "Added to list",
+                      lastActivityTime: "Just now",
+                      campaign: "Manual Entry",
+                      source: "Import",
+                      createdAt: new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }),
+                    };
+                    setLeads(prev => [newLead, ...prev]);
+                    setShowAddLeadModal(false);
+                  }}
+                  className="space-y-4"
+                >
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-silver mb-2">First Name *</label>
+                      <input
+                        name="firstName"
+                        required
+                        placeholder="John"
+                        className="w-full h-10 rounded-lg border border-graphite bg-deep-space px-4 text-sm text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-silver mb-2">Last Name *</label>
+                      <input
+                        name="lastName"
+                        required
+                        placeholder="Doe"
+                        className="w-full h-10 rounded-lg border border-graphite bg-deep-space px-4 text-sm text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-silver mb-2">Email *</label>
+                    <input
+                      name="email"
+                      type="email"
+                      required
+                      placeholder="john.doe@company.com"
+                      className="w-full h-10 rounded-lg border border-graphite bg-deep-space px-4 text-sm text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-silver mb-2">Phone</label>
+                    <input
+                      name="phone"
+                      type="tel"
+                      placeholder="+1 (555) 123-4567"
+                      className="w-full h-10 rounded-lg border border-graphite bg-deep-space px-4 text-sm text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-silver mb-2">Company *</label>
+                      <input
+                        name="company"
+                        required
+                        placeholder="Acme Inc"
+                        className="w-full h-10 rounded-lg border border-graphite bg-deep-space px-4 text-sm text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-silver mb-2">Title *</label>
+                      <input
+                        name="title"
+                        required
+                        placeholder="VP of Sales"
+                        className="w-full h-10 rounded-lg border border-graphite bg-deep-space px-4 text-sm text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="flex justify-end gap-3 pt-4 border-t border-graphite/50">
+                    <Button
+                      type="button"
+                      variant="outline"
+                      onClick={() => setShowAddLeadModal(false)}
+                    >
+                      Cancel
+                    </Button>
+                    <Button type="submit">
+                      <Plus className="h-4 w-4 mr-2" />
+                      Add Lead
+                    </Button>
+                  </div>
+                </form>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.div>
   );

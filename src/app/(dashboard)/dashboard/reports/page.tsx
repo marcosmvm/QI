@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { MetricsCard } from "@/components/dashboard";
 import { cn } from "@/lib/utils";
+import { useCallback, useState } from "react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -59,8 +60,9 @@ import {
   Trash2,
   Bell,
   CalendarDays,
+  X,
+  Loader2,
 } from "lucide-react";
-import { useState } from "react";
 
 // Enhanced mock data
 const weeklyReports = [
@@ -224,6 +226,43 @@ const latestInsights = [
 export default function ReportsPage() {
   const [activeTab, setActiveTab] = useState<"weekly" | "monthly" | "custom">("weekly");
   const [selectedReport, setSelectedReport] = useState(weeklyReports[0]);
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [showDatePicker, setShowDatePicker] = useState(false);
+  const [showReportPreview, setShowReportPreview] = useState(false);
+  const [previewReport, setPreviewReport] = useState<typeof weeklyReports[0] | null>(null);
+
+  // Generate new report
+  const handleGenerateReport = useCallback(async () => {
+    setIsGenerating(true);
+    // Simulate report generation
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    setIsGenerating(false);
+    alert("Report generation started! It will be available in a few minutes.");
+  }, []);
+
+  // Export report to various formats
+  const handleExport = useCallback((format: "pdf" | "xlsx" | "csv") => {
+    const report = selectedReport;
+    const filename = `report-${report.date.replace(/\s/g, "-").toLowerCase()}.${format}`;
+
+    if (format === "csv") {
+      const csvContent = `Report: ${report.title}\nDate: ${report.date}\n\nMetrics\nSent,${report.metrics.sent}\nOpen Rate,${report.metrics.openRate}%\nReply Rate,${report.metrics.replyRate}%\nMeetings,${report.metrics.meetings}`;
+      const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = filename;
+      link.click();
+    } else {
+      // For PDF and XLSX, show a message (would connect to backend in production)
+      alert(`Downloading ${filename}... This will be connected to the report generation service.`);
+    }
+  }, [selectedReport]);
+
+  // View report (open preview modal)
+  const handleViewReport = useCallback((report: typeof weeklyReports[0]) => {
+    setPreviewReport(report);
+    setShowReportPreview(true);
+  }, []);
 
   return (
     <motion.div
@@ -301,20 +340,86 @@ export default function ReportsPage() {
           </div>
 
           <div className="flex items-center gap-3">
-            <Button variant="outline" size="sm" className="border-electric-cyan/20 text-steel hover:text-white">
-              <Calendar className="h-4 w-4 mr-2" />
-              Custom Range
-            </Button>
-            <Button variant="outline" size="sm" className="border-electric-cyan/20 text-steel hover:text-white">
+            <div className="relative">
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-electric-cyan/20 text-steel hover:text-white"
+                onClick={() => setShowDatePicker(!showDatePicker)}
+              >
+                <Calendar className="h-4 w-4 mr-2" />
+                Custom Range
+              </Button>
+              <AnimatePresence>
+                {showDatePicker && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="absolute top-full right-0 mt-2 w-72 rounded-xl border border-electric-cyan/20 bg-midnight-blue/95 backdrop-blur-xl p-4 shadow-xl z-50"
+                  >
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-sm font-medium text-white">Select Date Range</span>
+                      <button onClick={() => setShowDatePicker(false)} className="text-steel hover:text-white">
+                        <X className="h-4 w-4" />
+                      </button>
+                    </div>
+                    <div className="space-y-3">
+                      <div>
+                        <label className="text-xs text-steel mb-1 block">Start Date</label>
+                        <input
+                          type="date"
+                          className="w-full h-9 rounded-lg border border-graphite bg-deep-space px-3 text-sm text-white focus:border-electric-cyan/50 focus:outline-none"
+                        />
+                      </div>
+                      <div>
+                        <label className="text-xs text-steel mb-1 block">End Date</label>
+                        <input
+                          type="date"
+                          className="w-full h-9 rounded-lg border border-graphite bg-deep-space px-3 text-sm text-white focus:border-electric-cyan/50 focus:outline-none"
+                        />
+                      </div>
+                      <Button
+                        className="w-full"
+                        size="sm"
+                        onClick={() => {
+                          setShowDatePicker(false);
+                          setActiveTab("custom");
+                        }}
+                      >
+                        Apply Range
+                      </Button>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-electric-cyan/20 text-steel hover:text-white"
+              onClick={() => window.location.reload()}
+            >
               <RefreshCw className="h-4 w-4 mr-2" />
               Refresh
             </Button>
             <Button
               size="sm"
               className="bg-gradient-to-r from-electric-cyan to-cyan-dark hover:from-cyan-light hover:to-electric-cyan text-deep-space font-semibold"
+              onClick={handleGenerateReport}
+              disabled={isGenerating}
             >
-              <FileText className="h-4 w-4 mr-2" />
-              Generate Report
+              {isGenerating ? (
+                <>
+                  <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                  Generating...
+                </>
+              ) : (
+                <>
+                  <FileText className="h-4 w-4 mr-2" />
+                  Generate Report
+                </>
+              )}
             </Button>
           </div>
         </div>
@@ -377,10 +482,25 @@ export default function ReportsPage() {
                       <div className="flex items-center gap-2">
                         {report.status === "ready" ? (
                           <>
-                            <Button variant="outline" size="sm" className="border-electric-cyan/20 text-steel hover:text-white">
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              className="border-electric-cyan/20 text-steel hover:text-white"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleViewReport(report as typeof selectedReport);
+                              }}
+                            >
                               View
                             </Button>
-                            <button className="p-2 text-steel hover:text-electric-cyan hover:bg-electric-cyan/10 rounded-lg transition-colors">
+                            <button
+                              className="p-2 text-steel hover:text-electric-cyan hover:bg-electric-cyan/10 rounded-lg transition-colors"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setSelectedReport(report as typeof selectedReport);
+                                handleExport("pdf");
+                              }}
+                            >
                               <Download className="h-4 w-4" />
                             </button>
                           </>
@@ -532,12 +652,13 @@ export default function ReportsPage() {
               <h3 className="font-semibold text-white mb-4">Export Options</h3>
               <div className="space-y-2">
                 {[
-                  { label: "PDF Report", format: "PDF", icon: FileText, description: "Formatted report with charts" },
-                  { label: "Excel Spreadsheet", format: "XLSX", icon: FileSpreadsheet, description: "Raw data with all metrics" },
-                  { label: "CSV Data", format: "CSV", icon: FileType, description: "Plain data export" },
+                  { label: "PDF Report", format: "pdf" as const, icon: FileText, description: "Formatted report with charts" },
+                  { label: "Excel Spreadsheet", format: "xlsx" as const, icon: FileSpreadsheet, description: "Raw data with all metrics" },
+                  { label: "CSV Data", format: "csv" as const, icon: FileType, description: "Plain data export" },
                 ].map((option) => (
                   <button
                     key={option.format}
+                    onClick={() => handleExport(option.format)}
                     className="w-full flex items-center gap-3 p-3 rounded-xl border border-electric-cyan/10 bg-deep-space/50 text-left hover:border-electric-cyan/30 hover:bg-electric-cyan/5 transition-all group"
                   >
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-electric-cyan/10 border border-electric-cyan/20 group-hover:bg-electric-cyan/20 transition-colors">
@@ -557,15 +678,27 @@ export default function ReportsPage() {
             <div className="glass-premium p-5">
               <h3 className="font-semibold text-white mb-4">Quick Actions</h3>
               <div className="space-y-2">
-                <Button variant="outline" className="w-full justify-start border-electric-cyan/20 text-steel hover:text-white">
+                <Button
+                  variant="outline"
+                  className="w-full justify-start border-electric-cyan/20 text-steel hover:text-white"
+                  onClick={() => alert("This will email the latest report. Connect to email service in production.")}
+                >
                   <Mail className="h-4 w-4 mr-2" />
                   Email Latest Report
                 </Button>
-                <Button variant="outline" className="w-full justify-start border-electric-cyan/20 text-steel hover:text-white">
+                <Button
+                  variant="outline"
+                  className="w-full justify-start border-electric-cyan/20 text-steel hover:text-white"
+                  onClick={() => alert("Report comparison feature coming soon!")}
+                >
                   <BarChart3 className="h-4 w-4 mr-2" />
                   Compare Reports
                 </Button>
-                <Button variant="outline" className="w-full justify-start border-electric-cyan/20 text-steel hover:text-white">
+                <Button
+                  variant="outline"
+                  className="w-full justify-start border-electric-cyan/20 text-steel hover:text-white"
+                  onClick={() => alert("Alert threshold configuration coming soon!")}
+                >
                   <Bell className="h-4 w-4 mr-2" />
                   Set Alert Thresholds
                 </Button>
@@ -573,6 +706,113 @@ export default function ReportsPage() {
             </div>
           </div>
         </div>
+
+        {/* Report Preview Modal */}
+        <AnimatePresence>
+          {showReportPreview && previewReport && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            >
+              <div
+                className="absolute inset-0 bg-deep-space/80 backdrop-blur-sm"
+                onClick={() => setShowReportPreview(false)}
+              />
+              <motion.div
+                initial={{ scale: 0.95, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.95, opacity: 0 }}
+                className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl border border-electric-cyan/20 bg-gradient-to-br from-midnight-blue to-deep-space p-6 shadow-2xl"
+              >
+                <button
+                  onClick={() => setShowReportPreview(false)}
+                  className="absolute top-4 right-4 p-2 text-steel hover:text-white rounded-lg hover:bg-electric-cyan/10 transition-colors"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+
+                <div className="mb-6">
+                  <h2 className="text-2xl font-sora font-bold text-white">{previewReport.title}</h2>
+                  <p className="text-steel">{previewReport.date}</p>
+                </div>
+
+                {/* Report Metrics Grid */}
+                <div className="grid grid-cols-4 gap-4 mb-6">
+                  <div className="p-4 rounded-xl border border-electric-cyan/10 bg-deep-space/50">
+                    <Mail className="h-5 w-5 text-electric-cyan mb-2" />
+                    <p className="text-2xl font-bold text-white">{previewReport.metrics.sent.toLocaleString()}</p>
+                    <p className="text-xs text-steel">Emails Sent</p>
+                  </div>
+                  <div className="p-4 rounded-xl border border-neon-mint/20 bg-neon-mint/5">
+                    <Eye className="h-5 w-5 text-neon-mint mb-2" />
+                    <p className="text-2xl font-bold text-neon-mint">{previewReport.metrics.openRate}%</p>
+                    <p className="text-xs text-steel">Open Rate</p>
+                  </div>
+                  <div className="p-4 rounded-xl border border-quantum-violet/20 bg-quantum-violet/5">
+                    <MessageSquare className="h-5 w-5 text-quantum-violet mb-2" />
+                    <p className="text-2xl font-bold text-quantum-violet">{previewReport.metrics.replyRate}%</p>
+                    <p className="text-xs text-steel">Reply Rate</p>
+                  </div>
+                  <div className="p-4 rounded-xl border border-energy-orange/20 bg-energy-orange/5">
+                    <Calendar className="h-5 w-5 text-energy-orange mb-2" />
+                    <p className="text-2xl font-bold text-energy-orange">{previewReport.metrics.meetings || 0}</p>
+                    <p className="text-xs text-steel">Meetings Booked</p>
+                  </div>
+                </div>
+
+                {/* Key Insights */}
+                <div className="p-4 rounded-xl border border-electric-cyan/10 bg-deep-space/50 mb-6">
+                  <h4 className="font-semibold text-white mb-4">Key Insights</h4>
+                  <div className="space-y-3">
+                    {latestInsights.map((insight, index) => (
+                      <div key={index} className="flex items-start gap-3">
+                        <div className={cn(
+                          "flex h-6 w-6 items-center justify-center rounded-lg mt-0.5",
+                          insight.type === "positive" && "bg-neon-mint/10",
+                          insight.type === "warning" && "bg-energy-orange/10",
+                          insight.type === "neutral" && "bg-electric-cyan/10"
+                        )}>
+                          {insight.type === "positive" ? (
+                            <TrendingUp className="h-3.5 w-3.5 text-neon-mint" />
+                          ) : insight.type === "warning" ? (
+                            <AlertCircle className="h-3.5 w-3.5 text-energy-orange" />
+                          ) : (
+                            <CheckCircle2 className="h-3.5 w-3.5 text-electric-cyan" />
+                          )}
+                        </div>
+                        <div>
+                          <p className="text-sm font-medium text-white">{insight.title}</p>
+                          <p className="text-xs text-steel">{insight.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Export Actions */}
+                <div className="flex justify-end gap-3">
+                  <Button
+                    variant="outline"
+                    onClick={() => {
+                      setSelectedReport(previewReport);
+                      handleExport("pdf");
+                    }}
+                  >
+                    <Download className="h-4 w-4 mr-2" />
+                    Download PDF
+                  </Button>
+                  <Button
+                    onClick={() => setShowReportPreview(false)}
+                  >
+                    Close
+                  </Button>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.div>
   );

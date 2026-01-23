@@ -1,54 +1,26 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { motion } from "framer-motion";
+import { Quote, Rocket, Target, Shield, Award, MapPin, GraduationCap } from "lucide-react";
 import { Container } from "@/components/marketing/layout/Container";
+import Link from "next/link";
 
-const testimonials = [
-  {
-    id: 1,
-    quote: "Quantum Insights transformed our outbound. We went from 2-3 meetings a month to 15-20 qualified opportunities. The AI engines are genuinely impressive.",
-    author: "Sarah Chen",
-    title: "VP of Sales",
-    company: "TechScale SaaS",
-    image: "/testimonials/placeholder.jpg",
-    rating: 5,
-    metric: { value: "8x", label: "More Meetings" },
-  },
-  {
-    id: 2,
-    quote: "Finally, a lead gen partner that actually delivers. Their deliverability rates are the best we've ever seen, and the transparency is refreshing.",
-    author: "Michael Torres",
-    title: "CEO",
-    company: "DataFlow Analytics",
-    image: "/testimonials/placeholder.jpg",
-    rating: 5,
-    metric: { value: "96%", label: "Deliverability" },
-  },
-  {
-    id: 3,
-    quote: "The ROI was obvious within the first month. Quantum Insights pays for itself many times over with the quality of meetings they book.",
-    author: "Jennifer Park",
-    title: "Head of Growth",
-    company: "CloudNine Solutions",
-    image: "/testimonials/placeholder.jpg",
-    rating: 5,
-    metric: { value: "340%", label: "ROI" },
-  },
+// Founder mission statement instead of fake testimonials
+const founderMission = {
+  quote: "I built Quantum Insights because I was tired of seeing B2B companies waste their best sales reps on cold outreach. Your closers should be closing, not prospecting. Our 5 AI engines do the heavy lifting so your team can focus on what they do best—building relationships and closing deals.",
+  author: "Marcos Matthews",
+  title: "Founder & CEO",
+  location: "Los Angeles, CA",
+  credential: "CSUN Entrepreneurship",
+};
+
+const commitments = [
+  { icon: Shield, title: "Deliverability First", description: "99%+ inbox placement or we fix it, free" },
+  { icon: Target, title: "Quality Over Quantity", description: "Qualified meetings, not just email volume" },
+  { icon: Award, title: "Skin in the Game", description: "Performance-based pricing model" },
 ];
 
 export function Testimonials() {
-  const [current, setCurrent] = useState(0);
-
-  const next = () => {
-    setCurrent((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prev = () => {
-    setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
   return (
     <section className="py-24 relative">
       {/* Subtle background */}
@@ -64,119 +36,114 @@ export function Testimonials() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
-            Trusted by{" "}
+            Meet the{" "}
             <span className="gradient-text-cyan-violet">
-              Growth Leaders
+              Founder
             </span>
           </h2>
           <p className="text-lg text-steel">
-            See what our clients say about working with Quantum Insights.
+            Built by someone who understands your pipeline challenges.
           </p>
         </motion.div>
 
-        {/* Testimonial Carousel */}
-        <div className="relative max-w-4xl mx-auto">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={current}
-              initial={{ opacity: 0, x: 50, scale: 0.98 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              exit={{ opacity: 0, x: -50, scale: 0.98 }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as const }}
-              className="relative"
-            >
-              <div className="relative p-8 md:p-12 rounded-3xl border border-graphite/50 bg-midnight-blue/40 backdrop-blur-sm hover:border-electric-cyan/30 transition-all duration-300">
-                {/* Quote Icon */}
-                <div className="absolute -top-6 left-8 p-4 rounded-2xl bg-midnight-blue border border-graphite/50 backdrop-blur-sm">
-                  <Quote className="h-6 w-6 text-electric-cyan" />
-                </div>
+        {/* Founder Section */}
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="relative"
+          >
+            <div className="relative p-8 md:p-12 rounded-3xl border border-graphite/50 bg-midnight-blue/40 backdrop-blur-sm">
+              {/* Quote Icon */}
+              <div className="absolute -top-6 left-8 p-4 rounded-2xl bg-midnight-blue border border-graphite/50 backdrop-blur-sm">
+                <Quote className="h-6 w-6 text-electric-cyan" />
+              </div>
 
-                {/* Rating */}
-                <div className="flex gap-1 mb-6 mt-4">
-                  {[...Array(testimonials[current].rating)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, scale: 0 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: i * 0.1, duration: 0.3 }}
-                    >
-                      <Star className="h-5 w-5 fill-electric-cyan text-electric-cyan" />
-                    </motion.div>
-                  ))}
-                </div>
+              {/* Quote */}
+              <blockquote className="text-xl md:text-2xl text-white font-medium leading-relaxed mb-8 mt-4">
+                &ldquo;{founderMission.quote}&rdquo;
+              </blockquote>
 
-                {/* Quote */}
-                <blockquote className="text-xl md:text-2xl text-white font-medium leading-relaxed mb-8">
-                  &ldquo;{testimonials[current].quote}&rdquo;
-                </blockquote>
-
-                {/* Author */}
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-full bg-electric-cyan/10 border border-electric-cyan/30 flex items-center justify-center">
-                      <span className="text-lg font-semibold text-electric-cyan">
-                        {testimonials[current].author.charAt(0)}
+              {/* Author */}
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-electric-cyan to-quantum-violet flex items-center justify-center text-deep-space font-bold text-xl">
+                    MM
+                  </div>
+                  <div>
+                    <p className="font-semibold text-white text-lg">{founderMission.author}</p>
+                    <p className="text-electric-cyan text-sm font-medium">{founderMission.title}</p>
+                    <div className="flex items-center gap-3 mt-1 text-steel text-xs">
+                      <span className="flex items-center gap-1">
+                        <MapPin className="h-3 w-3" />
+                        {founderMission.location}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <GraduationCap className="h-3 w-3" />
+                        {founderMission.credential}
                       </span>
                     </div>
-                    <div>
-                      <p className="font-semibold text-white">{testimonials[current].author}</p>
-                      <p className="text-steel text-sm">
-                        {testimonials[current].title}, {testimonials[current].company}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Metric */}
-                  <div className="hidden sm:block text-right">
-                    <motion.p
-                      key={`metric-${current}`}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.2 }}
-                      className="text-3xl font-sora font-bold text-electric-cyan"
-                    >
-                      {testimonials[current].metric.value}
-                    </motion.p>
-                    <p className="text-steel text-sm">{testimonials[current].metric.label}</p>
                   </div>
                 </div>
               </div>
-            </motion.div>
-          </AnimatePresence>
+            </div>
+          </motion.div>
 
-          {/* Navigation */}
-          <div className="flex items-center justify-center gap-4 mt-8">
-            <button
-              onClick={prev}
-              className="p-3 rounded-full border border-graphite/50 hover:border-electric-cyan/50 bg-midnight-blue/50 backdrop-blur-sm text-steel hover:text-electric-cyan hover:shadow-glow-cyan-sm transition-all duration-300"
-              aria-label="Previous testimonial"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-
-            <div className="flex gap-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrent(index)}
-                  className={`h-2.5 rounded-full transition-all duration-300 ${
-                    index === current
-                      ? "bg-electric-cyan w-8 shadow-glow-cyan-sm"
-                      : "bg-graphite hover:bg-steel w-2.5"
-                  }`}
-                  aria-label={`Go to testimonial ${index + 1}`}
-                />
+          {/* Our Commitments */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-12"
+          >
+            <h3 className="text-center text-lg font-semibold text-white mb-8">Our Commitment to You</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              {commitments.map((item, index) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: 0.3 + index * 0.1 }}
+                  className="p-6 rounded-2xl border border-graphite/50 bg-deep-space/50 hover:border-electric-cyan/30 transition-colors text-center"
+                >
+                  <div className="flex justify-center mb-4">
+                    <div className="p-3 rounded-xl bg-electric-cyan/10 border border-electric-cyan/20">
+                      <item.icon className="h-6 w-6 text-electric-cyan" />
+                    </div>
+                  </div>
+                  <h4 className="text-white font-semibold mb-2">{item.title}</h4>
+                  <p className="text-steel text-sm">{item.description}</p>
+                </motion.div>
               ))}
             </div>
+          </motion.div>
 
-            <button
-              onClick={next}
-              className="p-3 rounded-full border border-graphite/50 hover:border-electric-cyan/50 bg-midnight-blue/50 backdrop-blur-sm text-steel hover:text-electric-cyan hover:shadow-glow-cyan-sm transition-all duration-300"
-              aria-label="Next testimonial"
+          {/* Founding Partner CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="mt-12 text-center"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-quantum-violet/10 border border-quantum-violet/30 text-quantum-violet text-sm font-medium mb-4">
+              <Rocket className="h-4 w-4" />
+              Limited Founding Partner Spots Available
+            </div>
+            <p className="text-steel mb-6 max-w-xl mx-auto">
+              Join our founding partner program and lock in exclusive rates while helping shape the future of B2B outreach automation.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-electric-cyan text-deep-space font-semibold hover:shadow-glow-cyan hover:-translate-y-0.5 transition-all"
             >
-              <ChevronRight className="h-5 w-5" />
-            </button>
-          </div>
+              Become a Founding Partner
+            </Link>
+          </motion.div>
         </div>
       </Container>
     </section>
