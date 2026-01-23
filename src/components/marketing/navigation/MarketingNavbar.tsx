@@ -62,7 +62,7 @@ export function MarketingNavbar() {
                         "flex items-center gap-1 text-sm font-medium transition-colors duration-150",
                         activeDropdown === item.label
                           ? "text-emerald-pro-600 dark:text-xgrowth-500"
-                          : "text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-light-text dark:text-white"
+                          : "text-light-text-secondary dark:text-silver hover:text-light-text dark:hover:text-white"
                       )}
                     >
                       {item.label}
@@ -80,7 +80,7 @@ export function MarketingNavbar() {
                         "text-sm font-medium transition-colors duration-150",
                         pathname === item.href || pathname.startsWith(item.href + "/")
                           ? "text-emerald-pro-600 dark:text-xgrowth-500"
-                          : "text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-light-text dark:text-white"
+                          : "text-light-text-secondary dark:text-silver hover:text-light-text dark:hover:text-white"
                       )}
                     >
                       {item.label}
@@ -103,14 +103,14 @@ export function MarketingNavbar() {
               {/* Ghost Button for Login */}
               <Link
                 href="/login"
-                className="hidden lg:block text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-light-text dark:text-white font-medium px-4 py-2 rounded-lg hover:bg-light-bg-secondary dark:hover:bg-graphite/50 transition-all duration-200"
+                className="hidden lg:block text-light-text-secondary dark:text-silver hover:text-light-text dark:hover:text-white font-medium px-4 py-2 rounded-lg hover:bg-light-bg-secondary dark:hover:bg-graphite/50 transition-all duration-200"
               >
                 Login
               </Link>
               {/* Primary Button with Glow */}
               <Link
                 href="/contact"
-                className="hidden lg:block bg-emerald-pro-600 dark:bg-xgrowth-500 text-light-text dark:text-white dark:text-deep-space px-6 py-2.5 rounded-lg font-semibold transition-all duration-300 hover:bg-emerald-pro-700 dark:hover:bg-xgrowth-400 hover:shadow-glow-emerald dark:hover:shadow-glow-green hover:-translate-y-0.5 active:translate-y-0"
+                className="hidden lg:block bg-emerald-pro-600 dark:bg-xgrowth-500 text-white dark:text-deep-space px-6 py-2.5 rounded-lg font-semibold transition-all duration-300 hover:bg-emerald-pro-700 dark:hover:bg-xgrowth-400 hover:shadow-glow-emerald dark:hover:shadow-glow-green hover:-translate-y-0.5 active:translate-y-0"
               >
                 Book a Call
               </Link>
@@ -118,7 +118,7 @@ export function MarketingNavbar() {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-light-text dark:text-white hover:bg-light-bg-secondary dark:hover:bg-graphite/50 rounded-lg transition-all duration-150"
+                className="lg:hidden p-2 text-light-text-secondary dark:text-silver hover:text-light-text dark:hover:text-white hover:bg-light-bg-secondary dark:hover:bg-graphite/50 rounded-lg transition-all duration-150"
               >
                 {isMobileMenuOpen ? (
                   <X className="h-6 w-6" />
