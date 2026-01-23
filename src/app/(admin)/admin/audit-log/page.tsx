@@ -212,6 +212,7 @@ export default function AuditLogPage() {
       {/* Header */}
       <motion.div variants={itemVariants} className="flex items-center justify-between mb-8">
         <div>
+          <p className="text-sm text-steel mb-1">Admin / <span className="text-quantum-violet">Audit Log</span></p>
           <h1 className="text-2xl font-sora font-bold text-white">Audit Log</h1>
           <p className="text-steel mt-1">
             Track all changes and actions across the platform

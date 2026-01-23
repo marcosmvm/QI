@@ -353,11 +353,12 @@ function NotificationCard({ notification }: { notification: Notification }) {
 
   return (
     <div
-      className={`flex items-start gap-4 p-4 rounded-xl border transition-all hover:-translate-y-0.5 hover:shadow-card-hover ${
+      className={`flex items-start gap-4 p-4 rounded-xl border backdrop-blur-md transition-all hover:-translate-y-0.5 hover:shadow-card-hover ${
         notification.is_read
-          ? "bg-midnight-blue/20 border-graphite/30"
+          ? "bg-midnight-blue/30 border-graphite/30"
           : "bg-midnight-blue/40 border-electric-cyan/20"
       }`}
+      style={{ transition: "all 0.5s cubic-bezier(0.16, 1, 0.3, 1)" }}
     >
       <div
         className={`h-10 w-10 rounded-lg ${colors.bg} border ${colors.border} flex items-center justify-center flex-shrink-0`}

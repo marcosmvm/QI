@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { StatusBadge, ProgressRing } from "@/components/dashboard";
 import {
@@ -27,6 +28,28 @@ import {
   Cpu,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.16, 1, 0.3, 1] as const,
+    },
+  },
+};
 
 const steps = [
   { id: 1, name: "Campaign Details", icon: Target },
@@ -122,18 +145,24 @@ export default function NewCampaignPage() {
   };
 
   return (
-    <div className="min-h-screen bg-deep-space p-8">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className="min-h-screen p-8"
+    >
       {/* Page Header */}
-      <div className="mb-8">
+      <motion.div variants={itemVariants} className="mb-8">
         <div className="flex items-center gap-2 text-sm text-steel mb-2">
           <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
           <span>/</span>
           <Link href="/dashboard/campaigns" className="hover:text-electric-cyan transition-colors">Campaigns</Link>
           <span>/</span>
-          <span className="text-white">New</span>
+          <span className="text-electric-cyan">New</span>
         </div>
         <h1 className="text-2xl font-sora font-bold text-white">AI-powered campaign builder</h1>
-      </div>
+        <p className="text-steel mt-1">Build intelligent outreach sequences with AI Architect</p>
+      </motion.div>
 
       <div>
         {/* Back link */}
@@ -203,9 +232,9 @@ export default function NewCampaignPage() {
         </div>
 
         {/* Step content */}
-        <div className="max-w-3xl mx-auto">
+        <motion.div variants={itemVariants} className="max-w-3xl mx-auto">
           {currentStep === 1 && (
-            <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-8">
+            <div className="glass-premium p-8">
               <div className="flex items-center gap-3 mb-6">
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-electric-cyan/10 border border-electric-cyan/30">
                   <Target className="h-6 w-6 text-electric-cyan" />
@@ -319,7 +348,7 @@ export default function NewCampaignPage() {
           )}
 
           {currentStep === 2 && (
-            <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-8">
+            <div className="glass-premium p-8">
               <div className="flex items-center gap-3 mb-6">
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-neon-mint/10 border border-neon-mint/30">
                   <Users className="h-6 w-6 text-neon-mint" />
@@ -430,7 +459,7 @@ export default function NewCampaignPage() {
           )}
 
           {currentStep === 3 && (
-            <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-8">
+            <div className="glass-premium p-8">
               <div className="flex items-center gap-3 mb-6">
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-quantum-violet/10 border border-quantum-violet/30">
                   <Sparkles className="h-6 w-6 text-quantum-violet" />
@@ -510,7 +539,7 @@ export default function NewCampaignPage() {
 
           {currentStep === 4 && generatedContent && (
             <div className="space-y-6">
-              <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-8">
+              <div className="glass-premium p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-neon-mint/10 border border-neon-mint/30">
                     <CheckCircle className="h-6 w-6 text-neon-mint" />
@@ -567,8 +596,8 @@ export default function NewCampaignPage() {
               </div>
             </div>
           )}
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }

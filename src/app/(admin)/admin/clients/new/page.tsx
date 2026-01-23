@@ -149,6 +149,7 @@ export default function NewClientPage() {
 
         {/* Header */}
         <div className="mb-8">
+          <p className="text-sm text-steel mb-1">Admin / Clients / <span className="text-quantum-violet">New</span></p>
           <h1 className="text-2xl font-sora font-bold text-white">Add New Client</h1>
           <p className="text-steel mt-1">
             Create a new client organization and subscription

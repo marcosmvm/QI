@@ -54,25 +54,26 @@ export default function CareersPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-midnight-blue/30 to-deep-space" />
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-quantum-violet/20 rounded-full blur-[120px]" />
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-quantum-violet/20 rounded-full blur-[150px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-electric-cyan/15 rounded-full blur-[150px]" />
 
         <Container className="relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-4xl mx-auto"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neon-mint/10 border border-neon-mint/20 mb-6">
+            <div className="tech-badge mb-6">
               <Users className="w-4 h-4 text-neon-mint" />
               <span className="text-sm font-medium text-neon-mint">We&apos;re Hiring</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white mb-6">
               Join the Team Building the{" "}
-              <span className="gradient-text-cyan-violet">
+              <span className="gradient-text-cyan-violet headline-underline">
                 Future of Sales
               </span>
             </h1>
@@ -91,7 +92,7 @@ export default function CareersPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
               <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-6">
                 Why Quantum Insights?
@@ -113,7 +114,7 @@ export default function CareersPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="p-8 rounded-3xl border border-electric-cyan/20 bg-gradient-to-br from-midnight-blue/50 to-deep-space/50"
             >
               <div className="grid grid-cols-2 gap-6">
@@ -146,7 +147,7 @@ export default function CareersPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
@@ -164,7 +165,7 @@ export default function CareersPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
               >
                 <Link href="/contact" className="block group">
                   <div className="p-6 rounded-2xl border border-electric-cyan/20 bg-gradient-to-br from-midnight-blue/50 to-deep-space/50 hover:border-electric-cyan/40 transition-all">

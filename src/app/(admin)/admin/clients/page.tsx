@@ -188,6 +188,7 @@ export default function ClientsPage() {
       {/* Header */}
       <motion.div variants={itemVariants} className="flex items-center justify-between mb-8">
         <div>
+          <p className="text-sm text-steel mb-1">Admin / <span className="text-quantum-violet">Clients</span></p>
           <h1 className="text-2xl font-sora font-bold text-white">Clients</h1>
           <p className="text-steel mt-1">Manage your client relationships</p>
         </div>

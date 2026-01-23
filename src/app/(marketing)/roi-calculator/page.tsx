@@ -109,19 +109,20 @@ export default function ROICalculatorPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-24 overflow-hidden bg-deep-space">
+      <section className="relative py-32 overflow-hidden bg-deep-space">
         <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-deep-space to-midnight-blue" />
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-electric-cyan/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-quantum-violet/10 rounded-full blur-[100px]" />
+        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-neon-mint/10 rounded-full blur-[150px] opacity-60" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-quantum-violet/10 rounded-full blur-[150px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-electric-cyan/5 rounded-full blur-[180px]" />
 
         <Container className="relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-3xl mx-auto"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neon-mint/10 border border-neon-mint/30 mb-6">
+            <div className="tech-badge mb-8 inline-flex">
               <Calculator className="w-4 h-4 text-neon-mint" />
               <span className="text-sm font-medium text-neon-mint">
                 Free ROI Calculator
@@ -130,7 +131,7 @@ export default function ROICalculatorPage() {
 
             <h1 className="text-4xl md:text-5xl font-sora font-bold text-white mb-6">
               Calculate Your{" "}
-              <span className="gradient-text-cyan-violet">
+              <span className="headline-underline gradient-text-cyan-violet">
                 ROI Potential
               </span>
             </h1>
@@ -143,6 +144,9 @@ export default function ROICalculatorPage() {
         </Container>
       </section>
 
+      {/* Section Divider */}
+      <div className="section-divider max-w-4xl mx-auto" />
+
       {/* Calculator Section */}
       <SectionWrapper variant="default">
         <Container>
@@ -151,7 +155,7 @@ export default function ROICalculatorPage() {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
               <div className="p-8 rounded-3xl border border-graphite bg-midnight-blue/50">
                 <h2 className="text-xl font-sora font-bold text-white mb-6">
@@ -278,7 +282,7 @@ export default function ROICalculatorPage() {
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
               className="space-y-6"
             >
               {/* ROI Card */}
@@ -366,20 +370,20 @@ export default function ROICalculatorPage() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button
+                <button
                   onClick={() => setShowLeadCapture(true)}
-                  className="flex-1 bg-electric-cyan hover:bg-electric-cyan/90 text-deep-space font-semibold gap-2"
+                  className="cta-magnetic flex-1"
                 >
                   <Download className="h-4 w-4" />
                   Get Detailed Report
-                </Button>
+                </button>
                 <Link href="/book-demo" className="flex-1">
                   <Button
                     variant="outline"
-                    className="w-full border-graphite hover:border-electric-cyan/50 hover:text-electric-cyan gap-2"
+                    className="w-full border-electric-cyan/30 hover:border-electric-cyan/60 text-white hover:text-electric-cyan bg-electric-cyan/5 hover:bg-electric-cyan/10 px-8 py-6 text-lg transition-all backdrop-blur-sm"
                   >
                     Book a Demo
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
               </div>
@@ -395,11 +399,11 @@ export default function ROICalculatorPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center mb-8"
           >
             <h2 className="text-2xl font-sora font-bold text-white mb-4">
-              How We Calculate This
+              How We <span className="headline-underline gradient-text-cyan-violet">Calculate</span> This
             </h2>
             <p className="text-steel">
               Based on our documented performance across 100+ client campaigns.
@@ -418,7 +422,7 @@ export default function ROICalculatorPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="text-center p-4 rounded-xl border border-graphite bg-midnight-blue/50"
               >
                 <metric.icon className="h-6 w-6 text-electric-cyan mx-auto mb-2" />
@@ -438,6 +442,7 @@ export default function ROICalculatorPage() {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="w-full max-w-md p-8 rounded-3xl border border-graphite bg-midnight-blue"
           >
             <h3 className="text-xl font-sora font-bold text-white mb-2">
@@ -463,21 +468,21 @@ export default function ROICalculatorPage() {
                   type="button"
                   variant="outline"
                   onClick={() => setShowLeadCapture(false)}
-                  className="flex-1"
+                  className="flex-1 border-graphite hover:border-electric-cyan/50 hover:text-electric-cyan"
                 >
                   Cancel
                 </Button>
-                <Button
+                <button
                   type="submit"
                   disabled={isSubmitting || !email}
-                  className="flex-1 bg-electric-cyan hover:bg-electric-cyan/90 text-deep-space"
+                  className="cta-magnetic flex-1 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <Loader2 className="h-4 w-4 animate-spin" />
                   ) : (
                     "Send Report"
                   )}
-                </Button>
+                </button>
               </div>
             </form>
           </motion.div>

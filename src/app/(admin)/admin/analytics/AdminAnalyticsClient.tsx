@@ -76,7 +76,8 @@ export default function AdminAnalyticsClient({
       {/* Header */}
       <motion.div variants={itemVariants} className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-2xl font-sora font-bold text-electric-cyan">Analytics</h1>
+          <p className="text-sm text-steel mb-1">Admin / <span className="text-electric-cyan">Analytics</span></p>
+          <h1 className="text-2xl font-sora font-bold text-white">Analytics</h1>
           <p className="text-steel mt-1">
             Platform-wide performance metrics and insights
           </p>

@@ -177,6 +177,11 @@ export default function EnginesPage() {
       {/* Header */}
       <motion.div variants={itemVariants} className="flex items-center justify-between mb-8">
         <div>
+          <div className="flex items-center gap-2 text-sm text-steel mb-2">
+            <span>Admin</span>
+            <span className="text-graphite">/</span>
+            <span className="text-electric-cyan">Engines</span>
+          </div>
           <h1 className="text-2xl font-sora font-bold text-white">Engine Monitoring</h1>
           <p className="text-steel mt-1">
             Monitor the health and performance of all AI engines

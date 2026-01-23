@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 import {
   ArrowLeft,
   Mail,
@@ -37,6 +38,28 @@ import {
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import Link from "next/link";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.16, 1, 0.3, 1] as const,
+    },
+  },
+};
 
 // Mock campaign data
 const campaignData = {
@@ -165,17 +188,22 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
   const maxSent = Math.max(...dailyPerformance.map(d => d.sent));
 
   return (
-    <div className="min-h-screen bg-deep-space p-8">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className="min-h-screen p-8"
+    >
       {/* Page Header */}
-      <div className="mb-6">
+      <motion.div variants={itemVariants} className="mb-6">
         <div className="flex items-center gap-2 text-sm text-steel mb-2">
           <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
           <span>/</span>
           <Link href="/dashboard/campaigns" className="hover:text-electric-cyan transition-colors">Campaigns</Link>
           <span>/</span>
-          <span className="text-white">{campaignData.name}</span>
+          <span className="text-electric-cyan">{campaignData.name}</span>
         </div>
-      </div>
+      </motion.div>
 
       <div>
         {/* Back Button */}
@@ -188,7 +216,7 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
         </Link>
 
         {/* Campaign Header */}
-        <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6 mb-6">
+        <motion.div variants={itemVariants} className="glass-premium p-6 mb-6">
           <div className="flex items-start justify-between">
             <div className="flex items-center gap-4">
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-electric-cyan/10 border border-electric-cyan/20">
@@ -238,10 +266,10 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
               </Button>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Key Metrics */}
-        <div className="grid grid-cols-6 gap-4 mb-6">
+        <motion.div variants={itemVariants} className="grid grid-cols-6 gap-4 mb-6">
           {[
             { label: "Sent", value: campaignData.metrics.sent.toLocaleString(), icon: Send, color: "electric-cyan" },
             { label: "Delivered", value: `${campaignData.metrics.deliverabilityRate}%`, sublabel: campaignData.metrics.delivered.toLocaleString(), icon: CheckCircle2, status: getMetricStatus(campaignData.metrics.deliverabilityRate, 90, 85) },
@@ -254,7 +282,7 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
             return (
               <div
                 key={metric.label}
-                className="relative rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-4 hover:border-electric-cyan/30 hover:-translate-y-0.5 hover:shadow-card-hover transition-all duration-200 group overflow-hidden"
+                className="glass-premium p-4 hover:border-electric-cyan/30 hover:-translate-y-0.5 hover:shadow-card-hover transition-all duration-200 group overflow-hidden"
               >
                 {/* Top accent line on hover */}
                 <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-electric-cyan to-quantum-violet opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
@@ -288,10 +316,10 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
               </div>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* Health Metrics */}
-        <div className="grid grid-cols-3 gap-4 mb-6">
+        <motion.div variants={itemVariants} className="grid grid-cols-3 gap-4 mb-6">
           {[
             { label: "Bounce Rate", value: campaignData.metrics.bounceRate, target: 2, warning: 5, unit: "%", inverse: true },
             { label: "Unsubscribe Rate", value: (campaignData.metrics.unsubscribed / campaignData.metrics.sent * 100).toFixed(2), target: 0.5, warning: 1, unit: "%", inverse: true },
@@ -329,10 +357,10 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
               </div>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* Tabs */}
-        <div className="flex items-center gap-1 p-1 rounded-xl bg-midnight-blue/50 border border-electric-cyan/10 w-fit mb-6">
+        <motion.div variants={itemVariants} className="flex items-center gap-1 p-1 rounded-xl bg-midnight-blue/50 border border-electric-cyan/10 w-fit mb-6">
           {[
             { id: "overview", label: "Performance Overview", icon: BarChart3 },
             { id: "sequences", label: "Sequences", icon: GitBranch },
@@ -352,13 +380,13 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
               {tab.label}
             </button>
           ))}
-        </div>
+        </motion.div>
 
         {/* Overview Tab */}
         {activeTab === "overview" && (
-          <div className="grid grid-cols-3 gap-6">
+          <motion.div variants={itemVariants} className="grid grid-cols-3 gap-6">
             {/* Daily Performance Chart */}
-            <div className="col-span-2 rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+            <div className="col-span-2 glass-premium p-6">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="font-semibold text-white">Daily Performance</h3>
                 <div className="flex items-center gap-4">
@@ -401,7 +429,7 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
             </div>
 
             {/* Sequence Summary */}
-            <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+            <div className="glass-premium p-6">
               <h3 className="font-semibold text-white mb-4">Sequence Performance</h3>
               <div className="space-y-3">
                 {sequences.map((seq) => (
@@ -431,12 +459,12 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         )}
 
         {/* Sequences Tab */}
         {activeTab === "sequences" && (
-          <div className="space-y-4">
+          <motion.div variants={itemVariants} className="space-y-4">
             <div className="flex items-center justify-between">
               <h3 className="font-semibold text-white">Campaign Sequences</h3>
               <Button size="sm" className="bg-electric-cyan/10 text-electric-cyan hover:bg-electric-cyan/20 border border-electric-cyan/20">
@@ -445,7 +473,7 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
               </Button>
             </div>
 
-            <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 overflow-hidden">
+            <div className="glass-premium overflow-hidden">
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-electric-cyan/10">
@@ -508,12 +536,12 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
                 </tbody>
               </table>
             </div>
-          </div>
+          </motion.div>
         )}
 
         {/* Activity Tab */}
         {activeTab === "activity" && (
-          <div className="rounded-2xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+          <motion.div variants={itemVariants} className="glass-premium p-6">
             <div className="flex items-center justify-between mb-6">
               <h3 className="font-semibold text-white">Recent Activity</h3>
               <Button variant="outline" size="sm" className="border-electric-cyan/20 text-steel hover:text-white">
@@ -565,9 +593,9 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
                 );
               })}
             </div>
-          </div>
+          </motion.div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -1,6 +1,10 @@
-import { createClient } from "@/lib/supabase/server";
+"use client";
+
+import { createClient } from "@/lib/supabase/client";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { useEffect, useState, use } from "react";
+import { motion } from "framer-motion";
 import {
   ArrowLeft,
   Mail,
@@ -18,7 +22,15 @@ import {
   AlertTriangle,
 } from "lucide-react";
 
-export const dynamic = "force-dynamic";
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const } },
+};
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -58,82 +70,6 @@ interface ActivityLog {
   details: Record<string, unknown> | null;
 }
 
-async function getTeamMember(id: string): Promise<TeamMemberData | null> {
-  const supabase = await createClient();
-
-  const { data, error } = await supabase
-    .from("team_members")
-    .select(`
-      id,
-      user_id,
-      role,
-      permissions,
-      hired_at,
-      is_active,
-      profiles:user_id (
-        id,
-        email,
-        full_name,
-        avatar_url
-      )
-    `)
-    .eq("id", id)
-    .single();
-
-  if (error || !data) {
-    return null;
-  }
-
-  return data as unknown as TeamMemberData;
-}
-
-async function getAssignedClients(userId: string): Promise<AssignedClient[]> {
-  const supabase = await createClient();
-
-  // In a real implementation, this would query assigned client relationships
-  // For now, we'll simulate with organization_members where user is account manager
-  const { data } = await supabase
-    .from("organization_members")
-    .select(`
-      id,
-      organization_id,
-      joined_at,
-      organizations (
-        id,
-        name,
-        status
-      )
-    `)
-    .eq("user_id", userId);
-
-  return ((data || []) as unknown as Array<{
-    id: string;
-    organization_id: string;
-    joined_at: string;
-    organizations: { id: string; name: string; status: string } | null;
-  }>).map((d) => ({
-    id: d.id,
-    organization_id: d.organization_id,
-    assigned_at: d.joined_at,
-    organizations: d.organizations,
-  }));
-}
-
-async function getActivityLogs(userId: string): Promise<ActivityLog[]> {
-  const supabase = await createClient();
-
-  // In a real implementation, query audit_logs table
-  // For now, return mock data
-  const { data } = await supabase
-    .from("audit_logs")
-    .select("*")
-    .eq("user_id", userId)
-    .order("created_at", { ascending: false })
-    .limit(10);
-
-  return (data || []) as ActivityLog[];
-}
-
 const defaultPermissions = {
   view_dashboard: true,
   manage_clients: false,
@@ -145,18 +81,96 @@ const defaultPermissions = {
   manage_settings: false,
 };
 
-export default async function TeamMemberDetailPage({ params }: PageProps) {
-  const { id } = await params;
-  const member = await getTeamMember(id);
+export default function TeamMemberDetailPage({ params }: PageProps) {
+  const { id } = use(params);
+  const [member, setMember] = useState<TeamMemberData | null>(null);
+  const [assignedClients, setAssignedClients] = useState<AssignedClient[]>([]);
+  const [activityLogs, setActivityLogs] = useState<ActivityLog[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  if (!member) {
-    notFound();
+  useEffect(() => {
+    async function fetchData() {
+      const supabase = createClient();
+
+      // Fetch team member
+      const { data: memberData, error } = await supabase
+        .from("team_members")
+        .select(`
+          id,
+          user_id,
+          role,
+          permissions,
+          hired_at,
+          is_active,
+          profiles:user_id (
+            id,
+            email,
+            full_name,
+            avatar_url
+          )
+        `)
+        .eq("id", id)
+        .single();
+
+      if (error || !memberData) {
+        notFound();
+        return;
+      }
+
+      const teamMember = memberData as unknown as TeamMemberData;
+      setMember(teamMember);
+
+      // Fetch assigned clients
+      const { data: clientsData } = await supabase
+        .from("organization_members")
+        .select(`
+          id,
+          organization_id,
+          joined_at,
+          organizations (
+            id,
+            name,
+            status
+          )
+        `)
+        .eq("user_id", teamMember.user_id);
+
+      setAssignedClients(
+        ((clientsData || []) as unknown as Array<{
+          id: string;
+          organization_id: string;
+          joined_at: string;
+          organizations: { id: string; name: string; status: string } | null;
+        }>).map((d) => ({
+          id: d.id,
+          organization_id: d.organization_id,
+          assigned_at: d.joined_at,
+          organizations: d.organizations,
+        }))
+      );
+
+      // Fetch activity logs
+      const { data: logsData } = await supabase
+        .from("audit_logs")
+        .select("*")
+        .eq("user_id", teamMember.user_id)
+        .order("created_at", { ascending: false })
+        .limit(10);
+
+      setActivityLogs((logsData || []) as ActivityLog[]);
+      setLoading(false);
+    }
+
+    fetchData();
+  }, [id]);
+
+  if (loading || !member) {
+    return (
+      <div className="min-h-screen p-8 flex items-center justify-center">
+        <div className="text-steel">Loading...</div>
+      </div>
+    );
   }
-
-  const [assignedClients, activityLogs] = await Promise.all([
-    getAssignedClients(member.user_id),
-    getActivityLogs(member.user_id),
-  ]);
 
   const profile = member.profiles;
   const permissions = { ...defaultPermissions, ...member.permissions };
@@ -226,20 +240,27 @@ export default async function TeamMemberDetailPage({ params }: PageProps) {
   const colors = colorClasses[role.color] || colorClasses.steel;
 
   return (
-    <div className="min-h-screen p-8">
-      {/* Back link */}
-      <div >
-      <Link
-        href="/admin/team"
-        className="inline-flex items-center gap-2 text-steel hover:text-white transition-colors mb-6"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        Back to Team
-      </Link>
-      </div>
+    <motion.div initial="hidden" animate="visible" variants={containerVariants} className="min-h-screen p-8">
+      {/* Breadcrumb Header */}
+      <motion.div variants={itemVariants} className="mb-6">
+        <div className="flex items-center gap-2 text-sm text-steel mb-4">
+          <Link href="/admin" className="hover:text-white transition-colors">Admin</Link>
+          <span className="text-graphite">/</span>
+          <Link href="/admin/team" className="hover:text-white transition-colors">Team</Link>
+          <span className="text-graphite">/</span>
+          <span className="text-electric-cyan">{profile?.full_name || "Member"}</span>
+        </div>
+        <Link
+          href="/admin/team"
+          className="inline-flex items-center gap-2 text-steel hover:text-white transition-colors"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back to Team
+        </Link>
+      </motion.div>
 
       {/* Header */}
-      <div >
+      <motion.div variants={itemVariants}>
       <div className="flex items-start justify-between mb-8">
         <div className="flex items-center gap-4">
           <div className={`h-16 w-16 rounded-full ${colors.bg} border ${colors.border} flex items-center justify-center`}>
@@ -289,7 +310,7 @@ export default async function TeamMemberDetailPage({ params }: PageProps) {
           </button>
         </div>
       </div>
-      </div>
+      </motion.div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left Column */}
@@ -471,7 +492,7 @@ export default async function TeamMemberDetailPage({ params }: PageProps) {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

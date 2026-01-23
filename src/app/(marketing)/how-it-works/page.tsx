@@ -148,48 +148,53 @@ const differentiators = [
 export default function HowItWorksPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative py-24 overflow-hidden bg-deep-space">
-        <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-deep-space to-midnight-blue" />
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-electric-cyan/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-quantum-violet/10 rounded-full blur-[100px]" />
+      {/* Hero Section - Enhanced */}
+      <section className="relative py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-deep-space/50 to-midnight-blue/30" />
+
+        {/* Enhanced ambient orbs */}
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-quantum-violet/15 rounded-full blur-[150px] animate-orb-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-electric-cyan/12 rounded-full blur-[130px] animate-orb-float-reverse" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neon-mint/5 rounded-full blur-[180px]" />
 
         <Container className="relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center max-w-4xl mx-auto"
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="text-center max-w-5xl mx-auto"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-quantum-violet/10 border border-quantum-violet/30 mb-6">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="tech-badge mb-8"
+            >
               <Sparkles className="w-4 h-4 text-quantum-violet" />
               <span className="text-sm font-medium text-quantum-violet">
                 The Quantum Approach
               </span>
-            </div>
+              <Zap className="w-4 h-4 text-quantum-violet" />
+            </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white mb-6">
-              How{" "}
-              <span className="gradient-text-cyan-violet">
-                Quantum Insights
-              </span>{" "}
-              Works
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-white mb-8">
+              How Quantum Insights{" "}
+              <span className="headline-underline gradient-text-cyan-violet block mt-2">
+                Works
+              </span>
             </h1>
 
-            <p className="text-xl text-steel max-w-2xl mx-auto mb-8">
-              A proven process powered by AI that transforms cold outreach into
-              warm conversations and qualified meetings.
+            <p className="text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto mb-12 leading-relaxed">
+              A proven process powered by AI that transforms <span className="text-electric-cyan font-semibold">cold outreach</span> into
+              warm conversations and <span className="text-quantum-violet font-semibold">qualified meetings</span>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/book-demo">
-                <Button
-                  size="lg"
-                  className="bg-electric-cyan hover:bg-electric-cyan/90 text-deep-space font-semibold gap-2"
-                >
+                <button className="cta-magnetic group">
                   Book a Demo
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
+                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </button>
               </Link>
               <Link href="/engines">
                 <Button
@@ -205,19 +210,22 @@ export default function HowItWorksPage() {
         </Container>
       </section>
 
+      {/* Section Divider */}
+      <div className="section-divider max-w-4xl mx-auto" />
+
       {/* Process Steps */}
       <SectionWrapper variant="default">
         <Container>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-2xl mx-auto mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-4">
               The 4-Step{" "}
-              <span className="gradient-text-cyan-violet">
+              <span className="headline-underline gradient-text-cyan-violet">
                 Process
               </span>
             </h2>
@@ -234,10 +242,10 @@ export default function HowItWorksPage() {
               {processSteps.map((step, index) => (
                 <motion.div
                   key={step.step}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                   className="relative"
                 >
                   <div className="text-center mb-6">
@@ -275,19 +283,22 @@ export default function HowItWorksPage() {
         </Container>
       </SectionWrapper>
 
+      {/* Section Divider */}
+      <div className="section-divider max-w-4xl mx-auto" />
+
       {/* The 5 Engines */}
       <SectionWrapper variant="dark">
         <Container>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-2xl mx-auto mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-4">
               Powered by{" "}
-              <span className="gradient-text-cyan-violet">
+              <span className="headline-underline gradient-text-cyan-violet">
                 5 AI Engines
               </span>
             </h2>
@@ -329,10 +340,10 @@ export default function HowItWorksPage() {
               return (
                 <motion.div
                   key={engine.name}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <Link
                     href={`/engines/${engine.name.toLowerCase()}`}
@@ -366,14 +377,17 @@ export default function HowItWorksPage() {
         </Container>
       </SectionWrapper>
 
+      {/* Section Divider */}
+      <div className="section-divider max-w-4xl mx-auto" />
+
       {/* Results Stats */}
       <SectionWrapper variant="default">
         <Container size="md">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="p-8 rounded-3xl border border-graphite bg-gradient-to-br from-midnight-blue/80 to-deep-space"
           >
             <h2 className="text-2xl font-sora font-bold text-white text-center mb-8">
@@ -393,19 +407,22 @@ export default function HowItWorksPage() {
         </Container>
       </SectionWrapper>
 
+      {/* Section Divider */}
+      <div className="section-divider max-w-4xl mx-auto" />
+
       {/* Why Different */}
       <SectionWrapper variant="dark">
         <Container>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-2xl mx-auto mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-4">
               Why We&apos;re{" "}
-              <span className="gradient-text-cyan-violet">
+              <span className="headline-underline gradient-text-cyan-violet">
                 Different
               </span>
             </h2>
@@ -419,11 +436,11 @@ export default function HowItWorksPage() {
             {differentiators.map((item, index) => (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex items-start gap-4 p-6 rounded-2xl border border-graphite bg-midnight-blue/50"
+                transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="feature-grid-item flex items-start gap-4"
               >
                 <div className="h-12 w-12 rounded-xl bg-electric-cyan/10 border border-electric-cyan/30 flex items-center justify-center flex-shrink-0">
                   <item.icon className="h-6 w-6 text-electric-cyan" />

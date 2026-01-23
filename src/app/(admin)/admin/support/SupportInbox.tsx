@@ -112,6 +112,11 @@ export function SupportInbox({ conversations, teamMembers }: SupportInboxProps) 
       <motion.div variants={itemVariants} className="px-8 py-6 border-b border-graphite/50">
         <div className="flex items-center justify-between">
           <div>
+            <div className="flex items-center gap-2 text-sm text-steel mb-2">
+              <span>Admin</span>
+              <span className="text-graphite">/</span>
+              <span className="text-electric-cyan">Support</span>
+            </div>
             <h1 className="text-2xl font-sora font-bold text-white">
               Support Inbox
             </h1>

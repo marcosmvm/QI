@@ -67,6 +67,7 @@ export default function CampaignsPageClient({
       <motion.div variants={itemVariants}>
         <div className="flex items-center justify-between mb-8">
           <div>
+            <p className="text-sm text-steel mb-1">Admin / <span className="text-electric-cyan">Campaigns</span></p>
             <h1 className="text-2xl font-sora font-bold text-white">Campaigns</h1>
             <p className="text-steel mt-1">
               Monitor and manage campaigns across all clients

@@ -75,19 +75,22 @@ export default function ComparisonHubPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-24 overflow-hidden bg-deep-space">
+      <section className="relative py-32 overflow-hidden bg-deep-space">
         <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-deep-space to-midnight-blue" />
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-electric-cyan/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-quantum-violet/10 rounded-full blur-[100px]" />
+        {/* Enhanced Ambient Orbs */}
+        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-electric-cyan/10 rounded-full blur-[150px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-quantum-violet/10 rounded-full blur-[150px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-neon-mint/5 rounded-full blur-[180px]" />
 
         <Container className="relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-3xl mx-auto"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-quantum-violet/10 border border-quantum-violet/30 mb-6">
+            {/* Tech Badge */}
+            <div className="tech-badge mb-6">
               <Scale className="w-4 h-4 text-quantum-violet" />
               <span className="text-sm font-medium text-quantum-violet">
                 Compare Providers
@@ -96,7 +99,7 @@ export default function ComparisonHubPage() {
 
             <h1 className="text-4xl md:text-5xl font-sora font-bold text-white mb-6">
               Quantum Insights vs{" "}
-              <span className="gradient-text-cyan-violet">
+              <span className="headline-underline gradient-text-cyan-violet">
                 The Competition
               </span>
             </h1>
@@ -109,6 +112,9 @@ export default function ComparisonHubPage() {
         </Container>
       </section>
 
+      {/* Section Divider */}
+      <div className="section-divider max-w-4xl mx-auto" />
+
       {/* Competitor Grid */}
       <SectionWrapper variant="default">
         <Container>
@@ -119,7 +125,7 @@ export default function ComparisonHubPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
               >
                 <Link
                   href={`/vs/${competitor.slug}`}
@@ -155,6 +161,9 @@ export default function ComparisonHubPage() {
         </Container>
       </SectionWrapper>
 
+      {/* Section Divider */}
+      <div className="section-divider max-w-4xl mx-auto" />
+
       {/* Why Compare */}
       <SectionWrapper variant="dark">
         <Container size="md">
@@ -162,7 +171,7 @@ export default function ComparisonHubPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center p-8 rounded-3xl border border-graphite bg-midnight-blue/50"
           >
             <h2 className="text-2xl font-sora font-bold text-white mb-4">

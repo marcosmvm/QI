@@ -216,7 +216,7 @@ export default function ScientistPage() {
 
       <div className="space-y-6">
         {/* Engine Status Banner */}
-        <div className="relative rounded-2xl border border-neon-mint/20 bg-gradient-to-r from-neon-mint/10 via-midnight-blue/50 to-neon-mint/5 p-6 overflow-hidden">
+        <motion.div variants={itemVariants} className="relative glass-premium p-6 overflow-hidden border-neon-mint/20">
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-neon-mint/60 to-transparent" />
           <div className="absolute -right-20 -top-20 w-64 h-64 bg-neon-mint/10 rounded-full blur-3xl" />
 
@@ -261,10 +261,10 @@ export default function ScientistPage() {
               </Button>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Performance Summary Cards */}
-        <div className="grid grid-cols-4 gap-4">
+        <motion.div variants={itemVariants} className="grid grid-cols-4 gap-4">
           {[
             { label: "Avg Open Rate", value: `${performanceMetrics.openRate.current}%`, change: performanceMetrics.openRate.change, icon: Eye, color: "electric-cyan" },
             { label: "Avg Reply Rate", value: `${performanceMetrics.replyRate.current}%`, change: performanceMetrics.replyRate.change, icon: MessageSquare, color: "neon-mint" },
@@ -312,10 +312,10 @@ export default function ScientistPage() {
               </div>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* Tab Navigation */}
-        <div className="flex items-center gap-1 p-1 rounded-xl bg-midnight-blue/50 border border-electric-cyan/10 w-fit">
+        <motion.div variants={itemVariants} className="flex items-center gap-1 p-1 rounded-xl bg-midnight-blue/50 border border-electric-cyan/10 w-fit">
           {[
             { id: "overview", label: "Performance Overview", icon: BarChart3 },
             { id: "tests", label: "A/B Tests", icon: Beaker },
@@ -335,11 +335,11 @@ export default function ScientistPage() {
               {tab.label}
             </button>
           ))}
-        </div>
+        </motion.div>
 
         {/* Overview Tab */}
         {activeTab === "overview" && (
-          <div className="grid grid-cols-3 gap-6">
+          <motion.div variants={itemVariants} className="grid grid-cols-3 gap-6">
             {/* Hourly Performance Chart */}
             <div className="col-span-2 glass-premium p-6">
               <div className="flex items-center justify-between mb-6">
@@ -457,12 +457,12 @@ export default function ScientistPage() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         )}
 
         {/* A/B Tests Tab */}
         {activeTab === "tests" && (
-          <div className="space-y-4">
+          <motion.div variants={itemVariants} className="space-y-4">
             {activeTests.map((test) => {
               const status = statusColors[test.status as keyof typeof statusColors];
               const winningVariant = test.variants.find(v => v.name.includes(test.winner) || v.name === test.winner);
@@ -602,12 +602,12 @@ export default function ScientistPage() {
                 </div>
               );
             })}
-          </div>
+          </motion.div>
         )}
 
         {/* Recommendations Tab */}
         {activeTab === "recommendations" && (
-          <div className="grid grid-cols-2 gap-4">
+          <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4">
             {recommendations.map((rec) => {
               const impact = impactColors[rec.impact as keyof typeof impactColors];
               return (
@@ -661,7 +661,7 @@ export default function ScientistPage() {
                 </div>
               );
             })}
-          </div>
+          </motion.div>
         )}
       </div>
     </motion.div>

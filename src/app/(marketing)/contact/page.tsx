@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, Calendar, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Calendar, ArrowRight, Zap } from "lucide-react";
 import { Container } from "@/components/marketing/layout/Container";
 import { SectionWrapper } from "@/components/marketing/layout/SectionWrapper";
 import { Button } from "@/components/ui/button";
@@ -41,37 +41,49 @@ export default function ContactPage() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative py-24 overflow-hidden bg-deep-space">
-        <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-deep-space to-midnight-blue" />
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-electric-cyan/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-quantum-violet/10 rounded-full blur-[100px]" />
+      {/* Hero Section - Enhanced */}
+      <section className="relative py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-deep-space/50 to-midnight-blue/30" />
+
+        {/* Enhanced ambient orbs */}
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-electric-cyan/15 rounded-full blur-[150px] animate-orb-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-quantum-violet/12 rounded-full blur-[130px] animate-orb-float-reverse" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neon-mint/5 rounded-full blur-[180px]" />
 
         <Container className="relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center max-w-4xl mx-auto"
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="text-center max-w-5xl mx-auto"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-electric-cyan/10 border border-electric-cyan/30 mb-6">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="tech-badge mb-8"
+            >
               <Calendar className="w-4 h-4 text-electric-cyan" />
               <span className="text-sm font-medium text-electric-cyan">Let&apos;s Talk</span>
-            </div>
+              <Zap className="w-4 h-4 text-electric-cyan" />
+            </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-white mb-8">
               Start Your{" "}
-              <span className="gradient-text-cyan-violet">
+              <span className="headline-underline gradient-text-cyan-violet block mt-2">
                 Growth Journey
               </span>
             </h1>
 
-            <p className="text-xl text-steel max-w-2xl mx-auto">
-              Book a strategy call with our team to discuss how we can help fill your pipeline with qualified meetings.
+            <p className="text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto leading-relaxed">
+              Book a strategy call with our team to discuss how we can help fill your pipeline with <span className="text-electric-cyan font-semibold">qualified meetings</span>.
             </p>
           </motion.div>
         </Container>
       </section>
+
+      {/* Section Divider */}
+      <div className="section-divider max-w-4xl mx-auto" />
 
       {/* Contact Section */}
       <SectionWrapper variant="default">
@@ -79,10 +91,10 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-5 gap-12">
             {/* Contact Info */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-2"
             >
               <h2 className="text-2xl font-sora font-bold text-white mb-6">
@@ -94,7 +106,7 @@ export default function ContactPage() {
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-electric-cyan/10 border border-electric-cyan/30">
+                  <div className="icon-container-animated cyan">
                     <Mail className="h-5 w-5 text-electric-cyan" />
                   </div>
                   <div>
@@ -109,14 +121,14 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-electric-cyan/10 border border-electric-cyan/30">
-                    <Phone className="h-5 w-5 text-electric-cyan" />
+                  <div className="icon-container-animated violet">
+                    <Phone className="h-5 w-5 text-quantum-violet" />
                   </div>
                   <div>
                     <p className="text-white font-medium">Phone</p>
                     <a
                       href={`tel:${contactInfo.phone}`}
-                      className="text-electric-cyan hover:text-cyan-light transition-colors"
+                      className="text-quantum-violet hover:text-violet-light transition-colors"
                     >
                       {contactInfo.phone}
                     </a>
@@ -124,8 +136,8 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-electric-cyan/10 border border-electric-cyan/30">
-                    <MapPin className="h-5 w-5 text-electric-cyan" />
+                  <div className="icon-container-animated mint">
+                    <MapPin className="h-5 w-5 text-neon-mint" />
                   </div>
                   <div>
                     <p className="text-white font-medium">Location</p>
@@ -135,7 +147,7 @@ export default function ContactPage() {
               </div>
 
               {/* What to Expect */}
-              <div className="mt-12 p-6 rounded-2xl border border-graphite bg-midnight-blue/50">
+              <div className="mt-12 feature-grid-item">
                 <h3 className="text-lg font-sora font-semibold text-white mb-4">
                   What to Expect
                 </h3>
@@ -145,15 +157,15 @@ export default function ContactPage() {
                     30-minute discovery call
                   </li>
                   <li className="flex items-start gap-2">
-                    <ArrowRight className="h-4 w-4 text-electric-cyan flex-shrink-0 mt-0.5" />
+                    <ArrowRight className="h-4 w-4 text-quantum-violet flex-shrink-0 mt-0.5" />
                     Discussion of your goals and target market
                   </li>
                   <li className="flex items-start gap-2">
-                    <ArrowRight className="h-4 w-4 text-electric-cyan flex-shrink-0 mt-0.5" />
+                    <ArrowRight className="h-4 w-4 text-neon-mint flex-shrink-0 mt-0.5" />
                     Custom recommendation for your business
                   </li>
                   <li className="flex items-start gap-2">
-                    <ArrowRight className="h-4 w-4 text-electric-cyan flex-shrink-0 mt-0.5" />
+                    <ArrowRight className="h-4 w-4 text-energy-orange flex-shrink-0 mt-0.5" />
                     No pressure, no hard sell
                   </li>
                 </ul>
@@ -162,10 +174,10 @@ export default function ContactPage() {
 
             {/* Contact Form */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-3"
             >
               <div className="p-8 rounded-3xl border border-graphite bg-midnight-blue">

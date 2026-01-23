@@ -40,17 +40,29 @@ export default function IndustriesPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="py-24 lg:py-32 bg-deep-space">
-        <Container>
+      <section className="relative py-32 bg-deep-space overflow-hidden">
+        {/* Enhanced Ambient Orbs */}
+        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-electric-cyan/10 rounded-full blur-[150px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-quantum-violet/10 rounded-full blur-[150px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-neon-mint/5 rounded-full blur-[180px]" />
+
+        <Container className="relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-4xl mx-auto"
           >
+            {/* Tech Badge */}
+            <div className="tech-badge mb-6">
+              <span className="text-sm font-medium text-electric-cyan">
+                B2B Industry Expertise
+              </span>
+            </div>
+
             {/* Main Headline */}
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Industries We Serve
+              <span className="headline-underline gradient-text-cyan-violet">Industries We Serve</span>
             </h1>
 
             {/* Subtitle */}
@@ -64,7 +76,7 @@ export default function IndustriesPage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="flex flex-wrap justify-center gap-4 md:gap-6"
             >
               <TrustBadge label="Trusted by 500+ B2B companies" />
@@ -74,6 +86,9 @@ export default function IndustriesPage() {
           </motion.div>
         </Container>
       </section>
+
+      {/* Section Divider */}
+      <div className="section-divider max-w-4xl mx-auto" />
 
       {/* Industries Grid */}
       <section id="industries" className="py-20 bg-deep-space">
@@ -89,7 +104,7 @@ export default function IndustriesPage() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  transition={{ duration: 0.5, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <Link href={`/industries/${industry.id}`} className="block group h-full">
                     {/* Brand Board v1.0 - Interactive Card Pattern with Enhanced Hover */}
@@ -132,6 +147,7 @@ export default function IndustriesPage() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
+              transition={{ ease: [0.16, 1, 0.3, 1] }}
               className="text-center mt-12"
             >
               {/* Brand Board v1.0 - Secondary Button */}
@@ -147,27 +163,34 @@ export default function IndustriesPage() {
         </Container>
       </section>
 
+      {/* Section Divider */}
+      <div className="section-divider max-w-4xl mx-auto" />
+
       {/* CTA Section */}
-      <section className="py-24 lg:py-32 bg-deep-space">
-        <Container>
+      <section className="relative py-32 bg-deep-space overflow-hidden">
+        {/* Enhanced Ambient Orbs */}
+        <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-quantum-violet/10 rounded-full blur-[150px]" />
+        <div className="absolute bottom-1/3 left-1/4 w-[400px] h-[400px] bg-electric-cyan/10 rounded-full blur-[150px]" />
+
+        <Container className="relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-4xl mx-auto"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Dominate Your Industry?
+              Ready to <span className="headline-underline gradient-text-cyan-violet">Dominate Your Industry</span>?
             </h2>
             <p className="text-lg text-silver mb-10">
               Join hundreds of B2B companies using our AI-powered cold email system to book more qualified meetings and accelerate growth.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              {/* Brand Board v1.0 - Primary Button */}
+              {/* Brand Board v1.0 - Primary CTA Magnetic Button */}
               <Link
                 href="/contact"
-                className="bg-electric-cyan text-deep-space px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-electric-cyan/90 hover:shadow-glow-cyan"
+                className="cta-magnetic"
               >
                 Book a Strategy Call
               </Link>

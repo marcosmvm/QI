@@ -276,11 +276,12 @@ function IntegrationCard({ integration }: { integration: Integration }) {
 
   return (
     <div
-      className={`p-6 rounded-xl border transition-all hover:-translate-y-0.5 hover:shadow-card-hover ${
+      className={`glass-premium p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-card-hover ${
         integration.connected
-          ? "bg-midnight-blue/40 border-neon-mint/30 backdrop-blur-sm"
-          : "bg-midnight-blue/30 border-graphite/50 hover:border-electric-cyan/30 backdrop-blur-sm"
+          ? "border-neon-mint/30"
+          : "hover:border-electric-cyan/30"
       }`}
+      style={{ transition: "all 0.5s cubic-bezier(0.16, 1, 0.3, 1)" }}
     >
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-3">

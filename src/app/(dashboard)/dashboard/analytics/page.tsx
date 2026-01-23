@@ -76,7 +76,7 @@ export default function AnalyticsPage() {
         <div className="flex items-center gap-2 text-sm text-steel mb-2">
           <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
           <span>/</span>
-          <span className="text-white">Analytics</span>
+          <span className="text-electric-cyan">Analytics</span>
         </div>
         <h1 className="text-2xl font-sora font-bold text-white">Analytics</h1>
         <p className="text-sm text-steel mt-1">

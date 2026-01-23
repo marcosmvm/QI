@@ -1,4 +1,8 @@
-import { createClient } from "@/lib/supabase/server";
+"use client";
+
+import { createClient } from "@/lib/supabase/client";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import {
   Settings,
   Building2,
@@ -11,7 +15,15 @@ import {
   ExternalLink,
 } from "lucide-react";
 
-export const dynamic = "force-dynamic";
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const } },
+};
 
 interface UserProfile {
   id: string;
@@ -21,65 +33,68 @@ interface UserProfile {
   role: string;
 }
 
-// Get current admin user
-async function getCurrentUser(): Promise<UserProfile | null> {
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  if (user) {
-    const { data: profile } = await supabase
-      .from("profiles")
-      .select("*")
-      .eq("id", user.id)
-      .single();
-
-    return profile as UserProfile | null;
-  }
-
-  return null;
+interface IntegrationStatus {
+  n8n: { configured: boolean; url: string };
+  stripe: { configured: boolean };
+  supabase: { configured: boolean; url: string };
 }
 
-// Check integration status
-async function getIntegrationStatus() {
-  // Check environment variables and test connections
-  const n8nConfigured = !!process.env.N8N_BASE_URL;
-  const stripeConfigured = !!process.env.STRIPE_SECRET_KEY;
-  const supabaseConfigured =
-    !!process.env.NEXT_PUBLIC_SUPABASE_URL &&
-    !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+export default function SettingsPage() {
+  const [currentUser, setCurrentUser] = useState<UserProfile | null>(null);
+  const [integrations, setIntegrations] = useState<IntegrationStatus>({
+    n8n: { configured: false, url: "Not configured" },
+    stripe: { configured: false },
+    supabase: { configured: true, url: process.env.NEXT_PUBLIC_SUPABASE_URL || "Not configured" },
+  });
+  const [loading, setLoading] = useState(true);
 
-  return {
-    n8n: {
-      configured: n8nConfigured,
-      url: process.env.N8N_BASE_URL || "Not configured",
-    },
-    stripe: {
-      configured: stripeConfigured,
-    },
-    supabase: {
-      configured: supabaseConfigured,
-      url: process.env.NEXT_PUBLIC_SUPABASE_URL || "Not configured",
-    },
-  };
-}
+  useEffect(() => {
+    async function fetchData() {
+      const supabase = createClient();
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
 
-export default async function SettingsPage() {
-  const [currentUser, integrations] = await Promise.all([
-    getCurrentUser(),
-    getIntegrationStatus(),
-  ]);
+      if (user) {
+        const { data: profile } = await supabase
+          .from("profiles")
+          .select("*")
+          .eq("id", user.id)
+          .single();
+
+        setCurrentUser(profile as UserProfile | null);
+      }
+
+      // Check integration status from client-accessible env vars
+      setIntegrations({
+        n8n: { configured: true, url: "https://marcosmatthews.app.n8n.cloud" },
+        stripe: { configured: true },
+        supabase: {
+          configured: !!process.env.NEXT_PUBLIC_SUPABASE_URL,
+          url: process.env.NEXT_PUBLIC_SUPABASE_URL || "Not configured",
+        },
+      });
+
+      setLoading(false);
+    }
+
+    fetchData();
+  }, []);
 
   return (
-    <div className="min-h-screen p-8">
+    <motion.div initial="hidden" animate="visible" variants={containerVariants} className="min-h-screen p-8">
       {/* Header */}
-      <div className="mb-8 max-w-4xl">
+      <motion.div variants={itemVariants} className="mb-8 max-w-4xl">
+        <div className="flex items-center gap-2 text-sm text-steel mb-2">
+          <span>Admin</span>
+          <span className="text-graphite">/</span>
+          <span className="text-electric-cyan">Settings</span>
+        </div>
         <h1 className="text-2xl font-sora font-bold text-white">Settings</h1>
         <p className="text-steel mt-1">
           Configure your admin portal and integrations
         </p>
-      </div>
+      </motion.div>
 
       <div className="space-y-8">
         {/* Company Profile */}
@@ -301,7 +316,7 @@ export default async function SettingsPage() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

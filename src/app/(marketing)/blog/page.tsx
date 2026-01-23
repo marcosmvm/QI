@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, BookOpen, Calendar } from "lucide-react";
+import { ArrowRight, BookOpen, Calendar, Zap } from "lucide-react";
 import { Container } from "@/components/marketing/layout/Container";
 import { SectionWrapper } from "@/components/marketing/layout/SectionWrapper";
 import { CTABanner } from "@/components/marketing/sections/CTABanner";
@@ -55,62 +55,75 @@ const posts = [
 export default function BlogPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-midnight-blue/30 to-deep-space" />
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-electric-cyan/20 rounded-full blur-[120px]" />
+      {/* Hero Section - Enhanced */}
+      <section className="relative py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-deep-space/50 to-midnight-blue/30" />
+
+        {/* Enhanced ambient orbs */}
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-electric-cyan/15 rounded-full blur-[150px] animate-orb-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-quantum-violet/12 rounded-full blur-[130px] animate-orb-float-reverse" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neon-mint/5 rounded-full blur-[180px]" />
 
         <Container className="relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center max-w-4xl mx-auto"
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="text-center max-w-5xl mx-auto"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-electric-cyan/10 border border-electric-cyan/20 mb-6">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="tech-badge mb-8"
+            >
               <BookOpen className="w-4 h-4 text-electric-cyan" />
               <span className="text-sm font-medium text-electric-cyan">Insights & Resources</span>
-            </div>
+              <Zap className="w-4 h-4 text-electric-cyan" />
+            </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-white mb-8">
               The Quantum Insights{" "}
-              <span className="gradient-text-cyan-violet">
+              <span className="headline-underline gradient-text-cyan-violet block mt-2">
                 Blog
               </span>
             </h1>
-            <p className="text-xl text-silver max-w-2xl mx-auto">
-              Expert insights on B2B lead generation, deliverability, AI, and sales development.
+            <p className="text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto leading-relaxed">
+              Expert insights on <span className="text-electric-cyan font-semibold">B2B lead generation</span>, deliverability, AI, and <span className="text-quantum-violet font-semibold">sales development</span>.
             </p>
           </motion.div>
         </Container>
       </section>
 
+      {/* Section Divider */}
+      <div className="section-divider max-w-4xl mx-auto" />
+
       {/* Blog Grid */}
       <SectionWrapper variant="default">
         <Container>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {posts.map((post, index) => (
               <motion.article
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
               >
                 <Link href="/contact" className="block group h-full">
-                  <div className="h-full p-6 rounded-2xl border border-electric-cyan/20 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 hover:border-electric-cyan/40 transition-all">
+                  <div className="feature-grid-item h-full">
                     {/* Category */}
                     <span className="inline-block px-3 py-1 rounded-full bg-electric-cyan/10 text-electric-cyan text-xs font-medium mb-4">
                       {post.category}
                     </span>
 
                     {/* Title */}
-                    <h2 className="text-xl font-sora font-semibold text-white mb-3 group-hover:text-electric-cyan transition-colors">
+                    <h2 className="text-xl font-sora font-semibold text-white mb-3 group-hover:text-gradient transition-all">
                       {post.title}
                     </h2>
 
                     {/* Excerpt */}
-                    <p className="text-silver text-sm mb-4 line-clamp-2">
+                    <p className="text-silver text-sm mb-4 line-clamp-2 group-hover:text-white/80 transition-colors">
                       {post.excerpt}
                     </p>
 

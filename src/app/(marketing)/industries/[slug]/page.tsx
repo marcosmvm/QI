@@ -64,16 +64,19 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-midnight-blue/30 to-deep-space" />
-        <div className={`absolute top-1/4 left-1/3 w-[500px] h-[500px] ${colors.bg} rounded-full blur-[150px] opacity-50`} />
+        {/* Enhanced Ambient Orbs */}
+        <div className={`absolute top-1/4 left-1/3 w-[600px] h-[600px] ${colors.bg} rounded-full blur-[150px] opacity-50`} />
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-quantum-violet/10 rounded-full blur-[150px]" />
+        <div className="absolute top-1/2 right-1/3 w-[400px] h-[400px] bg-electric-cyan/5 rounded-full blur-[180px]" />
 
         <Container className="relative z-10">
           {/* Back Link */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="mb-8"
           >
             <Link
@@ -90,14 +93,18 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              <div className={`inline-flex p-3 rounded-xl ${colors.bg} ${colors.border} border mb-6`}>
-                <Icon className={`h-8 w-8 ${colors.text}`} />
+              {/* Tech Badge */}
+              <div className="tech-badge mb-6">
+                <Icon className={`h-4 w-4 ${colors.text}`} />
+                <span className={`text-sm font-medium ${colors.text}`}>
+                  Industry Expertise
+                </span>
               </div>
 
               <h1 className="text-4xl md:text-5xl font-sora font-bold text-white mb-4">
-                {industry.name}
+                <span className="headline-underline gradient-text-cyan-violet">{industry.name}</span>
               </h1>
 
               <p className={`text-xl ${colors.text} font-medium mb-4`}>
@@ -108,14 +115,9 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
                 {industry.longDescription}
               </p>
 
-              <Link href="/contact">
-                <Button
-                  size="lg"
-                  className={`bg-gradient-to-r ${colors.gradient} hover:opacity-90 text-white font-semibold px-8`}
-                >
-                  Get Started
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+              <Link href="/contact" className="cta-magnetic inline-flex">
+                Get Started
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </motion.div>
 
@@ -123,7 +125,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
               <div className="grid grid-cols-2 gap-4">
                 {industry.stats.map((stat) => (
@@ -143,6 +145,9 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
         </Container>
       </section>
 
+      {/* Section Divider */}
+      <div className="section-divider max-w-4xl mx-auto" />
+
       {/* Challenges Section */}
       <SectionWrapper variant="default">
         <Container>
@@ -151,7 +156,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
               <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-6">
                 Challenges in{" "}
@@ -168,7 +173,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                     className={`p-4 rounded-xl border ${colors.border} bg-midnight-blue/30`}
                   >
                     <div className="flex items-start gap-3">
@@ -187,7 +192,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
               <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-6">
                 Our{" "}
@@ -204,7 +209,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                     className="flex items-start gap-3"
                   >
                     <CheckCircle className={`h-6 w-6 ${colors.text} flex-shrink-0 mt-0.5`} />
@@ -217,6 +222,9 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
         </Container>
       </SectionWrapper>
 
+      {/* Section Divider */}
+      <div className="section-divider max-w-4xl mx-auto" />
+
       {/* Target Titles Section */}
       <SectionWrapper variant="dark">
         <Container>
@@ -224,7 +232,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-3xl mx-auto mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-6">
@@ -243,7 +251,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
+                transition={{ duration: 0.5, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
                 className={`px-4 py-2 rounded-full ${colors.bg} ${colors.border} border ${colors.text} font-medium`}
               >
                 {title}
@@ -253,6 +261,9 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
         </Container>
       </SectionWrapper>
 
+      {/* Section Divider */}
+      <div className="section-divider max-w-4xl mx-auto" />
+
       {/* Related Case Studies */}
       {relatedCaseStudies.length > 0 && (
         <SectionWrapper variant="default">
@@ -261,7 +272,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="text-center max-w-3xl mx-auto mb-12"
             >
               <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-6">
@@ -279,7 +290,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <Link href={`/case-studies/${study.id}`} className="block group">
                     <div className={`p-6 rounded-2xl border ${colors.border} bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 hover:border-opacity-60 transition-all`}>

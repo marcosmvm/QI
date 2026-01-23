@@ -107,6 +107,11 @@ export default function TeamPage() {
       {/* Header */}
       <motion.div variants={itemVariants} className="flex items-center justify-between mb-8">
         <div>
+          <div className="flex items-center gap-2 text-sm text-steel mb-2">
+            <span>Admin</span>
+            <span className="text-graphite">/</span>
+            <span className="text-electric-cyan">Team</span>
+          </div>
           <h1 className="text-2xl font-sora font-bold text-white">Team</h1>
           <p className="text-steel mt-1">Manage your team members and roles</p>
         </div>

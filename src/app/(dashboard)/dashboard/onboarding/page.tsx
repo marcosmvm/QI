@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import {
   ArrowLeft,
   ArrowRight,
@@ -26,6 +27,28 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.16, 1, 0.3, 1] as const,
+    },
+  },
+};
 
 const steps = [
   { id: 1, name: "Welcome", icon: Sparkles },
@@ -147,15 +170,20 @@ export default function OnboardingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-deep-space p-8">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className="min-h-screen p-8"
+    >
       {/* Page Header */}
-      <div className="mb-8">
+      <motion.div variants={itemVariants} className="mb-8">
         <div className="flex items-center gap-2 text-sm text-steel mb-2">
           <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">
             Portal
           </Link>
           <span>/</span>
-          <span className="text-white">Onboarding</span>
+          <span className="text-electric-cyan">Onboarding</span>
         </div>
         <h1 className="text-2xl font-sora font-bold text-white">
           Welcome to Quantum Insights
@@ -163,10 +191,10 @@ export default function OnboardingPage() {
         <p className="text-steel mt-1">
           Let&apos;s get your account set up and ready to launch campaigns
         </p>
-      </div>
+      </motion.div>
 
       {/* Progress Steps */}
-      <div className="mb-8">
+      <motion.div variants={itemVariants} className="mb-8">
         <div className="flex items-center justify-center">
           {steps.map((step, index) => (
             <div key={step.id} className="flex items-center">
@@ -220,13 +248,13 @@ export default function OnboardingPage() {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
 
       {/* Step Content */}
-      <div className="max-w-3xl mx-auto">
+      <motion.div variants={itemVariants} className="max-w-3xl mx-auto">
         {/* Step 1: Welcome */}
         {currentStep === 1 && (
-          <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-8">
+          <div className="glass-premium p-8">
             <div className="text-center mb-8">
               <div className="relative h-20 w-20 mx-auto mb-6">
                 <div className="absolute inset-0 rounded-full border-2 border-electric-cyan/20 animate-pulse" />
@@ -288,7 +316,7 @@ export default function OnboardingPage() {
 
         {/* Step 2: Company Profile */}
         {currentStep === 2 && (
-          <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-8">
+          <div className="glass-premium p-8">
             <div className="flex items-center gap-3 mb-6">
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-electric-cyan/10 border border-electric-cyan/30">
                 <Building2 className="h-6 w-6 text-electric-cyan" />
@@ -409,7 +437,7 @@ export default function OnboardingPage() {
 
         {/* Step 3: Connect Inbox */}
         {currentStep === 3 && (
-          <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-8">
+          <div className="glass-premium p-8">
             <div className="flex items-center gap-3 mb-6">
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-quantum-violet/10 border border-quantum-violet/30">
                 <Mail className="h-6 w-6 text-quantum-violet" />
@@ -529,7 +557,7 @@ export default function OnboardingPage() {
 
         {/* Step 4: Upload ICP */}
         {currentStep === 4 && (
-          <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-8">
+          <div className="glass-premium p-8">
             <div className="flex items-center gap-3 mb-6">
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-neon-mint/10 border border-neon-mint/30">
                 <FileSpreadsheet className="h-6 w-6 text-neon-mint" />
@@ -653,7 +681,7 @@ export default function OnboardingPage() {
 
         {/* Step 5: Launch */}
         {currentStep === 5 && (
-          <div className="rounded-xl border border-graphite bg-midnight-blue/60 p-8">
+          <div className="glass-premium p-8">
             <div className="flex items-center gap-3 mb-6">
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-electric-cyan/10 border border-electric-cyan/30">
                 <Rocket className="h-6 w-6 text-electric-cyan" />
@@ -734,8 +762,8 @@ export default function OnboardingPage() {
             </div>
           </div>
         )}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 

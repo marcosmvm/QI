@@ -237,7 +237,7 @@ export default function SentinelPage() {
 
       <div className="space-y-6">
         {/* Engine Status Banner */}
-        <div className="relative rounded-2xl border border-quantum-violet/20 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6 overflow-hidden">
+        <motion.div variants={itemVariants} className="relative glass-premium p-6 overflow-hidden border-quantum-violet/20">
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-quantum-violet/60 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-br from-quantum-violet/5 to-transparent" />
 
@@ -281,10 +281,10 @@ export default function SentinelPage() {
               </Button>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Key Metrics */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-3">
               <Users className="h-5 w-5 text-electric-cyan" />
@@ -332,10 +332,10 @@ export default function SentinelPage() {
             <p className="text-sm text-steel mt-1">Identification Rate</p>
             <p className="text-xs text-steel mt-2">Industry avg: 8%</p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Visitor Intelligence and Intent Signals */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Recent Identified Visitors */}
           <div className="lg:col-span-2 glass-premium p-6">
             <div className="flex items-center justify-between mb-6">
@@ -498,10 +498,10 @@ export default function SentinelPage() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Top Pages and Quick Actions */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Top Converting Pages */}
           <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-6">
@@ -591,7 +591,7 @@ export default function SentinelPage() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </motion.div>
   );

@@ -268,7 +268,7 @@ export default function HunterPage() {
 
       <div className="space-y-6">
         {/* Engine Status Banner */}
-        <div className="relative rounded-2xl border border-energy-orange/20 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6 overflow-hidden">
+        <motion.div variants={itemVariants} className="relative glass-premium p-6 overflow-hidden border-energy-orange/20">
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-energy-orange/60 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-br from-energy-orange/5 to-transparent" />
 
@@ -312,10 +312,10 @@ export default function HunterPage() {
               </Button>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Key Metrics */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-3">
               <MessageSquare className="h-5 w-5 text-electric-cyan" />
@@ -363,10 +363,10 @@ export default function HunterPage() {
             <p className="text-sm text-steel mt-1">Referrals Generated</p>
             <p className="text-xs text-steel mt-2">New leads from replies</p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Reply Sentiment Breakdown */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Sentiment Overview */}
           <div className="glass-premium p-6">
             <h3 className="text-lg font-sora font-semibold text-white mb-6">Reply Sentiment Analysis</h3>
@@ -482,10 +482,10 @@ export default function HunterPage() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Recent Replies and Referrals */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Recent Replies */}
           <div className="lg:col-span-2 glass-premium p-6">
             <div className="flex items-center justify-between mb-6">
@@ -621,10 +621,10 @@ export default function HunterPage() {
               Add to Campaign
             </Button>
           </div>
-        </div>
+        </motion.div>
 
         {/* Campaign Performance */}
-        <div className="glass-premium p-6">
+        <motion.div variants={itemVariants} className="glass-premium p-6">
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-lg font-sora font-semibold text-white">Campaign Reply Performance</h3>
             <Button variant="ghost" size="sm" className="text-electric-cyan hover:text-electric-cyan/80">
@@ -672,7 +672,7 @@ export default function HunterPage() {
               </tbody>
             </table>
           </div>
-        </div>
+        </motion.div>
       </div>
     </motion.div>
   );

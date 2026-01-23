@@ -7,7 +7,6 @@ import { ArrowRight, ArrowLeft, Quote, CheckCircle } from "lucide-react";
 import { Container } from "@/components/marketing/layout/Container";
 import { SectionWrapper } from "@/components/marketing/layout/SectionWrapper";
 import { CTABanner } from "@/components/marketing/sections/CTABanner";
-import { Button } from "@/components/ui/button";
 import { getCaseStudyById, caseStudies } from "@/lib/content/case-studies";
 
 export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -32,16 +31,17 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-midnight-blue/30 to-deep-space" />
         <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-electric-cyan/10 rounded-full blur-[150px] opacity-50" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-quantum-violet/15 rounded-full blur-[150px]" />
 
         <Container className="relative z-10">
           {/* Back Link */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="mb-8"
           >
             <Link
@@ -56,18 +56,15 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-4xl"
           >
             {/* Tags */}
             <div className="flex flex-wrap gap-2 mb-6">
               {study.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1 rounded-full bg-electric-cyan/10 border border-electric-cyan/20 text-electric-cyan text-sm"
-                >
-                  {tag}
-                </span>
+                <div key={tag} className="tech-badge">
+                  <span className="text-sm font-medium text-electric-cyan">{tag}</span>
+                </div>
               ))}
             </div>
 
@@ -77,7 +74,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
 
             {/* Title */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white mb-6">
-              {study.title}
+              <span className="headline-underline">{study.title}</span>
             </h1>
 
             <p className="text-xl text-silver mb-10">
@@ -85,13 +82,10 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
             </p>
 
             <Link href="/contact">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-electric-cyan to-cyan-dark hover:from-cyan-light hover:to-electric-cyan text-deep-space font-semibold px-8"
-              >
+              <button className="cta-magnetic">
                 Get Similar Results
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              </button>
             </Link>
           </motion.div>
         </Container>
@@ -107,7 +101,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="text-center"
               >
                 <p className="text-4xl md:text-5xl font-sora font-bold gradient-text-cyan-violet">
@@ -129,7 +123,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
               <h2 className="text-2xl md:text-3xl font-sora font-bold text-white mb-6">
                 The <span className="text-energy-orange">Challenge</span>
@@ -144,7 +138,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
               <h2 className="text-2xl md:text-3xl font-sora font-bold text-white mb-6">
                 The <span className="text-electric-cyan">Solution</span>
@@ -159,7 +153,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
               <h2 className="text-2xl md:text-3xl font-sora font-bold text-white mb-6">
                 The <span className="text-neon-mint">Results</span>
@@ -180,7 +174,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="relative p-8 md:p-12 rounded-3xl border border-electric-cyan/20 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90"
             >
               {/* Quote Icon */}
@@ -215,7 +209,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-6">
@@ -230,7 +224,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="flex items-start gap-4 p-6 rounded-xl border border-electric-cyan/20 bg-midnight-blue/30"
               >
                 <CheckCircle className="h-6 w-6 text-neon-mint flex-shrink-0" />

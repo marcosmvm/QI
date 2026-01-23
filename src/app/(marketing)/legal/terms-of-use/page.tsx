@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { FileText } from "lucide-react";
 import { Container } from "@/components/marketing/layout/Container";
 import { SectionWrapper } from "@/components/marketing/layout/SectionWrapper";
 
@@ -8,17 +9,23 @@ export default function TermsOfUsePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-midnight-blue/30 to-deep-space" />
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-quantum-violet/20 rounded-full blur-[150px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-electric-cyan/15 rounded-full blur-[150px]" />
         <Container className="relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-4xl mx-auto"
           >
+            <div className="tech-badge mb-6">
+              <FileText className="w-4 h-4 text-electric-cyan" />
+              <span className="text-sm font-medium text-electric-cyan">Legal</span>
+            </div>
             <h1 className="text-4xl md:text-5xl font-sora font-bold text-white mb-6">
-              Terms of Use
+              <span className="gradient-text-cyan-violet headline-underline">Terms of Use</span>
             </h1>
             <p className="text-silver">
               Last updated: January 2024
@@ -26,6 +33,8 @@ export default function TermsOfUsePage() {
           </motion.div>
         </Container>
       </section>
+
+      <div className="section-divider max-w-4xl mx-auto" />
 
       <SectionWrapper variant="default">
         <Container size="md">
