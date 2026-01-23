@@ -210,10 +210,10 @@ const months = [
 const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 const statusColors = {
-  confirmed: { bg: "bg-neon-mint/10", text: "text-neon-mint", border: "border-neon-mint/20", dot: "bg-neon-mint" },
+  confirmed: { bg: "bg-emerald-pro-400/10", text: "text-emerald-pro-400", border: "border-emerald-pro-400/20", dot: "bg-emerald-pro-400" },
   pending: { bg: "bg-energy-orange/10", text: "text-energy-orange", border: "border-energy-orange/20", dot: "bg-energy-orange" },
   cancelled: { bg: "bg-rose/10", text: "text-rose", border: "border-rose/20", dot: "bg-rose" },
-  completed: { bg: "bg-electric-cyan/10", text: "text-electric-cyan", border: "border-electric-cyan/20", dot: "bg-electric-cyan" },
+  completed: { bg: "bg-emerald-pro-600/10", text: "text-emerald-pro-600", border: "border-emerald-pro-600/20", dot: "bg-emerald-pro-600" },
 };
 
 const typeIcons = {
@@ -254,13 +254,13 @@ export default function AppointmentsPage() {
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-steel mb-2">
-          <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
+        <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-2">
+          <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
           <span>/</span>
-          <span className="text-electric-cyan">Appointments</span>
+          <span className="text-emerald-pro-600">Appointments</span>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-white">Appointments</h1>
-        <p className="text-steel mt-1">Meeting scheduling and calendar management</p>
+        <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">Appointments</h1>
+        <p className="text-light-text-muted dark:text-steel mt-1">Meeting scheduling and calendar management</p>
       </motion.div>
 
       <div className="space-y-6">
@@ -307,11 +307,11 @@ export default function AppointmentsPage() {
         {/* Actions Bar */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Button variant="outline" size="sm" className="border-electric-cyan/20 text-steel hover:text-white">
+            <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white">
               <Filter className="h-4 w-4 mr-2" />
               Filter
             </Button>
-            <Button variant="outline" size="sm" className="border-electric-cyan/20 text-steel hover:text-white">
+            <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white">
               <RefreshCw className="h-4 w-4 mr-2" />
               Sync Calendar
             </Button>
@@ -319,14 +319,14 @@ export default function AppointmentsPage() {
 
           <div className="flex items-center gap-3">
             {/* View Toggle */}
-            <div className="flex items-center gap-1 p-1 rounded-lg bg-midnight-blue/50 border border-electric-cyan/10">
+            <div className="flex items-center gap-1 p-1 rounded-lg bg-light-bg-secondary dark:bg-midnight-blue/50 border border-emerald-pro-600/10">
               <button
                 onClick={() => setViewMode("calendar")}
                 className={cn(
                   "p-2 rounded-md transition-all",
                   viewMode === "calendar"
-                    ? "bg-electric-cyan/10 text-electric-cyan"
-                    : "text-steel hover:text-white"
+                    ? "bg-emerald-pro-600/10 text-emerald-pro-600"
+                    : "text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
                 )}
               >
                 <LayoutGrid className="h-4 w-4" />
@@ -336,8 +336,8 @@ export default function AppointmentsPage() {
                 className={cn(
                   "p-2 rounded-md transition-all",
                   viewMode === "list"
-                    ? "bg-electric-cyan/10 text-electric-cyan"
-                    : "text-steel hover:text-white"
+                    ? "bg-emerald-pro-600/10 text-emerald-pro-600"
+                    : "text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
                 )}
               >
                 <List className="h-4 w-4" />
@@ -346,7 +346,7 @@ export default function AppointmentsPage() {
 
             <Button
               size="sm"
-              className="bg-gradient-to-r from-electric-cyan to-cyan-dark hover:from-cyan-light hover:to-electric-cyan text-deep-space font-semibold"
+              className="bg-gradient-to-r from-emerald-pro-600 to-cyan-dark hover:from-cyan-light hover:to-emerald-pro-600 text-deep-space font-semibold"
             >
               <Plus className="h-4 w-4 mr-2" />
               Schedule Meeting
@@ -361,25 +361,25 @@ export default function AppointmentsPage() {
             <div className="col-span-2 glass-premium p-6">
               {/* Calendar Header */}
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-xl font-sora font-bold text-white">
+                <h3 className="text-xl font-sora font-bold text-light-text dark:text-white">
                   {months[currentDate.getMonth()]} {currentDate.getFullYear()}
                 </h3>
                 <div className="flex items-center gap-2">
                   <button
                     onClick={previousMonth}
-                    className="p-2 rounded-lg border border-electric-cyan/20 text-steel hover:text-white hover:bg-electric-cyan/10 transition-all"
+                    className="p-2 rounded-lg border border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-emerald-pro-600/10 transition-all"
                   >
                     <ChevronLeft className="h-4 w-4" />
                   </button>
                   <button
                     onClick={() => setCurrentDate(new Date(2026, 0, 20))}
-                    className="px-3 py-2 rounded-lg border border-electric-cyan/20 text-sm text-steel hover:text-white hover:bg-electric-cyan/10 transition-all"
+                    className="px-3 py-2 rounded-lg border border-emerald-pro-600/20 text-sm text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-emerald-pro-600/10 transition-all"
                   >
                     Today
                   </button>
                   <button
                     onClick={nextMonth}
-                    className="p-2 rounded-lg border border-electric-cyan/20 text-steel hover:text-white hover:bg-electric-cyan/10 transition-all"
+                    className="p-2 rounded-lg border border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-emerald-pro-600/10 transition-all"
                   >
                     <ChevronRight className="h-4 w-4" />
                   </button>
@@ -389,7 +389,7 @@ export default function AppointmentsPage() {
               {/* Week Days */}
               <div className="grid grid-cols-7 gap-2 mb-2">
                 {weekDays.map((day) => (
-                  <div key={day} className="text-center text-xs font-semibold text-steel uppercase tracking-wider py-2">
+                  <div key={day} className="text-center text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider py-2">
                     {day}
                   </div>
                 ))}
@@ -409,16 +409,16 @@ export default function AppointmentsPage() {
                       className={cn(
                         "relative min-h-[80px] p-2 rounded-xl border transition-all text-left",
                         day.currentMonth
-                          ? "border-electric-cyan/10 hover:border-electric-cyan/30"
+                          ? "border-emerald-pro-600/10 hover:border-emerald-pro-600/30"
                           : "border-transparent opacity-40",
-                        isSelected && "border-electric-cyan/50 bg-electric-cyan/10",
-                        isToday && "ring-2 ring-electric-cyan/50"
+                        isSelected && "border-emerald-pro-600/50 bg-emerald-pro-600/10",
+                        isToday && "ring-2 ring-emerald-pro-600/50"
                       )}
                     >
                       <span className={cn(
                         "text-sm font-medium",
-                        day.currentMonth ? "text-white" : "text-steel",
-                        isToday && "text-electric-cyan"
+                        day.currentMonth ? "text-light-text dark:text-white" : "text-light-text-muted dark:text-steel",
+                        isToday && "text-emerald-pro-600"
                       )}>
                         {day.date}
                       </span>
@@ -440,7 +440,7 @@ export default function AppointmentsPage() {
                             );
                           })}
                           {appointments.length > 2 && (
-                            <div className="text-[10px] text-steel px-1">
+                            <div className="text-[10px] text-light-text-muted dark:text-steel px-1">
                               +{appointments.length - 2} more
                             </div>
                           )}
@@ -455,7 +455,7 @@ export default function AppointmentsPage() {
             {/* Selected Day Details */}
             <div className="space-y-4">
               <div className="glass-premium p-5">
-                <h3 className="font-semibold text-white mb-4">
+                <h3 className="font-semibold text-light-text dark:text-white mb-4">
                   {selectedDate
                     ? new Date(selectedDate + "T00:00:00").toLocaleDateString("en-US", {
                         weekday: "long",
@@ -467,11 +467,11 @@ export default function AppointmentsPage() {
 
                 {selectedDateAppointments.length === 0 ? (
                   <div className="text-center py-8">
-                    <Calendar className="h-12 w-12 text-steel/30 mx-auto mb-3" />
-                    <p className="text-sm text-steel">No appointments scheduled</p>
+                    <Calendar className="h-12 w-12 text-light-text-muted dark:text-steel/30 mx-auto mb-3" />
+                    <p className="text-sm text-light-text-muted dark:text-steel">No appointments scheduled</p>
                     <Button
                       size="sm"
-                      className="mt-4 bg-electric-cyan/10 text-electric-cyan hover:bg-electric-cyan/20 border border-electric-cyan/20"
+                      className="mt-4 bg-emerald-pro-600/10 text-emerald-pro-600 hover:bg-emerald-pro-600/20 border border-emerald-pro-600/20"
                     >
                       <Plus className="h-4 w-4 mr-2" />
                       Schedule Meeting
@@ -486,7 +486,7 @@ export default function AppointmentsPage() {
                       return (
                         <div
                           key={apt.id}
-                          className="p-4 rounded-xl border border-electric-cyan/10 bg-deep-space/50 hover:border-electric-cyan/20 transition-all"
+                          className="p-4 rounded-xl border border-emerald-pro-600/10 bg-white dark:bg-deep-space/50 hover:border-emerald-pro-600/20 transition-all"
                         >
                           <div className="flex items-start justify-between mb-3">
                             <div className="flex items-center gap-2">
@@ -498,8 +498,8 @@ export default function AppointmentsPage() {
                                 <TypeIcon className={cn("h-4 w-4", status.text)} />
                               </div>
                               <div>
-                                <p className="text-sm font-medium text-white">{apt.time}</p>
-                                <p className="text-xs text-steel">{apt.duration}</p>
+                                <p className="text-sm font-medium text-light-text dark:text-white">{apt.time}</p>
+                                <p className="text-xs text-light-text-muted dark:text-steel">{apt.duration}</p>
                               </div>
                             </div>
                             <span className={cn(
@@ -512,15 +512,15 @@ export default function AppointmentsPage() {
                             </span>
                           </div>
 
-                          <h4 className="font-medium text-white mb-2">{apt.title}</h4>
+                          <h4 className="font-medium text-light-text dark:text-white mb-2">{apt.title}</h4>
 
                           <div className="flex items-center gap-2 mb-3">
-                            <div className="h-6 w-6 rounded-md bg-gradient-to-br from-quantum-violet to-violet-dark flex items-center justify-center text-[10px] font-bold text-white">
+                            <div className="h-6 w-6 rounded-md bg-gradient-to-br from-emerald-pro-500 to-violet-dark flex items-center justify-center text-[10px] font-bold text-light-text dark:text-white">
                               {apt.lead.name.split(" ").map(n => n[0]).join("")}
                             </div>
                             <div>
-                              <p className="text-xs text-white">{apt.lead.name}</p>
-                              <p className="text-[10px] text-steel">{apt.lead.company}</p>
+                              <p className="text-xs text-light-text dark:text-white">{apt.lead.name}</p>
+                              <p className="text-[10px] text-light-text-muted dark:text-steel">{apt.lead.company}</p>
                             </div>
                           </div>
 
@@ -530,16 +530,16 @@ export default function AppointmentsPage() {
                                 href={apt.meetingLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-lg bg-electric-cyan/10 text-electric-cyan text-xs font-medium hover:bg-electric-cyan/20 transition-all"
+                                className="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-lg bg-emerald-pro-600/10 text-emerald-pro-600 text-xs font-medium hover:bg-emerald-pro-600/20 transition-all"
                               >
                                 <Link2 className="h-3 w-3" />
                                 Join Meeting
                               </a>
                             )}
-                            <button className="p-2 text-steel hover:text-white hover:bg-electric-cyan/10 rounded-lg transition-colors">
+                            <button className="p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                               <Edit3 className="h-4 w-4" />
                             </button>
-                            <button className="p-2 text-steel hover:text-rose hover:bg-rose/10 rounded-lg transition-colors">
+                            <button className="p-2 text-light-text-muted dark:text-steel hover:text-rose hover:bg-rose/10 rounded-lg transition-colors">
                               <Trash2 className="h-4 w-4" />
                             </button>
                           </div>
@@ -552,19 +552,19 @@ export default function AppointmentsPage() {
 
               {/* Upcoming Appointments Quick View */}
               <div className="glass-premium p-5">
-                <h3 className="font-semibold text-white mb-4">Upcoming This Week</h3>
+                <h3 className="font-semibold text-light-text dark:text-white mb-4">Upcoming This Week</h3>
                 <div className="space-y-2">
                   {appointmentsData.slice(0, 4).map((apt) => {
                     const status = statusColors[apt.status as keyof typeof statusColors];
                     return (
                       <div
                         key={apt.id}
-                        className="flex items-center gap-3 p-2 rounded-lg hover:bg-electric-cyan/5 transition-all"
+                        className="flex items-center gap-3 p-2 rounded-lg hover:bg-emerald-pro-600/5 transition-all"
                       >
                         <div className={cn("h-2 w-2 rounded-full", status.dot)} />
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm text-white truncate">{apt.lead.name}</p>
-                          <p className="text-xs text-steel">{apt.date} • {apt.time}</p>
+                          <p className="text-sm text-light-text dark:text-white truncate">{apt.lead.name}</p>
+                          <p className="text-xs text-light-text-muted dark:text-steel">{apt.date} • {apt.time}</p>
                         </div>
                       </div>
                     );
@@ -581,51 +581,51 @@ export default function AppointmentsPage() {
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b border-electric-cyan/10">
-                    <th className="text-left text-xs font-semibold text-steel uppercase tracking-wider px-6 py-4">Meeting</th>
-                    <th className="text-left text-xs font-semibold text-steel uppercase tracking-wider px-4 py-4">Lead</th>
-                    <th className="text-left text-xs font-semibold text-steel uppercase tracking-wider px-4 py-4">Date & Time</th>
-                    <th className="text-left text-xs font-semibold text-steel uppercase tracking-wider px-4 py-4">Type</th>
-                    <th className="text-left text-xs font-semibold text-steel uppercase tracking-wider px-4 py-4">Status</th>
-                    <th className="text-left text-xs font-semibold text-steel uppercase tracking-wider px-4 py-4">Campaign</th>
-                    <th className="text-right text-xs font-semibold text-steel uppercase tracking-wider px-6 py-4">Actions</th>
+                  <tr className="border-b border-emerald-pro-600/10">
+                    <th className="text-left text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">Meeting</th>
+                    <th className="text-left text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-4 py-4">Lead</th>
+                    <th className="text-left text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-4 py-4">Date & Time</th>
+                    <th className="text-left text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-4 py-4">Type</th>
+                    <th className="text-left text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-4 py-4">Status</th>
+                    <th className="text-left text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-4 py-4">Campaign</th>
+                    <th className="text-right text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">Actions</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-electric-cyan/5">
+                <tbody className="divide-y divide-emerald-pro-600/5">
                   {appointmentsData.map((apt) => {
                     const status = statusColors[apt.status as keyof typeof statusColors];
                     const TypeIcon = typeIcons[apt.type as keyof typeof typeIcons];
 
                     return (
-                      <tr key={apt.id} className="hover:bg-electric-cyan/5 transition-colors">
+                      <tr key={apt.id} className="hover:bg-emerald-pro-600/5 transition-colors">
                         <td className="px-6 py-4">
-                          <p className="font-medium text-white">{apt.title}</p>
-                          <p className="text-xs text-steel mt-0.5">{apt.duration}</p>
+                          <p className="font-medium text-light-text dark:text-white">{apt.title}</p>
+                          <p className="text-xs text-light-text-muted dark:text-steel mt-0.5">{apt.duration}</p>
                         </td>
                         <td className="px-4 py-4">
                           <div className="flex items-center gap-3">
-                            <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-quantum-violet to-violet-dark flex items-center justify-center text-xs font-bold text-white">
+                            <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-emerald-pro-500 to-violet-dark flex items-center justify-center text-xs font-bold text-light-text dark:text-white">
                               {apt.lead.name.split(" ").map(n => n[0]).join("")}
                             </div>
                             <div>
                               <Link
                                 href={`/dashboard/leads/${apt.lead.id}`}
-                                className="text-sm font-medium text-white hover:text-electric-cyan transition-colors"
+                                className="text-sm font-medium text-light-text dark:text-white hover:text-emerald-pro-600 transition-colors"
                               >
                                 {apt.lead.name}
                               </Link>
-                              <p className="text-xs text-steel">{apt.lead.company}</p>
+                              <p className="text-xs text-light-text-muted dark:text-steel">{apt.lead.company}</p>
                             </div>
                           </div>
                         </td>
                         <td className="px-4 py-4">
-                          <p className="text-sm text-white">{apt.date}</p>
-                          <p className="text-xs text-steel">{apt.time}</p>
+                          <p className="text-sm text-light-text dark:text-white">{apt.date}</p>
+                          <p className="text-xs text-light-text-muted dark:text-steel">{apt.time}</p>
                         </td>
                         <td className="px-4 py-4">
                           <div className="flex items-center gap-2">
-                            <TypeIcon className="h-4 w-4 text-steel" />
-                            <span className="text-sm text-white capitalize">{apt.type}</span>
+                            <TypeIcon className="h-4 w-4 text-light-text-muted dark:text-steel" />
+                            <span className="text-sm text-light-text dark:text-white capitalize">{apt.type}</span>
                           </div>
                         </td>
                         <td className="px-4 py-4">
@@ -640,7 +640,7 @@ export default function AppointmentsPage() {
                           </span>
                         </td>
                         <td className="px-4 py-4">
-                          <p className="text-sm text-white">{apt.campaign}</p>
+                          <p className="text-sm text-light-text dark:text-white">{apt.campaign}</p>
                         </td>
                         <td className="px-6 py-4">
                           <div className="flex items-center justify-end gap-1">
@@ -649,18 +649,18 @@ export default function AppointmentsPage() {
                                 href={apt.meetingLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="p-2 text-electric-cyan hover:bg-electric-cyan/10 rounded-lg transition-colors"
+                                className="p-2 text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors"
                               >
                                 <Link2 className="h-4 w-4" />
                               </a>
                             )}
-                            <button className="p-2 text-steel hover:text-electric-cyan hover:bg-electric-cyan/10 rounded-lg transition-colors">
+                            <button className="p-2 text-light-text-muted dark:text-steel hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                               <Edit3 className="h-4 w-4" />
                             </button>
-                            <button className="p-2 text-steel hover:text-rose hover:bg-rose/10 rounded-lg transition-colors">
+                            <button className="p-2 text-light-text-muted dark:text-steel hover:text-rose hover:bg-rose/10 rounded-lg transition-colors">
                               <Trash2 className="h-4 w-4" />
                             </button>
-                            <button className="p-2 text-steel hover:text-white hover:bg-electric-cyan/10 rounded-lg transition-colors">
+                            <button className="p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                               <MoreHorizontal className="h-4 w-4" />
                             </button>
                           </div>

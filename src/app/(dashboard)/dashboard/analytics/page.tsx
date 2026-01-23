@@ -73,13 +73,13 @@ export default function AnalyticsPage() {
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-steel mb-2">
-          <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
+        <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-2">
+          <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
           <span>/</span>
-          <span className="text-electric-cyan">Analytics</span>
+          <span className="text-emerald-pro-600">Analytics</span>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-white">Analytics</h1>
-        <p className="text-sm text-steel mt-1">
+        <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">Analytics</h1>
+        <p className="text-sm text-light-text-muted dark:text-steel mt-1">
           Campaign performance insights
         </p>
       </motion.div>
@@ -125,7 +125,7 @@ export default function AnalyticsPage() {
           variants={itemVariants}
           className="glass-premium p-6 hover:shadow-card-glow-active transition-all duration-300"
         >
-          <h3 className="text-base font-semibold text-white mb-6">
+          <h3 className="text-base font-semibold text-light-text dark:text-white mb-6">
             Weekly Trend
           </h3>
           <div className="h-64">
@@ -161,18 +161,18 @@ export default function AnalyticsPage() {
             </ResponsiveContainer>
           </div>
           {/* Chart legend */}
-          <div className="flex items-center justify-center gap-6 mt-4 pt-4 border-t border-graphite/30">
+          <div className="flex items-center justify-center gap-6 mt-4 pt-4 border-t border-border-default dark:border-graphite/30">
             <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-electric-cyan" />
-              <span className="text-xs text-steel">Sent</span>
+              <div className="w-3 h-3 rounded-full bg-emerald-pro-600" />
+              <span className="text-xs text-light-text-muted dark:text-steel">Sent</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-quantum-violet" />
-              <span className="text-xs text-steel">Opened</span>
+              <div className="w-3 h-3 rounded-full bg-emerald-pro-500" />
+              <span className="text-xs text-light-text-muted dark:text-steel">Opened</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-neon-mint" />
-              <span className="text-xs text-steel">Replied</span>
+              <div className="w-3 h-3 rounded-full bg-emerald-pro-400" />
+              <span className="text-xs text-light-text-muted dark:text-steel">Replied</span>
             </div>
           </div>
         </motion.div>
@@ -182,7 +182,7 @@ export default function AnalyticsPage() {
           variants={itemVariants}
           className="glass-premium p-6 hover:shadow-card-glow-active transition-all duration-300"
         >
-          <h3 className="text-base font-semibold text-white mb-6">
+          <h3 className="text-base font-semibold text-light-text dark:text-white mb-6">
             Hourly Engagement
           </h3>
           <div className="h-64">
@@ -223,7 +223,7 @@ export default function AnalyticsPage() {
         variants={itemVariants}
         className="glass-premium p-6 hover:shadow-card-glow-active transition-all duration-300"
       >
-        <h3 className="text-base font-semibold text-white mb-6">
+        <h3 className="text-base font-semibold text-light-text dark:text-white mb-6">
           Campaign Performance
         </h3>
         <div className="h-64">

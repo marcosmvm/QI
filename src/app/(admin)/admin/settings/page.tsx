@@ -85,13 +85,13 @@ export default function SettingsPage() {
     <motion.div initial="hidden" animate="visible" variants={containerVariants} className="min-h-screen p-8">
       {/* Header */}
       <motion.div variants={itemVariants} className="mb-8 max-w-4xl">
-        <div className="flex items-center gap-2 text-sm text-steel mb-2">
+        <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-2">
           <span>Admin</span>
           <span className="text-graphite">/</span>
-          <span className="text-electric-cyan">Settings</span>
+          <span className="text-emerald-pro-600">Settings</span>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-white">Settings</h1>
-        <p className="text-steel mt-1">
+        <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">Settings</h1>
+        <p className="text-light-text-muted dark:text-steel mt-1">
           Configure your admin portal and integrations
         </p>
       </motion.div>
@@ -244,12 +244,12 @@ export default function SettingsPage() {
           icon={Shield}
         >
           <div className="space-y-4">
-            <div className="flex items-center justify-between p-4 bg-deep-space/30 rounded-lg border border-graphite/30">
+            <div className="flex items-center justify-between p-4 bg-white dark:bg-deep-space/30 rounded-lg border border-border-default dark:border-graphite/30">
               <div>
-                <p className="text-sm font-medium text-white">
+                <p className="text-sm font-medium text-light-text dark:text-white">
                   Two-Factor Authentication
                 </p>
-                <p className="text-xs text-steel mt-0.5">
+                <p className="text-xs text-light-text-muted dark:text-steel mt-0.5">
                   Managed through Supabase Auth
                 </p>
               </div>
@@ -257,17 +257,17 @@ export default function SettingsPage() {
                 href="https://supabase.com/dashboard"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 text-sm text-electric-cyan hover:underline"
+                className="flex items-center gap-1 text-sm text-emerald-pro-600 hover:underline"
               >
                 Configure
                 <ExternalLink className="h-3 w-3" />
               </a>
             </div>
 
-            <div className="flex items-center justify-between p-4 bg-deep-space/30 rounded-lg border border-graphite/30">
+            <div className="flex items-center justify-between p-4 bg-white dark:bg-deep-space/30 rounded-lg border border-border-default dark:border-graphite/30">
               <div>
-                <p className="text-sm font-medium text-white">Session Timeout</p>
-                <p className="text-xs text-steel mt-0.5">
+                <p className="text-sm font-medium text-light-text dark:text-white">Session Timeout</p>
+                <p className="text-xs text-light-text-muted dark:text-steel mt-0.5">
                   Sessions expire after 7 days of inactivity
                 </p>
               </div>
@@ -281,17 +281,17 @@ export default function SettingsPage() {
           <h3 className="text-lg font-sora font-semibold text-red-400 mb-2">
             Danger Zone
           </h3>
-          <p className="text-sm text-steel mb-4">
+          <p className="text-sm text-light-text-muted dark:text-steel mb-4">
             Irreversible actions that affect your entire organization
           </p>
 
           <div className="space-y-3">
             <div className="flex items-center justify-between p-4 bg-red-500/10 rounded-lg border border-red-500/20">
               <div>
-                <p className="text-sm font-medium text-white">
+                <p className="text-sm font-medium text-light-text dark:text-white">
                   Export All Data
                 </p>
-                <p className="text-xs text-steel mt-0.5">
+                <p className="text-xs text-light-text-muted dark:text-steel mt-0.5">
                   Download all organization data as JSON
                 </p>
               </div>
@@ -302,10 +302,10 @@ export default function SettingsPage() {
 
             <div className="flex items-center justify-between p-4 bg-red-500/10 rounded-lg border border-red-500/20">
               <div>
-                <p className="text-sm font-medium text-white">
+                <p className="text-sm font-medium text-light-text dark:text-white">
                   Delete All Test Data
                 </p>
-                <p className="text-xs text-steel mt-0.5">
+                <p className="text-xs text-light-text-muted dark:text-steel mt-0.5">
                   Remove all campaigns and leads marked as test
                 </p>
               </div>
@@ -334,12 +334,12 @@ function SettingsSection({
   return (
     <div className="glass-premium p-6">
       <div className="flex items-start gap-4 mb-6">
-        <div className="h-10 w-10 rounded-lg bg-electric-cyan/10 border border-electric-cyan/30 flex items-center justify-center flex-shrink-0">
-          <Icon className="h-5 w-5 text-electric-cyan" />
+        <div className="h-10 w-10 rounded-lg bg-emerald-pro-600/10 border border-emerald-pro-600/30 flex items-center justify-center flex-shrink-0">
+          <Icon className="h-5 w-5 text-emerald-pro-600" />
         </div>
         <div>
-          <h2 className="text-lg font-sora font-semibold text-white">{title}</h2>
-          <p className="text-sm text-steel mt-0.5">{description}</p>
+          <h2 className="text-lg font-sora font-semibold text-light-text dark:text-white">{title}</h2>
+          <p className="text-sm text-light-text-muted dark:text-steel mt-0.5">{description}</p>
         </div>
       </div>
       {children}
@@ -358,12 +358,12 @@ function FormField({
 }) {
   return (
     <div>
-      <label className="block text-xs text-steel mb-1.5">{label}</label>
+      <label className="block text-xs text-light-text-muted dark:text-steel mb-1.5">{label}</label>
       <input
         type="text"
         value={value}
         disabled={disabled}
-        className="w-full h-10 rounded-lg border border-graphite bg-deep-space px-3 text-sm text-white disabled:opacity-60 focus:border-electric-cyan/50 focus:outline-none"
+        className="w-full h-10 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-3 text-sm text-light-text dark:text-white disabled:opacity-60 focus:border-emerald-pro-600/50 focus:outline-none"
       />
     </div>
   );
@@ -381,35 +381,35 @@ function IntegrationCard({
   details: string;
 }) {
   return (
-    <div className="flex items-center justify-between p-4 bg-deep-space/30 rounded-lg border border-graphite/30">
+    <div className="flex items-center justify-between p-4 bg-white dark:bg-deep-space/30 rounded-lg border border-border-default dark:border-graphite/30">
       <div className="flex items-center gap-3">
         <div
           className={`h-10 w-10 rounded-lg flex items-center justify-center ${
             configured
-              ? "bg-neon-mint/10 border border-neon-mint/30"
+              ? "bg-emerald-pro-400/10 border border-emerald-pro-400/30"
               : "bg-energy-orange/10 border border-energy-orange/30"
           }`}
         >
           {configured ? (
-            <CheckCircle2 className="h-5 w-5 text-neon-mint" />
+            <CheckCircle2 className="h-5 w-5 text-emerald-pro-400" />
           ) : (
             <AlertTriangle className="h-5 w-5 text-energy-orange" />
           )}
         </div>
         <div>
-          <p className="text-sm font-medium text-white">{name}</p>
-          <p className="text-xs text-steel">{description}</p>
+          <p className="text-sm font-medium text-light-text dark:text-white">{name}</p>
+          <p className="text-xs text-light-text-muted dark:text-steel">{description}</p>
         </div>
       </div>
       <div className="text-right">
         <p
           className={`text-xs font-medium ${
-            configured ? "text-neon-mint" : "text-energy-orange"
+            configured ? "text-emerald-pro-400" : "text-energy-orange"
           }`}
         >
           {configured ? "Connected" : "Not Configured"}
         </p>
-        <p className="text-xs text-steel mt-0.5 max-w-[200px] truncate">
+        <p className="text-xs text-light-text-muted dark:text-steel mt-0.5 max-w-[200px] truncate">
           {details}
         </p>
       </div>
@@ -427,10 +427,10 @@ function NotificationToggle({
   defaultChecked?: boolean;
 }) {
   return (
-    <div className="flex items-center justify-between p-4 bg-deep-space/30 rounded-lg border border-graphite/30">
+    <div className="flex items-center justify-between p-4 bg-white dark:bg-deep-space/30 rounded-lg border border-border-default dark:border-graphite/30">
       <div>
-        <p className="text-sm font-medium text-white">{label}</p>
-        <p className="text-xs text-steel mt-0.5">{description}</p>
+        <p className="text-sm font-medium text-light-text dark:text-white">{label}</p>
+        <p className="text-xs text-light-text-muted dark:text-steel mt-0.5">{description}</p>
       </div>
       <label className="relative inline-flex items-center cursor-pointer">
         <input
@@ -438,7 +438,7 @@ function NotificationToggle({
           defaultChecked={defaultChecked}
           className="sr-only peer"
         />
-        <div className="w-11 h-6 bg-graphite rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-electric-cyan"></div>
+        <div className="w-11 h-6 bg-graphite rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-pro-600"></div>
       </label>
     </div>
   );
@@ -460,12 +460,12 @@ function ThresholdSetting({
   inverted?: boolean;
 }) {
   return (
-    <div className="p-4 bg-deep-space/30 rounded-lg border border-graphite/30">
-      <p className="text-sm font-medium text-white mb-3">{label}</p>
+    <div className="p-4 bg-white dark:bg-deep-space/30 rounded-lg border border-border-default dark:border-graphite/30">
+      <p className="text-sm font-medium text-light-text dark:text-white mb-3">{label}</p>
       <div className="space-y-2">
         <div className="flex items-center justify-between">
-          <span className="text-xs text-neon-mint">Target</span>
-          <span className="text-xs text-neon-mint">
+          <span className="text-xs text-emerald-pro-400">Target</span>
+          <span className="text-xs text-emerald-pro-400">
             {inverted ? "<" : ">"} {target}
             {suffix}
           </span>

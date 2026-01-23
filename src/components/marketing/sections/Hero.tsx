@@ -156,13 +156,13 @@ export function Hero() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email for a free guide"
-                  className="flex-1 px-4 py-3 rounded-lg bg-white dark:bg-midnight-blue/60 border border-border-default dark:border-graphite/50 text-light-text dark:text-white placeholder:text-light-text-muted dark:placeholder:text-steel focus:outline-none focus:border-emerald-pro-600/50 dark:focus:border-xgrowth-500/50 text-sm"
+                  className="flex-1 px-4 py-3 rounded-lg bg-white dark:bg-midnight-blue/60 border border-border-default dark:border-graphite/50 text-light-text dark:text-white placeholder:text-light-text-muted dark:placeholder:text-light-text-muted dark:text-steel focus:outline-none focus:border-emerald-pro-600/50 dark:focus:border-xgrowth-500/50 text-sm"
                   required
                 />
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="px-5 py-3 bg-emerald-pro-600 dark:bg-xgrowth-500 hover:bg-emerald-pro-700 dark:hover:bg-xgrowth-400 text-white dark:text-deep-space font-medium rounded-lg transition-colors text-sm whitespace-nowrap disabled:opacity-50"
+                  className="px-5 py-3 bg-emerald-pro-600 dark:bg-xgrowth-500 hover:bg-emerald-pro-700 dark:hover:bg-xgrowth-400 text-light-text dark:text-white dark:text-deep-space font-medium rounded-lg transition-colors text-sm whitespace-nowrap disabled:opacity-50"
                 >
                   {isSubmitting ? "..." : "Get Guide"}
                 </button>

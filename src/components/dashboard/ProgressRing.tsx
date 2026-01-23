@@ -17,9 +17,9 @@ interface ProgressRingProps {
 }
 
 const colorMap: Record<ColorVariant, { stroke: string; text: string }> = {
-  cyan: { stroke: '#00D4FF', text: 'text-electric-cyan' },
-  violet: { stroke: '#7B61FF', text: 'text-quantum-violet' },
-  mint: { stroke: '#00FFB2', text: 'text-neon-mint' },
+  cyan: { stroke: '#00D4FF', text: 'text-emerald-pro-600' },
+  violet: { stroke: '#7B61FF', text: 'text-emerald-pro-500' },
+  mint: { stroke: '#00FFB2', text: 'text-emerald-pro-400' },
   orange: { stroke: '#FF6B35', text: 'text-energy-orange' },
 }
 
@@ -73,7 +73,7 @@ export function ProgressRing({
           {Math.round(percentage)}%
         </span>
         {label && (
-          <span className="text-2xs text-steel uppercase tracking-wide">
+          <span className="text-2xs text-light-text-muted dark:text-steel uppercase tracking-wide">
             {label}
           </span>
         )}

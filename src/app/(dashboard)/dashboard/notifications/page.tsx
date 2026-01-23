@@ -153,12 +153,12 @@ const notificationTypeConfig: Record<
 > = {
   lead: {
     icon: Users,
-    color: "neon-mint",
+    color: "emerald-pro-400",
     label: "Leads",
   },
   campaign: {
     icon: Mail,
-    color: "electric-cyan",
+    color: "emerald-pro-600",
     label: "Campaigns",
   },
   compliance: {
@@ -168,17 +168,17 @@ const notificationTypeConfig: Record<
   },
   billing: {
     icon: CreditCard,
-    color: "quantum-violet",
+    color: "emerald-pro-500",
     label: "Billing",
   },
   report: {
     icon: TrendingUp,
-    color: "electric-cyan",
+    color: "emerald-pro-600",
     label: "Reports",
   },
   support: {
     icon: MessageSquare,
-    color: "quantum-violet",
+    color: "emerald-pro-500",
     label: "Support",
   },
 };
@@ -215,34 +215,34 @@ export default async function NotificationsPage() {
     <div className="min-h-screen p-8">
       {/* Page Header */}
       <div className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-steel mb-2">
+        <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-2">
           <Link
             href="/dashboard"
-            className="hover:text-electric-cyan transition-colors"
+            className="hover:text-emerald-pro-600 transition-colors"
           >
             Portal
           </Link>
           <span>/</span>
-          <span className="text-electric-cyan">Notifications</span>
+          <span className="text-emerald-pro-600">Notifications</span>
         </div>
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-sora font-bold text-white">
+            <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">
               Notifications
             </h1>
-            <p className="text-steel mt-1">
+            <p className="text-light-text-muted dark:text-steel mt-1">
               {unreadCount > 0
                 ? `You have ${unreadCount} unread notification${unreadCount !== 1 ? "s" : ""}`
                 : "You're all caught up!"}
             </p>
           </div>
           <div className="flex items-center gap-3">
-            <button className="flex items-center gap-2 px-4 py-2 border border-graphite text-steel rounded-lg hover:bg-midnight-blue/30 transition-colors">
+            <button className="flex items-center gap-2 px-4 py-2 border border-border-default dark:border-graphite text-light-text-muted dark:text-steel rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors">
               <Filter className="h-4 w-4" />
               Filter
             </button>
             {unreadCount > 0 && (
-              <button className="flex items-center gap-2 px-4 py-2 border border-electric-cyan/30 text-electric-cyan rounded-lg hover:bg-electric-cyan/10 transition-colors">
+              <button className="flex items-center gap-2 px-4 py-2 border border-emerald-pro-600/30 text-emerald-pro-600 rounded-lg hover:bg-emerald-pro-600/10 transition-colors">
                 <Check className="h-4 w-4" />
                 Mark all read
               </button>
@@ -274,8 +274,8 @@ export default async function NotificationsPage() {
                   />
                 </div>
                 <div>
-                  <p className="text-lg font-sora font-bold text-white">{count}</p>
-                  <p className="text-xs text-steel">{config.label}</p>
+                  <p className="text-lg font-sora font-bold text-light-text dark:text-white">{count}</p>
+                  <p className="text-xs text-light-text-muted dark:text-steel">{config.label}</p>
                 </div>
               </div>
             </div>
@@ -286,9 +286,9 @@ export default async function NotificationsPage() {
       {/* Notifications List */}
       {notifications.length === 0 ? (
         <div className="glass-premium p-12 text-center">
-          <Bell className="h-12 w-12 text-steel mx-auto mb-4" />
-          <p className="text-steel">No notifications yet</p>
-          <p className="text-sm text-steel/70 mt-1">
+          <Bell className="h-12 w-12 text-light-text-muted dark:text-steel mx-auto mb-4" />
+          <p className="text-light-text-muted dark:text-steel">No notifications yet</p>
+          <p className="text-sm text-light-text-muted dark:text-steel/70 mt-1">
             We&apos;ll notify you when something important happens
           </p>
         </div>
@@ -296,7 +296,7 @@ export default async function NotificationsPage() {
         <div className="space-y-8">
           {Object.entries(groupedByDate).map(([date, items]) => (
             <div key={date}>
-              <h3 className="text-sm font-medium text-steel mb-3">{date}</h3>
+              <h3 className="text-sm font-medium text-light-text-muted dark:text-steel mb-3">{date}</h3>
               <div className="space-y-3">
                 {items.map((notification) => (
                   <NotificationCard
@@ -322,30 +322,30 @@ function NotificationCard({ notification }: { notification: Notification }) {
   const Icon = config.icon;
 
   const colorClasses: Record<string, { bg: string; border: string; text: string }> = {
-    "neon-mint": {
-      bg: "bg-neon-mint/10",
-      border: "border-neon-mint/30",
-      text: "text-neon-mint",
+    "emerald-pro-400": {
+      bg: "bg-emerald-pro-400/10",
+      border: "border-emerald-pro-400/30",
+      text: "text-emerald-pro-400",
     },
-    "electric-cyan": {
-      bg: "bg-electric-cyan/10",
-      border: "border-electric-cyan/30",
-      text: "text-electric-cyan",
+    "emerald-pro-600": {
+      bg: "bg-emerald-pro-600/10",
+      border: "border-emerald-pro-600/30",
+      text: "text-emerald-pro-600",
     },
     "energy-orange": {
       bg: "bg-energy-orange/10",
       border: "border-energy-orange/30",
       text: "text-energy-orange",
     },
-    "quantum-violet": {
-      bg: "bg-quantum-violet/10",
-      border: "border-quantum-violet/30",
-      text: "text-quantum-violet",
+    "emerald-pro-500": {
+      bg: "bg-emerald-pro-500/10",
+      border: "border-emerald-pro-500/30",
+      text: "text-emerald-pro-500",
     },
     steel: {
       bg: "bg-steel/10",
       border: "border-steel/30",
-      text: "text-steel",
+      text: "text-light-text-muted dark:text-steel",
     },
   };
 
@@ -355,8 +355,8 @@ function NotificationCard({ notification }: { notification: Notification }) {
     <div
       className={`flex items-start gap-4 p-4 rounded-xl border backdrop-blur-md transition-all hover:-translate-y-0.5 hover:shadow-card-hover ${
         notification.is_read
-          ? "bg-midnight-blue/30 border-graphite/30"
-          : "bg-midnight-blue/40 border-electric-cyan/20"
+          ? "bg-light-bg-secondary dark:bg-midnight-blue/30 border-border-default dark:border-graphite/30"
+          : "bg-light-bg-secondary dark:bg-midnight-blue/40 border-emerald-pro-600/20"
       }`}
       style={{ transition: "all 0.5s cubic-bezier(0.16, 1, 0.3, 1)" }}
     >
@@ -370,16 +370,16 @@ function NotificationCard({ notification }: { notification: Notification }) {
         <div className="flex items-start justify-between gap-4">
           <div>
             <div className="flex items-center gap-2">
-              <h4 className="text-sm font-medium text-white">
+              <h4 className="text-sm font-medium text-light-text dark:text-white">
                 {notification.title}
               </h4>
               {!notification.is_read && (
-                <span className="h-2 w-2 rounded-full bg-electric-cyan" />
+                <span className="h-2 w-2 rounded-full bg-emerald-pro-600" />
               )}
             </div>
-            <p className="text-sm text-steel mt-1">{notification.message}</p>
+            <p className="text-sm text-light-text-muted dark:text-steel mt-1">{notification.message}</p>
           </div>
-          <span className="text-xs text-steel whitespace-nowrap">
+          <span className="text-xs text-light-text-muted dark:text-steel whitespace-nowrap">
             {formatTimeAgo(notification.created_at)}
           </span>
         </div>
@@ -388,14 +388,14 @@ function NotificationCard({ notification }: { notification: Notification }) {
           <div className="mt-3 flex items-center gap-3">
             <Link
               href={notification.action_url}
-              className="text-sm text-electric-cyan hover:underline"
+              className="text-sm text-emerald-pro-600 hover:underline"
             >
               View details
             </Link>
-            <button className="text-sm text-steel hover:text-white">
+            <button className="text-sm text-light-text-muted dark:text-steel hover:text-light-text dark:text-white">
               <Check className="h-4 w-4" />
             </button>
-            <button className="text-sm text-steel hover:text-energy-orange">
+            <button className="text-sm text-light-text-muted dark:text-steel hover:text-energy-orange">
               <Trash2 className="h-4 w-4" />
             </button>
           </div>

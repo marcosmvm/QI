@@ -13,27 +13,27 @@ interface EngineDetailPageProps {
 }
 
 const colorClasses = {
-  "electric-cyan": {
-    bg: "bg-electric-cyan/10",
-    border: "border-electric-cyan/30",
-    text: "text-electric-cyan",
-    gradient: "from-electric-cyan to-cyan-dark",
+  "emerald-pro-600": {
+    bg: "bg-emerald-pro-600/10",
+    border: "border-emerald-pro-600/30",
+    text: "text-emerald-pro-600",
+    gradient: "from-emerald-pro-600 to-cyan-dark",
     glow: "shadow-[0_0_60px_rgba(0,212,255,0.3)]",
     iconBg: "cyan",
   },
-  "quantum-violet": {
-    bg: "bg-quantum-violet/10",
-    border: "border-quantum-violet/30",
-    text: "text-quantum-violet",
-    gradient: "from-quantum-violet to-purple-600",
+  "emerald-pro-500": {
+    bg: "bg-emerald-pro-500/10",
+    border: "border-emerald-pro-500/30",
+    text: "text-emerald-pro-500",
+    gradient: "from-emerald-pro-500 to-purple-600",
     glow: "shadow-[0_0_60px_rgba(123,97,255,0.3)]",
     iconBg: "violet",
   },
-  "neon-mint": {
-    bg: "bg-neon-mint/10",
-    border: "border-neon-mint/30",
-    text: "text-neon-mint",
-    gradient: "from-neon-mint to-emerald-500",
+  "emerald-pro-400": {
+    bg: "bg-emerald-pro-400/10",
+    border: "border-emerald-pro-400/30",
+    text: "text-emerald-pro-400",
+    gradient: "from-emerald-pro-400 to-emerald-500",
     glow: "shadow-[0_0_60px_rgba(0,255,178,0.3)]",
     iconBg: "mint",
   },
@@ -70,7 +70,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
         {/* Enhanced ambient orbs */}
         <div className={`absolute top-1/4 left-1/4 w-[500px] h-[500px] ${colors.bg} rounded-full blur-[150px] animate-orb-float`} />
         <div className={`absolute bottom-1/4 right-1/4 w-[400px] h-[400px] ${colors.bg} rounded-full blur-[130px] animate-orb-float-reverse opacity-60`} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-quantum-violet/5 rounded-full blur-[180px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-pro-500/5 rounded-full blur-[180px]" />
 
         <Container className="relative z-10">
           {/* Back Link */}
@@ -82,7 +82,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
           >
             <Link
               href="/engines"
-              className="inline-flex items-center gap-2 text-steel hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               All Engines
@@ -113,7 +113,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
                   <Icon className={`h-10 w-10 ${colors.text}`} />
                 </div>
                 <div>
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white">
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-light-text dark:text-white">
                     <span className={`headline-underline ${colors.text}`}>
                       {engine.name}
                     </span>
@@ -155,7 +155,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
                     <p className={`text-4xl font-sora font-bold ${colors.text}`}>
                       {stat.value}
                     </p>
-                    <p className="text-steel text-sm mt-1">{stat.label}</p>
+                    <p className="text-light-text-muted dark:text-steel text-sm mt-1">{stat.label}</p>
                   </motion.div>
                 ))}
               </div>
@@ -177,7 +177,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
               Key{" "}
               <span className={`headline-underline ${colors.text}`}>Features</span>
             </h2>
@@ -198,15 +198,15 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
               >
                 {/* Accent Line */}
                 <div className={`absolute top-0 left-0 right-0 h-1 rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity ${
-                  colors.iconBg === 'cyan' ? 'bg-electric-cyan' :
-                  colors.iconBg === 'violet' ? 'bg-quantum-violet' :
-                  colors.iconBg === 'mint' ? 'bg-neon-mint' : 'bg-energy-orange'
+                  colors.iconBg === 'cyan' ? 'bg-emerald-pro-600' :
+                  colors.iconBg === 'violet' ? 'bg-emerald-pro-500' :
+                  colors.iconBg === 'mint' ? 'bg-emerald-pro-400' : 'bg-energy-orange'
                 }`} />
 
-                <h3 className={`text-lg font-sora font-semibold text-white mb-2 group-hover:${colors.text} transition-colors`}>
+                <h3 className={`text-lg font-sora font-semibold text-light-text dark:text-white mb-2 group-hover:${colors.text} transition-colors`}>
                   {feature.title}
                 </h3>
-                <p className="text-silver text-sm leading-relaxed group-hover:text-white/80 transition-colors">
+                <p className="text-silver text-sm leading-relaxed group-hover:text-light-text dark:text-white/80 transition-colors">
                   {feature.description}
                 </p>
               </motion.div>
@@ -228,7 +228,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
                 Perfect{" "}
                 <span className={`headline-underline ${colors.text}`}>For</span>
               </h2>
@@ -247,7 +247,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
                     className="flex items-start gap-3 group"
                   >
                     <CheckCircle className={`h-6 w-6 ${colors.text} flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform`} />
-                    <span className="text-silver group-hover:text-white/90 transition-colors">{useCase}</span>
+                    <span className="text-silver group-hover:text-light-text dark:text-white/90 transition-colors">{useCase}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -263,7 +263,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
               <div className={`icon-container-animated ${colors.iconBg} mb-6`}>
                 <Icon className={`h-12 w-12 ${colors.text}`} />
               </div>
-              <h3 className="text-2xl font-sora font-bold text-white mb-4">
+              <h3 className="text-2xl font-sora font-bold text-light-text dark:text-white mb-4">
                 Ready to deploy {engine.name}?
               </h3>
               <p className="text-silver mb-6 leading-relaxed">
@@ -296,11 +296,11 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
             {prevEngine ? (
               <Link
                 href={`/engines/${prevEngine.id}`}
-                className="flex items-center gap-3 text-steel hover:text-white transition-colors group p-4 rounded-xl hover:bg-midnight-blue/30"
+                className="flex items-center gap-3 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white transition-colors group p-4 rounded-xl hover:bg-light-bg-secondary dark:bg-midnight-blue/30"
               >
                 <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
                 <span>
-                  <span className="text-sm block text-steel/70">Previous</span>
+                  <span className="text-sm block text-light-text-muted dark:text-steel/70">Previous</span>
                   <span className="font-semibold">{prevEngine.name}</span>
                 </span>
               </Link>
@@ -310,7 +310,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
 
             <Link
               href="/engines"
-              className="text-electric-cyan hover:text-cyan-light transition-colors font-medium px-6 py-3 rounded-xl border border-electric-cyan/20 hover:border-electric-cyan/40 hover:bg-electric-cyan/5"
+              className="text-emerald-pro-600 hover:text-cyan-light transition-colors font-medium px-6 py-3 rounded-xl border border-emerald-pro-600/20 hover:border-emerald-pro-600/40 hover:bg-emerald-pro-600/5"
             >
               View All Engines
             </Link>
@@ -318,10 +318,10 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
             {nextEngine ? (
               <Link
                 href={`/engines/${nextEngine.id}`}
-                className="flex items-center gap-3 text-steel hover:text-white transition-colors group text-right p-4 rounded-xl hover:bg-midnight-blue/30"
+                className="flex items-center gap-3 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white transition-colors group text-right p-4 rounded-xl hover:bg-light-bg-secondary dark:bg-midnight-blue/30"
               >
                 <span>
-                  <span className="text-sm block text-steel/70">Next</span>
+                  <span className="text-sm block text-light-text-muted dark:text-steel/70">Next</span>
                   <span className="font-semibold">{nextEngine.name}</span>
                 </span>
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />

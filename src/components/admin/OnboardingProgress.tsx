@@ -53,20 +53,20 @@ export function OnboardingProgress({
   const progressPercent = Math.round((completedCount / totalSteps) * 100);
 
   return (
-    <div className={cn("rounded-xl border border-graphite/50 bg-midnight-blue/30 p-6", className)}>
+    <div className={cn("rounded-xl border border-border-default dark:border-graphite/50 bg-light-bg-secondary dark:bg-midnight-blue/30 p-6", className)}>
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-sora font-semibold text-white">
+        <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white">
           Onboarding Progress
         </h3>
-        <span className="text-sm font-medium text-electric-cyan">
+        <span className="text-sm font-medium text-emerald-pro-600">
           {completedCount}/{totalSteps} Complete
         </span>
       </div>
 
       {/* Progress bar */}
-      <div className="h-2 w-full rounded-full bg-deep-space/50 mb-6">
+      <div className="h-2 w-full rounded-full bg-white dark:bg-deep-space/50 mb-6">
         <div
-          className="h-full rounded-full bg-gradient-to-r from-electric-cyan to-quantum-violet transition-all duration-500"
+          className="h-full rounded-full bg-gradient-to-r from-emerald-pro-600 to-emerald-pro-500 transition-all duration-500"
           style={{ width: `${progressPercent}%` }}
         />
       </div>
@@ -83,19 +83,19 @@ export function OnboardingProgress({
               className={cn(
                 "flex items-center gap-2 rounded-lg p-2 transition-colors",
                 isCompleted
-                  ? "bg-neon-mint/10"
-                  : "bg-deep-space/30"
+                  ? "bg-emerald-pro-400/10"
+                  : "bg-white dark:bg-deep-space/30"
               )}
             >
               {isCompleted ? (
-                <CheckCircle2 className="h-4 w-4 text-neon-mint flex-shrink-0" />
+                <CheckCircle2 className="h-4 w-4 text-emerald-pro-400 flex-shrink-0" />
               ) : (
-                <Circle className="h-4 w-4 text-steel flex-shrink-0" />
+                <Circle className="h-4 w-4 text-light-text-muted dark:text-steel flex-shrink-0" />
               )}
               <span
                 className={cn(
                   "text-xs font-medium truncate",
-                  isCompleted ? "text-neon-mint" : "text-steel"
+                  isCompleted ? "text-emerald-pro-400" : "text-light-text-muted dark:text-steel"
                 )}
               >
                 {step.label}
@@ -122,20 +122,20 @@ export function OnboardingProgressBar({
 
   return (
     <div className={cn("flex items-center gap-2", className)}>
-      <div className="h-1.5 w-16 rounded-full bg-deep-space/50">
+      <div className="h-1.5 w-16 rounded-full bg-white dark:bg-deep-space/50">
         <div
           className={cn(
             "h-full rounded-full transition-all",
             progressPercent === 100
-              ? "bg-neon-mint"
+              ? "bg-emerald-pro-400"
               : progressPercent >= 50
-              ? "bg-electric-cyan"
+              ? "bg-emerald-pro-600"
               : "bg-steel"
           )}
           style={{ width: `${progressPercent}%` }}
         />
       </div>
-      <span className="text-xs text-steel">
+      <span className="text-xs text-light-text-muted dark:text-steel">
         {completedSteps}/{totalSteps}
       </span>
     </div>

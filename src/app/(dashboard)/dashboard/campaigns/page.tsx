@@ -166,10 +166,10 @@ const mockCampaigns: Campaign[] = [
 
 const statusConfig = {
   active: {
-    bg: "bg-neon-mint/10",
-    text: "text-neon-mint",
-    border: "border-neon-mint/20",
-    dot: "bg-neon-mint",
+    bg: "bg-emerald-pro-400/10",
+    text: "text-emerald-pro-400",
+    border: "border-emerald-pro-400/20",
+    dot: "bg-emerald-pro-400",
     label: "Active",
   },
   paused: {
@@ -181,16 +181,16 @@ const statusConfig = {
   },
   draft: {
     bg: "bg-steel/10",
-    text: "text-steel",
+    text: "text-light-text-muted dark:text-steel",
     border: "border-steel/20",
     dot: "bg-steel",
     label: "Draft",
   },
   completed: {
-    bg: "bg-electric-cyan/10",
-    text: "text-electric-cyan",
-    border: "border-electric-cyan/20",
-    dot: "bg-electric-cyan",
+    bg: "bg-emerald-pro-600/10",
+    text: "text-emerald-pro-600",
+    border: "border-emerald-pro-600/20",
+    dot: "bg-emerald-pro-600",
     label: "Completed",
   },
 };
@@ -279,13 +279,13 @@ export default function CampaignsPage() {
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-steel mb-2">
-          <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
+        <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-2">
+          <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
           <span>/</span>
-          <span className="text-electric-cyan">Campaigns</span>
+          <span className="text-emerald-pro-600">Campaigns</span>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-white">Campaigns</h1>
-        <p className="text-steel mt-1">Manage and monitor your email campaigns</p>
+        <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">Campaigns</h1>
+        <p className="text-light-text-muted dark:text-steel mt-1">Manage and monitor your email campaigns</p>
       </motion.div>
 
       <div className="space-y-6">
@@ -332,23 +332,23 @@ export default function CampaignsPage() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-steel" />
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-light-text-muted dark:text-steel" />
               <input
                 type="text"
                 placeholder="Search campaigns..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="h-10 w-80 rounded-xl border border-electric-cyan/20 bg-midnight-blue/50 pl-10 pr-4 text-sm text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-2 focus:ring-electric-cyan/20 transition-all"
+                className="h-10 w-80 rounded-xl border border-emerald-pro-600/20 bg-light-bg-secondary dark:bg-midnight-blue/50 pl-10 pr-4 text-sm text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-2 focus:ring-emerald-pro-600/20 transition-all"
               />
             </div>
-            <div className="flex items-center gap-1 p-1 rounded-lg bg-midnight-blue/50 border border-electric-cyan/10">
+            <div className="flex items-center gap-1 p-1 rounded-lg bg-light-bg-secondary dark:bg-midnight-blue/50 border border-emerald-pro-600/10">
               <button
                 onClick={() => setStatusFilter(null)}
                 className={cn(
                   "px-3 py-1.5 rounded-md text-xs font-medium transition-all",
                   !statusFilter
-                    ? "bg-electric-cyan/10 text-electric-cyan"
-                    : "text-steel hover:text-white"
+                    ? "bg-emerald-pro-600/10 text-emerald-pro-600"
+                    : "text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
                 )}
               >
                 All
@@ -361,7 +361,7 @@ export default function CampaignsPage() {
                     "px-3 py-1.5 rounded-md text-xs font-medium transition-all",
                     statusFilter === key
                       ? `${config.bg} ${config.text}`
-                      : "text-steel hover:text-white"
+                      : "text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
                   )}
                 >
                   {config.label}
@@ -374,7 +374,7 @@ export default function CampaignsPage() {
             <Button
               variant="outline"
               size="sm"
-              className="border-electric-cyan/20 text-steel hover:text-white hover:border-electric-cyan/40"
+              className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:border-emerald-pro-600/40"
               onClick={handleExport}
             >
               <Download className="h-4 w-4 mr-2" />
@@ -383,7 +383,7 @@ export default function CampaignsPage() {
             <Button
               variant="outline"
               size="sm"
-              className="border-electric-cyan/20 text-steel hover:text-white hover:border-electric-cyan/40"
+              className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:border-emerald-pro-600/40"
               onClick={handleRefresh}
               disabled={isRefreshing}
             >
@@ -393,7 +393,7 @@ export default function CampaignsPage() {
             <Link href="/dashboard/campaigns/new">
               <Button
                 size="sm"
-                className="bg-gradient-to-r from-electric-cyan to-cyan-dark hover:from-cyan-light hover:to-electric-cyan text-deep-space font-semibold"
+                className="bg-gradient-to-r from-emerald-pro-600 to-cyan-dark hover:from-cyan-light hover:to-emerald-pro-600 text-deep-space font-semibold"
               >
                 <Plus className="h-4 w-4 mr-2" />
                 New Campaign
@@ -407,35 +407,35 @@ export default function CampaignsPage() {
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="border-b border-electric-cyan/10">
-                  <th className="text-left text-xs font-semibold text-steel uppercase tracking-wider px-6 py-4">Campaign</th>
-                  <th className="text-left text-xs font-semibold text-steel uppercase tracking-wider px-4 py-4">Status</th>
-                  <th className="text-center text-xs font-semibold text-steel uppercase tracking-wider px-4 py-4">Sent</th>
-                  <th className="text-center text-xs font-semibold text-steel uppercase tracking-wider px-4 py-4">Delivered</th>
-                  <th className="text-center text-xs font-semibold text-steel uppercase tracking-wider px-4 py-4">Opened</th>
-                  <th className="text-center text-xs font-semibold text-steel uppercase tracking-wider px-4 py-4">Replied</th>
-                  <th className="text-center text-xs font-semibold text-steel uppercase tracking-wider px-4 py-4">Open Rate</th>
-                  <th className="text-center text-xs font-semibold text-steel uppercase tracking-wider px-4 py-4">Reply Rate</th>
-                  <th className="text-right text-xs font-semibold text-steel uppercase tracking-wider px-6 py-4">Actions</th>
+                <tr className="border-b border-emerald-pro-600/10">
+                  <th className="text-left text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">Campaign</th>
+                  <th className="text-left text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-4 py-4">Status</th>
+                  <th className="text-center text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-4 py-4">Sent</th>
+                  <th className="text-center text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-4 py-4">Delivered</th>
+                  <th className="text-center text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-4 py-4">Opened</th>
+                  <th className="text-center text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-4 py-4">Replied</th>
+                  <th className="text-center text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-4 py-4">Open Rate</th>
+                  <th className="text-center text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-4 py-4">Reply Rate</th>
+                  <th className="text-right text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-electric-cyan/5">
+              <tbody className="divide-y divide-emerald-pro-600/5">
                 {filteredCampaigns.map((campaign) => {
                   const status = statusConfig[campaign.status as keyof typeof statusConfig];
                   const openRateStatus = campaign.metrics.openRate >= 30 ? "success" : campaign.metrics.openRate >= 15 ? "warning" : "critical";
                   const replyRateStatus = campaign.metrics.replyRate >= 3 ? "success" : campaign.metrics.replyRate >= 1 ? "warning" : "critical";
 
                   return (
-                    <tr key={campaign.id} className="hover:bg-electric-cyan/5 transition-colors group">
+                    <tr key={campaign.id} className="hover:bg-emerald-pro-600/5 transition-colors group">
                       <td className="px-6 py-4">
                         <Link
                           href={`/dashboard/campaigns/${campaign.id}`}
                           className="block"
                         >
-                          <p className="font-medium text-white group-hover:text-electric-cyan transition-colors">
+                          <p className="font-medium text-light-text dark:text-white group-hover:text-emerald-pro-600 transition-colors">
                             {campaign.name}
                           </p>
-                          <p className="text-xs text-steel mt-0.5">
+                          <p className="text-xs text-light-text-muted dark:text-steel mt-0.5">
                             Created {new Date(campaign.createdAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
                           </p>
                         </Link>
@@ -452,24 +452,24 @@ export default function CampaignsPage() {
                         </span>
                       </td>
                       <td className="px-4 py-4 text-center">
-                        <span className="text-sm text-white font-medium">{campaign.metrics.sent.toLocaleString()}</span>
+                        <span className="text-sm text-light-text dark:text-white font-medium">{campaign.metrics.sent.toLocaleString()}</span>
                       </td>
                       <td className="px-4 py-4 text-center">
-                        <span className="text-sm text-white">{campaign.metrics.delivered.toLocaleString()}</span>
-                        <span className="text-xs text-steel ml-1">
+                        <span className="text-sm text-light-text dark:text-white">{campaign.metrics.delivered.toLocaleString()}</span>
+                        <span className="text-xs text-light-text-muted dark:text-steel ml-1">
                           ({campaign.metrics.deliverabilityRate}%)
                         </span>
                       </td>
                       <td className="px-4 py-4 text-center">
-                        <span className="text-sm text-white">{campaign.metrics.opened.toLocaleString()}</span>
+                        <span className="text-sm text-light-text dark:text-white">{campaign.metrics.opened.toLocaleString()}</span>
                       </td>
                       <td className="px-4 py-4 text-center">
-                        <span className="text-sm text-neon-mint font-medium">{campaign.metrics.replied.toLocaleString()}</span>
+                        <span className="text-sm text-emerald-pro-400 font-medium">{campaign.metrics.replied.toLocaleString()}</span>
                       </td>
                       <td className="px-4 py-4 text-center">
                         <span className={cn(
                           "text-sm font-semibold",
-                          openRateStatus === "success" && "text-neon-mint",
+                          openRateStatus === "success" && "text-emerald-pro-400",
                           openRateStatus === "warning" && "text-energy-orange",
                           openRateStatus === "critical" && "text-rose"
                         )}>
@@ -479,7 +479,7 @@ export default function CampaignsPage() {
                       <td className="px-4 py-4 text-center">
                         <span className={cn(
                           "text-sm font-semibold",
-                          replyRateStatus === "success" && "text-neon-mint",
+                          replyRateStatus === "success" && "text-emerald-pro-400",
                           replyRateStatus === "warning" && "text-energy-orange",
                           replyRateStatus === "critical" && "text-rose"
                         )}>
@@ -491,7 +491,7 @@ export default function CampaignsPage() {
                           {campaign.status === "active" ? (
                             <button
                               onClick={() => handleToggleStatus(campaign.id)}
-                              className="p-2 text-steel hover:text-energy-orange hover:bg-energy-orange/10 rounded-lg transition-colors"
+                              className="p-2 text-light-text-muted dark:text-steel hover:text-energy-orange hover:bg-energy-orange/10 rounded-lg transition-colors"
                               title="Pause campaign"
                             >
                               <Pause className="h-4 w-4" />
@@ -499,7 +499,7 @@ export default function CampaignsPage() {
                           ) : campaign.status === "paused" ? (
                             <button
                               onClick={() => handleToggleStatus(campaign.id)}
-                              className="p-2 text-steel hover:text-neon-mint hover:bg-neon-mint/10 rounded-lg transition-colors"
+                              className="p-2 text-light-text-muted dark:text-steel hover:text-emerald-pro-400 hover:bg-emerald-pro-400/10 rounded-lg transition-colors"
                               title="Resume campaign"
                             >
                               <Play className="h-4 w-4" />
@@ -507,26 +507,26 @@ export default function CampaignsPage() {
                           ) : null}
                           <Link
                             href={`/dashboard/campaigns/${campaign.id}`}
-                            className="p-2 text-steel hover:text-electric-cyan hover:bg-electric-cyan/10 rounded-lg transition-colors"
+                            className="p-2 text-light-text-muted dark:text-steel hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors"
                             title="View campaign"
                           >
                             <Eye className="h-4 w-4" />
                           </Link>
                           <Link
                             href={`/dashboard/campaigns/${campaign.id}/edit`}
-                            className="p-2 text-steel hover:text-electric-cyan hover:bg-electric-cyan/10 rounded-lg transition-colors"
+                            className="p-2 text-light-text-muted dark:text-steel hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors"
                             title="Edit campaign"
                           >
                             <Edit3 className="h-4 w-4" />
                           </Link>
                           <button
                             onClick={() => handleCopyCampaign(campaign)}
-                            className="p-2 text-steel hover:text-electric-cyan hover:bg-electric-cyan/10 rounded-lg transition-colors"
+                            className="p-2 text-light-text-muted dark:text-steel hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors"
                             title="Copy campaign"
                           >
                             <Copy className="h-4 w-4" />
                           </button>
-                          <button className="p-2 text-steel hover:text-white hover:bg-electric-cyan/10 rounded-lg transition-colors" title="More options">
+                          <button className="p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors" title="More options">
                             <MoreHorizontal className="h-4 w-4" />
                           </button>
                         </div>
@@ -539,16 +539,16 @@ export default function CampaignsPage() {
           </div>
 
           {/* Pagination */}
-          <div className="flex items-center justify-between px-6 py-4 border-t border-graphite/30">
-            <p className="text-sm text-steel">
-              Showing <span className="text-white font-medium">{filteredCampaigns.length}</span> of{" "}
-              <span className="text-white font-medium">{campaigns.length}</span> campaigns
+          <div className="flex items-center justify-between px-6 py-4 border-t border-border-default dark:border-graphite/30">
+            <p className="text-sm text-light-text-muted dark:text-steel">
+              Showing <span className="text-light-text dark:text-white font-medium">{filteredCampaigns.length}</span> of{" "}
+              <span className="text-light-text dark:text-white font-medium">{campaigns.length}</span> campaigns
             </p>
             <div className="flex items-center gap-2">
-              <Button variant="outline" size="sm" className="border-graphite/50 text-steel hover:text-white hover:border-electric-cyan/30" disabled>
+              <Button variant="outline" size="sm" className="border-border-default dark:border-graphite/50 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:border-emerald-pro-600/30" disabled>
                 Previous
               </Button>
-              <Button variant="outline" size="sm" className="border-graphite/50 text-steel hover:text-white hover:border-electric-cyan/30">
+              <Button variant="outline" size="sm" className="border-border-default dark:border-graphite/50 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:border-emerald-pro-600/30">
                 Next
               </Button>
             </div>
@@ -560,8 +560,8 @@ export default function CampaignsPage() {
           {/* Top Performing Campaigns */}
           <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="font-semibold text-white">Top Performing</h3>
-              <span className="text-xs text-steel">By reply rate</span>
+              <h3 className="font-semibold text-light-text dark:text-white">Top Performing</h3>
+              <span className="text-xs text-light-text-muted dark:text-steel">By reply rate</span>
             </div>
             <div className="space-y-3">
               {mockCampaigns
@@ -572,23 +572,23 @@ export default function CampaignsPage() {
                   <Link
                     key={campaign.id}
                     href={`/dashboard/campaigns/${campaign.id}`}
-                    className="flex items-center gap-4 p-3 rounded-xl border border-electric-cyan/10 bg-deep-space/50 hover:border-electric-cyan/30 transition-all"
+                    className="flex items-center gap-4 p-3 rounded-xl border border-emerald-pro-600/10 bg-white dark:bg-deep-space/50 hover:border-emerald-pro-600/30 transition-all"
                   >
                     <div className={cn(
                       "flex h-8 w-8 items-center justify-center rounded-lg font-mono text-sm font-bold",
-                      index === 0 && "bg-neon-mint/10 text-neon-mint border border-neon-mint/20",
-                      index === 1 && "bg-electric-cyan/10 text-electric-cyan border border-electric-cyan/20",
-                      index === 2 && "bg-quantum-violet/10 text-quantum-violet border border-quantum-violet/20"
+                      index === 0 && "bg-emerald-pro-400/10 text-emerald-pro-400 border border-emerald-pro-400/20",
+                      index === 1 && "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20",
+                      index === 2 && "bg-emerald-pro-500/10 text-emerald-pro-500 border border-emerald-pro-500/20"
                     )}>
                       #{index + 1}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium text-white truncate">{campaign.name}</p>
-                      <p className="text-xs text-steel">{campaign.metrics.sent.toLocaleString()} sent</p>
+                      <p className="text-sm font-medium text-light-text dark:text-white truncate">{campaign.name}</p>
+                      <p className="text-xs text-light-text-muted dark:text-steel">{campaign.metrics.sent.toLocaleString()} sent</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-sm font-semibold text-neon-mint">{campaign.metrics.replyRate}%</p>
-                      <p className="text-xs text-steel">reply rate</p>
+                      <p className="text-sm font-semibold text-emerald-pro-400">{campaign.metrics.replyRate}%</p>
+                      <p className="text-xs text-light-text-muted dark:text-steel">reply rate</p>
                     </div>
                   </Link>
                 ))}
@@ -598,8 +598,8 @@ export default function CampaignsPage() {
           {/* Campaigns Needing Attention */}
           <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="font-semibold text-white">Needs Attention</h3>
-              <span className="text-xs text-steel">Low performance</span>
+              <h3 className="font-semibold text-light-text dark:text-white">Needs Attention</h3>
+              <span className="text-xs text-light-text-muted dark:text-steel">Low performance</span>
             </div>
             <div className="space-y-3">
               {mockCampaigns
@@ -615,21 +615,21 @@ export default function CampaignsPage() {
                       <AlertCircle className="h-4 w-4 text-energy-orange" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium text-white truncate">{campaign.name}</p>
+                      <p className="text-sm font-medium text-light-text dark:text-white truncate">{campaign.name}</p>
                       <p className="text-xs text-energy-orange">
                         {campaign.metrics.openRate < 30 && `Low open rate (${campaign.metrics.openRate}%)`}
                         {campaign.metrics.openRate < 30 && campaign.metrics.replyRate < 2 && " • "}
                         {campaign.metrics.replyRate < 2 && `Low reply rate (${campaign.metrics.replyRate}%)`}
                       </p>
                     </div>
-                    <ChevronRight className="h-4 w-4 text-steel" />
+                    <ChevronRight className="h-4 w-4 text-light-text-muted dark:text-steel" />
                   </Link>
                 ))}
               {mockCampaigns.filter(c => c.metrics.sent > 0 && (c.metrics.openRate < 30 || c.metrics.replyRate < 2)).length === 0 && (
                 <div className="flex items-center justify-center py-8">
                   <div className="text-center">
-                    <CheckCircle2 className="h-10 w-10 text-neon-mint/30 mx-auto mb-2" />
-                    <p className="text-sm text-steel">All campaigns performing well!</p>
+                    <CheckCircle2 className="h-10 w-10 text-emerald-pro-400/30 mx-auto mb-2" />
+                    <p className="text-sm text-light-text-muted dark:text-steel">All campaigns performing well!</p>
                   </div>
                 </div>
               )}

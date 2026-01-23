@@ -51,9 +51,9 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-deep-space/50 to-midnight-blue/30" />
 
         {/* Enhanced ambient orbs */}
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-quantum-violet/15 rounded-full blur-[180px] animate-orb-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-electric-cyan/10 rounded-full blur-[150px] animate-orb-float-reverse" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-neon-mint/5 rounded-full blur-[200px]" />
+        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-emerald-pro-500/15 rounded-full blur-[180px] animate-orb-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-emerald-pro-600/10 rounded-full blur-[150px] animate-orb-float-reverse" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-emerald-pro-400/5 rounded-full blur-[200px]" />
 
         <Container className="relative z-10">
           <motion.div
@@ -68,19 +68,19 @@ export default function AboutPage() {
               transition={{ duration: 0.5 }}
               className="tech-badge mb-10"
             >
-              <Building2 className="w-4 h-4 text-quantum-violet" />
-              <span className="text-sm font-medium text-quantum-violet">About XGrowthOS</span>
-              <Sparkles className="w-4 h-4 text-quantum-violet" />
+              <Building2 className="w-4 h-4 text-emerald-pro-500" />
+              <span className="text-sm font-medium text-emerald-pro-500">About XGrowthOS</span>
+              <Sparkles className="w-4 h-4 text-emerald-pro-500" />
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-white mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-light-text dark:text-white mb-8">
               We&apos;re Building the Future of{" "}
               <span className="headline-underline gradient-text-cyan-violet block mt-2">
                 B2B Outbound
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto leading-relaxed">
-              XGrowthOS was founded with a simple mission: make <span className="text-electric-cyan font-semibold">AI-powered lead generation</span> accessible to every B2B company.
+              XGrowthOS was founded with a simple mission: make <span className="text-emerald-pro-600 font-semibold">AI-powered lead generation</span> accessible to every B2B company.
             </p>
           </motion.div>
         </Container>
@@ -106,8 +106,8 @@ export default function AboutPage() {
         />
 
         {/* Top and bottom borders */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-electric-cyan/30 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-quantum-violet/30 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-pro-600/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-pro-500/30 to-transparent" />
 
         <Container className="relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
@@ -123,7 +123,7 @@ export default function AboutPage() {
                 <p className="stat-number text-4xl md:text-5xl">
                   {stat.value}
                 </p>
-                <p className="text-steel mt-2">{stat.label}</p>
+                <p className="text-light-text-muted dark:text-steel mt-2">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -139,7 +139,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-10 text-center">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-10 text-center">
               Our <span className="headline-underline gradient-text-cyan-violet">Story</span>
             </h2>
             <div className="prose prose-lg prose-invert max-w-none space-y-6">
@@ -150,7 +150,7 @@ export default function AboutPage() {
                 transition={{ delay: 0.1 }}
                 className="text-silver/90 leading-relaxed text-lg"
               >
-                XGrowthOS was born from frustration. Our founder, <span className="text-electric-cyan font-semibold">Marcos Matthews</span>, spent years watching B2B companies struggle with cold outreach—either doing it poorly themselves or paying agencies that delivered inconsistent results.
+                XGrowthOS was born from frustration. Our founder, <span className="text-emerald-pro-600 font-semibold">Marcos Matthews</span>, spent years watching B2B companies struggle with cold outreach—either doing it poorly themselves or paying agencies that delivered inconsistent results.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, x: -20 }}
@@ -168,7 +168,7 @@ export default function AboutPage() {
                 transition={{ delay: 0.3 }}
                 className="text-silver/90 leading-relaxed text-lg"
               >
-                We built XGrowthOS to prove there&apos;s a better way. By combining <span className="text-quantum-violet font-semibold">cutting-edge AI</span> with deep expertise in deliverability, personalization, and sales psychology, we&apos;ve created a system that actually works—consistently, at scale.
+                We built XGrowthOS to prove there&apos;s a better way. By combining <span className="text-emerald-pro-500 font-semibold">cutting-edge AI</span> with deep expertise in deliverability, personalization, and sales psychology, we&apos;ve created a system that actually works—consistently, at scale.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, x: -20 }}
@@ -177,7 +177,7 @@ export default function AboutPage() {
                 transition={{ delay: 0.4 }}
                 className="text-silver/90 leading-relaxed text-lg"
               >
-                Today, our <span className="text-neon-mint font-semibold">5 AI engines</span> are ready to power lead generation for B2B companies. We&apos;re launching our founding partner program—join us in building the infrastructure for modern outbound sales.
+                Today, our <span className="text-emerald-pro-400 font-semibold">5 AI engines</span> are ready to power lead generation for B2B companies. We&apos;re launching our founding partner program—join us in building the infrastructure for modern outbound sales.
               </motion.p>
             </div>
           </motion.div>
@@ -197,7 +197,7 @@ export default function AboutPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
               Our <span className="headline-underline gradient-text-cyan-violet">Values</span>
             </h2>
             <p className="text-lg md:text-xl text-silver/90 max-w-2xl mx-auto">
@@ -217,29 +217,29 @@ export default function AboutPage() {
               >
                 {/* Accent line based on color */}
                 <div className={`absolute top-0 left-0 right-0 h-1 rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity ${
-                  value.color === 'cyan' ? 'bg-electric-cyan' :
-                  value.color === 'violet' ? 'bg-quantum-violet' :
-                  value.color === 'mint' ? 'bg-neon-mint' :
+                  value.color === 'cyan' ? 'bg-emerald-pro-600' :
+                  value.color === 'violet' ? 'bg-emerald-pro-500' :
+                  value.color === 'mint' ? 'bg-emerald-pro-400' :
                   'bg-energy-orange'
                 }`} />
 
                 <div className={`icon-container-animated ${value.color} mb-6`}>
                   <value.icon className={`h-6 w-6 ${
-                    value.color === 'cyan' ? 'text-electric-cyan' :
-                    value.color === 'violet' ? 'text-quantum-violet' :
-                    value.color === 'mint' ? 'text-neon-mint' :
+                    value.color === 'cyan' ? 'text-emerald-pro-600' :
+                    value.color === 'violet' ? 'text-emerald-pro-500' :
+                    value.color === 'mint' ? 'text-emerald-pro-400' :
                     'text-energy-orange'
                   }`} />
                 </div>
-                <h3 className={`text-xl lg:text-2xl font-sora font-semibold text-white mb-3 group-hover:${
-                  value.color === 'cyan' ? 'text-electric-cyan' :
-                  value.color === 'violet' ? 'text-quantum-violet' :
-                  value.color === 'mint' ? 'text-neon-mint' :
+                <h3 className={`text-xl lg:text-2xl font-sora font-semibold text-light-text dark:text-white mb-3 group-hover:${
+                  value.color === 'cyan' ? 'text-emerald-pro-600' :
+                  value.color === 'violet' ? 'text-emerald-pro-500' :
+                  value.color === 'mint' ? 'text-emerald-pro-400' :
                   'text-energy-orange'
                 } transition-colors`}>
                   {value.title}
                 </h3>
-                <p className="text-silver leading-relaxed group-hover:text-white/80 transition-colors">
+                <p className="text-silver leading-relaxed group-hover:text-light-text dark:text-white/80 transition-colors">
                   {value.description}
                 </p>
               </motion.div>
@@ -265,9 +265,9 @@ export default function AboutPage() {
               transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
               className="icon-container-animated violet mx-auto mb-8"
             >
-              <Users className="h-8 w-8 text-quantum-violet" />
+              <Users className="h-8 w-8 text-emerald-pro-500" />
             </motion.div>
-            <h3 className="text-2xl lg:text-3xl font-sora font-bold text-white mb-4">
+            <h3 className="text-2xl lg:text-3xl font-sora font-bold text-light-text dark:text-white mb-4">
               Join Our Team
             </h3>
             <p className="text-silver text-lg mb-8 max-w-md mx-auto">

@@ -33,9 +33,9 @@ const orbConfigs: Record<string, OrbConfig[]> = {
 };
 
 const orbColors = {
-  cyan: 'bg-gradient-radial from-electric-cyan/20 to-transparent',
-  violet: 'bg-gradient-radial from-quantum-violet/15 to-transparent',
-  mint: 'bg-gradient-radial from-neon-mint/12 to-transparent',
+  cyan: 'bg-gradient-radial from-emerald-pro-600/20 to-transparent',
+  violet: 'bg-gradient-radial from-emerald-pro-500/15 to-transparent',
+  mint: 'bg-gradient-radial from-emerald-pro-400/12 to-transparent',
 };
 
 export function AnimatedBackground({

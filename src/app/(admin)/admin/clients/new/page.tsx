@@ -123,13 +123,13 @@ export default function NewClientPage() {
     return (
       <div className="p-8 flex items-center justify-center min-h-[60vh]">
         <div className="text-center">
-          <div className="h-16 w-16 rounded-full bg-neon-mint/10 border border-neon-mint/30 flex items-center justify-center mx-auto mb-4">
-            <CheckCircle className="h-8 w-8 text-neon-mint" />
+          <div className="h-16 w-16 rounded-full bg-emerald-pro-400/10 border border-emerald-pro-400/30 flex items-center justify-center mx-auto mb-4">
+            <CheckCircle className="h-8 w-8 text-emerald-pro-400" />
           </div>
-          <h2 className="text-xl font-sora font-semibold text-white mb-2">
+          <h2 className="text-xl font-sora font-semibold text-light-text dark:text-white mb-2">
             Client Created Successfully
           </h2>
-          <p className="text-steel">Redirecting to clients list...</p>
+          <p className="text-light-text-muted dark:text-steel">Redirecting to clients list...</p>
         </div>
       </div>
     );
@@ -141,7 +141,7 @@ export default function NewClientPage() {
       <motion.div variants={itemVariants}>
         <Link
           href="/admin/clients"
-          className="inline-flex items-center gap-2 text-steel hover:text-electric-cyan transition-colors mb-6"
+          className="inline-flex items-center gap-2 text-light-text-muted dark:text-steel hover:text-emerald-pro-600 transition-colors mb-6"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to Clients
@@ -149,9 +149,9 @@ export default function NewClientPage() {
 
         {/* Header */}
         <div className="mb-8">
-          <p className="text-sm text-steel mb-1">Admin / Clients / <span className="text-quantum-violet">New</span></p>
-          <h1 className="text-2xl font-sora font-bold text-white">Add New Client</h1>
-          <p className="text-steel mt-1">
+          <p className="text-sm text-light-text-muted dark:text-steel mb-1">Admin / Clients / <span className="text-emerald-pro-500">New</span></p>
+          <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">Add New Client</h1>
+          <p className="text-light-text-muted dark:text-steel mt-1">
             Create a new client organization and subscription
           </p>
         </div>
@@ -162,14 +162,14 @@ export default function NewClientPage() {
           {/* Company Information */}
           <div className="glass-premium p-6">
             <div className="flex items-center gap-3 mb-6">
-              <div className="h-10 w-10 rounded-lg bg-electric-cyan/10 border border-electric-cyan/30 flex items-center justify-center">
-                <Building2 className="h-5 w-5 text-electric-cyan" />
+              <div className="h-10 w-10 rounded-lg bg-emerald-pro-600/10 border border-emerald-pro-600/30 flex items-center justify-center">
+                <Building2 className="h-5 w-5 text-emerald-pro-600" />
               </div>
               <div>
-                <h2 className="text-lg font-sora font-semibold text-white">
+                <h2 className="text-lg font-sora font-semibold text-light-text dark:text-white">
                   Company Information
                 </h2>
-                <p className="text-sm text-steel">Basic client details</p>
+                <p className="text-sm text-light-text-muted dark:text-steel">Basic client details</p>
               </div>
             </div>
 
@@ -184,7 +184,7 @@ export default function NewClientPage() {
                   onChange={handleChange}
                   placeholder="Enter company name"
                   required
-                  className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                  className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                 />
               </div>
 
@@ -198,7 +198,7 @@ export default function NewClientPage() {
                   value={formData.domain}
                   onChange={handleChange}
                   placeholder="example.com"
-                  className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                  className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                 />
               </div>
 
@@ -213,7 +213,7 @@ export default function NewClientPage() {
                     value={formData.industry}
                     onChange={handleChange}
                     required
-                    className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                    className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                   >
                     <option value="">Select industry</option>
                     {industries.map((industry) => (
@@ -232,7 +232,7 @@ export default function NewClientPage() {
                     name="employeeCount"
                     value={formData.employeeCount}
                     onChange={handleChange}
-                    className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                    className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                   >
                     <option value="">Select size</option>
                     {employeeRanges.map((range) => (
@@ -249,14 +249,14 @@ export default function NewClientPage() {
           {/* Contact Information */}
           <div className="glass-premium p-6">
             <div className="flex items-center gap-3 mb-6">
-              <div className="h-10 w-10 rounded-lg bg-quantum-violet/10 border border-quantum-violet/30 flex items-center justify-center">
-                <Mail className="h-5 w-5 text-quantum-violet" />
+              <div className="h-10 w-10 rounded-lg bg-emerald-pro-500/10 border border-emerald-pro-500/30 flex items-center justify-center">
+                <Mail className="h-5 w-5 text-emerald-pro-500" />
               </div>
               <div>
-                <h2 className="text-lg font-sora font-semibold text-white">
+                <h2 className="text-lg font-sora font-semibold text-light-text dark:text-white">
                   Contact Information
                 </h2>
-                <p className="text-sm text-steel">Primary contact details</p>
+                <p className="text-sm text-light-text-muted dark:text-steel">Primary contact details</p>
               </div>
             </div>
 
@@ -271,9 +271,9 @@ export default function NewClientPage() {
                 onChange={handleChange}
                 placeholder="contact@example.com"
                 required
-                className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
               />
-              <p className="text-xs text-steel mt-2">
+              <p className="text-xs text-light-text-muted dark:text-steel mt-2">
                 An invitation will be sent to this email address
               </p>
             </div>
@@ -282,14 +282,14 @@ export default function NewClientPage() {
           {/* Subscription */}
           <div className="glass-premium p-6">
             <div className="flex items-center gap-3 mb-6">
-              <div className="h-10 w-10 rounded-lg bg-neon-mint/10 border border-neon-mint/30 flex items-center justify-center">
-                <DollarSign className="h-5 w-5 text-neon-mint" />
+              <div className="h-10 w-10 rounded-lg bg-emerald-pro-400/10 border border-emerald-pro-400/30 flex items-center justify-center">
+                <DollarSign className="h-5 w-5 text-emerald-pro-400" />
               </div>
               <div>
-                <h2 className="text-lg font-sora font-semibold text-white">
+                <h2 className="text-lg font-sora font-semibold text-light-text dark:text-white">
                   Subscription
                 </h2>
-                <p className="text-sm text-steel">Plan and billing details</p>
+                <p className="text-sm text-light-text-muted dark:text-steel">Plan and billing details</p>
               </div>
             </div>
 
@@ -310,8 +310,8 @@ export default function NewClientPage() {
                       }
                       className={`p-3 rounded-lg border text-center transition-colors ${
                         formData.planType === plan.value
-                          ? "border-electric-cyan/50 bg-electric-cyan/10 text-white"
-                          : "border-graphite bg-deep-space/50 text-steel hover:border-electric-cyan/30"
+                          ? "border-emerald-pro-600/50 bg-emerald-pro-600/10 text-light-text dark:text-white"
+                          : "border-border-default dark:border-graphite bg-white dark:bg-deep-space/50 text-light-text-muted dark:text-steel hover:border-emerald-pro-600/30"
                       }`}
                     >
                       <p className="text-sm font-medium">{plan.label}</p>
@@ -330,7 +330,7 @@ export default function NewClientPage() {
                   Monthly Fee
                 </label>
                 <div className="relative">
-                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-steel">
+                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-light-text-muted dark:text-steel">
                     $
                   </span>
                   <input
@@ -339,10 +339,10 @@ export default function NewClientPage() {
                     value={formData.monthlyFee}
                     onChange={handleChange}
                     placeholder="0"
-                    className="w-full h-11 rounded-lg border border-graphite bg-deep-space pl-8 pr-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                    className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space pl-8 pr-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                   />
                 </div>
-                <p className="text-xs text-steel mt-2">
+                <p className="text-xs text-light-text-muted dark:text-steel mt-2">
                   Override the default plan price if needed
                 </p>
               </div>
@@ -356,10 +356,10 @@ export default function NewClientPage() {
                 <FileText className="h-5 w-5 text-energy-orange" />
               </div>
               <div>
-                <h2 className="text-lg font-sora font-semibold text-white">
+                <h2 className="text-lg font-sora font-semibold text-light-text dark:text-white">
                   Internal Notes
                 </h2>
-                <p className="text-sm text-steel">
+                <p className="text-sm text-light-text-muted dark:text-steel">
                   Additional information (not visible to client)
                 </p>
               </div>
@@ -371,7 +371,7 @@ export default function NewClientPage() {
               onChange={handleChange}
               placeholder="Any relevant notes about this client..."
               rows={4}
-              className="w-full rounded-lg border border-graphite bg-deep-space px-4 py-3 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50 resize-none"
+              className="w-full rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 py-3 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 resize-none"
             />
           </div>
 
@@ -379,7 +379,7 @@ export default function NewClientPage() {
           <div className="flex items-center justify-between pt-4">
             <Link
               href="/admin/clients"
-              className="px-4 py-2 border border-graphite text-steel rounded-lg hover:bg-midnight-blue/30 transition-colors"
+              className="px-4 py-2 border border-border-default dark:border-graphite text-light-text-muted dark:text-steel rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors"
             >
               Cancel
             </Link>

@@ -54,9 +54,9 @@ export default function ResourcesPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-deep-space/50 to-midnight-blue/30" />
 
         {/* Enhanced ambient orbs */}
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-quantum-violet/15 rounded-full blur-[150px] animate-orb-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-electric-cyan/12 rounded-full blur-[130px] animate-orb-float-reverse" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neon-mint/5 rounded-full blur-[180px]" />
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-emerald-pro-500/15 rounded-full blur-[150px] animate-orb-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-emerald-pro-600/12 rounded-full blur-[130px] animate-orb-float-reverse" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-pro-400/5 rounded-full blur-[180px]" />
 
         <Container className="relative z-10">
           <motion.div
@@ -71,19 +71,19 @@ export default function ResourcesPage() {
               transition={{ duration: 0.5 }}
               className="tech-badge mb-8"
             >
-              <Download className="w-4 h-4 text-quantum-violet" />
-              <span className="text-sm font-medium text-quantum-violet">Free Resources</span>
-              <Zap className="w-4 h-4 text-quantum-violet" />
+              <Download className="w-4 h-4 text-emerald-pro-500" />
+              <span className="text-sm font-medium text-emerald-pro-500">Free Resources</span>
+              <Zap className="w-4 h-4 text-emerald-pro-500" />
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-white mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-light-text dark:text-white mb-8">
               Resources to Accelerate{" "}
               <span className="headline-underline gradient-text-cyan-violet block mt-2">
                 Your Growth
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto leading-relaxed">
-              Guides, templates, and tools to help you <span className="text-quantum-violet font-semibold">master B2B lead generation</span>.
+              Guides, templates, and tools to help you <span className="text-emerald-pro-500 font-semibold">master B2B lead generation</span>.
             </p>
           </motion.div>
         </Container>
@@ -99,9 +99,9 @@ export default function ResourcesPage() {
             {resources.map((resource, index) => {
               const iconColors = ['cyan', 'violet', 'mint', 'orange', 'cyan', 'violet'];
               const iconColor = iconColors[index % iconColors.length];
-              const textColorClass = iconColor === 'cyan' ? 'text-electric-cyan' :
-                                    iconColor === 'violet' ? 'text-quantum-violet' :
-                                    iconColor === 'mint' ? 'text-neon-mint' : 'text-energy-orange';
+              const textColorClass = iconColor === 'cyan' ? 'text-emerald-pro-600' :
+                                    iconColor === 'violet' ? 'text-emerald-pro-500' :
+                                    iconColor === 'mint' ? 'text-emerald-pro-400' : 'text-energy-orange';
 
               return (
                 <motion.div
@@ -119,22 +119,22 @@ export default function ResourcesPage() {
                       </div>
 
                       {/* Type */}
-                      <span className="inline-block px-3 py-1 rounded-full bg-quantum-violet/10 text-quantum-violet text-xs font-medium mb-3">
+                      <span className="inline-block px-3 py-1 rounded-full bg-emerald-pro-500/10 text-emerald-pro-500 text-xs font-medium mb-3">
                         {resource.type}
                       </span>
 
                       {/* Title */}
-                      <h2 className="text-xl font-sora font-semibold text-white mb-2 group-hover:text-gradient transition-all">
+                      <h2 className="text-xl font-sora font-semibold text-light-text dark:text-white mb-2 group-hover:text-gradient transition-all">
                         {resource.title}
                       </h2>
 
                       {/* Description */}
-                      <p className="text-silver text-sm mb-4 group-hover:text-white/80 transition-colors">
+                      <p className="text-silver text-sm mb-4 group-hover:text-light-text dark:text-white/80 transition-colors">
                         {resource.description}
                       </p>
 
                       {/* CTA */}
-                      <div className="flex items-center gap-2 text-electric-cyan text-sm font-medium group-hover:gap-3 transition-all">
+                      <div className="flex items-center gap-2 text-emerald-pro-600 text-sm font-medium group-hover:gap-3 transition-all">
                         Download free
                         <ArrowRight className="h-4 w-4" />
                       </div>

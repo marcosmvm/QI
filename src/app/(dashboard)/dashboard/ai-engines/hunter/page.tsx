@@ -172,9 +172,9 @@ const referralLeads = [
 ];
 
 const qualificationPipeline = [
-  { stage: "Replies Received", count: 1247, color: "electric-cyan" },
-  { stage: "Positive Intent", count: 847, color: "quantum-violet" },
-  { stage: "Qualified Lead", count: 612, color: "neon-mint" },
+  { stage: "Replies Received", count: 1247, color: "emerald-pro-600" },
+  { stage: "Positive Intent", count: 847, color: "emerald-pro-500" },
+  { stage: "Qualified Lead", count: 612, color: "emerald-pro-400" },
   { stage: "Meeting Ready", count: 234, color: "energy-orange" },
 ];
 
@@ -222,28 +222,28 @@ export default function HunterPage() {
   const getSentimentColor = (sentiment: string) => {
     switch (sentiment) {
       case "positive":
-        return { bg: "bg-neon-mint/10", text: "text-neon-mint", border: "border-neon-mint/30", icon: ThumbsUp };
+        return { bg: "bg-emerald-pro-400/10", text: "text-emerald-pro-400", border: "border-emerald-pro-400/30", icon: ThumbsUp };
       case "neutral":
         return { bg: "bg-energy-orange/10", text: "text-energy-orange", border: "border-energy-orange/30", icon: Minus };
       case "negative":
         return { bg: "bg-rose/10", text: "text-rose", border: "border-rose/30", icon: ThumbsDown };
       default:
-        return { bg: "bg-steel/10", text: "text-steel", border: "border-steel/30", icon: Minus };
+        return { bg: "bg-steel/10", text: "text-light-text-muted dark:text-steel", border: "border-steel/30", icon: Minus };
     }
   };
 
   const getActionLabel = (action: string) => {
     switch (action) {
       case "meeting_scheduled":
-        return { label: "Meeting Scheduled", color: "text-neon-mint" };
+        return { label: "Meeting Scheduled", color: "text-emerald-pro-400" };
       case "follow_up_sent":
-        return { label: "Follow-up Sent", color: "text-electric-cyan" };
+        return { label: "Follow-up Sent", color: "text-emerald-pro-600" };
       case "nurture_sequence":
-        return { label: "Added to Nurture", color: "text-quantum-violet" };
+        return { label: "Added to Nurture", color: "text-emerald-pro-500" };
       case "unsubscribed":
         return { label: "Unsubscribed", color: "text-rose" };
       default:
-        return { label: "Pending Review", color: "text-steel" };
+        return { label: "Pending Review", color: "text-light-text-muted dark:text-steel" };
     }
   };
 
@@ -256,13 +256,13 @@ export default function HunterPage() {
       {/* Page Header */}
       <motion.div variants={itemVariants}>
         <div className="mb-8">
-          <div className="flex items-center gap-2 text-sm text-steel mb-2">
-            <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
+          <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-2">
+            <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
             <span>/</span>
-            <span className="text-electric-cyan">The Hunter</span>
+            <span className="text-emerald-pro-600">The Hunter</span>
           </div>
-          <h1 className="text-2xl font-sora font-bold text-white">The Hunter</h1>
-          <p className="text-steel mt-1">Reply-Based Lead Expansion Engine</p>
+          <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">The Hunter</h1>
+          <p className="text-light-text-muted dark:text-steel mt-1">Reply-Based Lead Expansion Engine</p>
         </div>
       </motion.div>
 
@@ -279,27 +279,27 @@ export default function HunterPage() {
               </div>
               <div>
                 <div className="flex items-center gap-3">
-                  <h2 className="text-2xl font-sora font-bold text-white">Hunter Engine</h2>
-                  <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-neon-mint/15 border border-neon-mint/30">
+                  <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white">Hunter Engine</h2>
+                  <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-pro-400/15 border border-emerald-pro-400/30">
                     <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-mint opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-neon-mint"></span>
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-pro-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-pro-400"></span>
                     </span>
-                    <span className="text-sm font-medium text-neon-mint">ACTIVE</span>
+                    <span className="text-sm font-medium text-emerald-pro-400">ACTIVE</span>
                   </span>
                 </div>
-                <p className="text-steel mt-1">Converting positive replies into qualified opportunities</p>
+                <p className="text-light-text-muted dark:text-steel mt-1">Converting positive replies into qualified opportunities</p>
               </div>
             </div>
 
             <div className="flex items-center gap-4">
               <div className="text-right">
-                <p className="text-sm text-steel">Last Processed</p>
-                <p className="text-white font-medium">{overallStats.lastProcessed}</p>
+                <p className="text-sm text-light-text-muted dark:text-steel">Last Processed</p>
+                <p className="text-light-text dark:text-white font-medium">{overallStats.lastProcessed}</p>
               </div>
               <div className="text-right">
-                <p className="text-sm text-steel">Today's Replies</p>
-                <p className="text-white font-medium">47 new</p>
+                <p className="text-sm text-light-text-muted dark:text-steel">Today's Replies</p>
+                <p className="text-light-text dark:text-white font-medium">47 new</p>
               </div>
               <Button
                 variant="outline"
@@ -318,50 +318,50 @@ export default function HunterPage() {
         <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-3">
-              <MessageSquare className="h-5 w-5 text-electric-cyan" />
-              <span className="text-neon-mint text-sm font-medium flex items-center gap-1">
+              <MessageSquare className="h-5 w-5 text-emerald-pro-600" />
+              <span className="text-emerald-pro-400 text-sm font-medium flex items-center gap-1">
                 <TrendingUp className="h-4 w-4" /> 12%
               </span>
             </div>
-            <p className="text-3xl font-sora font-bold text-white">{overallStats.repliesProcessed.toLocaleString()}</p>
-            <p className="text-sm text-steel mt-1">Total Replies Processed</p>
-            <p className="text-xs text-steel mt-2">This month</p>
+            <p className="text-3xl font-sora font-bold text-light-text dark:text-white">{overallStats.repliesProcessed.toLocaleString()}</p>
+            <p className="text-sm text-light-text-muted dark:text-steel mt-1">Total Replies Processed</p>
+            <p className="text-xs text-light-text-muted dark:text-steel mt-2">This month</p>
           </div>
 
           <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-3">
-              <ThumbsUp className="h-5 w-5 text-neon-mint" />
-              <span className="text-neon-mint text-sm font-medium flex items-center gap-1">
+              <ThumbsUp className="h-5 w-5 text-emerald-pro-400" />
+              <span className="text-emerald-pro-400 text-sm font-medium flex items-center gap-1">
                 <TrendingUp className="h-4 w-4" /> 5%
               </span>
             </div>
-            <p className="text-3xl font-sora font-bold text-white">{overallStats.positiveRate}%</p>
-            <p className="text-sm text-steel mt-1">Positive Reply Rate</p>
-            <p className="text-xs text-steel mt-2">Industry avg: 45%</p>
+            <p className="text-3xl font-sora font-bold text-light-text dark:text-white">{overallStats.positiveRate}%</p>
+            <p className="text-sm text-light-text-muted dark:text-steel mt-1">Positive Reply Rate</p>
+            <p className="text-xs text-light-text-muted dark:text-steel mt-2">Industry avg: 45%</p>
           </div>
 
           <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-3">
-              <Users className="h-5 w-5 text-quantum-violet" />
-              <span className="text-neon-mint text-sm font-medium flex items-center gap-1">
+              <Users className="h-5 w-5 text-emerald-pro-500" />
+              <span className="text-emerald-pro-400 text-sm font-medium flex items-center gap-1">
                 <TrendingUp className="h-4 w-4" /> 18%
               </span>
             </div>
-            <p className="text-3xl font-sora font-bold text-white">{overallStats.leadsQualified.toLocaleString()}</p>
-            <p className="text-sm text-steel mt-1">Leads Qualified</p>
-            <p className="text-xs text-steel mt-2">From positive replies</p>
+            <p className="text-3xl font-sora font-bold text-light-text dark:text-white">{overallStats.leadsQualified.toLocaleString()}</p>
+            <p className="text-sm text-light-text-muted dark:text-steel mt-1">Leads Qualified</p>
+            <p className="text-xs text-light-text-muted dark:text-steel mt-2">From positive replies</p>
           </div>
 
           <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-3">
               <UserPlus className="h-5 w-5 text-energy-orange" />
-              <span className="text-neon-mint text-sm font-medium flex items-center gap-1">
+              <span className="text-emerald-pro-400 text-sm font-medium flex items-center gap-1">
                 <TrendingUp className="h-4 w-4" /> 24%
               </span>
             </div>
-            <p className="text-3xl font-sora font-bold text-white">{overallStats.referralsGenerated}</p>
-            <p className="text-sm text-steel mt-1">Referrals Generated</p>
-            <p className="text-xs text-steel mt-2">New leads from replies</p>
+            <p className="text-3xl font-sora font-bold text-light-text dark:text-white">{overallStats.referralsGenerated}</p>
+            <p className="text-sm text-light-text-muted dark:text-steel mt-1">Referrals Generated</p>
+            <p className="text-xs text-light-text-muted dark:text-steel mt-2">New leads from replies</p>
           </div>
         </motion.div>
 
@@ -369,25 +369,25 @@ export default function HunterPage() {
         <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Sentiment Overview */}
           <div className="glass-premium p-6">
-            <h3 className="text-lg font-sora font-semibold text-white mb-6">Reply Sentiment Analysis</h3>
+            <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-6">Reply Sentiment Analysis</h3>
 
             <div className="space-y-4">
               {/* Positive */}
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
-                    <ThumbsUp className="h-4 w-4 text-neon-mint" />
-                    <span className="text-white font-medium">Positive</span>
+                    <ThumbsUp className="h-4 w-4 text-emerald-pro-400" />
+                    <span className="text-light-text dark:text-white font-medium">Positive</span>
                   </div>
-                  <span className="text-neon-mint font-semibold">{replyBreakdown.positive}</span>
+                  <span className="text-emerald-pro-400 font-semibold">{replyBreakdown.positive}</span>
                 </div>
                 <div className="h-3 rounded-full bg-graphite/30 overflow-hidden">
                   <div
-                    className="h-full bg-neon-mint rounded-full"
+                    className="h-full bg-emerald-pro-400 rounded-full"
                     style={{ width: `${(replyBreakdown.positive / replyBreakdown.total) * 100}%` }}
                   />
                 </div>
-                <p className="text-xs text-steel mt-1">{((replyBreakdown.positive / replyBreakdown.total) * 100).toFixed(1)}% of replies</p>
+                <p className="text-xs text-light-text-muted dark:text-steel mt-1">{((replyBreakdown.positive / replyBreakdown.total) * 100).toFixed(1)}% of replies</p>
               </div>
 
               {/* Neutral */}
@@ -395,7 +395,7 @@ export default function HunterPage() {
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
                     <Minus className="h-4 w-4 text-energy-orange" />
-                    <span className="text-white font-medium">Neutral</span>
+                    <span className="text-light-text dark:text-white font-medium">Neutral</span>
                   </div>
                   <span className="text-energy-orange font-semibold">{replyBreakdown.neutral}</span>
                 </div>
@@ -405,7 +405,7 @@ export default function HunterPage() {
                     style={{ width: `${(replyBreakdown.neutral / replyBreakdown.total) * 100}%` }}
                   />
                 </div>
-                <p className="text-xs text-steel mt-1">{((replyBreakdown.neutral / replyBreakdown.total) * 100).toFixed(1)}% of replies</p>
+                <p className="text-xs text-light-text-muted dark:text-steel mt-1">{((replyBreakdown.neutral / replyBreakdown.total) * 100).toFixed(1)}% of replies</p>
               </div>
 
               {/* Negative */}
@@ -413,7 +413,7 @@ export default function HunterPage() {
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
                     <ThumbsDown className="h-4 w-4 text-rose" />
-                    <span className="text-white font-medium">Negative</span>
+                    <span className="text-light-text dark:text-white font-medium">Negative</span>
                   </div>
                   <span className="text-rose font-semibold">{replyBreakdown.negative}</span>
                 </div>
@@ -423,42 +423,42 @@ export default function HunterPage() {
                     style={{ width: `${(replyBreakdown.negative / replyBreakdown.total) * 100}%` }}
                   />
                 </div>
-                <p className="text-xs text-steel mt-1">{((replyBreakdown.negative / replyBreakdown.total) * 100).toFixed(1)}% of replies</p>
+                <p className="text-xs text-light-text-muted dark:text-steel mt-1">{((replyBreakdown.negative / replyBreakdown.total) * 100).toFixed(1)}% of replies</p>
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-graphite/30">
+            <div className="mt-6 pt-4 border-t border-border-default dark:border-graphite/30">
               <div className="flex items-center justify-between text-sm">
-                <span className="text-steel">Total Replies</span>
-                <span className="text-white font-bold">{replyBreakdown.total.toLocaleString()}</span>
+                <span className="text-light-text-muted dark:text-steel">Total Replies</span>
+                <span className="text-light-text dark:text-white font-bold">{replyBreakdown.total.toLocaleString()}</span>
               </div>
             </div>
           </div>
 
           {/* Qualification Pipeline */}
           <div className="lg:col-span-2 glass-premium p-6">
-            <h3 className="text-lg font-sora font-semibold text-white mb-6">Lead Qualification Pipeline</h3>
+            <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-6">Lead Qualification Pipeline</h3>
 
             <div className="flex items-center justify-between gap-4">
               {qualificationPipeline.map((stage, index) => (
                 <div key={stage.stage} className="flex-1 relative">
                   <div className={cn(
                     "rounded-xl border p-4 text-center",
-                    stage.color === "electric-cyan" && "border-electric-cyan/30 bg-electric-cyan/10",
-                    stage.color === "quantum-violet" && "border-quantum-violet/30 bg-quantum-violet/10",
-                    stage.color === "neon-mint" && "border-neon-mint/30 bg-neon-mint/10",
+                    stage.color === "emerald-pro-600" && "border-emerald-pro-600/30 bg-emerald-pro-600/10",
+                    stage.color === "emerald-pro-500" && "border-emerald-pro-500/30 bg-emerald-pro-500/10",
+                    stage.color === "emerald-pro-400" && "border-emerald-pro-400/30 bg-emerald-pro-400/10",
                     stage.color === "energy-orange" && "border-energy-orange/30 bg-energy-orange/10"
                   )}>
                     <p className={cn(
                       "text-2xl font-sora font-bold",
-                      stage.color === "electric-cyan" && "text-electric-cyan",
-                      stage.color === "quantum-violet" && "text-quantum-violet",
-                      stage.color === "neon-mint" && "text-neon-mint",
+                      stage.color === "emerald-pro-600" && "text-emerald-pro-600",
+                      stage.color === "emerald-pro-500" && "text-emerald-pro-500",
+                      stage.color === "emerald-pro-400" && "text-emerald-pro-400",
                       stage.color === "energy-orange" && "text-energy-orange"
                     )}>
                       {stage.count.toLocaleString()}
                     </p>
-                    <p className="text-xs text-steel mt-1">{stage.stage}</p>
+                    <p className="text-xs text-light-text-muted dark:text-steel mt-1">{stage.stage}</p>
                   </div>
                   {index < qualificationPipeline.length - 1 && (
                     <ArrowRight className="absolute top-1/2 -right-3 -translate-y-1/2 h-5 w-5 text-graphite z-10" />
@@ -468,17 +468,17 @@ export default function HunterPage() {
             </div>
 
             <div className="mt-6 grid grid-cols-3 gap-4">
-              <div className="p-4 rounded-lg bg-deep-space/50 border border-graphite/30 text-center">
-                <p className="text-2xl font-sora font-bold text-neon-mint">68%</p>
-                <p className="text-xs text-steel mt-1">Positive → Qualified</p>
+              <div className="p-4 rounded-lg bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30 text-center">
+                <p className="text-2xl font-sora font-bold text-emerald-pro-400">68%</p>
+                <p className="text-xs text-light-text-muted dark:text-steel mt-1">Positive → Qualified</p>
               </div>
-              <div className="p-4 rounded-lg bg-deep-space/50 border border-graphite/30 text-center">
-                <p className="text-2xl font-sora font-bold text-quantum-violet">38%</p>
-                <p className="text-xs text-steel mt-1">Qualified → Meeting</p>
+              <div className="p-4 rounded-lg bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30 text-center">
+                <p className="text-2xl font-sora font-bold text-emerald-pro-500">38%</p>
+                <p className="text-xs text-light-text-muted dark:text-steel mt-1">Qualified → Meeting</p>
               </div>
-              <div className="p-4 rounded-lg bg-deep-space/50 border border-graphite/30 text-center">
+              <div className="p-4 rounded-lg bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30 text-center">
                 <p className="text-2xl font-sora font-bold text-energy-orange">19%</p>
-                <p className="text-xs text-steel mt-1">Reply → Meeting</p>
+                <p className="text-xs text-light-text-muted dark:text-steel mt-1">Reply → Meeting</p>
               </div>
             </div>
           </div>
@@ -489,9 +489,9 @@ export default function HunterPage() {
           {/* Recent Replies */}
           <div className="lg:col-span-2 glass-premium p-6">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-sora font-semibold text-white">Recent Replies</h3>
+              <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white">Recent Replies</h3>
               <div className="flex items-center gap-2">
-                <div className="flex items-center gap-1 p-1 rounded-lg bg-deep-space/50 border border-graphite/30">
+                <div className="flex items-center gap-1 p-1 rounded-lg bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30">
                   {(["all", "positive", "neutral", "negative"] as const).map((filter) => (
                     <button
                       key={filter}
@@ -499,8 +499,8 @@ export default function HunterPage() {
                       className={cn(
                         "px-3 py-1.5 rounded-md text-xs font-medium transition-colors capitalize",
                         sentimentFilter === filter
-                          ? "bg-electric-cyan/20 text-electric-cyan"
-                          : "text-steel hover:text-white"
+                          ? "bg-emerald-pro-600/20 text-emerald-pro-600"
+                          : "text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
                       )}
                     >
                       {filter}
@@ -518,7 +518,7 @@ export default function HunterPage() {
                 return (
                   <div
                     key={reply.id}
-                    className="p-4 rounded-xl border border-graphite/30 bg-deep-space/50 hover:border-electric-cyan/30 transition-all"
+                    className="p-4 rounded-xl border border-border-default dark:border-graphite/30 bg-white dark:bg-deep-space/50 hover:border-emerald-pro-600/30 transition-all"
                   >
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex items-center gap-3">
@@ -531,10 +531,10 @@ export default function HunterPage() {
                         </div>
                         <div>
                           <div className="flex items-center gap-2">
-                            <p className="font-medium text-white">{reply.leadName}</p>
+                            <p className="font-medium text-light-text dark:text-white">{reply.leadName}</p>
                             {reply.score >= 90 && <Star className="h-4 w-4 text-energy-orange fill-energy-orange" />}
                           </div>
-                          <div className="flex items-center gap-2 text-sm text-steel">
+                          <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel">
                             <Building2 className="h-3.5 w-3.5" />
                             <span>{reply.company}</span>
                           </div>
@@ -542,17 +542,17 @@ export default function HunterPage() {
                       </div>
                       <div className="text-right">
                         <span className={cn("text-sm font-medium", action.color)}>{action.label}</span>
-                        <p className="text-xs text-steel mt-0.5">{reply.receivedAt}</p>
+                        <p className="text-xs text-light-text-muted dark:text-steel mt-0.5">{reply.receivedAt}</p>
                       </div>
                     </div>
 
                     <div className="pl-13">
-                      <p className="text-sm text-white mb-1">{reply.subject}</p>
-                      <p className="text-sm text-steel italic">"{reply.preview}"</p>
+                      <p className="text-sm text-light-text dark:text-white mb-1">{reply.subject}</p>
+                      <p className="text-sm text-light-text-muted dark:text-steel italic">"{reply.preview}"</p>
                       <div className="flex items-center gap-4 mt-3 text-xs">
-                        <span className="text-steel">Campaign: <span className="text-electric-cyan">{reply.campaign}</span></span>
-                        <span className="text-steel">Score: <span className={cn(
-                          reply.score >= 80 ? "text-neon-mint" : reply.score >= 50 ? "text-energy-orange" : "text-rose"
+                        <span className="text-light-text-muted dark:text-steel">Campaign: <span className="text-emerald-pro-600">{reply.campaign}</span></span>
+                        <span className="text-light-text-muted dark:text-steel">Score: <span className={cn(
+                          reply.score >= 80 ? "text-emerald-pro-400" : reply.score >= 50 ? "text-energy-orange" : "text-rose"
                         )}>{reply.score}</span></span>
                       </div>
                     </div>
@@ -570,13 +570,13 @@ export default function HunterPage() {
           {/* Referral Leads */}
           <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-sora font-semibold text-white">Referral Leads</h3>
+              <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white">Referral Leads</h3>
               <span className="text-xs px-2 py-1 rounded-full bg-energy-orange/10 text-energy-orange border border-energy-orange/20">
                 {referralLeads.length} new
               </span>
             </div>
 
-            <p className="text-sm text-steel mb-4">
+            <p className="text-sm text-light-text-muted dark:text-steel mb-4">
               New leads generated from positive reply mentions and referrals.
             </p>
 
@@ -584,33 +584,33 @@ export default function HunterPage() {
               {referralLeads.map((lead) => (
                 <div
                   key={lead.id}
-                  className="p-4 rounded-xl border border-graphite/30 bg-deep-space/50 hover:border-electric-cyan/30 transition-all"
+                  className="p-4 rounded-xl border border-border-default dark:border-graphite/30 bg-white dark:bg-deep-space/50 hover:border-emerald-pro-600/30 transition-all"
                 >
                   <div className="flex items-start justify-between mb-2">
                     <div>
-                      <p className="font-medium text-white">{lead.name}</p>
-                      <p className="text-sm text-steel">{lead.title}</p>
+                      <p className="font-medium text-light-text dark:text-white">{lead.name}</p>
+                      <p className="text-sm text-light-text-muted dark:text-steel">{lead.title}</p>
                     </div>
                     <span className={cn(
                       "text-xs px-2 py-0.5 rounded-full capitalize",
                       lead.status === "new"
-                        ? "bg-electric-cyan/10 text-electric-cyan border border-electric-cyan/20"
-                        : "bg-quantum-violet/10 text-quantum-violet border border-quantum-violet/20"
+                        ? "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20"
+                        : "bg-emerald-pro-500/10 text-emerald-pro-500 border border-emerald-pro-500/20"
                     )}>
                       {lead.status}
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-2 text-sm text-steel mb-2">
+                  <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-2">
                     <Building2 className="h-3.5 w-3.5" />
                     <span>{lead.company}</span>
                   </div>
 
                   <div className="flex items-center justify-between text-xs">
-                    <span className="text-steel">
-                      Referred by <span className="text-quantum-violet">{lead.referredBy}</span>
+                    <span className="text-light-text-muted dark:text-steel">
+                      Referred by <span className="text-emerald-pro-500">{lead.referredBy}</span>
                     </span>
-                    <span className="text-neon-mint font-medium">Score: {lead.score}</span>
+                    <span className="text-emerald-pro-400 font-medium">Score: {lead.score}</span>
                   </div>
                 </div>
               ))}
@@ -626,8 +626,8 @@ export default function HunterPage() {
         {/* Campaign Performance */}
         <motion.div variants={itemVariants} className="glass-premium p-6">
           <div className="flex items-center justify-between mb-6">
-            <h3 className="text-lg font-sora font-semibold text-white">Campaign Reply Performance</h3>
-            <Button variant="ghost" size="sm" className="text-electric-cyan hover:text-electric-cyan/80">
+            <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white">Campaign Reply Performance</h3>
+            <Button variant="ghost" size="sm" className="text-emerald-pro-600 hover:text-emerald-pro-600/80">
               View Details
             </Button>
           </div>
@@ -635,35 +635,35 @@ export default function HunterPage() {
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="border-b border-graphite/50">
-                  <th className="text-left text-sm font-medium text-steel pb-4">Campaign</th>
-                  <th className="text-center text-sm font-medium text-steel pb-4">Total Replies</th>
-                  <th className="text-center text-sm font-medium text-steel pb-4">Positive</th>
-                  <th className="text-center text-sm font-medium text-steel pb-4">Qualified</th>
-                  <th className="text-center text-sm font-medium text-steel pb-4">Meetings</th>
-                  <th className="text-right text-sm font-medium text-steel pb-4">Conversion</th>
+                <tr className="border-b border-border-default dark:border-graphite/50">
+                  <th className="text-left text-sm font-medium text-light-text-muted dark:text-steel pb-4">Campaign</th>
+                  <th className="text-center text-sm font-medium text-light-text-muted dark:text-steel pb-4">Total Replies</th>
+                  <th className="text-center text-sm font-medium text-light-text-muted dark:text-steel pb-4">Positive</th>
+                  <th className="text-center text-sm font-medium text-light-text-muted dark:text-steel pb-4">Qualified</th>
+                  <th className="text-center text-sm font-medium text-light-text-muted dark:text-steel pb-4">Meetings</th>
+                  <th className="text-right text-sm font-medium text-light-text-muted dark:text-steel pb-4">Conversion</th>
                 </tr>
               </thead>
               <tbody>
                 {campaignPerformance.map((campaign, index) => (
-                  <tr key={index} className="border-b border-graphite/30 last:border-0 hover:bg-electric-cyan/5 transition-colors">
+                  <tr key={index} className="border-b border-border-default dark:border-graphite/30 last:border-0 hover:bg-emerald-pro-600/5 transition-colors">
                     <td className="py-4">
-                      <span className="text-white font-medium">{campaign.name}</span>
+                      <span className="text-light-text dark:text-white font-medium">{campaign.name}</span>
                     </td>
                     <td className="py-4 text-center">
                       <span className="text-silver">{campaign.replies}</span>
                     </td>
                     <td className="py-4 text-center">
-                      <span className="text-neon-mint font-semibold">{campaign.positive}</span>
+                      <span className="text-emerald-pro-400 font-semibold">{campaign.positive}</span>
                     </td>
                     <td className="py-4 text-center">
-                      <span className="text-quantum-violet font-semibold">{campaign.qualified}</span>
+                      <span className="text-emerald-pro-500 font-semibold">{campaign.qualified}</span>
                     </td>
                     <td className="py-4 text-center">
                       <span className="text-energy-orange font-semibold">{campaign.meetings}</span>
                     </td>
                     <td className="py-4 text-right">
-                      <span className="text-neon-mint font-semibold">
+                      <span className="text-emerald-pro-400 font-semibold">
                         {((campaign.meetings / campaign.replies) * 100).toFixed(1)}%
                       </span>
                     </td>

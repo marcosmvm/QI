@@ -34,7 +34,7 @@ export interface Industry {
   shortDescription: string;
   longDescription: string;
   icon: LucideIcon;
-  color: "electric-cyan" | "quantum-violet" | "neon-mint" | "energy-orange";
+  color: "emerald-pro-600" | "emerald-pro-500" | "emerald-pro-400" | "energy-orange";
   stats: IndustryStat[];
   challenges: IndustryChallenge[];
   solutions: string[];
@@ -49,7 +49,7 @@ export const industries: Industry[] = [
     shortDescription: "Drive demos, trials, and enterprise contracts for software companies at every stage.",
     longDescription: "SaaS companies need a predictable pipeline to hit aggressive growth targets. We've helped hundreds of software companies—from seed-stage startups to public companies—build scalable outbound engines that deliver qualified demos and trials.",
     icon: Cloud,
-    color: "electric-cyan",
+    color: "emerald-pro-600",
     stats: [
       { value: "200+", label: "SaaS Clients" },
       { value: "35%", label: "Avg Open Rate" },
@@ -77,7 +77,7 @@ export const industries: Industry[] = [
     shortDescription: "Compliant outreach to healthcare providers, payers, and health tech buyers.",
     longDescription: "Healthcare sales require specialized knowledge of compliance requirements, buying committees, and industry-specific pain points. Our team has deep experience selling to hospitals, health systems, payers, and healthcare technology companies.",
     icon: HeartPulse,
-    color: "neon-mint",
+    color: "emerald-pro-400",
     stats: [
       { value: "50+", label: "Healthcare Clients" },
       { value: "HIPAA", label: "Compliant Processes" },
@@ -105,7 +105,7 @@ export const industries: Industry[] = [
     shortDescription: "Compliant outreach to banks, asset managers, fintech, and insurance companies.",
     longDescription: "Financial services buyers demand precision, compliance, and clear value. We help fintech companies, banks, and financial services providers reach CFOs, treasurers, and financial operations leaders with messaging that speaks their language.",
     icon: Landmark,
-    color: "quantum-violet",
+    color: "emerald-pro-500",
     stats: [
       { value: "75+", label: "Finance Clients" },
       { value: "SOC2", label: "Compliant" },
@@ -133,7 +133,7 @@ export const industries: Industry[] = [
     shortDescription: "Reach CMOs and marketing directors with data-driven messaging that demonstrates clear ROI.",
     longDescription: "Marketing technology buyers are sophisticated and data-driven. They evaluate solutions based on ROI, integration capabilities, and scalability. We help martech companies cut through the noise and reach marketing leaders with compelling value propositions.",
     icon: Megaphone,
-    color: "quantum-violet",
+    color: "emerald-pro-500",
     stats: [
       { value: "55+", label: "MarTech Clients" },
       { value: "ROI", label: "Focused Messaging" },
@@ -189,7 +189,7 @@ export const industries: Industry[] = [
     shortDescription: "Connect with CHROs and talent acquisition teams through campaigns focused on employee experience.",
     longDescription: "HR technology companies need to reach HR leaders who are focused on employee experience, talent acquisition, and workforce transformation. We help HR tech vendors connect with decision-makers during budget cycles and strategic planning windows.",
     icon: Users,
-    color: "electric-cyan",
+    color: "emerald-pro-600",
     stats: [
       { value: "35+", label: "HR Tech Clients" },
       { value: "CHRO", label: "Level Targeting" },
@@ -245,7 +245,7 @@ export const industries: Industry[] = [
     shortDescription: "Generate leads for IT consulting, managed services, and technology implementation.",
     longDescription: "IT services companies compete for the attention of technology leaders overwhelmed with vendor outreach. We help MSPs, IT consultants, and implementation partners stand out with value-focused messaging that addresses real business challenges.",
     icon: Monitor,
-    color: "electric-cyan",
+    color: "emerald-pro-600",
     stats: [
       { value: "100+", label: "IT Services Clients" },
       { value: "Technical", label: "Messaging Expertise" },
@@ -273,7 +273,7 @@ export const industries: Industry[] = [
     shortDescription: "Connect with administrators, IT directors, and curriculum leaders in education.",
     longDescription: "EdTech companies face unique challenges reaching educators and administrators with limited time and budget pressures. We help education technology companies connect with decision-makers across K-12 districts and higher education institutions.",
     icon: GraduationCap,
-    color: "quantum-violet",
+    color: "emerald-pro-500",
     stats: [
       { value: "30+", label: "EdTech Clients" },
       { value: "K-12 & Higher Ed", label: "Coverage" },
@@ -301,7 +301,7 @@ export const industries: Industry[] = [
     shortDescription: "Lead generation for law firms, accounting firms, and consulting practices.",
     longDescription: "Professional services firms often struggle with business development. We help law firms, accounting practices, and consulting firms build predictable pipelines of qualified prospects who need their specialized expertise.",
     icon: Briefcase,
-    color: "neon-mint",
+    color: "emerald-pro-400",
     stats: [
       { value: "60+", label: "Prof Services Clients" },
       { value: "Partner-Level", label: "Targeting" },
@@ -329,7 +329,7 @@ export const industries: Industry[] = [
     shortDescription: "Reach e-commerce brands, agencies, and platform operators.",
     longDescription: "E-commerce technology vendors need to reach brands, agencies, and platform operators who are overwhelmed with solutions. We help e-commerce tech companies stand out with ROI-focused messaging that demonstrates clear impact on revenue and operations.",
     icon: ShoppingCart,
-    color: "electric-cyan",
+    color: "emerald-pro-600",
     stats: [
       { value: "45+", label: "E-commerce Clients" },
       { value: "D2C & B2B", label: "Coverage" },
@@ -357,7 +357,7 @@ export const industries: Industry[] = [
     shortDescription: "Reach brokers, property managers, and commercial real estate leaders.",
     longDescription: "Real estate technology companies need to reach property professionals who are often relationship-focused and technology-skeptical. We help proptech companies demonstrate value and build trust with real estate decision-makers.",
     icon: Building2,
-    color: "quantum-violet",
+    color: "emerald-pro-500",
     stats: [
       { value: "35+", label: "Real Estate Clients" },
       { value: "Commercial & Residential", label: "Coverage" },
@@ -413,7 +413,7 @@ export const industries: Industry[] = [
     shortDescription: "Reach product, engineering, and technology leaders at tech companies.",
     longDescription: "Selling to technology companies requires speaking their language. We help B2B tech companies reach other tech companies with messaging that resonates with technical and product-focused buyers.",
     icon: Cpu,
-    color: "electric-cyan",
+    color: "emerald-pro-600",
     stats: [
       { value: "150+", label: "Tech Clients" },
       { value: "Technical", label: "Messaging" },
@@ -441,7 +441,7 @@ export const industries: Industry[] = [
     shortDescription: "Connect with sustainability leaders driving environmental initiatives.",
     longDescription: "CleanTech and sustainability companies are helping organizations reduce their environmental impact. We help these companies reach sustainability officers and operations leaders who are prioritizing environmental initiatives.",
     icon: Leaf,
-    color: "neon-mint",
+    color: "emerald-pro-400",
     stats: [
       { value: "20+", label: "CleanTech Clients" },
       { value: "ESG", label: "Focus" },

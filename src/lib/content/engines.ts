@@ -18,7 +18,7 @@ export interface Engine {
   shortDescription: string;
   longDescription: string;
   icon: LucideIcon;
-  color: "electric-cyan" | "quantum-violet" | "neon-mint" | "energy-orange";
+  color: "emerald-pro-600" | "emerald-pro-500" | "emerald-pro-400" | "energy-orange";
   features: EngineFeature[];
   stats: EngineStat[];
   useCases: string[];
@@ -33,7 +33,7 @@ export const engines: Engine[] = [
     shortDescription: "24/7 monitoring ensures maximum deliverability. Protects your sender reputation with intelligent domain rotation and health scoring.",
     longDescription: "The Guardian Engine is your first line of defense against deliverability issues. Using advanced monitoring and predictive analytics, it ensures your emails consistently reach the inbox by maintaining optimal domain health, managing sending reputation, and automatically adjusting to keep you compliant with all regulations.",
     icon: Shield,
-    color: "electric-cyan",
+    color: "emerald-pro-600",
     features: [
       {
         title: "Domain Health Scoring",
@@ -81,7 +81,7 @@ export const engines: Engine[] = [
     shortDescription: "Transforms your value proposition into high-converting email sequences tailored to each prospect segment.",
     longDescription: "The Architect Engine uses advanced AI to design campaigns that resonate. It analyzes your ICP, studies successful patterns, and crafts personalized sequences that speak directly to each prospect's pain points. From subject lines to call-to-action, every element is optimized for engagement.",
     icon: Cpu,
-    color: "quantum-violet",
+    color: "emerald-pro-500",
     features: [
       {
         title: "ICP Analysis",
@@ -129,7 +129,7 @@ export const engines: Engine[] = [
     shortDescription: "Continuously analyzes engagement data to optimize send times, subject lines, and messaging for peak performance.",
     longDescription: "The Scientist Engine never stops learning. It monitors every open, click, and reply across all your campaigns, identifying patterns that humans would miss. Using machine learning, it continuously refines timing, messaging, and targeting to maximize your results.",
     icon: FlaskConical,
-    color: "neon-mint",
+    color: "emerald-pro-400",
     features: [
       {
         title: "A/B Testing Engine",
@@ -225,7 +225,7 @@ export const engines: Engine[] = [
     shortDescription: "Deanonymizes website visitors and triggers personalized outreach to warm leads already exploring your solution.",
     longDescription: "The Sentinel Engine turns anonymous website traffic into qualified opportunities. When a potential buyer visits your site, Sentinel identifies them, enriches their profile, and triggers personalized outreach—reaching them while your solution is top of mind.",
     icon: Eye,
-    color: "quantum-violet",
+    color: "emerald-pro-500",
     features: [
       {
         title: "Visitor Identification",

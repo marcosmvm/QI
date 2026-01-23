@@ -107,15 +107,15 @@ export default function TeamPage() {
       {/* Header */}
       <motion.div variants={itemVariants} className="flex items-center justify-between mb-8">
         <div>
-          <div className="flex items-center gap-2 text-sm text-steel mb-2">
+          <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-2">
             <span>Admin</span>
             <span className="text-graphite">/</span>
-            <span className="text-electric-cyan">Team</span>
+            <span className="text-emerald-pro-600">Team</span>
           </div>
-          <h1 className="text-2xl font-sora font-bold text-white">Team</h1>
-          <p className="text-steel mt-1">Manage your team members and roles</p>
+          <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">Team</h1>
+          <p className="text-light-text-muted dark:text-steel mt-1">Manage your team members and roles</p>
         </div>
-        <button className="flex items-center gap-2 px-4 py-2 bg-electric-cyan text-deep-space font-medium rounded-lg hover:bg-electric-cyan/90 transition-colors">
+        <button className="flex items-center gap-2 px-4 py-2 bg-emerald-pro-600 text-deep-space font-medium rounded-lg hover:bg-emerald-pro-600/90 transition-colors">
           <UserPlus className="h-4 w-4" />
           Invite Member
         </button>
@@ -128,19 +128,19 @@ export default function TeamPage() {
           label="Admins"
           value={stats.admins}
           icon={Shield}
-          color="quantum-violet"
+          color="emerald-pro-500"
         />
         <StatCard
           label="Account Managers"
           value={stats.accountManagers}
           icon={Building2}
-          color="electric-cyan"
+          color="emerald-pro-600"
         />
         <StatCard
           label="Support"
           value={stats.support}
           icon={Headphones}
-          color="neon-mint"
+          color="emerald-pro-400"
         />
         <StatCard
           label="Viewers"
@@ -153,9 +153,9 @@ export default function TeamPage() {
       {/* Team Members Grid */}
       {teamMembers.length === 0 ? (
         <div className="glass-premium p-12 text-center">
-          <Users className="h-12 w-12 text-steel mx-auto mb-4" />
-          <p className="text-steel">No team members yet</p>
-          <button className="text-electric-cyan hover:underline text-sm mt-2">
+          <Users className="h-12 w-12 text-light-text-muted dark:text-steel mx-auto mb-4" />
+          <p className="text-light-text-muted dark:text-steel">No team members yet</p>
+          <button className="text-emerald-pro-600 hover:underline text-sm mt-2">
             Invite your first team member
           </button>
         </div>
@@ -169,7 +169,7 @@ export default function TeamPage() {
 
       {/* Role Descriptions */}
       <div className="mt-12">
-        <h2 className="text-lg font-sora font-semibold text-white mb-4">
+        <h2 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-4">
           Role Permissions
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -177,19 +177,19 @@ export default function TeamPage() {
             role="Admin"
             description="Full access to all features including team management, billing, and settings."
             icon={Shield}
-            color="quantum-violet"
+            color="emerald-pro-500"
           />
           <RoleCard
             role="Account Manager"
             description="Manage clients, campaigns, and view analytics. Cannot access billing or team settings."
             icon={Building2}
-            color="electric-cyan"
+            color="emerald-pro-600"
           />
           <RoleCard
             role="Support"
             description="Access to support inbox and client communications. Read-only for other areas."
             icon={Headphones}
-            color="neon-mint"
+            color="emerald-pro-400"
           />
           <RoleCard
             role="Viewer"
@@ -207,7 +207,7 @@ function StatCard({
   label,
   value,
   icon: Icon,
-  color = "electric-cyan",
+  color = "emerald-pro-600",
 }: {
   label: string;
   value: number;
@@ -215,29 +215,29 @@ function StatCard({
   color?: string;
 }) {
   const colorClasses: Record<string, { text: string; bg: string; border: string }> = {
-    "electric-cyan": {
-      text: "text-electric-cyan",
-      bg: "bg-electric-cyan/10",
-      border: "border-electric-cyan/30",
+    "emerald-pro-600": {
+      text: "text-emerald-pro-600",
+      bg: "bg-emerald-pro-600/10",
+      border: "border-emerald-pro-600/30",
     },
-    "quantum-violet": {
-      text: "text-quantum-violet",
-      bg: "bg-quantum-violet/10",
-      border: "border-quantum-violet/30",
+    "emerald-pro-500": {
+      text: "text-emerald-pro-500",
+      bg: "bg-emerald-pro-500/10",
+      border: "border-emerald-pro-500/30",
     },
-    "neon-mint": {
-      text: "text-neon-mint",
-      bg: "bg-neon-mint/10",
-      border: "border-neon-mint/30",
+    "emerald-pro-400": {
+      text: "text-emerald-pro-400",
+      bg: "bg-emerald-pro-400/10",
+      border: "border-emerald-pro-400/30",
     },
     steel: {
-      text: "text-steel",
+      text: "text-light-text-muted dark:text-steel",
       bg: "bg-steel/10",
       border: "border-steel/30",
     },
   };
 
-  const colors = colorClasses[color] || colorClasses["electric-cyan"];
+  const colors = colorClasses[color] || colorClasses["emerald-pro-600"];
 
   return (
     <div className="glass-premium p-4">
@@ -248,8 +248,8 @@ function StatCard({
           <Icon className={`h-4 w-4 ${colors.text}`} />
         </div>
       </div>
-      <p className="text-2xl font-sora font-bold text-white">{value}</p>
-      <p className="text-sm text-steel mt-1">{label}</p>
+      <p className="text-2xl font-sora font-bold text-light-text dark:text-white">{value}</p>
+      <p className="text-sm text-light-text-muted dark:text-steel mt-1">{label}</p>
     </div>
   );
 }
@@ -257,10 +257,10 @@ function StatCard({
 function TeamMemberCard({ member }: { member: TeamMemberWithProfile }) {
   const profile = member.profiles;
   const roleColors: Record<string, string> = {
-    admin: "bg-quantum-violet/10 text-quantum-violet border-quantum-violet/30",
-    account_manager: "bg-electric-cyan/10 text-electric-cyan border-electric-cyan/30",
-    support: "bg-neon-mint/10 text-neon-mint border-neon-mint/30",
-    viewer: "bg-steel/10 text-steel border-steel/30",
+    admin: "bg-emerald-pro-500/10 text-emerald-pro-500 border-emerald-pro-500/30",
+    account_manager: "bg-emerald-pro-600/10 text-emerald-pro-600 border-emerald-pro-600/30",
+    support: "bg-emerald-pro-400/10 text-emerald-pro-400 border-emerald-pro-400/30",
+    viewer: "bg-steel/10 text-light-text-muted dark:text-steel border-steel/30",
   };
 
   const roleLabels: Record<string, string> = {
@@ -281,16 +281,16 @@ function TeamMemberCard({ member }: { member: TeamMemberWithProfile }) {
   };
 
   return (
-    <div className="glass-premium p-6 hover:border-graphite/80 transition-colors">
+    <div className="glass-premium p-6 hover:border-border-default dark:border-graphite/80 transition-colors">
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-3">
-          <div className="h-12 w-12 rounded-full bg-quantum-violet/20 border border-quantum-violet/30 flex items-center justify-center">
-            <span className="text-lg font-medium text-quantum-violet">
+          <div className="h-12 w-12 rounded-full bg-emerald-pro-500/20 border border-emerald-pro-500/30 flex items-center justify-center">
+            <span className="text-lg font-medium text-emerald-pro-500">
               {getInitials(profile.full_name)}
             </span>
           </div>
           <div>
-            <p className="text-base font-medium text-white">
+            <p className="text-base font-medium text-light-text dark:text-white">
               {profile.full_name || "Unnamed"}
             </p>
             <span
@@ -302,19 +302,19 @@ function TeamMemberCard({ member }: { member: TeamMemberWithProfile }) {
             </span>
           </div>
         </div>
-        <button className="p-2 rounded-lg text-steel hover:text-white hover:bg-midnight-blue/50 transition-colors">
+        <button className="p-2 rounded-lg text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-colors">
           <MoreHorizontal className="h-4 w-4" />
         </button>
       </div>
 
       <div className="space-y-2">
         <div className="flex items-center gap-2 text-sm">
-          <Mail className="h-4 w-4 text-steel" />
+          <Mail className="h-4 w-4 text-light-text-muted dark:text-steel" />
           <span className="text-silver truncate">{profile.email}</span>
         </div>
         {member.hired_at && (
           <div className="flex items-center gap-2 text-sm">
-            <Calendar className="h-4 w-4 text-steel" />
+            <Calendar className="h-4 w-4 text-light-text-muted dark:text-steel" />
             <span className="text-silver">
               Joined {new Date(member.hired_at).toLocaleDateString()}
             </span>
@@ -322,14 +322,14 @@ function TeamMemberCard({ member }: { member: TeamMemberWithProfile }) {
         )}
       </div>
 
-      <div className="mt-4 pt-4 border-t border-graphite/30 flex items-center gap-2">
+      <div className="mt-4 pt-4 border-t border-border-default dark:border-graphite/30 flex items-center gap-2">
         <Link
           href={`/admin/team/${member.id}`}
-          className="flex-1 px-3 py-2 text-sm text-center text-silver border border-graphite rounded-lg hover:bg-midnight-blue/30 transition-colors"
+          className="flex-1 px-3 py-2 text-sm text-center text-silver border border-border-default dark:border-graphite rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors"
         >
           View Profile
         </Link>
-        <button className="flex-1 px-3 py-2 text-sm text-center text-electric-cyan border border-electric-cyan/30 rounded-lg hover:bg-electric-cyan/10 transition-colors">
+        <button className="flex-1 px-3 py-2 text-sm text-center text-emerald-pro-600 border border-emerald-pro-600/30 rounded-lg hover:bg-emerald-pro-600/10 transition-colors">
           Edit Role
         </button>
       </div>
@@ -349,23 +349,23 @@ function RoleCard({
   color: string;
 }) {
   const colorClasses: Record<string, { text: string; bg: string; border: string }> = {
-    "quantum-violet": {
-      text: "text-quantum-violet",
-      bg: "bg-quantum-violet/10",
-      border: "border-quantum-violet/30",
+    "emerald-pro-500": {
+      text: "text-emerald-pro-500",
+      bg: "bg-emerald-pro-500/10",
+      border: "border-emerald-pro-500/30",
     },
-    "electric-cyan": {
-      text: "text-electric-cyan",
-      bg: "bg-electric-cyan/10",
-      border: "border-electric-cyan/30",
+    "emerald-pro-600": {
+      text: "text-emerald-pro-600",
+      bg: "bg-emerald-pro-600/10",
+      border: "border-emerald-pro-600/30",
     },
-    "neon-mint": {
-      text: "text-neon-mint",
-      bg: "bg-neon-mint/10",
-      border: "border-neon-mint/30",
+    "emerald-pro-400": {
+      text: "text-emerald-pro-400",
+      bg: "bg-emerald-pro-400/10",
+      border: "border-emerald-pro-400/30",
     },
     steel: {
-      text: "text-steel",
+      text: "text-light-text-muted dark:text-steel",
       bg: "bg-steel/10",
       border: "border-steel/30",
     },
@@ -380,8 +380,8 @@ function RoleCard({
       >
         <Icon className={`h-5 w-5 ${colors.text}`} />
       </div>
-      <h3 className="text-sm font-semibold text-white mb-1">{role}</h3>
-      <p className="text-xs text-steel">{description}</p>
+      <h3 className="text-sm font-semibold text-light-text dark:text-white mb-1">{role}</h3>
+      <p className="text-xs text-light-text-muted dark:text-steel">{description}</p>
     </div>
   );
 }

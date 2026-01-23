@@ -42,20 +42,20 @@ export default function RegisterPage() {
 
         <div className="relative z-10">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-electric-cyan/10 border border-electric-cyan/30">
-              <Zap className="h-6 w-6 text-electric-cyan" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-pro-600/10 border border-emerald-pro-600/30">
+              <Zap className="h-6 w-6 text-emerald-pro-600" />
             </div>
-            <span className="text-xl font-sora font-semibold text-white">
+            <span className="text-xl font-sora font-semibold text-light-text dark:text-white">
               XGrowthOS
             </span>
           </div>
         </div>
 
         <div className="relative z-10 space-y-6">
-          <h1 className="text-4xl font-sora font-bold text-white leading-tight">
+          <h1 className="text-4xl font-sora font-bold text-light-text dark:text-white leading-tight">
             Ready to scale
             <br />
-            <span className="text-electric-cyan">your outreach?</span>
+            <span className="text-emerald-pro-600">your outreach?</span>
           </h1>
           <p className="text-lg text-silver max-w-md">
             Join leading B2B companies using XGrowthOS to automate their
@@ -71,8 +71,8 @@ export default function RegisterPage() {
               "Dedicated success manager",
             ].map((feature, index) => (
               <div key={index} className="flex items-center gap-3">
-                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-neon-mint/20">
-                  <CheckCircle className="h-4 w-4 text-neon-mint" />
+                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-pro-400/20">
+                  <CheckCircle className="h-4 w-4 text-emerald-pro-400" />
                 </div>
                 <span className="text-silver">{feature}</span>
               </div>
@@ -80,7 +80,7 @@ export default function RegisterPage() {
           </div>
         </div>
 
-        <div className="relative z-10 text-sm text-steel">
+        <div className="relative z-10 text-sm text-light-text-muted dark:text-steel">
           &copy; {new Date().getFullYear()} XGrowthOS. All rights reserved.
         </div>
       </div>
@@ -90,10 +90,10 @@ export default function RegisterPage() {
         <div className="w-full max-w-md">
           {/* Mobile logo */}
           <div className="lg:hidden flex items-center justify-center gap-3 mb-8">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-electric-cyan/10 border border-electric-cyan/30">
-              <Zap className="h-6 w-6 text-electric-cyan" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-pro-600/10 border border-emerald-pro-600/30">
+              <Zap className="h-6 w-6 text-emerald-pro-600" />
             </div>
-            <span className="text-xl font-sora font-semibold text-white">
+            <span className="text-xl font-sora font-semibold text-light-text dark:text-white">
               XGrowthOS
             </span>
           </div>
@@ -102,14 +102,14 @@ export default function RegisterPage() {
             {isSubmitted ? (
               <div className="text-center py-8">
                 <div className="flex justify-center mb-6">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-neon-mint/20 border border-neon-mint/30">
-                    <CheckCircle className="h-8 w-8 text-neon-mint" />
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-pro-400/20 border border-emerald-pro-400/30">
+                    <CheckCircle className="h-8 w-8 text-emerald-pro-400" />
                   </div>
                 </div>
-                <h2 className="text-2xl font-sora font-bold text-white mb-2">
+                <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white mb-2">
                   Request Submitted!
                 </h2>
-                <p className="text-steel mb-6">
+                <p className="text-light-text-muted dark:text-steel mb-6">
                   Thank you for your interest in XGrowthOS. Our team will
                   review your request and reach out within 24-48 hours.
                 </p>
@@ -122,10 +122,10 @@ export default function RegisterPage() {
             ) : (
               <>
                 <div className="text-center mb-8">
-                  <h2 className="text-2xl font-sora font-bold text-white mb-2">
+                  <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white mb-2">
                     Request Access
                   </h2>
-                  <p className="text-steel">
+                  <p className="text-light-text-muted dark:text-steel">
                     Fill out the form to get started with XGrowthOS
                   </p>
                 </div>
@@ -139,7 +139,7 @@ export default function RegisterPage() {
                       Full name
                     </label>
                     <div className="relative">
-                      <User className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-steel" />
+                      <User className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-light-text-muted dark:text-steel" />
                       <input
                         id="name"
                         name="name"
@@ -148,7 +148,7 @@ export default function RegisterPage() {
                         onChange={handleChange}
                         placeholder="John Smith"
                         required
-                        className="w-full h-11 rounded-lg border border-graphite bg-deep-space pl-10 pr-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50 transition-colors"
+                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space pl-10 pr-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 transition-colors"
                       />
                     </div>
                   </div>
@@ -161,7 +161,7 @@ export default function RegisterPage() {
                       Work email
                     </label>
                     <div className="relative">
-                      <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-steel" />
+                      <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-light-text-muted dark:text-steel" />
                       <input
                         id="email"
                         name="email"
@@ -170,7 +170,7 @@ export default function RegisterPage() {
                         onChange={handleChange}
                         placeholder="you@company.com"
                         required
-                        className="w-full h-11 rounded-lg border border-graphite bg-deep-space pl-10 pr-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50 transition-colors"
+                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space pl-10 pr-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 transition-colors"
                       />
                     </div>
                   </div>
@@ -183,7 +183,7 @@ export default function RegisterPage() {
                       Company name
                     </label>
                     <div className="relative">
-                      <Building className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-steel" />
+                      <Building className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-light-text-muted dark:text-steel" />
                       <input
                         id="company"
                         name="company"
@@ -192,7 +192,7 @@ export default function RegisterPage() {
                         onChange={handleChange}
                         placeholder="Acme Inc."
                         required
-                        className="w-full h-11 rounded-lg border border-graphite bg-deep-space pl-10 pr-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50 transition-colors"
+                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space pl-10 pr-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 transition-colors"
                       />
                     </div>
                   </div>
@@ -205,7 +205,7 @@ export default function RegisterPage() {
                       Create password
                     </label>
                     <div className="relative">
-                      <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-steel" />
+                      <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-light-text-muted dark:text-steel" />
                       <input
                         id="password"
                         name="password"
@@ -215,7 +215,7 @@ export default function RegisterPage() {
                         placeholder="Min. 8 characters"
                         required
                         minLength={8}
-                        className="w-full h-11 rounded-lg border border-graphite bg-deep-space pl-10 pr-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50 transition-colors"
+                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space pl-10 pr-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 transition-colors"
                       />
                     </div>
                   </div>
@@ -256,24 +256,24 @@ export default function RegisterPage() {
                     )}
                   </Button>
 
-                  <p className="text-xs text-steel text-center">
+                  <p className="text-xs text-light-text-muted dark:text-steel text-center">
                     By requesting access, you agree to our{" "}
-                    <Link href="/terms" className="text-electric-cyan hover:underline">
+                    <Link href="/terms" className="text-emerald-pro-600 hover:underline">
                       Terms of Service
                     </Link>{" "}
                     and{" "}
-                    <Link href="/privacy" className="text-electric-cyan hover:underline">
+                    <Link href="/privacy" className="text-emerald-pro-600 hover:underline">
                       Privacy Policy
                     </Link>
                   </p>
                 </form>
 
                 <div className="mt-6 text-center">
-                  <p className="text-steel text-sm">
+                  <p className="text-light-text-muted dark:text-steel text-sm">
                     Already have an account?{" "}
                     <Link
                       href="/login"
-                      className="text-electric-cyan hover:underline font-medium"
+                      className="text-emerald-pro-600 hover:underline font-medium"
                     >
                       Sign in
                     </Link>

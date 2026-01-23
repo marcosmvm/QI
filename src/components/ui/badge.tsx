@@ -12,12 +12,12 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-steel/15 text-steel border-steel/20",
-        success: "bg-neon-mint/15 text-neon-mint border-neon-mint/20",
+        default: "bg-steel/15 text-light-text-muted dark:text-steel border-steel/20",
+        success: "bg-emerald-pro-400/15 text-emerald-pro-400 border-emerald-pro-400/20",
         warning: "bg-energy-orange/15 text-energy-orange border-energy-orange/20",
         error: "bg-alert-red/15 text-alert-red border-alert-red/20",
-        info: "bg-quantum-violet/15 text-quantum-violet border-quantum-violet/20",
-        primary: "bg-electric-cyan/15 text-electric-cyan border-electric-cyan/20",
+        info: "bg-emerald-pro-500/15 text-emerald-pro-500 border-emerald-pro-500/20",
+        primary: "bg-emerald-pro-600/15 text-emerald-pro-600 border-emerald-pro-600/20",
       },
       size: {
         sm: "px-2 py-0.5 text-[10px]",

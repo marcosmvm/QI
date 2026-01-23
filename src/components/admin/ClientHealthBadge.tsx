@@ -17,10 +17,10 @@ function getHealthLevel(score: number | null): HealthLevel {
 }
 
 const healthStyles: Record<HealthLevel, string> = {
-  healthy: "bg-neon-mint/10 text-neon-mint border-neon-mint/30",
+  healthy: "bg-emerald-pro-400/10 text-emerald-pro-400 border-emerald-pro-400/30",
   warning: "bg-energy-orange/10 text-energy-orange border-energy-orange/30",
   critical: "bg-red-500/10 text-red-400 border-red-500/30",
-  unknown: "bg-steel/10 text-steel border-steel/30",
+  unknown: "bg-steel/10 text-light-text-muted dark:text-steel border-steel/30",
 };
 
 const healthLabels: Record<HealthLevel, string> = {
@@ -31,7 +31,7 @@ const healthLabels: Record<HealthLevel, string> = {
 };
 
 const dotStyles: Record<HealthLevel, string> = {
-  healthy: "bg-neon-mint",
+  healthy: "bg-emerald-pro-400",
   warning: "bg-energy-orange",
   critical: "bg-red-400",
   unknown: "bg-steel",

@@ -6,7 +6,7 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-deep-space dashboard-bg">
+    <div className="min-h-screen bg-white dark:bg-deep-space dashboard-bg">
       <Sidebar variant="client" />
 
       {/* Ambient gradient orbs - fixed position for smooth scrolling */}

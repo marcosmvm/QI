@@ -67,9 +67,9 @@ export default function BillingPageClient({
     >
       {/* Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <p className="text-sm text-steel mb-1">Admin / <span className="text-neon-mint">Billing</span></p>
-        <h1 className="text-2xl font-sora font-bold text-white">Billing</h1>
-        <p className="text-steel mt-1">Revenue and subscription management</p>
+        <p className="text-sm text-light-text-muted dark:text-steel mb-1">Admin / <span className="text-emerald-pro-400">Billing</span></p>
+        <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">Billing</h1>
+        <p className="text-light-text-muted dark:text-steel mt-1">Revenue and subscription management</p>
       </motion.div>
 
       {/* Stats */}
@@ -104,15 +104,15 @@ export default function BillingPageClient({
       {/* Two Column Layout */}
       <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Subscriptions */}
-        <div className="glass-premium p-6 hover:border-electric-cyan/30 hover:-translate-y-0.5 hover:shadow-card-hover transition-all duration-300">
-          <h2 className="text-lg font-sora font-semibold text-white mb-6">
+        <div className="glass-premium p-6 hover:border-emerald-pro-600/30 hover:-translate-y-0.5 hover:shadow-card-hover transition-all duration-300">
+          <h2 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-6">
             Active Subscriptions
           </h2>
           <div className="space-y-4">
             {subscriptions.filter((s) => s.status === "active").length === 0 ? (
               <div className="text-center py-8">
-                <CreditCard className="h-8 w-8 text-steel mx-auto mb-2" />
-                <p className="text-steel text-sm">No active subscriptions</p>
+                <CreditCard className="h-8 w-8 text-light-text-muted dark:text-steel mx-auto mb-2" />
+                <p className="text-light-text-muted dark:text-steel text-sm">No active subscriptions</p>
               </div>
             ) : (
               subscriptions
@@ -120,26 +120,26 @@ export default function BillingPageClient({
                 .map((sub) => (
                   <div
                     key={sub.id}
-                    className="flex items-center justify-between p-4 rounded-lg bg-deep-space/50 border border-graphite/30 hover:border-electric-cyan/20 transition-colors"
+                    className="flex items-center justify-between p-4 rounded-lg bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30 hover:border-emerald-pro-600/20 transition-colors"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="h-10 w-10 rounded-full bg-neon-mint/10 border border-neon-mint/30 flex items-center justify-center">
-                        <CheckCircle className="h-5 w-5 text-neon-mint" />
+                      <div className="h-10 w-10 rounded-full bg-emerald-pro-400/10 border border-emerald-pro-400/30 flex items-center justify-center">
+                        <CheckCircle className="h-5 w-5 text-emerald-pro-400" />
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-white">
+                        <p className="text-sm font-medium text-light-text dark:text-white">
                           {sub.organizations?.name || "Unknown"}
                         </p>
-                        <p className="text-xs text-steel capitalize">
+                        <p className="text-xs text-light-text-muted dark:text-steel capitalize">
                           {sub.plan_type} Plan
                         </p>
                       </div>
                     </div>
                     <div className="text-right">
-                      <p className="text-sm font-medium text-white">
+                      <p className="text-sm font-medium text-light-text dark:text-white">
                         ${(sub.monthly_fee || 0).toLocaleString()}/mo
                       </p>
-                      <p className="text-xs text-steel">
+                      <p className="text-xs text-light-text-muted dark:text-steel">
                         Renews{" "}
                         {sub.current_period_end
                           ? new Date(sub.current_period_end).toLocaleDateString()
@@ -153,61 +153,61 @@ export default function BillingPageClient({
         </div>
 
         {/* Recent Invoices */}
-        <div className="glass-premium p-6 hover:border-electric-cyan/30 hover:-translate-y-0.5 hover:shadow-card-hover transition-all duration-300">
-          <h2 className="text-lg font-sora font-semibold text-white mb-6">
+        <div className="glass-premium p-6 hover:border-emerald-pro-600/30 hover:-translate-y-0.5 hover:shadow-card-hover transition-all duration-300">
+          <h2 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-6">
             Recent Invoices
           </h2>
           <div className="space-y-4">
             {invoices.length === 0 ? (
               <div className="text-center py-8">
-                <Receipt className="h-8 w-8 text-steel mx-auto mb-2" />
-                <p className="text-steel text-sm">No invoices yet</p>
+                <Receipt className="h-8 w-8 text-light-text-muted dark:text-steel mx-auto mb-2" />
+                <p className="text-light-text-muted dark:text-steel text-sm">No invoices yet</p>
               </div>
             ) : (
               invoices.map((invoice) => (
                 <div
                   key={invoice.id}
-                  className="flex items-center justify-between p-4 rounded-lg bg-deep-space/50 border border-graphite/30 hover:border-electric-cyan/20 transition-colors"
+                  className="flex items-center justify-between p-4 rounded-lg bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30 hover:border-emerald-pro-600/20 transition-colors"
                 >
                   <div className="flex items-center gap-3">
                     <div
                       className={`h-10 w-10 rounded-full flex items-center justify-center ${
                         invoice.status === "paid"
-                          ? "bg-neon-mint/10 border border-neon-mint/30"
+                          ? "bg-emerald-pro-400/10 border border-emerald-pro-400/30"
                           : invoice.status === "open"
                           ? "bg-energy-orange/10 border border-energy-orange/30"
                           : "bg-steel/10 border border-steel/30"
                       }`}
                     >
                       {invoice.status === "paid" ? (
-                        <CheckCircle className="h-5 w-5 text-neon-mint" />
+                        <CheckCircle className="h-5 w-5 text-emerald-pro-400" />
                       ) : invoice.status === "open" ? (
                         <AlertCircle className="h-5 w-5 text-energy-orange" />
                       ) : (
-                        <Receipt className="h-5 w-5 text-steel" />
+                        <Receipt className="h-5 w-5 text-light-text-muted dark:text-steel" />
                       )}
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-white">
+                      <p className="text-sm font-medium text-light-text dark:text-white">
                         {invoice.organizations?.name || "Unknown"}
                       </p>
-                      <p className="text-xs text-steel">
+                      <p className="text-xs text-light-text-muted dark:text-steel">
                         {new Date(invoice.created_at).toLocaleDateString()}
                       </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
                     <div className="text-right">
-                      <p className="text-sm font-medium text-white">
+                      <p className="text-sm font-medium text-light-text dark:text-white">
                         ${(invoice.amount || 0).toLocaleString()}
                       </p>
                       <p
                         className={`text-xs capitalize ${
                           invoice.status === "paid"
-                            ? "text-neon-mint"
+                            ? "text-emerald-pro-400"
                             : invoice.status === "open"
                             ? "text-energy-orange"
-                            : "text-steel"
+                            : "text-light-text-muted dark:text-steel"
                         }`}
                       >
                         {invoice.status}
@@ -218,7 +218,7 @@ export default function BillingPageClient({
                         href={invoice.invoice_url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 rounded-lg text-steel hover:text-electric-cyan hover:bg-electric-cyan/10 transition-colors"
+                        className="p-2 rounded-lg text-light-text-muted dark:text-steel hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 transition-colors"
                         title="View invoice"
                       >
                         <ExternalLink className="h-4 w-4" />
@@ -250,7 +250,7 @@ function StatCard({
 }) {
   return (
     <div
-      className={`glass-premium p-6 hover:border-electric-cyan/30 hover:-translate-y-0.5 hover:shadow-card-hover transition-all duration-300 ${
+      className={`glass-premium p-6 hover:border-emerald-pro-600/30 hover:-translate-y-0.5 hover:shadow-card-hover transition-all duration-300 ${
         highlight ? "border-energy-orange/50" : ""
       }`}
     >
@@ -259,18 +259,18 @@ function StatCard({
           className={`h-10 w-10 rounded-lg flex items-center justify-center ${
             highlight
               ? "bg-energy-orange/10 border border-energy-orange/30"
-              : "bg-electric-cyan/10 border border-electric-cyan/30"
+              : "bg-emerald-pro-600/10 border border-emerald-pro-600/30"
           }`}
         >
           <Icon
-            className={`h-5 w-5 ${highlight ? "text-energy-orange" : "text-electric-cyan"}`}
+            className={`h-5 w-5 ${highlight ? "text-energy-orange" : "text-emerald-pro-600"}`}
           />
         </div>
       </div>
       <div className="mt-4">
-        <p className="text-2xl font-sora font-bold text-white">{value}</p>
+        <p className="text-2xl font-sora font-bold text-light-text dark:text-white">{value}</p>
         <p className="text-sm text-silver mt-1">{title}</p>
-        <p className="text-xs text-steel mt-0.5">{subtitle}</p>
+        <p className="text-xs text-light-text-muted dark:text-steel mt-0.5">{subtitle}</p>
       </div>
     </div>
   );

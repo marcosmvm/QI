@@ -153,22 +153,22 @@ export default function NewCampaignPage() {
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-steel mb-2">
-          <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
+        <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-2">
+          <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
           <span>/</span>
-          <Link href="/dashboard/campaigns" className="hover:text-electric-cyan transition-colors">Campaigns</Link>
+          <Link href="/dashboard/campaigns" className="hover:text-emerald-pro-600 transition-colors">Campaigns</Link>
           <span>/</span>
-          <span className="text-electric-cyan">New</span>
+          <span className="text-emerald-pro-600">New</span>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-white">AI-powered campaign builder</h1>
-        <p className="text-steel mt-1">Build intelligent outreach sequences with AI Architect</p>
+        <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">AI-powered campaign builder</h1>
+        <p className="text-light-text-muted dark:text-steel mt-1">Build intelligent outreach sequences with AI Architect</p>
       </motion.div>
 
       <div>
         {/* Back link */}
         <Link
           href="/dashboard/campaigns"
-          className="inline-flex items-center gap-2 text-steel hover:text-electric-cyan transition-colors mb-6"
+          className="inline-flex items-center gap-2 text-light-text-muted dark:text-steel hover:text-emerald-pro-600 transition-colors mb-6"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to campaigns
@@ -183,20 +183,20 @@ export default function NewCampaignPage() {
                   className={cn(
                     "flex items-center gap-3 px-4 py-2 rounded-lg transition-colors",
                     currentStep === step.id
-                      ? "bg-electric-cyan/10 border border-electric-cyan/30"
+                      ? "bg-emerald-pro-600/10 border border-emerald-pro-600/30"
                       : currentStep > step.id
-                      ? "bg-neon-mint/10 border border-neon-mint/30"
-                      : "bg-midnight-blue/50 border border-graphite"
+                      ? "bg-emerald-pro-400/10 border border-emerald-pro-400/30"
+                      : "bg-light-bg-secondary dark:bg-midnight-blue/50 border border-border-default dark:border-graphite"
                   )}
                 >
                   <div
                     className={cn(
                       "flex h-8 w-8 items-center justify-center rounded-full",
                       currentStep === step.id
-                        ? "bg-electric-cyan text-deep-space"
+                        ? "bg-emerald-pro-600 text-deep-space"
                         : currentStep > step.id
-                        ? "bg-neon-mint text-deep-space"
-                        : "bg-graphite text-steel"
+                        ? "bg-emerald-pro-400 text-deep-space"
+                        : "bg-graphite text-light-text-muted dark:text-steel"
                     )}
                   >
                     {currentStep > step.id ? (
@@ -209,10 +209,10 @@ export default function NewCampaignPage() {
                     className={cn(
                       "text-sm font-medium",
                       currentStep === step.id
-                        ? "text-electric-cyan"
+                        ? "text-emerald-pro-600"
                         : currentStep > step.id
-                        ? "text-neon-mint"
-                        : "text-steel"
+                        ? "text-emerald-pro-400"
+                        : "text-light-text-muted dark:text-steel"
                     )}
                   >
                     {step.name}
@@ -222,7 +222,7 @@ export default function NewCampaignPage() {
                   <div
                     className={cn(
                       "w-12 h-0.5 mx-2",
-                      currentStep > step.id ? "bg-neon-mint" : "bg-graphite"
+                      currentStep > step.id ? "bg-emerald-pro-400" : "bg-graphite"
                     )}
                   />
                 )}
@@ -236,14 +236,14 @@ export default function NewCampaignPage() {
           {currentStep === 1 && (
             <div className="glass-premium p-8">
               <div className="flex items-center gap-3 mb-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-electric-cyan/10 border border-electric-cyan/30">
-                  <Target className="h-6 w-6 text-electric-cyan" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-pro-600/10 border border-emerald-pro-600/30">
+                  <Target className="h-6 w-6 text-emerald-pro-600" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-sora font-semibold text-white">
+                  <h2 className="text-xl font-sora font-semibold text-light-text dark:text-white">
                     Campaign Details
                   </h2>
-                  <p className="text-steel">
+                  <p className="text-light-text-muted dark:text-steel">
                     Tell us about your target audience and goals
                   </p>
                 </div>
@@ -259,7 +259,7 @@ export default function NewCampaignPage() {
                     value={formData.campaignName}
                     onChange={handleChange}
                     placeholder="e.g., Q1 Enterprise Outreach"
-                    className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                    className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                   />
                 </div>
 
@@ -273,7 +273,7 @@ export default function NewCampaignPage() {
                       name="targetIndustry"
                       value={formData.targetIndustry}
                       onChange={handleChange}
-                      className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                     >
                       <option value="">Select industry</option>
                       <option value="Technology">Technology</option>
@@ -294,7 +294,7 @@ export default function NewCampaignPage() {
                       value={formData.targetRole}
                       onChange={handleChange}
                       placeholder="e.g., VP of Sales, CRO"
-                      className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                     />
                   </div>
                 </div>
@@ -310,7 +310,7 @@ export default function NewCampaignPage() {
                     onChange={handleChange}
                     placeholder="What unique value do you offer? What problem do you solve?"
                     rows={3}
-                    className="w-full rounded-lg border border-graphite bg-deep-space px-4 py-3 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50 resize-none"
+                    className="w-full rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 py-3 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 resize-none"
                   />
                 </div>
 
@@ -324,7 +324,7 @@ export default function NewCampaignPage() {
                     value={formData.callToAction}
                     onChange={handleChange}
                     placeholder="e.g., Would you be open to a quick 15-minute call?"
-                    className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                    className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                   />
                 </div>
 
@@ -350,14 +350,14 @@ export default function NewCampaignPage() {
           {currentStep === 2 && (
             <div className="glass-premium p-8">
               <div className="flex items-center gap-3 mb-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-neon-mint/10 border border-neon-mint/30">
-                  <Users className="h-6 w-6 text-neon-mint" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-pro-400/10 border border-emerald-pro-400/30">
+                  <Users className="h-6 w-6 text-emerald-pro-400" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-sora font-semibold text-white">
+                  <h2 className="text-xl font-sora font-semibold text-light-text dark:text-white">
                     Select Lead Lists
                   </h2>
-                  <p className="text-steel">
+                  <p className="text-light-text-muted dark:text-steel">
                     Choose which leads to include in this campaign
                   </p>
                 </div>
@@ -365,20 +365,20 @@ export default function NewCampaignPage() {
 
               {/* Lead source options */}
               <div className="grid grid-cols-3 gap-4 mb-6">
-                <button className="p-4 rounded-lg border border-electric-cyan/30 bg-electric-cyan/10 text-center">
-                  <Database className="h-6 w-6 text-electric-cyan mx-auto mb-2" />
-                  <p className="text-sm font-medium text-white">Existing Lists</p>
-                  <p className="text-xs text-steel">Select from saved lists</p>
+                <button className="p-4 rounded-lg border border-emerald-pro-600/30 bg-emerald-pro-600/10 text-center">
+                  <Database className="h-6 w-6 text-emerald-pro-600 mx-auto mb-2" />
+                  <p className="text-sm font-medium text-light-text dark:text-white">Existing Lists</p>
+                  <p className="text-xs text-light-text-muted dark:text-steel">Select from saved lists</p>
                 </button>
-                <button className="p-4 rounded-lg border border-graphite bg-deep-space/50 text-center hover:border-electric-cyan/30 transition-colors">
-                  <Upload className="h-6 w-6 text-steel mx-auto mb-2" />
+                <button className="p-4 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space/50 text-center hover:border-emerald-pro-600/30 transition-colors">
+                  <Upload className="h-6 w-6 text-light-text-muted dark:text-steel mx-auto mb-2" />
                   <p className="text-sm font-medium text-silver">Upload CSV</p>
-                  <p className="text-xs text-steel">Import new contacts</p>
+                  <p className="text-xs text-light-text-muted dark:text-steel">Import new contacts</p>
                 </button>
-                <button className="p-4 rounded-lg border border-graphite bg-deep-space/50 text-center hover:border-electric-cyan/30 transition-colors">
-                  <Search className="h-6 w-6 text-steel mx-auto mb-2" />
+                <button className="p-4 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space/50 text-center hover:border-emerald-pro-600/30 transition-colors">
+                  <Search className="h-6 w-6 text-light-text-muted dark:text-steel mx-auto mb-2" />
                   <p className="text-sm font-medium text-silver">Build List</p>
-                  <p className="text-xs text-steel">Create from filters</p>
+                  <p className="text-xs text-light-text-muted dark:text-steel">Create from filters</p>
                 </button>
               </div>
 
@@ -391,8 +391,8 @@ export default function NewCampaignPage() {
                     className={cn(
                       "flex items-center justify-between p-4 rounded-lg border cursor-pointer transition-all",
                       selectedLeadLists.includes(list.id)
-                        ? "border-electric-cyan/50 bg-electric-cyan/10"
-                        : "border-graphite bg-deep-space/50 hover:border-electric-cyan/30"
+                        ? "border-emerald-pro-600/50 bg-emerald-pro-600/10"
+                        : "border-border-default dark:border-graphite bg-white dark:bg-deep-space/50 hover:border-emerald-pro-600/30"
                     )}
                   >
                     <div className="flex items-center gap-4">
@@ -400,8 +400,8 @@ export default function NewCampaignPage() {
                         className={cn(
                           "h-5 w-5 rounded border-2 flex items-center justify-center transition-colors",
                           selectedLeadLists.includes(list.id)
-                            ? "border-electric-cyan bg-electric-cyan"
-                            : "border-graphite"
+                            ? "border-emerald-pro-600 bg-emerald-pro-600"
+                            : "border-border-default dark:border-graphite"
                         )}
                       >
                         {selectedLeadLists.includes(list.id) && (
@@ -409,8 +409,8 @@ export default function NewCampaignPage() {
                         )}
                       </div>
                       <div>
-                        <p className="font-medium text-white">{list.name}</p>
-                        <div className="flex items-center gap-3 text-sm text-steel">
+                        <p className="font-medium text-light-text dark:text-white">{list.name}</p>
+                        <div className="flex items-center gap-3 text-sm text-light-text-muted dark:text-steel">
                           <span>{list.industry}</span>
                           <span>•</span>
                           <span>Updated {list.lastUpdated}</span>
@@ -418,30 +418,30 @@ export default function NewCampaignPage() {
                       </div>
                     </div>
                     <div className="text-right">
-                      <p className="text-lg font-bold text-white">{list.count.toLocaleString()}</p>
-                      <p className="text-xs text-steel">contacts</p>
+                      <p className="text-lg font-bold text-light-text dark:text-white">{list.count.toLocaleString()}</p>
+                      <p className="text-xs text-light-text-muted dark:text-steel">contacts</p>
                     </div>
                   </div>
                 ))}
               </div>
 
               {/* Summary */}
-              <div className="rounded-lg border border-graphite bg-deep-space/50 p-4 mb-6">
+              <div className="rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space/50 p-4 mb-6">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <Info className="h-5 w-5 text-electric-cyan" />
+                    <Info className="h-5 w-5 text-emerald-pro-600" />
                     <span className="text-silver">
                       {selectedLeadLists.length} list{selectedLeadLists.length !== 1 ? "s" : ""} selected
                     </span>
                   </div>
                   <div className="text-right">
-                    <span className="text-2xl font-bold text-white">{totalSelectedLeads.toLocaleString()}</span>
-                    <span className="text-steel ml-2">total contacts</span>
+                    <span className="text-2xl font-bold text-light-text dark:text-white">{totalSelectedLeads.toLocaleString()}</span>
+                    <span className="text-light-text-muted dark:text-steel ml-2">total contacts</span>
                   </div>
                 </div>
               </div>
 
-              <div className="flex justify-between pt-4 border-t border-graphite">
+              <div className="flex justify-between pt-4 border-t border-border-default dark:border-graphite">
                 <Button variant="outline" onClick={() => setCurrentStep(1)}>
                   <ArrowLeft className="h-4 w-4 mr-2" />
                   Back
@@ -461,14 +461,14 @@ export default function NewCampaignPage() {
           {currentStep === 3 && (
             <div className="glass-premium p-8">
               <div className="flex items-center gap-3 mb-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-quantum-violet/10 border border-quantum-violet/30">
-                  <Sparkles className="h-6 w-6 text-quantum-violet" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-pro-500/10 border border-emerald-pro-500/30">
+                  <Sparkles className="h-6 w-6 text-emerald-pro-500" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-sora font-semibold text-white">
+                  <h2 className="text-xl font-sora font-semibold text-light-text dark:text-white">
                     AI Architect Engine
                   </h2>
-                  <p className="text-steel">
+                  <p className="text-light-text-muted dark:text-steel">
                     Let AI generate your email sequences
                   </p>
                 </div>
@@ -479,43 +479,43 @@ export default function NewCampaignPage() {
                   <div className="space-y-4">
                     <div className="flex justify-center">
                       <div className="relative">
-                        <div className="h-20 w-20 rounded-full border-4 border-quantum-violet/20" />
-                        <div className="absolute inset-0 h-20 w-20 rounded-full border-4 border-quantum-violet border-t-transparent animate-spin" />
-                        <Sparkles className="absolute inset-0 m-auto h-8 w-8 text-quantum-violet" />
+                        <div className="h-20 w-20 rounded-full border-4 border-emerald-pro-500/20" />
+                        <div className="absolute inset-0 h-20 w-20 rounded-full border-4 border-emerald-pro-500 border-t-transparent animate-spin" />
+                        <Sparkles className="absolute inset-0 m-auto h-8 w-8 text-emerald-pro-500" />
                       </div>
                     </div>
-                    <p className="text-lg font-medium text-white">
+                    <p className="text-lg font-medium text-light-text dark:text-white">
                       AI Architect is crafting your campaign...
                     </p>
-                    <p className="text-steel">
+                    <p className="text-light-text-muted dark:text-steel">
                       Analyzing your inputs and generating personalized email sequences
                     </p>
                   </div>
                 ) : (
                   <div className="space-y-6">
-                    <div className="rounded-lg border border-graphite bg-deep-space/50 p-6 text-left">
-                      <h3 className="font-medium text-white mb-4">Campaign Summary</h3>
+                    <div className="rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space/50 p-6 text-left">
+                      <h3 className="font-medium text-light-text dark:text-white mb-4">Campaign Summary</h3>
                       <div className="grid grid-cols-2 gap-4 text-sm">
                         <div>
-                          <p className="text-steel">Campaign Name</p>
-                          <p className="text-white">{formData.campaignName}</p>
+                          <p className="text-light-text-muted dark:text-steel">Campaign Name</p>
+                          <p className="text-light-text dark:text-white">{formData.campaignName}</p>
                         </div>
                         <div>
-                          <p className="text-steel">Target Industry</p>
-                          <p className="text-white">{formData.targetIndustry}</p>
+                          <p className="text-light-text-muted dark:text-steel">Target Industry</p>
+                          <p className="text-light-text dark:text-white">{formData.targetIndustry}</p>
                         </div>
                         <div>
-                          <p className="text-steel">Target Role</p>
-                          <p className="text-white">{formData.targetRole}</p>
+                          <p className="text-light-text-muted dark:text-steel">Target Role</p>
+                          <p className="text-light-text dark:text-white">{formData.targetRole}</p>
                         </div>
                         <div>
-                          <p className="text-steel">Value Proposition</p>
-                          <p className="text-white truncate">{formData.valueProposition}</p>
+                          <p className="text-light-text-muted dark:text-steel">Value Proposition</p>
+                          <p className="text-light-text dark:text-white truncate">{formData.valueProposition}</p>
                         </div>
                       </div>
                     </div>
 
-                    <p className="text-steel">
+                    <p className="text-light-text-muted dark:text-steel">
                       Click the button below to generate AI-powered email sequences
                       tailored to your campaign goals.
                     </p>
@@ -528,7 +528,7 @@ export default function NewCampaignPage() {
                 )}
               </div>
 
-              <div className="flex justify-between pt-4 border-t border-graphite">
+              <div className="flex justify-between pt-4 border-t border-border-default dark:border-graphite">
                 <Button variant="outline" onClick={() => setCurrentStep(2)}>
                   <ArrowLeft className="h-4 w-4 mr-2" />
                   Back
@@ -541,14 +541,14 @@ export default function NewCampaignPage() {
             <div className="space-y-6">
               <div className="glass-premium p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-neon-mint/10 border border-neon-mint/30">
-                    <CheckCircle className="h-6 w-6 text-neon-mint" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-pro-400/10 border border-emerald-pro-400/30">
+                    <CheckCircle className="h-6 w-6 text-emerald-pro-400" />
                   </div>
                   <div>
-                    <h2 className="text-xl font-sora font-semibold text-white">
+                    <h2 className="text-xl font-sora font-semibold text-light-text dark:text-white">
                       Review & Launch
                     </h2>
-                    <p className="text-steel">
+                    <p className="text-light-text-muted dark:text-steel">
                       Review your AI-generated email sequences
                     </p>
                   </div>
@@ -558,15 +558,15 @@ export default function NewCampaignPage() {
                   {generatedContent.sequences.map((seq) => (
                     <div
                       key={seq.step}
-                      className="rounded-lg border border-graphite bg-deep-space/50 p-4"
+                      className="rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space/50 p-4"
                     >
                       <div className="flex items-center gap-3 mb-3">
-                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-electric-cyan/10 text-electric-cyan font-mono font-bold">
+                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-pro-600/10 text-emerald-pro-600 font-mono font-bold">
                           {seq.step}
                         </div>
                         <div>
-                          <p className="font-medium text-white">{seq.subject}</p>
-                          <p className="text-sm text-steel">
+                          <p className="font-medium text-light-text dark:text-white">{seq.subject}</p>
+                          <p className="text-sm text-light-text-muted dark:text-steel">
                             {seq.delay === 0 ? "Sent immediately" : `Sent after ${seq.delay} days`}
                           </p>
                         </div>

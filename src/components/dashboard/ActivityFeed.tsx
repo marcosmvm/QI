@@ -65,16 +65,16 @@ export function ActivityFeed({
   const displayedActivities = activities.slice(0, maxItems);
 
   return (
-    <div className={cn("bg-midnight-blue border border-graphite rounded-xl", className)}>
+    <div className={cn("bg-light-bg-secondary dark:bg-midnight-blue border border-border-default dark:border-graphite rounded-xl", className)}>
       {/* Header */}
-      <div className="flex items-center justify-between px-6 py-4 border-b border-graphite">
+      <div className="flex items-center justify-between px-6 py-4 border-b border-border-default dark:border-graphite">
         <div>
-          <h3 className="text-2xl font-semibold text-white">{title}</h3>
-          <p className="text-sm text-steel">{activities.length} activities</p>
+          <h3 className="text-2xl font-semibold text-light-text dark:text-white">{title}</h3>
+          <p className="text-sm text-light-text-muted dark:text-steel">{activities.length} activities</p>
         </div>
         <Link
           href="/dashboard/analytics"
-          className="text-sm text-electric-cyan hover:text-electric-cyan/80 transition-colors"
+          className="text-sm text-emerald-pro-600 hover:text-emerald-pro-600/80 transition-colors"
         >
           View all
         </Link>
@@ -88,16 +88,16 @@ export function ActivityFeed({
 
           const content = (
             <div className="flex items-start gap-3 px-6 py-4">
-              <Icon className="h-4 w-4 text-steel mt-0.5 shrink-0" />
+              <Icon className="h-4 w-4 text-light-text-muted dark:text-steel mt-0.5 shrink-0" />
               <div className="flex-1 min-w-0">
-                <p className="text-sm text-white">{activity.title}</p>
+                <p className="text-sm text-light-text dark:text-white">{activity.title}</p>
                 {activity.description && (
-                  <p className="text-xs text-steel mt-0.5 line-clamp-1">
+                  <p className="text-xs text-light-text-muted dark:text-steel mt-0.5 line-clamp-1">
                     {activity.description}
                   </p>
                 )}
               </div>
-              <span className="text-xs text-steel whitespace-nowrap">
+              <span className="text-xs text-light-text-muted dark:text-steel whitespace-nowrap">
                 {activity.timestamp}
               </span>
             </div>
@@ -117,8 +117,8 @@ export function ActivityFeed({
 
       {activities.length === 0 && (
         <div className="px-6 py-12 text-center">
-          <Activity className="h-8 w-8 text-steel mx-auto mb-2" />
-          <p className="text-sm text-steel">No recent activity</p>
+          <Activity className="h-8 w-8 text-light-text-muted dark:text-steel mx-auto mb-2" />
+          <p className="text-sm text-light-text-muted dark:text-steel">No recent activity</p>
         </div>
       )}
     </div>

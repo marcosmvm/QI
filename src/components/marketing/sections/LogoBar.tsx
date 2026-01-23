@@ -13,7 +13,7 @@ const idealClient = [
 
 export function LogoBar() {
   return (
-    <section className="py-16 border-y border-graphite bg-midnight-blue/30">
+    <section className="py-16 border-y border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue/30">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -23,7 +23,7 @@ export function LogoBar() {
           className="max-w-3xl mx-auto"
         >
           <div className="text-center mb-8">
-            <p className="text-electric-cyan text-sm uppercase tracking-widest font-medium mb-2">
+            <p className="text-emerald-pro-600 text-sm uppercase tracking-widest font-medium mb-2">
               Built for B2B Companies Who
             </p>
           </div>
@@ -36,10 +36,10 @@ export function LogoBar() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="flex items-center gap-3 p-4 rounded-xl border border-graphite/50 bg-deep-space/50 hover:border-electric-cyan/30 transition-colors"
+                className="flex items-center gap-3 p-4 rounded-xl border border-border-default dark:border-graphite/50 bg-white dark:bg-deep-space/50 hover:border-emerald-pro-600/30 transition-colors"
               >
-                <div className="flex-shrink-0 p-2 rounded-lg bg-electric-cyan/10 border border-electric-cyan/20">
-                  <item.icon className="h-5 w-5 text-electric-cyan" />
+                <div className="flex-shrink-0 p-2 rounded-lg bg-emerald-pro-600/10 border border-emerald-pro-600/20">
+                  <item.icon className="h-5 w-5 text-emerald-pro-600" />
                 </div>
                 <p className="text-silver text-sm font-medium">{item.text}</p>
               </motion.div>
@@ -55,7 +55,7 @@ export function LogoBar() {
           >
             <Link
               href="/pricing"
-              className="inline-flex items-center gap-2 text-electric-cyan hover:text-cyan-light text-sm font-medium transition-colors group"
+              className="inline-flex items-center gap-2 text-emerald-pro-600 hover:text-cyan-light text-sm font-medium transition-colors group"
             >
               See if you're a fit
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />

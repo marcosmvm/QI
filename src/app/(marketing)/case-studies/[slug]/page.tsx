@@ -16,8 +16,8 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
   if (!study) {
     return (
       <Container className="py-24 text-center">
-        <h1 className="text-2xl text-white">Case study not found</h1>
-        <Link href="/case-studies" className="text-electric-cyan hover:underline mt-4 block">
+        <h1 className="text-2xl text-light-text dark:text-white">Case study not found</h1>
+        <Link href="/case-studies" className="text-emerald-pro-600 hover:underline mt-4 block">
           View all case studies
         </Link>
       </Container>
@@ -33,8 +33,8 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-midnight-blue/30 to-deep-space" />
-        <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-electric-cyan/10 rounded-full blur-[150px] opacity-50" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-quantum-violet/15 rounded-full blur-[150px]" />
+        <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-emerald-pro-600/10 rounded-full blur-[150px] opacity-50" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-emerald-pro-500/15 rounded-full blur-[150px]" />
 
         <Container className="relative z-10">
           {/* Back Link */}
@@ -46,7 +46,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
           >
             <Link
               href="/case-studies"
-              className="inline-flex items-center gap-2 text-steel hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               All Case Studies
@@ -63,17 +63,17 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
             <div className="flex flex-wrap gap-2 mb-6">
               {study.tags.map((tag) => (
                 <div key={tag} className="tech-badge">
-                  <span className="text-sm font-medium text-electric-cyan">{tag}</span>
+                  <span className="text-sm font-medium text-emerald-pro-600">{tag}</span>
                 </div>
               ))}
             </div>
 
             {/* Company */}
-            <p className="text-electric-cyan text-lg font-medium mb-2">{study.company}</p>
-            <p className="text-steel mb-4">{study.industry}</p>
+            <p className="text-emerald-pro-600 text-lg font-medium mb-2">{study.company}</p>
+            <p className="text-light-text-muted dark:text-steel mb-4">{study.industry}</p>
 
             {/* Title */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-light-text dark:text-white mb-6">
               <span className="headline-underline">{study.title}</span>
             </h1>
 
@@ -92,7 +92,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
       </section>
 
       {/* Metrics Bar */}
-      <div className="bg-gradient-to-r from-electric-cyan/10 via-quantum-violet/10 to-neon-mint/10 py-12">
+      <div className="bg-gradient-to-r from-emerald-pro-600/10 via-emerald-pro-500/10 to-emerald-pro-400/10 py-12">
         <Container>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {study.metrics.map((metric, index) => (
@@ -107,7 +107,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
                 <p className="text-4xl md:text-5xl font-sora font-bold gradient-text-cyan-violet">
                   {metric.value}
                 </p>
-                <p className="text-steel mt-1">{metric.label}</p>
+                <p className="text-light-text-muted dark:text-steel mt-1">{metric.label}</p>
               </motion.div>
             ))}
           </div>
@@ -125,7 +125,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h2 className="text-2xl md:text-3xl font-sora font-bold text-white mb-6">
+              <h2 className="text-2xl md:text-3xl font-sora font-bold text-light-text dark:text-white mb-6">
                 The <span className="text-energy-orange">Challenge</span>
               </h2>
               <p className="text-lg text-silver leading-relaxed">
@@ -140,8 +140,8 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h2 className="text-2xl md:text-3xl font-sora font-bold text-white mb-6">
-                The <span className="text-electric-cyan">Solution</span>
+              <h2 className="text-2xl md:text-3xl font-sora font-bold text-light-text dark:text-white mb-6">
+                The <span className="text-emerald-pro-600">Solution</span>
               </h2>
               <p className="text-lg text-silver leading-relaxed">
                 {study.solution}
@@ -155,8 +155,8 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h2 className="text-2xl md:text-3xl font-sora font-bold text-white mb-6">
-                The <span className="text-neon-mint">Results</span>
+              <h2 className="text-2xl md:text-3xl font-sora font-bold text-light-text dark:text-white mb-6">
+                The <span className="text-emerald-pro-400">Results</span>
               </h2>
               <p className="text-lg text-silver leading-relaxed">
                 {study.results}
@@ -175,26 +175,26 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="relative p-8 md:p-12 rounded-3xl border border-electric-cyan/20 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90"
+              className="relative p-8 md:p-12 rounded-3xl border border-emerald-pro-600/20 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90"
             >
               {/* Quote Icon */}
-              <div className="absolute -top-6 left-8 p-4 rounded-2xl bg-gradient-to-br from-electric-cyan/20 to-quantum-violet/20 border border-electric-cyan/30">
-                <Quote className="h-6 w-6 text-electric-cyan" />
+              <div className="absolute -top-6 left-8 p-4 rounded-2xl bg-gradient-to-br from-emerald-pro-600/20 to-emerald-pro-500/20 border border-emerald-pro-600/30">
+                <Quote className="h-6 w-6 text-emerald-pro-600" />
               </div>
 
-              <blockquote className="text-2xl md:text-3xl text-white font-medium leading-relaxed mt-4 mb-8">
+              <blockquote className="text-2xl md:text-3xl text-light-text dark:text-white font-medium leading-relaxed mt-4 mb-8">
                 &ldquo;{study.testimonial.quote}&rdquo;
               </blockquote>
 
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-electric-cyan/30 to-quantum-violet/30 border border-electric-cyan/20 flex items-center justify-center">
-                  <span className="text-lg font-semibold text-white">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-pro-600/30 to-emerald-pro-500/30 border border-emerald-pro-600/20 flex items-center justify-center">
+                  <span className="text-lg font-semibold text-light-text dark:text-white">
                     {study.testimonial.author.charAt(0)}
                   </span>
                 </div>
                 <div>
-                  <p className="font-semibold text-white">{study.testimonial.author}</p>
-                  <p className="text-steel text-sm">{study.testimonial.title}</p>
+                  <p className="font-semibold text-light-text dark:text-white">{study.testimonial.author}</p>
+                  <p className="text-light-text-muted dark:text-steel text-sm">{study.testimonial.title}</p>
                 </div>
               </div>
             </motion.div>
@@ -212,8 +212,8 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-6">
-              Key <span className="text-electric-cyan">Takeaways</span>
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-6">
+              Key <span className="text-emerald-pro-600">Takeaways</span>
             </h2>
           </motion.div>
 
@@ -225,11 +225,11 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="flex items-start gap-4 p-6 rounded-xl border border-electric-cyan/20 bg-midnight-blue/30"
+                className="flex items-start gap-4 p-6 rounded-xl border border-emerald-pro-600/20 bg-light-bg-secondary dark:bg-midnight-blue/30"
               >
-                <CheckCircle className="h-6 w-6 text-neon-mint flex-shrink-0" />
+                <CheckCircle className="h-6 w-6 text-emerald-pro-400 flex-shrink-0" />
                 <div>
-                  <p className="text-2xl font-sora font-bold text-electric-cyan">{metric.value}</p>
+                  <p className="text-2xl font-sora font-bold text-emerald-pro-600">{metric.value}</p>
                   <p className="text-silver">{metric.label}</p>
                 </div>
               </motion.div>
@@ -245,7 +245,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
             {prevStudy ? (
               <Link
                 href={`/case-studies/${prevStudy.id}`}
-                className="flex items-center gap-3 text-steel hover:text-white transition-colors group"
+                className="flex items-center gap-3 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white transition-colors group"
               >
                 <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
                 <span>
@@ -259,7 +259,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
 
             <Link
               href="/case-studies"
-              className="text-electric-cyan hover:text-cyan-light transition-colors font-medium"
+              className="text-emerald-pro-600 hover:text-cyan-light transition-colors font-medium"
             >
               View All Case Studies
             </Link>
@@ -267,7 +267,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
             {nextStudy ? (
               <Link
                 href={`/case-studies/${nextStudy.id}`}
-                className="flex items-center gap-3 text-steel hover:text-white transition-colors group text-right"
+                className="flex items-center gap-3 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white transition-colors group text-right"
               >
                 <span>
                   <span className="text-sm block">Next</span>

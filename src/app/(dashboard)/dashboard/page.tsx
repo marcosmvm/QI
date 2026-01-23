@@ -184,38 +184,38 @@ export default async function DashboardPage() {
   // If user has no organization, show welcome message
   if (!organizationId) {
     return (
-      <div className="min-h-screen bg-deep-space p-8 flex items-center justify-center relative overflow-hidden">
+      <div className="min-h-screen bg-white dark:bg-deep-space p-8 flex items-center justify-center relative overflow-hidden">
         {/* Background gradient effects */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-electric-cyan/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-quantum-violet/5 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-pro-600/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-emerald-pro-500/5 rounded-full blur-3xl" />
         </div>
 
         <div className="relative text-center max-w-lg">
           {/* Animated orbital ring */}
           <div className="relative h-24 w-24 mx-auto mb-6">
-            <div className="absolute inset-0 rounded-full border border-electric-cyan/20 animate-pulse" />
-            <div className="absolute inset-2 rounded-full border border-quantum-violet/20" />
-            <div className="absolute inset-4 rounded-full bg-gradient-to-br from-midnight-blue/80 to-deep-space border border-electric-cyan/30 flex items-center justify-center">
-              <Users className="h-8 w-8 text-electric-cyan" />
+            <div className="absolute inset-0 rounded-full border border-emerald-pro-600/20 animate-pulse" />
+            <div className="absolute inset-2 rounded-full border border-emerald-pro-500/20" />
+            <div className="absolute inset-4 rounded-full bg-gradient-to-br from-midnight-blue/80 to-deep-space border border-emerald-pro-600/30 flex items-center justify-center">
+              <Users className="h-8 w-8 text-emerald-pro-600" />
             </div>
           </div>
 
-          <h1 className="text-2xl font-sora font-bold text-white mb-3">Welcome to XGrowthOS</h1>
-          <p className="text-steel mb-8 leading-relaxed">
+          <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white mb-3">Welcome to XGrowthOS</h1>
+          <p className="text-light-text-muted dark:text-steel mb-8 leading-relaxed">
             Your account is being set up. Our team will reach out shortly to complete your onboarding and get your first campaigns running.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/dashboard/support"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-electric-cyan to-cyan-dark text-deep-space font-semibold rounded-xl hover:shadow-lg hover:shadow-electric-cyan/20 transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-pro-600 to-cyan-dark text-deep-space font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-pro-600/20 transition-all"
             >
               Contact Support
             </Link>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-electric-cyan/20 text-electric-cyan font-medium rounded-xl hover:bg-electric-cyan/10 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-emerald-pro-600/20 text-emerald-pro-600 font-medium rounded-xl hover:bg-emerald-pro-600/10 transition-colors"
             >
               Explore Platform
             </Link>

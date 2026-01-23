@@ -44,7 +44,7 @@ export function SkeletonCard({ className }: { className?: string }) {
 export function SkeletonTable({ rows = 5, className }: { rows?: number; className?: string }) {
   return (
     <div className={cn("table-container", className)}>
-      <div className="p-4 border-b border-graphite">
+      <div className="p-4 border-b border-border-default dark:border-graphite">
         <div className="flex gap-4">
           {[1, 2, 3, 4].map((i) => (
             <Skeleton key={i} variant="text" className="w-24" />
@@ -52,7 +52,7 @@ export function SkeletonTable({ rows = 5, className }: { rows?: number; classNam
         </div>
       </div>
       {Array.from({ length: rows }).map((_, i) => (
-        <div key={i} className="p-4 border-b border-graphite/50">
+        <div key={i} className="p-4 border-b border-border-default dark:border-graphite/50">
           <div className="flex gap-4">
             <Skeleton variant="text" className="w-32" />
             <Skeleton variant="text" className="w-20" />

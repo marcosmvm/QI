@@ -40,8 +40,8 @@ export default function CaseStudiesPage() {
       {/* Hero Section - Honest Pre-Launch Framing */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-midnight-blue/30 to-deep-space" />
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-neon-mint/20 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-electric-cyan/15 rounded-full blur-[100px]" />
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-emerald-pro-400/20 rounded-full blur-[120px]" />
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-emerald-pro-600/15 rounded-full blur-[100px]" />
 
         <Container className="relative z-10">
           <motion.div
@@ -50,12 +50,12 @@ export default function CaseStudiesPage() {
             transition={{ duration: 0.5 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-quantum-violet/10 border border-quantum-violet/20 mb-6">
-              <Rocket className="w-4 h-4 text-quantum-violet" />
-              <span className="text-sm font-medium text-quantum-violet">Founding Partner Program</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-pro-500/10 border border-emerald-pro-500/20 mb-6">
+              <Rocket className="w-4 h-4 text-emerald-pro-500" />
+              <span className="text-sm font-medium text-emerald-pro-500">Founding Partner Program</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-light-text dark:text-white mb-6">
               Results We&apos;re{" "}
               <span className="gradient-text-cyan-violet">
                 Targeting
@@ -69,7 +69,7 @@ export default function CaseStudiesPage() {
             <Link href="/contact">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-electric-cyan to-cyan-dark hover:from-cyan-light hover:to-electric-cyan text-deep-space font-semibold px-8"
+                className="bg-gradient-to-r from-emerald-pro-600 to-cyan-dark hover:from-cyan-light hover:to-emerald-pro-600 text-deep-space font-semibold px-8"
               >
                 Become a Founding Partner
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -89,7 +89,7 @@ export default function CaseStudiesPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
               Our Performance Targets
             </h2>
             <p className="text-silver max-w-2xl mx-auto">
@@ -105,17 +105,17 @@ export default function CaseStudiesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center p-6 rounded-2xl border border-electric-cyan/20 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90"
+                className="text-center p-6 rounded-2xl border border-emerald-pro-600/20 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90"
               >
                 <div className="flex justify-center mb-4">
-                  <div className="p-3 rounded-xl bg-electric-cyan/10 border border-electric-cyan/20">
-                    <benchmark.icon className="h-6 w-6 text-electric-cyan" />
+                  <div className="p-3 rounded-xl bg-emerald-pro-600/10 border border-emerald-pro-600/20">
+                    <benchmark.icon className="h-6 w-6 text-emerald-pro-600" />
                   </div>
                 </div>
-                <p className="text-3xl font-sora font-bold text-electric-cyan mb-2">
+                <p className="text-3xl font-sora font-bold text-emerald-pro-600 mb-2">
                   {benchmark.value}
                 </p>
-                <p className="text-steel text-sm">{benchmark.label}</p>
+                <p className="text-light-text-muted dark:text-steel text-sm">{benchmark.label}</p>
               </motion.div>
             ))}
           </div>
@@ -128,7 +128,7 @@ export default function CaseStudiesPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
               How We&apos;ll Achieve These Results
             </h2>
             <p className="text-silver max-w-2xl mx-auto">
@@ -144,13 +144,13 @@ export default function CaseStudiesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-6 rounded-2xl border border-graphite/50 bg-deep-space/50 hover:border-electric-cyan/30 transition-colors"
+                className="p-6 rounded-2xl border border-border-default dark:border-graphite/50 bg-white dark:bg-deep-space/50 hover:border-emerald-pro-600/30 transition-colors"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="p-3 rounded-xl bg-electric-cyan/10 border border-electric-cyan/20">
-                    <item.icon className="h-6 w-6 text-electric-cyan" />
+                  <div className="p-3 rounded-xl bg-emerald-pro-600/10 border border-emerald-pro-600/20">
+                    <item.icon className="h-6 w-6 text-emerald-pro-600" />
                   </div>
-                  <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                  <h3 className="text-lg font-semibold text-light-text dark:text-white">{item.title}</h3>
                 </div>
                 <p className="text-silver text-sm">{item.description}</p>
               </motion.div>
@@ -170,7 +170,7 @@ export default function CaseStudiesPage() {
               transition={{ duration: 0.5 }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
                 Why Become a Founding Partner?
               </h2>
               <p className="text-silver max-w-2xl mx-auto">
@@ -191,12 +191,12 @@ export default function CaseStudiesPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-start gap-4 p-4 rounded-xl border border-electric-cyan/10 bg-deep-space/30"
+                  className="flex items-start gap-4 p-4 rounded-xl border border-emerald-pro-600/10 bg-white dark:bg-deep-space/30"
                 >
-                  <CheckCircle className="h-6 w-6 text-neon-mint flex-shrink-0" />
+                  <CheckCircle className="h-6 w-6 text-emerald-pro-400 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold text-white mb-1">{benefit.title}</h4>
-                    <p className="text-steel text-sm">{benefit.description}</p>
+                    <h4 className="font-semibold text-light-text dark:text-white mb-1">{benefit.title}</h4>
+                    <p className="text-light-text-muted dark:text-steel text-sm">{benefit.description}</p>
                   </div>
                 </motion.div>
               ))}

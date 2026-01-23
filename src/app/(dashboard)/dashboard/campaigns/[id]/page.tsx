@@ -170,7 +170,7 @@ const getMetricStatus = (value: number, target: number, warning: number, inverse
 };
 
 const statusColors: Record<MetricStatusType, { bg: string; text: string; border: string }> = {
-  success: { bg: "bg-neon-mint/10", text: "text-neon-mint", border: "border-neon-mint/20" },
+  success: { bg: "bg-emerald-pro-400/10", text: "text-emerald-pro-400", border: "border-emerald-pro-400/20" },
   warning: { bg: "bg-energy-orange/10", text: "text-energy-orange", border: "border-energy-orange/20" },
   critical: { bg: "bg-rose/10", text: "text-rose", border: "border-rose/20" },
 };
@@ -196,12 +196,12 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-6">
-        <div className="flex items-center gap-2 text-sm text-steel mb-2">
-          <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
+        <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-2">
+          <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
           <span>/</span>
-          <Link href="/dashboard/campaigns" className="hover:text-electric-cyan transition-colors">Campaigns</Link>
+          <Link href="/dashboard/campaigns" className="hover:text-emerald-pro-600 transition-colors">Campaigns</Link>
           <span>/</span>
-          <span className="text-electric-cyan">{campaignData.name}</span>
+          <span className="text-emerald-pro-600">{campaignData.name}</span>
         </div>
       </motion.div>
 
@@ -209,7 +209,7 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
         {/* Back Button */}
         <Link
           href="/dashboard/campaigns"
-          className="inline-flex items-center gap-2 text-sm text-steel hover:text-electric-cyan transition-colors mb-6"
+          className="inline-flex items-center gap-2 text-sm text-light-text-muted dark:text-steel hover:text-emerald-pro-600 transition-colors mb-6"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to Campaigns
@@ -219,28 +219,28 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
         <motion.div variants={itemVariants} className="glass-premium p-6 mb-6">
           <div className="flex items-start justify-between">
             <div className="flex items-center gap-4">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-electric-cyan/10 border border-electric-cyan/20">
-                <Mail className="h-7 w-7 text-electric-cyan" />
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-pro-600/10 border border-emerald-pro-600/20">
+                <Mail className="h-7 w-7 text-emerald-pro-600" />
               </div>
               <div>
                 <div className="flex items-center gap-3 mb-1">
-                  <h2 className="text-2xl font-sora font-bold text-white">{campaignData.name}</h2>
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium bg-neon-mint/10 text-neon-mint border border-neon-mint/20">
-                    <span className="h-1.5 w-1.5 rounded-full bg-neon-mint animate-pulse" />
+                  <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white">{campaignData.name}</h2>
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium bg-emerald-pro-400/10 text-emerald-pro-400 border border-emerald-pro-400/20">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-pro-400 animate-pulse" />
                     Active
                   </span>
                 </div>
-                <p className="text-sm text-steel">{campaignData.description}</p>
+                <p className="text-sm text-light-text-muted dark:text-steel">{campaignData.description}</p>
                 <div className="flex items-center gap-4 mt-2">
-                  <span className="text-xs text-steel flex items-center gap-1">
+                  <span className="text-xs text-light-text-muted dark:text-steel flex items-center gap-1">
                     <Calendar className="h-3 w-3" />
                     Created {campaignData.createdAt}
                   </span>
-                  <span className="text-xs text-steel flex items-center gap-1">
+                  <span className="text-xs text-light-text-muted dark:text-steel flex items-center gap-1">
                     <Users className="h-3 w-3" />
                     {campaignData.totalLeads.toLocaleString()} leads
                   </span>
-                  <span className="text-xs text-steel flex items-center gap-1">
+                  <span className="text-xs text-light-text-muted dark:text-steel flex items-center gap-1">
                     <GitBranch className="h-3 w-3" />
                     {campaignData.sequences} sequences
                   </span>
@@ -253,15 +253,15 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
                 <Pause className="h-4 w-4 mr-2" />
                 Pause
               </Button>
-              <Button variant="outline" size="sm" className="border-electric-cyan/20 text-steel hover:text-white">
+              <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white">
                 <Edit3 className="h-4 w-4 mr-2" />
                 Edit
               </Button>
-              <Button variant="outline" size="sm" className="border-electric-cyan/20 text-steel hover:text-white">
+              <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white">
                 <Download className="h-4 w-4 mr-2" />
                 Export
               </Button>
-              <Button variant="outline" size="sm" className="border-electric-cyan/20 text-steel hover:text-white">
+              <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white">
                 <MoreHorizontal className="h-4 w-4" />
               </Button>
             </div>
@@ -271,10 +271,10 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
         {/* Key Metrics */}
         <motion.div variants={itemVariants} className="grid grid-cols-6 gap-4 mb-6">
           {[
-            { label: "Sent", value: campaignData.metrics.sent.toLocaleString(), icon: Send, color: "electric-cyan" },
+            { label: "Sent", value: campaignData.metrics.sent.toLocaleString(), icon: Send, color: "emerald-pro-600" },
             { label: "Delivered", value: `${campaignData.metrics.deliverabilityRate}%`, sublabel: campaignData.metrics.delivered.toLocaleString(), icon: CheckCircle2, status: getMetricStatus(campaignData.metrics.deliverabilityRate, 90, 85) },
             { label: "Opened", value: `${campaignData.metrics.openRate}%`, sublabel: campaignData.metrics.opened.toLocaleString(), icon: Eye, status: getMetricStatus(campaignData.metrics.openRate, 30, 15) },
-            { label: "Clicked", value: `${campaignData.metrics.clickRate}%`, sublabel: campaignData.metrics.clicked.toLocaleString(), icon: MousePointer, color: "quantum-violet" },
+            { label: "Clicked", value: `${campaignData.metrics.clickRate}%`, sublabel: campaignData.metrics.clicked.toLocaleString(), icon: MousePointer, color: "emerald-pro-500" },
             { label: "Replied", value: `${campaignData.metrics.replyRate}%`, sublabel: campaignData.metrics.replied.toLocaleString(), icon: MessageSquare, status: getMetricStatus(campaignData.metrics.replyRate, 3, 1) },
             { label: "Meetings", value: campaignData.metrics.meetings.toString(), sublabel: `${campaignData.metrics.meetingRate}%`, icon: Calendar, color: "energy-orange" },
           ].map((metric) => {
@@ -282,36 +282,36 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
             return (
               <div
                 key={metric.label}
-                className="glass-premium p-4 hover:border-electric-cyan/30 hover:-translate-y-0.5 hover:shadow-card-hover transition-all duration-200 group overflow-hidden"
+                className="glass-premium p-4 hover:border-emerald-pro-600/30 hover:-translate-y-0.5 hover:shadow-card-hover transition-all duration-200 group overflow-hidden"
               >
                 {/* Top accent line on hover */}
-                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-electric-cyan to-quantum-violet opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-emerald-pro-600 to-emerald-pro-500 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                 <div className="flex items-center justify-between mb-2">
-                  <p className="text-xs text-steel">{metric.label}</p>
+                  <p className="text-xs text-light-text-muted dark:text-steel">{metric.label}</p>
                   <div className={cn(
                     "flex h-8 w-8 items-center justify-center rounded-lg border",
                     metricStatus ? `${metricStatus.bg} ${metricStatus.border}` :
-                    metric.color === "electric-cyan" ? "bg-electric-cyan/10 border-electric-cyan/20" :
-                    metric.color === "quantum-violet" ? "bg-quantum-violet/10 border-quantum-violet/20" :
+                    metric.color === "emerald-pro-600" ? "bg-emerald-pro-600/10 border-emerald-pro-600/20" :
+                    metric.color === "emerald-pro-500" ? "bg-emerald-pro-500/10 border-emerald-pro-500/20" :
                     "bg-energy-orange/10 border-energy-orange/20"
                   )}>
                     <metric.icon className={cn(
                       "h-4 w-4",
                       metricStatus ? metricStatus.text :
-                      metric.color === "electric-cyan" ? "text-electric-cyan" :
-                      metric.color === "quantum-violet" ? "text-quantum-violet" :
+                      metric.color === "emerald-pro-600" ? "text-emerald-pro-600" :
+                      metric.color === "emerald-pro-500" ? "text-emerald-pro-500" :
                       "text-energy-orange"
                     )} />
                   </div>
                 </div>
                 <p className={cn(
                   "text-2xl font-sora font-bold",
-                  metricStatus ? metricStatus.text : "text-white"
+                  metricStatus ? metricStatus.text : "text-light-text dark:text-white"
                 )}>
                   {metric.value}
                 </p>
                 {metric.sublabel && (
-                  <p className="text-xs text-steel mt-1">{metric.sublabel} total</p>
+                  <p className="text-xs text-light-text-muted dark:text-steel mt-1">{metric.sublabel} total</p>
                 )}
               </div>
             );
@@ -337,7 +337,7 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
                 )}
               >
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-steel">{metric.label}</span>
+                  <span className="text-sm text-light-text-muted dark:text-steel">{metric.label}</span>
                   <span className={cn("text-xs font-medium", colors.text)}>
                     Target: {"<"}{metric.target}{metric.unit}
                   </span>
@@ -360,7 +360,7 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
         </motion.div>
 
         {/* Tabs */}
-        <motion.div variants={itemVariants} className="flex items-center gap-1 p-1 rounded-xl bg-midnight-blue/50 border border-electric-cyan/10 w-fit mb-6">
+        <motion.div variants={itemVariants} className="flex items-center gap-1 p-1 rounded-xl bg-light-bg-secondary dark:bg-midnight-blue/50 border border-emerald-pro-600/10 w-fit mb-6">
           {[
             { id: "overview", label: "Performance Overview", icon: BarChart3 },
             { id: "sequences", label: "Sequences", icon: GitBranch },
@@ -372,8 +372,8 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
               className={cn(
                 "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all",
                 activeTab === tab.id
-                  ? "bg-electric-cyan/10 text-electric-cyan border border-electric-cyan/20"
-                  : "text-steel hover:text-white hover:bg-electric-cyan/5"
+                  ? "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20"
+                  : "text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-emerald-pro-600/5"
               )}
             >
               <tab.icon className="h-4 w-4" />
@@ -388,19 +388,19 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
             {/* Daily Performance Chart */}
             <div className="col-span-2 glass-premium p-6">
               <div className="flex items-center justify-between mb-6">
-                <h3 className="font-semibold text-white">Daily Performance</h3>
+                <h3 className="font-semibold text-light-text dark:text-white">Daily Performance</h3>
                 <div className="flex items-center gap-4">
                   <div className="flex items-center gap-2">
-                    <span className="h-3 w-3 rounded-full bg-electric-cyan"></span>
-                    <span className="text-xs text-steel">Sent</span>
+                    <span className="h-3 w-3 rounded-full bg-emerald-pro-600"></span>
+                    <span className="text-xs text-light-text-muted dark:text-steel">Sent</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="h-3 w-3 rounded-full bg-quantum-violet"></span>
-                    <span className="text-xs text-steel">Opened</span>
+                    <span className="h-3 w-3 rounded-full bg-emerald-pro-500"></span>
+                    <span className="text-xs text-light-text-muted dark:text-steel">Opened</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="h-3 w-3 rounded-full bg-neon-mint"></span>
-                    <span className="text-xs text-steel">Replied</span>
+                    <span className="h-3 w-3 rounded-full bg-emerald-pro-400"></span>
+                    <span className="text-xs text-light-text-muted dark:text-steel">Replied</span>
                   </div>
                 </div>
               </div>
@@ -410,19 +410,19 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
                   <div key={day.date} className="flex-1 flex flex-col items-center gap-1">
                     <div className="w-full flex gap-0.5 items-end" style={{ height: "140px" }}>
                       <div
-                        className="flex-1 bg-electric-cyan/40 rounded-t hover:bg-electric-cyan/60 transition-all"
+                        className="flex-1 bg-emerald-pro-600/40 rounded-t hover:bg-emerald-pro-600/60 transition-all"
                         style={{ height: `${(day.sent / maxSent) * 100}%` }}
                       />
                       <div
-                        className="flex-1 bg-quantum-violet/40 rounded-t hover:bg-quantum-violet/60 transition-all"
+                        className="flex-1 bg-emerald-pro-500/40 rounded-t hover:bg-emerald-pro-500/60 transition-all"
                         style={{ height: `${(day.opened / maxSent) * 100}%` }}
                       />
                       <div
-                        className="flex-1 bg-neon-mint/40 rounded-t hover:bg-neon-mint/60 transition-all"
+                        className="flex-1 bg-emerald-pro-400/40 rounded-t hover:bg-emerald-pro-400/60 transition-all"
                         style={{ height: `${(day.replied / maxSent) * 100}%` }}
                       />
                     </div>
-                    <span className="text-[10px] text-steel mt-2">{day.date}</span>
+                    <span className="text-[10px] text-light-text-muted dark:text-steel mt-2">{day.date}</span>
                   </div>
                 ))}
               </div>
@@ -430,29 +430,29 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
 
             {/* Sequence Summary */}
             <div className="glass-premium p-6">
-              <h3 className="font-semibold text-white mb-4">Sequence Performance</h3>
+              <h3 className="font-semibold text-light-text dark:text-white mb-4">Sequence Performance</h3>
               <div className="space-y-3">
                 {sequences.map((seq) => (
                   <div
                     key={seq.id}
-                    className="p-3 rounded-xl border border-electric-cyan/10 bg-deep-space/50"
+                    className="p-3 rounded-xl border border-emerald-pro-600/10 bg-white dark:bg-deep-space/50"
                   >
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2">
-                        <span className="font-mono text-xs px-2 py-0.5 rounded-md bg-electric-cyan/10 text-electric-cyan border border-electric-cyan/20">
+                        <span className="font-mono text-xs px-2 py-0.5 rounded-md bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20">
                           {seq.step}
                         </span>
-                        <span className="text-sm font-medium text-white">{seq.name}</span>
+                        <span className="text-sm font-medium text-light-text dark:text-white">{seq.name}</span>
                       </div>
                     </div>
                     <div className="grid grid-cols-2 gap-2 text-xs">
                       <div>
-                        <span className="text-steel">Open Rate</span>
-                        <p className="text-white font-medium">{seq.openRate}%</p>
+                        <span className="text-light-text-muted dark:text-steel">Open Rate</span>
+                        <p className="text-light-text dark:text-white font-medium">{seq.openRate}%</p>
                       </div>
                       <div>
-                        <span className="text-steel">Reply Rate</span>
-                        <p className="text-neon-mint font-medium">{seq.replyRate}%</p>
+                        <span className="text-light-text-muted dark:text-steel">Reply Rate</span>
+                        <p className="text-emerald-pro-400 font-medium">{seq.replyRate}%</p>
                       </div>
                     </div>
                   </div>
@@ -466,8 +466,8 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
         {activeTab === "sequences" && (
           <motion.div variants={itemVariants} className="space-y-4">
             <div className="flex items-center justify-between">
-              <h3 className="font-semibold text-white">Campaign Sequences</h3>
-              <Button size="sm" className="bg-electric-cyan/10 text-electric-cyan hover:bg-electric-cyan/20 border border-electric-cyan/20">
+              <h3 className="font-semibold text-light-text dark:text-white">Campaign Sequences</h3>
+              <Button size="sm" className="bg-emerald-pro-600/10 text-emerald-pro-600 hover:bg-emerald-pro-600/20 border border-emerald-pro-600/20">
                 <Plus className="h-4 w-4 mr-2" />
                 Add Sequence
               </Button>
@@ -476,57 +476,57 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
             <div className="glass-premium overflow-hidden">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b border-electric-cyan/10">
-                    <th className="text-left text-xs font-semibold text-steel uppercase tracking-wider px-6 py-4">Step</th>
-                    <th className="text-left text-xs font-semibold text-steel uppercase tracking-wider px-4 py-4">Name</th>
-                    <th className="text-center text-xs font-semibold text-steel uppercase tracking-wider px-4 py-4">Sent</th>
-                    <th className="text-center text-xs font-semibold text-steel uppercase tracking-wider px-4 py-4">Opened</th>
-                    <th className="text-center text-xs font-semibold text-steel uppercase tracking-wider px-4 py-4">Replied</th>
-                    <th className="text-center text-xs font-semibold text-steel uppercase tracking-wider px-4 py-4">Open Rate</th>
-                    <th className="text-center text-xs font-semibold text-steel uppercase tracking-wider px-4 py-4">Reply Rate</th>
-                    <th className="text-right text-xs font-semibold text-steel uppercase tracking-wider px-6 py-4">Actions</th>
+                  <tr className="border-b border-emerald-pro-600/10">
+                    <th className="text-left text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">Step</th>
+                    <th className="text-left text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-4 py-4">Name</th>
+                    <th className="text-center text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-4 py-4">Sent</th>
+                    <th className="text-center text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-4 py-4">Opened</th>
+                    <th className="text-center text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-4 py-4">Replied</th>
+                    <th className="text-center text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-4 py-4">Open Rate</th>
+                    <th className="text-center text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-4 py-4">Reply Rate</th>
+                    <th className="text-right text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">Actions</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-electric-cyan/5">
+                <tbody className="divide-y divide-emerald-pro-600/5">
                   {sequences.map((seq) => (
-                    <tr key={seq.id} className="hover:bg-electric-cyan/5 transition-colors">
+                    <tr key={seq.id} className="hover:bg-emerald-pro-600/5 transition-colors">
                       <td className="px-6 py-4">
-                        <span className="font-mono text-sm px-3 py-1 rounded-lg bg-electric-cyan/10 text-electric-cyan border border-electric-cyan/20">
+                        <span className="font-mono text-sm px-3 py-1 rounded-lg bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20">
                           Step {seq.step}
                         </span>
                       </td>
                       <td className="px-4 py-4">
-                        <p className="font-medium text-white">{seq.name}</p>
+                        <p className="font-medium text-light-text dark:text-white">{seq.name}</p>
                       </td>
                       <td className="px-4 py-4 text-center">
-                        <span className="text-sm text-white">{seq.sent.toLocaleString()}</span>
+                        <span className="text-sm text-light-text dark:text-white">{seq.sent.toLocaleString()}</span>
                       </td>
                       <td className="px-4 py-4 text-center">
-                        <span className="text-sm text-white">{seq.opened.toLocaleString()}</span>
+                        <span className="text-sm text-light-text dark:text-white">{seq.opened.toLocaleString()}</span>
                       </td>
                       <td className="px-4 py-4 text-center">
-                        <span className="text-sm text-neon-mint font-medium">{seq.replied}</span>
+                        <span className="text-sm text-emerald-pro-400 font-medium">{seq.replied}</span>
                       </td>
                       <td className="px-4 py-4 text-center">
-                        <span className="text-sm text-white font-medium">{seq.openRate}%</span>
+                        <span className="text-sm text-light-text dark:text-white font-medium">{seq.openRate}%</span>
                       </td>
                       <td className="px-4 py-4 text-center">
                         <span className={cn(
                           "text-sm font-semibold",
-                          seq.replyRate >= 5 ? "text-neon-mint" : seq.replyRate >= 3 ? "text-energy-orange" : "text-steel"
+                          seq.replyRate >= 5 ? "text-emerald-pro-400" : seq.replyRate >= 3 ? "text-energy-orange" : "text-light-text-muted dark:text-steel"
                         )}>
                           {seq.replyRate}%
                         </span>
                       </td>
                       <td className="px-6 py-4">
                         <div className="flex items-center justify-end gap-1">
-                          <button className="p-2 text-steel hover:text-electric-cyan hover:bg-electric-cyan/10 rounded-lg transition-colors">
+                          <button className="p-2 text-light-text-muted dark:text-steel hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                             <Eye className="h-4 w-4" />
                           </button>
-                          <button className="p-2 text-steel hover:text-electric-cyan hover:bg-electric-cyan/10 rounded-lg transition-colors">
+                          <button className="p-2 text-light-text-muted dark:text-steel hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                             <Edit3 className="h-4 w-4" />
                           </button>
-                          <button className="p-2 text-steel hover:text-white hover:bg-electric-cyan/10 rounded-lg transition-colors">
+                          <button className="p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                             <MoreHorizontal className="h-4 w-4" />
                           </button>
                         </div>
@@ -543,8 +543,8 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
         {activeTab === "activity" && (
           <motion.div variants={itemVariants} className="glass-premium p-6">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="font-semibold text-white">Recent Activity</h3>
-              <Button variant="outline" size="sm" className="border-electric-cyan/20 text-steel hover:text-white">
+              <h3 className="font-semibold text-light-text dark:text-white">Recent Activity</h3>
+              <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white">
                 <RefreshCw className="h-4 w-4 mr-2" />
                 Refresh
               </Button>
@@ -556,36 +556,36 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
                 return (
                   <div
                     key={activity.id}
-                    className="flex items-start gap-4 p-4 rounded-xl border border-electric-cyan/10 bg-deep-space/50 hover:border-electric-cyan/20 transition-all"
+                    className="flex items-start gap-4 p-4 rounded-xl border border-emerald-pro-600/10 bg-white dark:bg-deep-space/50 hover:border-emerald-pro-600/20 transition-all"
                   >
                     <div className={cn(
                       "flex h-10 w-10 items-center justify-center rounded-xl border",
-                      activity.type === "reply" && "bg-neon-mint/10 border-neon-mint/20",
-                      activity.type === "meeting" && "bg-quantum-violet/10 border-quantum-violet/20",
-                      activity.type === "open" && "bg-electric-cyan/10 border-electric-cyan/20",
+                      activity.type === "reply" && "bg-emerald-pro-400/10 border-emerald-pro-400/20",
+                      activity.type === "meeting" && "bg-emerald-pro-500/10 border-emerald-pro-500/20",
+                      activity.type === "open" && "bg-emerald-pro-600/10 border-emerald-pro-600/20",
                       activity.type === "click" && "bg-energy-orange/10 border-energy-orange/20"
                     )}>
                       <Icon className={cn(
                         "h-5 w-5",
-                        activity.type === "reply" && "text-neon-mint",
-                        activity.type === "meeting" && "text-quantum-violet",
-                        activity.type === "open" && "text-electric-cyan",
+                        activity.type === "reply" && "text-emerald-pro-400",
+                        activity.type === "meeting" && "text-emerald-pro-500",
+                        activity.type === "open" && "text-emerald-pro-600",
                         activity.type === "click" && "text-energy-orange"
                       )} />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-1">
                         <div className="flex items-center gap-2">
-                          <span className="font-medium text-white">{activity.lead}</span>
-                          <span className="text-xs text-steel">at {activity.company}</span>
+                          <span className="font-medium text-light-text dark:text-white">{activity.lead}</span>
+                          <span className="text-xs text-light-text-muted dark:text-steel">at {activity.company}</span>
                         </div>
-                        <span className="text-xs text-steel">{activity.time}</span>
+                        <span className="text-xs text-light-text-muted dark:text-steel">{activity.time}</span>
                       </div>
-                      <p className="text-sm text-steel">{activity.message}</p>
+                      <p className="text-sm text-light-text-muted dark:text-steel">{activity.message}</p>
                     </div>
                     <Link
                       href={`/dashboard/leads/lead-001`}
-                      className="p-2 text-steel hover:text-electric-cyan hover:bg-electric-cyan/10 rounded-lg transition-colors"
+                      className="p-2 text-light-text-muted dark:text-steel hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors"
                     >
                       <ChevronRight className="h-4 w-4" />
                     </Link>

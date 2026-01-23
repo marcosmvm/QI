@@ -74,13 +74,13 @@ export function ProcessSteps() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
             How It{" "}
             <span className="gradient-text-cyan-violet">
               Works
             </span>
           </h2>
-          <p className="text-lg text-steel">
+          <p className="text-lg text-light-text-muted dark:text-steel">
             Our proven 5-step process transforms cold outreach into a predictable meeting machine.
           </p>
         </motion.div>
@@ -96,7 +96,7 @@ export function ProcessSteps() {
           {/* Connection Line - Animated gradient */}
           <div className="absolute left-8 top-0 bottom-0 w-px hidden md:block overflow-hidden">
             <motion.div
-              className="h-full w-full bg-gradient-to-b from-electric-cyan via-quantum-violet to-electric-cyan"
+              className="h-full w-full bg-gradient-to-b from-emerald-pro-600 via-emerald-pro-500 to-emerald-pro-600"
               initial={{ scaleY: 0 }}
               whileInView={{ scaleY: 1 }}
               viewport={{ once: true }}
@@ -114,21 +114,21 @@ export function ProcessSteps() {
               >
                 {/* Step Icon */}
                 <div className="relative z-10 flex-shrink-0">
-                  <div className="w-16 h-16 rounded-2xl bg-midnight-blue/60 backdrop-blur-sm border border-graphite/50 flex items-center justify-center group-hover:border-electric-cyan/40 group-hover:shadow-glow-cyan-sm transition-all duration-300">
-                    <step.icon className="h-7 w-7 text-electric-cyan group-hover:scale-110 transition-transform duration-300" />
+                  <div className="w-16 h-16 rounded-2xl bg-light-bg-secondary dark:bg-midnight-blue/60 backdrop-blur-sm border border-border-default dark:border-graphite/50 flex items-center justify-center group-hover:border-emerald-pro-600/40 group-hover:shadow-glow-cyan-sm transition-all duration-300">
+                    <step.icon className="h-7 w-7 text-emerald-pro-600 group-hover:scale-110 transition-transform duration-300" />
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 pb-8">
-                  <div className="p-5 rounded-xl bg-midnight-blue/30 backdrop-blur-sm border border-graphite/30 group-hover:border-electric-cyan/30 group-hover:bg-midnight-blue/50 transition-all duration-300">
+                  <div className="p-5 rounded-xl bg-light-bg-secondary dark:bg-midnight-blue/30 backdrop-blur-sm border border-border-default dark:border-graphite/30 group-hover:border-emerald-pro-600/30 group-hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-all duration-300">
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="text-electric-cyan font-mono text-sm font-semibold">{step.number}</span>
-                      <h3 className="text-xl md:text-2xl font-sora font-semibold text-white group-hover:text-electric-cyan transition-colors">
+                      <span className="text-emerald-pro-600 font-mono text-sm font-semibold">{step.number}</span>
+                      <h3 className="text-xl md:text-2xl font-sora font-semibold text-light-text dark:text-white group-hover:text-emerald-pro-600 transition-colors">
                         {step.title}
                       </h3>
                     </div>
-                    <p className="text-steel max-w-2xl group-hover:text-silver/80 transition-colors">
+                    <p className="text-light-text-muted dark:text-steel max-w-2xl group-hover:text-silver/80 transition-colors">
                       {step.description}
                     </p>
                   </div>

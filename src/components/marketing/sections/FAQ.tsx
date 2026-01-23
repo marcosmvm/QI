@@ -74,13 +74,13 @@ export function FAQ() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-2xl mx-auto mb-12"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
             Frequently Asked{" "}
             <span className="gradient-text-cyan-violet">
               Questions
             </span>
           </h2>
-          <p className="text-lg text-steel">
+          <p className="text-lg text-light-text-muted dark:text-steel">
             Everything you need to know about working with XGrowthOS.
           </p>
         </motion.div>
@@ -97,18 +97,18 @@ export function FAQ() {
               <motion.div key={index} variants={itemVariants}>
                 <Accordion.Item
                   value={`item-${index}`}
-                  className="group rounded-xl border border-graphite/50 bg-midnight-blue/30 backdrop-blur-sm overflow-hidden data-[state=open]:border-electric-cyan/30 data-[state=open]:shadow-glow-cyan-sm hover:border-electric-cyan/20 transition-all duration-300"
+                  className="group rounded-xl border border-border-default dark:border-graphite/50 bg-light-bg-secondary dark:bg-midnight-blue/30 backdrop-blur-sm overflow-hidden data-[state=open]:border-emerald-pro-600/30 data-[state=open]:shadow-glow-cyan-sm hover:border-emerald-pro-600/20 transition-all duration-300"
                 >
                   <Accordion.Header>
                     <Accordion.Trigger className="flex w-full items-center justify-between px-6 py-5 text-left">
-                      <span className="text-white font-medium pr-4 group-hover:text-electric-cyan transition-colors">{faq.question}</span>
-                      <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-electric-cyan/10 border border-electric-cyan/20 flex items-center justify-center group-data-[state=open]:bg-electric-cyan/20 transition-all duration-300">
-                        <ChevronDown className="h-4 w-4 text-electric-cyan shrink-0 transition-transform duration-300 group-data-[state=open]:rotate-180" />
+                      <span className="text-light-text dark:text-white font-medium pr-4 group-hover:text-emerald-pro-600 transition-colors">{faq.question}</span>
+                      <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-emerald-pro-600/10 border border-emerald-pro-600/20 flex items-center justify-center group-data-[state=open]:bg-emerald-pro-600/20 transition-all duration-300">
+                        <ChevronDown className="h-4 w-4 text-emerald-pro-600 shrink-0 transition-transform duration-300 group-data-[state=open]:rotate-180" />
                       </div>
                     </Accordion.Trigger>
                   </Accordion.Header>
                   <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                    <div className="px-6 pb-5 text-steel leading-relaxed">
+                    <div className="px-6 pb-5 text-light-text-muted dark:text-steel leading-relaxed">
                       {faq.answer}
                     </div>
                   </Accordion.Content>

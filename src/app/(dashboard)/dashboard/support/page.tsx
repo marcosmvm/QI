@@ -114,9 +114,9 @@ export default async function SupportPage({
     return (
       <div className="min-h-screen p-8 flex items-center justify-center">
         <div className="text-center">
-          <MessageSquare className="h-12 w-12 text-steel mx-auto mb-4" />
-          <h1 className="text-xl font-sora font-bold text-white mb-2">Support Unavailable</h1>
-          <p className="text-steel">Please complete your onboarding first.</p>
+          <MessageSquare className="h-12 w-12 text-light-text-muted dark:text-steel mx-auto mb-4" />
+          <h1 className="text-xl font-sora font-bold text-light-text dark:text-white mb-2">Support Unavailable</h1>
+          <p className="text-light-text-muted dark:text-steel">Please complete your onboarding first.</p>
         </div>
       </div>
     );
@@ -140,22 +140,22 @@ export default async function SupportPage({
     <SupportPageWrapper>
       <div className="h-screen flex flex-col">
         {/* Page Header */}
-        <div className="p-4 border-b border-graphite/50 bg-midnight-blue/50 flex-shrink-0">
-          <div className="flex items-center gap-2 text-sm text-steel mb-1">
-            <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
+        <div className="p-4 border-b border-border-default dark:border-graphite/50 bg-light-bg-secondary dark:bg-midnight-blue/50 flex-shrink-0">
+          <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-1">
+            <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
             <span>/</span>
-            <span className="text-electric-cyan">Support</span>
+            <span className="text-emerald-pro-600">Support</span>
           </div>
-          <h1 className="text-xl font-sora font-bold text-white">Support</h1>
-          <p className="text-steel text-sm">Get help from our team</p>
+          <h1 className="text-xl font-sora font-bold text-light-text dark:text-white">Support</h1>
+          <p className="text-light-text-muted dark:text-steel text-sm">Get help from our team</p>
         </div>
 
         <div className="flex-1 flex overflow-hidden">
           {/* Conversations Sidebar */}
-          <div className="w-80 border-r border-graphite/50 flex flex-col bg-midnight-blue/30">
-            <div className="p-4 border-b border-graphite/50 bg-midnight-blue/50">
+          <div className="w-80 border-r border-border-default dark:border-graphite/50 flex flex-col bg-light-bg-secondary dark:bg-midnight-blue/30">
+            <div className="p-4 border-b border-border-default dark:border-graphite/50 bg-light-bg-secondary dark:bg-midnight-blue/50">
               <div className="flex items-center justify-between">
-                <h2 className="text-base font-sora font-semibold text-white">Conversations</h2>
+                <h2 className="text-base font-sora font-semibold text-light-text dark:text-white">Conversations</h2>
                 <form
                   action={async () => {
                     "use server";
@@ -191,7 +191,7 @@ export default async function SupportPage({
                 >
                   <button
                     type="submit"
-                    className="p-2 rounded-lg bg-electric-cyan/10 border border-electric-cyan/30 text-electric-cyan hover:bg-electric-cyan/20 transition-colors"
+                    className="p-2 rounded-lg bg-emerald-pro-600/10 border border-emerald-pro-600/30 text-emerald-pro-600 hover:bg-emerald-pro-600/20 transition-colors"
                     title="New conversation"
                   >
                     <Plus className="h-4 w-4" />
@@ -203,7 +203,7 @@ export default async function SupportPage({
             <div className="flex-1 overflow-y-auto">
               {conversations.length === 0 ? (
                 <div className="p-4 text-center">
-                  <p className="text-steel text-sm">No conversations yet</p>
+                  <p className="text-light-text-muted dark:text-steel text-sm">No conversations yet</p>
                 </div>
               ) : (
                 <div className="divide-y divide-graphite/30">
@@ -211,34 +211,34 @@ export default async function SupportPage({
                     <Link
                       key={conv.id}
                       href={`/dashboard/support?conversation=${conv.id}`}
-                      className={`block p-4 hover:bg-midnight-blue/30 transition-colors ${
-                        conv.id === activeConversationId ? "bg-midnight-blue/50 border-l-2 border-electric-cyan" : ""
+                      className={`block p-4 hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors ${
+                        conv.id === activeConversationId ? "bg-light-bg-secondary dark:bg-midnight-blue/50 border-l-2 border-emerald-pro-600" : ""
                       }`}
                     >
                       <div className="flex items-start gap-3">
                         <div className={`h-8 w-8 rounded-full flex items-center justify-center ${
                           conv.status === "open"
-                            ? "bg-electric-cyan/10 border border-electric-cyan/30"
-                            : "bg-neon-mint/10 border border-neon-mint/30"
+                            ? "bg-emerald-pro-600/10 border border-emerald-pro-600/30"
+                            : "bg-emerald-pro-400/10 border border-emerald-pro-400/30"
                         }`}>
                           <MessageSquare className={`h-4 w-4 ${
-                            conv.status === "open" ? "text-electric-cyan" : "text-neon-mint"
+                            conv.status === "open" ? "text-emerald-pro-600" : "text-emerald-pro-400"
                           }`} />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm font-medium text-white truncate">
+                          <p className="text-sm font-medium text-light-text dark:text-white truncate">
                             {conv.subject || "Conversation"}
                           </p>
-                          <p className="text-xs text-steel">
+                          <p className="text-xs text-light-text-muted dark:text-steel">
                             {new Date(conv.updated_at).toLocaleDateString()}
                           </p>
                         </div>
                         <span className={`text-xs px-2 py-0.5 rounded-full capitalize ${
                           conv.status === "open"
-                            ? "bg-electric-cyan/10 text-electric-cyan"
+                            ? "bg-emerald-pro-600/10 text-emerald-pro-600"
                             : conv.status === "resolved"
-                            ? "bg-neon-mint/10 text-neon-mint"
-                            : "bg-steel/10 text-steel"
+                            ? "bg-emerald-pro-400/10 text-emerald-pro-400"
+                            : "bg-steel/10 text-light-text-muted dark:text-steel"
                         }`}>
                           {conv.status}
                         </span>
@@ -251,18 +251,18 @@ export default async function SupportPage({
           </div>
 
           {/* Chat Area */}
-          <div className="flex-1 flex flex-col bg-deep-space/50">
+          <div className="flex-1 flex flex-col bg-white dark:bg-deep-space/50">
             {activeConversationId ? (
               <>
                 {/* Chat Header */}
-                <div className="p-4 border-b border-graphite/50 bg-midnight-blue/30 backdrop-blur-sm">
+                <div className="p-4 border-b border-border-default dark:border-graphite/50 bg-light-bg-secondary dark:bg-midnight-blue/30 backdrop-blur-sm">
                   <div className="flex items-center gap-3">
-                    <div className="h-10 w-10 rounded-full bg-quantum-violet/20 border border-quantum-violet/30 flex items-center justify-center">
-                      <span className="text-sm font-medium text-quantum-violet">QI</span>
+                    <div className="h-10 w-10 rounded-full bg-emerald-pro-500/20 border border-emerald-pro-500/30 flex items-center justify-center">
+                      <span className="text-sm font-medium text-emerald-pro-500">QI</span>
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-white">XGrowthOS Support</p>
-                      <p className="text-xs text-steel">We typically reply within a few hours</p>
+                      <p className="text-sm font-medium text-light-text dark:text-white">XGrowthOS Support</p>
+                      <p className="text-xs text-light-text-muted dark:text-steel">We typically reply within a few hours</p>
                     </div>
                   </div>
                 </div>
@@ -279,8 +279,8 @@ export default async function SupportPage({
             ) : (
               <div className="flex-1 flex items-center justify-center">
                 <div className="text-center">
-                  <MessageSquare className="h-12 w-12 text-steel mx-auto mb-4" />
-                  <p className="text-steel">Select a conversation to continue</p>
+                  <MessageSquare className="h-12 w-12 text-light-text-muted dark:text-steel mx-auto mb-4" />
+                  <p className="text-light-text-muted dark:text-steel">Select a conversation to continue</p>
                 </div>
               </div>
             )}

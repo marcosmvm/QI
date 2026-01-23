@@ -1,85 +1,89 @@
 // ============================================
-// QUANTUM INSIGHTS - CHART CONFIGURATION
+// XGROWTHOS - CHART CONFIGURATION
 // Recharts theme configuration for consistent styling
+// Light Theme Default with Dark Mode Support
 // ============================================
 
 export const chartColors = {
-  // Primary data series
-  primary: '#00D4FF',      // electric-cyan
-  // Secondary data series
-  secondary: '#7B61FF',    // quantum-violet
+  // Primary data series (emerald green)
+  primary: '#059669',      // emerald-pro-600
+  // Secondary data series (lighter green)
+  secondary: '#10b981',    // emerald-pro-500
   // Tertiary (positive trends)
-  tertiary: '#00FFB2',     // neon-mint
+  tertiary: '#22c55e',     // xgrowth-500
   // Quaternary (warnings)
-  quaternary: '#FF6B35',   // energy-orange
+  quaternary: '#f59e0b',   // amber
   // Neutral
-  neutral: '#9CA3AF',      // steel
+  neutral: '#64748b',      // slate-500
   // Error
-  error: '#FF4757',        // alert-red
+  error: '#ef4444',        // red-500
+  // Success
+  success: '#22c55e',      // green-500
 }
 
 export const chartAreaFills = {
-  primary: 'rgba(0, 212, 255, 0.1)',
-  secondary: 'rgba(123, 97, 255, 0.1)',
-  tertiary: 'rgba(0, 255, 178, 0.1)',
-  quaternary: 'rgba(255, 107, 53, 0.1)',
+  primary: 'rgba(5, 150, 105, 0.1)',
+  secondary: 'rgba(16, 185, 129, 0.1)',
+  tertiary: 'rgba(34, 197, 94, 0.1)',
+  quaternary: 'rgba(245, 158, 11, 0.1)',
 }
 
 export const chartGradients = {
   primary: {
     id: 'primaryGradient',
     stops: [
-      { offset: '0%', color: '#00D4FF', opacity: 0.3 },
-      { offset: '100%', color: '#00D4FF', opacity: 0 },
+      { offset: '0%', color: '#059669', opacity: 0.3 },
+      { offset: '100%', color: '#059669', opacity: 0 },
     ],
   },
   secondary: {
     id: 'secondaryGradient',
     stops: [
-      { offset: '0%', color: '#7B61FF', opacity: 0.3 },
-      { offset: '100%', color: '#7B61FF', opacity: 0 },
+      { offset: '0%', color: '#10b981', opacity: 0.3 },
+      { offset: '100%', color: '#10b981', opacity: 0 },
     ],
   },
   tertiary: {
     id: 'tertiaryGradient',
     stops: [
-      { offset: '0%', color: '#00FFB2', opacity: 0.3 },
-      { offset: '100%', color: '#00FFB2', opacity: 0 },
+      { offset: '0%', color: '#22c55e', opacity: 0.3 },
+      { offset: '100%', color: '#22c55e', opacity: 0 },
     ],
   },
 }
 
+// Light mode chart theme (default)
 export const chartTheme = {
   // Grid
   grid: {
-    stroke: '#2A3F5F',
+    stroke: '#e2e8f0',
     strokeDasharray: '3 3',
   },
   // Axes
   axis: {
-    stroke: '#2A3F5F',
+    stroke: '#e2e8f0',
     tick: {
-      fill: '#9CA3AF',
+      fill: '#64748b',
       fontSize: 12,
     },
   },
-  // Tooltip
+  // Tooltip (light mode)
   tooltip: {
     contentStyle: {
-      backgroundColor: '#1A2D4A',
-      border: '1px solid #2A3F5F',
+      backgroundColor: '#ffffff',
+      border: '1px solid #e2e8f0',
       borderRadius: '8px',
-      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
+      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
       padding: '12px',
     },
     labelStyle: {
-      color: '#FFFFFF',
+      color: '#0f172a',
       fontWeight: 600,
       marginBottom: '8px',
       fontSize: '14px',
     },
     itemStyle: {
-      color: '#E8E8ED',
+      color: '#334155',
       fontSize: '13px',
       padding: '2px 0',
     },
@@ -90,7 +94,51 @@ export const chartTheme = {
       paddingTop: '16px',
     },
     itemStyle: {
-      color: '#9CA3AF',
+      color: '#64748b',
+      fontSize: '13px',
+    },
+  },
+}
+
+// Dark mode chart theme
+export const chartThemeDark = {
+  grid: {
+    stroke: '#2d4a2d',
+    strokeDasharray: '3 3',
+  },
+  axis: {
+    stroke: '#2d4a2d',
+    tick: {
+      fill: '#9ca3af',
+      fontSize: 12,
+    },
+  },
+  tooltip: {
+    contentStyle: {
+      backgroundColor: '#1a2e1a',
+      border: '1px solid #2d4a2d',
+      borderRadius: '8px',
+      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
+      padding: '12px',
+    },
+    labelStyle: {
+      color: '#ffffff',
+      fontWeight: 600,
+      marginBottom: '8px',
+      fontSize: '14px',
+    },
+    itemStyle: {
+      color: '#e8e8ed',
+      fontSize: '13px',
+      padding: '2px 0',
+    },
+  },
+  legend: {
+    wrapperStyle: {
+      paddingTop: '16px',
+    },
+    itemStyle: {
+      color: '#9ca3af',
       fontSize: '13px',
     },
   },
@@ -122,10 +170,10 @@ export const CustomTooltip = ({ active, payload, label, formatter }: CustomToolt
   if (active && payload && payload.length) {
     return (
       <div
-        className="bg-midnight-blue border border-graphite rounded-lg p-3 shadow-lg"
-        style={{ boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)' }}
+        className="bg-white dark:bg-midnight-blue border border-border-default dark:border-graphite rounded-lg p-3 shadow-lg"
+        style={{ boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)' }}
       >
-        <p className="text-white font-semibold text-sm mb-2">{label}</p>
+        <p className="text-light-text dark:text-white font-semibold text-sm mb-2">{label}</p>
         {payload.map((entry, index) => (
           <p
             key={index}
@@ -141,7 +189,7 @@ export const CustomTooltip = ({ active, payload, label, formatter }: CustomToolt
   return null
 }
 
-// Common axis props
+// Common axis props (light mode)
 export const xAxisProps = {
   stroke: chartTheme.axis.stroke,
   tick: chartTheme.axis.tick,

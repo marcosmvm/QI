@@ -12,23 +12,23 @@ import { getIndustryById, industries } from "@/lib/content/industries";
 import { getCaseStudiesByIndustry } from "@/lib/content/case-studies";
 
 const colorClasses = {
-  "electric-cyan": {
-    bg: "bg-electric-cyan/10",
-    border: "border-electric-cyan/30",
-    text: "text-electric-cyan",
-    gradient: "from-electric-cyan to-cyan-dark",
+  "emerald-pro-600": {
+    bg: "bg-emerald-pro-600/10",
+    border: "border-emerald-pro-600/30",
+    text: "text-emerald-pro-600",
+    gradient: "from-emerald-pro-600 to-cyan-dark",
   },
-  "quantum-violet": {
-    bg: "bg-quantum-violet/10",
-    border: "border-quantum-violet/30",
-    text: "text-quantum-violet",
-    gradient: "from-quantum-violet to-purple-600",
+  "emerald-pro-500": {
+    bg: "bg-emerald-pro-500/10",
+    border: "border-emerald-pro-500/30",
+    text: "text-emerald-pro-500",
+    gradient: "from-emerald-pro-500 to-purple-600",
   },
-  "neon-mint": {
-    bg: "bg-neon-mint/10",
-    border: "border-neon-mint/30",
-    text: "text-neon-mint",
-    gradient: "from-neon-mint to-emerald-500",
+  "emerald-pro-400": {
+    bg: "bg-emerald-pro-400/10",
+    border: "border-emerald-pro-400/30",
+    text: "text-emerald-pro-400",
+    gradient: "from-emerald-pro-400 to-emerald-500",
   },
   "energy-orange": {
     bg: "bg-energy-orange/10",
@@ -46,8 +46,8 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
   if (!industry) {
     return (
       <Container className="py-24 text-center">
-        <h1 className="text-2xl text-white">Industry not found</h1>
-        <Link href="/industries" className="text-electric-cyan hover:underline mt-4 block">
+        <h1 className="text-2xl text-light-text dark:text-white">Industry not found</h1>
+        <Link href="/industries" className="text-emerald-pro-600 hover:underline mt-4 block">
           View all industries
         </Link>
       </Container>
@@ -68,8 +68,8 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
         <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-midnight-blue/30 to-deep-space" />
         {/* Enhanced Ambient Orbs */}
         <div className={`absolute top-1/4 left-1/3 w-[600px] h-[600px] ${colors.bg} rounded-full blur-[150px] opacity-50`} />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-quantum-violet/10 rounded-full blur-[150px]" />
-        <div className="absolute top-1/2 right-1/3 w-[400px] h-[400px] bg-electric-cyan/5 rounded-full blur-[180px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-emerald-pro-500/10 rounded-full blur-[150px]" />
+        <div className="absolute top-1/2 right-1/3 w-[400px] h-[400px] bg-emerald-pro-600/5 rounded-full blur-[180px]" />
 
         <Container className="relative z-10">
           {/* Back Link */}
@@ -81,7 +81,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
           >
             <Link
               href="/industries"
-              className="inline-flex items-center gap-2 text-steel hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               All Industries
@@ -103,7 +103,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
                 </span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl font-sora font-bold text-white mb-4">
+              <h1 className="text-4xl md:text-5xl font-sora font-bold text-light-text dark:text-white mb-4">
                 <span className="headline-underline gradient-text-cyan-violet">{industry.name}</span>
               </h1>
 
@@ -136,7 +136,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
                     <p className={`text-4xl font-sora font-bold ${colors.text}`}>
                       {stat.value}
                     </p>
-                    <p className="text-steel text-sm mt-1">{stat.label}</p>
+                    <p className="text-light-text-muted dark:text-steel text-sm mt-1">{stat.label}</p>
                   </div>
                 ))}
               </div>
@@ -158,7 +158,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-6">
                 Challenges in{" "}
                 <span className={colors.text}>{industry.name}</span>
               </h2>
@@ -174,12 +174,12 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                    className={`p-4 rounded-xl border ${colors.border} bg-midnight-blue/30`}
+                    className={`p-4 rounded-xl border ${colors.border} bg-light-bg-secondary dark:bg-midnight-blue/30`}
                   >
                     <div className="flex items-start gap-3">
                       <AlertCircle className={`h-5 w-5 ${colors.text} flex-shrink-0 mt-0.5`} />
                       <div>
-                        <h4 className="text-white font-semibold">{challenge.title}</h4>
+                        <h4 className="text-light-text dark:text-white font-semibold">{challenge.title}</h4>
                         <p className="text-silver text-sm">{challenge.description}</p>
                       </div>
                     </div>
@@ -194,7 +194,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-6">
                 Our{" "}
                 <span className={colors.text}>Solutions</span>
               </h2>
@@ -235,7 +235,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-3xl mx-auto mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-6">
               Who We{" "}
               <span className={colors.text}>Target</span>
             </h2>
@@ -275,7 +275,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="text-center max-w-3xl mx-auto mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-6">
                 Case Studies
               </h2>
               <p className="text-lg text-silver">
@@ -294,8 +294,8 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
                 >
                   <Link href={`/case-studies/${study.id}`} className="block group">
                     <div className={`p-6 rounded-2xl border ${colors.border} bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 hover:border-opacity-60 transition-all`}>
-                      <p className="text-steel text-sm mb-2">{study.company}</p>
-                      <h3 className="text-xl font-sora font-semibold text-white mb-3">
+                      <p className="text-light-text-muted dark:text-steel text-sm mb-2">{study.company}</p>
+                      <h3 className="text-xl font-sora font-semibold text-light-text dark:text-white mb-3">
                         {study.title}
                       </h3>
                       <p className="text-silver text-sm mb-4">{study.subtitle}</p>
@@ -306,7 +306,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
                             <p className={`text-lg font-sora font-bold ${colors.text}`}>
                               {metric.value}
                             </p>
-                            <p className="text-steel text-xs">{metric.label}</p>
+                            <p className="text-light-text-muted dark:text-steel text-xs">{metric.label}</p>
                           </div>
                         ))}
                       </div>
@@ -331,7 +331,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
             {prevIndustry ? (
               <Link
                 href={`/industries/${prevIndustry.id}`}
-                className="flex items-center gap-3 text-steel hover:text-white transition-colors group"
+                className="flex items-center gap-3 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white transition-colors group"
               >
                 <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
                 <span>
@@ -345,7 +345,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
 
             <Link
               href="/industries"
-              className="text-electric-cyan hover:text-cyan-light transition-colors font-medium"
+              className="text-emerald-pro-600 hover:text-cyan-light transition-colors font-medium"
             >
               View All Industries
             </Link>
@@ -353,7 +353,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
             {nextIndustry ? (
               <Link
                 href={`/industries/${nextIndustry.id}`}
-                className="flex items-center gap-3 text-steel hover:text-white transition-colors group text-right"
+                className="flex items-center gap-3 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white transition-colors group text-right"
               >
                 <span>
                   <span className="text-sm block">Next</span>

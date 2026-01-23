@@ -10,31 +10,31 @@ import { engines } from "@/lib/content/engines";
 import { Button } from "@/components/ui/button";
 
 const colorClasses = {
-  "electric-cyan": {
-    bg: "bg-electric-cyan/10",
-    border: "border-electric-cyan/30",
-    text: "text-electric-cyan",
-    gradient: "from-electric-cyan/20 to-transparent",
+  "emerald-pro-600": {
+    bg: "bg-emerald-pro-600/10",
+    border: "border-emerald-pro-600/30",
+    text: "text-emerald-pro-600",
+    gradient: "from-emerald-pro-600/20 to-transparent",
     glow: "rgba(0,212,255,0.25)",
-    accentLine: "bg-electric-cyan",
+    accentLine: "bg-emerald-pro-600",
     iconBg: "cyan",
   },
-  "quantum-violet": {
-    bg: "bg-quantum-violet/10",
-    border: "border-quantum-violet/30",
-    text: "text-quantum-violet",
-    gradient: "from-quantum-violet/20 to-transparent",
+  "emerald-pro-500": {
+    bg: "bg-emerald-pro-500/10",
+    border: "border-emerald-pro-500/30",
+    text: "text-emerald-pro-500",
+    gradient: "from-emerald-pro-500/20 to-transparent",
     glow: "rgba(123,97,255,0.25)",
-    accentLine: "bg-quantum-violet",
+    accentLine: "bg-emerald-pro-500",
     iconBg: "violet",
   },
-  "neon-mint": {
-    bg: "bg-neon-mint/10",
-    border: "border-neon-mint/30",
-    text: "text-neon-mint",
-    gradient: "from-neon-mint/20 to-transparent",
+  "emerald-pro-400": {
+    bg: "bg-emerald-pro-400/10",
+    border: "border-emerald-pro-400/30",
+    text: "text-emerald-pro-400",
+    gradient: "from-emerald-pro-400/20 to-transparent",
     glow: "rgba(0,255,178,0.25)",
-    accentLine: "bg-neon-mint",
+    accentLine: "bg-emerald-pro-400",
     iconBg: "mint",
   },
   "energy-orange": {
@@ -56,9 +56,9 @@ export default function EnginesPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-deep-space/50 to-midnight-blue/30" />
 
         {/* Enhanced ambient orbs */}
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-quantum-violet/15 rounded-full blur-[150px] animate-orb-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-electric-cyan/12 rounded-full blur-[130px] animate-orb-float-reverse" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neon-mint/5 rounded-full blur-[180px]" />
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-emerald-pro-500/15 rounded-full blur-[150px] animate-orb-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-emerald-pro-600/12 rounded-full blur-[130px] animate-orb-float-reverse" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-pro-400/5 rounded-full blur-[180px]" />
 
         <Container className="relative z-10">
           <motion.div
@@ -73,12 +73,12 @@ export default function EnginesPage() {
               transition={{ duration: 0.5 }}
               className="tech-badge mb-8"
             >
-              <Cpu className="w-4 h-4 text-quantum-violet" />
-              <span className="text-sm font-medium text-quantum-violet">Our Technology</span>
-              <CircuitBoard className="w-4 h-4 text-quantum-violet" />
+              <Cpu className="w-4 h-4 text-emerald-pro-500" />
+              <span className="text-sm font-medium text-emerald-pro-500">Our Technology</span>
+              <CircuitBoard className="w-4 h-4 text-emerald-pro-500" />
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-white mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-light-text dark:text-white mb-8">
               5 AI Engines.{" "}
               <span className="headline-underline gradient-text-cyan-violet block mt-2">
                 One Powerful Platform.
@@ -86,7 +86,7 @@ export default function EnginesPage() {
             </h1>
 
             <p className="text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto mb-12 leading-relaxed">
-              Each engine is specialized for a <span className="text-quantum-violet font-semibold">critical part</span> of the outbound process. Together, they form an <span className="text-electric-cyan font-semibold">unstoppable</span> lead generation machine.
+              Each engine is specialized for a <span className="text-emerald-pro-500 font-semibold">critical part</span> of the outbound process. Together, they form an <span className="text-emerald-pro-600 font-semibold">unstoppable</span> lead generation machine.
             </p>
 
             <Link href="/contact">
@@ -117,9 +117,9 @@ export default function EnginesPage() {
                     <div
                       className="engine-card p-8 md:p-10 lg:p-12"
                       style={{
-                        '--engine-color': colors.accentLine === 'bg-electric-cyan' ? 'var(--electric-cyan)' :
-                                         colors.accentLine === 'bg-quantum-violet' ? 'var(--quantum-violet)' :
-                                         colors.accentLine === 'bg-neon-mint' ? 'var(--neon-mint)' : 'var(--energy-orange)',
+                        '--engine-color': colors.accentLine === 'bg-emerald-pro-600' ? 'var(--emerald-pro-600)' :
+                                         colors.accentLine === 'bg-emerald-pro-500' ? 'var(--emerald-pro-500)' :
+                                         colors.accentLine === 'bg-emerald-pro-400' ? 'var(--emerald-pro-400)' : 'var(--energy-orange)',
                         '--engine-glow': colors.glow
                       } as React.CSSProperties}
                     >
@@ -141,7 +141,7 @@ export default function EnginesPage() {
                             >
                               ENGINE {engine.codename}
                             </motion.span>
-                            <h2 className="text-2xl md:text-3xl font-sora font-bold text-white mt-1 group-hover:text-gradient transition-all">
+                            <h2 className="text-2xl md:text-3xl font-sora font-bold text-light-text dark:text-white mt-1 group-hover:text-gradient transition-all">
                               {engine.name}
                             </h2>
                             <p className={`${colors.text} font-medium text-sm md:text-base`}>{engine.tagline}</p>
@@ -150,7 +150,7 @@ export default function EnginesPage() {
 
                         {/* Description */}
                         <div className="flex-1">
-                          <p className="text-silver leading-relaxed group-hover:text-white/90 transition-colors">
+                          <p className="text-silver leading-relaxed group-hover:text-light-text dark:text-white/90 transition-colors">
                             {engine.shortDescription}
                           </p>
                         </div>
@@ -164,12 +164,12 @@ export default function EnginesPage() {
                               whileInView={{ opacity: 1, scale: 1 }}
                               viewport={{ once: true }}
                               transition={{ delay: 0.4 + index * 0.1 + statIndex * 0.1 }}
-                              className="text-center p-3 rounded-xl bg-deep-space/50 border border-graphite/30 group-hover:border-electric-cyan/20 transition-colors"
+                              className="text-center p-3 rounded-xl bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30 group-hover:border-emerald-pro-600/20 transition-colors"
                             >
                               <p className={`text-2xl font-sora font-bold ${colors.text}`}>
                                 {stat.value}
                               </p>
-                              <p className="text-steel text-xs">{stat.label}</p>
+                              <p className="text-light-text-muted dark:text-steel text-xs">{stat.label}</p>
                             </motion.div>
                           ))}
                         </div>
@@ -201,14 +201,14 @@ export default function EnginesPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
               How They Work{" "}
               <span className="headline-underline gradient-text-cyan-violet">
                 Together
               </span>
             </h2>
             <p className="text-lg md:text-xl text-silver leading-relaxed">
-              Our engines don&apos;t operate in isolation. They share data, learn from each other, and <span className="text-electric-cyan">continuously optimize</span> the entire funnel.
+              Our engines don&apos;t operate in isolation. They share data, learn from each other, and <span className="text-emerald-pro-600">continuously optimize</span> the entire funnel.
             </p>
           </motion.div>
 
@@ -251,36 +251,36 @@ export default function EnginesPage() {
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className={`feature-grid-item group ${combo.color === 'gradient' ? '!bg-gradient-to-br !from-electric-cyan/10 !to-quantum-violet/10' : ''}`}
+                className={`feature-grid-item group ${combo.color === 'gradient' ? '!bg-gradient-to-br !from-emerald-pro-600/10 !to-emerald-pro-500/10' : ''}`}
               >
                 {/* Connection Line Indicator */}
                 <div className={`absolute top-0 left-0 right-0 h-1 rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity ${
-                  combo.color === 'cyan' ? 'bg-electric-cyan' :
-                  combo.color === 'violet' ? 'bg-quantum-violet' :
-                  combo.color === 'mint' ? 'bg-neon-mint' :
+                  combo.color === 'cyan' ? 'bg-emerald-pro-600' :
+                  combo.color === 'violet' ? 'bg-emerald-pro-500' :
+                  combo.color === 'mint' ? 'bg-emerald-pro-400' :
                   combo.color === 'orange' ? 'bg-energy-orange' :
-                  'bg-gradient-to-r from-electric-cyan to-quantum-violet'
+                  'bg-gradient-to-r from-emerald-pro-600 to-emerald-pro-500'
                 }`} />
 
                 <h3 className={`text-xl font-sora font-semibold mb-3 group-hover:text-gradient transition-all ${
-                  combo.color === 'cyan' ? 'text-electric-cyan' :
-                  combo.color === 'violet' ? 'text-quantum-violet' :
-                  combo.color === 'mint' ? 'text-neon-mint' :
+                  combo.color === 'cyan' ? 'text-emerald-pro-600' :
+                  combo.color === 'violet' ? 'text-emerald-pro-500' :
+                  combo.color === 'mint' ? 'text-emerald-pro-400' :
                   combo.color === 'orange' ? 'text-energy-orange' :
-                  'text-white'
+                  'text-light-text dark:text-white'
                 }`}>
                   {combo.title}
                 </h3>
-                <p className="text-silver text-sm leading-relaxed group-hover:text-white/80 transition-colors">
+                <p className="text-silver text-sm leading-relaxed group-hover:text-light-text dark:text-white/80 transition-colors">
                   {combo.description}
                 </p>
 
                 {/* Neural connection dots */}
                 {combo.color === 'gradient' && (
                   <div className="absolute bottom-4 right-4 flex gap-1">
-                    <span className="w-2 h-2 rounded-full bg-electric-cyan animate-pulse" />
-                    <span className="w-2 h-2 rounded-full bg-quantum-violet animate-pulse" style={{ animationDelay: '0.2s' }} />
-                    <span className="w-2 h-2 rounded-full bg-neon-mint animate-pulse" style={{ animationDelay: '0.4s' }} />
+                    <span className="w-2 h-2 rounded-full bg-emerald-pro-600 animate-pulse" />
+                    <span className="w-2 h-2 rounded-full bg-emerald-pro-500 animate-pulse" style={{ animationDelay: '0.2s' }} />
+                    <span className="w-2 h-2 rounded-full bg-emerald-pro-400 animate-pulse" style={{ animationDelay: '0.4s' }} />
                   </div>
                 )}
               </motion.div>

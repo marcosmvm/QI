@@ -178,17 +178,17 @@ export default function OnboardingPage() {
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-steel mb-2">
-          <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">
+        <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-2">
+          <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">
             Portal
           </Link>
           <span>/</span>
-          <span className="text-electric-cyan">Onboarding</span>
+          <span className="text-emerald-pro-600">Onboarding</span>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-white">
+        <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">
           Welcome to XGrowthOS
         </h1>
-        <p className="text-steel mt-1">
+        <p className="text-light-text-muted dark:text-steel mt-1">
           Let&apos;s get your account set up and ready to launch campaigns
         </p>
       </motion.div>
@@ -202,20 +202,20 @@ export default function OnboardingPage() {
                 className={cn(
                   "flex items-center gap-3 px-4 py-2 rounded-lg transition-colors",
                   currentStep === step.id
-                    ? "bg-electric-cyan/10 border border-electric-cyan/30"
+                    ? "bg-emerald-pro-600/10 border border-emerald-pro-600/30"
                     : currentStep > step.id
-                    ? "bg-neon-mint/10 border border-neon-mint/30"
-                    : "bg-midnight-blue/50 border border-graphite"
+                    ? "bg-emerald-pro-400/10 border border-emerald-pro-400/30"
+                    : "bg-light-bg-secondary dark:bg-midnight-blue/50 border border-border-default dark:border-graphite"
                 )}
               >
                 <div
                   className={cn(
                     "flex h-8 w-8 items-center justify-center rounded-full",
                     currentStep === step.id
-                      ? "bg-electric-cyan text-deep-space"
+                      ? "bg-emerald-pro-600 text-deep-space"
                       : currentStep > step.id
-                      ? "bg-neon-mint text-deep-space"
-                      : "bg-graphite text-steel"
+                      ? "bg-emerald-pro-400 text-deep-space"
+                      : "bg-graphite text-light-text-muted dark:text-steel"
                   )}
                 >
                   {currentStep > step.id ? (
@@ -228,10 +228,10 @@ export default function OnboardingPage() {
                   className={cn(
                     "text-sm font-medium hidden md:block",
                     currentStep === step.id
-                      ? "text-electric-cyan"
+                      ? "text-emerald-pro-600"
                       : currentStep > step.id
-                      ? "text-neon-mint"
-                      : "text-steel"
+                      ? "text-emerald-pro-400"
+                      : "text-light-text-muted dark:text-steel"
                   )}
                 >
                   {step.name}
@@ -241,7 +241,7 @@ export default function OnboardingPage() {
                 <div
                   className={cn(
                     "w-8 md:w-12 h-0.5 mx-2",
-                    currentStep > step.id ? "bg-neon-mint" : "bg-graphite"
+                    currentStep > step.id ? "bg-emerald-pro-400" : "bg-graphite"
                   )}
                 />
               )}
@@ -257,13 +257,13 @@ export default function OnboardingPage() {
           <div className="glass-premium p-8">
             <div className="text-center mb-8">
               <div className="relative h-20 w-20 mx-auto mb-6">
-                <div className="absolute inset-0 rounded-full border-2 border-electric-cyan/20 animate-pulse" />
-                <div className="absolute inset-2 rounded-full border border-quantum-violet/30" />
-                <div className="absolute inset-4 rounded-full bg-gradient-to-br from-electric-cyan/20 to-quantum-violet/20 flex items-center justify-center">
-                  <Sparkles className="h-8 w-8 text-electric-cyan" />
+                <div className="absolute inset-0 rounded-full border-2 border-emerald-pro-600/20 animate-pulse" />
+                <div className="absolute inset-2 rounded-full border border-emerald-pro-500/30" />
+                <div className="absolute inset-4 rounded-full bg-gradient-to-br from-emerald-pro-600/20 to-emerald-pro-500/20 flex items-center justify-center">
+                  <Sparkles className="h-8 w-8 text-emerald-pro-600" />
                 </div>
               </div>
-              <h2 className="text-2xl font-sora font-bold text-white mb-3">
+              <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white mb-3">
                 Welcome to the Future of Outreach
               </h2>
               <p className="text-silver max-w-lg mx-auto">
@@ -290,14 +290,14 @@ export default function OnboardingPage() {
               />
             </div>
 
-            <div className="bg-deep-space/50 border border-graphite/50 rounded-lg p-4 mb-6">
+            <div className="bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/50 rounded-lg p-4 mb-6">
               <div className="flex items-start gap-3">
-                <Clock className="h-5 w-5 text-electric-cyan flex-shrink-0 mt-0.5" />
+                <Clock className="h-5 w-5 text-emerald-pro-600 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-sm font-medium text-white">
+                  <p className="text-sm font-medium text-light-text dark:text-white">
                     This will only take about 5 minutes
                   </p>
-                  <p className="text-xs text-steel mt-1">
+                  <p className="text-xs text-light-text-muted dark:text-steel mt-1">
                     We&apos;ll guide you through connecting your email, uploading your
                     ideal customer profile, and reviewing your first campaign.
                   </p>
@@ -318,14 +318,14 @@ export default function OnboardingPage() {
         {currentStep === 2 && (
           <div className="glass-premium p-8">
             <div className="flex items-center gap-3 mb-6">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-electric-cyan/10 border border-electric-cyan/30">
-                <Building2 className="h-6 w-6 text-electric-cyan" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-pro-600/10 border border-emerald-pro-600/30">
+                <Building2 className="h-6 w-6 text-emerald-pro-600" />
               </div>
               <div>
-                <h2 className="text-xl font-sora font-semibold text-white">
+                <h2 className="text-xl font-sora font-semibold text-light-text dark:text-white">
                   Company Profile
                 </h2>
-                <p className="text-steel">Tell us about your business</p>
+                <p className="text-light-text-muted dark:text-steel">Tell us about your business</p>
               </div>
             </div>
 
@@ -339,7 +339,7 @@ export default function OnboardingPage() {
                   value={formData.companyName}
                   onChange={handleChange}
                   placeholder="Your company name"
-                  className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                  className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                 />
               </div>
 
@@ -353,7 +353,7 @@ export default function OnboardingPage() {
                   value={formData.domain}
                   onChange={handleChange}
                   placeholder="example.com"
-                  className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                  className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                 />
               </div>
 
@@ -366,7 +366,7 @@ export default function OnboardingPage() {
                     name="industry"
                     value={formData.industry}
                     onChange={handleChange}
-                    className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                    className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                   >
                     <option value="">Select industry</option>
                     {industries.map((industry) => (
@@ -385,7 +385,7 @@ export default function OnboardingPage() {
                     name="employeeCount"
                     value={formData.employeeCount}
                     onChange={handleChange}
-                    className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                    className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                   >
                     <option value="">Select size</option>
                     {employeeRanges.map((range) => (
@@ -406,7 +406,7 @@ export default function OnboardingPage() {
                   name="targetMarket"
                   value={formData.targetMarket}
                   onChange={handleChange}
-                  className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                  className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                 >
                   <option value="">Select target market</option>
                   {targetMarkets.map((market) => (
@@ -417,7 +417,7 @@ export default function OnboardingPage() {
                 </select>
               </div>
 
-              <div className="flex justify-between pt-4 border-t border-graphite">
+              <div className="flex justify-between pt-4 border-t border-border-default dark:border-graphite">
                 <Button variant="outline" onClick={() => setCurrentStep(1)}>
                   <ArrowLeft className="h-4 w-4 mr-2" />
                   Back
@@ -439,28 +439,28 @@ export default function OnboardingPage() {
         {currentStep === 3 && (
           <div className="glass-premium p-8">
             <div className="flex items-center gap-3 mb-6">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-quantum-violet/10 border border-quantum-violet/30">
-                <Mail className="h-6 w-6 text-quantum-violet" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-pro-500/10 border border-emerald-pro-500/30">
+                <Mail className="h-6 w-6 text-emerald-pro-500" />
               </div>
               <div>
-                <h2 className="text-xl font-sora font-semibold text-white">
+                <h2 className="text-xl font-sora font-semibold text-light-text dark:text-white">
                   Connect Your Email
                 </h2>
-                <p className="text-steel">
+                <p className="text-light-text-muted dark:text-steel">
                   Link your Instantly account for email delivery
                 </p>
               </div>
             </div>
 
             <div className="space-y-6">
-              <div className="bg-deep-space/50 border border-graphite/50 rounded-lg p-4">
+              <div className="bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/50 rounded-lg p-4">
                 <div className="flex items-start gap-3">
-                  <Zap className="h-5 w-5 text-electric-cyan flex-shrink-0 mt-0.5" />
+                  <Zap className="h-5 w-5 text-emerald-pro-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-sm font-medium text-white">
+                    <p className="text-sm font-medium text-light-text dark:text-white">
                       Why Instantly?
                     </p>
-                    <p className="text-xs text-steel mt-1">
+                    <p className="text-xs text-light-text-muted dark:text-steel mt-1">
                       Instantly provides enterprise-grade email infrastructure with
                       built-in warmup, rotation, and deliverability optimization.
                       Your API key connects our AI engines to your sending accounts.
@@ -480,7 +480,7 @@ export default function OnboardingPage() {
                     value={formData.instantlyApiKey}
                     onChange={handleChange}
                     placeholder="Enter your Instantly API key"
-                    className="flex-1 h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                    className="flex-1 h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                     disabled={connectionStatus.instantly === "connected"}
                   />
                   <Button
@@ -500,7 +500,7 @@ export default function OnboardingPage() {
                       </>
                     ) : connectionStatus.instantly === "connected" ? (
                       <>
-                        <Check className="h-4 w-4 mr-2 text-neon-mint" />
+                        <Check className="h-4 w-4 mr-2 text-emerald-pro-400" />
                         Connected
                       </>
                     ) : (
@@ -509,7 +509,7 @@ export default function OnboardingPage() {
                   </Button>
                 </div>
                 {connectionStatus.instantly === "connected" && (
-                  <p className="text-xs text-neon-mint mt-2 flex items-center gap-1">
+                  <p className="text-xs text-emerald-pro-400 mt-2 flex items-center gap-1">
                     <CheckCircle className="h-3 w-3" />
                     Successfully connected to Instantly
                   </p>
@@ -522,14 +522,14 @@ export default function OnboardingPage() {
                 )}
               </div>
 
-              <div className="bg-midnight-blue/50 border border-graphite/30 rounded-lg p-4">
-                <p className="text-sm text-steel">
+              <div className="bg-light-bg-secondary dark:bg-midnight-blue/50 border border-border-default dark:border-graphite/30 rounded-lg p-4">
+                <p className="text-sm text-light-text-muted dark:text-steel">
                   Don&apos;t have an Instantly account?{" "}
                   <a
                     href="https://instantly.ai"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-electric-cyan hover:underline inline-flex items-center gap-1"
+                    className="text-emerald-pro-600 hover:underline inline-flex items-center gap-1"
                   >
                     Sign up here
                     <ExternalLink className="h-3 w-3" />
@@ -537,7 +537,7 @@ export default function OnboardingPage() {
                 </p>
               </div>
 
-              <div className="flex justify-between pt-4 border-t border-graphite">
+              <div className="flex justify-between pt-4 border-t border-border-default dark:border-graphite">
                 <Button variant="outline" onClick={() => setCurrentStep(2)}>
                   <ArrowLeft className="h-4 w-4 mr-2" />
                   Back
@@ -559,28 +559,28 @@ export default function OnboardingPage() {
         {currentStep === 4 && (
           <div className="glass-premium p-8">
             <div className="flex items-center gap-3 mb-6">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-neon-mint/10 border border-neon-mint/30">
-                <FileSpreadsheet className="h-6 w-6 text-neon-mint" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-pro-400/10 border border-emerald-pro-400/30">
+                <FileSpreadsheet className="h-6 w-6 text-emerald-pro-400" />
               </div>
               <div>
-                <h2 className="text-xl font-sora font-semibold text-white">
+                <h2 className="text-xl font-sora font-semibold text-light-text dark:text-white">
                   Define Your Ideal Customer
                 </h2>
-                <p className="text-steel">
+                <p className="text-light-text-muted dark:text-steel">
                   Help our AI understand who to target
                 </p>
               </div>
             </div>
 
             <div className="space-y-6">
-              <div className="bg-deep-space/50 border border-graphite/50 rounded-lg p-4">
+              <div className="bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/50 rounded-lg p-4">
                 <div className="flex items-start gap-3">
-                  <Target className="h-5 w-5 text-electric-cyan flex-shrink-0 mt-0.5" />
+                  <Target className="h-5 w-5 text-emerald-pro-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-sm font-medium text-white">
+                    <p className="text-sm font-medium text-light-text dark:text-white">
                       What is an ICP?
                     </p>
-                    <p className="text-xs text-steel mt-1">
+                    <p className="text-xs text-light-text-muted dark:text-steel mt-1">
                       Your Ideal Customer Profile defines the companies and decision-makers
                       most likely to buy from you. This helps our AI Architect engine craft
                       highly targeted campaigns.
@@ -599,7 +599,7 @@ export default function OnboardingPage() {
                     value={formData.googleSheetId}
                     onChange={handleChange}
                     placeholder="Paste Google Sheet URL or ID"
-                    className="flex-1 h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                    className="flex-1 h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                     disabled={connectionStatus.googleSheets === "connected"}
                   />
                   <Button
@@ -619,7 +619,7 @@ export default function OnboardingPage() {
                       </>
                     ) : connectionStatus.googleSheets === "connected" ? (
                       <>
-                        <Check className="h-4 w-4 mr-2 text-neon-mint" />
+                        <Check className="h-4 w-4 mr-2 text-emerald-pro-400" />
                         Linked
                       </>
                     ) : (
@@ -628,7 +628,7 @@ export default function OnboardingPage() {
                   </Button>
                 </div>
                 {connectionStatus.googleSheets === "connected" && (
-                  <p className="text-xs text-neon-mint mt-2 flex items-center gap-1">
+                  <p className="text-xs text-emerald-pro-400 mt-2 flex items-center gap-1">
                     <CheckCircle className="h-3 w-3" />
                     Google Sheet linked successfully
                   </p>
@@ -637,10 +637,10 @@ export default function OnboardingPage() {
 
               <div className="relative">
                 <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-graphite/50" />
+                  <div className="w-full border-t border-border-default dark:border-graphite/50" />
                 </div>
                 <div className="relative flex justify-center text-xs">
-                  <span className="px-3 bg-midnight-blue/60 text-steel">OR</span>
+                  <span className="px-3 bg-light-bg-secondary dark:bg-midnight-blue/60 text-light-text-muted dark:text-steel">OR</span>
                 </div>
               </div>
 
@@ -654,14 +654,14 @@ export default function OnboardingPage() {
                   onChange={handleChange}
                   placeholder="E.g., VP of Sales at SaaS companies with 50-200 employees, based in the US, using Salesforce..."
                   rows={4}
-                  className="w-full rounded-lg border border-graphite bg-deep-space px-4 py-3 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50 resize-none"
+                  className="w-full rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 py-3 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 resize-none"
                 />
-                <p className="text-xs text-steel mt-2">
+                <p className="text-xs text-light-text-muted dark:text-steel mt-2">
                   Include: job titles, industries, company sizes, locations, technologies used, pain points
                 </p>
               </div>
 
-              <div className="flex justify-between pt-4 border-t border-graphite">
+              <div className="flex justify-between pt-4 border-t border-border-default dark:border-graphite">
                 <Button variant="outline" onClick={() => setCurrentStep(3)}>
                   <ArrowLeft className="h-4 w-4 mr-2" />
                   Back
@@ -683,14 +683,14 @@ export default function OnboardingPage() {
         {currentStep === 5 && (
           <div className="glass-premium p-8">
             <div className="flex items-center gap-3 mb-6">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-electric-cyan/10 border border-electric-cyan/30">
-                <Rocket className="h-6 w-6 text-electric-cyan" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-pro-600/10 border border-emerald-pro-600/30">
+                <Rocket className="h-6 w-6 text-emerald-pro-600" />
               </div>
               <div>
-                <h2 className="text-xl font-sora font-semibold text-white">
+                <h2 className="text-xl font-sora font-semibold text-light-text dark:text-white">
                   Ready to Launch
                 </h2>
-                <p className="text-steel">Review your setup and get started</p>
+                <p className="text-light-text-muted dark:text-steel">Review your setup and get started</p>
               </div>
             </div>
 
@@ -719,14 +719,14 @@ export default function OnboardingPage() {
                 />
               </div>
 
-              <div className="bg-deep-space/50 border border-neon-mint/30 rounded-lg p-4">
+              <div className="bg-white dark:bg-deep-space/50 border border-emerald-pro-400/30 rounded-lg p-4">
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-neon-mint flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="h-5 w-5 text-emerald-pro-400 flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-sm font-medium text-white">
+                    <p className="text-sm font-medium text-light-text dark:text-white">
                       What happens next?
                     </p>
-                    <ul className="text-xs text-steel mt-2 space-y-1">
+                    <ul className="text-xs text-light-text-muted dark:text-steel mt-2 space-y-1">
                       <li>• Your account will be activated immediately</li>
                       <li>• Our Guardian engine will verify your domain health</li>
                       <li>• You can create your first campaign from the dashboard</li>
@@ -736,7 +736,7 @@ export default function OnboardingPage() {
                 </div>
               </div>
 
-              <div className="flex justify-between pt-4 border-t border-graphite">
+              <div className="flex justify-between pt-4 border-t border-border-default dark:border-graphite">
                 <Button variant="outline" onClick={() => setCurrentStep(4)}>
                   <ArrowLeft className="h-4 w-4 mr-2" />
                   Back
@@ -744,7 +744,7 @@ export default function OnboardingPage() {
                 <Button
                   onClick={handleComplete}
                   disabled={isSubmitting}
-                  className="gap-2 bg-gradient-to-r from-electric-cyan to-cyan-600"
+                  className="gap-2 bg-gradient-to-r from-emerald-pro-600 to-cyan-600"
                 >
                   {isSubmitting ? (
                     <>
@@ -777,12 +777,12 @@ function FeatureCard({
   description: string;
 }) {
   return (
-    <div className="bg-deep-space/50 border border-graphite/50 rounded-lg p-4 text-center">
-      <div className="h-10 w-10 rounded-lg bg-electric-cyan/10 border border-electric-cyan/30 flex items-center justify-center mx-auto mb-3">
-        <Icon className="h-5 w-5 text-electric-cyan" />
+    <div className="bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/50 rounded-lg p-4 text-center">
+      <div className="h-10 w-10 rounded-lg bg-emerald-pro-600/10 border border-emerald-pro-600/30 flex items-center justify-center mx-auto mb-3">
+        <Icon className="h-5 w-5 text-emerald-pro-600" />
       </div>
-      <p className="text-sm font-medium text-white">{title}</p>
-      <p className="text-xs text-steel mt-1">{description}</p>
+      <p className="text-sm font-medium text-light-text dark:text-white">{title}</p>
+      <p className="text-xs text-light-text-muted dark:text-steel mt-1">{description}</p>
     </div>
   );
 }
@@ -797,23 +797,23 @@ function SummaryCard({
   items: Array<{ label: string; value: string; status?: "success" | "warning" }>;
 }) {
   return (
-    <div className="bg-deep-space/50 border border-graphite/50 rounded-lg p-4">
+    <div className="bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/50 rounded-lg p-4">
       <div className="flex items-center gap-2 mb-3">
-        <Icon className="h-4 w-4 text-electric-cyan" />
-        <span className="text-sm font-medium text-white">{title}</span>
+        <Icon className="h-4 w-4 text-emerald-pro-600" />
+        <span className="text-sm font-medium text-light-text dark:text-white">{title}</span>
       </div>
       <div className="space-y-2">
         {items.map((item, i) => (
           <div key={i} className="flex items-center justify-between text-sm">
-            <span className="text-steel">{item.label}</span>
+            <span className="text-light-text-muted dark:text-steel">{item.label}</span>
             <span
               className={cn(
                 "font-medium",
                 item.status === "success"
-                  ? "text-neon-mint"
+                  ? "text-emerald-pro-400"
                   : item.status === "warning"
                   ? "text-energy-orange"
-                  : "text-white"
+                  : "text-light-text dark:text-white"
               )}
             >
               {item.value || "—"}

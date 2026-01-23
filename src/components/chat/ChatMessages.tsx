@@ -151,7 +151,7 @@ export function ChatMessages({
           <div key={groupIndex}>
             {/* Date separator */}
             <div className="flex items-center justify-center my-4">
-              <span className="text-xs text-steel bg-deep-space px-3 py-1 rounded-full">
+              <span className="text-xs text-light-text-muted dark:text-steel bg-white dark:bg-deep-space px-3 py-1 rounded-full">
                 {group.date}
               </span>
             </div>
@@ -168,19 +168,19 @@ export function ChatMessages({
                     <div
                       className={`max-w-[70%] ${
                         isOwn
-                          ? "bg-electric-cyan/10 border border-electric-cyan/30"
-                          : "bg-midnight-blue/50 border border-graphite/30"
+                          ? "bg-emerald-pro-600/10 border border-emerald-pro-600/30"
+                          : "bg-light-bg-secondary dark:bg-midnight-blue/50 border border-border-default dark:border-graphite/30"
                       } rounded-2xl px-4 py-3`}
                     >
                       {!isOwn && message.sender && (
-                        <p className="text-xs text-electric-cyan font-medium mb-1">
+                        <p className="text-xs text-emerald-pro-600 font-medium mb-1">
                           {message.sender.full_name || "Support"}
                         </p>
                       )}
-                      <p className="text-sm text-white whitespace-pre-wrap">
+                      <p className="text-sm text-light-text dark:text-white whitespace-pre-wrap">
                         {message.content}
                       </p>
-                      <p className={`text-xs mt-1 ${isOwn ? "text-electric-cyan/60" : "text-steel"}`}>
+                      <p className={`text-xs mt-1 ${isOwn ? "text-emerald-pro-600/60" : "text-light-text-muted dark:text-steel"}`}>
                         {formatTime(message.created_at)}
                       </p>
                     </div>
@@ -194,19 +194,19 @@ export function ChatMessages({
       </div>
 
       {/* Input */}
-      <form onSubmit={handleSend} className="p-4 border-t border-graphite/50">
+      <form onSubmit={handleSend} className="p-4 border-t border-border-default dark:border-graphite/50">
         <div className="flex gap-3">
           <input
             type="text"
             value={newMessage}
             onChange={(e) => setNewMessage(e.target.value)}
             placeholder="Type your message..."
-            className="flex-1 h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50 transition-colors"
+            className="flex-1 h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 transition-colors"
           />
           <button
             type="submit"
             disabled={!newMessage.trim() || isSending}
-            className="h-11 px-4 bg-electric-cyan text-deep-space font-medium rounded-lg hover:bg-electric-cyan/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+            className="h-11 px-4 bg-emerald-pro-600 text-deep-space font-medium rounded-lg hover:bg-emerald-pro-600/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
           >
             {isSending ? (
               <Loader2 className="h-4 w-4 animate-spin" />

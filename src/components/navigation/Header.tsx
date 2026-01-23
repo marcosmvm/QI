@@ -59,7 +59,7 @@ export function Header({ title, subtitle, showNavTabs = true }: HeaderProps) {
                     className={cn(
                       "px-5 py-2 rounded-full text-sm font-medium transition-all duration-200",
                       isActive
-                        ? "bg-secondary text-white shadow-sm"
+                        ? "bg-secondary text-light-text dark:text-white shadow-sm"
                         : "text-slate-600 hover:text-slate-900 hover:bg-white/60"
                     )}
                   >
@@ -89,7 +89,7 @@ export function Header({ title, subtitle, showNavTabs = true }: HeaderProps) {
           {/* Add Report Button */}
           <Button
             size="sm"
-            className="gap-2 bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-semibold px-5 py-2.5 rounded-full shadow-primary hover:shadow-lg transition-all"
+            className="gap-2 bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-light-text dark:text-white font-semibold px-5 py-2.5 rounded-full shadow-primary hover:shadow-lg transition-all"
           >
             Add report
           </Button>
@@ -108,7 +108,7 @@ export function Header({ title, subtitle, showNavTabs = true }: HeaderProps) {
           {/* User Avatar */}
           <button className="flex items-center gap-2 p-1 hover:bg-slate-50 rounded-xl transition-colors">
             <div className="h-9 w-9 rounded-full bg-gradient-to-br from-secondary to-secondary-light flex items-center justify-center">
-              <span className="text-xs font-bold text-white">MM</span>
+              <span className="text-xs font-bold text-light-text dark:text-white">MM</span>
             </div>
           </button>
         </div>

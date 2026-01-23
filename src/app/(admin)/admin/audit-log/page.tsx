@@ -118,12 +118,12 @@ const actionConfig: Record<
 > = {
   created: {
     icon: Plus,
-    color: "neon-mint",
+    color: "emerald-pro-400",
     label: "Created",
   },
   updated: {
     icon: Edit,
-    color: "electric-cyan",
+    color: "emerald-pro-600",
     label: "Updated",
   },
   deleted: {
@@ -202,7 +202,7 @@ export default function AuditLogPage() {
   if (loading) {
     return (
       <div className="min-h-screen p-8 flex items-center justify-center">
-        <div className="text-steel">Loading audit logs...</div>
+        <div className="text-light-text-muted dark:text-steel">Loading audit logs...</div>
       </div>
     );
   }
@@ -212,18 +212,18 @@ export default function AuditLogPage() {
       {/* Header */}
       <motion.div variants={itemVariants} className="flex items-center justify-between mb-8">
         <div>
-          <p className="text-sm text-steel mb-1">Admin / <span className="text-quantum-violet">Audit Log</span></p>
-          <h1 className="text-2xl font-sora font-bold text-white">Audit Log</h1>
-          <p className="text-steel mt-1">
+          <p className="text-sm text-light-text-muted dark:text-steel mb-1">Admin / <span className="text-emerald-pro-500">Audit Log</span></p>
+          <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">Audit Log</h1>
+          <p className="text-light-text-muted dark:text-steel mt-1">
             Track all changes and actions across the platform
           </p>
         </div>
         <div className="flex items-center gap-3">
-          <button className="flex items-center gap-2 px-4 py-2 border border-graphite text-steel rounded-lg hover:bg-midnight-blue/30 transition-colors">
+          <button className="flex items-center gap-2 px-4 py-2 border border-border-default dark:border-graphite text-light-text-muted dark:text-steel rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors">
             <Filter className="h-4 w-4" />
             Filter
           </button>
-          <button className="flex items-center gap-2 px-4 py-2 border border-electric-cyan/30 text-electric-cyan rounded-lg hover:bg-electric-cyan/10 transition-colors">
+          <button className="flex items-center gap-2 px-4 py-2 border border-emerald-pro-600/30 text-emerald-pro-600 rounded-lg hover:bg-emerald-pro-600/10 transition-colors">
             <Download className="h-4 w-4" />
             Export
           </button>
@@ -233,28 +233,28 @@ export default function AuditLogPage() {
       {/* Search and Filters */}
       <div className="flex items-center gap-4 mb-6">
         <div className="relative flex-1 max-w-md">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-steel" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-light-text-muted dark:text-steel" />
           <input
             type="text"
             placeholder="Search audit logs..."
-            className="w-full h-10 rounded-lg border border-graphite bg-midnight-blue/30 pl-10 pr-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none"
+            className="w-full h-10 rounded-lg border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue/30 pl-10 pr-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none"
           />
         </div>
-        <select className="h-10 rounded-lg border border-graphite bg-midnight-blue/30 px-4 text-white">
+        <select className="h-10 rounded-lg border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue/30 px-4 text-light-text dark:text-white">
           <option value="">All Actions</option>
           <option value="created">Created</option>
           <option value="updated">Updated</option>
           <option value="deleted">Deleted</option>
           <option value="viewed">Viewed</option>
         </select>
-        <select className="h-10 rounded-lg border border-graphite bg-midnight-blue/30 px-4 text-white">
+        <select className="h-10 rounded-lg border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue/30 px-4 text-light-text dark:text-white">
           <option value="">All Resources</option>
           <option value="campaign">Campaigns</option>
           <option value="client">Clients</option>
           <option value="lead">Leads</option>
           <option value="team_member">Team Members</option>
         </select>
-        <select className="h-10 rounded-lg border border-graphite bg-midnight-blue/30 px-4 text-white">
+        <select className="h-10 rounded-lg border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue/30 px-4 text-light-text dark:text-white">
           <option value="">All Users</option>
         </select>
       </div>
@@ -270,13 +270,13 @@ export default function AuditLogPage() {
           label="Creates"
           value={auditLogs.filter((l) => l.action === "created").length}
           icon={Plus}
-          color="neon-mint"
+          color="emerald-pro-400"
         />
         <StatCard
           label="Updates"
           value={auditLogs.filter((l) => l.action === "updated").length}
           icon={Edit}
-          color="electric-cyan"
+          color="emerald-pro-600"
         />
         <StatCard
           label="Deletes"
@@ -290,7 +290,7 @@ export default function AuditLogPage() {
       <div className="space-y-8">
         {Object.entries(groupedLogs).map(([date, logs]) => (
           <div key={date}>
-            <h3 className="text-sm font-medium text-steel mb-3">{date}</h3>
+            <h3 className="text-sm font-medium text-light-text-muted dark:text-steel mb-3">{date}</h3>
             <div className="space-y-2">
               {logs.map((log) => (
                 <AuditLogRow key={log.id} log={log} />
@@ -302,9 +302,9 @@ export default function AuditLogPage() {
 
       {auditLogs.length === 0 && (
         <div className="glass-premium p-12 text-center">
-          <Clock className="h-12 w-12 text-steel mx-auto mb-4" />
-          <p className="text-steel">No audit logs yet</p>
-          <p className="text-sm text-steel/70 mt-1">
+          <Clock className="h-12 w-12 text-light-text-muted dark:text-steel mx-auto mb-4" />
+          <p className="text-light-text-muted dark:text-steel">No audit logs yet</p>
+          <p className="text-sm text-light-text-muted dark:text-steel/70 mt-1">
             Actions will be recorded as users interact with the platform
           </p>
         </div>
@@ -320,15 +320,15 @@ function AuditLogRow({ log }: { log: AuditLog }) {
   const ResourceIcon = resource.icon;
 
   const colorClasses: Record<string, { bg: string; border: string; text: string }> = {
-    "neon-mint": {
-      bg: "bg-neon-mint/10",
-      border: "border-neon-mint/30",
-      text: "text-neon-mint",
+    "emerald-pro-400": {
+      bg: "bg-emerald-pro-400/10",
+      border: "border-emerald-pro-400/30",
+      text: "text-emerald-pro-400",
     },
-    "electric-cyan": {
-      bg: "bg-electric-cyan/10",
-      border: "border-electric-cyan/30",
-      text: "text-electric-cyan",
+    "emerald-pro-600": {
+      bg: "bg-emerald-pro-600/10",
+      border: "border-emerald-pro-600/30",
+      text: "text-emerald-pro-600",
     },
     "energy-orange": {
       bg: "bg-energy-orange/10",
@@ -338,7 +338,7 @@ function AuditLogRow({ log }: { log: AuditLog }) {
     steel: {
       bg: "bg-steel/10",
       border: "border-steel/30",
-      text: "text-steel",
+      text: "text-light-text-muted dark:text-steel",
     },
   };
 
@@ -348,7 +348,7 @@ function AuditLogRow({ log }: { log: AuditLog }) {
     (log.details as Record<string, string>)?.name || log.resource_type;
 
   return (
-    <div className="flex items-center gap-4 p-4 glass-premium hover:border-graphite/70 transition-colors">
+    <div className="flex items-center gap-4 p-4 glass-premium hover:border-border-default dark:border-graphite/70 transition-colors">
       {/* Action Icon */}
       <div
         className={`h-10 w-10 rounded-lg ${colors.bg} border ${colors.border} flex items-center justify-center flex-shrink-0`}
@@ -359,25 +359,25 @@ function AuditLogRow({ log }: { log: AuditLog }) {
       {/* Details */}
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2">
-          <span className="text-sm font-medium text-white">
+          <span className="text-sm font-medium text-light-text dark:text-white">
             {log.profiles?.full_name || "System"}
           </span>
           <span className={`text-sm ${colors.text}`}>{action.label}</span>
           <span className="text-sm text-silver">a</span>
           <div className="flex items-center gap-1">
-            <ResourceIcon className="h-4 w-4 text-steel" />
+            <ResourceIcon className="h-4 w-4 text-light-text-muted dark:text-steel" />
             <span className="text-sm text-silver">{resource.label}</span>
           </div>
         </div>
-        <p className="text-sm text-steel truncate">
+        <p className="text-sm text-light-text-muted dark:text-steel truncate">
           {resourceName}
         </p>
       </div>
 
       {/* Timestamp */}
       <div className="text-right flex-shrink-0">
-        <p className="text-sm text-steel">{formatTimeAgo(log.created_at)}</p>
-        <p className="text-xs text-steel/70">
+        <p className="text-sm text-light-text-muted dark:text-steel">{formatTimeAgo(log.created_at)}</p>
+        <p className="text-xs text-light-text-muted dark:text-steel/70">
           {new Date(log.created_at).toLocaleTimeString()}
         </p>
       </div>
@@ -389,7 +389,7 @@ function StatCard({
   label,
   value,
   icon: Icon,
-  color = "electric-cyan",
+  color = "emerald-pro-600",
 }: {
   label: string;
   value: number;
@@ -397,15 +397,15 @@ function StatCard({
   color?: string;
 }) {
   const colorClasses: Record<string, { bg: string; border: string; text: string }> = {
-    "electric-cyan": {
-      bg: "bg-electric-cyan/10",
-      border: "border-electric-cyan/30",
-      text: "text-electric-cyan",
+    "emerald-pro-600": {
+      bg: "bg-emerald-pro-600/10",
+      border: "border-emerald-pro-600/30",
+      text: "text-emerald-pro-600",
     },
-    "neon-mint": {
-      bg: "bg-neon-mint/10",
-      border: "border-neon-mint/30",
-      text: "text-neon-mint",
+    "emerald-pro-400": {
+      bg: "bg-emerald-pro-400/10",
+      border: "border-emerald-pro-400/30",
+      text: "text-emerald-pro-400",
     },
     "energy-orange": {
       bg: "bg-energy-orange/10",
@@ -414,7 +414,7 @@ function StatCard({
     },
   };
 
-  const colors = colorClasses[color] || colorClasses["electric-cyan"];
+  const colors = colorClasses[color] || colorClasses["emerald-pro-600"];
 
   return (
     <div className="glass-premium p-4">
@@ -425,8 +425,8 @@ function StatCard({
           <Icon className={`h-4 w-4 ${colors.text}`} />
         </div>
         <div>
-          <p className="text-xl font-sora font-bold text-white">{value}</p>
-          <p className="text-xs text-steel">{label}</p>
+          <p className="text-xl font-sora font-bold text-light-text dark:text-white">{value}</p>
+          <p className="text-xs text-light-text-muted dark:text-steel">{label}</p>
         </div>
       </div>
     </div>

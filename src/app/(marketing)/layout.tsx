@@ -7,7 +7,7 @@ export default function MarketingLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-deep-space relative overflow-hidden">
+    <div className="min-h-screen bg-white dark:bg-deep-space relative overflow-hidden">
       {/* Noise Texture for Premium Feel */}
       <div className="noise-texture" />
 

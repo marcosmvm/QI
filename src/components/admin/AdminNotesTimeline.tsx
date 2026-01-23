@@ -35,22 +35,22 @@ const noteTypeConfig: Record<
 > = {
   general: {
     icon: MessageSquare,
-    color: "text-steel bg-steel/10 border-steel/30",
+    color: "text-light-text-muted dark:text-steel bg-steel/10 border-steel/30",
     label: "Note",
   },
   call: {
     icon: Phone,
-    color: "text-neon-mint bg-neon-mint/10 border-neon-mint/30",
+    color: "text-emerald-pro-400 bg-emerald-pro-400/10 border-emerald-pro-400/30",
     label: "Call",
   },
   email: {
     icon: Mail,
-    color: "text-electric-cyan bg-electric-cyan/10 border-electric-cyan/30",
+    color: "text-emerald-pro-600 bg-emerald-pro-600/10 border-emerald-pro-600/30",
     label: "Email",
   },
   meeting: {
     icon: Calendar,
-    color: "text-quantum-violet bg-quantum-violet/10 border-quantum-violet/30",
+    color: "text-emerald-pro-500 bg-emerald-pro-500/10 border-emerald-pro-500/30",
     label: "Meeting",
   },
   task: {
@@ -70,15 +70,15 @@ export function AdminNotesTimeline({
   const unpinnedNotes = notes.filter((n) => !n.isPinned);
 
   return (
-    <div className={cn("rounded-xl border border-graphite/50 bg-midnight-blue/30 p-6", className)}>
+    <div className={cn("rounded-xl border border-border-default dark:border-graphite/50 bg-light-bg-secondary dark:bg-midnight-blue/30 p-6", className)}>
       <div className="flex items-center justify-between mb-6">
-        <h3 className="text-lg font-sora font-semibold text-white">
+        <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white">
           Admin Notes
         </h3>
         {onAddNote && (
           <button
             onClick={onAddNote}
-            className="text-sm text-electric-cyan hover:text-electric-cyan/80 transition-colors"
+            className="text-sm text-emerald-pro-600 hover:text-emerald-pro-600/80 transition-colors"
           >
             + Add Note
           </button>
@@ -87,8 +87,8 @@ export function AdminNotesTimeline({
 
       {notes.length === 0 ? (
         <div className="text-center py-8">
-          <MessageSquare className="h-8 w-8 text-steel mx-auto mb-2" />
-          <p className="text-sm text-steel">No notes yet</p>
+          <MessageSquare className="h-8 w-8 text-light-text-muted dark:text-steel mx-auto mb-2" />
+          <p className="text-sm text-light-text-muted dark:text-steel">No notes yet</p>
         </div>
       ) : (
         <div className="space-y-4">
@@ -112,7 +112,7 @@ function NoteItem({ note }: { note: AdminNote }) {
   const Icon = config.icon;
 
   return (
-    <div className="relative pl-8 pb-4 border-l border-graphite/50 last:border-l-0 last:pb-0">
+    <div className="relative pl-8 pb-4 border-l border-border-default dark:border-graphite/50 last:border-l-0 last:pb-0">
       {/* Timeline dot */}
       <div
         className={cn(
@@ -124,7 +124,7 @@ function NoteItem({ note }: { note: AdminNote }) {
       </div>
 
       {/* Note content */}
-      <div className="bg-deep-space/30 rounded-lg p-4 border border-graphite/30">
+      <div className="bg-white dark:bg-deep-space/30 rounded-lg p-4 border border-border-default dark:border-graphite/30">
         <div className="flex items-start justify-between gap-2 mb-2">
           <div className="flex items-center gap-2">
             <span className="text-xs font-medium text-silver">
@@ -135,10 +135,10 @@ function NoteItem({ note }: { note: AdminNote }) {
             )}
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-xs text-steel">
+            <span className="text-xs text-light-text-muted dark:text-steel">
               {formatDistanceToNow(new Date(note.createdAt), { addSuffix: true })}
             </span>
-            <button className="text-steel hover:text-silver transition-colors">
+            <button className="text-light-text-muted dark:text-steel hover:text-silver transition-colors">
               <MoreHorizontal className="h-4 w-4" />
             </button>
           </div>

@@ -33,7 +33,7 @@ export default function TestimonialsPage() {
       {/* Hero Section - Honest Pre-Launch Framing */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-midnight-blue/30 to-deep-space" />
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-quantum-violet/20 rounded-full blur-[120px]" />
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-emerald-pro-500/20 rounded-full blur-[120px]" />
 
         <Container className="relative z-10">
           <motion.div
@@ -42,12 +42,12 @@ export default function TestimonialsPage() {
             transition={{ duration: 0.5 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-quantum-violet/10 border border-quantum-violet/20 mb-6">
-              <Rocket className="w-4 h-4 text-quantum-violet" />
-              <span className="text-sm font-medium text-quantum-violet">Launching February 2026</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-pro-500/10 border border-emerald-pro-500/20 mb-6">
+              <Rocket className="w-4 h-4 text-emerald-pro-500" />
+              <span className="text-sm font-medium text-emerald-pro-500">Launching February 2026</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-light-text dark:text-white mb-6">
               Our Commitment to{" "}
               <span className="gradient-text-cyan-violet">
                 Founding Partners
@@ -68,28 +68,28 @@ export default function TestimonialsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="relative p-8 md:p-12 rounded-3xl border border-electric-cyan/20 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90"
+            className="relative p-8 md:p-12 rounded-3xl border border-emerald-pro-600/20 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90"
           >
             {/* Quote Icon */}
-            <div className="absolute -top-6 left-8 p-4 rounded-2xl bg-midnight-blue border border-graphite/50 backdrop-blur-sm">
-              <Quote className="h-6 w-6 text-electric-cyan" />
+            <div className="absolute -top-6 left-8 p-4 rounded-2xl bg-light-bg-secondary dark:bg-midnight-blue border border-border-default dark:border-graphite/50 backdrop-blur-sm">
+              <Quote className="h-6 w-6 text-emerald-pro-600" />
             </div>
 
             {/* Quote */}
-            <blockquote className="text-xl md:text-2xl text-white font-medium leading-relaxed mb-8 mt-4">
+            <blockquote className="text-xl md:text-2xl text-light-text dark:text-white font-medium leading-relaxed mb-8 mt-4">
               &ldquo;I built XGrowthOS because I was tired of seeing B2B companies waste their best sales reps on cold outreach. Your closers should be closing, not prospecting. Our 5 AI engines do the heavy lifting so your team can focus on what they do best—building relationships and closing deals.&rdquo;
             </blockquote>
 
             {/* Author */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-electric-cyan to-quantum-violet flex items-center justify-center text-deep-space font-bold text-xl">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-pro-600 to-emerald-pro-500 flex items-center justify-center text-deep-space font-bold text-xl">
                   MM
                 </div>
                 <div>
-                  <p className="font-semibold text-white text-lg">Marcos Matthews</p>
-                  <p className="text-electric-cyan text-sm font-medium">Founder & CEO</p>
-                  <div className="flex items-center gap-3 mt-1 text-steel text-xs">
+                  <p className="font-semibold text-light-text dark:text-white text-lg">Marcos Matthews</p>
+                  <p className="text-emerald-pro-600 text-sm font-medium">Founder & CEO</p>
+                  <div className="flex items-center gap-3 mt-1 text-light-text-muted dark:text-steel text-xs">
                     <span className="flex items-center gap-1">
                       <MapPin className="h-3 w-3" />
                       Los Angeles, CA
@@ -116,7 +116,7 @@ export default function TestimonialsPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
               Our Promise to You
             </h2>
             <p className="text-silver max-w-2xl mx-auto">
@@ -132,14 +132,14 @@ export default function TestimonialsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center p-8 rounded-2xl border border-electric-cyan/20 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90"
+                className="text-center p-8 rounded-2xl border border-emerald-pro-600/20 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90"
               >
                 <div className="flex justify-center mb-6">
-                  <div className="p-4 rounded-xl bg-electric-cyan/10 border border-electric-cyan/20">
-                    <commitment.icon className="h-8 w-8 text-electric-cyan" />
+                  <div className="p-4 rounded-xl bg-emerald-pro-600/10 border border-emerald-pro-600/20">
+                    <commitment.icon className="h-8 w-8 text-emerald-pro-600" />
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">{commitment.title}</h3>
+                <h3 className="text-xl font-semibold text-light-text dark:text-white mb-3">{commitment.title}</h3>
                 <p className="text-silver">{commitment.description}</p>
               </motion.div>
             ))}
@@ -157,7 +157,7 @@ export default function TestimonialsPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
               Why Join as a Founding Partner?
             </h2>
             <p className="text-silver max-w-2xl mx-auto">
@@ -180,12 +180,12 @@ export default function TestimonialsPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex items-start gap-4 p-4 rounded-xl border border-electric-cyan/10 bg-deep-space/30"
+                className="flex items-start gap-4 p-4 rounded-xl border border-emerald-pro-600/10 bg-white dark:bg-deep-space/30"
               >
-                <CheckCircle className="h-6 w-6 text-neon-mint flex-shrink-0" />
+                <CheckCircle className="h-6 w-6 text-emerald-pro-400 flex-shrink-0" />
                 <div>
-                  <h4 className="font-semibold text-white mb-1">{benefit.title}</h4>
-                  <p className="text-steel text-sm">{benefit.description}</p>
+                  <h4 className="font-semibold text-light-text dark:text-white mb-1">{benefit.title}</h4>
+                  <p className="text-light-text-muted dark:text-steel text-sm">{benefit.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -203,14 +203,14 @@ export default function TestimonialsPage() {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
-            <h2 className="text-3xl font-sora font-bold text-white mb-4">
+            <h2 className="text-3xl font-sora font-bold text-light-text dark:text-white mb-4">
               Ready to Be a Founding Partner?
             </h2>
             <p className="text-silver mb-8 max-w-xl mx-auto">
               Limited spots available. Book a call to discuss if we&apos;re a fit for each other.
             </p>
             <Link href="/contact">
-              <Button className="bg-gradient-to-r from-electric-cyan to-cyan-dark hover:from-cyan-light hover:to-electric-cyan text-deep-space font-semibold">
+              <Button className="bg-gradient-to-r from-emerald-pro-600 to-cyan-dark hover:from-cyan-light hover:to-emerald-pro-600 text-deep-space font-semibold">
                 Book a Consultation
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>

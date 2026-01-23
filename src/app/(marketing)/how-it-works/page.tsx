@@ -79,21 +79,21 @@ const engines = [
     codename: "Engine A",
     icon: Shield,
     description: "Compliance & domain health verification",
-    color: "electric-cyan",
+    color: "emerald-pro-600",
   },
   {
     name: "Architect",
     codename: "Engine B",
     icon: Sparkles,
     description: "AI-powered campaign design",
-    color: "quantum-violet",
+    color: "emerald-pro-500",
   },
   {
     name: "Scientist",
     codename: "Engine C",
     icon: BarChart3,
     description: "Campaign monitoring & optimization",
-    color: "neon-mint",
+    color: "emerald-pro-400",
   },
   {
     name: "Hunter",
@@ -107,7 +107,7 @@ const engines = [
     codename: "Engine H",
     icon: Users,
     description: "Website visitor intelligence",
-    color: "electric-cyan",
+    color: "emerald-pro-600",
   },
 ];
 
@@ -153,9 +153,9 @@ export default function HowItWorksPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-deep-space/50 to-midnight-blue/30" />
 
         {/* Enhanced ambient orbs */}
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-quantum-violet/15 rounded-full blur-[150px] animate-orb-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-electric-cyan/12 rounded-full blur-[130px] animate-orb-float-reverse" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neon-mint/5 rounded-full blur-[180px]" />
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-emerald-pro-500/15 rounded-full blur-[150px] animate-orb-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-emerald-pro-600/12 rounded-full blur-[130px] animate-orb-float-reverse" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-pro-400/5 rounded-full blur-[180px]" />
 
         <Container className="relative z-10">
           <motion.div
@@ -170,14 +170,14 @@ export default function HowItWorksPage() {
               transition={{ duration: 0.5 }}
               className="tech-badge mb-8"
             >
-              <Sparkles className="w-4 h-4 text-quantum-violet" />
-              <span className="text-sm font-medium text-quantum-violet">
+              <Sparkles className="w-4 h-4 text-emerald-pro-500" />
+              <span className="text-sm font-medium text-emerald-pro-500">
                 The Quantum Approach
               </span>
-              <Zap className="w-4 h-4 text-quantum-violet" />
+              <Zap className="w-4 h-4 text-emerald-pro-500" />
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-white mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-light-text dark:text-white mb-8">
               How XGrowthOS{" "}
               <span className="headline-underline gradient-text-cyan-violet block mt-2">
                 Works
@@ -185,8 +185,8 @@ export default function HowItWorksPage() {
             </h1>
 
             <p className="text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto mb-12 leading-relaxed">
-              A proven process powered by AI that transforms <span className="text-electric-cyan font-semibold">cold outreach</span> into
-              warm conversations and <span className="text-quantum-violet font-semibold">qualified meetings</span>.
+              A proven process powered by AI that transforms <span className="text-emerald-pro-600 font-semibold">cold outreach</span> into
+              warm conversations and <span className="text-emerald-pro-500 font-semibold">qualified meetings</span>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -200,7 +200,7 @@ export default function HowItWorksPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-graphite hover:border-electric-cyan/50 hover:text-electric-cyan"
+                  className="border-border-default dark:border-graphite hover:border-emerald-pro-600/50 hover:text-emerald-pro-600"
                 >
                   Explore the Engines
                 </Button>
@@ -223,20 +223,20 @@ export default function HowItWorksPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-2xl mx-auto mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-4">
               The 4-Step{" "}
               <span className="headline-underline gradient-text-cyan-violet">
                 Process
               </span>
             </h2>
-            <p className="text-steel">
+            <p className="text-light-text-muted dark:text-steel">
               From discovery to scale, here&apos;s how we build your outbound engine.
             </p>
           </motion.div>
 
           <div className="relative">
             {/* Connection line */}
-            <div className="absolute top-24 left-[50%] w-[80%] -translate-x-1/2 h-0.5 bg-gradient-to-r from-electric-cyan via-quantum-violet to-neon-mint hidden lg:block" />
+            <div className="absolute top-24 left-[50%] w-[80%] -translate-x-1/2 h-0.5 bg-gradient-to-r from-emerald-pro-600 via-emerald-pro-500 to-emerald-pro-400 hidden lg:block" />
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {processSteps.map((step, index) => (
@@ -249,28 +249,28 @@ export default function HowItWorksPage() {
                   className="relative"
                 >
                   <div className="text-center mb-6">
-                    <div className="h-16 w-16 rounded-full bg-electric-cyan/10 border-2 border-electric-cyan flex items-center justify-center mx-auto relative z-10 bg-deep-space">
-                      <step.icon className="h-7 w-7 text-electric-cyan" />
+                    <div className="h-16 w-16 rounded-full bg-emerald-pro-600/10 border-2 border-emerald-pro-600 flex items-center justify-center mx-auto relative z-10 bg-white dark:bg-deep-space">
+                      <step.icon className="h-7 w-7 text-emerald-pro-600" />
                     </div>
                   </div>
 
-                  <div className="p-6 rounded-2xl border border-graphite bg-midnight-blue/50 hover:border-electric-cyan/30 transition-colors">
+                  <div className="p-6 rounded-2xl border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue/50 hover:border-emerald-pro-600/30 transition-colors">
                     <div className="flex items-center gap-2 mb-3">
-                      <span className="text-xs font-medium text-electric-cyan bg-electric-cyan/10 px-2 py-1 rounded">
+                      <span className="text-xs font-medium text-emerald-pro-600 bg-emerald-pro-600/10 px-2 py-1 rounded">
                         Step {step.step}
                       </span>
                     </div>
-                    <h3 className="text-lg font-sora font-semibold text-white mb-2">
+                    <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-sm text-steel mb-4">{step.description}</p>
+                    <p className="text-sm text-light-text-muted dark:text-steel mb-4">{step.description}</p>
                     <ul className="space-y-2">
                       {step.details.map((detail, i) => (
                         <li
                           key={i}
                           className="flex items-center gap-2 text-sm text-silver"
                         >
-                          <CheckCircle className="h-4 w-4 text-neon-mint flex-shrink-0" />
+                          <CheckCircle className="h-4 w-4 text-emerald-pro-400 flex-shrink-0" />
                           {detail}
                         </li>
                       ))}
@@ -296,13 +296,13 @@ export default function HowItWorksPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-2xl mx-auto mb-12"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-4">
               Powered by{" "}
               <span className="headline-underline gradient-text-cyan-violet">
                 5 AI Engines
               </span>
             </h2>
-            <p className="text-steel">
+            <p className="text-light-text-muted dark:text-steel">
               Each engine handles a specialized part of your outreach, working together
               to maximize results.
             </p>
@@ -314,20 +314,20 @@ export default function HowItWorksPage() {
                 string,
                 { bg: string; border: string; text: string }
               > = {
-                "electric-cyan": {
-                  bg: "bg-electric-cyan/10",
-                  border: "border-electric-cyan/30",
-                  text: "text-electric-cyan",
+                "emerald-pro-600": {
+                  bg: "bg-emerald-pro-600/10",
+                  border: "border-emerald-pro-600/30",
+                  text: "text-emerald-pro-600",
                 },
-                "quantum-violet": {
-                  bg: "bg-quantum-violet/10",
-                  border: "border-quantum-violet/30",
-                  text: "text-quantum-violet",
+                "emerald-pro-500": {
+                  bg: "bg-emerald-pro-500/10",
+                  border: "border-emerald-pro-500/30",
+                  text: "text-emerald-pro-500",
                 },
-                "neon-mint": {
-                  bg: "bg-neon-mint/10",
-                  border: "border-neon-mint/30",
-                  text: "text-neon-mint",
+                "emerald-pro-400": {
+                  bg: "bg-emerald-pro-400/10",
+                  border: "border-emerald-pro-400/30",
+                  text: "text-emerald-pro-400",
                 },
                 "energy-orange": {
                   bg: "bg-energy-orange/10",
@@ -335,7 +335,7 @@ export default function HowItWorksPage() {
                   text: "text-energy-orange",
                 },
               };
-              const colors = colorClasses[engine.color] || colorClasses["electric-cyan"];
+              const colors = colorClasses[engine.color] || colorClasses["emerald-pro-600"];
 
               return (
                 <motion.div
@@ -347,18 +347,18 @@ export default function HowItWorksPage() {
                 >
                   <Link
                     href={`/engines/${engine.name.toLowerCase()}`}
-                    className="block p-5 rounded-xl border border-graphite bg-midnight-blue/50 hover:border-electric-cyan/30 transition-colors text-center"
+                    className="block p-5 rounded-xl border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue/50 hover:border-emerald-pro-600/30 transition-colors text-center"
                   >
                     <div
                       className={`h-12 w-12 rounded-xl ${colors.bg} border ${colors.border} flex items-center justify-center mx-auto mb-3`}
                     >
                       <engine.icon className={`h-6 w-6 ${colors.text}`} />
                     </div>
-                    <p className="text-xs text-steel mb-1">{engine.codename}</p>
-                    <h3 className="text-base font-sora font-semibold text-white mb-1">
+                    <p className="text-xs text-light-text-muted dark:text-steel mb-1">{engine.codename}</p>
+                    <h3 className="text-base font-sora font-semibold text-light-text dark:text-white mb-1">
                       {engine.name}
                     </h3>
-                    <p className="text-xs text-steel">{engine.description}</p>
+                    <p className="text-xs text-light-text-muted dark:text-steel">{engine.description}</p>
                   </Link>
                 </motion.div>
               );
@@ -368,7 +368,7 @@ export default function HowItWorksPage() {
           <div className="text-center mt-8">
             <Link
               href="/engines"
-              className="inline-flex items-center gap-2 text-electric-cyan hover:underline"
+              className="inline-flex items-center gap-2 text-emerald-pro-600 hover:underline"
             >
               Learn more about our AI engines
               <ArrowRight className="h-4 w-4" />
@@ -388,18 +388,18 @@ export default function HowItWorksPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="p-8 rounded-3xl border border-graphite bg-gradient-to-br from-midnight-blue/80 to-deep-space"
+            className="p-8 rounded-3xl border border-border-default dark:border-graphite bg-gradient-to-br from-midnight-blue/80 to-deep-space"
           >
-            <h2 className="text-2xl font-sora font-bold text-white text-center mb-8">
+            <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white text-center mb-8">
               Average Results Our Clients See
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <p className="text-3xl md:text-4xl font-sora font-bold text-electric-cyan mb-1">
+                  <p className="text-3xl md:text-4xl font-sora font-bold text-emerald-pro-600 mb-1">
                     {stat.value}
                   </p>
-                  <p className="text-sm text-steel">{stat.label}</p>
+                  <p className="text-sm text-light-text-muted dark:text-steel">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -420,13 +420,13 @@ export default function HowItWorksPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-2xl mx-auto mb-12"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-4">
               Why We&apos;re{" "}
               <span className="headline-underline gradient-text-cyan-violet">
                 Different
               </span>
             </h2>
-            <p className="text-steel">
+            <p className="text-light-text-muted dark:text-steel">
               Traditional agencies rely on manual processes and guesswork. We use
               AI to deliver consistent, scalable results.
             </p>
@@ -442,14 +442,14 @@ export default function HowItWorksPage() {
                 transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="feature-grid-item flex items-start gap-4"
               >
-                <div className="h-12 w-12 rounded-xl bg-electric-cyan/10 border border-electric-cyan/30 flex items-center justify-center flex-shrink-0">
-                  <item.icon className="h-6 w-6 text-electric-cyan" />
+                <div className="h-12 w-12 rounded-xl bg-emerald-pro-600/10 border border-emerald-pro-600/30 flex items-center justify-center flex-shrink-0">
+                  <item.icon className="h-6 w-6 text-emerald-pro-600" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-sora font-semibold text-white mb-2">
+                  <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-steel">{item.description}</p>
+                  <p className="text-light-text-muted dark:text-steel">{item.description}</p>
                 </div>
               </motion.div>
             ))}

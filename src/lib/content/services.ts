@@ -37,7 +37,7 @@ export interface Service {
   shortDescription: string;
   longDescription: string;
   icon: LucideIcon;
-  color: "electric-cyan" | "quantum-violet" | "neon-mint" | "energy-orange";
+  color: "emerald-pro-600" | "emerald-pro-500" | "emerald-pro-400" | "energy-orange";
   features: ServiceFeature[];
   stats: ServiceStat[];
   process: ServiceProcess[];
@@ -53,7 +53,7 @@ export const services: Service[] = [
     shortDescription: "We book meetings with decision-makers who are ready to buy. No tire-kickers, just qualified opportunities.",
     longDescription: "Our appointment setting service combines AI-powered research, multi-channel outreach, and human qualification to deliver sales-ready meetings directly to your calendar. We handle everything from prospecting to scheduling, so your sales team can focus on closing.",
     icon: Calendar,
-    color: "electric-cyan",
+    color: "emerald-pro-600",
     features: [
       { title: "AI-Powered Prospecting", description: "Find ideal buyers using advanced firmographic and intent data." },
       { title: "Multi-Channel Outreach", description: "Coordinated campaigns across email, LinkedIn, and phone." },
@@ -94,7 +94,7 @@ export const services: Service[] = [
     shortDescription: "Reach your ideal buyers with personalized email sequences that feel human but scale infinitely.",
     longDescription: "Our cold email service leverages all 5 AI engines to deliver highly personalized, compliant email campaigns that land in the inbox and generate responses. From infrastructure setup to copy optimization, we handle everything.",
     icon: Mail,
-    color: "quantum-violet",
+    color: "emerald-pro-500",
     features: [
       { title: "Infrastructure Setup", description: "Multiple sending domains, proper authentication, and warming." },
       { title: "AI Copywriting", description: "Personalized emails that resonate with each prospect." },
@@ -135,7 +135,7 @@ export const services: Service[] = [
     shortDescription: "Professional SDRs make targeted calls that complement your digital outreach and boost conversion rates.",
     longDescription: "Cold calling remains one of the most effective ways to reach decision-makers. Our trained SDRs use data-driven scripts and strategic timing to connect with prospects who've engaged with your digital campaigns, dramatically increasing conversion rates.",
     icon: Phone,
-    color: "neon-mint",
+    color: "emerald-pro-400",
     features: [
       { title: "Trained SDRs", description: "Professional callers who understand B2B sales." },
       { title: "Data-Driven Scripts", description: "Messaging optimized through continuous testing." },
@@ -176,7 +176,7 @@ export const services: Service[] = [
     shortDescription: "Strategic LinkedIn outreach that builds relationships and generates opportunities without damaging your brand.",
     longDescription: "LinkedIn is where B2B buyers live. Our LinkedIn service uses careful, compliant outreach to connect with decision-makers, build relationships, and generate qualified opportunities—all while protecting your professional reputation.",
     icon: Linkedin,
-    color: "electric-cyan",
+    color: "emerald-pro-600",
     features: [
       { title: "Profile Optimization", description: "Transform your profile into a conversion machine." },
       { title: "Targeted Outreach", description: "Connect with ideal buyers using advanced filters." },
@@ -217,7 +217,7 @@ export const services: Service[] = [
     shortDescription: "Custom-built prospect lists with verified contact data and deep company insights.",
     longDescription: "Quality lists are the foundation of successful outreach. Our research team combines AI-powered tools with human verification to build highly targeted prospect lists that include verified emails, direct dials, and detailed company insights.",
     icon: Search,
-    color: "quantum-violet",
+    color: "emerald-pro-500",
     features: [
       { title: "Custom ICP Matching", description: "Prospects matched to your exact criteria." },
       { title: "Email Verification", description: "Every email tested for deliverability." },
@@ -299,7 +299,7 @@ export const services: Service[] = [
     shortDescription: "Expert guidance to fix deliverability issues and maintain healthy sender reputation.",
     longDescription: "Email deliverability problems can destroy your outbound efforts. Our deliverability experts diagnose issues, implement fixes, and provide ongoing monitoring to ensure your emails consistently reach the inbox.",
     icon: Shield,
-    color: "electric-cyan",
+    color: "emerald-pro-600",
     features: [
       { title: "Full Audit", description: "Comprehensive analysis of your email infrastructure." },
       { title: "Authentication Setup", description: "SPF, DKIM, DMARC properly configured." },
@@ -340,7 +340,7 @@ export const services: Service[] = [
     shortDescription: "CRM setup, integration, and optimization to maximize your sales team's efficiency.",
     longDescription: "Your CRM should accelerate your sales process, not slow it down. We help configure, integrate, and optimize your CRM to ensure clean data, efficient workflows, and accurate reporting.",
     icon: Settings,
-    color: "quantum-violet",
+    color: "emerald-pro-500",
     features: [
       { title: "CRM Setup", description: "New implementation or migration services." },
       { title: "Integration", description: "Connect your CRM to key tools and data sources." },
@@ -381,7 +381,7 @@ export const services: Service[] = [
     shortDescription: "Experienced SDRs dedicated to your business, managed and trained by our team.",
     longDescription: "Building an in-house SDR team is expensive and time-consuming. Our outsourced SDR service provides experienced, trained sales development reps who work as an extension of your team—without the hiring headaches.",
     icon: Users,
-    color: "neon-mint",
+    color: "emerald-pro-400",
     features: [
       { title: "Dedicated SDRs", description: "Full-time reps focused on your business." },
       { title: "Management Included", description: "We handle hiring, training, and oversight." },
@@ -422,7 +422,7 @@ export const services: Service[] = [
     shortDescription: "Specialized strategies for landing large enterprise accounts with long sales cycles.",
     longDescription: "Enterprise deals require a different approach. We combine account-based strategies, multi-threading, and patient nurturing to help you break into Fortune 500 companies and close seven-figure deals.",
     icon: Building2,
-    color: "electric-cyan",
+    color: "emerald-pro-600",
     features: [
       { title: "Strategic Account Planning", description: "Detailed plans for each target enterprise." },
       { title: "Executive Targeting", description: "Reach C-suite and VP-level decision-makers." },
@@ -463,7 +463,7 @@ export const services: Service[] = [
     shortDescription: "Efficient, scalable campaigns for companies targeting small and medium businesses.",
     longDescription: "SMB sales require volume and efficiency. Our SMB lead generation service uses automation and AI to reach large numbers of prospects quickly while maintaining personalization and quality.",
     icon: Briefcase,
-    color: "quantum-violet",
+    color: "emerald-pro-500",
     features: [
       { title: "High-Volume Outreach", description: "Reach thousands of SMB prospects efficiently." },
       { title: "Automated Sequences", description: "Scalable campaigns with personal touch." },

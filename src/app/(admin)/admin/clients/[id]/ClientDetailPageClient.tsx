@@ -119,12 +119,12 @@ export default function ClientDetailPageClient({
     >
       {/* Back link & Header */}
       <motion.div variants={itemVariants}>
-        <p className="text-sm text-steel mb-4">
-          Admin / <Link href="/admin/clients" className="hover:text-electric-cyan transition-colors">Clients</Link> / <span className="text-quantum-violet">{client.name}</span>
+        <p className="text-sm text-light-text-muted dark:text-steel mb-4">
+          Admin / <Link href="/admin/clients" className="hover:text-emerald-pro-600 transition-colors">Clients</Link> / <span className="text-emerald-pro-500">{client.name}</span>
         </p>
         <Link
           href="/admin/clients"
-          className="inline-flex items-center gap-2 text-steel hover:text-electric-cyan transition-colors mb-6"
+          className="inline-flex items-center gap-2 text-light-text-muted dark:text-steel hover:text-emerald-pro-600 transition-colors mb-6"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to Clients
@@ -135,12 +135,12 @@ export default function ClientDetailPageClient({
       <motion.div variants={itemVariants}>
         <div className="flex items-start justify-between mb-8">
           <div className="flex items-center gap-4">
-            <div className="h-16 w-16 rounded-xl bg-quantum-violet/20 border border-quantum-violet/30 flex items-center justify-center">
-              <Building2 className="h-8 w-8 text-quantum-violet" />
+            <div className="h-16 w-16 rounded-xl bg-emerald-pro-500/20 border border-emerald-pro-500/30 flex items-center justify-center">
+              <Building2 className="h-8 w-8 text-emerald-pro-500" />
             </div>
             <div>
               <div className="flex items-center gap-3">
-                <h1 className="text-2xl font-sora font-bold text-white">
+                <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">
                   {client.name}
                 </h1>
                 <StatusBadge status={client.status} />
@@ -152,7 +152,7 @@ export default function ClientDetailPageClient({
                     href={`https://${client.domain}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-sm text-steel hover:text-electric-cyan transition-colors"
+                    className="flex items-center gap-1 text-sm text-light-text-muted dark:text-steel hover:text-emerald-pro-600 transition-colors"
                   >
                     <Globe className="h-3.5 w-3.5" />
                     {client.domain}
@@ -160,11 +160,11 @@ export default function ClientDetailPageClient({
                   </a>
                 )}
                 {client.industry && (
-                  <span className="text-sm text-steel">
+                  <span className="text-sm text-light-text-muted dark:text-steel">
                     {client.industry}
                   </span>
                 )}
-                <span className="text-sm text-steel">
+                <span className="text-sm text-light-text-muted dark:text-steel">
                   <Calendar className="h-3.5 w-3.5 inline mr-1" />
                   Joined {new Date(client.createdAt).toLocaleDateString()}
                 </span>
@@ -180,16 +180,16 @@ export default function ClientDetailPageClient({
                 Pause
               </button>
             ) : (
-              <button className="flex items-center gap-2 px-4 py-2 border border-neon-mint/50 text-neon-mint rounded-lg hover:bg-neon-mint/10 transition-colors">
+              <button className="flex items-center gap-2 px-4 py-2 border border-emerald-pro-400/50 text-emerald-pro-400 rounded-lg hover:bg-emerald-pro-400/10 transition-colors">
                 <Play className="h-4 w-4" />
                 Resume
               </button>
             )}
-            <button className="flex items-center gap-2 px-4 py-2 border border-graphite text-steel rounded-lg hover:bg-midnight-blue/30 transition-colors">
+            <button className="flex items-center gap-2 px-4 py-2 border border-border-default dark:border-graphite text-light-text-muted dark:text-steel rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors">
               <Archive className="h-4 w-4" />
               Archive
             </button>
-            <button className="p-2 border border-graphite text-steel rounded-lg hover:bg-midnight-blue/30 transition-colors">
+            <button className="p-2 border border-border-default dark:border-graphite text-light-text-muted dark:text-steel rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors">
               <MoreHorizontal className="h-4 w-4" />
             </button>
           </div>
@@ -251,10 +251,10 @@ export default function ClientDetailPageClient({
 
 function StatusBadge({ status }: { status: string }) {
   const styles: Record<string, string> = {
-    active: "bg-neon-mint/10 text-neon-mint border-neon-mint/30",
-    pilot: "bg-electric-cyan/10 text-electric-cyan border-electric-cyan/30",
+    active: "bg-emerald-pro-400/10 text-emerald-pro-400 border-emerald-pro-400/30",
+    pilot: "bg-emerald-pro-600/10 text-emerald-pro-600 border-emerald-pro-600/30",
     paused: "bg-energy-orange/10 text-energy-orange border-energy-orange/30",
-    churned: "bg-steel/10 text-steel border-steel/30",
+    churned: "bg-steel/10 text-light-text-muted dark:text-steel border-steel/30",
   };
 
   return (
@@ -280,16 +280,16 @@ function QuickStat({
   highlight?: boolean;
 }) {
   return (
-    <div className="glass-premium p-4 hover:border-electric-cyan/30 hover:-translate-y-0.5 hover:shadow-card-hover transition-all duration-300">
-      <p className="text-xs text-steel mb-1">{label}</p>
+    <div className="glass-premium p-4 hover:border-emerald-pro-600/30 hover:-translate-y-0.5 hover:shadow-card-hover transition-all duration-300">
+      <p className="text-xs text-light-text-muted dark:text-steel mb-1">{label}</p>
       <p
         className={`text-xl font-sora font-bold capitalize ${
-          highlight ? "text-energy-orange" : "text-white"
+          highlight ? "text-energy-orange" : "text-light-text dark:text-white"
         }`}
       >
         {value}
       </p>
-      {subtext && <p className="text-xs text-steel mt-1">{subtext}</p>}
+      {subtext && <p className="text-xs text-light-text-muted dark:text-steel mt-1">{subtext}</p>}
     </div>
   );
 }

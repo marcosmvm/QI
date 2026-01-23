@@ -13,7 +13,7 @@ interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   ({ className, variant = 'default', ...props }, ref) => {
     const variants = {
-      default: "bg-midnight-blue/60 border border-graphite rounded-xl backdrop-blur-sm",
+      default: "bg-light-bg-secondary dark:bg-midnight-blue/60 border border-border-default dark:border-graphite rounded-xl backdrop-blur-sm",
       interactive: "card-interactive", // Uses CSS class from globals.css
       stat: "card-stat",
       featured: "card-featured",
@@ -49,7 +49,7 @@ const CardTitle = React.forwardRef<
   <h3
     ref={ref}
     className={cn(
-      "text-lg font-semibold text-white tracking-tight",
+      "text-lg font-semibold text-light-text dark:text-white tracking-tight",
       className
     )}
     {...props}
@@ -63,7 +63,7 @@ const CardDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <p
     ref={ref}
-    className={cn("text-sm text-steel", className)}
+    className={cn("text-sm text-light-text-muted dark:text-steel", className)}
     {...props}
   />
 ))

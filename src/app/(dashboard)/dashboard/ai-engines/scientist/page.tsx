@@ -171,16 +171,16 @@ const hourlyPerformance = [
 
 const statusColors = {
   running: {
-    bg: "bg-neon-mint/10",
-    text: "text-neon-mint",
-    border: "border-neon-mint/20",
-    dot: "bg-neon-mint",
+    bg: "bg-emerald-pro-400/10",
+    text: "text-emerald-pro-400",
+    border: "border-emerald-pro-400/20",
+    dot: "bg-emerald-pro-400",
   },
   completed: {
-    bg: "bg-electric-cyan/10",
-    text: "text-electric-cyan",
-    border: "border-electric-cyan/20",
-    dot: "bg-electric-cyan",
+    bg: "bg-emerald-pro-600/10",
+    text: "text-emerald-pro-600",
+    border: "border-emerald-pro-600/20",
+    dot: "bg-emerald-pro-600",
   },
   paused: {
     bg: "bg-energy-orange/10",
@@ -191,9 +191,9 @@ const statusColors = {
 };
 
 const impactColors = {
-  high: { bg: "bg-neon-mint/10", text: "text-neon-mint", border: "border-neon-mint/20" },
+  high: { bg: "bg-emerald-pro-400/10", text: "text-emerald-pro-400", border: "border-emerald-pro-400/20" },
   medium: { bg: "bg-energy-orange/10", text: "text-energy-orange", border: "border-energy-orange/20" },
-  low: { bg: "bg-steel/10", text: "text-steel", border: "border-steel/20" },
+  low: { bg: "bg-steel/10", text: "text-light-text-muted dark:text-steel", border: "border-steel/20" },
 };
 
 export default function ScientistPage() {
@@ -205,41 +205,41 @@ export default function ScientistPage() {
     <motion.div initial="hidden" animate="visible" variants={containerVariants} className="min-h-screen p-8">
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-steel mb-2">
-          <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
+        <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-2">
+          <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
           <span>/</span>
-          <span className="text-electric-cyan">Scientist Engine</span>
+          <span className="text-emerald-pro-600">Scientist Engine</span>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-white">Scientist Engine</h1>
-        <p className="text-steel mt-1">Campaign Optimization & A/B Testing Intelligence</p>
+        <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">Scientist Engine</h1>
+        <p className="text-light-text-muted dark:text-steel mt-1">Campaign Optimization & A/B Testing Intelligence</p>
       </motion.div>
 
       <div className="space-y-6">
         {/* Engine Status Banner */}
-        <motion.div variants={itemVariants} className="relative glass-premium p-6 overflow-hidden border-neon-mint/20">
-          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-neon-mint/60 to-transparent" />
-          <div className="absolute -right-20 -top-20 w-64 h-64 bg-neon-mint/10 rounded-full blur-3xl" />
+        <motion.div variants={itemVariants} className="relative glass-premium p-6 overflow-hidden border-emerald-pro-400/20">
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-emerald-pro-400/60 to-transparent" />
+          <div className="absolute -right-20 -top-20 w-64 h-64 bg-emerald-pro-400/10 rounded-full blur-3xl" />
 
           <div className="relative flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-neon-mint/20 border border-neon-mint/30 shadow-glow-mint">
-                <FlaskConical className="h-7 w-7 text-neon-mint" />
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-pro-400/20 border border-emerald-pro-400/30 shadow-glow-mint">
+                <FlaskConical className="h-7 w-7 text-emerald-pro-400" />
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="font-mono text-xs px-2 py-0.5 rounded-md bg-midnight-blue text-neon-mint border border-neon-mint/30">
+                  <span className="font-mono text-xs px-2 py-0.5 rounded-md bg-light-bg-secondary dark:bg-midnight-blue text-emerald-pro-400 border border-emerald-pro-400/30">
                     ENGINE C
                   </span>
-                  <span className="flex items-center gap-1.5 text-xs text-neon-mint">
+                  <span className="flex items-center gap-1.5 text-xs text-emerald-pro-400">
                     <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-mint opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-neon-mint"></span>
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-pro-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-pro-400"></span>
                     </span>
                     Analyzing
                   </span>
                 </div>
-                <h2 className="text-xl font-sora font-bold text-white mt-1">Campaign Scientist</h2>
-                <p className="text-sm text-steel">Real-time optimization, A/B testing, and performance intelligence</p>
+                <h2 className="text-xl font-sora font-bold text-light-text dark:text-white mt-1">Campaign Scientist</h2>
+                <p className="text-sm text-light-text-muted dark:text-steel">Real-time optimization, A/B testing, and performance intelligence</p>
               </div>
             </div>
 
@@ -247,14 +247,14 @@ export default function ScientistPage() {
               <Button
                 variant="outline"
                 size="sm"
-                className="border-neon-mint/30 text-neon-mint hover:bg-neon-mint/10"
+                className="border-emerald-pro-400/30 text-emerald-pro-400 hover:bg-emerald-pro-400/10"
               >
                 <Settings className="h-4 w-4 mr-2" />
                 Settings
               </Button>
               <Button
                 size="sm"
-                className="bg-gradient-to-r from-neon-mint to-emerald-600 hover:from-emerald-400 hover:to-neon-mint text-deep-space font-semibold shadow-glow-mint"
+                className="bg-gradient-to-r from-emerald-pro-400 to-emerald-600 hover:from-emerald-400 hover:to-emerald-pro-400 text-deep-space font-semibold shadow-glow-mint"
               >
                 <Beaker className="h-4 w-4 mr-2" />
                 New A/B Test
@@ -266,40 +266,40 @@ export default function ScientistPage() {
         {/* Performance Summary Cards */}
         <motion.div variants={itemVariants} className="grid grid-cols-4 gap-4">
           {[
-            { label: "Avg Open Rate", value: `${performanceMetrics.openRate.current}%`, change: performanceMetrics.openRate.change, icon: Eye, color: "electric-cyan" },
-            { label: "Avg Reply Rate", value: `${performanceMetrics.replyRate.current}%`, change: performanceMetrics.replyRate.change, icon: MessageSquare, color: "neon-mint" },
+            { label: "Avg Open Rate", value: `${performanceMetrics.openRate.current}%`, change: performanceMetrics.openRate.change, icon: Eye, color: "emerald-pro-600" },
+            { label: "Avg Reply Rate", value: `${performanceMetrics.replyRate.current}%`, change: performanceMetrics.replyRate.change, icon: MessageSquare, color: "emerald-pro-400" },
             { label: "Bounce Rate", value: `${performanceMetrics.bounceRate.current}%`, change: performanceMetrics.bounceRate.change, icon: AlertTriangle, color: "energy-orange", inverse: true },
-            { label: "Meeting Rate", value: `${performanceMetrics.meetingRate.current}%`, change: performanceMetrics.meetingRate.change, icon: Calendar, color: "quantum-violet" },
+            { label: "Meeting Rate", value: `${performanceMetrics.meetingRate.current}%`, change: performanceMetrics.meetingRate.change, icon: Calendar, color: "emerald-pro-500" },
           ].map((metric) => {
             const isPositive = metric.inverse ? metric.change < 0 : metric.change > 0;
             return (
               <div
                 key={metric.label}
-                className="rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-4 hover:border-electric-cyan/20 transition-all"
+                className="rounded-xl border border-emerald-pro-600/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-4 hover:border-emerald-pro-600/20 transition-all"
               >
                 <div className="flex items-center justify-between mb-2">
-                  <p className="text-xs text-steel">{metric.label}</p>
+                  <p className="text-xs text-light-text-muted dark:text-steel">{metric.label}</p>
                   <div className={cn(
                     "flex h-8 w-8 items-center justify-center rounded-lg",
-                    metric.color === "electric-cyan" && "bg-electric-cyan/10 border border-electric-cyan/20",
-                    metric.color === "neon-mint" && "bg-neon-mint/10 border border-neon-mint/20",
+                    metric.color === "emerald-pro-600" && "bg-emerald-pro-600/10 border border-emerald-pro-600/20",
+                    metric.color === "emerald-pro-400" && "bg-emerald-pro-400/10 border border-emerald-pro-400/20",
                     metric.color === "energy-orange" && "bg-energy-orange/10 border border-energy-orange/20",
-                    metric.color === "quantum-violet" && "bg-quantum-violet/10 border border-quantum-violet/20"
+                    metric.color === "emerald-pro-500" && "bg-emerald-pro-500/10 border border-emerald-pro-500/20"
                   )}>
                     <metric.icon className={cn(
                       "h-4 w-4",
-                      metric.color === "electric-cyan" && "text-electric-cyan",
-                      metric.color === "neon-mint" && "text-neon-mint",
+                      metric.color === "emerald-pro-600" && "text-emerald-pro-600",
+                      metric.color === "emerald-pro-400" && "text-emerald-pro-400",
                       metric.color === "energy-orange" && "text-energy-orange",
-                      metric.color === "quantum-violet" && "text-quantum-violet"
+                      metric.color === "emerald-pro-500" && "text-emerald-pro-500"
                     )} />
                   </div>
                 </div>
                 <div className="flex items-end justify-between">
-                  <p className="text-2xl font-sora font-bold text-white">{metric.value}</p>
+                  <p className="text-2xl font-sora font-bold text-light-text dark:text-white">{metric.value}</p>
                   <div className={cn(
                     "flex items-center gap-1 text-xs font-medium",
-                    isPositive ? "text-neon-mint" : "text-rose"
+                    isPositive ? "text-emerald-pro-400" : "text-rose"
                   )}>
                     {isPositive ? (
                       <ArrowUpRight className="h-3 w-3" />
@@ -315,7 +315,7 @@ export default function ScientistPage() {
         </motion.div>
 
         {/* Tab Navigation */}
-        <motion.div variants={itemVariants} className="flex items-center gap-1 p-1 rounded-xl bg-midnight-blue/50 border border-electric-cyan/10 w-fit">
+        <motion.div variants={itemVariants} className="flex items-center gap-1 p-1 rounded-xl bg-light-bg-secondary dark:bg-midnight-blue/50 border border-emerald-pro-600/10 w-fit">
           {[
             { id: "overview", label: "Performance Overview", icon: BarChart3 },
             { id: "tests", label: "A/B Tests", icon: Beaker },
@@ -327,8 +327,8 @@ export default function ScientistPage() {
               className={cn(
                 "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all",
                 activeTab === tab.id
-                  ? "bg-electric-cyan/10 text-electric-cyan border border-electric-cyan/20"
-                  : "text-steel hover:text-white hover:bg-electric-cyan/5"
+                  ? "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20"
+                  : "text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-emerald-pro-600/5"
               )}
             >
               <tab.icon className="h-4 w-4" />
@@ -344,17 +344,17 @@ export default function ScientistPage() {
             <div className="col-span-2 glass-premium p-6">
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <h3 className="text-lg font-sora font-semibold text-white">Hourly Performance</h3>
-                  <p className="text-sm text-steel">Best engagement windows for your campaigns</p>
+                  <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white">Hourly Performance</h3>
+                  <p className="text-sm text-light-text-muted dark:text-steel">Best engagement windows for your campaigns</p>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="flex items-center gap-2">
-                    <span className="h-3 w-3 rounded-full bg-electric-cyan"></span>
-                    <span className="text-xs text-steel">Opens</span>
+                    <span className="h-3 w-3 rounded-full bg-emerald-pro-600"></span>
+                    <span className="text-xs text-light-text-muted dark:text-steel">Opens</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="h-3 w-3 rounded-full bg-neon-mint"></span>
-                    <span className="text-xs text-steel">Replies</span>
+                    <span className="h-3 w-3 rounded-full bg-emerald-pro-400"></span>
+                    <span className="text-xs text-light-text-muted dark:text-steel">Replies</span>
                   </div>
                 </div>
               </div>
@@ -364,25 +364,25 @@ export default function ScientistPage() {
                   <div key={hour.hour} className="flex-1 flex flex-col items-center gap-1">
                     <div className="w-full flex flex-col gap-0.5">
                       <div
-                        className="w-full bg-electric-cyan/60 rounded-t transition-all hover:bg-electric-cyan"
+                        className="w-full bg-emerald-pro-600/60 rounded-t transition-all hover:bg-emerald-pro-600"
                         style={{ height: `${(hour.opens / maxOpens) * 140}px` }}
                       />
                       <div
-                        className="w-full bg-neon-mint/60 rounded-b transition-all hover:bg-neon-mint"
+                        className="w-full bg-emerald-pro-400/60 rounded-b transition-all hover:bg-emerald-pro-400"
                         style={{ height: `${(hour.replies / maxOpens) * 140}px` }}
                       />
                     </div>
-                    <span className="text-[10px] text-steel mt-2">{hour.hour}</span>
+                    <span className="text-[10px] text-light-text-muted dark:text-steel mt-2">{hour.hour}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-6 p-4 rounded-xl bg-neon-mint/5 border border-neon-mint/20">
+              <div className="mt-6 p-4 rounded-xl bg-emerald-pro-400/5 border border-emerald-pro-400/20">
                 <div className="flex items-center gap-2">
-                  <Sparkles className="h-4 w-4 text-neon-mint" />
-                  <span className="text-sm font-medium text-neon-mint">AI Insight</span>
+                  <Sparkles className="h-4 w-4 text-emerald-pro-400" />
+                  <span className="text-sm font-medium text-emerald-pro-400">AI Insight</span>
                 </div>
-                <p className="text-sm text-steel mt-1">
+                <p className="text-sm text-light-text-muted dark:text-steel mt-1">
                   Peak engagement occurs between 9-11 AM. Consider scheduling your highest-priority sends during this window for maximum impact.
                 </p>
               </div>
@@ -391,67 +391,67 @@ export default function ScientistPage() {
             {/* Quick Stats Sidebar */}
             <div className="space-y-4">
               {/* Active Tests Summary */}
-              <div className="rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-5">
+              <div className="rounded-xl border border-emerald-pro-600/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-5">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-neon-mint/10 border border-neon-mint/20">
-                    <Beaker className="h-5 w-5 text-neon-mint" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-pro-400/10 border border-emerald-pro-400/20">
+                    <Beaker className="h-5 w-5 text-emerald-pro-400" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white">Active Tests</h3>
-                    <p className="text-xs text-steel">Currently running experiments</p>
+                    <h3 className="font-semibold text-light-text dark:text-white">Active Tests</h3>
+                    <p className="text-xs text-light-text-muted dark:text-steel">Currently running experiments</p>
                   </div>
                 </div>
 
                 <div className="space-y-3">
                   {activeTests.filter(t => t.status === "running").slice(0, 3).map((test) => (
-                    <div key={test.id} className="p-3 rounded-lg bg-deep-space/50 border border-electric-cyan/10">
+                    <div key={test.id} className="p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-emerald-pro-600/10">
                       <div className="flex items-center justify-between mb-1">
-                        <span className="text-sm font-medium text-white truncate">{test.name}</span>
-                        <span className="text-xs text-neon-mint">{test.confidence}%</span>
+                        <span className="text-sm font-medium text-light-text dark:text-white truncate">{test.name}</span>
+                        <span className="text-xs text-emerald-pro-400">{test.confidence}%</span>
                       </div>
-                      <p className="text-xs text-steel">Leading: Variant {test.winner}</p>
+                      <p className="text-xs text-light-text-muted dark:text-steel">Leading: Variant {test.winner}</p>
                     </div>
                   ))}
                 </div>
 
-                <Button variant="ghost" size="sm" className="w-full mt-3 text-electric-cyan hover:bg-electric-cyan/10">
+                <Button variant="ghost" size="sm" className="w-full mt-3 text-emerald-pro-600 hover:bg-emerald-pro-600/10">
                   View All Tests
                   <ChevronRight className="h-4 w-4 ml-1" />
                 </Button>
               </div>
 
               {/* Recent Wins */}
-              <div className="rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-5">
+              <div className="rounded-xl border border-emerald-pro-600/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-5">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-quantum-violet/10 border border-quantum-violet/20">
-                    <Target className="h-5 w-5 text-quantum-violet" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-pro-500/10 border border-emerald-pro-500/20">
+                    <Target className="h-5 w-5 text-emerald-pro-500" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white">Recent Wins</h3>
-                    <p className="text-xs text-steel">Successful optimizations</p>
+                    <h3 className="font-semibold text-light-text dark:text-white">Recent Wins</h3>
+                    <p className="text-xs text-light-text-muted dark:text-steel">Successful optimizations</p>
                   </div>
                 </div>
 
                 <div className="space-y-3">
-                  <div className="flex items-center gap-3 p-3 rounded-lg bg-neon-mint/5 border border-neon-mint/20">
-                    <CheckCircle2 className="h-5 w-5 text-neon-mint" />
+                  <div className="flex items-center gap-3 p-3 rounded-lg bg-emerald-pro-400/5 border border-emerald-pro-400/20">
+                    <CheckCircle2 className="h-5 w-5 text-emerald-pro-400" />
                     <div>
-                      <p className="text-sm text-white">+44% reply rate</p>
-                      <p className="text-xs text-steel">CTA Variation Test</p>
+                      <p className="text-sm text-light-text dark:text-white">+44% reply rate</p>
+                      <p className="text-xs text-light-text-muted dark:text-steel">CTA Variation Test</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3 p-3 rounded-lg bg-neon-mint/5 border border-neon-mint/20">
-                    <CheckCircle2 className="h-5 w-5 text-neon-mint" />
+                  <div className="flex items-center gap-3 p-3 rounded-lg bg-emerald-pro-400/5 border border-emerald-pro-400/20">
+                    <CheckCircle2 className="h-5 w-5 text-emerald-pro-400" />
                     <div>
-                      <p className="text-sm text-white">-33% bounce rate</p>
-                      <p className="text-xs text-steel">List cleaning applied</p>
+                      <p className="text-sm text-light-text dark:text-white">-33% bounce rate</p>
+                      <p className="text-xs text-light-text-muted dark:text-steel">List cleaning applied</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3 p-3 rounded-lg bg-neon-mint/5 border border-neon-mint/20">
-                    <CheckCircle2 className="h-5 w-5 text-neon-mint" />
+                  <div className="flex items-center gap-3 p-3 rounded-lg bg-emerald-pro-400/5 border border-emerald-pro-400/20">
+                    <CheckCircle2 className="h-5 w-5 text-emerald-pro-400" />
                     <div>
-                      <p className="text-sm text-white">+21% open rate</p>
-                      <p className="text-xs text-steel">Subject line optimization</p>
+                      <p className="text-sm text-light-text dark:text-white">+21% open rate</p>
+                      <p className="text-xs text-light-text-muted dark:text-steel">Subject line optimization</p>
                     </div>
                   </div>
                 </div>
@@ -470,12 +470,12 @@ export default function ScientistPage() {
               return (
                 <div
                   key={test.id}
-                  className="glass-premium p-6 hover:border-electric-cyan/20 transition-all"
+                  className="glass-premium p-6 hover:border-emerald-pro-600/20 transition-all"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <div className="flex items-center gap-3 mb-1">
-                        <h3 className="text-lg font-semibold text-white">{test.name}</h3>
+                        <h3 className="text-lg font-semibold text-light-text dark:text-white">{test.name}</h3>
                         <span className={cn(
                           "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium border",
                           status.bg,
@@ -486,7 +486,7 @@ export default function ScientistPage() {
                           {test.status.charAt(0).toUpperCase() + test.status.slice(1)}
                         </span>
                       </div>
-                      <p className="text-sm text-steel">
+                      <p className="text-sm text-light-text-muted dark:text-steel">
                         Campaign: {test.campaign} • Started {test.startDate}
                       </p>
                     </div>
@@ -497,7 +497,7 @@ export default function ScientistPage() {
                           Pause
                         </Button>
                       )}
-                      <Button variant="outline" size="sm" className="border-electric-cyan/20 text-steel hover:text-white">
+                      <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white">
                         <MoreHorizontal className="h-4 w-4" />
                       </Button>
                     </div>
@@ -513,8 +513,8 @@ export default function ScientistPage() {
                           className={cn(
                             "rounded-xl border p-4 transition-all",
                             isWinner
-                              ? "border-neon-mint/30 bg-neon-mint/5"
-                              : "border-electric-cyan/10 bg-deep-space/50"
+                              ? "border-emerald-pro-400/30 bg-emerald-pro-400/5"
+                              : "border-emerald-pro-600/10 bg-white dark:bg-deep-space/50"
                           )}
                         >
                           <div className="flex items-center justify-between mb-3">
@@ -522,15 +522,15 @@ export default function ScientistPage() {
                               <span className={cn(
                                 "font-mono text-xs px-2 py-0.5 rounded-md border",
                                 isWinner
-                                  ? "bg-neon-mint/10 text-neon-mint border-neon-mint/30"
-                                  : "bg-midnight-blue text-electric-cyan border-electric-cyan/20"
+                                  ? "bg-emerald-pro-400/10 text-emerald-pro-400 border-emerald-pro-400/30"
+                                  : "bg-light-bg-secondary dark:bg-midnight-blue text-emerald-pro-600 border-emerald-pro-600/20"
                               )}>
                                 {String.fromCharCode(65 + index)}
                               </span>
-                              <span className="text-sm font-medium text-white">{variant.name}</span>
+                              <span className="text-sm font-medium text-light-text dark:text-white">{variant.name}</span>
                             </div>
                             {isWinner && (
-                              <span className="text-xs text-neon-mint font-medium flex items-center gap-1">
+                              <span className="text-xs text-emerald-pro-400 font-medium flex items-center gap-1">
                                 <CheckCircle2 className="h-3 w-3" />
                                 Leading
                               </span>
@@ -538,32 +538,32 @@ export default function ScientistPage() {
                           </div>
 
                           {variant.subject !== "-" && (
-                            <p className="text-xs text-steel mb-3 truncate">
+                            <p className="text-xs text-light-text-muted dark:text-steel mb-3 truncate">
                               Subject: "{variant.subject}"
                             </p>
                           )}
 
                           <div className="grid grid-cols-4 gap-3">
                             <div>
-                              <p className="text-xs text-steel">Sent</p>
-                              <p className="text-sm font-semibold text-white">{variant.sent}</p>
+                              <p className="text-xs text-light-text-muted dark:text-steel">Sent</p>
+                              <p className="text-sm font-semibold text-light-text dark:text-white">{variant.sent}</p>
                             </div>
                             <div>
-                              <p className="text-xs text-steel">Opens</p>
-                              <p className="text-sm font-semibold text-white">{variant.opens}</p>
+                              <p className="text-xs text-light-text-muted dark:text-steel">Opens</p>
+                              <p className="text-sm font-semibold text-light-text dark:text-white">{variant.opens}</p>
                             </div>
                             <div>
-                              <p className="text-xs text-steel">Open Rate</p>
+                              <p className="text-xs text-light-text-muted dark:text-steel">Open Rate</p>
                               <p className={cn(
                                 "text-sm font-semibold",
-                                isWinner ? "text-neon-mint" : "text-white"
+                                isWinner ? "text-emerald-pro-400" : "text-light-text dark:text-white"
                               )}>{variant.openRate}%</p>
                             </div>
                             <div>
-                              <p className="text-xs text-steel">Reply Rate</p>
+                              <p className="text-xs text-light-text-muted dark:text-steel">Reply Rate</p>
                               <p className={cn(
                                 "text-sm font-semibold",
-                                isWinner ? "text-neon-mint" : "text-white"
+                                isWinner ? "text-emerald-pro-400" : "text-light-text dark:text-white"
                               )}>{variant.replyRate}%</p>
                             </div>
                           </div>
@@ -573,27 +573,27 @@ export default function ScientistPage() {
                   </div>
 
                   {/* Test Results */}
-                  <div className="flex items-center justify-between p-4 rounded-xl bg-deep-space/50 border border-electric-cyan/10">
+                  <div className="flex items-center justify-between p-4 rounded-xl bg-white dark:bg-deep-space/50 border border-emerald-pro-600/10">
                     <div className="flex items-center gap-6">
                       <div>
-                        <p className="text-xs text-steel">Statistical Confidence</p>
-                        <p className="text-lg font-semibold text-electric-cyan">{test.confidence}%</p>
+                        <p className="text-xs text-light-text-muted dark:text-steel">Statistical Confidence</p>
+                        <p className="text-lg font-semibold text-emerald-pro-600">{test.confidence}%</p>
                       </div>
-                      <div className="h-8 w-px bg-electric-cyan/20" />
+                      <div className="h-8 w-px bg-emerald-pro-600/20" />
                       <div>
-                        <p className="text-xs text-steel">Improvement</p>
-                        <p className="text-lg font-semibold text-neon-mint">{test.improvement}</p>
+                        <p className="text-xs text-light-text-muted dark:text-steel">Improvement</p>
+                        <p className="text-lg font-semibold text-emerald-pro-400">{test.improvement}</p>
                       </div>
-                      <div className="h-8 w-px bg-electric-cyan/20" />
+                      <div className="h-8 w-px bg-emerald-pro-600/20" />
                       <div>
-                        <p className="text-xs text-steel">Recommended Action</p>
-                        <p className="text-sm text-white">
+                        <p className="text-xs text-light-text-muted dark:text-steel">Recommended Action</p>
+                        <p className="text-sm text-light-text dark:text-white">
                           {test.confidence >= 95 ? "Apply winning variant" : "Continue testing"}
                         </p>
                       </div>
                     </div>
                     {test.confidence >= 95 && (
-                      <Button size="sm" className="bg-gradient-to-r from-neon-mint to-emerald-600 text-deep-space font-semibold">
+                      <Button size="sm" className="bg-gradient-to-r from-emerald-pro-400 to-emerald-600 text-deep-space font-semibold">
                         Apply Winner
                         <ChevronRight className="h-4 w-4 ml-1" />
                       </Button>
@@ -613,25 +613,25 @@ export default function ScientistPage() {
               return (
                 <div
                   key={rec.id}
-                  className="rounded-xl border border-electric-cyan/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-5 hover:border-electric-cyan/20 transition-all"
+                  className="rounded-xl border border-emerald-pro-600/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-5 hover:border-emerald-pro-600/20 transition-all"
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center gap-3">
                       <div className={cn(
                         "flex h-10 w-10 items-center justify-center rounded-xl border",
-                        rec.type === "timing" && "bg-electric-cyan/10 border-electric-cyan/20",
-                        rec.type === "content" && "bg-quantum-violet/10 border-quantum-violet/20",
-                        rec.type === "sequence" && "bg-neon-mint/10 border-neon-mint/20",
+                        rec.type === "timing" && "bg-emerald-pro-600/10 border-emerald-pro-600/20",
+                        rec.type === "content" && "bg-emerald-pro-500/10 border-emerald-pro-500/20",
+                        rec.type === "sequence" && "bg-emerald-pro-400/10 border-emerald-pro-400/20",
                         rec.type === "audience" && "bg-energy-orange/10 border-energy-orange/20"
                       )}>
-                        {rec.type === "timing" && <Clock className="h-5 w-5 text-electric-cyan" />}
-                        {rec.type === "content" && <Mail className="h-5 w-5 text-quantum-violet" />}
-                        {rec.type === "sequence" && <Activity className="h-5 w-5 text-neon-mint" />}
+                        {rec.type === "timing" && <Clock className="h-5 w-5 text-emerald-pro-600" />}
+                        {rec.type === "content" && <Mail className="h-5 w-5 text-emerald-pro-500" />}
+                        {rec.type === "sequence" && <Activity className="h-5 w-5 text-emerald-pro-400" />}
                         {rec.type === "audience" && <Users className="h-5 w-5 text-energy-orange" />}
                       </div>
                       <div>
-                        <h4 className="font-medium text-white">{rec.title}</h4>
-                        <p className="text-xs text-steel">{rec.campaign}</p>
+                        <h4 className="font-medium text-light-text dark:text-white">{rec.title}</h4>
+                        <p className="text-xs text-light-text-muted dark:text-steel">{rec.campaign}</p>
                       </div>
                     </div>
                     <span className={cn(
@@ -644,15 +644,15 @@ export default function ScientistPage() {
                     </span>
                   </div>
 
-                  <p className="text-sm text-steel mb-4">{rec.description}</p>
+                  <p className="text-sm text-light-text-muted dark:text-steel mb-4">{rec.description}</p>
 
-                  <div className="flex items-center justify-between pt-3 border-t border-electric-cyan/10">
+                  <div className="flex items-center justify-between pt-3 border-t border-emerald-pro-600/10">
                     <div className="flex items-center gap-2">
-                      <Lightbulb className="h-4 w-4 text-quantum-violet" />
-                      <span className="text-xs text-steel">AI-generated recommendation</span>
+                      <Lightbulb className="h-4 w-4 text-emerald-pro-500" />
+                      <span className="text-xs text-light-text-muted dark:text-steel">AI-generated recommendation</span>
                     </div>
                     {rec.actionable && (
-                      <Button size="sm" variant="ghost" className="text-electric-cyan hover:bg-electric-cyan/10">
+                      <Button size="sm" variant="ghost" className="text-emerald-pro-600 hover:bg-emerald-pro-600/10">
                         Apply
                         <ChevronRight className="h-4 w-4 ml-1" />
                       </Button>

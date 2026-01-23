@@ -42,28 +42,28 @@ export function PerformanceChart({
     <div className="chart-container">
       {/* Header */}
       <div className="mb-6">
-        <h3 className="text-base font-semibold text-white">{title}</h3>
+        <h3 className="text-base font-semibold text-light-text dark:text-white">{title}</h3>
         <div className="mt-3 flex items-center gap-6">
           <div className="flex items-center gap-2">
             <span
               className="h-0.5 w-4 rounded"
               style={{ backgroundColor: chartColors.primary }}
             />
-            <span className="text-xs text-steel">Sent</span>
+            <span className="text-xs text-light-text-muted dark:text-steel">Sent</span>
           </div>
           <div className="flex items-center gap-2">
             <span
               className="h-0.5 w-4 rounded"
               style={{ backgroundColor: chartColors.secondary }}
             />
-            <span className="text-xs text-steel">Opened</span>
+            <span className="text-xs text-light-text-muted dark:text-steel">Opened</span>
           </div>
           <div className="flex items-center gap-2">
             <span
               className="h-0.5 w-4 rounded"
               style={{ backgroundColor: chartColors.tertiary }}
             />
-            <span className="text-xs text-steel">Replied</span>
+            <span className="text-xs text-light-text-muted dark:text-steel">Replied</span>
           </div>
         </div>
       </div>

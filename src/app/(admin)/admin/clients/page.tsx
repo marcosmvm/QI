@@ -173,7 +173,7 @@ export default function ClientsPage() {
   if (loading) {
     return (
       <div className="min-h-screen p-8 flex items-center justify-center">
-        <div className="text-steel">Loading...</div>
+        <div className="text-light-text-muted dark:text-steel">Loading...</div>
       </div>
     );
   }
@@ -188,13 +188,13 @@ export default function ClientsPage() {
       {/* Header */}
       <motion.div variants={itemVariants} className="flex items-center justify-between mb-8">
         <div>
-          <p className="text-sm text-steel mb-1">Admin / <span className="text-quantum-violet">Clients</span></p>
-          <h1 className="text-2xl font-sora font-bold text-white">Clients</h1>
-          <p className="text-steel mt-1">Manage your client relationships</p>
+          <p className="text-sm text-light-text-muted dark:text-steel mb-1">Admin / <span className="text-emerald-pro-500">Clients</span></p>
+          <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">Clients</h1>
+          <p className="text-light-text-muted dark:text-steel mt-1">Manage your client relationships</p>
         </div>
         <Link
           href="/admin/clients/new"
-          className="flex items-center gap-2 px-4 py-2 bg-electric-cyan text-deep-space font-medium rounded-lg hover:bg-electric-cyan/90 transition-colors"
+          className="flex items-center gap-2 px-4 py-2 bg-emerald-pro-600 text-deep-space font-medium rounded-lg hover:bg-emerald-pro-600/90 transition-colors"
         >
           <Plus className="h-4 w-4" />
           Add Client
@@ -204,8 +204,8 @@ export default function ClientsPage() {
       {/* Stats */}
       <motion.div variants={itemVariants} className="grid grid-cols-4 gap-4 mb-8">
         <StatCard label="Total Clients" value={stats.total} />
-        <StatCard label="Active" value={stats.active} color="neon-mint" />
-        <StatCard label="Pilot" value={stats.pilot} color="electric-cyan" />
+        <StatCard label="Active" value={stats.active} color="emerald-pro-400" />
+        <StatCard label="Pilot" value={stats.pilot} color="emerald-pro-600" />
         <StatCard label="Paused" value={stats.paused} color="energy-orange" />
       </motion.div>
 
@@ -213,11 +213,11 @@ export default function ClientsPage() {
       <motion.div variants={itemVariants}>
         {clients.length === 0 ? (
           <div className="glass-premium p-12 text-center">
-            <Building2 className="h-12 w-12 text-steel mx-auto mb-4" />
-            <p className="text-steel">No clients yet</p>
+            <Building2 className="h-12 w-12 text-light-text-muted dark:text-steel mx-auto mb-4" />
+            <p className="text-light-text-muted dark:text-steel">No clients yet</p>
             <Link
               href="/admin/clients/new"
-              className="text-electric-cyan hover:underline text-sm mt-2 inline-block"
+              className="text-emerald-pro-600 hover:underline text-sm mt-2 inline-block"
             >
               Add your first client
             </Link>
@@ -233,17 +233,17 @@ export default function ClientsPage() {
 function StatCard({
   label,
   value,
-  color = "electric-cyan",
+  color = "emerald-pro-600",
 }: {
   label: string;
   value: number;
   color?: string;
 }) {
   const colorClasses: Record<string, string> = {
-    "electric-cyan": "text-electric-cyan",
-    "neon-mint": "text-neon-mint",
+    "emerald-pro-600": "text-emerald-pro-600",
+    "emerald-pro-400": "text-emerald-pro-400",
     "energy-orange": "text-energy-orange",
-    "quantum-violet": "text-quantum-violet",
+    "emerald-pro-500": "text-emerald-pro-500",
   };
 
   return (
@@ -251,7 +251,7 @@ function StatCard({
       <p className={`text-2xl font-sora font-bold ${colorClasses[color]}`}>
         {value}
       </p>
-      <p className="text-sm text-steel mt-1">{label}</p>
+      <p className="text-sm text-light-text-muted dark:text-steel mt-1">{label}</p>
     </div>
   );
 }

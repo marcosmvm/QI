@@ -15,27 +15,27 @@ interface ServiceDetailPageProps {
 }
 
 const colorClasses = {
-  "electric-cyan": {
-    bg: "bg-electric-cyan/10",
-    border: "border-electric-cyan/30",
-    text: "text-electric-cyan",
-    gradient: "from-electric-cyan to-cyan-dark",
+  "emerald-pro-600": {
+    bg: "bg-emerald-pro-600/10",
+    border: "border-emerald-pro-600/30",
+    text: "text-emerald-pro-600",
+    gradient: "from-emerald-pro-600 to-cyan-dark",
     glow: "shadow-[0_0_60px_rgba(0,212,255,0.3)]",
     iconBg: "cyan",
   },
-  "quantum-violet": {
-    bg: "bg-quantum-violet/10",
-    border: "border-quantum-violet/30",
-    text: "text-quantum-violet",
-    gradient: "from-quantum-violet to-purple-600",
+  "emerald-pro-500": {
+    bg: "bg-emerald-pro-500/10",
+    border: "border-emerald-pro-500/30",
+    text: "text-emerald-pro-500",
+    gradient: "from-emerald-pro-500 to-purple-600",
     glow: "shadow-[0_0_60px_rgba(123,97,255,0.3)]",
     iconBg: "violet",
   },
-  "neon-mint": {
-    bg: "bg-neon-mint/10",
-    border: "border-neon-mint/30",
-    text: "text-neon-mint",
-    gradient: "from-neon-mint to-emerald-500",
+  "emerald-pro-400": {
+    bg: "bg-emerald-pro-400/10",
+    border: "border-emerald-pro-400/30",
+    text: "text-emerald-pro-400",
+    gradient: "from-emerald-pro-400 to-emerald-500",
     glow: "shadow-[0_0_60px_rgba(0,255,178,0.3)]",
     iconBg: "mint",
   },
@@ -67,8 +67,8 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
 
         {/* Enhanced ambient orbs */}
         <div className={`absolute top-1/4 left-1/4 w-[600px] h-[600px] ${colors.bg} rounded-full blur-[180px] opacity-60 animate-orb-float`} />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-quantum-violet/10 rounded-full blur-[150px] animate-orb-float-reverse" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-electric-cyan/5 rounded-full blur-[180px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-emerald-pro-500/10 rounded-full blur-[150px] animate-orb-float-reverse" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-pro-600/5 rounded-full blur-[180px]" />
 
         <Container className="relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -90,7 +90,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
                 <Sparkles className={`w-4 h-4 ${colors.text}`} />
               </motion.div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-light-text dark:text-white mb-6">
                 {service.name}
               </h1>
 
@@ -113,7 +113,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-electric-cyan/30 hover:border-electric-cyan/60 text-white hover:text-electric-cyan bg-electric-cyan/5 hover:bg-electric-cyan/10 px-8 py-6 text-lg transition-all backdrop-blur-sm"
+                    className="border-emerald-pro-600/30 hover:border-emerald-pro-600/60 text-light-text dark:text-white hover:text-emerald-pro-600 bg-emerald-pro-600/5 hover:bg-emerald-pro-600/10 px-8 py-6 text-lg transition-all backdrop-blur-sm"
                   >
                     View Pricing
                   </Button>
@@ -139,7 +139,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
                     <p className={`stat-number text-3xl md:text-4xl ${colors.text}`}>
                       {stat.value}
                     </p>
-                    <p className="text-steel text-sm mt-2">{stat.label}</p>
+                    <p className="text-light-text-muted dark:text-steel text-sm mt-2">{stat.label}</p>
                   </motion.div>
                 ))}
               </div>
@@ -161,7 +161,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
               What&apos;s{" "}
               <span className={`headline-underline ${colors.text}`}>Included</span>
             </h2>
@@ -183,10 +183,10 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
                 {/* Accent line on hover */}
                 <div className={`absolute top-0 left-0 right-0 h-1 rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity ${colors.text.replace('text-', 'bg-')}`} />
 
-                <h3 className={`text-lg font-sora font-semibold text-white mb-3 group-hover:${colors.text} transition-colors`}>
+                <h3 className={`text-lg font-sora font-semibold text-light-text dark:text-white mb-3 group-hover:${colors.text} transition-colors`}>
                   {feature.title}
                 </h3>
-                <p className="text-silver text-sm leading-relaxed group-hover:text-white/80 transition-colors">
+                <p className="text-silver text-sm leading-relaxed group-hover:text-light-text dark:text-white/80 transition-colors">
                   {feature.description}
                 </p>
               </motion.div>
@@ -205,7 +205,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
               How It{" "}
               <span className={`headline-underline ${colors.text}`}>Works</span>
             </h2>
@@ -240,10 +240,10 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
 
                   {/* Content */}
                   <div className="flex-1 pb-8 pt-2">
-                    <h3 className={`text-xl md:text-2xl font-sora font-semibold text-white mb-3 group-hover:${colors.text} transition-colors`}>
+                    <h3 className={`text-xl md:text-2xl font-sora font-semibold text-light-text dark:text-white mb-3 group-hover:${colors.text} transition-colors`}>
                       {step.title}
                     </h3>
-                    <p className="text-silver leading-relaxed group-hover:text-white/80 transition-colors">
+                    <p className="text-silver leading-relaxed group-hover:text-light-text dark:text-white/80 transition-colors">
                       {step.description}
                     </p>
                   </div>
@@ -264,7 +264,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
                 Why Choose{" "}
                 <span className={`headline-underline ${colors.text}`}>XGrowthOS</span>
               </h2>
@@ -285,7 +285,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
                     <div className={`flex-shrink-0 w-8 h-8 rounded-full ${colors.bg} border ${colors.border} flex items-center justify-center group-hover:scale-110 transition-transform`}>
                       <CheckCircle className={`h-5 w-5 ${colors.text}`} />
                     </div>
-                    <span className="text-silver text-lg leading-relaxed group-hover:text-white transition-colors">{benefit}</span>
+                    <span className="text-silver text-lg leading-relaxed group-hover:text-light-text dark:text-white transition-colors">{benefit}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -301,7 +301,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
               <div className={`icon-container-animated ${colors.iconBg} mb-8`}>
                 <Icon className={`h-8 w-8 ${colors.text}`} />
               </div>
-              <h3 className="text-2xl lg:text-3xl font-sora font-bold text-white mb-4">
+              <h3 className="text-2xl lg:text-3xl font-sora font-bold text-light-text dark:text-white mb-4">
                 Ready to get started?
               </h3>
               <p className="text-silver text-lg mb-8">
@@ -331,7 +331,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-2xl mx-auto mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
               Frequently Asked{" "}
               <span className={`headline-underline ${colors.text}`}>Questions</span>
             </h2>
@@ -357,15 +357,15 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
                     className={`group feature-grid-item !p-0 overflow-hidden data-[state=open]:!border-${colors.text.replace('text-', '')}/30`}
                   >
                     <Accordion.Header>
-                      <Accordion.Trigger className="flex w-full items-center justify-between px-6 py-6 text-left hover:bg-electric-cyan/5 transition-colors">
-                        <span className="text-white font-medium pr-4 text-lg">{faq.question}</span>
+                      <Accordion.Trigger className="flex w-full items-center justify-between px-6 py-6 text-left hover:bg-emerald-pro-600/5 transition-colors">
+                        <span className="text-light-text dark:text-white font-medium pr-4 text-lg">{faq.question}</span>
                         <div className={`flex-shrink-0 w-8 h-8 rounded-full ${colors.bg} border ${colors.border} flex items-center justify-center group-hover:scale-110 transition-all`}>
                           <ChevronDown className={`h-4 w-4 ${colors.text} transition-transform duration-300 group-data-[state=open]:rotate-180`} />
                         </div>
                       </Accordion.Trigger>
                     </Accordion.Header>
                     <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                      <div className="px-6 pb-6 text-silver leading-relaxed border-t border-graphite/30 pt-4">
+                      <div className="px-6 pb-6 text-silver leading-relaxed border-t border-border-default dark:border-graphite/30 pt-4">
                         {faq.answer}
                       </div>
                     </Accordion.Content>

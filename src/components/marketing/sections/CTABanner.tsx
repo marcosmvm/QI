@@ -112,7 +112,7 @@ export function CTABanner({
         {Array.from({ length: 8 }).map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-electric-cyan rounded-full"
+            className="absolute w-1 h-1 bg-emerald-pro-600 rounded-full"
             style={{
               left: `${10 + i * 12}%`,
               top: '50%',
@@ -148,7 +148,7 @@ export function CTABanner({
             transition={{ duration: 0.6, delay: 0.1, type: "spring", stiffness: 200 }}
             className="icon-container-animated mx-auto mb-10"
           >
-            <Calendar className="w-8 h-8 text-electric-cyan" />
+            <Calendar className="w-8 h-8 text-emerald-pro-600" />
           </motion.div>
 
           {/* Headline - Enhanced */}
@@ -157,7 +157,7 @@ export function CTABanner({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-sora font-bold text-white mb-8"
+            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-sora font-bold text-light-text dark:text-white mb-8"
           >
             {title}
           </motion.h2>
@@ -191,7 +191,7 @@ export function CTABanner({
               <Button
                 variant="outline"
                 size="lg"
-                className="border-electric-cyan/30 hover:border-electric-cyan/60 text-white hover:text-electric-cyan bg-electric-cyan/5 hover:bg-electric-cyan/10 px-8 py-6 text-lg transition-all backdrop-blur-sm"
+                className="border-emerald-pro-600/30 hover:border-emerald-pro-600/60 text-light-text dark:text-white hover:text-emerald-pro-600 bg-emerald-pro-600/5 hover:bg-emerald-pro-600/10 px-8 py-6 text-lg transition-all backdrop-blur-sm"
               >
                 <Sparkles className="mr-2 h-5 w-5" />
                 {secondaryCTA.text}

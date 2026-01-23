@@ -84,13 +84,13 @@ export default function CompliancePage() {
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-steel mb-2">
-          <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
+        <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-2">
+          <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
           <span>/</span>
-          <span className="text-electric-cyan">Compliance</span>
+          <span className="text-emerald-pro-600">Compliance</span>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-white">Compliance</h1>
-        <p className="text-sm text-steel mt-1">
+        <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">Compliance</h1>
+        <p className="text-sm text-light-text-muted dark:text-steel mt-1">
           Domain health and deliverability monitoring
         </p>
       </motion.div>
@@ -122,30 +122,30 @@ export default function CompliancePage() {
       <motion.div variants={itemVariants} className="grid grid-cols-12 gap-6">
         {/* Domain Health Table */}
         <div className="col-span-8 glass-premium">
-          <div className="flex items-center justify-between px-6 py-4 border-b border-electric-cyan/10">
+          <div className="flex items-center justify-between px-6 py-4 border-b border-emerald-pro-600/10">
             <div>
-              <h3 className="text-base font-semibold text-white">Domain Health</h3>
-              <p className="text-xs text-steel">Monitor your sending domains</p>
+              <h3 className="text-base font-semibold text-light-text dark:text-white">Domain Health</h3>
+              <p className="text-xs text-light-text-muted dark:text-steel">Monitor your sending domains</p>
             </div>
-            <button className="flex items-center gap-2 text-sm text-electric-cyan hover:text-electric-cyan/80 transition-colors">
+            <button className="flex items-center gap-2 text-sm text-emerald-pro-600 hover:text-emerald-pro-600/80 transition-colors">
               <RefreshCw className="h-4 w-4" />
               Refresh
             </button>
           </div>
 
-          <div className="divide-y divide-electric-cyan/5">
+          <div className="divide-y divide-emerald-pro-600/5">
             {mockDomains.map((domain) => (
-              <div key={domain.domain} className="flex items-center px-6 py-4 hover:bg-electric-cyan/5 transition-colors">
-                <Globe className="h-4 w-4 text-steel mr-3" />
+              <div key={domain.domain} className="flex items-center px-6 py-4 hover:bg-emerald-pro-600/5 transition-colors">
+                <Globe className="h-4 w-4 text-light-text-muted dark:text-steel mr-3" />
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-medium text-white">{domain.domain}</p>
-                  <p className="text-xs text-steel">Last check: {domain.lastCheck}</p>
+                  <p className="text-sm font-medium text-light-text dark:text-white">{domain.domain}</p>
+                  <p className="text-xs text-light-text-muted dark:text-steel">Last check: {domain.lastCheck}</p>
                 </div>
                 <div className="flex items-center gap-4">
                   <span
                     className={cn(
                       "text-sm font-semibold",
-                      domain.score >= 90 ? "text-neon-mint" : "text-energy-orange"
+                      domain.score >= 90 ? "text-emerald-pro-400" : "text-energy-orange"
                     )}
                   >
                     {domain.score}%
@@ -154,14 +154,14 @@ export default function CompliancePage() {
                     className={cn(
                       "inline-flex items-center gap-1.5 text-xs font-medium px-2 py-1 rounded-lg border",
                       domain.status === "healthy"
-                        ? "bg-neon-mint/10 text-neon-mint border-neon-mint/20"
+                        ? "bg-emerald-pro-400/10 text-emerald-pro-400 border-emerald-pro-400/20"
                         : "bg-energy-orange/10 text-energy-orange border-energy-orange/20"
                     )}
                   >
                     <span
                       className={cn(
                         "h-1.5 w-1.5 rounded-full",
-                        domain.status === "healthy" ? "bg-neon-mint animate-pulse" : "bg-energy-orange"
+                        domain.status === "healthy" ? "bg-emerald-pro-400 animate-pulse" : "bg-energy-orange"
                       )}
                     />
                     {domain.status === "healthy" ? "Healthy" : "Warning"}
@@ -174,30 +174,30 @@ export default function CompliancePage() {
 
         {/* Recent Alerts */}
         <div className="col-span-4 glass-premium">
-          <div className="px-6 py-4 border-b border-electric-cyan/10">
-            <h3 className="text-base font-semibold text-white">Recent Alerts</h3>
-            <p className="text-xs text-steel">{recentAlerts.length} alerts</p>
+          <div className="px-6 py-4 border-b border-emerald-pro-600/10">
+            <h3 className="text-base font-semibold text-light-text dark:text-white">Recent Alerts</h3>
+            <p className="text-xs text-light-text-muted dark:text-steel">{recentAlerts.length} alerts</p>
           </div>
 
-          <div className="divide-y divide-electric-cyan/5">
+          <div className="divide-y divide-emerald-pro-600/5">
             {recentAlerts.map((alert, index) => (
-              <div key={index} className="flex items-start gap-3 px-6 py-4 hover:bg-electric-cyan/5 transition-colors">
+              <div key={index} className="flex items-start gap-3 px-6 py-4 hover:bg-emerald-pro-600/5 transition-colors">
                 {alert.type === "warning" ? (
                   <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-energy-orange/10 border border-energy-orange/20">
                     <AlertTriangle className="h-3.5 w-3.5 text-energy-orange" />
                   </div>
                 ) : alert.type === "success" ? (
-                  <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-neon-mint/10 border border-neon-mint/20">
-                    <CheckCircle className="h-3.5 w-3.5 text-neon-mint" />
+                  <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-emerald-pro-400/10 border border-emerald-pro-400/20">
+                    <CheckCircle className="h-3.5 w-3.5 text-emerald-pro-400" />
                   </div>
                 ) : (
-                  <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-electric-cyan/10 border border-electric-cyan/20">
-                    <Shield className="h-3.5 w-3.5 text-electric-cyan" />
+                  <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-emerald-pro-600/10 border border-emerald-pro-600/20">
+                    <Shield className="h-3.5 w-3.5 text-emerald-pro-600" />
                   </div>
                 )}
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm text-white">{alert.message}</p>
-                  <p className="text-xs text-steel mt-0.5">{alert.time}</p>
+                  <p className="text-sm text-light-text dark:text-white">{alert.message}</p>
+                  <p className="text-xs text-light-text-muted dark:text-steel mt-0.5">{alert.time}</p>
                 </div>
               </div>
             ))}

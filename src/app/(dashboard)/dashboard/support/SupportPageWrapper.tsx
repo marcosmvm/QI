@@ -46,12 +46,12 @@ export function SupportHeader() {
   return (
     <motion.div
       variants={itemVariants}
-      className="p-4 border-b border-graphite/50 bg-midnight-blue/50"
+      className="p-4 border-b border-border-default dark:border-graphite/50 bg-light-bg-secondary dark:bg-midnight-blue/50"
     >
-      <div className="flex items-center gap-2 text-sm text-steel mb-1">
-        <a href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</a>
+      <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-1">
+        <a href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</a>
         <span>/</span>
-        <span className="text-electric-cyan">Support</span>
+        <span className="text-emerald-pro-600">Support</span>
       </div>
     </motion.div>
   );

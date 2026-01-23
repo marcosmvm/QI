@@ -75,12 +75,12 @@ export default function ComparisonHubPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-32 overflow-hidden bg-deep-space">
+      <section className="relative py-32 overflow-hidden bg-white dark:bg-deep-space">
         <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-deep-space to-midnight-blue" />
         {/* Enhanced Ambient Orbs */}
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-electric-cyan/10 rounded-full blur-[150px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-quantum-violet/10 rounded-full blur-[150px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-neon-mint/5 rounded-full blur-[180px]" />
+        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-emerald-pro-600/10 rounded-full blur-[150px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-emerald-pro-500/10 rounded-full blur-[150px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-emerald-pro-400/5 rounded-full blur-[180px]" />
 
         <Container className="relative z-10">
           <motion.div
@@ -91,20 +91,20 @@ export default function ComparisonHubPage() {
           >
             {/* Tech Badge */}
             <div className="tech-badge mb-6">
-              <Scale className="w-4 h-4 text-quantum-violet" />
-              <span className="text-sm font-medium text-quantum-violet">
+              <Scale className="w-4 h-4 text-emerald-pro-500" />
+              <span className="text-sm font-medium text-emerald-pro-500">
                 Compare Providers
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-sora font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
               XGrowthOS vs{" "}
               <span className="headline-underline gradient-text-cyan-violet">
                 The Competition
               </span>
             </h1>
 
-            <p className="text-xl text-steel">
+            <p className="text-xl text-light-text-muted dark:text-steel">
               See how our AI-powered approach compares to traditional lead
               generation agencies.
             </p>
@@ -129,12 +129,12 @@ export default function ComparisonHubPage() {
               >
                 <Link
                   href={`/vs/${competitor.slug}`}
-                  className="block p-6 rounded-2xl border border-graphite bg-midnight-blue/50 hover:border-electric-cyan/30 transition-colors h-full"
+                  className="block p-6 rounded-2xl border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue/50 hover:border-emerald-pro-600/30 transition-colors h-full"
                 >
-                  <h3 className="text-lg font-sora font-semibold text-white mb-1">
+                  <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-1">
                     XGrowthOS vs {competitor.name}
                   </h3>
-                  <p className="text-sm text-steel mb-4">
+                  <p className="text-sm text-light-text-muted dark:text-steel mb-4">
                     {competitor.description}
                   </p>
 
@@ -144,13 +144,13 @@ export default function ComparisonHubPage() {
                         key={i}
                         className="flex items-center gap-2 text-sm text-silver"
                       >
-                        <CheckCircle className="h-4 w-4 text-neon-mint flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-emerald-pro-400 flex-shrink-0" />
                         {diff}
                       </div>
                     ))}
                   </div>
 
-                  <span className="inline-flex items-center gap-1 text-sm text-electric-cyan hover:underline">
+                  <span className="inline-flex items-center gap-1 text-sm text-emerald-pro-600 hover:underline">
                     Read comparison
                     <ArrowRight className="h-4 w-4" />
                   </span>
@@ -172,19 +172,19 @@ export default function ComparisonHubPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="text-center p-8 rounded-3xl border border-graphite bg-midnight-blue/50"
+            className="text-center p-8 rounded-3xl border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue/50"
           >
-            <h2 className="text-2xl font-sora font-bold text-white mb-4">
+            <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white mb-4">
               Why Companies Switch to XGrowthOS
             </h2>
-            <p className="text-steel mb-6">
+            <p className="text-light-text-muted dark:text-steel mb-6">
               Traditional agencies rely on manual processes that can&apos;t match the
               speed, personalization, and optimization that AI delivers.
             </p>
 
             <div className="grid md:grid-cols-3 gap-6 text-left">
               <div>
-                <p className="text-3xl font-sora font-bold text-electric-cyan mb-2">
+                <p className="text-3xl font-sora font-bold text-emerald-pro-600 mb-2">
                   3x
                 </p>
                 <p className="text-sm text-silver">
@@ -192,13 +192,13 @@ export default function ComparisonHubPage() {
                 </p>
               </div>
               <div>
-                <p className="text-3xl font-sora font-bold text-neon-mint mb-2">
+                <p className="text-3xl font-sora font-bold text-emerald-pro-400 mb-2">
                   40%
                 </p>
                 <p className="text-sm text-silver">Lower cost per meeting</p>
               </div>
               <div>
-                <p className="text-3xl font-sora font-bold text-quantum-violet mb-2">
+                <p className="text-3xl font-sora font-bold text-emerald-pro-500 mb-2">
                   24/7
                 </p>
                 <p className="text-sm text-silver">Continuous optimization</p>

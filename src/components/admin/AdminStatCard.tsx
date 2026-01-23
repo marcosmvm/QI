@@ -26,9 +26,9 @@ interface AdminStatCardProps {
 }
 
 const iconColorStyles = {
-  cyan: "bg-electric-cyan/10 border-electric-cyan/30 text-electric-cyan",
-  violet: "bg-quantum-violet/10 border-quantum-violet/30 text-quantum-violet",
-  mint: "bg-neon-mint/10 border-neon-mint/30 text-neon-mint",
+  cyan: "bg-emerald-pro-600/10 border-emerald-pro-600/30 text-emerald-pro-600",
+  violet: "bg-emerald-pro-500/10 border-emerald-pro-500/30 text-emerald-pro-500",
+  mint: "bg-emerald-pro-400/10 border-emerald-pro-400/30 text-emerald-pro-400",
   orange: "bg-energy-orange/10 border-energy-orange/30 text-energy-orange",
 };
 
@@ -54,10 +54,10 @@ export function AdminStatCard({
   return (
     <div
       className={cn(
-        "rounded-xl border bg-midnight-blue/30 p-6 transition-all duration-200",
+        "rounded-xl border bg-light-bg-secondary dark:bg-midnight-blue/30 p-6 transition-all duration-200",
         highlight
           ? "border-energy-orange/50 shadow-lg shadow-energy-orange/10"
-          : "border-graphite/50 hover:border-graphite/80",
+          : "border-border-default dark:border-graphite/50 hover:border-border-default dark:border-graphite/80",
         className
       )}
     >
@@ -90,9 +90,9 @@ export function AdminStatCard({
       </div>
 
       <div className="mt-4">
-        <p className="text-2xl font-sora font-bold text-white">
+        <p className="text-2xl font-sora font-bold text-light-text dark:text-white">
           {value}
-          {suffix && <span className="text-lg text-steel ml-1">{suffix}</span>}
+          {suffix && <span className="text-lg text-light-text-muted dark:text-steel ml-1">{suffix}</span>}
         </p>
         <p className="text-sm text-silver mt-1">{title}</p>
       </div>
@@ -100,7 +100,7 @@ export function AdminStatCard({
       {change !== undefined && (
         <div className="mt-3 flex items-center gap-2">
           {change > 0 ? (
-            <TrendingUp className="h-4 w-4 text-neon-mint" />
+            <TrendingUp className="h-4 w-4 text-emerald-pro-400" />
           ) : change < 0 ? (
             <TrendingDown className="h-4 w-4 text-energy-orange" />
           ) : null}
@@ -108,16 +108,16 @@ export function AdminStatCard({
             className={cn(
               "text-sm font-medium",
               change > 0
-                ? "text-neon-mint"
+                ? "text-emerald-pro-400"
                 : change < 0
                 ? "text-energy-orange"
-                : "text-steel"
+                : "text-light-text-muted dark:text-steel"
             )}
           >
             {change > 0 ? "+" : ""}
             {change}%
           </span>
-          <span className="text-xs text-steel">{changeLabel}</span>
+          <span className="text-xs text-light-text-muted dark:text-steel">{changeLabel}</span>
         </div>
       )}
     </div>

@@ -35,18 +35,18 @@ export function RevenueChart({
   };
 
   return (
-    <div className="rounded-xl border border-graphite/50 bg-midnight-blue/30 p-6">
+    <div className="rounded-xl border border-border-default dark:border-graphite/50 bg-light-bg-secondary dark:bg-midnight-blue/30 p-6">
       <div className="mb-6">
-        <h3 className="text-lg font-sora font-semibold text-white">{title}</h3>
+        <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white">{title}</h3>
         <div className="mt-2 flex items-center gap-6">
           <div className="flex items-center gap-2">
-            <span className="h-0.5 w-4 bg-electric-cyan rounded" />
-            <span className="text-xs text-steel">MRR</span>
+            <span className="h-0.5 w-4 bg-emerald-pro-600 rounded" />
+            <span className="text-xs text-light-text-muted dark:text-steel">MRR</span>
           </div>
           {showARR && (
             <div className="flex items-center gap-2">
-              <span className="h-0.5 w-4 bg-quantum-violet rounded" />
-              <span className="text-xs text-steel">ARR</span>
+              <span className="h-0.5 w-4 bg-emerald-pro-500 rounded" />
+              <span className="text-xs text-light-text-muted dark:text-steel">ARR</span>
             </div>
           )}
         </div>

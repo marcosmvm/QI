@@ -95,13 +95,13 @@ export function DashboardContent({
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-steel mb-2">
-          <span className="text-white">Portal</span>
+        <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-2">
+          <span className="text-light-text dark:text-white">Portal</span>
           <span>/</span>
-          <span className="text-electric-cyan">Dashboard</span>
+          <span className="text-emerald-pro-600">Dashboard</span>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-white">Dashboard</h1>
-        <p className="text-steel mt-1">
+        <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">Dashboard</h1>
+        <p className="text-light-text-muted dark:text-steel mt-1">
           Welcome back! Here&apos;s an overview of your campaign performance.
         </p>
       </motion.div>
@@ -146,7 +146,7 @@ export function DashboardContent({
         variants={itemVariants}
         className="glass-premium p-6 mb-8"
       >
-        <h2 className="text-lg font-sora font-semibold text-white mb-6">
+        <h2 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-6">
           Weekly Performance
         </h2>
         <div className="h-64 flex items-end gap-2">
@@ -167,21 +167,21 @@ export function DashboardContent({
                 style={{ height: '200px' }}
               >
                 <div
-                  className="w-full bg-gradient-to-t from-electric-cyan/40 to-electric-cyan/20 rounded-t hover:from-electric-cyan/60 hover:to-electric-cyan/30 transition-colors duration-200"
+                  className="w-full bg-gradient-to-t from-emerald-pro-600/40 to-emerald-pro-600/20 rounded-t hover:from-emerald-pro-600/60 hover:to-emerald-pro-600/30 transition-colors duration-200"
                   style={{
                     height: `${Math.max((day.sent / maxSent) * 100, 2)}%`,
                   }}
                   title={`Sent: ${day.sent}`}
                 />
               </div>
-              <span className="text-xs text-steel">{day.date}</span>
+              <span className="text-xs text-light-text-muted dark:text-steel">{day.date}</span>
             </motion.div>
           ))}
         </div>
-        <div className="flex items-center justify-center gap-6 mt-4 pt-4 border-t border-graphite/30">
+        <div className="flex items-center justify-center gap-6 mt-4 pt-4 border-t border-border-default dark:border-graphite/30">
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded bg-electric-cyan/40" />
-            <span className="text-xs text-steel">Emails Sent</span>
+            <div className="w-3 h-3 rounded bg-emerald-pro-600/40" />
+            <span className="text-xs text-light-text-muted dark:text-steel">Emails Sent</span>
           </div>
         </div>
       </motion.div>
@@ -195,16 +195,16 @@ export function DashboardContent({
         >
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h2 className="text-lg font-sora font-semibold text-white">
+              <h2 className="text-lg font-sora font-semibold text-light-text dark:text-white">
                 Active Campaigns
               </h2>
-              <p className="text-sm text-steel">
+              <p className="text-sm text-light-text-muted dark:text-steel">
                 {activeCampaigns} campaigns running
               </p>
             </div>
             <Link
               href="/dashboard/campaigns"
-              className="text-sm text-electric-cyan hover:underline"
+              className="text-sm text-emerald-pro-600 hover:underline"
             >
               View all
             </Link>
@@ -212,11 +212,11 @@ export function DashboardContent({
           <div className="space-y-3">
             {campaigns.length === 0 ? (
               <div className="text-center py-8">
-                <Mail className="h-8 w-8 text-steel mx-auto mb-3" />
-                <p className="text-steel text-sm mb-3">No campaigns yet</p>
+                <Mail className="h-8 w-8 text-light-text-muted dark:text-steel mx-auto mb-3" />
+                <p className="text-light-text-muted dark:text-steel text-sm mb-3">No campaigns yet</p>
                 <Link
                   href="/dashboard/campaigns/new"
-                  className="inline-flex items-center gap-2 text-sm text-electric-cyan hover:underline"
+                  className="inline-flex items-center gap-2 text-sm text-emerald-pro-600 hover:underline"
                 >
                   Create your first campaign
                 </Link>
@@ -231,29 +231,29 @@ export function DashboardContent({
                 >
                   <Link
                     href={`/dashboard/campaigns/${campaign.id}`}
-                    className="flex items-center justify-between p-3 rounded-lg bg-deep-space/50 border border-graphite/30 hover:border-electric-cyan/30 hover:-translate-y-0.5 hover:shadow-card-hover transition-all duration-200"
+                    className="flex items-center justify-between p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30 hover:border-emerald-pro-600/30 hover:-translate-y-0.5 hover:shadow-card-hover transition-all duration-200"
                   >
                     <div className="flex items-center gap-3">
                       <div
                         className={`h-2 w-2 rounded-full ${
                           campaign.status === 'active'
-                            ? 'bg-neon-mint'
+                            ? 'bg-emerald-pro-400'
                             : campaign.status === 'paused'
                               ? 'bg-energy-orange'
                               : 'bg-steel'
                         }`}
                       />
-                      <span className="text-sm font-medium text-white">
+                      <span className="text-sm font-medium text-light-text dark:text-white">
                         {campaign.name}
                       </span>
                     </div>
                     <span
                       className={`text-xs px-2 py-1 rounded-full border capitalize ${
                         campaign.status === 'active'
-                          ? 'bg-neon-mint/10 text-neon-mint border-neon-mint/30'
+                          ? 'bg-emerald-pro-400/10 text-emerald-pro-400 border-emerald-pro-400/30'
                           : campaign.status === 'paused'
                             ? 'bg-energy-orange/10 text-energy-orange border-energy-orange/30'
-                            : 'bg-steel/10 text-steel border-steel/30'
+                            : 'bg-steel/10 text-light-text-muted dark:text-steel border-steel/30'
                       }`}
                     >
                       {campaign.status}
@@ -272,14 +272,14 @@ export function DashboardContent({
         >
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h2 className="text-lg font-sora font-semibold text-white">
+              <h2 className="text-lg font-sora font-semibold text-light-text dark:text-white">
                 Recent Leads
               </h2>
-              <p className="text-sm text-steel">{leads.length} new leads</p>
+              <p className="text-sm text-light-text-muted dark:text-steel">{leads.length} new leads</p>
             </div>
             <Link
               href="/dashboard/leads"
-              className="text-sm text-electric-cyan hover:underline"
+              className="text-sm text-emerald-pro-600 hover:underline"
             >
               View all
             </Link>
@@ -287,11 +287,11 @@ export function DashboardContent({
           <div className="space-y-3">
             {leads.length === 0 ? (
               <div className="text-center py-8">
-                <Users className="h-8 w-8 text-steel mx-auto mb-3" />
-                <p className="text-steel text-sm mb-3">No leads yet</p>
+                <Users className="h-8 w-8 text-light-text-muted dark:text-steel mx-auto mb-3" />
+                <p className="text-light-text-muted dark:text-steel text-sm mb-3">No leads yet</p>
                 <Link
                   href="/dashboard/leads"
-                  className="inline-flex items-center gap-2 text-sm text-electric-cyan hover:underline"
+                  className="inline-flex items-center gap-2 text-sm text-emerald-pro-600 hover:underline"
                 >
                   Import leads
                 </Link>
@@ -306,29 +306,29 @@ export function DashboardContent({
                 >
                   <Link
                     href={`/dashboard/leads/${lead.id}`}
-                    className="flex items-center justify-between p-3 rounded-lg bg-deep-space/50 border border-graphite/30 hover:border-electric-cyan/30 hover:-translate-y-0.5 hover:shadow-card-hover transition-all duration-200"
+                    className="flex items-center justify-between p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30 hover:border-emerald-pro-600/30 hover:-translate-y-0.5 hover:shadow-card-hover transition-all duration-200"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="h-9 w-9 rounded-full bg-quantum-violet/20 border border-quantum-violet/30 flex items-center justify-center">
-                        <span className="text-xs font-medium text-quantum-violet">
+                      <div className="h-9 w-9 rounded-full bg-emerald-pro-500/20 border border-emerald-pro-500/30 flex items-center justify-center">
+                        <span className="text-xs font-medium text-emerald-pro-500">
                           {(lead.first_name?.[0] || '') +
                             (lead.last_name?.[0] || '')}
                         </span>
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-white">
+                        <p className="text-sm font-medium text-light-text dark:text-white">
                           {lead.first_name} {lead.last_name}
                         </p>
-                        <p className="text-xs text-steel">{lead.company}</p>
+                        <p className="text-xs text-light-text-muted dark:text-steel">{lead.company}</p>
                       </div>
                     </div>
                     <span
                       className={`text-xs px-2 py-1 rounded-full border capitalize ${
                         lead.stage === 'meeting' || lead.stage === 'qualified'
-                          ? 'bg-neon-mint/10 text-neon-mint border-neon-mint/30'
+                          ? 'bg-emerald-pro-400/10 text-emerald-pro-400 border-emerald-pro-400/30'
                           : lead.stage === 'engaged'
-                            ? 'bg-electric-cyan/10 text-electric-cyan border-electric-cyan/30'
-                            : 'bg-steel/10 text-steel border-steel/30'
+                            ? 'bg-emerald-pro-600/10 text-emerald-pro-600 border-emerald-pro-600/30'
+                            : 'bg-steel/10 text-light-text-muted dark:text-steel border-steel/30'
                       }`}
                     >
                       {lead.stage}
@@ -348,44 +348,44 @@ export function DashboardContent({
       >
         <Link
           href="/dashboard/reports"
-          className="flex items-center gap-4 p-4 glass-premium hover:border-electric-cyan/30 hover:-translate-y-1 hover:shadow-card-glow-active transition-all duration-200 group"
+          className="flex items-center gap-4 p-4 glass-premium hover:border-emerald-pro-600/30 hover:-translate-y-1 hover:shadow-card-glow-active transition-all duration-200 group"
         >
-          <div className="h-10 w-10 rounded-lg bg-electric-cyan/10 border border-electric-cyan/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-electric-cyan/20 transition-all duration-200">
-            <Calendar className="h-5 w-5 text-electric-cyan" />
+          <div className="h-10 w-10 rounded-lg bg-emerald-pro-600/10 border border-emerald-pro-600/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-emerald-pro-600/20 transition-all duration-200">
+            <Calendar className="h-5 w-5 text-emerald-pro-600" />
           </div>
           <div>
-            <p className="text-sm font-medium text-white group-hover:text-electric-cyan transition-colors">
+            <p className="text-sm font-medium text-light-text dark:text-white group-hover:text-emerald-pro-600 transition-colors">
               Weekly Reports
             </p>
-            <p className="text-xs text-steel">View your performance reports</p>
+            <p className="text-xs text-light-text-muted dark:text-steel">View your performance reports</p>
           </div>
         </Link>
         <Link
           href="/dashboard/support"
-          className="flex items-center gap-4 p-4 glass-premium hover:border-quantum-violet/30 hover:-translate-y-1 hover:shadow-glow-violet-lg transition-all duration-200 group"
+          className="flex items-center gap-4 p-4 glass-premium hover:border-emerald-pro-500/30 hover:-translate-y-1 hover:shadow-glow-violet-lg transition-all duration-200 group"
         >
-          <div className="h-10 w-10 rounded-lg bg-quantum-violet/10 border border-quantum-violet/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-quantum-violet/20 transition-all duration-200">
-            <Reply className="h-5 w-5 text-quantum-violet" />
+          <div className="h-10 w-10 rounded-lg bg-emerald-pro-500/10 border border-emerald-pro-500/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-emerald-pro-500/20 transition-all duration-200">
+            <Reply className="h-5 w-5 text-emerald-pro-500" />
           </div>
           <div>
-            <p className="text-sm font-medium text-white group-hover:text-quantum-violet transition-colors">
+            <p className="text-sm font-medium text-light-text dark:text-white group-hover:text-emerald-pro-500 transition-colors">
               Contact Support
             </p>
-            <p className="text-xs text-steel">Chat with our team</p>
+            <p className="text-xs text-light-text-muted dark:text-steel">Chat with our team</p>
           </div>
         </Link>
         <Link
           href="/dashboard/analytics"
-          className="flex items-center gap-4 p-4 glass-premium hover:border-neon-mint/30 hover:-translate-y-1 hover:shadow-glow-mint-lg transition-all duration-200 group"
+          className="flex items-center gap-4 p-4 glass-premium hover:border-emerald-pro-400/30 hover:-translate-y-1 hover:shadow-glow-mint-lg transition-all duration-200 group"
         >
-          <div className="h-10 w-10 rounded-lg bg-neon-mint/10 border border-neon-mint/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-neon-mint/20 transition-all duration-200">
-            <TrendingUp className="h-5 w-5 text-neon-mint" />
+          <div className="h-10 w-10 rounded-lg bg-emerald-pro-400/10 border border-emerald-pro-400/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-emerald-pro-400/20 transition-all duration-200">
+            <TrendingUp className="h-5 w-5 text-emerald-pro-400" />
           </div>
           <div>
-            <p className="text-sm font-medium text-white group-hover:text-neon-mint transition-colors">
+            <p className="text-sm font-medium text-light-text dark:text-white group-hover:text-emerald-pro-400 transition-colors">
               Deep Analytics
             </p>
-            <p className="text-xs text-steel">Detailed performance insights</p>
+            <p className="text-xs text-light-text-muted dark:text-steel">Detailed performance insights</p>
           </div>
         </Link>
       </motion.div>

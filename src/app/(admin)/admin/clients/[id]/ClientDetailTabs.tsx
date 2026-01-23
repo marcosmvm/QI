@@ -112,7 +112,7 @@ export function ClientDetailTabs({
   return (
     <div>
       {/* Tab Navigation */}
-      <div className="flex items-center gap-1 border-b border-graphite/50 mb-6">
+      <div className="flex items-center gap-1 border-b border-border-default dark:border-graphite/50 mb-6">
         {tabs.map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
@@ -124,19 +124,19 @@ export function ClientDetailTabs({
               className={cn(
                 "flex items-center gap-2 px-4 py-3 text-sm font-medium border-b-2 -mb-px transition-colors",
                 isActive
-                  ? "border-electric-cyan text-electric-cyan"
-                  : "border-transparent text-steel hover:text-silver"
+                  ? "border-emerald-pro-600 text-emerald-pro-600"
+                  : "border-transparent text-light-text-muted dark:text-steel hover:text-silver"
               )}
             >
               <Icon className="h-4 w-4" />
               {tab.label}
               {tab.id === "leads" && leads.length > 0 && (
-                <span className="ml-1 px-1.5 py-0.5 text-xs rounded-full bg-electric-cyan/10 text-electric-cyan">
+                <span className="ml-1 px-1.5 py-0.5 text-xs rounded-full bg-emerald-pro-600/10 text-emerald-pro-600">
                   {leads.length}
                 </span>
               )}
               {tab.id === "notes" && notes.length > 0 && (
-                <span className="ml-1 px-1.5 py-0.5 text-xs rounded-full bg-quantum-violet/10 text-quantum-violet">
+                <span className="ml-1 px-1.5 py-0.5 text-xs rounded-full bg-emerald-pro-500/10 text-emerald-pro-500">
                   {notes.length}
                 </span>
               )}
@@ -199,8 +199,8 @@ function OverviewTab({
       {/* Left Column */}
       <div className="lg:col-span-2 space-y-6">
         {/* Company Info */}
-        <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
-          <h3 className="text-lg font-sora font-semibold text-white mb-4">
+        <div className="bg-light-bg-secondary dark:bg-midnight-blue/30 border border-border-default dark:border-graphite/50 rounded-xl p-6">
+          <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-4">
             Company Information
           </h3>
           <div className="grid grid-cols-2 gap-4">
@@ -224,20 +224,20 @@ function OverviewTab({
         </div>
 
         {/* Onboarding Progress */}
-        <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
+        <div className="bg-light-bg-secondary dark:bg-midnight-blue/30 border border-border-default dark:border-graphite/50 rounded-xl p-6">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg font-sora font-semibold text-white">
+            <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white">
               Onboarding Progress
             </h3>
-            <span className="text-sm text-electric-cyan">
+            <span className="text-sm text-emerald-pro-600">
               {completedSteps}/{onboardingSteps.length} Complete
             </span>
           </div>
 
           {/* Progress bar */}
-          <div className="h-2 w-full rounded-full bg-deep-space/50 mb-4">
+          <div className="h-2 w-full rounded-full bg-white dark:bg-deep-space/50 mb-4">
             <div
-              className="h-full rounded-full bg-gradient-to-r from-electric-cyan to-quantum-violet transition-all"
+              className="h-full rounded-full bg-gradient-to-r from-emerald-pro-600 to-emerald-pro-500 transition-all"
               style={{
                 width: `${(completedSteps / onboardingSteps.length) * 100}%`,
               }}
@@ -250,18 +250,18 @@ function OverviewTab({
                 key={idx}
                 className={cn(
                   "flex items-center gap-2 rounded-lg p-2",
-                  step.completed ? "bg-neon-mint/10" : "bg-deep-space/30"
+                  step.completed ? "bg-emerald-pro-400/10" : "bg-white dark:bg-deep-space/30"
                 )}
               >
                 {step.completed ? (
-                  <CheckCircle2 className="h-4 w-4 text-neon-mint flex-shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-emerald-pro-400 flex-shrink-0" />
                 ) : (
-                  <Circle className="h-4 w-4 text-steel flex-shrink-0" />
+                  <Circle className="h-4 w-4 text-light-text-muted dark:text-steel flex-shrink-0" />
                 )}
                 <span
                   className={cn(
                     "text-xs font-medium truncate",
-                    step.completed ? "text-neon-mint" : "text-steel"
+                    step.completed ? "text-emerald-pro-400" : "text-light-text-muted dark:text-steel"
                   )}
                 >
                   {step.label}
@@ -272,34 +272,34 @@ function OverviewTab({
         </div>
 
         {/* Performance Summary */}
-        <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
-          <h3 className="text-lg font-sora font-semibold text-white mb-4">
+        <div className="bg-light-bg-secondary dark:bg-midnight-blue/30 border border-border-default dark:border-graphite/50 rounded-xl p-6">
+          <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-4">
             Performance Summary
           </h3>
           <div className="grid grid-cols-4 gap-4">
             <div className="text-center">
-              <p className="text-2xl font-sora font-bold text-white">
+              <p className="text-2xl font-sora font-bold text-light-text dark:text-white">
                 {totalSent.toLocaleString()}
               </p>
-              <p className="text-xs text-steel mt-1">Emails Sent</p>
+              <p className="text-xs text-light-text-muted dark:text-steel mt-1">Emails Sent</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl font-sora font-bold text-white">
+              <p className="text-2xl font-sora font-bold text-light-text dark:text-white">
                 {totalOpened.toLocaleString()}
               </p>
-              <p className="text-xs text-steel mt-1">Opens</p>
+              <p className="text-xs text-light-text-muted dark:text-steel mt-1">Opens</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl font-sora font-bold text-electric-cyan">
+              <p className="text-2xl font-sora font-bold text-emerald-pro-600">
                 {overallOpenRate.toFixed(1)}%
               </p>
-              <p className="text-xs text-steel mt-1">Open Rate</p>
+              <p className="text-xs text-light-text-muted dark:text-steel mt-1">Open Rate</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl font-sora font-bold text-neon-mint">
+              <p className="text-2xl font-sora font-bold text-emerald-pro-400">
                 {overallReplyRate.toFixed(1)}%
               </p>
-              <p className="text-xs text-steel mt-1">Reply Rate</p>
+              <p className="text-xs text-light-text-muted dark:text-steel mt-1">Reply Rate</p>
             </div>
           </div>
         </div>
@@ -308,8 +308,8 @@ function OverviewTab({
       {/* Right Column */}
       <div className="space-y-6">
         {/* Integration Status */}
-        <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
-          <h3 className="text-lg font-sora font-semibold text-white mb-4">
+        <div className="bg-light-bg-secondary dark:bg-midnight-blue/30 border border-border-default dark:border-graphite/50 rounded-xl p-6">
+          <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-4">
             Integrations
           </h3>
           <div className="space-y-3">
@@ -327,31 +327,31 @@ function OverviewTab({
         </div>
 
         {/* Team Members */}
-        <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
-          <h3 className="text-lg font-sora font-semibold text-white mb-4">
+        <div className="bg-light-bg-secondary dark:bg-midnight-blue/30 border border-border-default dark:border-graphite/50 rounded-xl p-6">
+          <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-4">
             Team Members
           </h3>
           {members.length === 0 ? (
-            <p className="text-sm text-steel">No team members</p>
+            <p className="text-sm text-light-text-muted dark:text-steel">No team members</p>
           ) : (
             <div className="space-y-3">
               {members.map((member) => (
                 <div
                   key={member.id}
-                  className="flex items-center gap-3 p-2 rounded-lg bg-deep-space/30"
+                  className="flex items-center gap-3 p-2 rounded-lg bg-white dark:bg-deep-space/30"
                 >
-                  <div className="h-8 w-8 rounded-full bg-quantum-violet/20 border border-quantum-violet/30 flex items-center justify-center">
-                    <span className="text-xs font-medium text-quantum-violet">
+                  <div className="h-8 w-8 rounded-full bg-emerald-pro-500/20 border border-emerald-pro-500/30 flex items-center justify-center">
+                    <span className="text-xs font-medium text-emerald-pro-500">
                       {member.name.slice(0, 2).toUpperCase()}
                     </span>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-white truncate">
+                    <p className="text-sm font-medium text-light-text dark:text-white truncate">
                       {member.name}
                     </p>
-                    <p className="text-xs text-steel truncate">{member.email}</p>
+                    <p className="text-xs text-light-text-muted dark:text-steel truncate">{member.email}</p>
                   </div>
-                  <span className="text-xs text-steel capitalize">
+                  <span className="text-xs text-light-text-muted dark:text-steel capitalize">
                     {member.role}
                   </span>
                 </div>
@@ -362,33 +362,33 @@ function OverviewTab({
 
         {/* Subscription */}
         {subscription && (
-          <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
-            <h3 className="text-lg font-sora font-semibold text-white mb-4">
+          <div className="bg-light-bg-secondary dark:bg-midnight-blue/30 border border-border-default dark:border-graphite/50 rounded-xl p-6">
+            <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-4">
               Subscription
             </h3>
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-steel">Plan</span>
-                <span className="text-sm text-white capitalize">
+                <span className="text-sm text-light-text-muted dark:text-steel">Plan</span>
+                <span className="text-sm text-light-text dark:text-white capitalize">
                   {subscription.planType}
                 </span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-steel">Status</span>
+                <span className="text-sm text-light-text-muted dark:text-steel">Status</span>
                 <SubscriptionBadge status={subscription.status} />
               </div>
               {subscription.monthlyFee && (
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-steel">Monthly Fee</span>
-                  <span className="text-sm text-white">
+                  <span className="text-sm text-light-text-muted dark:text-steel">Monthly Fee</span>
+                  <span className="text-sm text-light-text dark:text-white">
                     ${subscription.monthlyFee.toLocaleString()}
                   </span>
                 </div>
               )}
               {subscription.currentPeriodEnd && (
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-steel">Renews</span>
-                  <span className="text-sm text-white">
+                  <span className="text-sm text-light-text-muted dark:text-steel">Renews</span>
+                  <span className="text-sm text-light-text dark:text-white">
                     {new Date(subscription.currentPeriodEnd).toLocaleDateString()}
                   </span>
                 </div>
@@ -411,34 +411,34 @@ function CampaignsTab({
 }) {
   if (campaigns.length === 0) {
     return (
-      <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-12 text-center">
-        <Mail className="h-12 w-12 text-steel mx-auto mb-4" />
-        <p className="text-steel">No campaigns yet</p>
+      <div className="bg-light-bg-secondary dark:bg-midnight-blue/30 border border-border-default dark:border-graphite/50 rounded-xl p-12 text-center">
+        <Mail className="h-12 w-12 text-light-text-muted dark:text-steel mx-auto mb-4" />
+        <p className="text-light-text-muted dark:text-steel">No campaigns yet</p>
       </div>
     );
   }
 
   return (
-    <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl overflow-hidden">
+    <div className="bg-light-bg-secondary dark:bg-midnight-blue/30 border border-border-default dark:border-graphite/50 rounded-xl overflow-hidden">
       <table className="w-full">
         <thead>
-          <tr className="border-b border-graphite/50">
-            <th className="text-left text-xs font-medium text-steel uppercase tracking-wider px-6 py-4">
+          <tr className="border-b border-border-default dark:border-graphite/50">
+            <th className="text-left text-xs font-medium text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">
               Campaign
             </th>
-            <th className="text-left text-xs font-medium text-steel uppercase tracking-wider px-6 py-4">
+            <th className="text-left text-xs font-medium text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">
               Status
             </th>
-            <th className="text-left text-xs font-medium text-steel uppercase tracking-wider px-6 py-4">
+            <th className="text-left text-xs font-medium text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">
               Sent
             </th>
-            <th className="text-left text-xs font-medium text-steel uppercase tracking-wider px-6 py-4">
+            <th className="text-left text-xs font-medium text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">
               Open Rate
             </th>
-            <th className="text-left text-xs font-medium text-steel uppercase tracking-wider px-6 py-4">
+            <th className="text-left text-xs font-medium text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">
               Reply Rate
             </th>
-            <th className="text-right text-xs font-medium text-steel uppercase tracking-wider px-6 py-4">
+            <th className="text-right text-xs font-medium text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">
               Actions
             </th>
           </tr>
@@ -447,11 +447,11 @@ function CampaignsTab({
           {campaigns.map((campaign) => (
             <tr
               key={campaign.id}
-              className="hover:bg-midnight-blue/20 transition-colors"
+              className="hover:bg-light-bg-secondary dark:bg-midnight-blue/20 transition-colors"
             >
               <td className="px-6 py-4">
-                <p className="text-sm font-medium text-white">{campaign.name}</p>
-                <p className="text-xs text-steel">
+                <p className="text-sm font-medium text-light-text dark:text-white">{campaign.name}</p>
+                <p className="text-xs text-light-text-muted dark:text-steel">
                   {campaign.targetIndustry || "General"}
                 </p>
               </td>
@@ -484,13 +484,13 @@ function CampaignsTab({
                       <Pause className="h-4 w-4" />
                     </button>
                   ) : (
-                    <button className="p-2 rounded-lg text-neon-mint hover:bg-neon-mint/10 transition-colors">
+                    <button className="p-2 rounded-lg text-emerald-pro-400 hover:bg-emerald-pro-400/10 transition-colors">
                       <Play className="h-4 w-4" />
                     </button>
                   )}
                   <Link
                     href={`/admin/campaigns/${campaign.id}`}
-                    className="p-2 rounded-lg text-steel hover:text-white hover:bg-midnight-blue/50 transition-colors"
+                    className="p-2 rounded-lg text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-colors"
                   >
                     <Eye className="h-4 w-4" />
                   </Link>
@@ -526,9 +526,9 @@ function LeadsTab({ leads }: { leads: ClientDetailTabsProps["leads"] }) {
 
   if (leads.length === 0) {
     return (
-      <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-12 text-center">
-        <Users className="h-12 w-12 text-steel mx-auto mb-4" />
-        <p className="text-steel">No leads yet</p>
+      <div className="bg-light-bg-secondary dark:bg-midnight-blue/30 border border-border-default dark:border-graphite/50 rounded-xl p-12 text-center">
+        <Users className="h-12 w-12 text-light-text-muted dark:text-steel mx-auto mb-4" />
+        <p className="text-light-text-muted dark:text-steel">No leads yet</p>
       </div>
     );
   }
@@ -544,8 +544,8 @@ function LeadsTab({ leads }: { leads: ClientDetailTabsProps["leads"] }) {
             className={cn(
               "px-3 py-1.5 text-xs font-medium rounded-lg transition-colors",
               stageFilter === stage.value
-                ? "bg-electric-cyan/10 text-electric-cyan border border-electric-cyan/30"
-                : "bg-deep-space/30 text-steel hover:text-silver border border-transparent"
+                ? "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/30"
+                : "bg-white dark:bg-deep-space/30 text-light-text-muted dark:text-steel hover:text-silver border border-transparent"
             )}
           >
             {stage.label}
@@ -559,23 +559,23 @@ function LeadsTab({ leads }: { leads: ClientDetailTabsProps["leads"] }) {
       </div>
 
       {/* Leads Table */}
-      <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl overflow-hidden">
+      <div className="bg-light-bg-secondary dark:bg-midnight-blue/30 border border-border-default dark:border-graphite/50 rounded-xl overflow-hidden">
         <table className="w-full">
           <thead>
-            <tr className="border-b border-graphite/50">
-              <th className="text-left text-xs font-medium text-steel uppercase tracking-wider px-6 py-4">
+            <tr className="border-b border-border-default dark:border-graphite/50">
+              <th className="text-left text-xs font-medium text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">
                 Lead
               </th>
-              <th className="text-left text-xs font-medium text-steel uppercase tracking-wider px-6 py-4">
+              <th className="text-left text-xs font-medium text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">
                 Company
               </th>
-              <th className="text-left text-xs font-medium text-steel uppercase tracking-wider px-6 py-4">
+              <th className="text-left text-xs font-medium text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">
                 Stage
               </th>
-              <th className="text-left text-xs font-medium text-steel uppercase tracking-wider px-6 py-4">
+              <th className="text-left text-xs font-medium text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">
                 Score
               </th>
-              <th className="text-left text-xs font-medium text-steel uppercase tracking-wider px-6 py-4">
+              <th className="text-left text-xs font-medium text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">
                 Added
               </th>
             </tr>
@@ -584,17 +584,17 @@ function LeadsTab({ leads }: { leads: ClientDetailTabsProps["leads"] }) {
             {filteredLeads.map((lead) => (
               <tr
                 key={lead.id}
-                className="hover:bg-midnight-blue/20 transition-colors"
+                className="hover:bg-light-bg-secondary dark:bg-midnight-blue/20 transition-colors"
               >
                 <td className="px-6 py-4">
-                  <p className="text-sm font-medium text-white">
+                  <p className="text-sm font-medium text-light-text dark:text-white">
                     {lead.firstName} {lead.lastName}
                   </p>
-                  <p className="text-xs text-steel">{lead.email}</p>
+                  <p className="text-xs text-light-text-muted dark:text-steel">{lead.email}</p>
                 </td>
                 <td className="px-6 py-4">
                   <p className="text-sm text-silver">{lead.company || "-"}</p>
-                  <p className="text-xs text-steel">{lead.title || ""}</p>
+                  <p className="text-xs text-light-text-muted dark:text-steel">{lead.title || ""}</p>
                 </td>
                 <td className="px-6 py-4">
                   <StageBadge stage={lead.stage} />
@@ -603,7 +603,7 @@ function LeadsTab({ leads }: { leads: ClientDetailTabsProps["leads"] }) {
                   <span className="text-sm text-silver">{lead.score}</span>
                 </td>
                 <td className="px-6 py-4">
-                  <span className="text-sm text-steel">
+                  <span className="text-sm text-light-text-muted dark:text-steel">
                     {new Date(lead.createdAt).toLocaleDateString()}
                   </span>
                 </td>
@@ -624,9 +624,9 @@ function BillingTab({
 }) {
   if (!subscription) {
     return (
-      <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-12 text-center">
-        <CreditCard className="h-12 w-12 text-steel mx-auto mb-4" />
-        <p className="text-steel">No subscription</p>
+      <div className="bg-light-bg-secondary dark:bg-midnight-blue/30 border border-border-default dark:border-graphite/50 rounded-xl p-12 text-center">
+        <CreditCard className="h-12 w-12 text-light-text-muted dark:text-steel mx-auto mb-4" />
+        <p className="text-light-text-muted dark:text-steel">No subscription</p>
       </div>
     );
   }
@@ -634,15 +634,15 @@ function BillingTab({
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
       {/* Current Subscription */}
-      <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
-        <h3 className="text-lg font-sora font-semibold text-white mb-4">
+      <div className="bg-light-bg-secondary dark:bg-midnight-blue/30 border border-border-default dark:border-graphite/50 rounded-xl p-6">
+        <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-4">
           Current Subscription
         </h3>
         <div className="space-y-4">
-          <div className="flex items-center justify-between p-4 bg-deep-space/30 rounded-lg">
+          <div className="flex items-center justify-between p-4 bg-white dark:bg-deep-space/30 rounded-lg">
             <div>
-              <p className="text-sm text-steel">Plan</p>
-              <p className="text-lg font-semibold text-white capitalize">
+              <p className="text-sm text-light-text-muted dark:text-steel">Plan</p>
+              <p className="text-lg font-semibold text-light-text dark:text-white capitalize">
                 {subscription.planType}
               </p>
             </div>
@@ -650,11 +650,11 @@ function BillingTab({
           </div>
 
           {subscription.monthlyFee && (
-            <div className="flex items-center gap-3 p-4 bg-deep-space/30 rounded-lg">
-              <DollarSign className="h-5 w-5 text-neon-mint" />
+            <div className="flex items-center gap-3 p-4 bg-white dark:bg-deep-space/30 rounded-lg">
+              <DollarSign className="h-5 w-5 text-emerald-pro-400" />
               <div>
-                <p className="text-sm text-steel">Monthly Fee</p>
-                <p className="text-lg font-semibold text-white">
+                <p className="text-sm text-light-text-muted dark:text-steel">Monthly Fee</p>
+                <p className="text-lg font-semibold text-light-text dark:text-white">
                   ${subscription.monthlyFee.toLocaleString()}/month
                 </p>
               </div>
@@ -662,11 +662,11 @@ function BillingTab({
           )}
 
           {subscription.currentPeriodEnd && (
-            <div className="flex items-center gap-3 p-4 bg-deep-space/30 rounded-lg">
-              <Calendar className="h-5 w-5 text-electric-cyan" />
+            <div className="flex items-center gap-3 p-4 bg-white dark:bg-deep-space/30 rounded-lg">
+              <Calendar className="h-5 w-5 text-emerald-pro-600" />
               <div>
-                <p className="text-sm text-steel">Next Billing Date</p>
-                <p className="text-lg font-semibold text-white">
+                <p className="text-sm text-light-text-muted dark:text-steel">Next Billing Date</p>
+                <p className="text-lg font-semibold text-light-text dark:text-white">
                   {new Date(subscription.currentPeriodEnd).toLocaleDateString()}
                 </p>
               </div>
@@ -676,13 +676,13 @@ function BillingTab({
       </div>
 
       {/* Invoice History Placeholder */}
-      <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-6">
-        <h3 className="text-lg font-sora font-semibold text-white mb-4">
+      <div className="bg-light-bg-secondary dark:bg-midnight-blue/30 border border-border-default dark:border-graphite/50 rounded-xl p-6">
+        <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-4">
           Invoice History
         </h3>
         <div className="text-center py-8">
-          <FileText className="h-8 w-8 text-steel mx-auto mb-2" />
-          <p className="text-sm text-steel">Invoice history coming soon</p>
+          <FileText className="h-8 w-8 text-light-text-muted dark:text-steel mx-auto mb-2" />
+          <p className="text-sm text-light-text-muted dark:text-steel">Invoice history coming soon</p>
         </div>
       </div>
     </div>
@@ -701,10 +701,10 @@ function NotesTab({
     string,
     { icon: typeof MessageSquare; color: string }
   > = {
-    general: { icon: MessageSquare, color: "text-steel" },
-    call: { icon: Phone, color: "text-neon-mint" },
-    email: { icon: Mail, color: "text-electric-cyan" },
-    meeting: { icon: Calendar, color: "text-quantum-violet" },
+    general: { icon: MessageSquare, color: "text-light-text-muted dark:text-steel" },
+    call: { icon: Phone, color: "text-emerald-pro-400" },
+    email: { icon: Mail, color: "text-emerald-pro-600" },
+    meeting: { icon: Calendar, color: "text-emerald-pro-500" },
     task: { icon: CheckCircle2, color: "text-energy-orange" },
   };
 
@@ -719,16 +719,16 @@ function NotesTab({
     <div>
       {/* Add Note Button */}
       <div className="flex justify-end mb-4">
-        <button className="flex items-center gap-2 px-4 py-2 bg-electric-cyan text-deep-space font-medium rounded-lg hover:bg-electric-cyan/90 transition-colors">
+        <button className="flex items-center gap-2 px-4 py-2 bg-emerald-pro-600 text-deep-space font-medium rounded-lg hover:bg-emerald-pro-600/90 transition-colors">
           <FileText className="h-4 w-4" />
           Add Note
         </button>
       </div>
 
       {notes.length === 0 ? (
-        <div className="bg-midnight-blue/30 border border-graphite/50 rounded-xl p-12 text-center">
-          <FileText className="h-12 w-12 text-steel mx-auto mb-4" />
-          <p className="text-steel">No notes yet</p>
+        <div className="bg-light-bg-secondary dark:bg-midnight-blue/30 border border-border-default dark:border-graphite/50 rounded-xl p-12 text-center">
+          <FileText className="h-12 w-12 text-light-text-muted dark:text-steel mx-auto mb-4" />
+          <p className="text-light-text-muted dark:text-steel">No notes yet</p>
         </div>
       ) : (
         <div className="space-y-4">
@@ -740,23 +740,23 @@ function NotesTab({
               <div
                 key={note.id}
                 className={cn(
-                  "bg-midnight-blue/30 border rounded-xl p-4",
+                  "bg-light-bg-secondary dark:bg-midnight-blue/30 border rounded-xl p-4",
                   note.isPinned
                     ? "border-energy-orange/30"
-                    : "border-graphite/50"
+                    : "border-border-default dark:border-graphite/50"
                 )}
               >
                 <div className="flex items-start justify-between mb-2">
                   <div className="flex items-center gap-2">
                     <Icon className={cn("h-4 w-4", config.color)} />
-                    <span className="text-sm font-medium text-white">
+                    <span className="text-sm font-medium text-light-text dark:text-white">
                       {note.authorName}
                     </span>
                     {note.isPinned && (
                       <Pin className="h-3 w-3 text-energy-orange" />
                     )}
                   </div>
-                  <span className="text-xs text-steel">
+                  <span className="text-xs text-light-text-muted dark:text-steel">
                     {new Date(note.createdAt).toLocaleDateString()}
                   </span>
                 </div>
@@ -784,12 +784,12 @@ function InfoItem({
 }) {
   return (
     <div className="flex items-center gap-3">
-      <div className="h-8 w-8 rounded-lg bg-deep-space/50 flex items-center justify-center">
-        <Icon className="h-4 w-4 text-steel" />
+      <div className="h-8 w-8 rounded-lg bg-white dark:bg-deep-space/50 flex items-center justify-center">
+        <Icon className="h-4 w-4 text-light-text-muted dark:text-steel" />
       </div>
       <div>
-        <p className="text-xs text-steel">{label}</p>
-        <p className="text-sm text-white">{value}</p>
+        <p className="text-xs text-light-text-muted dark:text-steel">{label}</p>
+        <p className="text-sm text-light-text dark:text-white">{value}</p>
       </div>
     </div>
   );
@@ -805,18 +805,18 @@ function IntegrationItem({
   connected: boolean;
 }) {
   return (
-    <div className="flex items-center justify-between p-3 bg-deep-space/30 rounded-lg">
+    <div className="flex items-center justify-between p-3 bg-white dark:bg-deep-space/30 rounded-lg">
       <div className="flex items-center gap-2">
-        <Icon className="h-4 w-4 text-steel" />
+        <Icon className="h-4 w-4 text-light-text-muted dark:text-steel" />
         <span className="text-sm text-silver">{label}</span>
       </div>
       {connected ? (
-        <span className="flex items-center gap-1 text-xs text-neon-mint">
+        <span className="flex items-center gap-1 text-xs text-emerald-pro-400">
           <CheckCircle2 className="h-3 w-3" />
           Connected
         </span>
       ) : (
-        <span className="text-xs text-steel">Not connected</span>
+        <span className="text-xs text-light-text-muted dark:text-steel">Not connected</span>
       )}
     </div>
   );
@@ -824,10 +824,10 @@ function IntegrationItem({
 
 function CampaignStatusBadge({ status }: { status: string }) {
   const styles: Record<string, string> = {
-    active: "bg-neon-mint/10 text-neon-mint border-neon-mint/30",
-    draft: "bg-steel/10 text-steel border-steel/30",
+    active: "bg-emerald-pro-400/10 text-emerald-pro-400 border-emerald-pro-400/30",
+    draft: "bg-steel/10 text-light-text-muted dark:text-steel border-steel/30",
     paused: "bg-energy-orange/10 text-energy-orange border-energy-orange/30",
-    completed: "bg-electric-cyan/10 text-electric-cyan border-electric-cyan/30",
+    completed: "bg-emerald-pro-600/10 text-emerald-pro-600 border-emerald-pro-600/30",
   };
 
   return (
@@ -844,11 +844,11 @@ function CampaignStatusBadge({ status }: { status: string }) {
 
 function SubscriptionBadge({ status }: { status: string }) {
   const styles: Record<string, string> = {
-    active: "bg-neon-mint/10 text-neon-mint border-neon-mint/30",
-    trialing: "bg-electric-cyan/10 text-electric-cyan border-electric-cyan/30",
+    active: "bg-emerald-pro-400/10 text-emerald-pro-400 border-emerald-pro-400/30",
+    trialing: "bg-emerald-pro-600/10 text-emerald-pro-600 border-emerald-pro-600/30",
     past_due: "bg-energy-orange/10 text-energy-orange border-energy-orange/30",
-    canceled: "bg-steel/10 text-steel border-steel/30",
-    paused: "bg-steel/10 text-steel border-steel/30",
+    canceled: "bg-steel/10 text-light-text-muted dark:text-steel border-steel/30",
+    paused: "bg-steel/10 text-light-text-muted dark:text-steel border-steel/30",
   };
 
   return (
@@ -865,12 +865,12 @@ function SubscriptionBadge({ status }: { status: string }) {
 
 function StageBadge({ stage }: { stage: string }) {
   const styles: Record<string, string> = {
-    new: "bg-steel/10 text-steel border-steel/30",
-    contacted: "bg-electric-cyan/10 text-electric-cyan border-electric-cyan/30",
-    engaged: "bg-quantum-violet/10 text-quantum-violet border-quantum-violet/30",
-    qualified: "bg-neon-mint/10 text-neon-mint border-neon-mint/30",
-    meeting: "bg-neon-mint/10 text-neon-mint border-neon-mint/30",
-    closed_won: "bg-neon-mint/10 text-neon-mint border-neon-mint/30",
+    new: "bg-steel/10 text-light-text-muted dark:text-steel border-steel/30",
+    contacted: "bg-emerald-pro-600/10 text-emerald-pro-600 border-emerald-pro-600/30",
+    engaged: "bg-emerald-pro-500/10 text-emerald-pro-500 border-emerald-pro-500/30",
+    qualified: "bg-emerald-pro-400/10 text-emerald-pro-400 border-emerald-pro-400/30",
+    meeting: "bg-emerald-pro-400/10 text-emerald-pro-400 border-emerald-pro-400/30",
+    closed_won: "bg-emerald-pro-400/10 text-emerald-pro-400 border-emerald-pro-400/30",
     closed_lost: "bg-energy-orange/10 text-energy-orange border-energy-orange/30",
   };
 

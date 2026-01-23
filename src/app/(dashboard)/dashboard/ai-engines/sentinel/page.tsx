@@ -157,25 +157,25 @@ const intentSignals = [
     signal: "Visited pricing page",
     weight: "High",
     occurrences: 1245,
-    color: "neon-mint",
+    color: "emerald-pro-400",
   },
   {
     signal: "Requested demo",
     weight: "High",
     occurrences: 423,
-    color: "neon-mint",
+    color: "emerald-pro-400",
   },
   {
     signal: "Multiple visits (3+)",
     weight: "Medium",
     occurrences: 678,
-    color: "quantum-violet",
+    color: "emerald-pro-500",
   },
   {
     signal: "Long session (5+ min)",
     weight: "Medium",
     occurrences: 534,
-    color: "quantum-violet",
+    color: "emerald-pro-500",
   },
   {
     signal: "Viewed case studies",
@@ -208,13 +208,13 @@ export default function SentinelPage() {
   const getStatusColor = (status: string) => {
     switch (status) {
       case "hot":
-        return { bg: "bg-neon-mint/10", text: "text-neon-mint", border: "border-neon-mint/30" };
+        return { bg: "bg-emerald-pro-400/10", text: "text-emerald-pro-400", border: "border-emerald-pro-400/30" };
       case "warm":
         return { bg: "bg-energy-orange/10", text: "text-energy-orange", border: "border-energy-orange/30" };
       case "cold":
-        return { bg: "bg-steel/10", text: "text-steel", border: "border-steel/30" };
+        return { bg: "bg-steel/10", text: "text-light-text-muted dark:text-steel", border: "border-steel/30" };
       default:
-        return { bg: "bg-electric-cyan/10", text: "text-electric-cyan", border: "border-electric-cyan/30" };
+        return { bg: "bg-emerald-pro-600/10", text: "text-emerald-pro-600", border: "border-emerald-pro-600/30" };
     }
   };
 
@@ -226,53 +226,53 @@ export default function SentinelPage() {
     <motion.div initial="hidden" animate="visible" variants={containerVariants} className="min-h-screen p-8">
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-steel mb-2">
-          <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
+        <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-2">
+          <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
           <span>/</span>
-          <span className="text-electric-cyan">The Sentinel</span>
+          <span className="text-emerald-pro-600">The Sentinel</span>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-white">The Sentinel</h1>
-        <p className="text-steel mt-1">Website Visitor Intelligence Engine</p>
+        <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">The Sentinel</h1>
+        <p className="text-light-text-muted dark:text-steel mt-1">Website Visitor Intelligence Engine</p>
       </motion.div>
 
       <div className="space-y-6">
         {/* Engine Status Banner */}
-        <motion.div variants={itemVariants} className="relative glass-premium p-6 overflow-hidden border-quantum-violet/20">
-          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-quantum-violet/60 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-br from-quantum-violet/5 to-transparent" />
+        <motion.div variants={itemVariants} className="relative glass-premium p-6 overflow-hidden border-emerald-pro-500/20">
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-emerald-pro-500/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-pro-500/5 to-transparent" />
 
           <div className="relative flex items-center justify-between">
             <div className="flex items-center gap-6">
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-quantum-violet/10 border border-quantum-violet/30">
-                <Eye className="h-8 w-8 text-quantum-violet" />
+              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-pro-500/10 border border-emerald-pro-500/30">
+                <Eye className="h-8 w-8 text-emerald-pro-500" />
               </div>
               <div>
                 <div className="flex items-center gap-3">
-                  <h2 className="text-2xl font-sora font-bold text-white">Sentinel Engine</h2>
-                  <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-neon-mint/15 border border-neon-mint/30">
+                  <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white">Sentinel Engine</h2>
+                  <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-pro-400/15 border border-emerald-pro-400/30">
                     <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-mint opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-neon-mint"></span>
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-pro-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-pro-400"></span>
                     </span>
-                    <span className="text-sm font-medium text-neon-mint">ACTIVE</span>
+                    <span className="text-sm font-medium text-emerald-pro-400">ACTIVE</span>
                   </span>
                 </div>
-                <p className="text-steel mt-1">Identifying anonymous visitors and revealing buyer intent</p>
+                <p className="text-light-text-muted dark:text-steel mt-1">Identifying anonymous visitors and revealing buyer intent</p>
               </div>
             </div>
 
             <div className="flex items-center gap-4">
               <div className="text-right">
-                <p className="text-sm text-steel">Last Update</p>
-                <p className="text-white font-medium">{overallStats.lastCheck}</p>
+                <p className="text-sm text-light-text-muted dark:text-steel">Last Update</p>
+                <p className="text-light-text dark:text-white font-medium">{overallStats.lastCheck}</p>
               </div>
               <div className="text-right">
-                <p className="text-sm text-steel">Live Visitors</p>
-                <p className="text-white font-medium">23 on site</p>
+                <p className="text-sm text-light-text-muted dark:text-steel">Live Visitors</p>
+                <p className="text-light-text dark:text-white font-medium">23 on site</p>
               </div>
               <Button
                 variant="outline"
-                className="gap-2 border-quantum-violet/30 hover:bg-quantum-violet/10"
+                className="gap-2 border-emerald-pro-500/30 hover:bg-emerald-pro-500/10"
                 onClick={handleRefresh}
                 disabled={isRefreshing}
               >
@@ -287,50 +287,50 @@ export default function SentinelPage() {
         <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-3">
-              <Users className="h-5 w-5 text-electric-cyan" />
-              <span className="text-neon-mint text-sm font-medium flex items-center gap-1">
+              <Users className="h-5 w-5 text-emerald-pro-600" />
+              <span className="text-emerald-pro-400 text-sm font-medium flex items-center gap-1">
                 <TrendingUp className="h-4 w-4" /> 18%
               </span>
             </div>
-            <p className="text-3xl font-sora font-bold text-white">{overallStats.visitorsIdentified.toLocaleString()}</p>
-            <p className="text-sm text-steel mt-1">Visitors Identified</p>
-            <p className="text-xs text-steel mt-2">Last 30 days</p>
+            <p className="text-3xl font-sora font-bold text-light-text dark:text-white">{overallStats.visitorsIdentified.toLocaleString()}</p>
+            <p className="text-sm text-light-text-muted dark:text-steel mt-1">Visitors Identified</p>
+            <p className="text-xs text-light-text-muted dark:text-steel mt-2">Last 30 days</p>
           </div>
 
           <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-3">
-              <Building2 className="h-5 w-5 text-quantum-violet" />
-              <span className="text-neon-mint text-sm font-medium flex items-center gap-1">
+              <Building2 className="h-5 w-5 text-emerald-pro-500" />
+              <span className="text-emerald-pro-400 text-sm font-medium flex items-center gap-1">
                 <TrendingUp className="h-4 w-4" /> 24%
               </span>
             </div>
-            <p className="text-3xl font-sora font-bold text-white">{overallStats.companiesRevealed.toLocaleString()}</p>
-            <p className="text-sm text-steel mt-1">Companies Revealed</p>
-            <p className="text-xs text-steel mt-2">Unique organizations</p>
+            <p className="text-3xl font-sora font-bold text-light-text dark:text-white">{overallStats.companiesRevealed.toLocaleString()}</p>
+            <p className="text-sm text-light-text-muted dark:text-steel mt-1">Companies Revealed</p>
+            <p className="text-xs text-light-text-muted dark:text-steel mt-2">Unique organizations</p>
           </div>
 
           <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-3">
-              <Target className="h-5 w-5 text-neon-mint" />
-              <span className="text-neon-mint text-sm font-medium flex items-center gap-1">
+              <Target className="h-5 w-5 text-emerald-pro-400" />
+              <span className="text-emerald-pro-400 text-sm font-medium flex items-center gap-1">
                 <TrendingUp className="h-4 w-4" /> 31%
               </span>
             </div>
-            <p className="text-3xl font-sora font-bold text-white">{overallStats.highIntentLeads}</p>
-            <p className="text-sm text-steel mt-1">High Intent Leads</p>
-            <p className="text-xs text-steel mt-2">Score 80+</p>
+            <p className="text-3xl font-sora font-bold text-light-text dark:text-white">{overallStats.highIntentLeads}</p>
+            <p className="text-sm text-light-text-muted dark:text-steel mt-1">High Intent Leads</p>
+            <p className="text-xs text-light-text-muted dark:text-steel mt-2">Score 80+</p>
           </div>
 
           <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-3">
               <Activity className="h-5 w-5 text-energy-orange" />
-              <span className="text-neon-mint text-sm font-medium flex items-center gap-1">
+              <span className="text-emerald-pro-400 text-sm font-medium flex items-center gap-1">
                 <TrendingUp className="h-4 w-4" /> 2.4%
               </span>
             </div>
-            <p className="text-3xl font-sora font-bold text-white">{overallStats.conversionRate}%</p>
-            <p className="text-sm text-steel mt-1">Identification Rate</p>
-            <p className="text-xs text-steel mt-2">Industry avg: 8%</p>
+            <p className="text-3xl font-sora font-bold text-light-text dark:text-white">{overallStats.conversionRate}%</p>
+            <p className="text-sm text-light-text-muted dark:text-steel mt-1">Identification Rate</p>
+            <p className="text-xs text-light-text-muted dark:text-steel mt-2">Industry avg: 8%</p>
           </div>
         </motion.div>
 
@@ -339,9 +339,9 @@ export default function SentinelPage() {
           {/* Recent Identified Visitors */}
           <div className="lg:col-span-2 glass-premium p-6">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-sora font-semibold text-white">Recently Identified Visitors</h3>
+              <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white">Recently Identified Visitors</h3>
               <div className="flex items-center gap-2">
-                <div className="flex items-center gap-1 p-1 rounded-lg bg-deep-space/50 border border-graphite/30">
+                <div className="flex items-center gap-1 p-1 rounded-lg bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30">
                   {(["all", "hot", "warm", "cold"] as const).map((filter) => (
                     <button
                       key={filter}
@@ -349,8 +349,8 @@ export default function SentinelPage() {
                       className={cn(
                         "px-3 py-1.5 rounded-md text-xs font-medium transition-colors capitalize",
                         statusFilter === filter
-                          ? "bg-electric-cyan/20 text-electric-cyan"
-                          : "text-steel hover:text-white"
+                          ? "bg-emerald-pro-600/20 text-emerald-pro-600"
+                          : "text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
                       )}
                     >
                       {filter}
@@ -366,16 +366,16 @@ export default function SentinelPage() {
                 return (
                   <div
                     key={visitor.id}
-                    className="p-4 rounded-xl border border-graphite/30 bg-deep-space/50 hover:border-electric-cyan/30 transition-all"
+                    className="p-4 rounded-xl border border-border-default dark:border-graphite/30 bg-white dark:bg-deep-space/50 hover:border-emerald-pro-600/30 transition-all"
                   >
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex items-center gap-3">
-                        <div className="h-12 w-12 rounded-xl bg-quantum-violet/10 border border-quantum-violet/20 flex items-center justify-center">
-                          <Building2 className="h-6 w-6 text-quantum-violet" />
+                        <div className="h-12 w-12 rounded-xl bg-emerald-pro-500/10 border border-emerald-pro-500/20 flex items-center justify-center">
+                          <Building2 className="h-6 w-6 text-emerald-pro-500" />
                         </div>
                         <div>
                           <div className="flex items-center gap-2">
-                            <p className="font-medium text-white">{visitor.company}</p>
+                            <p className="font-medium text-light-text dark:text-white">{visitor.company}</p>
                             <span className={cn(
                               "text-xs px-2 py-0.5 rounded-full capitalize font-medium",
                               statusColors.bg,
@@ -384,7 +384,7 @@ export default function SentinelPage() {
                               {visitor.status}
                             </span>
                           </div>
-                          <div className="flex items-center gap-3 text-sm text-steel mt-0.5">
+                          <div className="flex items-center gap-3 text-sm text-light-text-muted dark:text-steel mt-0.5">
                             <span>{visitor.industry}</span>
                             <span>•</span>
                             <span className="flex items-center gap-1">
@@ -396,44 +396,44 @@ export default function SentinelPage() {
                       </div>
                       <div className="text-right">
                         <div className="flex items-center gap-2">
-                          <span className="text-sm text-steel">Intent Score:</span>
+                          <span className="text-sm text-light-text-muted dark:text-steel">Intent Score:</span>
                           <span className={cn(
                             "text-lg font-bold",
-                            visitor.intentScore >= 80 ? "text-neon-mint" :
-                            visitor.intentScore >= 50 ? "text-energy-orange" : "text-steel"
+                            visitor.intentScore >= 80 ? "text-emerald-pro-400" :
+                            visitor.intentScore >= 50 ? "text-energy-orange" : "text-light-text-muted dark:text-steel"
                           )}>
                             {visitor.intentScore}
                           </span>
                         </div>
-                        <p className="text-xs text-steel mt-0.5">{visitor.lastVisit}</p>
+                        <p className="text-xs text-light-text-muted dark:text-steel mt-0.5">{visitor.lastVisit}</p>
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-4 gap-4 mt-4 pt-4 border-t border-graphite/30">
+                    <div className="grid grid-cols-4 gap-4 mt-4 pt-4 border-t border-border-default dark:border-graphite/30">
                       <div className="text-center">
-                        <p className="text-xs text-steel">Visits</p>
-                        <p className="text-sm font-semibold text-white">{visitor.visits}</p>
+                        <p className="text-xs text-light-text-muted dark:text-steel">Visits</p>
+                        <p className="text-sm font-semibold text-light-text dark:text-white">{visitor.visits}</p>
                       </div>
                       <div className="text-center">
-                        <p className="text-xs text-steel">Duration</p>
-                        <p className="text-sm font-semibold text-white">{visitor.duration}</p>
+                        <p className="text-xs text-light-text-muted dark:text-steel">Duration</p>
+                        <p className="text-sm font-semibold text-light-text dark:text-white">{visitor.duration}</p>
                       </div>
                       <div className="text-center">
-                        <p className="text-xs text-steel">Employees</p>
-                        <p className="text-sm font-semibold text-white">{visitor.employees}</p>
+                        <p className="text-xs text-light-text-muted dark:text-steel">Employees</p>
+                        <p className="text-sm font-semibold text-light-text dark:text-white">{visitor.employees}</p>
                       </div>
                       <div className="text-center">
-                        <p className="text-xs text-steel">Revenue</p>
-                        <p className="text-sm font-semibold text-white">{visitor.revenue}</p>
+                        <p className="text-xs text-light-text-muted dark:text-steel">Revenue</p>
+                        <p className="text-sm font-semibold text-light-text dark:text-white">{visitor.revenue}</p>
                       </div>
                     </div>
 
                     <div className="flex items-center gap-2 mt-3">
-                      <span className="text-xs text-steel">Pages:</span>
+                      <span className="text-xs text-light-text-muted dark:text-steel">Pages:</span>
                       {visitor.pages.map((page, i) => (
                         <span
                           key={i}
-                          className="text-xs px-2 py-0.5 rounded bg-electric-cyan/10 text-electric-cyan border border-electric-cyan/20"
+                          className="text-xs px-2 py-0.5 rounded bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20"
                         >
                           {page}
                         </span>
@@ -453,43 +453,43 @@ export default function SentinelPage() {
           {/* Intent Signals */}
           <div className="space-y-6">
             <div className="glass-premium p-6">
-              <h3 className="text-lg font-sora font-semibold text-white mb-4">Intent Signals Detected</h3>
+              <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-4">Intent Signals Detected</h3>
               <div className="space-y-3">
                 {intentSignals.map((signal, index) => (
                   <div
                     key={index}
-                    className="flex items-center justify-between p-3 rounded-lg bg-deep-space/50 border border-graphite/30"
+                    className="flex items-center justify-between p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30"
                   >
                     <div className="flex items-center gap-3">
                       <div className={cn(
                         "h-2 w-2 rounded-full",
-                        signal.color === "neon-mint" && "bg-neon-mint",
-                        signal.color === "quantum-violet" && "bg-quantum-violet",
+                        signal.color === "emerald-pro-400" && "bg-emerald-pro-400",
+                        signal.color === "emerald-pro-500" && "bg-emerald-pro-500",
                         signal.color === "energy-orange" && "bg-energy-orange"
                       )} />
                       <div>
-                        <p className="text-sm text-white">{signal.signal}</p>
-                        <p className="text-xs text-steel">{signal.weight} weight</p>
+                        <p className="text-sm text-light-text dark:text-white">{signal.signal}</p>
+                        <p className="text-xs text-light-text-muted dark:text-steel">{signal.weight} weight</p>
                       </div>
                     </div>
-                    <span className="text-sm font-semibold text-white">{signal.occurrences}</span>
+                    <span className="text-sm font-semibold text-light-text dark:text-white">{signal.occurrences}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             <div className="glass-premium p-6">
-              <h3 className="text-lg font-sora font-semibold text-white mb-4">Industry Breakdown</h3>
+              <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-4">Industry Breakdown</h3>
               <div className="space-y-3">
                 {industryBreakdown.map((item, index) => (
                   <div key={index}>
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-sm text-white">{item.industry}</span>
-                      <span className="text-sm text-steel">{item.count}</span>
+                      <span className="text-sm text-light-text dark:text-white">{item.industry}</span>
+                      <span className="text-sm text-light-text-muted dark:text-steel">{item.count}</span>
                     </div>
                     <div className="h-2 rounded-full bg-graphite/30 overflow-hidden">
                       <div
-                        className="h-full bg-quantum-violet rounded-full"
+                        className="h-full bg-emerald-pro-500 rounded-full"
                         style={{ width: `${item.percentage}%` }}
                       />
                     </div>
@@ -505,8 +505,8 @@ export default function SentinelPage() {
           {/* Top Converting Pages */}
           <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-sora font-semibold text-white">Top Converting Pages</h3>
-              <Button variant="ghost" size="sm" className="text-electric-cyan hover:text-electric-cyan/80">
+              <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white">Top Converting Pages</h3>
+              <Button variant="ghost" size="sm" className="text-emerald-pro-600 hover:text-emerald-pro-600/80">
                 View All
               </Button>
             </div>
@@ -515,20 +515,20 @@ export default function SentinelPage() {
               {topPages.map((page, index) => (
                 <div
                   key={index}
-                  className="flex items-center justify-between p-4 rounded-xl border border-graphite/30 bg-deep-space/50"
+                  className="flex items-center justify-between p-4 rounded-xl border border-border-default dark:border-graphite/30 bg-white dark:bg-deep-space/50"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-electric-cyan/10 border border-electric-cyan/20 text-sm font-bold text-electric-cyan">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-pro-600/10 border border-emerald-pro-600/20 text-sm font-bold text-emerald-pro-600">
                       {index + 1}
                     </div>
                     <div>
-                      <p className="font-medium text-white">{page.page}</p>
-                      <p className="text-xs text-steel">{page.visits.toLocaleString()} visits</p>
+                      <p className="font-medium text-light-text dark:text-white">{page.page}</p>
+                      <p className="text-xs text-light-text-muted dark:text-steel">{page.visits.toLocaleString()} visits</p>
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="font-semibold text-neon-mint">{page.conversionRate}%</p>
-                    <p className="text-xs text-steel">conversion</p>
+                    <p className="font-semibold text-emerald-pro-400">{page.conversionRate}%</p>
+                    <p className="text-xs text-light-text-muted dark:text-steel">conversion</p>
                   </div>
                 </div>
               ))}
@@ -537,19 +537,19 @@ export default function SentinelPage() {
 
           {/* Quick Actions and Summary */}
           <div className="glass-premium p-6">
-            <h3 className="text-lg font-sora font-semibold text-white mb-6">Quick Actions</h3>
+            <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-6">Quick Actions</h3>
 
             <div className="grid grid-cols-2 gap-4 mb-6">
-              <Button variant="outline" className="h-auto py-4 flex flex-col gap-2 border-neon-mint/30 hover:bg-neon-mint/10">
-                <UserPlus className="h-5 w-5 text-neon-mint" />
+              <Button variant="outline" className="h-auto py-4 flex flex-col gap-2 border-emerald-pro-400/30 hover:bg-emerald-pro-400/10">
+                <UserPlus className="h-5 w-5 text-emerald-pro-400" />
                 <span className="text-sm">Add Hot Leads to Campaign</span>
               </Button>
-              <Button variant="outline" className="h-auto py-4 flex flex-col gap-2 border-quantum-violet/30 hover:bg-quantum-violet/10">
-                <Target className="h-5 w-5 text-quantum-violet" />
+              <Button variant="outline" className="h-auto py-4 flex flex-col gap-2 border-emerald-pro-500/30 hover:bg-emerald-pro-500/10">
+                <Target className="h-5 w-5 text-emerald-pro-500" />
                 <span className="text-sm">Create Retargeting List</span>
               </Button>
-              <Button variant="outline" className="h-auto py-4 flex flex-col gap-2 border-electric-cyan/30 hover:bg-electric-cyan/10">
-                <BarChart3 className="h-5 w-5 text-electric-cyan" />
+              <Button variant="outline" className="h-auto py-4 flex flex-col gap-2 border-emerald-pro-600/30 hover:bg-emerald-pro-600/10">
+                <BarChart3 className="h-5 w-5 text-emerald-pro-600" />
                 <span className="text-sm">Export Visitor Report</span>
               </Button>
               <Button variant="outline" className="h-auto py-4 flex flex-col gap-2 border-energy-orange/30 hover:bg-energy-orange/10">
@@ -558,35 +558,35 @@ export default function SentinelPage() {
               </Button>
             </div>
 
-            <div className="p-4 rounded-xl bg-neon-mint/10 border border-neon-mint/30">
+            <div className="p-4 rounded-xl bg-emerald-pro-400/10 border border-emerald-pro-400/30">
               <div className="flex items-start gap-3">
-                <CheckCircle className="h-5 w-5 text-neon-mint mt-0.5" />
+                <CheckCircle className="h-5 w-5 text-emerald-pro-400 mt-0.5" />
                 <div>
-                  <p className="font-medium text-neon-mint">High-Intent Alert</p>
-                  <p className="text-sm text-steel mt-1">
+                  <p className="font-medium text-emerald-pro-400">High-Intent Alert</p>
+                  <p className="text-sm text-light-text-muted dark:text-steel mt-1">
                     3 hot leads from target accounts are currently on site. Consider reaching out via Architect engine.
                   </p>
-                  <Button size="sm" className="mt-3 bg-neon-mint/20 text-neon-mint hover:bg-neon-mint/30 border border-neon-mint/30">
+                  <Button size="sm" className="mt-3 bg-emerald-pro-400/20 text-emerald-pro-400 hover:bg-emerald-pro-400/30 border border-emerald-pro-400/30">
                     View Active Visitors
                   </Button>
                 </div>
               </div>
             </div>
 
-            <div className="mt-6 pt-6 border-t border-graphite/30">
-              <h4 className="text-sm font-medium text-white mb-3">This Week's Summary</h4>
+            <div className="mt-6 pt-6 border-t border-border-default dark:border-graphite/30">
+              <h4 className="text-sm font-medium text-light-text dark:text-white mb-3">This Week's Summary</h4>
               <div className="grid grid-cols-3 gap-3">
-                <div className="text-center p-3 rounded-lg bg-deep-space/50 border border-graphite/30">
-                  <p className="text-lg font-bold text-white">892</p>
-                  <p className="text-xs text-steel">New Companies</p>
+                <div className="text-center p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30">
+                  <p className="text-lg font-bold text-light-text dark:text-white">892</p>
+                  <p className="text-xs text-light-text-muted dark:text-steel">New Companies</p>
                 </div>
-                <div className="text-center p-3 rounded-lg bg-deep-space/50 border border-graphite/30">
-                  <p className="text-lg font-bold text-neon-mint">156</p>
-                  <p className="text-xs text-steel">Hot Leads</p>
+                <div className="text-center p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30">
+                  <p className="text-lg font-bold text-emerald-pro-400">156</p>
+                  <p className="text-xs text-light-text-muted dark:text-steel">Hot Leads</p>
                 </div>
-                <div className="text-center p-3 rounded-lg bg-deep-space/50 border border-graphite/30">
-                  <p className="text-lg font-bold text-quantum-violet">34</p>
-                  <p className="text-xs text-steel">Added to CRM</p>
+                <div className="text-center p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30">
+                  <p className="text-lg font-bold text-emerald-pro-500">34</p>
+                  <p className="text-xs text-light-text-muted dark:text-steel">Added to CRM</p>
                 </div>
               </div>
             </div>

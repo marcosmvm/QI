@@ -177,17 +177,17 @@ export default function EnginesPage() {
       {/* Header */}
       <motion.div variants={itemVariants} className="flex items-center justify-between mb-8">
         <div>
-          <div className="flex items-center gap-2 text-sm text-steel mb-2">
+          <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-2">
             <span>Admin</span>
             <span className="text-graphite">/</span>
-            <span className="text-electric-cyan">Engines</span>
+            <span className="text-emerald-pro-600">Engines</span>
           </div>
-          <h1 className="text-2xl font-sora font-bold text-white">Engine Monitoring</h1>
-          <p className="text-steel mt-1">
+          <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">Engine Monitoring</h1>
+          <p className="text-light-text-muted dark:text-steel mt-1">
             Monitor the health and performance of all AI engines
           </p>
         </div>
-        <button className="flex items-center gap-2 px-4 py-2 border border-graphite text-silver rounded-lg hover:bg-midnight-blue/30 transition-colors">
+        <button className="flex items-center gap-2 px-4 py-2 border border-border-default dark:border-graphite text-silver rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors">
           <RefreshCw className="h-4 w-4" />
           Refresh Status
         </button>
@@ -196,21 +196,21 @@ export default function EnginesPage() {
       {/* System Health Overview */}
       <div className="glass-premium p-6 mb-8">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-lg font-sora font-semibold text-white">
+          <h2 className="text-lg font-sora font-semibold text-light-text dark:text-white">
             System Health Overview
           </h2>
           <SystemStatusBadge status={systemHealth.overallStatus} />
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
-          <div className="text-center p-4 bg-neon-mint/10 border border-neon-mint/30 rounded-xl">
+          <div className="text-center p-4 bg-emerald-pro-400/10 border border-emerald-pro-400/30 rounded-xl">
             <div className="flex items-center justify-center gap-2 mb-2">
-              <CheckCircle2 className="h-5 w-5 text-neon-mint" />
+              <CheckCircle2 className="h-5 w-5 text-emerald-pro-400" />
             </div>
-            <p className="text-2xl font-sora font-bold text-neon-mint">
+            <p className="text-2xl font-sora font-bold text-emerald-pro-400">
               {systemHealth.operational}
             </p>
-            <p className="text-xs text-neon-mint">Operational</p>
+            <p className="text-xs text-emerald-pro-400">Operational</p>
           </div>
 
           <div className="text-center p-4 bg-energy-orange/10 border border-energy-orange/30 rounded-xl">
@@ -233,31 +233,31 @@ export default function EnginesPage() {
             <p className="text-xs text-red-400">Offline</p>
           </div>
 
-          <div className="text-center p-4 bg-electric-cyan/10 border border-electric-cyan/30 rounded-xl">
+          <div className="text-center p-4 bg-emerald-pro-600/10 border border-emerald-pro-600/30 rounded-xl">
             <div className="flex items-center justify-center gap-2 mb-2">
-              <Zap className="h-5 w-5 text-electric-cyan" />
+              <Zap className="h-5 w-5 text-emerald-pro-600" />
             </div>
-            <p className="text-2xl font-sora font-bold text-electric-cyan">
+            <p className="text-2xl font-sora font-bold text-emerald-pro-600">
               {systemHealth.totalExecutions.toLocaleString()}
             </p>
-            <p className="text-xs text-electric-cyan">24h Executions</p>
+            <p className="text-xs text-emerald-pro-600">24h Executions</p>
           </div>
 
-          <div className="text-center p-4 bg-quantum-violet/10 border border-quantum-violet/30 rounded-xl">
+          <div className="text-center p-4 bg-emerald-pro-500/10 border border-emerald-pro-500/30 rounded-xl">
             <div className="flex items-center justify-center gap-2 mb-2">
-              <Activity className="h-5 w-5 text-quantum-violet" />
+              <Activity className="h-5 w-5 text-emerald-pro-500" />
             </div>
-            <p className="text-2xl font-sora font-bold text-quantum-violet">
+            <p className="text-2xl font-sora font-bold text-emerald-pro-500">
               {systemHealth.totalErrors}
             </p>
-            <p className="text-xs text-quantum-violet">24h Errors</p>
+            <p className="text-xs text-emerald-pro-500">24h Errors</p>
           </div>
 
           <div className="text-center p-4 bg-steel/10 border border-steel/30 rounded-xl">
             <p className="text-2xl font-sora font-bold text-silver">
               {systemHealth.errorRate.toFixed(2)}%
             </p>
-            <p className="text-xs text-steel mt-2">Error Rate</p>
+            <p className="text-xs text-light-text-muted dark:text-steel mt-2">Error Rate</p>
           </div>
         </div>
       </div>
@@ -279,27 +279,27 @@ export default function EnginesPage() {
 
       {/* Engine Details Table */}
       <div className="mt-8 glass-premium overflow-hidden">
-        <div className="px-6 py-4 border-b border-graphite/50">
-          <h3 className="text-lg font-sora font-semibold text-white">
+        <div className="px-6 py-4 border-b border-border-default dark:border-graphite/50">
+          <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white">
             Engine Details
           </h3>
         </div>
         <table className="w-full">
           <thead>
-            <tr className="border-b border-graphite/50">
-              <th className="text-left text-xs font-medium text-steel uppercase tracking-wider px-6 py-4">
+            <tr className="border-b border-border-default dark:border-graphite/50">
+              <th className="text-left text-xs font-medium text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">
                 Engine
               </th>
-              <th className="text-left text-xs font-medium text-steel uppercase tracking-wider px-6 py-4">
+              <th className="text-left text-xs font-medium text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">
                 Status
               </th>
-              <th className="text-left text-xs font-medium text-steel uppercase tracking-wider px-6 py-4">
+              <th className="text-left text-xs font-medium text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">
                 Webhook Endpoint
               </th>
-              <th className="text-left text-xs font-medium text-steel uppercase tracking-wider px-6 py-4">
+              <th className="text-left text-xs font-medium text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">
                 Avg. Execution Time
               </th>
-              <th className="text-left text-xs font-medium text-steel uppercase tracking-wider px-6 py-4">
+              <th className="text-left text-xs font-medium text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">
                 24h Success Rate
               </th>
             </tr>
@@ -317,18 +317,18 @@ export default function EnginesPage() {
               return (
                 <tr
                   key={engine.name}
-                  className="hover:bg-midnight-blue/20 transition-colors"
+                  className="hover:bg-light-bg-secondary dark:bg-midnight-blue/20 transition-colors"
                 >
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-3">
-                      <div className="h-8 w-8 rounded-lg bg-electric-cyan/10 border border-electric-cyan/30 flex items-center justify-center">
-                        <Icon className="h-4 w-4 text-electric-cyan" />
+                      <div className="h-8 w-8 rounded-lg bg-emerald-pro-600/10 border border-emerald-pro-600/30 flex items-center justify-center">
+                        <Icon className="h-4 w-4 text-emerald-pro-600" />
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-white">
+                        <p className="text-sm font-medium text-light-text dark:text-white">
                           {engine.name}
                         </p>
-                        <p className="text-xs text-steel">
+                        <p className="text-xs text-light-text-muted dark:text-steel">
                           Engine {engine.codename}
                         </p>
                       </div>
@@ -338,7 +338,7 @@ export default function EnginesPage() {
                     <EngineStatusBadge status={engine.status} />
                   </td>
                   <td className="px-6 py-4">
-                    <code className="text-xs text-steel bg-deep-space/50 px-2 py-1 rounded">
+                    <code className="text-xs text-light-text-muted dark:text-steel bg-white dark:bg-deep-space/50 px-2 py-1 rounded">
                       {engine.webhookEndpoint}
                     </code>
                   </td>
@@ -353,7 +353,7 @@ export default function EnginesPage() {
                     <span
                       className={`text-sm font-medium ${
                         successRate >= 99
-                          ? "text-neon-mint"
+                          ? "text-emerald-pro-400"
                           : successRate >= 95
                           ? "text-silver"
                           : "text-energy-orange"
@@ -380,9 +380,9 @@ function SystemStatusBadge({
   const config = {
     healthy: {
       label: "All Systems Operational",
-      color: "text-neon-mint",
-      bg: "bg-neon-mint/10",
-      border: "border-neon-mint/30",
+      color: "text-emerald-pro-400",
+      bg: "bg-emerald-pro-400/10",
+      border: "border-emerald-pro-400/30",
       icon: CheckCircle2,
     },
     degraded: {
@@ -417,9 +417,9 @@ function EngineStatusBadge({ status }: { status: EngineStatus }) {
   const config = {
     operational: {
       label: "Operational",
-      color: "text-neon-mint",
-      bg: "bg-neon-mint/10",
-      border: "border-neon-mint/30",
+      color: "text-emerald-pro-400",
+      bg: "bg-emerald-pro-400/10",
+      border: "border-emerald-pro-400/30",
     },
     degraded: {
       label: "Degraded",
@@ -444,7 +444,7 @@ function EngineStatusBadge({ status }: { status: EngineStatus }) {
       <span
         className={`h-1.5 w-1.5 rounded-full ${
           status === "operational"
-            ? "bg-neon-mint"
+            ? "bg-emerald-pro-400"
             : status === "degraded"
             ? "bg-energy-orange"
             : "bg-red-400"

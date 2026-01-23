@@ -9,61 +9,61 @@ const pillars = [
     icon: Target,
     title: "Precision Targeting",
     description: "AI-powered ICP identification finds your ideal prospects across millions of B2B contacts.",
-    color: "electric-cyan",
+    color: "emerald-pro-600",
   },
   {
     icon: Zap,
     title: "Automated Outreach",
     description: "Personalized sequences that feel human but scale infinitely across your target market.",
-    color: "quantum-violet",
+    color: "emerald-pro-500",
   },
   {
     icon: TrendingUp,
     title: "Continuous Optimization",
     description: "Machine learning analyzes every interaction to improve response rates over time.",
-    color: "neon-mint",
+    color: "emerald-pro-400",
   },
   {
     icon: Shield,
     title: "Deliverability First",
     description: "Guardian Engine monitors domain health 24/7 to keep you out of spam folders.",
-    color: "electric-cyan",
+    color: "emerald-pro-600",
   },
   {
     icon: Users,
     title: "Quality Meetings",
     description: "Focus on closing deals, not chasing leads. We deliver ready-to-buy prospects.",
-    color: "quantum-violet",
+    color: "emerald-pro-500",
   },
   {
     icon: BarChart3,
     title: "Full Transparency",
     description: "Real-time dashboards show every metric from sends to meetings booked.",
-    color: "neon-mint",
+    color: "emerald-pro-400",
   },
 ];
 
 const colorClasses = {
-  "electric-cyan": {
-    bg: "bg-electric-cyan/10",
-    text: "text-electric-cyan",
-    border: "group-hover:border-electric-cyan/40",
+  "emerald-pro-600": {
+    bg: "bg-emerald-pro-600/10",
+    text: "text-emerald-pro-600",
+    border: "group-hover:border-emerald-pro-600/40",
     glow: "group-hover:shadow-glow-cyan-sm",
-    accent: "bg-electric-cyan",
+    accent: "bg-emerald-pro-600",
   },
-  "quantum-violet": {
-    bg: "bg-quantum-violet/10",
-    text: "text-quantum-violet",
-    border: "group-hover:border-quantum-violet/40",
+  "emerald-pro-500": {
+    bg: "bg-emerald-pro-500/10",
+    text: "text-emerald-pro-500",
+    border: "group-hover:border-emerald-pro-500/40",
     glow: "group-hover:shadow-glow-violet-lg",
-    accent: "bg-quantum-violet",
+    accent: "bg-emerald-pro-500",
   },
-  "neon-mint": {
-    bg: "bg-neon-mint/10",
-    text: "text-neon-mint",
-    border: "group-hover:border-neon-mint/40",
+  "emerald-pro-400": {
+    bg: "bg-emerald-pro-400/10",
+    text: "text-emerald-pro-400",
+    border: "group-hover:border-emerald-pro-400/40",
     glow: "group-hover:shadow-glow-mint-lg",
-    accent: "bg-neon-mint",
+    accent: "bg-emerald-pro-400",
   },
 };
 
@@ -102,13 +102,13 @@ export function ValuePillars() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
             Why Companies Choose{" "}
             <span className="gradient-text-cyan-violet">
               XGrowthOS
             </span>
           </h2>
-          <p className="text-lg text-steel">
+          <p className="text-lg text-light-text-muted dark:text-steel">
             Our AI-first approach delivers predictable pipeline growth with industry-leading deliverability and conversion rates.
           </p>
         </motion.div>
@@ -127,7 +127,7 @@ export function ValuePillars() {
               <motion.div
                 key={pillar.title}
                 variants={itemVariants}
-                className={`group relative p-6 rounded-2xl border border-graphite/50 bg-midnight-blue/30 backdrop-blur-sm ${colors.border} ${colors.glow} hover:-translate-y-1 transition-all duration-300`}
+                className={`group relative p-6 rounded-2xl border border-border-default dark:border-graphite/50 bg-light-bg-secondary dark:bg-midnight-blue/30 backdrop-blur-sm ${colors.border} ${colors.glow} hover:-translate-y-1 transition-all duration-300`}
               >
                 {/* Accent line at top */}
                 <div className={`absolute top-0 left-0 right-0 h-[2px] ${colors.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
@@ -138,10 +138,10 @@ export function ValuePillars() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-sora font-semibold text-white mb-2 group-hover:text-electric-cyan transition-colors">
+                <h3 className="text-xl font-sora font-semibold text-light-text dark:text-white mb-2 group-hover:text-emerald-pro-600 transition-colors">
                   {pillar.title}
                 </h3>
-                <p className="text-steel text-sm leading-relaxed group-hover:text-silver/80 transition-colors">
+                <p className="text-light-text-muted dark:text-steel text-sm leading-relaxed group-hover:text-silver/80 transition-colors">
                   {pillar.description}
                 </p>
               </motion.div>

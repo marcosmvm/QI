@@ -67,9 +67,9 @@ export default function CampaignsPageClient({
       <motion.div variants={itemVariants}>
         <div className="flex items-center justify-between mb-8">
           <div>
-            <p className="text-sm text-steel mb-1">Admin / <span className="text-electric-cyan">Campaigns</span></p>
-            <h1 className="text-2xl font-sora font-bold text-white">Campaigns</h1>
-            <p className="text-steel mt-1">
+            <p className="text-sm text-light-text-muted dark:text-steel mb-1">Admin / <span className="text-emerald-pro-600">Campaigns</span></p>
+            <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">Campaigns</h1>
+            <p className="text-light-text-muted dark:text-steel mt-1">
               Monitor and manage campaigns across all clients
             </p>
           </div>
@@ -79,13 +79,13 @@ export default function CampaignsPageClient({
       {/* Stats */}
       <motion.div variants={itemVariants} className="grid grid-cols-6 gap-4 mb-8">
         <StatCard label="Total" value={stats.total} />
-        <StatCard label="Active" value={stats.active} color="neon-mint" />
+        <StatCard label="Active" value={stats.active} color="emerald-pro-400" />
         <StatCard label="Paused" value={stats.paused} color="energy-orange" />
         <StatCard label="Draft" value={stats.draft} color="steel" />
         <StatCard
           label="Healthy"
           value={healthCounts.healthy}
-          color="neon-mint"
+          color="emerald-pro-400"
           icon={CheckCircle}
         />
         <StatCard
@@ -100,8 +100,8 @@ export default function CampaignsPageClient({
       <motion.div variants={itemVariants}>
         {campaigns.length === 0 ? (
           <div className="glass-premium p-12 text-center">
-            <Mail className="h-12 w-12 text-steel mx-auto mb-4" />
-            <p className="text-steel">No campaigns yet</p>
+            <Mail className="h-12 w-12 text-light-text-muted dark:text-steel mx-auto mb-4" />
+            <p className="text-light-text-muted dark:text-steel">No campaigns yet</p>
           </div>
         ) : (
           <CampaignsTable campaigns={campaigns} clients={clients} />
@@ -114,7 +114,7 @@ export default function CampaignsPageClient({
 function StatCard({
   label,
   value,
-  color = "electric-cyan",
+  color = "emerald-pro-600",
   icon: Icon,
 }: {
   label: string;
@@ -123,11 +123,11 @@ function StatCard({
   icon?: typeof TrendingUp;
 }) {
   const colorClasses: Record<string, string> = {
-    "electric-cyan": "text-electric-cyan",
-    "neon-mint": "text-neon-mint",
+    "emerald-pro-600": "text-emerald-pro-600",
+    "emerald-pro-400": "text-emerald-pro-400",
     "energy-orange": "text-energy-orange",
-    "quantum-violet": "text-quantum-violet",
-    steel: "text-steel",
+    "emerald-pro-500": "text-emerald-pro-500",
+    steel: "text-light-text-muted dark:text-steel",
   };
 
   return (
@@ -138,7 +138,7 @@ function StatCard({
         </p>
         {Icon && <Icon className={`h-5 w-5 ${colorClasses[color]}`} />}
       </div>
-      <p className="text-sm text-steel mt-1">{label}</p>
+      <p className="text-sm text-light-text-muted dark:text-steel mt-1">{label}</p>
     </div>
   );
 }

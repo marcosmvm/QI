@@ -36,11 +36,11 @@ const engineIcons: Record<EngineName, typeof Shield> = {
 };
 
 const engineColors: Record<EngineName, string> = {
-  Guardian: "electric-cyan",
-  Architect: "quantum-violet",
-  Scientist: "neon-mint",
+  Guardian: "emerald-pro-600",
+  Architect: "emerald-pro-500",
+  Scientist: "emerald-pro-400",
   Hunter: "energy-orange",
-  Sentinel: "quantum-violet",
+  Sentinel: "emerald-pro-500",
 };
 
 const statusConfig: Record<
@@ -49,9 +49,9 @@ const statusConfig: Record<
 > = {
   operational: {
     icon: CheckCircle2,
-    color: "text-neon-mint",
+    color: "text-emerald-pro-400",
     label: "Operational",
-    bgColor: "bg-neon-mint/10",
+    bgColor: "bg-emerald-pro-400/10",
   },
   degraded: {
     icon: AlertTriangle,
@@ -102,7 +102,7 @@ export function EngineStatusCard({
     <Link
       href={`/admin/engines/${name.toLowerCase()}`}
       className={cn(
-        "block rounded-xl border border-graphite/50 bg-midnight-blue/30 p-4 transition-all duration-200 hover:border-graphite/80 hover:bg-midnight-blue/50",
+        "block rounded-xl border border-border-default dark:border-graphite/50 bg-light-bg-secondary dark:bg-midnight-blue/30 p-4 transition-all duration-200 hover:border-border-default dark:border-graphite/80 hover:bg-light-bg-secondary dark:bg-midnight-blue/50",
         className
       )}
     >
@@ -124,8 +124,8 @@ export function EngineStatusCard({
             />
           </div>
           <div>
-            <h3 className="text-sm font-semibold text-white">{name}</h3>
-            <p className="text-xs text-steel">Engine {codename}</p>
+            <h3 className="text-sm font-semibold text-light-text dark:text-white">{name}</h3>
+            <p className="text-xs text-light-text-muted dark:text-steel">Engine {codename}</p>
           </div>
         </div>
 
@@ -144,19 +144,19 @@ export function EngineStatusCard({
 
       <div className="mt-4 grid grid-cols-3 gap-4">
         <div>
-          <p className="text-xs text-steel">Last Heartbeat</p>
+          <p className="text-xs text-light-text-muted dark:text-steel">Last Heartbeat</p>
           <p className="text-sm font-medium text-silver mt-0.5">
             {formatTimeAgo(lastHeartbeat)}
           </p>
         </div>
         <div>
-          <p className="text-xs text-steel">24h Executions</p>
+          <p className="text-xs text-light-text-muted dark:text-steel">24h Executions</p>
           <p className="text-sm font-medium text-silver mt-0.5">
             {executions24h.toLocaleString()}
           </p>
         </div>
         <div>
-          <p className="text-xs text-steel">24h Errors</p>
+          <p className="text-xs text-light-text-muted dark:text-steel">24h Errors</p>
           <p
             className={cn(
               "text-sm font-medium mt-0.5",
@@ -194,7 +194,7 @@ export function EngineStatusCompact({
   return (
     <div className="flex items-center justify-between py-2">
       <div className="flex items-center gap-2">
-        <Icon className="h-4 w-4 text-steel" />
+        <Icon className="h-4 w-4 text-light-text-muted dark:text-steel" />
         <span className="text-sm text-silver">{name}</span>
       </div>
       <div className="flex items-center gap-3">
@@ -205,7 +205,7 @@ export function EngineStatusCompact({
           className={cn(
             "h-2 w-2 rounded-full",
             status === "operational"
-              ? "bg-neon-mint"
+              ? "bg-emerald-pro-400"
               : status === "degraded"
               ? "bg-energy-orange"
               : "bg-red-400"

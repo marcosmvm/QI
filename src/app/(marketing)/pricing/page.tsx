@@ -19,9 +19,9 @@ export default function PricingPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-deep-space/50 to-midnight-blue/30" />
 
         {/* Enhanced ambient orbs */}
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-neon-mint/10 rounded-full blur-[150px] animate-orb-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-quantum-violet/15 rounded-full blur-[120px] animate-orb-float-reverse" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-electric-cyan/5 rounded-full blur-[180px]" />
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-emerald-pro-400/10 rounded-full blur-[150px] animate-orb-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-emerald-pro-500/15 rounded-full blur-[120px] animate-orb-float-reverse" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-pro-600/5 rounded-full blur-[180px]" />
 
         <Container className="relative z-10">
           <motion.div
@@ -36,12 +36,12 @@ export default function PricingPage() {
               transition={{ duration: 0.5 }}
               className="tech-badge mb-8"
             >
-              <DollarSign className="w-4 h-4 text-neon-mint" />
-              <span className="text-sm font-medium text-neon-mint">Transparent Pricing</span>
-              <Sparkles className="w-4 h-4 text-neon-mint" />
+              <DollarSign className="w-4 h-4 text-emerald-pro-400" />
+              <span className="text-sm font-medium text-emerald-pro-400">Transparent Pricing</span>
+              <Sparkles className="w-4 h-4 text-emerald-pro-400" />
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-white mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-light-text dark:text-white mb-8">
               Invest in{" "}
               <span className="headline-underline gradient-text-cyan-violet">
                 Predictable Growth
@@ -49,7 +49,7 @@ export default function PricingPage() {
             </h1>
 
             <p className="text-xl md:text-2xl text-silver/90 max-w-2xl mx-auto leading-relaxed">
-              Choose the plan that matches your growth goals. All plans include <span className="text-electric-cyan">setup</span>, <span className="text-quantum-violet">training</span>, and <span className="text-neon-mint">ongoing optimization</span>.
+              Choose the plan that matches your growth goals. All plans include <span className="text-emerald-pro-600">setup</span>, <span className="text-emerald-pro-500">training</span>, and <span className="text-emerald-pro-400">ongoing optimization</span>.
             </p>
           </motion.div>
         </Container>
@@ -77,7 +77,7 @@ export default function PricingPage() {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
-                    className="absolute -top-5 left-1/2 -translate-x-1/2 px-6 py-2 rounded-full bg-gradient-to-r from-electric-cyan to-quantum-violet text-deep-space text-sm font-bold shadow-lg shadow-electric-cyan/30 flex items-center gap-2"
+                    className="absolute -top-5 left-1/2 -translate-x-1/2 px-6 py-2 rounded-full bg-gradient-to-r from-emerald-pro-600 to-emerald-pro-500 text-deep-space text-sm font-bold shadow-lg shadow-emerald-pro-600/30 flex items-center gap-2"
                   >
                     <Zap className="w-4 h-4" />
                     Most Popular
@@ -86,10 +86,10 @@ export default function PricingPage() {
 
                 {/* Header */}
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl lg:text-3xl font-sora font-bold text-white mb-2">
+                  <h3 className="text-2xl lg:text-3xl font-sora font-bold text-light-text dark:text-white mb-2">
                     {tier.name}
                   </h3>
-                  <p className="text-steel text-sm">{tier.tagline}</p>
+                  <p className="text-light-text-muted dark:text-steel text-sm">{tier.tagline}</p>
                 </div>
 
                 {/* Price - Enhanced */}
@@ -97,13 +97,13 @@ export default function PricingPage() {
                   <div className="flex items-baseline justify-center gap-1">
                     <span className={cn(
                       "text-5xl lg:text-6xl font-sora font-bold",
-                      tier.popular ? "text-gradient" : "text-electric-cyan"
+                      tier.popular ? "text-gradient" : "text-emerald-pro-600"
                     )}>
                       {tier.price}
                     </span>
-                    <span className="text-steel text-lg">{tier.priceSubtext}</span>
+                    <span className="text-light-text-muted dark:text-steel text-lg">{tier.priceSubtext}</span>
                   </div>
-                  <p className="text-steel text-sm mt-3">{tier.description}</p>
+                  <p className="text-light-text-muted dark:text-steel text-sm mt-3">{tier.description}</p>
                 </div>
 
                 {/* Features - Enhanced */}
@@ -121,17 +121,17 @@ export default function PricingPage() {
                       )}
                     >
                       {feature.included ? (
-                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-neon-mint/10 border border-neon-mint/30 flex items-center justify-center mt-0.5 group-hover:bg-neon-mint/20 transition-colors">
-                          <Check className="h-3.5 w-3.5 text-neon-mint" />
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-pro-400/10 border border-emerald-pro-400/30 flex items-center justify-center mt-0.5 group-hover:bg-emerald-pro-400/20 transition-colors">
+                          <Check className="h-3.5 w-3.5 text-emerald-pro-400" />
                         </div>
                       ) : (
-                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-graphite/20 border border-graphite/30 flex items-center justify-center mt-0.5">
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-graphite/20 border border-border-default dark:border-graphite/30 flex items-center justify-center mt-0.5">
                           <X className="h-3.5 w-3.5 text-graphite" />
                         </div>
                       )}
                       <span className={cn(
                         "text-sm leading-relaxed",
-                        feature.included ? "text-silver group-hover:text-white transition-colors" : "text-graphite"
+                        feature.included ? "text-silver group-hover:text-light-text dark:text-white transition-colors" : "text-graphite"
                       )}>
                         {feature.text}
                       </span>
@@ -148,7 +148,7 @@ export default function PricingPage() {
                     </button>
                   ) : (
                     <Button
-                      className="w-full font-semibold bg-transparent border border-electric-cyan/30 hover:border-electric-cyan/60 hover:bg-electric-cyan/10 text-white hover:text-electric-cyan transition-all py-6"
+                      className="w-full font-semibold bg-transparent border border-emerald-pro-600/30 hover:border-emerald-pro-600/60 hover:bg-emerald-pro-600/10 text-light-text dark:text-white hover:text-emerald-pro-600 transition-all py-6"
                     >
                       {tier.cta}
                       <ArrowRight className="ml-2 h-4 w-4" />
@@ -179,11 +179,11 @@ export default function PricingPage() {
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-              className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-quantum-violet/10 border border-quantum-violet/30 flex items-center justify-center"
+              className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-emerald-pro-500/10 border border-emerald-pro-500/30 flex items-center justify-center"
             >
-              <Sparkles className="w-8 h-8 text-quantum-violet" />
+              <Sparkles className="w-8 h-8 text-emerald-pro-500" />
             </motion.div>
-            <h3 className="text-2xl lg:text-3xl font-sora font-bold text-white mb-4">
+            <h3 className="text-2xl lg:text-3xl font-sora font-bold text-light-text dark:text-white mb-4">
               Not sure which plan is right?
             </h3>
             <p className="text-silver text-lg mb-8 max-w-xl mx-auto">
@@ -207,7 +207,7 @@ export default function PricingPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-2xl mx-auto mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
               Pricing{" "}
               <span className="headline-underline gradient-text-cyan-violet">
                 FAQ
@@ -232,18 +232,18 @@ export default function PricingPage() {
                 >
                   <Accordion.Item
                     value={`item-${index}`}
-                    className="group feature-grid-item !p-0 overflow-hidden data-[state=open]:!border-electric-cyan/30"
+                    className="group feature-grid-item !p-0 overflow-hidden data-[state=open]:!border-emerald-pro-600/30"
                   >
                     <Accordion.Header>
-                      <Accordion.Trigger className="flex w-full items-center justify-between px-6 py-6 text-left hover:bg-electric-cyan/5 transition-colors">
-                        <span className="text-white font-medium pr-4 text-lg">{faq.question}</span>
-                        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-electric-cyan/10 border border-electric-cyan/20 flex items-center justify-center group-hover:bg-electric-cyan/20 transition-colors">
-                          <ChevronDown className="h-4 w-4 text-electric-cyan transition-transform duration-300 group-data-[state=open]:rotate-180" />
+                      <Accordion.Trigger className="flex w-full items-center justify-between px-6 py-6 text-left hover:bg-emerald-pro-600/5 transition-colors">
+                        <span className="text-light-text dark:text-white font-medium pr-4 text-lg">{faq.question}</span>
+                        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-pro-600/10 border border-emerald-pro-600/20 flex items-center justify-center group-hover:bg-emerald-pro-600/20 transition-colors">
+                          <ChevronDown className="h-4 w-4 text-emerald-pro-600 transition-transform duration-300 group-data-[state=open]:rotate-180" />
                         </div>
                       </Accordion.Trigger>
                     </Accordion.Header>
                     <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                      <div className="px-6 pb-6 text-silver leading-relaxed border-t border-graphite/30 pt-4">
+                      <div className="px-6 pb-6 text-silver leading-relaxed border-t border-border-default dark:border-graphite/30 pt-4">
                         {faq.answer}
                       </div>
                     </Accordion.Content>

@@ -128,11 +128,11 @@ export default function BookDemoPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-32 overflow-hidden bg-deep-space">
+      <section className="relative py-32 overflow-hidden bg-white dark:bg-deep-space">
         <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-deep-space to-midnight-blue" />
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-electric-cyan/10 rounded-full blur-[150px] opacity-60" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-quantum-violet/10 rounded-full blur-[150px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-electric-cyan/5 rounded-full blur-[180px]" />
+        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-emerald-pro-600/10 rounded-full blur-[150px] opacity-60" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-emerald-pro-500/10 rounded-full blur-[150px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-pro-600/5 rounded-full blur-[180px]" />
 
         <Container className="relative z-10">
           <motion.div
@@ -142,20 +142,20 @@ export default function BookDemoPage() {
             className="text-center max-w-3xl mx-auto mb-12"
           >
             <div className="tech-badge mb-8 inline-flex">
-              <Calendar className="w-4 h-4 text-electric-cyan" />
-              <span className="text-sm font-medium text-electric-cyan">
+              <Calendar className="w-4 h-4 text-emerald-pro-600" />
+              <span className="text-sm font-medium text-emerald-pro-600">
                 Free Strategy Session
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-sora font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
               Book a{" "}
               <span className="headline-underline gradient-text-cyan-violet">
                 Demo
               </span>
             </h1>
 
-            <p className="text-xl text-steel">
+            <p className="text-xl text-light-text-muted dark:text-steel">
               See how AI-powered cold outreach can transform your sales pipeline.
               No commitment, no pressure—just valuable insights.
             </p>
@@ -178,20 +178,20 @@ export default function BookDemoPage() {
               className="lg:col-span-2 space-y-8"
             >
               <div>
-                <h2 className="text-2xl font-sora font-bold text-white mb-6">
+                <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white mb-6">
                   What to Expect
                 </h2>
                 <div className="space-y-4">
                   {whatToExpect.map((item, index) => (
                     <div key={index} className="flex items-start gap-4">
-                      <div className="h-10 w-10 rounded-lg bg-electric-cyan/10 border border-electric-cyan/30 flex items-center justify-center flex-shrink-0">
-                        <item.icon className="h-5 w-5 text-electric-cyan" />
+                      <div className="h-10 w-10 rounded-lg bg-emerald-pro-600/10 border border-emerald-pro-600/30 flex items-center justify-center flex-shrink-0">
+                        <item.icon className="h-5 w-5 text-emerald-pro-600" />
                       </div>
                       <div>
-                        <h3 className="text-sm font-medium text-white">
+                        <h3 className="text-sm font-medium text-light-text dark:text-white">
                           {item.title}
                         </h3>
-                        <p className="text-sm text-steel">{item.description}</p>
+                        <p className="text-sm text-light-text-muted dark:text-steel">{item.description}</p>
                       </div>
                     </div>
                   ))}
@@ -203,13 +203,13 @@ export default function BookDemoPage() {
                 {testimonials.map((testimonial, index) => (
                   <div
                     key={index}
-                    className="p-4 rounded-xl border border-graphite bg-midnight-blue/50"
+                    className="p-4 rounded-xl border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue/50"
                   >
                     <div className="flex items-center gap-1 mb-3">
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
-                          className="h-4 w-4 text-neon-mint fill-neon-mint"
+                          className="h-4 w-4 text-emerald-pro-400 fill-emerald-pro-400"
                         />
                       ))}
                     </div>
@@ -217,10 +217,10 @@ export default function BookDemoPage() {
                       &ldquo;{testimonial.quote}&rdquo;
                     </p>
                     <div>
-                      <p className="text-sm font-medium text-white">
+                      <p className="text-sm font-medium text-light-text dark:text-white">
                         {testimonial.author}
                       </p>
-                      <p className="text-xs text-steel">{testimonial.role}</p>
+                      <p className="text-xs text-light-text-muted dark:text-steel">{testimonial.role}</p>
                     </div>
                   </div>
                 ))}
@@ -229,12 +229,12 @@ export default function BookDemoPage() {
               {/* Trust Badges */}
               <div className="flex items-center gap-4 pt-4">
                 <div className="flex items-center gap-2">
-                  <Shield className="h-5 w-5 text-neon-mint" />
-                  <span className="text-sm text-steel">No spam, ever</span>
+                  <Shield className="h-5 w-5 text-emerald-pro-400" />
+                  <span className="text-sm text-light-text-muted dark:text-steel">No spam, ever</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-neon-mint" />
-                  <span className="text-sm text-steel">Free consultation</span>
+                  <CheckCircle className="h-5 w-5 text-emerald-pro-400" />
+                  <span className="text-sm text-light-text-muted dark:text-steel">Free consultation</span>
                 </div>
               </div>
             </motion.div>
@@ -246,7 +246,7 @@ export default function BookDemoPage() {
               transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-3"
             >
-              <div className="p-8 rounded-3xl border border-graphite bg-midnight-blue/50">
+              <div className="p-8 rounded-3xl border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue/50">
                 {step === "form" && (
                   <form onSubmit={handleFormSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
@@ -260,7 +260,7 @@ export default function BookDemoPage() {
                           onChange={handleChange}
                           placeholder="John"
                           required
-                          className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                         />
                       </div>
                       <div>
@@ -273,7 +273,7 @@ export default function BookDemoPage() {
                           onChange={handleChange}
                           placeholder="Smith"
                           required
-                          className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                         />
                       </div>
                     </div>
@@ -290,7 +290,7 @@ export default function BookDemoPage() {
                         onChange={handleChange}
                         placeholder="john@company.com"
                         required
-                        className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                       />
                     </div>
 
@@ -306,7 +306,7 @@ export default function BookDemoPage() {
                           onChange={handleChange}
                           placeholder="Your Company"
                           required
-                          className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                         />
                       </div>
                       <div>
@@ -320,7 +320,7 @@ export default function BookDemoPage() {
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder="+1 (555) 000-0000"
-                          className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                         />
                       </div>
                     </div>
@@ -334,7 +334,7 @@ export default function BookDemoPage() {
                           name="teamSize"
                           value={formData.teamSize}
                           onChange={handleChange}
-                          className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                         >
                           <option value="">Select team size</option>
                           <option value="1-5">1-5 reps</option>
@@ -351,7 +351,7 @@ export default function BookDemoPage() {
                           name="currentVolume"
                           value={formData.currentVolume}
                           onChange={handleChange}
-                          className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                         >
                           <option value="">Select volume</option>
                           <option value="none">Not doing outbound yet</option>
@@ -372,7 +372,7 @@ export default function BookDemoPage() {
                         onChange={handleChange}
                         placeholder="Tell us about your goals or specific challenges..."
                         rows={3}
-                        className="w-full rounded-lg border border-graphite bg-deep-space px-4 py-3 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50 resize-none"
+                        className="w-full rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 py-3 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 resize-none"
                       />
                     </div>
 
@@ -395,12 +395,12 @@ export default function BookDemoPage() {
                 {step === "calendar" && (
                   <div className="space-y-6">
                     <div className="flex items-center justify-between">
-                      <h3 className="text-lg font-sora font-semibold text-white">
+                      <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white">
                         Select a Date & Time
                       </h3>
                       <button
                         onClick={() => setStep("form")}
-                        className="text-sm text-electric-cyan hover:underline"
+                        className="text-sm text-emerald-pro-600 hover:underline"
                       >
                         Back
                       </button>
@@ -413,8 +413,8 @@ export default function BookDemoPage() {
                           onClick={() => setSelectedDate(date)}
                           className={`p-3 rounded-lg border text-center transition-colors ${
                             selectedDate?.toDateString() === date.toDateString()
-                              ? "border-electric-cyan/50 bg-electric-cyan/10 text-white"
-                              : "border-graphite bg-deep-space/50 text-steel hover:border-electric-cyan/30"
+                              ? "border-emerald-pro-600/50 bg-emerald-pro-600/10 text-light-text dark:text-white"
+                              : "border-border-default dark:border-graphite bg-white dark:bg-deep-space/50 text-light-text-muted dark:text-steel hover:border-emerald-pro-600/30"
                           }`}
                         >
                           <p className="text-xs">
@@ -430,7 +430,7 @@ export default function BookDemoPage() {
 
                     {selectedDate && (
                       <div>
-                        <p className="text-sm text-steel mb-3">
+                        <p className="text-sm text-light-text-muted dark:text-steel mb-3">
                           Available times for{" "}
                           {selectedDate.toLocaleDateString("en-US", {
                             weekday: "long",
@@ -445,8 +445,8 @@ export default function BookDemoPage() {
                               onClick={() => setSelectedTime(time)}
                               className={`p-2 rounded-lg border text-sm transition-colors ${
                                 selectedTime === time
-                                  ? "border-electric-cyan/50 bg-electric-cyan/10 text-white"
-                                  : "border-graphite bg-deep-space/50 text-steel hover:border-electric-cyan/30"
+                                  ? "border-emerald-pro-600/50 bg-emerald-pro-600/10 text-light-text dark:text-white"
+                                  : "border-border-default dark:border-graphite bg-white dark:bg-deep-space/50 text-light-text-muted dark:text-steel hover:border-emerald-pro-600/30"
                               }`}
                             >
                               {time}
@@ -478,16 +478,16 @@ export default function BookDemoPage() {
 
                 {step === "success" && (
                   <div className="text-center py-8">
-                    <div className="h-16 w-16 rounded-full bg-neon-mint/10 border border-neon-mint/30 flex items-center justify-center mx-auto mb-4">
-                      <CheckCircle className="h-8 w-8 text-neon-mint" />
+                    <div className="h-16 w-16 rounded-full bg-emerald-pro-400/10 border border-emerald-pro-400/30 flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle className="h-8 w-8 text-emerald-pro-400" />
                     </div>
-                    <h3 className="text-xl font-sora font-semibold text-white mb-2">
+                    <h3 className="text-xl font-sora font-semibold text-light-text dark:text-white mb-2">
                       You&apos;re All Set!
                     </h3>
-                    <p className="text-steel mb-4">
+                    <p className="text-light-text-muted dark:text-steel mb-4">
                       We&apos;ve sent a calendar invite to {formData.email}.
                     </p>
-                    <div className="p-4 bg-deep-space/50 border border-graphite/30 rounded-lg mb-6">
+                    <div className="p-4 bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30 rounded-lg mb-6">
                       <p className="text-sm text-silver">
                         <Calendar className="h-4 w-4 inline mr-2" />
                         {selectedDate?.toLocaleDateString("en-US", {
@@ -498,11 +498,11 @@ export default function BookDemoPage() {
                         at {selectedTime}
                       </p>
                     </div>
-                    <p className="text-sm text-steel">
+                    <p className="text-sm text-light-text-muted dark:text-steel">
                       Questions before the call?{" "}
                       <a
                         href="mailto:hello@xgrowthos.com"
-                        className="text-electric-cyan hover:underline"
+                        className="text-emerald-pro-600 hover:underline"
                       >
                         Email us
                       </a>

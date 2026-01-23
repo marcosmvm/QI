@@ -60,9 +60,9 @@ export default function BlogPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-deep-space/50 to-midnight-blue/30" />
 
         {/* Enhanced ambient orbs */}
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-electric-cyan/15 rounded-full blur-[150px] animate-orb-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-quantum-violet/12 rounded-full blur-[130px] animate-orb-float-reverse" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neon-mint/5 rounded-full blur-[180px]" />
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-emerald-pro-600/15 rounded-full blur-[150px] animate-orb-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-emerald-pro-500/12 rounded-full blur-[130px] animate-orb-float-reverse" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-pro-400/5 rounded-full blur-[180px]" />
 
         <Container className="relative z-10">
           <motion.div
@@ -77,19 +77,19 @@ export default function BlogPage() {
               transition={{ duration: 0.5 }}
               className="tech-badge mb-8"
             >
-              <BookOpen className="w-4 h-4 text-electric-cyan" />
-              <span className="text-sm font-medium text-electric-cyan">Insights & Resources</span>
-              <Zap className="w-4 h-4 text-electric-cyan" />
+              <BookOpen className="w-4 h-4 text-emerald-pro-600" />
+              <span className="text-sm font-medium text-emerald-pro-600">Insights & Resources</span>
+              <Zap className="w-4 h-4 text-emerald-pro-600" />
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-white mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-light-text dark:text-white mb-8">
               The XGrowthOS{" "}
               <span className="headline-underline gradient-text-cyan-violet block mt-2">
                 Blog
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto leading-relaxed">
-              Expert insights on <span className="text-electric-cyan font-semibold">B2B lead generation</span>, deliverability, AI, and <span className="text-quantum-violet font-semibold">sales development</span>.
+              Expert insights on <span className="text-emerald-pro-600 font-semibold">B2B lead generation</span>, deliverability, AI, and <span className="text-emerald-pro-500 font-semibold">sales development</span>.
             </p>
           </motion.div>
         </Container>
@@ -113,22 +113,22 @@ export default function BlogPage() {
                 <Link href="/contact" className="block group h-full">
                   <div className="feature-grid-item h-full">
                     {/* Category */}
-                    <span className="inline-block px-3 py-1 rounded-full bg-electric-cyan/10 text-electric-cyan text-xs font-medium mb-4">
+                    <span className="inline-block px-3 py-1 rounded-full bg-emerald-pro-600/10 text-emerald-pro-600 text-xs font-medium mb-4">
                       {post.category}
                     </span>
 
                     {/* Title */}
-                    <h2 className="text-xl font-sora font-semibold text-white mb-3 group-hover:text-gradient transition-all">
+                    <h2 className="text-xl font-sora font-semibold text-light-text dark:text-white mb-3 group-hover:text-gradient transition-all">
                       {post.title}
                     </h2>
 
                     {/* Excerpt */}
-                    <p className="text-silver text-sm mb-4 line-clamp-2 group-hover:text-white/80 transition-colors">
+                    <p className="text-silver text-sm mb-4 line-clamp-2 group-hover:text-light-text dark:text-white/80 transition-colors">
                       {post.excerpt}
                     </p>
 
                     {/* Meta */}
-                    <div className="flex items-center justify-between text-steel text-xs">
+                    <div className="flex items-center justify-between text-light-text-muted dark:text-steel text-xs">
                       <div className="flex items-center gap-1">
                         <Calendar className="h-3 w-3" />
                         {post.date}
@@ -137,7 +137,7 @@ export default function BlogPage() {
                     </div>
 
                     {/* Read More */}
-                    <div className="flex items-center gap-2 text-electric-cyan text-sm font-medium mt-4 group-hover:gap-3 transition-all">
+                    <div className="flex items-center gap-2 text-emerald-pro-600 text-sm font-medium mt-4 group-hover:gap-3 transition-all">
                       Read article
                       <ArrowRight className="h-4 w-4" />
                     </div>

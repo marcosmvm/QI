@@ -273,13 +273,13 @@ export default function ReportsPage() {
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-steel mb-2">
-          <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
+        <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-2">
+          <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
           <span>/</span>
-          <span className="text-electric-cyan">Reports</span>
+          <span className="text-emerald-pro-600">Reports</span>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-white">Reports</h1>
-        <p className="text-steel mt-1">Automated reports and performance insights</p>
+        <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">Reports</h1>
+        <p className="text-light-text-muted dark:text-steel mt-1">Automated reports and performance insights</p>
       </motion.div>
 
       <div className="space-y-6">
@@ -318,7 +318,7 @@ export default function ReportsPage() {
 
         {/* Actions Bar */}
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-1 p-1 rounded-xl bg-midnight-blue/50 border border-electric-cyan/10">
+          <div className="flex items-center gap-1 p-1 rounded-xl bg-light-bg-secondary dark:bg-midnight-blue/50 border border-emerald-pro-600/10">
             {[
               { id: "weekly", label: "Weekly" },
               { id: "monthly", label: "Monthly" },
@@ -330,8 +330,8 @@ export default function ReportsPage() {
                 className={cn(
                   "px-4 py-2 rounded-lg text-sm font-medium transition-all",
                   activeTab === tab.id
-                    ? "bg-electric-cyan/10 text-electric-cyan"
-                    : "text-steel hover:text-white"
+                    ? "bg-emerald-pro-600/10 text-emerald-pro-600"
+                    : "text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
                 )}
               >
                 {tab.label}
@@ -344,7 +344,7 @@ export default function ReportsPage() {
               <Button
                 variant="outline"
                 size="sm"
-                className="border-electric-cyan/20 text-steel hover:text-white"
+                className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
                 onClick={() => setShowDatePicker(!showDatePicker)}
               >
                 <Calendar className="h-4 w-4 mr-2" />
@@ -356,27 +356,27 @@ export default function ReportsPage() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="absolute top-full right-0 mt-2 w-72 rounded-xl border border-electric-cyan/20 bg-midnight-blue/95 backdrop-blur-xl p-4 shadow-xl z-50"
+                    className="absolute top-full right-0 mt-2 w-72 rounded-xl border border-emerald-pro-600/20 bg-light-bg-secondary dark:bg-midnight-blue/95 backdrop-blur-xl p-4 shadow-xl z-50"
                   >
                     <div className="flex items-center justify-between mb-4">
-                      <span className="text-sm font-medium text-white">Select Date Range</span>
-                      <button onClick={() => setShowDatePicker(false)} className="text-steel hover:text-white">
+                      <span className="text-sm font-medium text-light-text dark:text-white">Select Date Range</span>
+                      <button onClick={() => setShowDatePicker(false)} className="text-light-text-muted dark:text-steel hover:text-light-text dark:text-white">
                         <X className="h-4 w-4" />
                       </button>
                     </div>
                     <div className="space-y-3">
                       <div>
-                        <label className="text-xs text-steel mb-1 block">Start Date</label>
+                        <label className="text-xs text-light-text-muted dark:text-steel mb-1 block">Start Date</label>
                         <input
                           type="date"
-                          className="w-full h-9 rounded-lg border border-graphite bg-deep-space px-3 text-sm text-white focus:border-electric-cyan/50 focus:outline-none"
+                          className="w-full h-9 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-3 text-sm text-light-text dark:text-white focus:border-emerald-pro-600/50 focus:outline-none"
                         />
                       </div>
                       <div>
-                        <label className="text-xs text-steel mb-1 block">End Date</label>
+                        <label className="text-xs text-light-text-muted dark:text-steel mb-1 block">End Date</label>
                         <input
                           type="date"
-                          className="w-full h-9 rounded-lg border border-graphite bg-deep-space px-3 text-sm text-white focus:border-electric-cyan/50 focus:outline-none"
+                          className="w-full h-9 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-3 text-sm text-light-text dark:text-white focus:border-emerald-pro-600/50 focus:outline-none"
                         />
                       </div>
                       <Button
@@ -397,7 +397,7 @@ export default function ReportsPage() {
             <Button
               variant="outline"
               size="sm"
-              className="border-electric-cyan/20 text-steel hover:text-white"
+              className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
               onClick={() => window.location.reload()}
             >
               <RefreshCw className="h-4 w-4 mr-2" />
@@ -405,7 +405,7 @@ export default function ReportsPage() {
             </Button>
             <Button
               size="sm"
-              className="bg-gradient-to-r from-electric-cyan to-cyan-dark hover:from-cyan-light hover:to-electric-cyan text-deep-space font-semibold"
+              className="bg-gradient-to-r from-emerald-pro-600 to-cyan-dark hover:from-cyan-light hover:to-emerald-pro-600 text-deep-space font-semibold"
               onClick={handleGenerateReport}
               disabled={isGenerating}
             >
@@ -429,53 +429,53 @@ export default function ReportsPage() {
           <div className="col-span-2 space-y-6">
             {/* Reports Table */}
             <div className="glass-premium overflow-hidden">
-              <div className="px-6 py-4 border-b border-electric-cyan/10">
-                <h3 className="font-semibold text-white">
+              <div className="px-6 py-4 border-b border-emerald-pro-600/10">
+                <h3 className="font-semibold text-light-text dark:text-white">
                   {activeTab === "weekly" ? "Weekly Reports" : activeTab === "monthly" ? "Monthly Reports" : "Custom Reports"}
                 </h3>
               </div>
 
-              <div className="divide-y divide-electric-cyan/5">
+              <div className="divide-y divide-emerald-pro-600/5">
                 {(activeTab === "weekly" ? weeklyReports : monthlyReports).map((report) => (
                   <div
                     key={report.id}
                     onClick={() => setSelectedReport(report as typeof selectedReport)}
                     className={cn(
-                      "flex items-center justify-between p-4 hover:bg-electric-cyan/5 transition-colors cursor-pointer",
-                      selectedReport.id === report.id && "bg-electric-cyan/5"
+                      "flex items-center justify-between p-4 hover:bg-emerald-pro-600/5 transition-colors cursor-pointer",
+                      selectedReport.id === report.id && "bg-emerald-pro-600/5"
                     )}
                   >
                     <div className="flex items-center gap-4">
                       <div className={cn(
                         "flex h-12 w-12 items-center justify-center rounded-xl border",
                         report.status === "ready"
-                          ? "bg-electric-cyan/10 border-electric-cyan/20"
+                          ? "bg-emerald-pro-600/10 border-emerald-pro-600/20"
                           : "bg-energy-orange/10 border-energy-orange/20"
                       )}>
                         <FileText className={cn(
                           "h-6 w-6",
-                          report.status === "ready" ? "text-electric-cyan" : "text-energy-orange"
+                          report.status === "ready" ? "text-emerald-pro-600" : "text-energy-orange"
                         )} />
                       </div>
                       <div>
-                        <p className="font-medium text-white">{report.title}</p>
-                        <p className="text-sm text-steel">{report.date}</p>
+                        <p className="font-medium text-light-text dark:text-white">{report.title}</p>
+                        <p className="text-sm text-light-text-muted dark:text-steel">{report.date}</p>
                       </div>
                     </div>
 
                     <div className="flex items-center gap-6">
                       <div className="hidden md:flex items-center gap-6 text-sm">
                         <div className="text-center">
-                          <p className="text-xs text-steel">Sent</p>
-                          <p className="text-white font-medium">{report.metrics.sent.toLocaleString()}</p>
+                          <p className="text-xs text-light-text-muted dark:text-steel">Sent</p>
+                          <p className="text-light-text dark:text-white font-medium">{report.metrics.sent.toLocaleString()}</p>
                         </div>
                         <div className="text-center">
-                          <p className="text-xs text-steel">Open Rate</p>
-                          <p className="text-white font-medium">{report.metrics.openRate}%</p>
+                          <p className="text-xs text-light-text-muted dark:text-steel">Open Rate</p>
+                          <p className="text-light-text dark:text-white font-medium">{report.metrics.openRate}%</p>
                         </div>
                         <div className="text-center">
-                          <p className="text-xs text-steel">Reply Rate</p>
-                          <p className="text-neon-mint font-medium">{report.metrics.replyRate}%</p>
+                          <p className="text-xs text-light-text-muted dark:text-steel">Reply Rate</p>
+                          <p className="text-emerald-pro-400 font-medium">{report.metrics.replyRate}%</p>
                         </div>
                       </div>
 
@@ -485,7 +485,7 @@ export default function ReportsPage() {
                             <Button
                               variant="outline"
                               size="sm"
-                              className="border-electric-cyan/20 text-steel hover:text-white"
+                              className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
                               onClick={(e) => {
                                 e.stopPropagation();
                                 handleViewReport(report as typeof selectedReport);
@@ -494,7 +494,7 @@ export default function ReportsPage() {
                               View
                             </Button>
                             <button
-                              className="p-2 text-steel hover:text-electric-cyan hover:bg-electric-cyan/10 rounded-lg transition-colors"
+                              className="p-2 text-light-text-muted dark:text-steel hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors"
                               onClick={(e) => {
                                 e.stopPropagation();
                                 setSelectedReport(report as typeof selectedReport);
@@ -520,15 +520,15 @@ export default function ReportsPage() {
             <div className="glass-premium p-6">
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <h3 className="text-lg font-semibold text-white">Report Preview</h3>
-                  <p className="text-sm text-steel">{selectedReport.date}</p>
+                  <h3 className="text-lg font-semibold text-light-text dark:text-white">Report Preview</h3>
+                  <p className="text-sm text-light-text-muted dark:text-steel">{selectedReport.date}</p>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Button variant="outline" size="sm" className="border-electric-cyan/20 text-steel hover:text-white">
+                  <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white">
                     <Share2 className="h-4 w-4 mr-2" />
                     Share
                   </Button>
-                  <Button variant="outline" size="sm" className="border-electric-cyan/20 text-steel hover:text-white">
+                  <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white">
                     <Printer className="h-4 w-4 mr-2" />
                     Print
                   </Button>
@@ -545,13 +545,13 @@ export default function ReportsPage() {
                 ].map((metric) => (
                   <div
                     key={metric.label}
-                    className="p-4 rounded-xl border border-electric-cyan/10 bg-deep-space/50"
+                    className="p-4 rounded-xl border border-emerald-pro-600/10 bg-white dark:bg-deep-space/50"
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <metric.icon className="h-4 w-4 text-steel" />
+                      <metric.icon className="h-4 w-4 text-light-text-muted dark:text-steel" />
                       <div className={cn(
                         "flex items-center gap-1 text-xs font-medium",
-                        metric.trend === "up" ? "text-neon-mint" : "text-rose"
+                        metric.trend === "up" ? "text-emerald-pro-400" : "text-rose"
                       )}>
                         {metric.trend === "up" ? (
                           <ArrowUpRight className="h-3 w-3" />
@@ -561,35 +561,35 @@ export default function ReportsPage() {
                         {metric.change}
                       </div>
                     </div>
-                    <p className="text-2xl font-sora font-bold text-white">{metric.value}</p>
-                    <p className="text-xs text-steel mt-1">{metric.label}</p>
+                    <p className="text-2xl font-sora font-bold text-light-text dark:text-white">{metric.value}</p>
+                    <p className="text-xs text-light-text-muted dark:text-steel mt-1">{metric.label}</p>
                   </div>
                 ))}
               </div>
 
               {/* Key Insights */}
-              <div className="p-4 rounded-xl border border-electric-cyan/10 bg-deep-space/50">
-                <h4 className="font-medium text-white mb-4">Key Insights</h4>
+              <div className="p-4 rounded-xl border border-emerald-pro-600/10 bg-white dark:bg-deep-space/50">
+                <h4 className="font-medium text-light-text dark:text-white mb-4">Key Insights</h4>
                 <div className="space-y-3">
                   {latestInsights.map((insight, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <div className={cn(
                         "flex h-6 w-6 items-center justify-center rounded-lg mt-0.5",
-                        insight.type === "positive" && "bg-neon-mint/10",
+                        insight.type === "positive" && "bg-emerald-pro-400/10",
                         insight.type === "warning" && "bg-energy-orange/10",
-                        insight.type === "neutral" && "bg-electric-cyan/10"
+                        insight.type === "neutral" && "bg-emerald-pro-600/10"
                       )}>
                         {insight.type === "positive" ? (
-                          <TrendingUp className="h-3.5 w-3.5 text-neon-mint" />
+                          <TrendingUp className="h-3.5 w-3.5 text-emerald-pro-400" />
                         ) : insight.type === "warning" ? (
                           <AlertCircle className="h-3.5 w-3.5 text-energy-orange" />
                         ) : (
-                          <CheckCircle2 className="h-3.5 w-3.5 text-electric-cyan" />
+                          <CheckCircle2 className="h-3.5 w-3.5 text-emerald-pro-600" />
                         )}
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-white">{insight.title}</p>
-                        <p className="text-xs text-steel">{insight.description}</p>
+                        <p className="text-sm font-medium text-light-text dark:text-white">{insight.title}</p>
+                        <p className="text-xs text-light-text-muted dark:text-steel">{insight.description}</p>
                       </div>
                     </div>
                   ))}
@@ -603,8 +603,8 @@ export default function ReportsPage() {
             {/* Scheduled Reports */}
             <div className="glass-premium p-5">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="font-semibold text-white">Scheduled Reports</h3>
-                <Button variant="ghost" size="sm" className="text-electric-cyan hover:bg-electric-cyan/10">
+                <h3 className="font-semibold text-light-text dark:text-white">Scheduled Reports</h3>
+                <Button variant="ghost" size="sm" className="text-emerald-pro-600 hover:bg-emerald-pro-600/10">
                   <Settings className="h-4 w-4" />
                 </Button>
               </div>
@@ -616,32 +616,32 @@ export default function ReportsPage() {
                     className={cn(
                       "p-3 rounded-xl border transition-all",
                       report.enabled
-                        ? "border-electric-cyan/10 bg-deep-space/50"
-                        : "border-electric-cyan/5 bg-deep-space/30 opacity-60"
+                        ? "border-emerald-pro-600/10 bg-white dark:bg-deep-space/50"
+                        : "border-emerald-pro-600/5 bg-white dark:bg-deep-space/30 opacity-60"
                     )}
                   >
                     <div className="flex items-start justify-between mb-2">
-                      <p className="text-sm font-medium text-white">{report.name}</p>
+                      <p className="text-sm font-medium text-light-text dark:text-white">{report.name}</p>
                       <div className={cn(
                         "h-2 w-2 rounded-full mt-1.5",
-                        report.enabled ? "bg-neon-mint" : "bg-steel"
+                        report.enabled ? "bg-emerald-pro-400" : "bg-steel"
                       )} />
                     </div>
-                    <div className="flex items-center gap-2 text-xs text-steel mb-1">
+                    <div className="flex items-center gap-2 text-xs text-light-text-muted dark:text-steel mb-1">
                       <Clock className="h-3 w-3" />
                       {report.frequency}
                     </div>
                     <div className="flex items-center justify-between">
-                      <p className="text-[10px] text-steel">
+                      <p className="text-[10px] text-light-text-muted dark:text-steel">
                         {report.recipients.length} recipient{report.recipients.length > 1 ? "s" : ""}
                       </p>
-                      <p className="text-[10px] text-steel">Last: {report.lastSent}</p>
+                      <p className="text-[10px] text-light-text-muted dark:text-steel">Last: {report.lastSent}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <Button variant="outline" className="w-full mt-4 border-electric-cyan/20 text-steel hover:text-white">
+              <Button variant="outline" className="w-full mt-4 border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white">
                 <Plus className="h-4 w-4 mr-2" />
                 Add Schedule
               </Button>
@@ -649,7 +649,7 @@ export default function ReportsPage() {
 
             {/* Export Options */}
             <div className="glass-premium p-5">
-              <h3 className="font-semibold text-white mb-4">Export Options</h3>
+              <h3 className="font-semibold text-light-text dark:text-white mb-4">Export Options</h3>
               <div className="space-y-2">
                 {[
                   { label: "PDF Report", format: "pdf" as const, icon: FileText, description: "Formatted report with charts" },
@@ -659,16 +659,16 @@ export default function ReportsPage() {
                   <button
                     key={option.format}
                     onClick={() => handleExport(option.format)}
-                    className="w-full flex items-center gap-3 p-3 rounded-xl border border-electric-cyan/10 bg-deep-space/50 text-left hover:border-electric-cyan/30 hover:bg-electric-cyan/5 transition-all group"
+                    className="w-full flex items-center gap-3 p-3 rounded-xl border border-emerald-pro-600/10 bg-white dark:bg-deep-space/50 text-left hover:border-emerald-pro-600/30 hover:bg-emerald-pro-600/5 transition-all group"
                   >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-electric-cyan/10 border border-electric-cyan/20 group-hover:bg-electric-cyan/20 transition-colors">
-                      <option.icon className="h-5 w-5 text-electric-cyan" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-pro-600/10 border border-emerald-pro-600/20 group-hover:bg-emerald-pro-600/20 transition-colors">
+                      <option.icon className="h-5 w-5 text-emerald-pro-600" />
                     </div>
                     <div className="flex-1">
-                      <p className="text-sm font-medium text-white">{option.label}</p>
-                      <p className="text-xs text-steel">{option.description}</p>
+                      <p className="text-sm font-medium text-light-text dark:text-white">{option.label}</p>
+                      <p className="text-xs text-light-text-muted dark:text-steel">{option.description}</p>
                     </div>
-                    <Download className="h-4 w-4 text-steel group-hover:text-electric-cyan transition-colors" />
+                    <Download className="h-4 w-4 text-light-text-muted dark:text-steel group-hover:text-emerald-pro-600 transition-colors" />
                   </button>
                 ))}
               </div>
@@ -676,11 +676,11 @@ export default function ReportsPage() {
 
             {/* Quick Actions */}
             <div className="glass-premium p-5">
-              <h3 className="font-semibold text-white mb-4">Quick Actions</h3>
+              <h3 className="font-semibold text-light-text dark:text-white mb-4">Quick Actions</h3>
               <div className="space-y-2">
                 <Button
                   variant="outline"
-                  className="w-full justify-start border-electric-cyan/20 text-steel hover:text-white"
+                  className="w-full justify-start border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
                   onClick={() => alert("This will email the latest report. Connect to email service in production.")}
                 >
                   <Mail className="h-4 w-4 mr-2" />
@@ -688,7 +688,7 @@ export default function ReportsPage() {
                 </Button>
                 <Button
                   variant="outline"
-                  className="w-full justify-start border-electric-cyan/20 text-steel hover:text-white"
+                  className="w-full justify-start border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
                   onClick={() => alert("Report comparison feature coming soon!")}
                 >
                   <BarChart3 className="h-4 w-4 mr-2" />
@@ -696,7 +696,7 @@ export default function ReportsPage() {
                 </Button>
                 <Button
                   variant="outline"
-                  className="w-full justify-start border-electric-cyan/20 text-steel hover:text-white"
+                  className="w-full justify-start border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
                   onClick={() => alert("Alert threshold configuration coming soon!")}
                 >
                   <Bell className="h-4 w-4 mr-2" />
@@ -717,74 +717,74 @@ export default function ReportsPage() {
               className="fixed inset-0 z-50 flex items-center justify-center p-4"
             >
               <div
-                className="absolute inset-0 bg-deep-space/80 backdrop-blur-sm"
+                className="absolute inset-0 bg-white dark:bg-deep-space/80 backdrop-blur-sm"
                 onClick={() => setShowReportPreview(false)}
               />
               <motion.div
                 initial={{ scale: 0.95, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.95, opacity: 0 }}
-                className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl border border-electric-cyan/20 bg-gradient-to-br from-midnight-blue to-deep-space p-6 shadow-2xl"
+                className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl border border-emerald-pro-600/20 bg-gradient-to-br from-midnight-blue to-deep-space p-6 shadow-2xl"
               >
                 <button
                   onClick={() => setShowReportPreview(false)}
-                  className="absolute top-4 right-4 p-2 text-steel hover:text-white rounded-lg hover:bg-electric-cyan/10 transition-colors"
+                  className="absolute top-4 right-4 p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white rounded-lg hover:bg-emerald-pro-600/10 transition-colors"
                 >
                   <X className="h-5 w-5" />
                 </button>
 
                 <div className="mb-6">
-                  <h2 className="text-2xl font-sora font-bold text-white">{previewReport.title}</h2>
-                  <p className="text-steel">{previewReport.date}</p>
+                  <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white">{previewReport.title}</h2>
+                  <p className="text-light-text-muted dark:text-steel">{previewReport.date}</p>
                 </div>
 
                 {/* Report Metrics Grid */}
                 <div className="grid grid-cols-4 gap-4 mb-6">
-                  <div className="p-4 rounded-xl border border-electric-cyan/10 bg-deep-space/50">
-                    <Mail className="h-5 w-5 text-electric-cyan mb-2" />
-                    <p className="text-2xl font-bold text-white">{previewReport.metrics.sent.toLocaleString()}</p>
-                    <p className="text-xs text-steel">Emails Sent</p>
+                  <div className="p-4 rounded-xl border border-emerald-pro-600/10 bg-white dark:bg-deep-space/50">
+                    <Mail className="h-5 w-5 text-emerald-pro-600 mb-2" />
+                    <p className="text-2xl font-bold text-light-text dark:text-white">{previewReport.metrics.sent.toLocaleString()}</p>
+                    <p className="text-xs text-light-text-muted dark:text-steel">Emails Sent</p>
                   </div>
-                  <div className="p-4 rounded-xl border border-neon-mint/20 bg-neon-mint/5">
-                    <Eye className="h-5 w-5 text-neon-mint mb-2" />
-                    <p className="text-2xl font-bold text-neon-mint">{previewReport.metrics.openRate}%</p>
-                    <p className="text-xs text-steel">Open Rate</p>
+                  <div className="p-4 rounded-xl border border-emerald-pro-400/20 bg-emerald-pro-400/5">
+                    <Eye className="h-5 w-5 text-emerald-pro-400 mb-2" />
+                    <p className="text-2xl font-bold text-emerald-pro-400">{previewReport.metrics.openRate}%</p>
+                    <p className="text-xs text-light-text-muted dark:text-steel">Open Rate</p>
                   </div>
-                  <div className="p-4 rounded-xl border border-quantum-violet/20 bg-quantum-violet/5">
-                    <MessageSquare className="h-5 w-5 text-quantum-violet mb-2" />
-                    <p className="text-2xl font-bold text-quantum-violet">{previewReport.metrics.replyRate}%</p>
-                    <p className="text-xs text-steel">Reply Rate</p>
+                  <div className="p-4 rounded-xl border border-emerald-pro-500/20 bg-emerald-pro-500/5">
+                    <MessageSquare className="h-5 w-5 text-emerald-pro-500 mb-2" />
+                    <p className="text-2xl font-bold text-emerald-pro-500">{previewReport.metrics.replyRate}%</p>
+                    <p className="text-xs text-light-text-muted dark:text-steel">Reply Rate</p>
                   </div>
                   <div className="p-4 rounded-xl border border-energy-orange/20 bg-energy-orange/5">
                     <Calendar className="h-5 w-5 text-energy-orange mb-2" />
                     <p className="text-2xl font-bold text-energy-orange">{previewReport.metrics.meetings || 0}</p>
-                    <p className="text-xs text-steel">Meetings Booked</p>
+                    <p className="text-xs text-light-text-muted dark:text-steel">Meetings Booked</p>
                   </div>
                 </div>
 
                 {/* Key Insights */}
-                <div className="p-4 rounded-xl border border-electric-cyan/10 bg-deep-space/50 mb-6">
-                  <h4 className="font-semibold text-white mb-4">Key Insights</h4>
+                <div className="p-4 rounded-xl border border-emerald-pro-600/10 bg-white dark:bg-deep-space/50 mb-6">
+                  <h4 className="font-semibold text-light-text dark:text-white mb-4">Key Insights</h4>
                   <div className="space-y-3">
                     {latestInsights.map((insight, index) => (
                       <div key={index} className="flex items-start gap-3">
                         <div className={cn(
                           "flex h-6 w-6 items-center justify-center rounded-lg mt-0.5",
-                          insight.type === "positive" && "bg-neon-mint/10",
+                          insight.type === "positive" && "bg-emerald-pro-400/10",
                           insight.type === "warning" && "bg-energy-orange/10",
-                          insight.type === "neutral" && "bg-electric-cyan/10"
+                          insight.type === "neutral" && "bg-emerald-pro-600/10"
                         )}>
                           {insight.type === "positive" ? (
-                            <TrendingUp className="h-3.5 w-3.5 text-neon-mint" />
+                            <TrendingUp className="h-3.5 w-3.5 text-emerald-pro-400" />
                           ) : insight.type === "warning" ? (
                             <AlertCircle className="h-3.5 w-3.5 text-energy-orange" />
                           ) : (
-                            <CheckCircle2 className="h-3.5 w-3.5 text-electric-cyan" />
+                            <CheckCircle2 className="h-3.5 w-3.5 text-emerald-pro-600" />
                           )}
                         </div>
                         <div>
-                          <p className="text-sm font-medium text-white">{insight.title}</p>
-                          <p className="text-xs text-steel">{insight.description}</p>
+                          <p className="text-sm font-medium text-light-text dark:text-white">{insight.title}</p>
+                          <p className="text-xs text-light-text-muted dark:text-steel">{insight.description}</p>
                         </div>
                       </div>
                     ))}

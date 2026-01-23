@@ -110,15 +110,15 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
   };
 
   return (
-    <aside className="fixed left-0 top-0 z-40 h-screen w-64 bg-deep-space border-r border-graphite/50">
+    <aside className="fixed left-0 top-0 z-40 h-screen w-64 bg-white dark:bg-deep-space border-r border-border-default dark:border-graphite/50">
       <div className="flex h-full flex-col">
         {/* Logo */}
-        <div className="flex h-16 items-center px-6 border-b border-graphite/50">
+        <div className="flex h-16 items-center px-6 border-b border-border-default dark:border-graphite/50">
           <Link href={variant === "admin" ? "/admin" : "/dashboard"} className="flex items-center gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-electric-cyan/10 border border-electric-cyan/30">
-              <Zap className="h-5 w-5 text-electric-cyan" />
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-pro-600/10 border border-emerald-pro-600/30">
+              <Zap className="h-5 w-5 text-emerald-pro-600" />
             </div>
-            <span className="text-lg font-sora font-semibold text-white">
+            <span className="text-lg font-sora font-semibold text-light-text dark:text-white">
               Quantum
             </span>
           </Link>
@@ -134,13 +134,13 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
                 className={cn(
                   "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200",
                   isActive(item.href)
-                    ? "bg-electric-cyan/10 text-electric-cyan border border-electric-cyan/20"
-                    : "text-silver hover:bg-midnight-blue/50 hover:text-white border border-transparent"
+                    ? "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20"
+                    : "text-silver hover:bg-light-bg-secondary dark:bg-midnight-blue/50 hover:text-light-text dark:text-white border border-transparent"
                 )}
               >
                 <item.icon className={cn(
                   "h-4 w-4",
-                  isActive(item.href) ? "text-electric-cyan" : "text-steel"
+                  isActive(item.href) ? "text-emerald-pro-600" : "text-light-text-muted dark:text-steel"
                 )} />
                 <span>{item.name}</span>
               </Link>
@@ -149,7 +149,7 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
         </nav>
 
         {/* Bottom Navigation */}
-        <div className="px-3 py-4 border-t border-graphite/50">
+        <div className="px-3 py-4 border-t border-border-default dark:border-graphite/50">
           <div className="space-y-1">
             {bottomNav.map((item) => (
               <Link
@@ -158,13 +158,13 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
                 className={cn(
                   "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200",
                   isActive(item.href)
-                    ? "bg-electric-cyan/10 text-electric-cyan border border-electric-cyan/20"
-                    : "text-silver hover:bg-midnight-blue/50 hover:text-white border border-transparent"
+                    ? "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20"
+                    : "text-silver hover:bg-light-bg-secondary dark:bg-midnight-blue/50 hover:text-light-text dark:text-white border border-transparent"
                 )}
               >
                 <item.icon className={cn(
                   "h-4 w-4",
-                  isActive(item.href) ? "text-electric-cyan" : "text-steel"
+                  isActive(item.href) ? "text-emerald-pro-600" : "text-light-text-muted dark:text-steel"
                 )} />
                 <span>{item.name}</span>
               </Link>
@@ -173,24 +173,24 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
         </div>
 
         {/* User Profile */}
-        <div className="border-t border-graphite/50 p-4">
+        <div className="border-t border-border-default dark:border-graphite/50 p-4">
           <div className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-full bg-quantum-violet/20 border border-quantum-violet/30 flex items-center justify-center">
-              <span className="text-sm font-medium text-quantum-violet">
+            <div className="h-9 w-9 rounded-full bg-emerald-pro-500/20 border border-emerald-pro-500/30 flex items-center justify-center">
+              <span className="text-sm font-medium text-emerald-pro-500">
                 {isLoading ? "..." : getInitials(profile?.full_name)}
               </span>
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-white truncate">
+              <p className="text-sm font-medium text-light-text dark:text-white truncate">
                 {isLoading ? "Loading..." : profile?.full_name || "User"}
               </p>
-              <p className="text-xs text-steel truncate capitalize">
+              <p className="text-xs text-light-text-muted dark:text-steel truncate capitalize">
                 {isLoading ? "" : profile?.role || "client"}
               </p>
             </div>
             <button
               onClick={handleSignOut}
-              className="p-2 rounded-lg text-steel hover:text-energy-orange hover:bg-energy-orange/10 transition-colors"
+              className="p-2 rounded-lg text-light-text-muted dark:text-steel hover:text-energy-orange hover:bg-energy-orange/10 transition-colors"
               title="Sign out"
             >
               <LogOut className="h-4 w-4" />

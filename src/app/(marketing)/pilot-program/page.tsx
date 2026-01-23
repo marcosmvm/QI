@@ -147,11 +147,11 @@ export default function PilotProgramPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-32 overflow-hidden bg-deep-space">
+      <section className="relative py-32 overflow-hidden bg-white dark:bg-deep-space">
         <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-deep-space to-midnight-blue" />
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-neon-mint/10 rounded-full blur-[150px] opacity-60" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-quantum-violet/10 rounded-full blur-[150px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-electric-cyan/5 rounded-full blur-[180px]" />
+        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-emerald-pro-400/10 rounded-full blur-[150px] opacity-60" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-emerald-pro-500/10 rounded-full blur-[150px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-pro-600/5 rounded-full blur-[180px]" />
 
         <Container className="relative z-10">
           <motion.div
@@ -161,20 +161,20 @@ export default function PilotProgramPage() {
             className="text-center max-w-4xl mx-auto"
           >
             <div className="tech-badge mb-8 inline-flex">
-              <Rocket className="w-4 h-4 text-neon-mint" />
-              <span className="text-sm font-medium text-neon-mint">
+              <Rocket className="w-4 h-4 text-emerald-pro-400" />
+              <span className="text-sm font-medium text-emerald-pro-400">
                 Limited Spots Available
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-light-text dark:text-white mb-6">
               Experience the Future of{" "}
               <span className="headline-underline gradient-text-cyan-violet">
                 Cold Outreach
               </span>
             </h1>
 
-            <p className="text-xl text-steel max-w-2xl mx-auto mb-8">
+            <p className="text-xl text-light-text-muted dark:text-steel max-w-2xl mx-auto mb-8">
               Join our 60-day pilot program and see firsthand how AI-powered campaigns
               can transform your pipeline. Limited spots available each month.
             </p>
@@ -190,7 +190,7 @@ export default function PilotProgramPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-electric-cyan/30 hover:border-electric-cyan/60 text-white hover:text-electric-cyan bg-electric-cyan/5 hover:bg-electric-cyan/10 px-8 py-6 text-lg transition-all backdrop-blur-sm"
+                  className="border-emerald-pro-600/30 hover:border-emerald-pro-600/60 text-light-text dark:text-white hover:text-emerald-pro-600 bg-emerald-pro-600/5 hover:bg-emerald-pro-600/10 px-8 py-6 text-lg transition-all backdrop-blur-sm"
                 >
                   How It Works
                 </Button>
@@ -213,13 +213,13 @@ export default function PilotProgramPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-2xl mx-auto mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
               What You Get in the{" "}
               <span className="headline-underline gradient-text-cyan-violet">
                 Pilot Program
               </span>
             </h2>
-            <p className="text-steel">
+            <p className="text-light-text-muted dark:text-steel">
               Everything you need to evaluate our platform and generate real results.
             </p>
           </motion.div>
@@ -232,15 +232,15 @@ export default function PilotProgramPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="p-6 rounded-2xl border border-graphite bg-midnight-blue/50 hover:border-electric-cyan/30 transition-colors"
+                className="p-6 rounded-2xl border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue/50 hover:border-emerald-pro-600/30 transition-colors"
               >
-                <div className="h-12 w-12 rounded-xl bg-electric-cyan/10 border border-electric-cyan/30 flex items-center justify-center mb-4">
-                  <benefit.icon className="h-6 w-6 text-electric-cyan" />
+                <div className="h-12 w-12 rounded-xl bg-emerald-pro-600/10 border border-emerald-pro-600/30 flex items-center justify-center mb-4">
+                  <benefit.icon className="h-6 w-6 text-emerald-pro-600" />
                 </div>
-                <h3 className="text-lg font-sora font-semibold text-white mb-2">
+                <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-2">
                   {benefit.title}
                 </h3>
-                <p className="text-steel text-sm">{benefit.description}</p>
+                <p className="text-light-text-muted dark:text-steel text-sm">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -257,13 +257,13 @@ export default function PilotProgramPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-2xl mx-auto mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
               How the Pilot{" "}
               <span className="headline-underline gradient-text-cyan-violet">
                 Works
               </span>
             </h2>
-            <p className="text-steel">
+            <p className="text-light-text-muted dark:text-steel">
               A simple, transparent process to evaluate our platform.
             </p>
           </motion.div>
@@ -280,18 +280,18 @@ export default function PilotProgramPage() {
                   className="relative"
                 >
                   <div className="text-center">
-                    <div className="h-14 w-14 rounded-full bg-electric-cyan/10 border-2 border-electric-cyan flex items-center justify-center mx-auto mb-4">
-                      <span className="text-xl font-sora font-bold text-electric-cyan">
+                    <div className="h-14 w-14 rounded-full bg-emerald-pro-600/10 border-2 border-emerald-pro-600 flex items-center justify-center mx-auto mb-4">
+                      <span className="text-xl font-sora font-bold text-emerald-pro-600">
                         {step.step}
                       </span>
                     </div>
-                    <h3 className="text-lg font-sora font-semibold text-white mb-2">
+                    <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-steel text-sm">{step.description}</p>
+                    <p className="text-light-text-muted dark:text-steel text-sm">{step.description}</p>
                   </div>
                   {index < pilotSteps.length - 1 && (
-                    <div className="hidden md:block absolute top-7 left-full w-full h-0.5 bg-gradient-to-r from-electric-cyan to-transparent -translate-x-1/2" />
+                    <div className="hidden md:block absolute top-7 left-full w-full h-0.5 bg-gradient-to-r from-emerald-pro-600 to-transparent -translate-x-1/2" />
                   )}
                 </motion.div>
               ))}
@@ -308,18 +308,18 @@ export default function PilotProgramPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="p-8 rounded-3xl border border-graphite bg-midnight-blue/50"
+            className="p-8 rounded-3xl border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue/50"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="h-10 w-10 rounded-lg bg-quantum-violet/10 border border-quantum-violet/30 flex items-center justify-center">
-                <CheckCircle className="h-5 w-5 text-quantum-violet" />
+              <div className="h-10 w-10 rounded-lg bg-emerald-pro-500/10 border border-emerald-pro-500/30 flex items-center justify-center">
+                <CheckCircle className="h-5 w-5 text-emerald-pro-500" />
               </div>
-              <h2 className="text-2xl font-sora font-bold text-white">
+              <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white">
                 Who Qualifies?
               </h2>
             </div>
 
-            <p className="text-steel mb-6">
+            <p className="text-light-text-muted dark:text-steel mb-6">
               The pilot program is designed for B2B companies ready to scale their
               outbound efforts. Here&apos;s what we look for:
             </p>
@@ -327,7 +327,7 @@ export default function PilotProgramPage() {
             <ul className="space-y-3">
               {pilotRequirements.map((req, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-neon-mint flex-shrink-0 mt-0.5" />
+                  <Check className="h-5 w-5 text-emerald-pro-400 flex-shrink-0 mt-0.5" />
                   <span className="text-silver">{req}</span>
                 </li>
               ))}
@@ -346,13 +346,13 @@ export default function PilotProgramPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
               Apply for the{" "}
               <span className="headline-underline gradient-text-cyan-violet">
                 Pilot Program
               </span>
             </h2>
-            <p className="text-steel">
+            <p className="text-light-text-muted dark:text-steel">
               Fill out the form below and we&apos;ll be in touch within 24 hours.
             </p>
           </motion.div>
@@ -362,17 +362,17 @@ export default function PilotProgramPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="p-8 rounded-3xl border border-graphite bg-midnight-blue/50"
+            className="p-8 rounded-3xl border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue/50"
           >
             {isSubmitted ? (
               <div className="text-center py-12">
-                <div className="h-16 w-16 rounded-full bg-neon-mint/10 border border-neon-mint/30 flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle className="h-8 w-8 text-neon-mint" />
+                <div className="h-16 w-16 rounded-full bg-emerald-pro-400/10 border border-emerald-pro-400/30 flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="h-8 w-8 text-emerald-pro-400" />
                 </div>
-                <h3 className="text-xl font-sora font-semibold text-white mb-2">
+                <h3 className="text-xl font-sora font-semibold text-light-text dark:text-white mb-2">
                   Application Received!
                 </h3>
-                <p className="text-steel max-w-md mx-auto">
+                <p className="text-light-text-muted dark:text-steel max-w-md mx-auto">
                   Thanks for your interest in the pilot program. Our team will review
                   your application and reach out within 24 hours to schedule a
                   discovery call.
@@ -392,7 +392,7 @@ export default function PilotProgramPage() {
                       onChange={handleChange}
                       placeholder="John Smith"
                       required
-                      className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                     />
                   </div>
                   <div>
@@ -407,7 +407,7 @@ export default function PilotProgramPage() {
                       onChange={handleChange}
                       placeholder="john@company.com"
                       required
-                      className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                     />
                   </div>
                 </div>
@@ -424,7 +424,7 @@ export default function PilotProgramPage() {
                       onChange={handleChange}
                       placeholder="Your Company"
                       required
-                      className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                     />
                   </div>
                   <div>
@@ -437,7 +437,7 @@ export default function PilotProgramPage() {
                       value={formData.website}
                       onChange={handleChange}
                       placeholder="https://yourcompany.com"
-                      className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                     />
                   </div>
                 </div>
@@ -450,7 +450,7 @@ export default function PilotProgramPage() {
                     name="monthlyVolume"
                     value={formData.monthlyVolume}
                     onChange={handleChange}
-                    className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                    className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                   >
                     <option value="">Select volume</option>
                     <option value="0">Not currently doing outbound</option>
@@ -472,7 +472,7 @@ export default function PilotProgramPage() {
                     onChange={handleChange}
                     placeholder="What are you hoping to achieve with outbound? Who is your ideal customer?"
                     rows={4}
-                    className="w-full rounded-lg border border-graphite bg-deep-space px-4 py-3 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50 resize-none"
+                    className="w-full rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 py-3 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 resize-none"
                   />
                 </div>
 
@@ -509,7 +509,7 @@ export default function PilotProgramPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-2xl mx-auto mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
               Pilot Program{" "}
               <span className="headline-underline gradient-text-cyan-violet">
                 FAQ
@@ -528,18 +528,18 @@ export default function PilotProgramPage() {
                 <Accordion.Item
                   key={index}
                   value={`item-${index}`}
-                  className="group rounded-xl border border-graphite bg-midnight-blue/50 overflow-hidden data-[state=open]:border-electric-cyan/30 transition-colors"
+                  className="group rounded-xl border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue/50 overflow-hidden data-[state=open]:border-emerald-pro-600/30 transition-colors"
                 >
                   <Accordion.Header>
                     <Accordion.Trigger className="flex w-full items-center justify-between px-6 py-5 text-left">
-                      <span className="text-white font-medium pr-4">
+                      <span className="text-light-text dark:text-white font-medium pr-4">
                         {faq.question}
                       </span>
-                      <ChevronDown className="h-5 w-5 text-electric-cyan shrink-0 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+                      <ChevronDown className="h-5 w-5 text-emerald-pro-600 shrink-0 transition-transform duration-200 group-data-[state=open]:rotate-180" />
                     </Accordion.Trigger>
                   </Accordion.Header>
                   <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                    <div className="px-6 pb-5 text-steel leading-relaxed">
+                    <div className="px-6 pb-5 text-light-text-muted dark:text-steel leading-relaxed">
                       {faq.answer}
                     </div>
                   </Accordion.Content>
@@ -558,22 +558,22 @@ export default function PilotProgramPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="text-center p-8 rounded-3xl border border-graphite bg-midnight-blue/50"
+            className="text-center p-8 rounded-3xl border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue/50"
           >
             <div className="flex items-center justify-center gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
-                  className="h-5 w-5 text-neon-mint fill-neon-mint"
+                  className="h-5 w-5 text-emerald-pro-400 fill-emerald-pro-400"
                 />
               ))}
             </div>
-            <blockquote className="text-xl text-white font-medium mb-4">
+            <blockquote className="text-xl text-light-text dark:text-white font-medium mb-4">
               &ldquo;The pilot program gave us the confidence to invest in
               XGrowthOS. We generated 47 qualified leads in the first
               month alone.&rdquo;
             </blockquote>
-            <p className="text-steel">
+            <p className="text-light-text-muted dark:text-steel">
               — Sarah Chen, VP of Sales at TechFlow Inc.
             </p>
           </motion.div>
@@ -584,10 +584,10 @@ export default function PilotProgramPage() {
       <div className="section-divider max-w-4xl mx-auto" />
 
       {/* Final CTA */}
-      <section className="relative py-32 overflow-hidden bg-deep-space">
+      <section className="relative py-32 overflow-hidden bg-white dark:bg-deep-space">
         <div className="absolute inset-0 bg-gradient-to-t from-deep-space via-midnight-blue to-deep-space" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-electric-cyan/10 rounded-full blur-[150px]" />
-        <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-quantum-violet/10 rounded-full blur-[150px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-pro-600/10 rounded-full blur-[150px]" />
+        <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-emerald-pro-500/10 rounded-full blur-[150px]" />
 
         <Container className="relative z-10">
           <motion.div
@@ -597,11 +597,11 @@ export default function PilotProgramPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-2xl mx-auto"
           >
-            <Clock className="h-12 w-12 text-electric-cyan mx-auto mb-6" />
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
+            <Clock className="h-12 w-12 text-emerald-pro-600 mx-auto mb-6" />
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
               Limited Spots Available
             </h2>
-            <p className="text-steel mb-8">
+            <p className="text-light-text-muted dark:text-steel mb-8">
               We only accept a limited number of pilot clients each month to ensure
               everyone gets the attention they deserve. Apply now to secure your spot.
             </p>

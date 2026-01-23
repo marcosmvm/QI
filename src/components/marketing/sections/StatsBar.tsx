@@ -14,7 +14,7 @@ const capabilities = [
 
 export function StatsBar() {
   return (
-    <section className="py-20 bg-deep-space border-y border-graphite">
+    <section className="py-20 bg-white dark:bg-deep-space border-y border-border-default dark:border-graphite">
       <Container>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {capabilities.map((cap, index) => (
@@ -27,22 +27,22 @@ export function StatsBar() {
               className="text-center group"
             >
               <div className="flex justify-center mb-3">
-                <div className="p-3 rounded-xl bg-electric-cyan/10 border border-electric-cyan/20 group-hover:border-electric-cyan/40 transition-colors">
-                  <cap.icon className="h-6 w-6 text-electric-cyan" />
+                <div className="p-3 rounded-xl bg-emerald-pro-600/10 border border-emerald-pro-600/20 group-hover:border-emerald-pro-600/40 transition-colors">
+                  <cap.icon className="h-6 w-6 text-emerald-pro-600" />
                 </div>
               </div>
               <div className="relative">
-                <span className="text-4xl md:text-5xl font-sora font-bold text-electric-cyan">
+                <span className="text-4xl md:text-5xl font-sora font-bold text-emerald-pro-600">
                   {cap.value}
                 </span>
-                <span className="text-2xl md:text-3xl font-sora font-bold text-electric-cyan">
+                <span className="text-2xl md:text-3xl font-sora font-bold text-emerald-pro-600">
                   {cap.suffix}
                 </span>
               </div>
-              <p className="text-white mt-2 text-sm md:text-base font-medium">
+              <p className="text-light-text dark:text-white mt-2 text-sm md:text-base font-medium">
                 {cap.label}
               </p>
-              <p className="text-steel text-xs mt-1">
+              <p className="text-light-text-muted dark:text-steel text-xs mt-1">
                 {cap.description}
               </p>
             </motion.div>

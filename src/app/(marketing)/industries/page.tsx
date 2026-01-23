@@ -9,15 +9,15 @@ import { industries, getFeaturedIndustries } from "@/lib/content/industries";
 
 // Brand Board v1.0 - Card accent colors for visual variety
 const cardColors: Record<string, { text: string; iconBg: string }> = {
-  saas: { text: "text-electric-cyan", iconBg: "bg-graphite" },
-  finance: { text: "text-neon-mint", iconBg: "bg-graphite" },
+  saas: { text: "text-emerald-pro-600", iconBg: "bg-graphite" },
+  finance: { text: "text-emerald-pro-400", iconBg: "bg-graphite" },
   healthcare: { text: "text-alert-red", iconBg: "bg-graphite" },
-  martech: { text: "text-quantum-violet", iconBg: "bg-graphite" },
+  martech: { text: "text-emerald-pro-500", iconBg: "bg-graphite" },
   cybersecurity: { text: "text-energy-orange", iconBg: "bg-graphite" },
-  "hr-tech": { text: "text-electric-cyan", iconBg: "bg-graphite" },
+  "hr-tech": { text: "text-emerald-pro-600", iconBg: "bg-graphite" },
 };
 
-const defaultCardColor = { text: "text-electric-cyan", iconBg: "bg-graphite" };
+const defaultCardColor = { text: "text-emerald-pro-600", iconBg: "bg-graphite" };
 
 function getCardColor(id: string) {
   return cardColors[id] || defaultCardColor;
@@ -26,7 +26,7 @@ function getCardColor(id: string) {
 // Brand Board v1.0 - Trust Badge Pattern
 function TrustBadge({ label }: { label: string }) {
   return (
-    <div className="bg-midnight-blue border border-graphite rounded-lg px-6 py-3">
+    <div className="bg-light-bg-secondary dark:bg-midnight-blue border border-border-default dark:border-graphite rounded-lg px-6 py-3">
       <span className="text-silver text-sm">{label}</span>
     </div>
   );
@@ -40,11 +40,11 @@ export default function IndustriesPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative py-32 bg-deep-space overflow-hidden">
+      <section className="relative py-32 bg-white dark:bg-deep-space overflow-hidden">
         {/* Enhanced Ambient Orbs */}
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-electric-cyan/10 rounded-full blur-[150px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-quantum-violet/10 rounded-full blur-[150px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-neon-mint/5 rounded-full blur-[180px]" />
+        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-emerald-pro-600/10 rounded-full blur-[150px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-emerald-pro-500/10 rounded-full blur-[150px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-emerald-pro-400/5 rounded-full blur-[180px]" />
 
         <Container className="relative z-10">
           <motion.div
@@ -55,13 +55,13 @@ export default function IndustriesPage() {
           >
             {/* Tech Badge */}
             <div className="tech-badge mb-6">
-              <span className="text-sm font-medium text-electric-cyan">
+              <span className="text-sm font-medium text-emerald-pro-600">
                 B2B Industry Expertise
               </span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-light-text dark:text-white mb-6">
               <span className="headline-underline gradient-text-cyan-violet">Industries We Serve</span>
             </h1>
 
@@ -91,7 +91,7 @@ export default function IndustriesPage() {
       <div className="section-divider max-w-4xl mx-auto" />
 
       {/* Industries Grid */}
-      <section id="industries" className="py-20 bg-deep-space">
+      <section id="industries" className="py-20 bg-white dark:bg-deep-space">
         <Container>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {displayedIndustries.map((industry, index) => {
@@ -108,20 +108,20 @@ export default function IndustriesPage() {
                 >
                   <Link href={`/industries/${industry.id}`} className="block group h-full">
                     {/* Brand Board v1.0 - Interactive Card Pattern with Enhanced Hover */}
-                    <div className="relative h-full p-6 rounded-xl border border-graphite bg-midnight-blue transition-all duration-200 hover:border-electric-cyan/50 hover:bg-graphite hover:-translate-y-1 hover:shadow-card-hover overflow-hidden">
+                    <div className="relative h-full p-6 rounded-xl border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue transition-all duration-200 hover:border-emerald-pro-600/50 hover:bg-graphite hover:-translate-y-1 hover:shadow-card-hover overflow-hidden">
                       {/* Top accent line on hover */}
-                      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-electric-cyan to-quantum-violet opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-emerald-pro-600 to-emerald-pro-500 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
 
                       {/* Icon and Arrow Row */}
                       <div className="flex justify-between items-start mb-6">
-                        <div className={`w-12 h-12 ${colors.iconBg} rounded-lg flex items-center justify-center transition-all duration-200 group-hover:bg-electric-cyan/10 group-hover:border group-hover:border-electric-cyan/30`}>
-                          <Icon className={`h-5 w-5 ${colors.text} transition-all duration-200 group-hover:text-electric-cyan group-hover:scale-110`} />
+                        <div className={`w-12 h-12 ${colors.iconBg} rounded-lg flex items-center justify-center transition-all duration-200 group-hover:bg-emerald-pro-600/10 group-hover:border group-hover:border-emerald-pro-600/30`}>
+                          <Icon className={`h-5 w-5 ${colors.text} transition-all duration-200 group-hover:text-emerald-pro-600 group-hover:scale-110`} />
                         </div>
-                        <ArrowRight className="h-5 w-5 text-steel opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:text-electric-cyan transition-all duration-200" />
+                        <ArrowRight className="h-5 w-5 text-light-text-muted dark:text-steel opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:text-emerald-pro-600 transition-all duration-200" />
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-electric-cyan transition-colors">
+                      <h3 className="text-xl font-semibold text-light-text dark:text-white mb-2 group-hover:text-emerald-pro-600 transition-colors">
                         {industry.name}
                       </h3>
 
@@ -131,7 +131,7 @@ export default function IndustriesPage() {
                       </p>
 
                       {/* Description */}
-                      <p className="text-steel text-sm leading-relaxed">
+                      <p className="text-light-text-muted dark:text-steel text-sm leading-relaxed">
                         {industry.shortDescription}
                       </p>
                     </div>
@@ -153,7 +153,7 @@ export default function IndustriesPage() {
               {/* Brand Board v1.0 - Secondary Button */}
               <button
                 onClick={() => setShowAll(true)}
-                className="border border-electric-cyan text-electric-cyan px-6 py-3 rounded-lg font-semibold hover:bg-electric-cyan/10 transition-all duration-200 inline-flex items-center gap-2"
+                className="border border-emerald-pro-600 text-emerald-pro-600 px-6 py-3 rounded-lg font-semibold hover:bg-emerald-pro-600/10 transition-all duration-200 inline-flex items-center gap-2"
               >
                 View All {industries.length} Industries
                 <ArrowRight className="h-5 w-5" />
@@ -167,10 +167,10 @@ export default function IndustriesPage() {
       <div className="section-divider max-w-4xl mx-auto" />
 
       {/* CTA Section */}
-      <section className="relative py-32 bg-deep-space overflow-hidden">
+      <section className="relative py-32 bg-white dark:bg-deep-space overflow-hidden">
         {/* Enhanced Ambient Orbs */}
-        <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-quantum-violet/10 rounded-full blur-[150px]" />
-        <div className="absolute bottom-1/3 left-1/4 w-[400px] h-[400px] bg-electric-cyan/10 rounded-full blur-[150px]" />
+        <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-emerald-pro-500/10 rounded-full blur-[150px]" />
+        <div className="absolute bottom-1/3 left-1/4 w-[400px] h-[400px] bg-emerald-pro-600/10 rounded-full blur-[150px]" />
 
         <Container className="relative z-10">
           <motion.div
@@ -180,7 +180,7 @@ export default function IndustriesPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-light-text dark:text-white mb-6">
               Ready to <span className="headline-underline gradient-text-cyan-violet">Dominate Your Industry</span>?
             </h2>
             <p className="text-lg text-silver mb-10">
@@ -197,7 +197,7 @@ export default function IndustriesPage() {
               {/* Brand Board v1.0 - Ghost Button */}
               <Link
                 href="/case-studies"
-                className="text-steel px-6 py-3 rounded-lg font-medium hover:text-white hover:bg-graphite transition-all duration-200"
+                className="text-light-text-muted dark:text-steel px-6 py-3 rounded-lg font-medium hover:text-light-text dark:text-white hover:bg-graphite transition-all duration-200"
               >
                 View Case Studies
               </Link>

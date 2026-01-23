@@ -56,8 +56,8 @@ export default function CareersPage() {
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-midnight-blue/30 to-deep-space" />
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-quantum-violet/20 rounded-full blur-[150px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-electric-cyan/15 rounded-full blur-[150px]" />
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-emerald-pro-500/20 rounded-full blur-[150px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-emerald-pro-600/15 rounded-full blur-[150px]" />
 
         <Container className="relative z-10">
           <motion.div
@@ -67,11 +67,11 @@ export default function CareersPage() {
             className="text-center max-w-4xl mx-auto"
           >
             <div className="tech-badge mb-6">
-              <Users className="w-4 h-4 text-neon-mint" />
-              <span className="text-sm font-medium text-neon-mint">We&apos;re Hiring</span>
+              <Users className="w-4 h-4 text-emerald-pro-400" />
+              <span className="text-sm font-medium text-emerald-pro-400">We&apos;re Hiring</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-light-text dark:text-white mb-6">
               Join the Team Building the{" "}
               <span className="gradient-text-cyan-violet headline-underline">
                 Future of Sales
@@ -94,7 +94,7 @@ export default function CareersPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-6">
                 Why XGrowthOS?
               </h2>
               <p className="text-silver mb-8 leading-relaxed">
@@ -103,7 +103,7 @@ export default function CareersPage() {
               <div className="grid grid-cols-2 gap-4">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-center gap-2">
-                    <Zap className="h-4 w-4 text-electric-cyan" />
+                    <Zap className="h-4 w-4 text-emerald-pro-600" />
                     <span className="text-silver text-sm">{benefit}</span>
                   </div>
                 ))}
@@ -115,24 +115,24 @@ export default function CareersPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="p-8 rounded-3xl border border-electric-cyan/20 bg-gradient-to-br from-midnight-blue/50 to-deep-space/50"
+              className="p-8 rounded-3xl border border-emerald-pro-600/20 bg-gradient-to-br from-midnight-blue/50 to-deep-space/50"
             >
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
-                  <p className="text-4xl font-sora font-bold text-electric-cyan">5</p>
-                  <p className="text-steel text-sm">AI Engines</p>
+                  <p className="text-4xl font-sora font-bold text-emerald-pro-600">5</p>
+                  <p className="text-light-text-muted dark:text-steel text-sm">AI Engines</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-4xl font-sora font-bold text-quantum-violet">LA</p>
-                  <p className="text-steel text-sm">Based</p>
+                  <p className="text-4xl font-sora font-bold text-emerald-pro-500">LA</p>
+                  <p className="text-light-text-muted dark:text-steel text-sm">Based</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-4xl font-sora font-bold text-neon-mint">2024</p>
-                  <p className="text-steel text-sm">Founded</p>
+                  <p className="text-4xl font-sora font-bold text-emerald-pro-400">2024</p>
+                  <p className="text-light-text-muted dark:text-steel text-sm">Founded</p>
                 </div>
                 <div className="text-center">
                   <p className="text-4xl font-sora font-bold text-energy-orange">Remote</p>
-                  <p className="text-steel text-sm">First</p>
+                  <p className="text-light-text-muted dark:text-steel text-sm">First</p>
                 </div>
               </div>
             </motion.div>
@@ -150,7 +150,7 @@ export default function CareersPage() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
               Open Positions
             </h2>
             <p className="text-silver">
@@ -168,24 +168,24 @@ export default function CareersPage() {
                 transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
               >
                 <Link href="/contact" className="block group">
-                  <div className="p-6 rounded-2xl border border-electric-cyan/20 bg-gradient-to-br from-midnight-blue/50 to-deep-space/50 hover:border-electric-cyan/40 transition-all">
+                  <div className="p-6 rounded-2xl border border-emerald-pro-600/20 bg-gradient-to-br from-midnight-blue/50 to-deep-space/50 hover:border-emerald-pro-600/40 transition-all">
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                       <div>
-                        <h3 className="text-xl font-sora font-semibold text-white group-hover:text-electric-cyan transition-colors">
+                        <h3 className="text-xl font-sora font-semibold text-light-text dark:text-white group-hover:text-emerald-pro-600 transition-colors">
                           {job.title}
                         </h3>
                         <div className="flex flex-wrap items-center gap-4 mt-2">
-                          <span className="flex items-center gap-1 text-steel text-sm">
+                          <span className="flex items-center gap-1 text-light-text-muted dark:text-steel text-sm">
                             <Briefcase className="h-4 w-4" />
                             {job.department}
                           </span>
-                          <span className="flex items-center gap-1 text-steel text-sm">
+                          <span className="flex items-center gap-1 text-light-text-muted dark:text-steel text-sm">
                             <MapPin className="h-4 w-4" />
                             {job.location}
                           </span>
                         </div>
                       </div>
-                      <div className="flex items-center gap-2 text-electric-cyan group-hover:gap-3 transition-all">
+                      <div className="flex items-center gap-2 text-emerald-pro-600 group-hover:gap-3 transition-all">
                         Apply
                         <ArrowRight className="h-4 w-4" />
                       </div>

@@ -233,13 +233,13 @@ export default function SettingsPage() {
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-steel mb-2">
-          <Link href="/dashboard" className="hover:text-electric-cyan transition-colors">Portal</Link>
+        <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-2">
+          <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
           <span>/</span>
-          <span className="text-electric-cyan">Settings</span>
+          <span className="text-emerald-pro-600">Settings</span>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-white">Settings</h1>
-        <p className="text-steel mt-1">Manage your account and preferences</p>
+        <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">Settings</h1>
+        <p className="text-light-text-muted dark:text-steel mt-1">Manage your account and preferences</p>
       </motion.div>
 
       <motion.div variants={itemVariants}>
@@ -254,8 +254,8 @@ export default function SettingsPage() {
                   className={cn(
                     "w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-colors",
                     activeTab === tab.id
-                      ? "bg-electric-cyan/10 text-electric-cyan border border-electric-cyan/20"
-                      : "text-steel hover:text-white hover:bg-deep-space/50"
+                      ? "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20"
+                      : "text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-white dark:bg-deep-space/50"
                   )}
                 >
                   <tab.icon className="h-5 w-5" />
@@ -269,20 +269,20 @@ export default function SettingsPage() {
           <div className="flex-1">
             {activeTab === "profile" && (
               <div className="glass-premium p-6">
-                <h3 className="text-lg font-sora font-semibold text-white mb-6">
+                <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-6">
                   Profile Settings
                 </h3>
 
                 <div className="space-y-6">
                   <div className="flex items-center gap-6">
-                    <div className="h-20 w-20 rounded-full bg-quantum-violet/20 flex items-center justify-center">
-                      <span className="text-2xl font-bold text-quantum-violet">MM</span>
+                    <div className="h-20 w-20 rounded-full bg-emerald-pro-500/20 flex items-center justify-center">
+                      <span className="text-2xl font-bold text-emerald-pro-500">MM</span>
                     </div>
                     <div>
                       <Button variant="outline" size="sm">
                         Change Photo
                       </Button>
-                      <p className="text-xs text-steel mt-2">
+                      <p className="text-xs text-light-text-muted dark:text-steel mt-2">
                         JPG, GIF or PNG. Max size 2MB.
                       </p>
                     </div>
@@ -297,7 +297,7 @@ export default function SettingsPage() {
                         type="text"
                         value={profile.name}
                         onChange={(e) => setProfile({ ...profile, name: e.target.value })}
-                        className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                       />
                     </div>
                     <div>
@@ -308,7 +308,7 @@ export default function SettingsPage() {
                         type="email"
                         value={profile.email}
                         onChange={(e) => setProfile({ ...profile, email: e.target.value })}
-                        className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                       />
                     </div>
                     <div>
@@ -319,7 +319,7 @@ export default function SettingsPage() {
                         type="text"
                         value={profile.role}
                         disabled
-                        className="w-full h-11 rounded-lg border border-graphite bg-deep-space/50 px-4 text-steel cursor-not-allowed"
+                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space/50 px-4 text-light-text-muted dark:text-steel cursor-not-allowed"
                       />
                     </div>
                     <div>
@@ -329,7 +329,7 @@ export default function SettingsPage() {
                       <select
                         value={profile.timezone}
                         onChange={(e) => setProfile({ ...profile, timezone: e.target.value })}
-                        className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                       >
                         <option value="America/Los_Angeles">Pacific Time (PT)</option>
                         <option value="America/Denver">Mountain Time (MT)</option>
@@ -339,7 +339,7 @@ export default function SettingsPage() {
                     </div>
                   </div>
 
-                  <div className="flex justify-end pt-4 border-t border-graphite">
+                  <div className="flex justify-end pt-4 border-t border-border-default dark:border-graphite">
                     <Button className="gap-2">
                       <Save className="h-4 w-4" />
                       Save Changes
@@ -351,7 +351,7 @@ export default function SettingsPage() {
 
             {activeTab === "company" && (
               <div className="glass-premium p-6">
-                <h3 className="text-lg font-sora font-semibold text-white mb-6">
+                <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-6">
                   Company Settings
                 </h3>
 
@@ -365,7 +365,7 @@ export default function SettingsPage() {
                         type="text"
                         value={company.name}
                         onChange={(e) => setCompany({ ...company, name: e.target.value })}
-                        className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                       />
                     </div>
                     <div>
@@ -376,7 +376,7 @@ export default function SettingsPage() {
                         type="url"
                         value={company.website}
                         onChange={(e) => setCompany({ ...company, website: e.target.value })}
-                        className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                       />
                     </div>
                     <div>
@@ -386,7 +386,7 @@ export default function SettingsPage() {
                       <select
                         value={company.industry}
                         onChange={(e) => setCompany({ ...company, industry: e.target.value })}
-                        className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                       >
                         <option value="B2B SaaS">B2B SaaS</option>
                         <option value="Technology">Technology</option>
@@ -402,7 +402,7 @@ export default function SettingsPage() {
                       <select
                         value={company.size}
                         onChange={(e) => setCompany({ ...company, size: e.target.value })}
-                        className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                       >
                         <option value="1-10">1-10 employees</option>
                         <option value="11-50">11-50 employees</option>
@@ -413,7 +413,7 @@ export default function SettingsPage() {
                     </div>
                   </div>
 
-                  <div className="flex justify-end pt-4 border-t border-graphite">
+                  <div className="flex justify-end pt-4 border-t border-border-default dark:border-graphite">
                     <Button className="gap-2">
                       <Save className="h-4 w-4" />
                       Save Changes
@@ -425,7 +425,7 @@ export default function SettingsPage() {
 
             {activeTab === "notifications" && (
               <div className="glass-premium p-6">
-                <h3 className="text-lg font-sora font-semibold text-white mb-6">
+                <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-6">
                   Notification Preferences
                 </h3>
 
@@ -439,11 +439,11 @@ export default function SettingsPage() {
                   ].map((item) => (
                     <div
                       key={item.key}
-                      className="flex items-center justify-between p-4 rounded-lg border border-graphite bg-deep-space/50"
+                      className="flex items-center justify-between p-4 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space/50"
                     >
                       <div>
-                        <p className="font-medium text-white">{item.label}</p>
-                        <p className="text-sm text-steel">{item.description}</p>
+                        <p className="font-medium text-light-text dark:text-white">{item.label}</p>
+                        <p className="text-sm text-light-text-muted dark:text-steel">{item.description}</p>
                       </div>
                       <button
                         onClick={() =>
@@ -455,7 +455,7 @@ export default function SettingsPage() {
                         className={cn(
                           "relative h-6 w-11 rounded-full transition-colors",
                           notifications[item.key as keyof typeof notifications]
-                            ? "bg-electric-cyan"
+                            ? "bg-emerald-pro-600"
                             : "bg-graphite"
                         )}
                       >
@@ -476,13 +476,13 @@ export default function SettingsPage() {
 
             {activeTab === "security" && (
               <div className="glass-premium p-6">
-                <h3 className="text-lg font-sora font-semibold text-white mb-6">
+                <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-6">
                   Security Settings
                 </h3>
 
                 <div className="space-y-6">
-                  <div className="p-4 rounded-lg border border-graphite bg-deep-space/50">
-                    <h4 className="font-medium text-white mb-4">Change Password</h4>
+                  <div className="p-4 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space/50">
+                    <h4 className="font-medium text-light-text dark:text-white mb-4">Change Password</h4>
                     <div className="space-y-4">
                       <div>
                         <label className="block text-sm font-medium text-silver mb-2">
@@ -491,7 +491,7 @@ export default function SettingsPage() {
                         <input
                           type="password"
                           placeholder="Enter current password"
-                          className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                         />
                       </div>
                       <div>
@@ -501,7 +501,7 @@ export default function SettingsPage() {
                         <input
                           type="password"
                           placeholder="Enter new password"
-                          className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                         />
                       </div>
                       <div>
@@ -511,16 +511,16 @@ export default function SettingsPage() {
                         <input
                           type="password"
                           placeholder="Confirm new password"
-                          className="w-full h-11 rounded-lg border border-graphite bg-deep-space px-4 text-white placeholder:text-steel focus:border-electric-cyan/50 focus:outline-none focus:ring-1 focus:ring-electric-cyan/50"
+                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                         />
                       </div>
                       <Button>Update Password</Button>
                     </div>
                   </div>
 
-                  <div className="p-4 rounded-lg border border-graphite bg-deep-space/50">
-                    <h4 className="font-medium text-white mb-2">Two-Factor Authentication</h4>
-                    <p className="text-sm text-steel mb-4">
+                  <div className="p-4 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space/50">
+                    <h4 className="font-medium text-light-text dark:text-white mb-2">Two-Factor Authentication</h4>
+                    <p className="text-sm text-light-text-muted dark:text-steel mb-4">
                       Add an extra layer of security to your account
                     </p>
                     <Button variant="outline">Enable 2FA</Button>
@@ -531,24 +531,24 @@ export default function SettingsPage() {
 
             {activeTab === "api" && (
               <div className="glass-premium p-6">
-                <h3 className="text-lg font-sora font-semibold text-white mb-6">
+                <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-6">
                   API Keys
                 </h3>
 
                 <div className="space-y-6">
-                  <div className="p-4 rounded-lg border border-graphite bg-deep-space/50">
+                  <div className="p-4 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space/50">
                     <div className="flex items-center justify-between mb-4">
                       <div>
-                        <h4 className="font-medium text-white">Production API Key</h4>
-                        <p className="text-sm text-steel">Use this key for production integrations</p>
+                        <h4 className="font-medium text-light-text dark:text-white">Production API Key</h4>
+                        <p className="text-sm text-light-text-muted dark:text-steel">Use this key for production integrations</p>
                       </div>
-                      <span className="px-2 py-1 rounded bg-neon-mint/20 text-neon-mint text-xs font-medium">
+                      <span className="px-2 py-1 rounded bg-emerald-pro-400/20 text-emerald-pro-400 text-xs font-medium">
                         Active
                       </span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="flex-1 h-11 rounded-lg border border-graphite bg-deep-space px-4 flex items-center">
-                        <code className="text-sm text-steel font-mono">
+                      <div className="flex-1 h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 flex items-center">
+                        <code className="text-sm text-light-text-muted dark:text-steel font-mono">
                           {showApiKey ? "qi_prod_a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6" : "qi_prod_••••••••••••••••••••••••••••••••"}
                         </code>
                       </div>
@@ -569,8 +569,8 @@ export default function SettingsPage() {
                     <div className="flex items-start gap-3">
                       <Shield className="h-5 w-5 text-energy-orange shrink-0 mt-0.5" />
                       <div>
-                        <h4 className="font-medium text-white">Keep your API key secure</h4>
-                        <p className="text-sm text-steel mt-1">
+                        <h4 className="font-medium text-light-text dark:text-white">Keep your API key secure</h4>
+                        <p className="text-sm text-light-text-muted dark:text-steel mt-1">
                           Never share your API key in public repositories or client-side code.
                           Regenerate immediately if compromised.
                         </p>
@@ -592,38 +592,38 @@ export default function SettingsPage() {
                 <div className="grid grid-cols-3 gap-4">
                   <div className="glass-premium p-4">
                     <div className="flex items-center gap-3">
-                      <div className="h-10 w-10 rounded-lg bg-neon-mint/20 flex items-center justify-center">
-                        <Check className="h-5 w-5 text-neon-mint" />
+                      <div className="h-10 w-10 rounded-lg bg-emerald-pro-400/20 flex items-center justify-center">
+                        <Check className="h-5 w-5 text-emerald-pro-400" />
                       </div>
                       <div>
-                        <p className="text-2xl font-bold text-white">
+                        <p className="text-2xl font-bold text-light-text dark:text-white">
                           {integrations.filter((i) => i.connected).length}
                         </p>
-                        <p className="text-sm text-steel">Connected</p>
+                        <p className="text-sm text-light-text-muted dark:text-steel">Connected</p>
                       </div>
                     </div>
                   </div>
                   <div className="glass-premium p-4">
                     <div className="flex items-center gap-3">
                       <div className="h-10 w-10 rounded-lg bg-steel/20 flex items-center justify-center">
-                        <Link2 className="h-5 w-5 text-steel" />
+                        <Link2 className="h-5 w-5 text-light-text-muted dark:text-steel" />
                       </div>
                       <div>
-                        <p className="text-2xl font-bold text-white">
+                        <p className="text-2xl font-bold text-light-text dark:text-white">
                           {integrations.filter((i) => !i.connected).length}
                         </p>
-                        <p className="text-sm text-steel">Available</p>
+                        <p className="text-sm text-light-text-muted dark:text-steel">Available</p>
                       </div>
                     </div>
                   </div>
                   <div className="glass-premium p-4">
                     <div className="flex items-center gap-3">
-                      <div className="h-10 w-10 rounded-lg bg-electric-cyan/20 flex items-center justify-center">
-                        <RefreshCw className="h-5 w-5 text-electric-cyan" />
+                      <div className="h-10 w-10 rounded-lg bg-emerald-pro-600/20 flex items-center justify-center">
+                        <RefreshCw className="h-5 w-5 text-emerald-pro-600" />
                       </div>
                       <div>
-                        <p className="text-2xl font-bold text-white">5 min</p>
-                        <p className="text-sm text-steel">Last Sync</p>
+                        <p className="text-2xl font-bold text-light-text dark:text-white">5 min</p>
+                        <p className="text-sm text-light-text-muted dark:text-steel">Last Sync</p>
                       </div>
                     </div>
                   </div>
@@ -643,11 +643,11 @@ export default function SettingsPage() {
                         className="glass-premium p-6"
                       >
                         <div className="flex items-center gap-2 mb-4">
-                          <CategoryIcon className="h-5 w-5 text-electric-cyan" />
-                          <h3 className="text-lg font-sora font-semibold text-white">
+                          <CategoryIcon className="h-5 w-5 text-emerald-pro-600" />
+                          <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white">
                             {categoryLabels[category].label}
                           </h3>
-                          <span className="ml-2 px-2 py-0.5 rounded-full bg-deep-space text-xs text-steel">
+                          <span className="ml-2 px-2 py-0.5 rounded-full bg-white dark:bg-deep-space text-xs text-light-text-muted dark:text-steel">
                             {categoryIntegrations.filter((i) => i.connected).length}/
                             {categoryIntegrations.length} connected
                           </span>
@@ -660,31 +660,31 @@ export default function SettingsPage() {
                               className={cn(
                                 "flex items-center justify-between p-4 rounded-lg border transition-colors",
                                 integration.connected
-                                  ? "border-neon-mint/30 bg-neon-mint/5"
-                                  : "border-graphite bg-deep-space/50 hover:border-electric-cyan/30"
+                                  ? "border-emerald-pro-400/30 bg-emerald-pro-400/5"
+                                  : "border-border-default dark:border-graphite bg-white dark:bg-deep-space/50 hover:border-emerald-pro-600/30"
                               )}
                             >
                               <div className="flex items-center gap-4">
-                                <div className="h-12 w-12 rounded-lg bg-midnight-blue flex items-center justify-center text-2xl">
+                                <div className="h-12 w-12 rounded-lg bg-light-bg-secondary dark:bg-midnight-blue flex items-center justify-center text-2xl">
                                   {integration.icon}
                                 </div>
                                 <div>
                                   <div className="flex items-center gap-2">
-                                    <h4 className="font-medium text-white">
+                                    <h4 className="font-medium text-light-text dark:text-white">
                                       {integration.name}
                                     </h4>
                                     {integration.connected && (
-                                      <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-neon-mint/20 text-neon-mint text-xs">
+                                      <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-pro-400/20 text-emerald-pro-400 text-xs">
                                         <Check className="h-3 w-3" />
                                         Connected
                                       </span>
                                     )}
                                   </div>
-                                  <p className="text-sm text-steel">
+                                  <p className="text-sm text-light-text-muted dark:text-steel">
                                     {integration.description}
                                   </p>
                                   {integration.lastSync && (
-                                    <p className="text-xs text-steel mt-1">
+                                    <p className="text-xs text-light-text-muted dark:text-steel mt-1">
                                       Last synced: {integration.lastSync}
                                     </p>
                                   )}
@@ -734,15 +734,15 @@ export default function SettingsPage() {
                 )}
 
                 {/* Request Integration */}
-                <div className="rounded-xl border border-dashed border-graphite bg-deep-space/30 p-6">
+                <div className="rounded-xl border border-dashed border-border-default dark:border-graphite bg-white dark:bg-deep-space/30 p-6">
                   <div className="text-center">
-                    <div className="h-12 w-12 rounded-lg bg-quantum-violet/20 flex items-center justify-center mx-auto mb-3">
-                      <Zap className="h-6 w-6 text-quantum-violet" />
+                    <div className="h-12 w-12 rounded-lg bg-emerald-pro-500/20 flex items-center justify-center mx-auto mb-3">
+                      <Zap className="h-6 w-6 text-emerald-pro-500" />
                     </div>
-                    <h4 className="font-medium text-white mb-1">
+                    <h4 className="font-medium text-light-text dark:text-white mb-1">
                       Need a different integration?
                     </h4>
-                    <p className="text-sm text-steel mb-4">
+                    <p className="text-sm text-light-text-muted dark:text-steel mb-4">
                       We're always adding new integrations. Let us know what you need.
                     </p>
                     <Button variant="outline">Request Integration</Button>
