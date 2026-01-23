@@ -57,7 +57,7 @@ export default function RegisterPage() {
             <br />
             <span className="text-emerald-pro-600">your outreach?</span>
           </h1>
-          <p className="text-lg text-silver max-w-md">
+          <p className="text-lg text-light-text-secondary dark:text-silver max-w-md">
             Join leading B2B companies using XGrowthOS to automate their
             cold email campaigns with AI-powered precision.
           </p>
@@ -74,7 +74,7 @@ export default function RegisterPage() {
                 <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-pro-400/20">
                   <CheckCircle className="h-4 w-4 text-emerald-pro-400" />
                 </div>
-                <span className="text-silver">{feature}</span>
+                <span className="text-light-text-secondary dark:text-silver">{feature}</span>
               </div>
             ))}
           </div>
@@ -134,7 +134,7 @@ export default function RegisterPage() {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-medium text-silver mb-2"
+                      className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2"
                     >
                       Full name
                     </label>
@@ -156,7 +156,7 @@ export default function RegisterPage() {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-silver mb-2"
+                      className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2"
                     >
                       Work email
                     </label>
@@ -178,7 +178,7 @@ export default function RegisterPage() {
                   <div>
                     <label
                       htmlFor="company"
-                      className="block text-sm font-medium text-silver mb-2"
+                      className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2"
                     >
                       Company name
                     </label>
@@ -200,7 +200,7 @@ export default function RegisterPage() {
                   <div>
                     <label
                       htmlFor="password"
-                      className="block text-sm font-medium text-silver mb-2"
+                      className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2"
                     >
                       Create password
                     </label>

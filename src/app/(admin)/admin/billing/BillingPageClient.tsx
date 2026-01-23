@@ -269,7 +269,7 @@ function StatCard({
       </div>
       <div className="mt-4">
         <p className="text-2xl font-sora font-bold text-light-text dark:text-white">{value}</p>
-        <p className="text-sm text-silver mt-1">{title}</p>
+        <p className="text-sm text-light-text-secondary dark:text-silver mt-1">{title}</p>
         <p className="text-xs text-light-text-muted dark:text-steel mt-0.5">{subtitle}</p>
       </div>
     </div>

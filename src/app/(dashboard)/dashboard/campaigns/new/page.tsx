@@ -251,7 +251,7 @@ export default function NewCampaignPage() {
 
               <div className="space-y-6">
                 <div>
-                  <label className="block text-sm font-medium text-silver mb-2">
+                  <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                     Campaign Name
                   </label>
                   <input
@@ -265,7 +265,7 @@ export default function NewCampaignPage() {
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-silver mb-2">
+                    <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                       <Building className="inline h-4 w-4 mr-1" />
                       Target Industry
                     </label>
@@ -285,7 +285,7 @@ export default function NewCampaignPage() {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-silver mb-2">
+                    <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                       <Users className="inline h-4 w-4 mr-1" />
                       Target Role
                     </label>
@@ -300,7 +300,7 @@ export default function NewCampaignPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-silver mb-2">
+                  <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                     <Zap className="inline h-4 w-4 mr-1" />
                     Value Proposition
                   </label>
@@ -315,7 +315,7 @@ export default function NewCampaignPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-silver mb-2">
+                  <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                     <MessageSquare className="inline h-4 w-4 mr-1" />
                     Call to Action
                   </label>
@@ -372,12 +372,12 @@ export default function NewCampaignPage() {
                 </button>
                 <button className="p-4 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space/50 text-center hover:border-emerald-pro-600/30 transition-colors">
                   <Upload className="h-6 w-6 text-light-text-muted dark:text-steel mx-auto mb-2" />
-                  <p className="text-sm font-medium text-silver">Upload CSV</p>
+                  <p className="text-sm font-medium text-light-text-secondary dark:text-silver">Upload CSV</p>
                   <p className="text-xs text-light-text-muted dark:text-steel">Import new contacts</p>
                 </button>
                 <button className="p-4 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space/50 text-center hover:border-emerald-pro-600/30 transition-colors">
                   <Search className="h-6 w-6 text-light-text-muted dark:text-steel mx-auto mb-2" />
-                  <p className="text-sm font-medium text-silver">Build List</p>
+                  <p className="text-sm font-medium text-light-text-secondary dark:text-silver">Build List</p>
                   <p className="text-xs text-light-text-muted dark:text-steel">Create from filters</p>
                 </button>
               </div>
@@ -430,7 +430,7 @@ export default function NewCampaignPage() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <Info className="h-5 w-5 text-emerald-pro-600" />
-                    <span className="text-silver">
+                    <span className="text-light-text-secondary dark:text-silver">
                       {selectedLeadLists.length} list{selectedLeadLists.length !== 1 ? "s" : ""} selected
                     </span>
                   </div>
@@ -572,7 +572,7 @@ export default function NewCampaignPage() {
                         </div>
                       </div>
                       <div className="pl-11">
-                        <pre className="text-sm text-silver whitespace-pre-wrap font-sans">
+                        <pre className="text-sm text-light-text-secondary dark:text-silver whitespace-pre-wrap font-sans">
                           {seq.body}
                         </pre>
                       </div>

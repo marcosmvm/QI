@@ -77,7 +77,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
               <span className="headline-underline">{study.title}</span>
             </h1>
 
-            <p className="text-xl text-silver mb-10">
+            <p className="text-xl text-light-text-secondary dark:text-silver mb-10">
               {study.subtitle}
             </p>
 
@@ -128,7 +128,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
               <h2 className="text-2xl md:text-3xl font-sora font-bold text-light-text dark:text-white mb-6">
                 The <span className="text-energy-orange">Challenge</span>
               </h2>
-              <p className="text-lg text-silver leading-relaxed">
+              <p className="text-lg text-light-text-secondary dark:text-silver leading-relaxed">
                 {study.challenge}
               </p>
             </motion.div>
@@ -143,7 +143,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
               <h2 className="text-2xl md:text-3xl font-sora font-bold text-light-text dark:text-white mb-6">
                 The <span className="text-emerald-pro-600">Solution</span>
               </h2>
-              <p className="text-lg text-silver leading-relaxed">
+              <p className="text-lg text-light-text-secondary dark:text-silver leading-relaxed">
                 {study.solution}
               </p>
             </motion.div>
@@ -158,7 +158,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
               <h2 className="text-2xl md:text-3xl font-sora font-bold text-light-text dark:text-white mb-6">
                 The <span className="text-emerald-pro-400">Results</span>
               </h2>
-              <p className="text-lg text-silver leading-relaxed">
+              <p className="text-lg text-light-text-secondary dark:text-silver leading-relaxed">
                 {study.results}
               </p>
             </motion.div>
@@ -230,7 +230,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
                 <CheckCircle className="h-6 w-6 text-emerald-pro-400 flex-shrink-0" />
                 <div>
                   <p className="text-2xl font-sora font-bold text-emerald-pro-600">{metric.value}</p>
-                  <p className="text-silver">{metric.label}</p>
+                  <p className="text-light-text-secondary dark:text-silver">{metric.label}</p>
                 </div>
               </motion.div>
             ))}

@@ -175,7 +175,7 @@ export function ClientsTable({ clients, industries }: ClientsTableProps) {
           className={`flex items-center gap-2 px-4 py-2 border rounded-lg transition-colors ${
             showFilters || hasActiveFilters
               ? "border-emerald-pro-600/50 text-emerald-pro-600 bg-emerald-pro-600/10"
-              : "border-border-default dark:border-graphite text-silver hover:bg-light-bg-secondary dark:bg-midnight-blue/30"
+              : "border-border-default dark:border-graphite text-light-text-secondary dark:text-silver hover:bg-light-bg-secondary dark:bg-midnight-blue/30"
           }`}
         >
           <Filter className="h-4 w-4" />
@@ -362,12 +362,12 @@ export function ClientsTable({ clients, industries }: ClientsTableProps) {
                     <ClientHealthBadge score={client.healthScore} size="sm" />
                   </td>
                   <td className="px-6 py-4">
-                    <span className="text-sm text-silver capitalize">
+                    <span className="text-sm text-light-text-secondary dark:text-silver capitalize">
                       {client.planType || "-"}
                     </span>
                   </td>
                   <td className="px-6 py-4">
-                    <span className="text-sm text-silver">
+                    <span className="text-sm text-light-text-secondary dark:text-silver">
                       {client.activeCampaigns}/{client.campaignCount}
                     </span>
                     <span className="text-xs text-light-text-muted dark:text-steel ml-1">active</span>
@@ -437,7 +437,7 @@ export function ClientsTable({ clients, industries }: ClientsTableProps) {
               <ChevronLeft className="h-4 w-4" />
             </button>
 
-            <span className="text-sm text-silver px-3">
+            <span className="text-sm text-light-text-secondary dark:text-silver px-3">
               Page {currentPage} of {totalPages}
             </span>
 
@@ -475,7 +475,7 @@ function SortableHeader({
       <button
         onClick={() => onSort(field)}
         className={`flex items-center gap-1 text-xs font-medium uppercase tracking-wider transition-colors ${
-          isActive ? "text-emerald-pro-600" : "text-light-text-muted dark:text-steel hover:text-silver"
+          isActive ? "text-emerald-pro-600" : "text-light-text-muted dark:text-steel hover:text-light-text-secondary dark:text-silver"
         }`}
       >
         {label}

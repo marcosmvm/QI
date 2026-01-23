@@ -166,7 +166,7 @@ export default function ROICalculatorPage() {
                   {/* Monthly Volume */}
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <label className="text-sm font-medium text-silver flex items-center gap-2">
+                      <label className="text-sm font-medium text-light-text-secondary dark:text-silver flex items-center gap-2">
                         <Mail className="h-4 w-4 text-emerald-pro-600" />
                         Monthly Email Volume
                       </label>
@@ -194,7 +194,7 @@ export default function ROICalculatorPage() {
                   {/* Current Reply Rate */}
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <label className="text-sm font-medium text-silver flex items-center gap-2">
+                      <label className="text-sm font-medium text-light-text-secondary dark:text-silver flex items-center gap-2">
                         <Users className="h-4 w-4 text-emerald-pro-500" />
                         Current Reply Rate
                       </label>
@@ -222,7 +222,7 @@ export default function ROICalculatorPage() {
                   {/* Average Deal Size */}
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <label className="text-sm font-medium text-silver flex items-center gap-2">
+                      <label className="text-sm font-medium text-light-text-secondary dark:text-silver flex items-center gap-2">
                         <DollarSign className="h-4 w-4 text-emerald-pro-400" />
                         Average Deal Size
                       </label>
@@ -250,7 +250,7 @@ export default function ROICalculatorPage() {
                   {/* Sales Cycle */}
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <label className="text-sm font-medium text-silver flex items-center gap-2">
+                      <label className="text-sm font-medium text-light-text-secondary dark:text-silver flex items-center gap-2">
                         <Calendar className="h-4 w-4 text-energy-orange" />
                         Sales Cycle Length
                       </label>
@@ -330,7 +330,7 @@ export default function ROICalculatorPage() {
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-silver">Replies/Month</span>
+                    <span className="text-sm text-light-text-secondary dark:text-silver">Replies/Month</span>
                     <div className="flex items-center gap-4">
                       <span className="text-sm text-light-text-muted dark:text-steel">
                         {results.current.replies}
@@ -342,7 +342,7 @@ export default function ROICalculatorPage() {
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-silver">Meetings/Month</span>
+                    <span className="text-sm text-light-text-secondary dark:text-silver">Meetings/Month</span>
                     <div className="flex items-center gap-4">
                       <span className="text-sm text-light-text-muted dark:text-steel">
                         {results.current.meetings}
@@ -354,7 +354,7 @@ export default function ROICalculatorPage() {
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-silver">Deals/Month</span>
+                    <span className="text-sm text-light-text-secondary dark:text-silver">Deals/Month</span>
                     <div className="flex items-center gap-4">
                       <span className="text-sm text-light-text-muted dark:text-steel">
                         {results.current.deals}

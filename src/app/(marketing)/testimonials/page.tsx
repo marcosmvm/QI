@@ -53,7 +53,7 @@ export default function TestimonialsPage() {
                 Founding Partners
               </span>
             </h1>
-            <p className="text-xl text-silver max-w-2xl mx-auto">
+            <p className="text-xl text-light-text-secondary dark:text-silver max-w-2xl mx-auto">
               We&apos;re building something special. Here&apos;s what we promise to every founding partner who joins us.
             </p>
           </motion.div>
@@ -119,7 +119,7 @@ export default function TestimonialsPage() {
             <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
               Our Promise to You
             </h2>
-            <p className="text-silver max-w-2xl mx-auto">
+            <p className="text-light-text-secondary dark:text-silver max-w-2xl mx-auto">
               These aren&apos;t marketing claims—they&apos;re commitments we stand behind.
             </p>
           </motion.div>
@@ -140,7 +140,7 @@ export default function TestimonialsPage() {
                   </div>
                 </div>
                 <h3 className="text-xl font-semibold text-light-text dark:text-white mb-3">{commitment.title}</h3>
-                <p className="text-silver">{commitment.description}</p>
+                <p className="text-light-text-secondary dark:text-silver">{commitment.description}</p>
               </motion.div>
             ))}
           </div>
@@ -160,7 +160,7 @@ export default function TestimonialsPage() {
             <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
               Why Join as a Founding Partner?
             </h2>
-            <p className="text-silver max-w-2xl mx-auto">
+            <p className="text-light-text-secondary dark:text-silver max-w-2xl mx-auto">
               Early adopters get exclusive benefits that won&apos;t be available later.
             </p>
           </motion.div>
@@ -206,7 +206,7 @@ export default function TestimonialsPage() {
             <h2 className="text-3xl font-sora font-bold text-light-text dark:text-white mb-4">
               Ready to Be a Founding Partner?
             </h2>
-            <p className="text-silver mb-8 max-w-xl mx-auto">
+            <p className="text-light-text-secondary dark:text-silver mb-8 max-w-xl mx-auto">
               Limited spots available. Book a call to discuss if we&apos;re a fit for each other.
             </p>
             <Link href="/contact">

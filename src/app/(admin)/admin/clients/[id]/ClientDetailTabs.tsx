@@ -125,7 +125,7 @@ export function ClientDetailTabs({
                 "flex items-center gap-2 px-4 py-3 text-sm font-medium border-b-2 -mb-px transition-colors",
                 isActive
                   ? "border-emerald-pro-600 text-emerald-pro-600"
-                  : "border-transparent text-light-text-muted dark:text-steel hover:text-silver"
+                  : "border-transparent text-light-text-muted dark:text-steel hover:text-light-text-secondary dark:text-silver"
               )}
             >
               <Icon className="h-4 w-4" />
@@ -459,19 +459,19 @@ function CampaignsTab({
                 <CampaignStatusBadge status={campaign.status} />
               </td>
               <td className="px-6 py-4">
-                <span className="text-sm text-silver">
+                <span className="text-sm text-light-text-secondary dark:text-silver">
                   {campaign.totalSent.toLocaleString()}
                 </span>
               </td>
               <td className="px-6 py-4">
-                <span className="text-sm text-silver">
+                <span className="text-sm text-light-text-secondary dark:text-silver">
                   {campaign.avgOpenRate !== null
                     ? `${campaign.avgOpenRate.toFixed(1)}%`
                     : "-"}
                 </span>
               </td>
               <td className="px-6 py-4">
-                <span className="text-sm text-silver">
+                <span className="text-sm text-light-text-secondary dark:text-silver">
                   {campaign.avgReplyRate !== null
                     ? `${campaign.avgReplyRate.toFixed(1)}%`
                     : "-"}
@@ -545,7 +545,7 @@ function LeadsTab({ leads }: { leads: ClientDetailTabsProps["leads"] }) {
               "px-3 py-1.5 text-xs font-medium rounded-lg transition-colors",
               stageFilter === stage.value
                 ? "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/30"
-                : "bg-white dark:bg-deep-space/30 text-light-text-muted dark:text-steel hover:text-silver border border-transparent"
+                : "bg-white dark:bg-deep-space/30 text-light-text-muted dark:text-steel hover:text-light-text-secondary dark:text-silver border border-transparent"
             )}
           >
             {stage.label}
@@ -593,14 +593,14 @@ function LeadsTab({ leads }: { leads: ClientDetailTabsProps["leads"] }) {
                   <p className="text-xs text-light-text-muted dark:text-steel">{lead.email}</p>
                 </td>
                 <td className="px-6 py-4">
-                  <p className="text-sm text-silver">{lead.company || "-"}</p>
+                  <p className="text-sm text-light-text-secondary dark:text-silver">{lead.company || "-"}</p>
                   <p className="text-xs text-light-text-muted dark:text-steel">{lead.title || ""}</p>
                 </td>
                 <td className="px-6 py-4">
                   <StageBadge stage={lead.stage} />
                 </td>
                 <td className="px-6 py-4">
-                  <span className="text-sm text-silver">{lead.score}</span>
+                  <span className="text-sm text-light-text-secondary dark:text-silver">{lead.score}</span>
                 </td>
                 <td className="px-6 py-4">
                   <span className="text-sm text-light-text-muted dark:text-steel">
@@ -760,7 +760,7 @@ function NotesTab({
                     {new Date(note.createdAt).toLocaleDateString()}
                   </span>
                 </div>
-                <p className="text-sm text-silver whitespace-pre-wrap">
+                <p className="text-sm text-light-text-secondary dark:text-silver whitespace-pre-wrap">
                   {note.content}
                 </p>
               </div>
@@ -808,7 +808,7 @@ function IntegrationItem({
     <div className="flex items-center justify-between p-3 bg-white dark:bg-deep-space/30 rounded-lg">
       <div className="flex items-center gap-2">
         <Icon className="h-4 w-4 text-light-text-muted dark:text-steel" />
-        <span className="text-sm text-silver">{label}</span>
+        <span className="text-sm text-light-text-secondary dark:text-silver">{label}</span>
       </div>
       {connected ? (
         <span className="flex items-center gap-1 text-xs text-emerald-pro-400">

@@ -98,7 +98,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-xl md:text-2xl text-light-text-secondary dark:text-silver/90 max-w-3xl mx-auto mb-8 leading-relaxed"
+            className="text-xl md:text-2xl text-light-text-secondary dark:text-silver max-w-3xl mx-auto mb-8 leading-relaxed"
           >
             Our <span className="text-emerald-pro-600 dark:text-xgrowth-500 font-semibold">5 proprietary AI engines</span> handle compliance, personalization, and optimization—so your cold emails actually get read.
           </motion.p>

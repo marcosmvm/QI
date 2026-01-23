@@ -906,7 +906,7 @@ export default function LeadsPage() {
                 >
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-silver mb-2">First Name *</label>
+                      <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">First Name *</label>
                       <input
                         name="firstName"
                         required
@@ -915,7 +915,7 @@ export default function LeadsPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-silver mb-2">Last Name *</label>
+                      <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">Last Name *</label>
                       <input
                         name="lastName"
                         required
@@ -926,7 +926,7 @@ export default function LeadsPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-silver mb-2">Email *</label>
+                    <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">Email *</label>
                     <input
                       name="email"
                       type="email"
@@ -937,7 +937,7 @@ export default function LeadsPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-silver mb-2">Phone</label>
+                    <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">Phone</label>
                     <input
                       name="phone"
                       type="tel"
@@ -948,7 +948,7 @@ export default function LeadsPage() {
 
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-silver mb-2">Company *</label>
+                      <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">Company *</label>
                       <input
                         name="company"
                         required
@@ -957,7 +957,7 @@ export default function LeadsPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-silver mb-2">Title *</label>
+                      <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">Title *</label>
                       <input
                         name="title"
                         required

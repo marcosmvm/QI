@@ -226,7 +226,7 @@ export function SupportInbox({ conversations, teamMembers }: SupportInboxProps) 
                   <p className="text-xs text-light-text-muted dark:text-steel mb-2">{conv.clientName}</p>
 
                   {conv.lastMessage && (
-                    <p className="text-xs text-silver line-clamp-2 mb-2">
+                    <p className="text-xs text-light-text-secondary dark:text-silver line-clamp-2 mb-2">
                       {conv.lastMessage.isFromAdmin && (
                         <span className="text-emerald-pro-600">You: </span>
                       )}
@@ -341,7 +341,7 @@ export function SupportInbox({ conversations, teamMembers }: SupportInboxProps) 
                           : "glass-premium"
                       )}
                     >
-                      <p className="text-sm text-silver whitespace-pre-wrap">
+                      <p className="text-sm text-light-text-secondary dark:text-silver whitespace-pre-wrap">
                         {message.content}
                       </p>
                     </div>

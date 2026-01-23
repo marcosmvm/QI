@@ -213,7 +213,7 @@ export default function BookDemoPage() {
                         />
                       ))}
                     </div>
-                    <p className="text-sm text-silver italic mb-3">
+                    <p className="text-sm text-light-text-secondary dark:text-silver italic mb-3">
                       &ldquo;{testimonial.quote}&rdquo;
                     </p>
                     <div>
@@ -251,7 +251,7 @@ export default function BookDemoPage() {
                   <form onSubmit={handleFormSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-sm font-medium text-silver mb-2">
+                        <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                           First Name *
                         </label>
                         <input
@@ -264,7 +264,7 @@ export default function BookDemoPage() {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-silver mb-2">
+                        <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                           Last Name *
                         </label>
                         <input
@@ -279,7 +279,7 @@ export default function BookDemoPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-silver mb-2">
+                      <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                         <Mail className="inline h-4 w-4 mr-1" />
                         Work Email *
                       </label>
@@ -296,7 +296,7 @@ export default function BookDemoPage() {
 
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-sm font-medium text-silver mb-2">
+                        <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                           <Building2 className="inline h-4 w-4 mr-1" />
                           Company *
                         </label>
@@ -310,7 +310,7 @@ export default function BookDemoPage() {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-silver mb-2">
+                        <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                           <Phone className="inline h-4 w-4 mr-1" />
                           Phone
                         </label>
@@ -327,7 +327,7 @@ export default function BookDemoPage() {
 
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-sm font-medium text-silver mb-2">
+                        <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                           Sales Team Size
                         </label>
                         <select
@@ -344,7 +344,7 @@ export default function BookDemoPage() {
                         </select>
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-silver mb-2">
+                        <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                           Current Outreach Volume
                         </label>
                         <select
@@ -363,7 +363,7 @@ export default function BookDemoPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-silver mb-2">
+                      <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                         Anything else we should know?
                       </label>
                       <textarea
@@ -488,7 +488,7 @@ export default function BookDemoPage() {
                       We&apos;ve sent a calendar invite to {formData.email}.
                     </p>
                     <div className="p-4 bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30 rounded-lg mb-6">
-                      <p className="text-sm text-silver">
+                      <p className="text-sm text-light-text-secondary dark:text-silver">
                         <Calendar className="h-4 w-4 inline mr-2" />
                         {selectedDate?.toLocaleDateString("en-US", {
                           weekday: "long",

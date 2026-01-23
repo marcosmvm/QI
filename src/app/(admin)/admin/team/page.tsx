@@ -310,12 +310,12 @@ function TeamMemberCard({ member }: { member: TeamMemberWithProfile }) {
       <div className="space-y-2">
         <div className="flex items-center gap-2 text-sm">
           <Mail className="h-4 w-4 text-light-text-muted dark:text-steel" />
-          <span className="text-silver truncate">{profile.email}</span>
+          <span className="text-light-text-secondary dark:text-silver truncate">{profile.email}</span>
         </div>
         {member.hired_at && (
           <div className="flex items-center gap-2 text-sm">
             <Calendar className="h-4 w-4 text-light-text-muted dark:text-steel" />
-            <span className="text-silver">
+            <span className="text-light-text-secondary dark:text-silver">
               Joined {new Date(member.hired_at).toLocaleDateString()}
             </span>
           </div>
@@ -325,7 +325,7 @@ function TeamMemberCard({ member }: { member: TeamMemberWithProfile }) {
       <div className="mt-4 pt-4 border-t border-border-default dark:border-graphite/30 flex items-center gap-2">
         <Link
           href={`/admin/team/${member.id}`}
-          className="flex-1 px-3 py-2 text-sm text-center text-silver border border-border-default dark:border-graphite rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors"
+          className="flex-1 px-3 py-2 text-sm text-center text-light-text-secondary dark:text-silver border border-border-default dark:border-graphite rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors"
         >
           View Profile
         </Link>

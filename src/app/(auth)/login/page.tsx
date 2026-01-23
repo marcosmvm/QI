@@ -80,7 +80,7 @@ export default function LoginPage() {
             <br />
             <span className="text-emerald-pro-600">Amplify your results.</span>
           </h1>
-          <p className="text-lg text-silver max-w-md">
+          <p className="text-lg text-light-text-secondary dark:text-silver max-w-md">
             Access your campaign dashboard, monitor performance, and track
             your results in real-time.
           </p>
@@ -137,7 +137,7 @@ export default function LoginPage() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-silver mb-2"
+                  className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2"
                 >
                   Email address
                 </label>
@@ -159,7 +159,7 @@ export default function LoginPage() {
                 <div className="flex items-center justify-between mb-2">
                   <label
                     htmlFor="password"
-                    className="block text-sm font-medium text-silver"
+                    className="block text-sm font-medium text-light-text-secondary dark:text-silver"
                   >
                     Password
                   </label>

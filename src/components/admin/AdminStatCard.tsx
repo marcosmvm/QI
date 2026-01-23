@@ -94,7 +94,7 @@ export function AdminStatCard({
           {value}
           {suffix && <span className="text-lg text-light-text-muted dark:text-steel ml-1">{suffix}</span>}
         </p>
-        <p className="text-sm text-silver mt-1">{title}</p>
+        <p className="text-sm text-light-text-secondary dark:text-silver mt-1">{title}</p>
       </div>
 
       {change !== undefined && (

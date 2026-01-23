@@ -335,7 +335,7 @@ export default function TeamMemberDetailPage({ params }: PageProps) {
                   key={key}
                   className="flex items-center justify-between p-3 bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30 rounded-lg"
                 >
-                  <span className="text-sm text-silver capitalize">
+                  <span className="text-sm text-light-text-secondary dark:text-silver capitalize">
                     {key.replace(/_/g, " ")}
                   </span>
                   {value ? (

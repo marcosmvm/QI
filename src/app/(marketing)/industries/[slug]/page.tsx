@@ -111,7 +111,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
                 {industry.tagline}
               </p>
 
-              <p className="text-lg text-silver mb-8 leading-relaxed">
+              <p className="text-lg text-light-text-secondary dark:text-silver mb-8 leading-relaxed">
                 {industry.longDescription}
               </p>
 
@@ -162,7 +162,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
                 Challenges in{" "}
                 <span className={colors.text}>{industry.name}</span>
               </h2>
-              <p className="text-lg text-silver mb-8">
+              <p className="text-lg text-light-text-secondary dark:text-silver mb-8">
                 We understand the unique obstacles you face when selling to this market.
               </p>
 
@@ -180,7 +180,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
                       <AlertCircle className={`h-5 w-5 ${colors.text} flex-shrink-0 mt-0.5`} />
                       <div>
                         <h4 className="text-light-text dark:text-white font-semibold">{challenge.title}</h4>
-                        <p className="text-silver text-sm">{challenge.description}</p>
+                        <p className="text-light-text-secondary dark:text-silver text-sm">{challenge.description}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -198,7 +198,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
                 Our{" "}
                 <span className={colors.text}>Solutions</span>
               </h2>
-              <p className="text-lg text-silver mb-8">
+              <p className="text-lg text-light-text-secondary dark:text-silver mb-8">
                 How we help {industry.name.toLowerCase()} companies overcome these challenges.
               </p>
 
@@ -213,7 +213,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
                     className="flex items-start gap-3"
                   >
                     <CheckCircle className={`h-6 w-6 ${colors.text} flex-shrink-0 mt-0.5`} />
-                    <span className="text-silver">{solution}</span>
+                    <span className="text-light-text-secondary dark:text-silver">{solution}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -239,7 +239,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
               Who We{" "}
               <span className={colors.text}>Target</span>
             </h2>
-            <p className="text-lg text-silver">
+            <p className="text-lg text-light-text-secondary dark:text-silver">
               The decision-makers we help you reach in {industry.name.toLowerCase()}.
             </p>
           </motion.div>
@@ -278,7 +278,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
               <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-6">
                 Case Studies
               </h2>
-              <p className="text-lg text-silver">
+              <p className="text-lg text-light-text-secondary dark:text-silver">
                 See how we&apos;ve helped other {industry.name.toLowerCase()} companies.
               </p>
             </motion.div>
@@ -298,7 +298,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
                       <h3 className="text-xl font-sora font-semibold text-light-text dark:text-white mb-3">
                         {study.title}
                       </h3>
-                      <p className="text-silver text-sm mb-4">{study.subtitle}</p>
+                      <p className="text-light-text-secondary dark:text-silver text-sm mb-4">{study.subtitle}</p>
 
                       <div className="flex gap-4 mb-4">
                         {study.metrics.slice(0, 2).map((metric) => (

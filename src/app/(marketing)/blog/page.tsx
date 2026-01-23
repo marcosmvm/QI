@@ -88,7 +88,7 @@ export default function BlogPage() {
                 Blog
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-light-text-secondary/90 dark:text-silver/90 max-w-3xl mx-auto leading-relaxed">
               Expert insights on <span className="text-emerald-pro-600 font-semibold">B2B lead generation</span>, deliverability, AI, and <span className="text-emerald-pro-500 font-semibold">sales development</span>.
             </p>
           </motion.div>
@@ -123,7 +123,7 @@ export default function BlogPage() {
                     </h2>
 
                     {/* Excerpt */}
-                    <p className="text-silver text-sm mb-4 line-clamp-2 group-hover:text-light-text dark:text-white/80 transition-colors">
+                    <p className="text-light-text-secondary dark:text-silver text-sm mb-4 line-clamp-2 group-hover:text-light-text dark:text-white/80 transition-colors">
                       {post.excerpt}
                     </p>
 

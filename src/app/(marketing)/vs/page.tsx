@@ -142,7 +142,7 @@ export default function ComparisonHubPage() {
                     {competitor.differentiators.map((diff, i) => (
                       <div
                         key={i}
-                        className="flex items-center gap-2 text-sm text-silver"
+                        className="flex items-center gap-2 text-sm text-light-text-secondary dark:text-silver"
                       >
                         <CheckCircle className="h-4 w-4 text-emerald-pro-400 flex-shrink-0" />
                         {diff}
@@ -187,7 +187,7 @@ export default function ComparisonHubPage() {
                 <p className="text-3xl font-sora font-bold text-emerald-pro-600 mb-2">
                   3x
                 </p>
-                <p className="text-sm text-silver">
+                <p className="text-sm text-light-text-secondary dark:text-silver">
                   Faster campaign deployment
                 </p>
               </div>
@@ -195,13 +195,13 @@ export default function ComparisonHubPage() {
                 <p className="text-3xl font-sora font-bold text-emerald-pro-400 mb-2">
                   40%
                 </p>
-                <p className="text-sm text-silver">Lower cost per meeting</p>
+                <p className="text-sm text-light-text-secondary dark:text-silver">Lower cost per meeting</p>
               </div>
               <div>
                 <p className="text-3xl font-sora font-bold text-emerald-pro-500 mb-2">
                   24/7
                 </p>
-                <p className="text-sm text-silver">Continuous optimization</p>
+                <p className="text-sm text-light-text-secondary dark:text-silver">Continuous optimization</p>
               </div>
             </div>
           </motion.div>

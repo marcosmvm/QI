@@ -75,7 +75,7 @@ export default function ContactPage() {
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-light-text-secondary/90 dark:text-silver/90 max-w-3xl mx-auto leading-relaxed">
               Book a strategy call with our team to discuss how we can help fill your pipeline with <span className="text-emerald-pro-600 font-semibold">qualified meetings</span>.
             </p>
           </motion.div>

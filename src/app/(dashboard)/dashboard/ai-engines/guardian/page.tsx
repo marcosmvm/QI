@@ -371,7 +371,7 @@ export default function GuardianPage() {
                           </span>
                         </td>
                         <td className="py-4 text-center">
-                          <span className="text-silver">{mailbox.inboxRate}%</span>
+                          <span className="text-light-text-secondary dark:text-silver">{mailbox.inboxRate}%</span>
                         </td>
                         <td className="py-4 text-center">
                           <span className={cn(

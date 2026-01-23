@@ -363,10 +363,10 @@ function AuditLogRow({ log }: { log: AuditLog }) {
             {log.profiles?.full_name || "System"}
           </span>
           <span className={`text-sm ${colors.text}`}>{action.label}</span>
-          <span className="text-sm text-silver">a</span>
+          <span className="text-sm text-light-text-secondary dark:text-silver">a</span>
           <div className="flex items-center gap-1">
             <ResourceIcon className="h-4 w-4 text-light-text-muted dark:text-steel" />
-            <span className="text-sm text-silver">{resource.label}</span>
+            <span className="text-sm text-light-text-secondary dark:text-silver">{resource.label}</span>
           </div>
         </div>
         <p className="text-sm text-light-text-muted dark:text-steel truncate">

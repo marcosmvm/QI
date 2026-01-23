@@ -61,7 +61,7 @@ export function AppointmentCard({ appointment, className }: AppointmentCardProps
         </div>
       </div>
 
-      <div className="space-y-2 text-xs text-silver">
+      <div className="space-y-2 text-xs text-light-text-secondary dark:text-silver">
         <div className="flex items-center gap-2">
           <Calendar className="h-3.5 w-3.5 text-light-text-muted dark:text-steel" />
           <span>

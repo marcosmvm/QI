@@ -187,7 +187,7 @@ export default function EnginesPage() {
             Monitor the health and performance of all AI engines
           </p>
         </div>
-        <button className="flex items-center gap-2 px-4 py-2 border border-border-default dark:border-graphite text-silver rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors">
+        <button className="flex items-center gap-2 px-4 py-2 border border-border-default dark:border-graphite text-light-text-secondary dark:text-silver rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors">
           <RefreshCw className="h-4 w-4" />
           Refresh Status
         </button>
@@ -254,7 +254,7 @@ export default function EnginesPage() {
           </div>
 
           <div className="text-center p-4 bg-steel/10 border border-steel/30 rounded-xl">
-            <p className="text-2xl font-sora font-bold text-silver">
+            <p className="text-2xl font-sora font-bold text-light-text-secondary dark:text-silver">
               {systemHealth.errorRate.toFixed(2)}%
             </p>
             <p className="text-xs text-light-text-muted dark:text-steel mt-2">Error Rate</p>
@@ -343,7 +343,7 @@ export default function EnginesPage() {
                     </code>
                   </td>
                   <td className="px-6 py-4">
-                    <span className="text-sm text-silver">
+                    <span className="text-sm text-light-text-secondary dark:text-silver">
                       {engine.avgExecutionTime
                         ? `${(engine.avgExecutionTime / 1000).toFixed(1)}s`
                         : "-"}
@@ -355,7 +355,7 @@ export default function EnginesPage() {
                         successRate >= 99
                           ? "text-emerald-pro-400"
                           : successRate >= 95
-                          ? "text-silver"
+                          ? "text-light-text-secondary dark:text-silver"
                           : "text-energy-orange"
                       }`}
                     >

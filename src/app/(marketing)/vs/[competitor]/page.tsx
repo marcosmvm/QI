@@ -384,7 +384,7 @@ export default function CompetitorComparisonPage({ params }: PageProps) {
                       index % 2 === 0 ? "bg-white dark:bg-deep-space/50" : "bg-light-bg-secondary dark:bg-midnight-blue/30"
                     }`}
                   >
-                    <td className="px-6 py-4 text-sm text-silver">
+                    <td className="px-6 py-4 text-sm text-light-text-secondary dark:text-silver">
                       {feature.name}
                     </td>
                     <td className="px-6 py-4 text-center">

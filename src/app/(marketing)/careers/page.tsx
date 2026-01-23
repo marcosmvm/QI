@@ -77,7 +77,7 @@ export default function CareersPage() {
                 Future of Sales
               </span>
             </h1>
-            <p className="text-xl text-silver max-w-2xl mx-auto">
+            <p className="text-xl text-light-text-secondary dark:text-silver max-w-2xl mx-auto">
               We&apos;re looking for talented people who want to revolutionize B2B lead generation with AI.
             </p>
           </motion.div>
@@ -97,14 +97,14 @@ export default function CareersPage() {
               <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-6">
                 Why XGrowthOS?
               </h2>
-              <p className="text-silver mb-8 leading-relaxed">
+              <p className="text-light-text-secondary dark:text-silver mb-8 leading-relaxed">
                 We&apos;re not just building another SaaS product—we&apos;re fundamentally changing how B2B companies grow. Join a team of passionate innovators working at the intersection of AI and sales.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-center gap-2">
                     <Zap className="h-4 w-4 text-emerald-pro-600" />
-                    <span className="text-silver text-sm">{benefit}</span>
+                    <span className="text-light-text-secondary dark:text-silver text-sm">{benefit}</span>
                   </div>
                 ))}
               </div>
@@ -153,7 +153,7 @@ export default function CareersPage() {
             <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
               Open Positions
             </h2>
-            <p className="text-silver">
+            <p className="text-light-text-secondary dark:text-silver">
               Find your next opportunity at XGrowthOS.
             </p>
           </motion.div>

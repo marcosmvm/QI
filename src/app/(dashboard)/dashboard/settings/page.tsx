@@ -290,7 +290,7 @@ export default function SettingsPage() {
 
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-silver mb-2">
+                      <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                         Full Name
                       </label>
                       <input
@@ -301,7 +301,7 @@ export default function SettingsPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-silver mb-2">
+                      <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                         Email Address
                       </label>
                       <input
@@ -312,7 +312,7 @@ export default function SettingsPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-silver mb-2">
+                      <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                         Role
                       </label>
                       <input
@@ -323,7 +323,7 @@ export default function SettingsPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-silver mb-2">
+                      <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                         Timezone
                       </label>
                       <select
@@ -358,7 +358,7 @@ export default function SettingsPage() {
                 <div className="space-y-6">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-silver mb-2">
+                      <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                         Company Name
                       </label>
                       <input
@@ -369,7 +369,7 @@ export default function SettingsPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-silver mb-2">
+                      <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                         Website
                       </label>
                       <input
@@ -380,7 +380,7 @@ export default function SettingsPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-silver mb-2">
+                      <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                         Industry
                       </label>
                       <select
@@ -396,7 +396,7 @@ export default function SettingsPage() {
                       </select>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-silver mb-2">
+                      <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                         Company Size
                       </label>
                       <select
@@ -485,7 +485,7 @@ export default function SettingsPage() {
                     <h4 className="font-medium text-light-text dark:text-white mb-4">Change Password</h4>
                     <div className="space-y-4">
                       <div>
-                        <label className="block text-sm font-medium text-silver mb-2">
+                        <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                           Current Password
                         </label>
                         <input
@@ -495,7 +495,7 @@ export default function SettingsPage() {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-silver mb-2">
+                        <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                           New Password
                         </label>
                         <input
@@ -505,7 +505,7 @@ export default function SettingsPage() {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-silver mb-2">
+                        <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                           Confirm New Password
                         </label>
                         <input

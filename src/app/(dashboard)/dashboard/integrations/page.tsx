@@ -329,7 +329,7 @@ function IntegrationCard({ integration }: { integration: Integration }) {
       <div className="flex items-center gap-2">
         {integration.connected ? (
           <>
-            <button className="flex items-center gap-2 px-3 py-1.5 text-sm text-silver border border-border-default dark:border-graphite rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-colors">
+            <button className="flex items-center gap-2 px-3 py-1.5 text-sm text-light-text-secondary dark:text-silver border border-border-default dark:border-graphite rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-colors">
               <Settings className="h-3.5 w-3.5" />
               Configure
             </button>

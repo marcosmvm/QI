@@ -79,7 +79,7 @@ export default function AboutPage() {
                 B2B Outbound
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-light-text-secondary/90 dark:text-silver/90 max-w-3xl mx-auto leading-relaxed">
               XGrowthOS was founded with a simple mission: make <span className="text-emerald-pro-600 font-semibold">AI-powered lead generation</span> accessible to every B2B company.
             </p>
           </motion.div>
@@ -148,7 +148,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-silver/90 leading-relaxed text-lg"
+                className="text-light-text-secondary/90 dark:text-silver/90 leading-relaxed text-lg"
               >
                 XGrowthOS was born from frustration. Our founder, <span className="text-emerald-pro-600 font-semibold">Marcos Matthews</span>, spent years watching B2B companies struggle with cold outreach—either doing it poorly themselves or paying agencies that delivered inconsistent results.
               </motion.p>
@@ -157,7 +157,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="text-silver/90 leading-relaxed text-lg"
+                className="text-light-text-secondary/90 dark:text-silver/90 leading-relaxed text-lg"
               >
                 The problem wasn&apos;t effort—it was the approach. Traditional outbound relied on <span className="text-energy-orange">volume over quality</span>, generic messaging, and outdated tools. Companies were burning through domains, annoying prospects, and seeing diminishing returns.
               </motion.p>
@@ -166,7 +166,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="text-silver/90 leading-relaxed text-lg"
+                className="text-light-text-secondary/90 dark:text-silver/90 leading-relaxed text-lg"
               >
                 We built XGrowthOS to prove there&apos;s a better way. By combining <span className="text-emerald-pro-500 font-semibold">cutting-edge AI</span> with deep expertise in deliverability, personalization, and sales psychology, we&apos;ve created a system that actually works—consistently, at scale.
               </motion.p>
@@ -175,7 +175,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
-                className="text-silver/90 leading-relaxed text-lg"
+                className="text-light-text-secondary/90 dark:text-silver/90 leading-relaxed text-lg"
               >
                 Today, our <span className="text-emerald-pro-400 font-semibold">5 AI engines</span> are ready to power lead generation for B2B companies. We&apos;re launching our founding partner program—join us in building the infrastructure for modern outbound sales.
               </motion.p>
@@ -200,7 +200,7 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
               Our <span className="headline-underline gradient-text-cyan-violet">Values</span>
             </h2>
-            <p className="text-lg md:text-xl text-silver/90 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-light-text-secondary/90 dark:text-silver/90 max-w-2xl mx-auto">
               The principles that guide everything we do.
             </p>
           </motion.div>
@@ -239,7 +239,7 @@ export default function AboutPage() {
                 } transition-colors`}>
                   {value.title}
                 </h3>
-                <p className="text-silver leading-relaxed group-hover:text-light-text dark:text-white/80 transition-colors">
+                <p className="text-light-text-secondary dark:text-silver leading-relaxed group-hover:text-light-text dark:text-white/80 transition-colors">
                   {value.description}
                 </p>
               </motion.div>
@@ -270,7 +270,7 @@ export default function AboutPage() {
             <h3 className="text-2xl lg:text-3xl font-sora font-bold text-light-text dark:text-white mb-4">
               Join Our Team
             </h3>
-            <p className="text-silver text-lg mb-8 max-w-md mx-auto">
+            <p className="text-light-text-secondary dark:text-silver text-lg mb-8 max-w-md mx-auto">
               We&apos;re always looking for talented people who share our passion for innovation and results.
             </p>
             <Link href="/careers">

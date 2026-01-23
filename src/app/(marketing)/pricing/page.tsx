@@ -48,7 +48,7 @@ export default function PricingPage() {
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-silver/90 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-light-text-secondary/90 dark:text-silver/90 max-w-2xl mx-auto leading-relaxed">
               Choose the plan that matches your growth goals. All plans include <span className="text-emerald-pro-600">setup</span>, <span className="text-emerald-pro-500">training</span>, and <span className="text-emerald-pro-400">ongoing optimization</span>.
             </p>
           </motion.div>
@@ -131,7 +131,7 @@ export default function PricingPage() {
                       )}
                       <span className={cn(
                         "text-sm leading-relaxed",
-                        feature.included ? "text-silver group-hover:text-light-text dark:text-white transition-colors" : "text-graphite"
+                        feature.included ? "text-light-text-secondary dark:text-silver group-hover:text-light-text dark:text-white transition-colors" : "text-graphite"
                       )}>
                         {feature.text}
                       </span>
@@ -186,7 +186,7 @@ export default function PricingPage() {
             <h3 className="text-2xl lg:text-3xl font-sora font-bold text-light-text dark:text-white mb-4">
               Not sure which plan is right?
             </h3>
-            <p className="text-silver text-lg mb-8 max-w-xl mx-auto">
+            <p className="text-light-text-secondary dark:text-silver text-lg mb-8 max-w-xl mx-auto">
               Book a call with our team and we&apos;ll help you determine the best fit based on your goals, target market, and current pipeline.
             </p>
             <button className="cta-magnetic">
@@ -243,7 +243,7 @@ export default function PricingPage() {
                       </Accordion.Trigger>
                     </Accordion.Header>
                     <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                      <div className="px-6 pb-6 text-silver leading-relaxed border-t border-border-default dark:border-graphite/30 pt-4">
+                      <div className="px-6 pb-6 text-light-text-secondary dark:text-silver leading-relaxed border-t border-border-default dark:border-graphite/30 pt-4">
                         {faq.answer}
                       </div>
                     </Accordion.Content>

@@ -62,7 +62,7 @@ export default function CaseStudiesPage() {
               </span>
             </h1>
 
-            <p className="text-xl text-silver max-w-2xl mx-auto mb-10">
+            <p className="text-xl text-light-text-secondary dark:text-silver max-w-2xl mx-auto mb-10">
               We&apos;re launching with ambitious benchmarks backed by proven AI technology. Be among our founding partners and help us build case studies together.
             </p>
 
@@ -92,7 +92,7 @@ export default function CaseStudiesPage() {
             <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
               Our Performance Targets
             </h2>
-            <p className="text-silver max-w-2xl mx-auto">
+            <p className="text-light-text-secondary dark:text-silver max-w-2xl mx-auto">
               These are the benchmarks we&apos;re building our platform to achieve. Our pilot partners will help validate these targets.
             </p>
           </motion.div>
@@ -131,7 +131,7 @@ export default function CaseStudiesPage() {
             <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
               How We&apos;ll Achieve These Results
             </h2>
-            <p className="text-silver max-w-2xl mx-auto">
+            <p className="text-light-text-secondary dark:text-silver max-w-2xl mx-auto">
               Our 5 AI engines work together to maximize deliverability and conversions.
             </p>
           </motion.div>
@@ -152,7 +152,7 @@ export default function CaseStudiesPage() {
                   </div>
                   <h3 className="text-lg font-semibold text-light-text dark:text-white">{item.title}</h3>
                 </div>
-                <p className="text-silver text-sm">{item.description}</p>
+                <p className="text-light-text-secondary dark:text-silver text-sm">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -173,7 +173,7 @@ export default function CaseStudiesPage() {
               <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
                 Why Become a Founding Partner?
               </h2>
-              <p className="text-silver max-w-2xl mx-auto">
+              <p className="text-light-text-secondary dark:text-silver max-w-2xl mx-auto">
                 Early adopters get exclusive benefits while helping shape the future of B2B outreach.
               </p>
             </motion.div>

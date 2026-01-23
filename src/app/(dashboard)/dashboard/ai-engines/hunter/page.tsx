@@ -651,7 +651,7 @@ export default function HunterPage() {
                       <span className="text-light-text dark:text-white font-medium">{campaign.name}</span>
                     </td>
                     <td className="py-4 text-center">
-                      <span className="text-silver">{campaign.replies}</span>
+                      <span className="text-light-text-secondary dark:text-silver">{campaign.replies}</span>
                     </td>
                     <td className="py-4 text-center">
                       <span className="text-emerald-pro-400 font-semibold">{campaign.positive}</span>

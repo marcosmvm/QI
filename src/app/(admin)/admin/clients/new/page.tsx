@@ -175,7 +175,7 @@ export default function NewClientPage() {
 
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-silver mb-2">
+                <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                   Company Name *
                 </label>
                 <input
@@ -189,7 +189,7 @@ export default function NewClientPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-silver mb-2">
+                <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                   <Globe className="inline h-4 w-4 mr-1" />
                   Domain
                 </label>
@@ -204,7 +204,7 @@ export default function NewClientPage() {
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-silver mb-2">
+                  <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                     <Briefcase className="inline h-4 w-4 mr-1" />
                     Industry *
                   </label>
@@ -224,7 +224,7 @@ export default function NewClientPage() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-silver mb-2">
+                  <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                     <Users className="inline h-4 w-4 mr-1" />
                     Employee Count
                   </label>
@@ -261,7 +261,7 @@ export default function NewClientPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-silver mb-2">
+              <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                 Primary Contact Email *
               </label>
               <input
@@ -295,7 +295,7 @@ export default function NewClientPage() {
 
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-silver mb-2">
+                <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                   Plan Type *
                 </label>
                 <div className="grid grid-cols-5 gap-2">
@@ -326,7 +326,7 @@ export default function NewClientPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-silver mb-2">
+                <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                   Monthly Fee
                 </label>
                 <div className="relative">

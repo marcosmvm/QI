@@ -62,11 +62,11 @@ export function LeadCard({ lead, className }: LeadCardProps) {
       </div>
 
       <div className="mt-4 space-y-2">
-        <div className="flex items-center gap-2 text-sm text-silver">
+        <div className="flex items-center gap-2 text-sm text-light-text-secondary dark:text-silver">
           <Building2 className="h-4 w-4 text-light-text-muted dark:text-steel" />
           <span className="truncate">{lead.company}</span>
         </div>
-        <div className="flex items-center gap-2 text-sm text-silver">
+        <div className="flex items-center gap-2 text-sm text-light-text-secondary dark:text-silver">
           <Mail className="h-4 w-4 text-light-text-muted dark:text-steel" />
           <span className="truncate">{lead.email}</span>
         </div>

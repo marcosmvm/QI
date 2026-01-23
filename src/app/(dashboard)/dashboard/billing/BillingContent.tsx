@@ -213,7 +213,7 @@ export function BillingContent({ subscription, invoices, usage }: BillingContent
                     {getPlanFeatures(subscription.plan_type).map((feature, i) => (
                       <div
                         key={i}
-                        className="flex items-center gap-2 text-sm text-silver"
+                        className="flex items-center gap-2 text-sm text-light-text-secondary dark:text-silver"
                       >
                         <CheckCircle className="h-4 w-4 text-emerald-pro-400 flex-shrink-0" />
                         {feature}
@@ -454,7 +454,7 @@ export function BillingContent({ subscription, invoices, usage }: BillingContent
             <div className="flex items-start gap-3">
               <Clock className="h-5 w-5 text-light-text-muted dark:text-steel flex-shrink-0" />
               <div>
-                <p className="text-sm text-silver">
+                <p className="text-sm text-light-text-secondary dark:text-silver">
                   Need help with billing?
                 </p>
                 <Link

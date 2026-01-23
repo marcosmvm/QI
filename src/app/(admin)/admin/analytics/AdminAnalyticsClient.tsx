@@ -228,7 +228,7 @@ export default function AdminAnalyticsClient({
                   </div>
                   <div className="flex items-center gap-4">
                     <div className="text-right">
-                      <p className="text-sm text-silver">
+                      <p className="text-sm text-light-text-secondary dark:text-silver">
                         {client.openRate.toFixed(1)}%
                       </p>
                       <p className="text-xs text-light-text-muted dark:text-steel">open</p>

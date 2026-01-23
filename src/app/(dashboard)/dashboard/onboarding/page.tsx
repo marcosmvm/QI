@@ -266,7 +266,7 @@ export default function OnboardingPage() {
               <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white mb-3">
                 Welcome to the Future of Outreach
               </h2>
-              <p className="text-silver max-w-lg mx-auto">
+              <p className="text-light-text-secondary dark:text-silver max-w-lg mx-auto">
                 You&apos;re about to unlock AI-powered cold email campaigns that deliver
                 real results. Let&apos;s get you set up in just a few minutes.
               </p>
@@ -331,7 +331,7 @@ export default function OnboardingPage() {
 
             <div className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-silver mb-2">
+                <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                   Company Name *
                 </label>
                 <input
@@ -344,7 +344,7 @@ export default function OnboardingPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-silver mb-2">
+                <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                   <Globe className="inline h-4 w-4 mr-1" />
                   Company Website
                 </label>
@@ -359,7 +359,7 @@ export default function OnboardingPage() {
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-silver mb-2">
+                  <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                     Industry *
                   </label>
                   <select
@@ -377,7 +377,7 @@ export default function OnboardingPage() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-silver mb-2">
+                  <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                     <Users className="inline h-4 w-4 mr-1" />
                     Company Size *
                   </label>
@@ -398,7 +398,7 @@ export default function OnboardingPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-silver mb-2">
+                <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                   <Target className="inline h-4 w-4 mr-1" />
                   Target Market
                 </label>
@@ -470,7 +470,7 @@ export default function OnboardingPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-silver mb-2">
+                <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                   Instantly API Key
                 </label>
                 <div className="flex gap-3">
@@ -590,7 +590,7 @@ export default function OnboardingPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-silver mb-2">
+                <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                   Google Sheet with Lead Data (Optional)
                 </label>
                 <div className="flex gap-3">
@@ -645,7 +645,7 @@ export default function OnboardingPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-silver mb-2">
+                <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                   Describe Your Ideal Customer
                 </label>
                 <textarea

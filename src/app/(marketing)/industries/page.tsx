@@ -27,7 +27,7 @@ function getCardColor(id: string) {
 function TrustBadge({ label }: { label: string }) {
   return (
     <div className="bg-light-bg-secondary dark:bg-midnight-blue border border-border-default dark:border-graphite rounded-lg px-6 py-3">
-      <span className="text-silver text-sm">{label}</span>
+      <span className="text-light-text-secondary dark:text-silver text-sm">{label}</span>
     </div>
   );
 }
@@ -66,7 +66,7 @@ export default function IndustriesPage() {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg text-silver max-w-3xl mx-auto mb-12">
+            <p className="text-lg text-light-text-secondary dark:text-silver max-w-3xl mx-auto mb-12">
               We understand the unique challenges of B2B sales across verticals. Our
               AI-powered cold email campaigns are tailored to each industry&apos;s specific
               buyer personas and decision-making processes.
@@ -183,7 +183,7 @@ export default function IndustriesPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-light-text dark:text-white mb-6">
               Ready to <span className="headline-underline gradient-text-cyan-violet">Dominate Your Industry</span>?
             </h2>
-            <p className="text-lg text-silver mb-10">
+            <p className="text-lg text-light-text-secondary dark:text-silver mb-10">
               Join hundreds of B2B companies using our AI-powered cold email system to book more qualified meetings and accelerate growth.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

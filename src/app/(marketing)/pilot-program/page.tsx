@@ -328,7 +328,7 @@ export default function PilotProgramPage() {
               {pilotRequirements.map((req, index) => (
                 <li key={index} className="flex items-start gap-3">
                   <Check className="h-5 w-5 text-emerald-pro-400 flex-shrink-0 mt-0.5" />
-                  <span className="text-silver">{req}</span>
+                  <span className="text-light-text-secondary dark:text-silver">{req}</span>
                 </li>
               ))}
             </ul>
@@ -382,7 +382,7 @@ export default function PilotProgramPage() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-silver mb-2">
+                    <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                       <Users className="inline h-4 w-4 mr-1" />
                       Full Name *
                     </label>
@@ -396,7 +396,7 @@ export default function PilotProgramPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-silver mb-2">
+                    <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                       <Mail className="inline h-4 w-4 mr-1" />
                       Work Email *
                     </label>
@@ -414,7 +414,7 @@ export default function PilotProgramPage() {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-silver mb-2">
+                    <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                       <Building2 className="inline h-4 w-4 mr-1" />
                       Company Name *
                     </label>
@@ -428,7 +428,7 @@ export default function PilotProgramPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-silver mb-2">
+                    <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                       <Globe className="inline h-4 w-4 mr-1" />
                       Website
                     </label>
@@ -443,7 +443,7 @@ export default function PilotProgramPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-silver mb-2">
+                  <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                     Current Monthly Email Volume
                   </label>
                   <select
@@ -462,7 +462,7 @@ export default function PilotProgramPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-silver mb-2">
+                  <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
                     <MessageSquare className="inline h-4 w-4 mr-1" />
                     Tell us about your goals
                   </label>

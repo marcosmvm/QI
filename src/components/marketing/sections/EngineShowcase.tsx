@@ -164,7 +164,7 @@ export function EngineShowcase() {
                       <div className={`p-3 rounded-xl ${colors.bg} border border-transparent group-hover:border-current/20 transition-all duration-300`}>
                         <engine.icon className={`h-6 w-6 ${colors.text}`} />
                       </div>
-                      <span className="text-xs font-mono text-light-text-muted dark:text-steel group-hover:text-silver transition-colors">
+                      <span className="text-xs font-mono text-light-text-muted dark:text-steel group-hover:text-light-text-secondary dark:text-silver transition-colors">
                         ENGINE {engine.codename}
                       </span>
                     </div>

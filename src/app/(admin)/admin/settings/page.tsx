@@ -271,7 +271,7 @@ export default function SettingsPage() {
                   Sessions expire after 7 days of inactivity
                 </p>
               </div>
-              <span className="text-sm text-silver">7 days</span>
+              <span className="text-sm text-light-text-secondary dark:text-silver">7 days</span>
             </div>
           </div>
         </SettingsSection>

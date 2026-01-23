@@ -125,7 +125,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
                 {engine.tagline}
               </p>
 
-              <p className="text-lg md:text-xl text-silver/90 mb-10 leading-relaxed">
+              <p className="text-lg md:text-xl text-light-text-secondary/90 dark:text-silver/90 mb-10 leading-relaxed">
                 {engine.longDescription}
               </p>
 
@@ -181,7 +181,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
               Key{" "}
               <span className={`headline-underline ${colors.text}`}>Features</span>
             </h2>
-            <p className="text-lg md:text-xl text-silver leading-relaxed">
+            <p className="text-lg md:text-xl text-light-text-secondary dark:text-silver leading-relaxed">
               Everything {engine.name} does to <span className={colors.text}>optimize</span> your outbound campaigns.
             </p>
           </motion.div>
@@ -206,7 +206,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
                 <h3 className={`text-lg font-sora font-semibold text-light-text dark:text-white mb-2 group-hover:${colors.text} transition-colors`}>
                   {feature.title}
                 </h3>
-                <p className="text-silver text-sm leading-relaxed group-hover:text-light-text dark:text-white/80 transition-colors">
+                <p className="text-light-text-secondary dark:text-silver text-sm leading-relaxed group-hover:text-light-text dark:text-white/80 transition-colors">
                   {feature.description}
                 </p>
               </motion.div>
@@ -232,7 +232,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
                 Perfect{" "}
                 <span className={`headline-underline ${colors.text}`}>For</span>
               </h2>
-              <p className="text-lg md:text-xl text-silver mb-8 leading-relaxed">
+              <p className="text-lg md:text-xl text-light-text-secondary dark:text-silver mb-8 leading-relaxed">
                 {engine.name} is ideal for teams who need to:
               </p>
 
@@ -247,7 +247,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
                     className="flex items-start gap-3 group"
                   >
                     <CheckCircle className={`h-6 w-6 ${colors.text} flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform`} />
-                    <span className="text-silver group-hover:text-light-text dark:text-white/90 transition-colors">{useCase}</span>
+                    <span className="text-light-text-secondary dark:text-silver group-hover:text-light-text dark:text-white/90 transition-colors">{useCase}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -266,7 +266,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
               <h3 className="text-2xl font-sora font-bold text-light-text dark:text-white mb-4">
                 Ready to deploy {engine.name}?
               </h3>
-              <p className="text-silver mb-6 leading-relaxed">
+              <p className="text-light-text-secondary dark:text-silver mb-6 leading-relaxed">
                 Our team will set up and configure {engine.name} specifically for your use case. See results in <span className={colors.text}>weeks, not months</span>.
               </p>
               <Link href="/contact">

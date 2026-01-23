@@ -145,13 +145,13 @@ export function EngineStatusCard({
       <div className="mt-4 grid grid-cols-3 gap-4">
         <div>
           <p className="text-xs text-light-text-muted dark:text-steel">Last Heartbeat</p>
-          <p className="text-sm font-medium text-silver mt-0.5">
+          <p className="text-sm font-medium text-light-text-secondary dark:text-silver mt-0.5">
             {formatTimeAgo(lastHeartbeat)}
           </p>
         </div>
         <div>
           <p className="text-xs text-light-text-muted dark:text-steel">24h Executions</p>
-          <p className="text-sm font-medium text-silver mt-0.5">
+          <p className="text-sm font-medium text-light-text-secondary dark:text-silver mt-0.5">
             {executions24h.toLocaleString()}
           </p>
         </div>
@@ -160,7 +160,7 @@ export function EngineStatusCard({
           <p
             className={cn(
               "text-sm font-medium mt-0.5",
-              errors24h > 0 ? "text-energy-orange" : "text-silver"
+              errors24h > 0 ? "text-energy-orange" : "text-light-text-secondary dark:text-silver"
             )}
           >
             {errors24h}
@@ -195,7 +195,7 @@ export function EngineStatusCompact({
     <div className="flex items-center justify-between py-2">
       <div className="flex items-center gap-2">
         <Icon className="h-4 w-4 text-light-text-muted dark:text-steel" />
-        <span className="text-sm text-silver">{name}</span>
+        <span className="text-sm text-light-text-secondary dark:text-silver">{name}</span>
       </div>
       <div className="flex items-center gap-3">
         {errors24h > 0 && (

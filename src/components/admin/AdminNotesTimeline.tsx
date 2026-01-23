@@ -127,7 +127,7 @@ function NoteItem({ note }: { note: AdminNote }) {
       <div className="bg-white dark:bg-deep-space/30 rounded-lg p-4 border border-border-default dark:border-graphite/30">
         <div className="flex items-start justify-between gap-2 mb-2">
           <div className="flex items-center gap-2">
-            <span className="text-xs font-medium text-silver">
+            <span className="text-xs font-medium text-light-text-secondary dark:text-silver">
               {note.authorName}
             </span>
             {note.isPinned && (
@@ -138,13 +138,13 @@ function NoteItem({ note }: { note: AdminNote }) {
             <span className="text-xs text-light-text-muted dark:text-steel">
               {formatDistanceToNow(new Date(note.createdAt), { addSuffix: true })}
             </span>
-            <button className="text-light-text-muted dark:text-steel hover:text-silver transition-colors">
+            <button className="text-light-text-muted dark:text-steel hover:text-light-text-secondary dark:text-silver transition-colors">
               <MoreHorizontal className="h-4 w-4" />
             </button>
           </div>
         </div>
 
-        <p className="text-sm text-silver whitespace-pre-wrap">
+        <p className="text-sm text-light-text-secondary dark:text-silver whitespace-pre-wrap">
           {note.content}
         </p>
 

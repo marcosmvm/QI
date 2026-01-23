@@ -184,7 +184,7 @@ export default function HowItWorksPage() {
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto mb-12 leading-relaxed">
+            <p className="text-xl md:text-2xl text-light-text-secondary/90 dark:text-silver/90 max-w-3xl mx-auto mb-12 leading-relaxed">
               A proven process powered by AI that transforms <span className="text-emerald-pro-600 font-semibold">cold outreach</span> into
               warm conversations and <span className="text-emerald-pro-500 font-semibold">qualified meetings</span>.
             </p>
@@ -268,7 +268,7 @@ export default function HowItWorksPage() {
                       {step.details.map((detail, i) => (
                         <li
                           key={i}
-                          className="flex items-center gap-2 text-sm text-silver"
+                          className="flex items-center gap-2 text-sm text-light-text-secondary dark:text-silver"
                         >
                           <CheckCircle className="h-4 w-4 text-emerald-pro-400 flex-shrink-0" />
                           {detail}

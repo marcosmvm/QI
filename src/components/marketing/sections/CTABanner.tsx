@@ -168,7 +168,7 @@ export function CTABanner({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-lg md:text-xl text-silver/90 mb-12 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-light-text-secondary/90 dark:text-silver/90 mb-12 max-w-2xl mx-auto leading-relaxed"
           >
             {description}
           </motion.p>
