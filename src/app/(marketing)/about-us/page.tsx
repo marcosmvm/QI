@@ -239,7 +239,7 @@ export default function AboutPage() {
                 } transition-colors`}>
                   {value.title}
                 </h3>
-                <p className="text-light-text-secondary dark:text-silver leading-relaxed group-hover:text-light-text dark:text-white/80 transition-colors">
+                <p className="text-light-text-secondary dark:text-silver leading-relaxed group-hover:text-light-text dark:group-hover:text-white/80 transition-colors">
                   {value.description}
                 </p>
               </motion.div>

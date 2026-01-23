@@ -255,7 +255,7 @@ export default function SettingsPage() {
                     "w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-colors",
                     activeTab === tab.id
                       ? "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20"
-                      : "text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-white dark:bg-deep-space/50"
+                      : "text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-light-bg-secondary dark:hover:bg-graphite/50"
                   )}
                 >
                   <tab.icon className="h-5 w-5" />

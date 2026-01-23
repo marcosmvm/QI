@@ -331,7 +331,7 @@ export default function ReportsPage() {
                   "px-4 py-2 rounded-lg text-sm font-medium transition-all",
                   activeTab === tab.id
                     ? "bg-emerald-pro-600/10 text-emerald-pro-600"
-                    : "text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
+                    : "text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white"
                 )}
               >
                 {tab.label}
@@ -344,7 +344,7 @@ export default function ReportsPage() {
               <Button
                 variant="outline"
                 size="sm"
-                className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
+                className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white"
                 onClick={() => setShowDatePicker(!showDatePicker)}
               >
                 <Calendar className="h-4 w-4 mr-2" />
@@ -360,7 +360,7 @@ export default function ReportsPage() {
                   >
                     <div className="flex items-center justify-between mb-4">
                       <span className="text-sm font-medium text-light-text dark:text-white">Select Date Range</span>
-                      <button onClick={() => setShowDatePicker(false)} className="text-light-text-muted dark:text-steel hover:text-light-text dark:text-white">
+                      <button onClick={() => setShowDatePicker(false)} className="text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white">
                         <X className="h-4 w-4" />
                       </button>
                     </div>
@@ -397,7 +397,7 @@ export default function ReportsPage() {
             <Button
               variant="outline"
               size="sm"
-              className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
+              className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white"
               onClick={() => window.location.reload()}
             >
               <RefreshCw className="h-4 w-4 mr-2" />
@@ -485,7 +485,7 @@ export default function ReportsPage() {
                             <Button
                               variant="outline"
                               size="sm"
-                              className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
+                              className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white"
                               onClick={(e) => {
                                 e.stopPropagation();
                                 handleViewReport(report as typeof selectedReport);
@@ -524,11 +524,11 @@ export default function ReportsPage() {
                   <p className="text-sm text-light-text-muted dark:text-steel">{selectedReport.date}</p>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white">
+                  <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white">
                     <Share2 className="h-4 w-4 mr-2" />
                     Share
                   </Button>
-                  <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white">
+                  <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white">
                     <Printer className="h-4 w-4 mr-2" />
                     Print
                   </Button>
@@ -641,7 +641,7 @@ export default function ReportsPage() {
                 ))}
               </div>
 
-              <Button variant="outline" className="w-full mt-4 border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white">
+              <Button variant="outline" className="w-full mt-4 border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white">
                 <Plus className="h-4 w-4 mr-2" />
                 Add Schedule
               </Button>
@@ -680,7 +680,7 @@ export default function ReportsPage() {
               <div className="space-y-2">
                 <Button
                   variant="outline"
-                  className="w-full justify-start border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
+                  className="w-full justify-start border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white"
                   onClick={() => alert("This will email the latest report. Connect to email service in production.")}
                 >
                   <Mail className="h-4 w-4 mr-2" />
@@ -688,7 +688,7 @@ export default function ReportsPage() {
                 </Button>
                 <Button
                   variant="outline"
-                  className="w-full justify-start border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
+                  className="w-full justify-start border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white"
                   onClick={() => alert("Report comparison feature coming soon!")}
                 >
                   <BarChart3 className="h-4 w-4 mr-2" />
@@ -696,7 +696,7 @@ export default function ReportsPage() {
                 </Button>
                 <Button
                   variant="outline"
-                  className="w-full justify-start border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
+                  className="w-full justify-start border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white"
                   onClick={() => alert("Alert threshold configuration coming soon!")}
                 >
                   <Bell className="h-4 w-4 mr-2" />
@@ -728,7 +728,7 @@ export default function ReportsPage() {
               >
                 <button
                   onClick={() => setShowReportPreview(false)}
-                  className="absolute top-4 right-4 p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white rounded-lg hover:bg-emerald-pro-600/10 transition-colors"
+                  className="absolute top-4 right-4 p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white rounded-lg hover:bg-emerald-pro-600/10 transition-colors"
                 >
                   <X className="h-5 w-5" />
                 </button>

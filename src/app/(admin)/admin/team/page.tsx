@@ -302,7 +302,7 @@ function TeamMemberCard({ member }: { member: TeamMemberWithProfile }) {
             </span>
           </div>
         </div>
-        <button className="p-2 rounded-lg text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-colors">
+        <button className="p-2 rounded-lg text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-colors">
           <MoreHorizontal className="h-4 w-4" />
         </button>
       </div>

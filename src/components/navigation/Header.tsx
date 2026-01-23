@@ -59,8 +59,8 @@ export function Header({ title, subtitle, showNavTabs = true }: HeaderProps) {
                     className={cn(
                       "px-5 py-2 rounded-full text-sm font-medium transition-all duration-200",
                       isActive
-                        ? "bg-secondary text-light-text dark:text-white shadow-sm"
-                        : "text-slate-600 hover:text-slate-900 hover:bg-white/60"
+                        ? "bg-emerald-pro-600/10 text-emerald-pro-600 dark:text-xgrowth-500 shadow-sm"
+                        : "text-light-text-secondary dark:text-silver hover:text-light-text dark:hover:text-white hover:bg-light-bg-secondary dark:hover:bg-graphite/50"
                     )}
                   >
                     {tab.name}
@@ -89,7 +89,7 @@ export function Header({ title, subtitle, showNavTabs = true }: HeaderProps) {
           {/* Add Report Button */}
           <Button
             size="sm"
-            className="gap-2 bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-light-text dark:text-white font-semibold px-5 py-2.5 rounded-full shadow-primary hover:shadow-lg transition-all"
+            className="gap-2 bg-gradient-to-r from-emerald-pro-600 to-emerald-pro-700 hover:from-emerald-pro-700 hover:to-emerald-pro-600 text-white font-semibold px-5 py-2.5 rounded-full shadow-soft hover:shadow-lg transition-all"
           >
             Add report
           </Button>

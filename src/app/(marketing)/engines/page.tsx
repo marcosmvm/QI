@@ -150,7 +150,7 @@ export default function EnginesPage() {
 
                         {/* Description */}
                         <div className="flex-1">
-                          <p className="text-light-text-secondary dark:text-silver leading-relaxed group-hover:text-light-text dark:text-white/90 transition-colors">
+                          <p className="text-light-text-secondary dark:text-silver leading-relaxed group-hover:text-light-text dark:group-hover:text-white/90 transition-colors">
                             {engine.shortDescription}
                           </p>
                         </div>
@@ -271,7 +271,7 @@ export default function EnginesPage() {
                 }`}>
                   {combo.title}
                 </h3>
-                <p className="text-light-text-secondary dark:text-silver text-sm leading-relaxed group-hover:text-light-text dark:text-white/80 transition-colors">
+                <p className="text-light-text-secondary dark:text-silver text-sm leading-relaxed group-hover:text-light-text dark:group-hover:text-white/80 transition-colors">
                   {combo.description}
                 </p>
 

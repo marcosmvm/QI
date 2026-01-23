@@ -135,7 +135,7 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
                   "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200",
                   isActive(item.href)
                     ? "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20"
-                    : "text-light-text-secondary dark:text-silver hover:bg-light-bg-secondary dark:bg-midnight-blue/50 hover:text-light-text dark:text-white border border-transparent"
+                    : "text-light-text-secondary dark:text-silver hover:bg-light-bg-secondary dark:bg-midnight-blue/50 hover:text-light-text dark:hover:text-white border border-transparent"
                 )}
               >
                 <item.icon className={cn(
@@ -159,7 +159,7 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
                   "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200",
                   isActive(item.href)
                     ? "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20"
-                    : "text-light-text-secondary dark:text-silver hover:bg-light-bg-secondary dark:bg-midnight-blue/50 hover:text-light-text dark:text-white border border-transparent"
+                    : "text-light-text-secondary dark:text-silver hover:bg-light-bg-secondary dark:bg-midnight-blue/50 hover:text-light-text dark:hover:text-white border border-transparent"
                 )}
               >
                 <item.icon className={cn(

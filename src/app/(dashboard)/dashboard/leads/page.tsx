@@ -377,7 +377,7 @@ export default function LeadsPage() {
                 variant="outline"
                 size="sm"
                 className={cn(
-                  "border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white",
+                  "border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white",
                   (filterSource || selectedStage) && "border-emerald-pro-600/50 text-emerald-pro-600"
                 )}
                 onClick={() => setShowFilterDropdown(!showFilterDropdown)}
@@ -469,7 +469,7 @@ export default function LeadsPage() {
               <Button
                 variant="outline"
                 size="sm"
-                className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
+                className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white"
                 onClick={() => setShowSortDropdown(!showSortDropdown)}
               >
                 <ArrowUpDown className="h-4 w-4 mr-2" />
@@ -504,7 +504,7 @@ export default function LeadsPage() {
                           "w-full flex items-center justify-between px-3 py-2 text-sm rounded-lg transition-colors",
                           sortBy === option.id
                             ? "bg-emerald-pro-600/10 text-emerald-pro-600"
-                            : "text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-emerald-pro-600/5"
+                            : "text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-emerald-pro-600/5"
                         )}
                       >
                         {option.label}
@@ -528,7 +528,7 @@ export default function LeadsPage() {
                   "p-2 rounded-md transition-all",
                   viewMode === "pipeline"
                     ? "bg-emerald-pro-600/10 text-emerald-pro-600"
-                    : "text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
+                    : "text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white"
                 )}
                 title="Pipeline View"
               >
@@ -540,7 +540,7 @@ export default function LeadsPage() {
                   "p-2 rounded-md transition-all",
                   viewMode === "list"
                     ? "bg-emerald-pro-600/10 text-emerald-pro-600"
-                    : "text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
+                    : "text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white"
                 )}
                 title="List View"
               >
@@ -551,7 +551,7 @@ export default function LeadsPage() {
             <Button
               variant="outline"
               size="sm"
-              className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
+              className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white"
               onClick={handleExport}
             >
               <Download className="h-4 w-4 mr-2" />
@@ -560,7 +560,7 @@ export default function LeadsPage() {
             <Button
               variant="outline"
               size="sm"
-              className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
+              className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white"
               onClick={handleImportClick}
             >
               <Upload className="h-4 w-4 mr-2" />
@@ -812,7 +812,7 @@ export default function LeadsPage() {
                             <button className="p-2 text-light-text-muted dark:text-steel hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                               <Phone className="h-4 w-4" />
                             </button>
-                            <button className="p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
+                            <button className="p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                               <MoreHorizontal className="h-4 w-4" />
                             </button>
                           </div>
@@ -830,10 +830,10 @@ export default function LeadsPage() {
                 Showing <span className="text-light-text dark:text-white font-medium">1-6</span> of <span className="text-light-text dark:text-white font-medium">547</span> leads
               </p>
               <div className="flex items-center gap-2">
-                <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white" disabled>
+                <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white" disabled>
                   Previous
                 </Button>
-                <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white">
+                <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white">
                   Next
                 </Button>
               </div>
@@ -862,7 +862,7 @@ export default function LeadsPage() {
               >
                 <button
                   onClick={() => setShowAddLeadModal(false)}
-                  className="absolute top-4 right-4 p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white rounded-lg hover:bg-emerald-pro-600/10 transition-colors"
+                  className="absolute top-4 right-4 p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white rounded-lg hover:bg-emerald-pro-600/10 transition-colors"
                 >
                   <X className="h-4 w-4" />
                 </button>

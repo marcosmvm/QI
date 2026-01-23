@@ -46,7 +46,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
           >
             <Link
               href="/case-studies"
-              className="inline-flex items-center gap-2 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               All Case Studies
@@ -245,7 +245,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
             {prevStudy ? (
               <Link
                 href={`/case-studies/${prevStudy.id}`}
-                className="flex items-center gap-3 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white transition-colors group"
+                className="flex items-center gap-3 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white transition-colors group"
               >
                 <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
                 <span>
@@ -267,7 +267,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
             {nextStudy ? (
               <Link
                 href={`/case-studies/${nextStudy.id}`}
-                className="flex items-center gap-3 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white transition-colors group text-right"
+                className="flex items-center gap-3 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white transition-colors group text-right"
               >
                 <span>
                   <span className="text-sm block">Next</span>

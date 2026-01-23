@@ -123,7 +123,7 @@ export default function BlogPage() {
                     </h2>
 
                     {/* Excerpt */}
-                    <p className="text-light-text-secondary dark:text-silver text-sm mb-4 line-clamp-2 group-hover:text-light-text dark:text-white/80 transition-colors">
+                    <p className="text-light-text-secondary dark:text-silver text-sm mb-4 line-clamp-2 group-hover:text-light-text dark:group-hover:text-white/80 transition-colors">
                       {post.excerpt}
                     </p>
 

@@ -392,7 +392,7 @@ function NotificationCard({ notification }: { notification: Notification }) {
             >
               View details
             </Link>
-            <button className="text-sm text-light-text-muted dark:text-steel hover:text-light-text dark:text-white">
+            <button className="text-sm text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white">
               <Check className="h-4 w-4" />
             </button>
             <button className="text-sm text-light-text-muted dark:text-steel hover:text-energy-orange">

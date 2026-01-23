@@ -105,7 +105,7 @@ export function ActivityFeed({
 
           if (activity.link) {
             return (
-              <Link key={activity.id} href={activity.link} className="block hover:bg-graphite/30 transition-colors">
+              <Link key={activity.id} href={activity.link} className="block hover:bg-light-bg-secondary dark:hover:bg-graphite/30 transition-colors">
                 {content}
               </Link>
             );

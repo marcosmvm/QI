@@ -163,7 +163,7 @@ export function ClientsTable({ clients, industries }: ClientsTableProps) {
           {searchQuery && (
             <button
               onClick={() => setSearchQuery("")}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white"
             >
               <X className="h-4 w-4" />
             </button>
@@ -188,7 +188,7 @@ export function ClientsTable({ clients, industries }: ClientsTableProps) {
         {hasActiveFilters && (
           <button
             onClick={clearFilters}
-            className="text-sm text-light-text-muted dark:text-steel hover:text-light-text dark:text-white transition-colors"
+            className="text-sm text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white transition-colors"
           >
             Clear all
           </button>
@@ -381,7 +381,7 @@ export function ClientsTable({ clients, industries }: ClientsTableProps) {
                     <div className="flex items-center justify-end gap-2">
                       <Link
                         href={`/admin/clients/${client.id}`}
-                        className="p-2 rounded-lg text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-colors"
+                        className="p-2 rounded-lg text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-colors"
                         title="View details"
                       >
                         <TrendingUp className="h-4 w-4" />

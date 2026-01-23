@@ -328,7 +328,7 @@ export default function ScientistPage() {
                 "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all",
                 activeTab === tab.id
                   ? "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20"
-                  : "text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-emerald-pro-600/5"
+                  : "text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-emerald-pro-600/5"
               )}
             >
               <tab.icon className="h-4 w-4" />
@@ -497,7 +497,7 @@ export default function ScientistPage() {
                           Pause
                         </Button>
                       )}
-                      <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white">
+                      <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white">
                         <MoreHorizontal className="h-4 w-4" />
                       </Button>
                     </div>

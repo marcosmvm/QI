@@ -490,7 +490,7 @@ function CampaignsTab({
                   )}
                   <Link
                     href={`/admin/campaigns/${campaign.id}`}
-                    className="p-2 rounded-lg text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-colors"
+                    className="p-2 rounded-lg text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-colors"
                   >
                     <Eye className="h-4 w-4" />
                   </Link>

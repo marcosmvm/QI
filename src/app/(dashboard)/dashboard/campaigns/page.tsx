@@ -348,7 +348,7 @@ export default function CampaignsPage() {
                   "px-3 py-1.5 rounded-md text-xs font-medium transition-all",
                   !statusFilter
                     ? "bg-emerald-pro-600/10 text-emerald-pro-600"
-                    : "text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
+                    : "text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white"
                 )}
               >
                 All
@@ -361,7 +361,7 @@ export default function CampaignsPage() {
                     "px-3 py-1.5 rounded-md text-xs font-medium transition-all",
                     statusFilter === key
                       ? `${config.bg} ${config.text}`
-                      : "text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
+                      : "text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white"
                   )}
                 >
                   {config.label}
@@ -374,7 +374,7 @@ export default function CampaignsPage() {
             <Button
               variant="outline"
               size="sm"
-              className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:border-emerald-pro-600/40"
+              className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:border-emerald-pro-600/40"
               onClick={handleExport}
             >
               <Download className="h-4 w-4 mr-2" />
@@ -383,7 +383,7 @@ export default function CampaignsPage() {
             <Button
               variant="outline"
               size="sm"
-              className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:border-emerald-pro-600/40"
+              className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:border-emerald-pro-600/40"
               onClick={handleRefresh}
               disabled={isRefreshing}
             >
@@ -526,7 +526,7 @@ export default function CampaignsPage() {
                           >
                             <Copy className="h-4 w-4" />
                           </button>
-                          <button className="p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors" title="More options">
+                          <button className="p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors" title="More options">
                             <MoreHorizontal className="h-4 w-4" />
                           </button>
                         </div>
@@ -545,10 +545,10 @@ export default function CampaignsPage() {
               <span className="text-light-text dark:text-white font-medium">{campaigns.length}</span> campaigns
             </p>
             <div className="flex items-center gap-2">
-              <Button variant="outline" size="sm" className="border-border-default dark:border-graphite/50 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:border-emerald-pro-600/30" disabled>
+              <Button variant="outline" size="sm" className="border-border-default dark:border-graphite/50 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:border-emerald-pro-600/30" disabled>
                 Previous
               </Button>
-              <Button variant="outline" size="sm" className="border-border-default dark:border-graphite/50 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:border-emerald-pro-600/30">
+              <Button variant="outline" size="sm" className="border-border-default dark:border-graphite/50 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:border-emerald-pro-600/30">
                 Next
               </Button>
             </div>

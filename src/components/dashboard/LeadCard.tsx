@@ -40,7 +40,7 @@ export function LeadCard({ lead, className }: LeadCardProps) {
     <Link
       href={`/dashboard/leads/${lead.id}`}
       className={cn(
-        "block bg-light-bg-secondary dark:bg-midnight-blue border border-border-default dark:border-graphite rounded-xl p-6 transition-all duration-200 hover:border-emerald-pro-600/50 hover:bg-graphite",
+        "block bg-light-bg-secondary dark:bg-midnight-blue border border-border-default dark:border-graphite rounded-xl p-6 transition-all duration-200 hover:border-emerald-pro-600/50 hover:bg-light-bg-secondary dark:hover:bg-graphite",
         className
       )}
     >

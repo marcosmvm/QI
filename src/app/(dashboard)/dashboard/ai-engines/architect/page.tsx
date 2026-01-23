@@ -325,7 +325,7 @@ export default function ArchitectPage() {
                 "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all",
                 activeTab === tab.id
                   ? "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20"
-                  : "text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-emerald-pro-600/5"
+                  : "text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-emerald-pro-600/5"
               )}
             >
               <tab.icon className="h-4 w-4" />
@@ -350,11 +350,11 @@ export default function ArchitectPage() {
                 />
               </div>
               <div className="flex items-center gap-2">
-                <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white">
+                <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white">
                   <Filter className="h-4 w-4 mr-2" />
                   Filter
                 </Button>
-                <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white">
+                <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white">
                   <RefreshCw className="h-4 w-4 mr-2" />
                   Refresh
                 </Button>
@@ -444,7 +444,7 @@ export default function ArchitectPage() {
                               <button className="p-2 text-light-text-muted dark:text-steel hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                                 <Edit3 className="h-4 w-4" />
                               </button>
-                              <button className="p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
+                              <button className="p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                                 <MoreHorizontal className="h-4 w-4" />
                               </button>
                             </div>
@@ -502,7 +502,7 @@ export default function ArchitectPage() {
                         </span>
                       </div>
                     </div>
-                    <button className="p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors opacity-0 group-hover:opacity-100">
+                    <button className="p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors opacity-0 group-hover:opacity-100">
                       <MoreHorizontal className="h-4 w-4" />
                     </button>
                   </div>
@@ -593,7 +593,7 @@ export default function ArchitectPage() {
                       {["Professional", "Casual", "Direct"].map((tone) => (
                         <button
                           key={tone}
-                          className="px-3 py-1.5 rounded-lg text-xs font-medium border border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-emerald-pro-600/10 transition-all"
+                          className="px-3 py-1.5 rounded-lg text-xs font-medium border border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-emerald-pro-600/10 transition-all"
                         >
                           {tone}
                         </button>
@@ -644,7 +644,7 @@ export default function ArchitectPage() {
               <div className="flex items-center justify-between">
                 <h3 className="font-semibold text-light-text dark:text-white">Generated Variants</h3>
                 <div className="flex items-center gap-2">
-                  <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white">
+                  <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white">
                     <RefreshCw className="h-4 w-4 mr-2" />
                     Regenerate
                   </Button>
@@ -701,10 +701,10 @@ export default function ArchitectPage() {
 
                   <div className="flex items-center justify-between pt-3 border-t border-emerald-pro-600/10">
                     <div className="flex items-center gap-2">
-                      <button className="p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
+                      <button className="p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                         <Copy className="h-4 w-4" />
                       </button>
-                      <button className="p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
+                      <button className="p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                         <Edit3 className="h-4 w-4" />
                       </button>
                       <button className="p-2 text-light-text-muted dark:text-steel hover:text-rose hover:bg-rose/10 rounded-lg transition-colors">

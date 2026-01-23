@@ -244,15 +244,15 @@ export default function TeamMemberDetailPage({ params }: PageProps) {
       {/* Breadcrumb Header */}
       <motion.div variants={itemVariants} className="mb-6">
         <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-4">
-          <Link href="/admin" className="hover:text-light-text dark:text-white transition-colors">Admin</Link>
+          <Link href="/admin" className="hover:text-light-text dark:hover:text-white transition-colors">Admin</Link>
           <span className="text-graphite">/</span>
-          <Link href="/admin/team" className="hover:text-light-text dark:text-white transition-colors">Team</Link>
+          <Link href="/admin/team" className="hover:text-light-text dark:hover:text-white transition-colors">Team</Link>
           <span className="text-graphite">/</span>
           <span className="text-emerald-pro-600">{profile?.full_name || "Member"}</span>
         </div>
         <Link
           href="/admin/team"
-          className="inline-flex items-center gap-2 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white transition-colors"
+          className="inline-flex items-center gap-2 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white transition-colors"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to Team

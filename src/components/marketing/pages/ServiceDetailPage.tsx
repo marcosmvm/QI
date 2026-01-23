@@ -186,7 +186,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
                 <h3 className={`text-lg font-sora font-semibold text-light-text dark:text-white mb-3 group-hover:${colors.text} transition-colors`}>
                   {feature.title}
                 </h3>
-                <p className="text-light-text-secondary dark:text-silver text-sm leading-relaxed group-hover:text-light-text dark:text-white/80 transition-colors">
+                <p className="text-light-text-secondary dark:text-silver text-sm leading-relaxed group-hover:text-light-text dark:group-hover:text-white/80 transition-colors">
                   {feature.description}
                 </p>
               </motion.div>
@@ -243,7 +243,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
                     <h3 className={`text-xl md:text-2xl font-sora font-semibold text-light-text dark:text-white mb-3 group-hover:${colors.text} transition-colors`}>
                       {step.title}
                     </h3>
-                    <p className="text-light-text-secondary dark:text-silver leading-relaxed group-hover:text-light-text dark:text-white/80 transition-colors">
+                    <p className="text-light-text-secondary dark:text-silver leading-relaxed group-hover:text-light-text dark:group-hover:text-white/80 transition-colors">
                       {step.description}
                     </p>
                   </div>
@@ -285,7 +285,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
                     <div className={`flex-shrink-0 w-8 h-8 rounded-full ${colors.bg} border ${colors.border} flex items-center justify-center group-hover:scale-110 transition-transform`}>
                       <CheckCircle className={`h-5 w-5 ${colors.text}`} />
                     </div>
-                    <span className="text-light-text-secondary dark:text-silver text-lg leading-relaxed group-hover:text-light-text dark:text-white transition-colors">{benefit}</span>
+                    <span className="text-light-text-secondary dark:text-silver text-lg leading-relaxed group-hover:text-light-text dark:group-hover:text-white transition-colors">{benefit}</span>
                   </motion.li>
                 ))}
               </ul>

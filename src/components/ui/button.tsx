@@ -21,9 +21,9 @@ const buttonVariants = cva(
         outline:
           "border border-emerald-pro-600 text-emerald-pro-600 bg-transparent hover:bg-emerald-pro-600/10 hover:shadow-glow-cyan-sm",
         secondary:
-          "bg-graphite text-light-text-secondary dark:text-silver hover:bg-slate hover:text-light-text dark:text-white",
+          "bg-graphite text-light-text-secondary dark:text-silver hover:bg-slate hover:text-light-text dark:hover:text-white",
         ghost:
-          "text-light-text-muted dark:text-steel hover:bg-graphite/50 hover:text-light-text dark:text-white",
+          "text-light-text-muted dark:text-steel hover:bg-light-bg-secondary dark:hover:bg-graphite/50 hover:text-light-text dark:hover:text-white",
         link:
           "text-emerald-pro-600 underline-offset-4 hover:underline",
         // Premium glow variant - pulsing glow effect

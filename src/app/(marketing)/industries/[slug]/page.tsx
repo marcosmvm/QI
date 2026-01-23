@@ -81,7 +81,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
           >
             <Link
               href="/industries"
-              className="inline-flex items-center gap-2 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               All Industries
@@ -331,7 +331,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
             {prevIndustry ? (
               <Link
                 href={`/industries/${prevIndustry.id}`}
-                className="flex items-center gap-3 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white transition-colors group"
+                className="flex items-center gap-3 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white transition-colors group"
               >
                 <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
                 <span>
@@ -353,7 +353,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
             {nextIndustry ? (
               <Link
                 href={`/industries/${nextIndustry.id}`}
-                className="flex items-center gap-3 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white transition-colors group text-right"
+                className="flex items-center gap-3 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white transition-colors group text-right"
               >
                 <span>
                   <span className="text-sm block">Next</span>

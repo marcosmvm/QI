@@ -82,7 +82,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
           >
             <Link
               href="/engines"
-              className="inline-flex items-center gap-2 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               All Engines
@@ -206,7 +206,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
                 <h3 className={`text-lg font-sora font-semibold text-light-text dark:text-white mb-2 group-hover:${colors.text} transition-colors`}>
                   {feature.title}
                 </h3>
-                <p className="text-light-text-secondary dark:text-silver text-sm leading-relaxed group-hover:text-light-text dark:text-white/80 transition-colors">
+                <p className="text-light-text-secondary dark:text-silver text-sm leading-relaxed group-hover:text-light-text dark:group-hover:text-white/80 transition-colors">
                   {feature.description}
                 </p>
               </motion.div>
@@ -247,7 +247,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
                     className="flex items-start gap-3 group"
                   >
                     <CheckCircle className={`h-6 w-6 ${colors.text} flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform`} />
-                    <span className="text-light-text-secondary dark:text-silver group-hover:text-light-text dark:text-white/90 transition-colors">{useCase}</span>
+                    <span className="text-light-text-secondary dark:text-silver group-hover:text-light-text dark:group-hover:text-white/90 transition-colors">{useCase}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -296,7 +296,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
             {prevEngine ? (
               <Link
                 href={`/engines/${prevEngine.id}`}
-                className="flex items-center gap-3 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white transition-colors group p-4 rounded-xl hover:bg-light-bg-secondary dark:bg-midnight-blue/30"
+                className="flex items-center gap-3 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white transition-colors group p-4 rounded-xl hover:bg-light-bg-secondary dark:bg-midnight-blue/30"
               >
                 <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
                 <span>
@@ -318,7 +318,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
             {nextEngine ? (
               <Link
                 href={`/engines/${nextEngine.id}`}
-                className="flex items-center gap-3 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white transition-colors group text-right p-4 rounded-xl hover:bg-light-bg-secondary dark:bg-midnight-blue/30"
+                className="flex items-center gap-3 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white transition-colors group text-right p-4 rounded-xl hover:bg-light-bg-secondary dark:bg-midnight-blue/30"
               >
                 <span>
                   <span className="text-sm block text-light-text-muted dark:text-steel/70">Next</span>

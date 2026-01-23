@@ -51,7 +51,7 @@ export function MegaMenu({ sections, featured }: MegaMenuProps) {
                         )}
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2">
-                            <span className="text-sm font-medium text-light-text-secondary dark:text-silver group-hover:text-light-text dark:group-hover:text-light-text dark:text-white transition-colors">
+                            <span className="text-sm font-medium text-light-text-secondary dark:text-silver group-hover:text-light-text dark:group-hover:text-white transition-colors">
                               {item.label}
                             </span>
                             {item.badge && (

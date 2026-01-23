@@ -350,7 +350,7 @@ export default function SentinelPage() {
                         "px-3 py-1.5 rounded-md text-xs font-medium transition-colors capitalize",
                         statusFilter === filter
                           ? "bg-emerald-pro-600/20 text-emerald-pro-600"
-                          : "text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
+                          : "text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white"
                       )}
                     >
                       {filter}

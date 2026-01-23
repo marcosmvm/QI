@@ -108,7 +108,7 @@ export default function IndustriesPage() {
                 >
                   <Link href={`/industries/${industry.id}`} className="block group h-full">
                     {/* Brand Board v1.0 - Interactive Card Pattern with Enhanced Hover */}
-                    <div className="relative h-full p-6 rounded-xl border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue transition-all duration-200 hover:border-emerald-pro-600/50 hover:bg-graphite hover:-translate-y-1 hover:shadow-card-hover overflow-hidden">
+                    <div className="relative h-full p-6 rounded-xl border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue transition-all duration-200 hover:border-emerald-pro-600/50 hover:bg-light-bg-secondary dark:hover:bg-graphite hover:-translate-y-1 hover:shadow-card-hover overflow-hidden">
                       {/* Top accent line on hover */}
                       <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-emerald-pro-600 to-emerald-pro-500 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
 
@@ -197,7 +197,7 @@ export default function IndustriesPage() {
               {/* Brand Board v1.0 - Ghost Button */}
               <Link
                 href="/case-studies"
-                className="text-light-text-muted dark:text-steel px-6 py-3 rounded-lg font-medium hover:text-light-text dark:text-white hover:bg-graphite transition-all duration-200"
+                className="text-light-text-muted dark:text-steel px-6 py-3 rounded-lg font-medium hover:text-light-text dark:hover:text-white hover:bg-light-bg-secondary dark:hover:bg-graphite transition-all duration-200"
               >
                 View Case Studies
               </Link>

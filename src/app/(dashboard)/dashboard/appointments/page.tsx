@@ -307,11 +307,11 @@ export default function AppointmentsPage() {
         {/* Actions Bar */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white">
+            <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white">
               <Filter className="h-4 w-4 mr-2" />
               Filter
             </Button>
-            <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white">
+            <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white">
               <RefreshCw className="h-4 w-4 mr-2" />
               Sync Calendar
             </Button>
@@ -326,7 +326,7 @@ export default function AppointmentsPage() {
                   "p-2 rounded-md transition-all",
                   viewMode === "calendar"
                     ? "bg-emerald-pro-600/10 text-emerald-pro-600"
-                    : "text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
+                    : "text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white"
                 )}
               >
                 <LayoutGrid className="h-4 w-4" />
@@ -337,7 +337,7 @@ export default function AppointmentsPage() {
                   "p-2 rounded-md transition-all",
                   viewMode === "list"
                     ? "bg-emerald-pro-600/10 text-emerald-pro-600"
-                    : "text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
+                    : "text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white"
                 )}
               >
                 <List className="h-4 w-4" />
@@ -367,19 +367,19 @@ export default function AppointmentsPage() {
                 <div className="flex items-center gap-2">
                   <button
                     onClick={previousMonth}
-                    className="p-2 rounded-lg border border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-emerald-pro-600/10 transition-all"
+                    className="p-2 rounded-lg border border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-emerald-pro-600/10 transition-all"
                   >
                     <ChevronLeft className="h-4 w-4" />
                   </button>
                   <button
                     onClick={() => setCurrentDate(new Date(2026, 0, 20))}
-                    className="px-3 py-2 rounded-lg border border-emerald-pro-600/20 text-sm text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-emerald-pro-600/10 transition-all"
+                    className="px-3 py-2 rounded-lg border border-emerald-pro-600/20 text-sm text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-emerald-pro-600/10 transition-all"
                   >
                     Today
                   </button>
                   <button
                     onClick={nextMonth}
-                    className="p-2 rounded-lg border border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-emerald-pro-600/10 transition-all"
+                    className="p-2 rounded-lg border border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-emerald-pro-600/10 transition-all"
                   >
                     <ChevronRight className="h-4 w-4" />
                   </button>
@@ -536,7 +536,7 @@ export default function AppointmentsPage() {
                                 Join Meeting
                               </a>
                             )}
-                            <button className="p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
+                            <button className="p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                               <Edit3 className="h-4 w-4" />
                             </button>
                             <button className="p-2 text-light-text-muted dark:text-steel hover:text-rose hover:bg-rose/10 rounded-lg transition-colors">
@@ -660,7 +660,7 @@ export default function AppointmentsPage() {
                             <button className="p-2 text-light-text-muted dark:text-steel hover:text-rose hover:bg-rose/10 rounded-lg transition-colors">
                               <Trash2 className="h-4 w-4" />
                             </button>
-                            <button className="p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
+                            <button className="p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                               <MoreHorizontal className="h-4 w-4" />
                             </button>
                           </div>

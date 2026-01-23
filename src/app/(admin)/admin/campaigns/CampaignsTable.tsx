@@ -170,7 +170,7 @@ export function CampaignsTable({ campaigns, clients }: CampaignsTableProps) {
           {searchQuery && (
             <button
               onClick={() => setSearchQuery("")}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white"
             >
               <X className="h-4 w-4" />
             </button>
@@ -196,7 +196,7 @@ export function CampaignsTable({ campaigns, clients }: CampaignsTableProps) {
         {hasActiveFilters && (
           <button
             onClick={clearFilters}
-            className="text-sm text-light-text-muted dark:text-steel hover:text-light-text dark:text-white transition-colors"
+            className="text-sm text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white transition-colors"
           >
             Clear all
           </button>
@@ -432,7 +432,7 @@ export function CampaignsTable({ campaigns, clients }: CampaignsTableProps) {
                       ) : null}
                       <Link
                         href={`/admin/campaigns/${campaign.id}`}
-                        className="p-2 rounded-lg text-light-text-muted dark:text-steel hover:text-light-text dark:text-white hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-colors"
+                        className="p-2 rounded-lg text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-colors"
                         title="View details"
                       >
                         <Eye className="h-4 w-4" />

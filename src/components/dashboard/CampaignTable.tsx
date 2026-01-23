@@ -82,7 +82,7 @@ export function CampaignTable({ campaigns }: CampaignTableProps) {
             {campaigns.map((campaign) => {
               const status = statusConfig[campaign.status];
               return (
-                <tr key={campaign.id} className="border-b border-border-default dark:border-graphite/50 hover:bg-graphite/30 transition-colors">
+                <tr key={campaign.id} className="border-b border-border-default dark:border-graphite/50 hover:bg-light-bg-secondary dark:hover:bg-graphite/30 transition-colors">
                   <td className="px-4 py-3">
                     <Link
                       href={`/dashboard/campaigns/${campaign.id}`}
@@ -147,24 +147,24 @@ export function CampaignTable({ campaigns }: CampaignTableProps) {
                   <td className="px-4 py-3">
                     <div className="flex items-center justify-end gap-1">
                       {campaign.status === "active" ? (
-                        <button className="p-1.5 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white rounded transition-colors">
+                        <button className="p-1.5 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white rounded transition-colors">
                           <Pause className="h-4 w-4" />
                         </button>
                       ) : campaign.status === "paused" || campaign.status === "draft" ? (
-                        <button className="p-1.5 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white rounded transition-colors">
+                        <button className="p-1.5 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white rounded transition-colors">
                           <Play className="h-4 w-4" />
                         </button>
                       ) : null}
                       <Link
                         href={`/dashboard/campaigns/${campaign.id}`}
-                        className="p-1.5 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white rounded transition-colors"
+                        className="p-1.5 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white rounded transition-colors"
                       >
                         <Eye className="h-4 w-4" />
                       </Link>
                       <button className="p-1.5 text-light-text-muted dark:text-steel hover:text-alert-red rounded transition-colors">
                         <Trash2 className="h-4 w-4" />
                       </button>
-                      <button className="p-1.5 text-light-text-muted dark:text-steel hover:text-light-text dark:text-white rounded transition-colors">
+                      <button className="p-1.5 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white rounded transition-colors">
                         <MoreHorizontal className="h-4 w-4" />
                       </button>
                     </div>

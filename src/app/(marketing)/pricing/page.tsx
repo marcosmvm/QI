@@ -131,7 +131,7 @@ export default function PricingPage() {
                       )}
                       <span className={cn(
                         "text-sm leading-relaxed",
-                        feature.included ? "text-light-text-secondary dark:text-silver group-hover:text-light-text dark:text-white transition-colors" : "text-graphite"
+                        feature.included ? "text-light-text-secondary dark:text-silver group-hover:text-light-text dark:group-hover:text-white transition-colors" : "text-graphite"
                       )}>
                         {feature.text}
                       </span>
