@@ -39,27 +39,27 @@ export function Hero() {
   };
 
   return (
-    <section className="hero-enhanced relative min-h-[100vh] flex items-center overflow-hidden pt-20">
-      {/* Enhanced Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-deep-space/30 to-midnight-blue/50" />
+    <section className="hero-enhanced relative min-h-[100vh] flex items-center overflow-hidden pt-20 bg-white dark:bg-deep-space">
+      {/* Enhanced Background Effects - Light Mode */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-light-bg-secondary/30 dark:via-deep-space/30 to-light-bg-tertiary/50 dark:to-midnight-blue/50" />
 
       {/* Hero-specific ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full blur-[200px] bg-[radial-gradient(circle,rgba(0,212,255,0.08)_0%,transparent_60%)]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full blur-[200px] bg-[radial-gradient(circle,rgba(5,150,105,0.05)_0%,transparent_60%)] dark:bg-[radial-gradient(circle,rgba(34,197,94,0.08)_0%,transparent_60%)]" />
 
       {/* Floating geometric shapes */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <motion.div
-          className="absolute top-20 left-10 w-20 h-20 border border-electric-cyan/20 rounded-lg"
+          className="absolute top-20 left-10 w-20 h-20 border border-emerald-pro-600/20 dark:border-xgrowth-500/20 rounded-lg"
           animate={{ rotate: 360, y: [0, -20, 0] }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         />
         <motion.div
-          className="absolute top-40 right-20 w-16 h-16 border border-quantum-violet/20 rounded-full"
+          className="absolute top-40 right-20 w-16 h-16 border border-emerald-pro-500/20 dark:border-xgrowth-400/20 rounded-full"
           animate={{ rotate: -360, scale: [1, 1.2, 1] }}
           transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
         />
         <motion.div
-          className="absolute bottom-40 left-20 w-12 h-12 border border-neon-mint/20"
+          className="absolute bottom-40 left-20 w-12 h-12 border border-emerald-pro-400/20 dark:border-xgrowth-300/20"
           style={{ clipPath: "polygon(50% 0%, 100% 100%, 0% 100%)" }}
           animate={{ rotate: 180, y: [0, 15, 0] }}
           transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
@@ -73,10 +73,10 @@ export function Hero() {
             initial={{ opacity: 0, y: 30, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-quantum-violet/10 border border-quantum-violet/30 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-pro-600/10 dark:bg-xgrowth-500/10 border border-emerald-pro-600/30 dark:border-xgrowth-500/30 mb-8"
           >
-            <Rocket className="w-4 h-4 text-quantum-violet" />
-            <span className="text-sm font-medium text-quantum-violet">Now Accepting Founding Partners</span>
+            <Rocket className="w-4 h-4 text-emerald-pro-600 dark:text-xgrowth-500" />
+            <span className="text-sm font-medium text-emerald-pro-600 dark:text-xgrowth-500">Now Accepting Founding Partners</span>
           </motion.div>
 
           {/* Main Headline - Updated per audit */}
@@ -85,9 +85,9 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-sora font-bold text-white leading-[1.1] mb-8">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-figtree dark:font-sora font-bold text-light-text dark:text-white leading-[1.1] mb-8">
               <span className="block">Book 3x More Meetings.</span>
-              <span className="headline-underline gradient-text-cyan-violet block mt-2">
+              <span className="headline-underline text-gradient block mt-2">
                 Zero Spam Folders.
               </span>
             </h1>
@@ -98,9 +98,9 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto mb-8 leading-relaxed"
+            className="text-xl md:text-2xl text-light-text-secondary dark:text-silver/90 max-w-3xl mx-auto mb-8 leading-relaxed"
           >
-            Our <span className="text-electric-cyan font-semibold">5 proprietary AI engines</span> handle compliance, personalization, and optimization—so your cold emails actually get read.
+            Our <span className="text-emerald-pro-600 dark:text-xgrowth-500 font-semibold">5 proprietary AI engines</span> handle compliance, personalization, and optimization—so your cold emails actually get read.
           </motion.p>
 
           {/* Value Props */}
@@ -111,8 +111,8 @@ export function Hero() {
             className="flex flex-wrap justify-center gap-6 mb-12"
           >
             {valueProps.map((prop, i) => (
-              <div key={i} className="flex items-center gap-2 text-silver">
-                <CheckCircle className="h-4 w-4 text-neon-mint" />
+              <div key={i} className="flex items-center gap-2 text-light-text-secondary dark:text-silver">
+                <CheckCircle className="h-4 w-4 text-emerald-pro-500 dark:text-xgrowth-400" />
                 <span className="text-sm">{prop}</span>
               </div>
             ))}
@@ -135,7 +135,7 @@ export function Hero() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-electric-cyan/30 hover:border-electric-cyan/60 text-white hover:text-electric-cyan bg-electric-cyan/5 hover:bg-electric-cyan/10 px-8 py-6 text-lg transition-all backdrop-blur-sm"
+                className="border-emerald-pro-600/30 dark:border-xgrowth-500/30 hover:border-emerald-pro-600/60 dark:hover:border-xgrowth-500/60 text-light-text dark:text-white hover:text-emerald-pro-600 dark:hover:text-xgrowth-500 bg-emerald-pro-600/5 dark:bg-xgrowth-500/5 hover:bg-emerald-pro-600/10 dark:hover:bg-xgrowth-500/10 px-8 py-6 text-lg transition-all backdrop-blur-sm"
               >
                 See How It Works
               </Button>
@@ -156,24 +156,24 @@ export function Hero() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email for a free guide"
-                  className="flex-1 px-4 py-3 rounded-lg bg-midnight-blue/60 border border-graphite/50 text-white placeholder:text-steel focus:outline-none focus:border-electric-cyan/50 text-sm"
+                  className="flex-1 px-4 py-3 rounded-lg bg-white dark:bg-midnight-blue/60 border border-border-default dark:border-graphite/50 text-light-text dark:text-white placeholder:text-light-text-muted dark:placeholder:text-steel focus:outline-none focus:border-emerald-pro-600/50 dark:focus:border-xgrowth-500/50 text-sm"
                   required
                 />
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="px-5 py-3 bg-quantum-violet hover:bg-quantum-violet/80 text-white font-medium rounded-lg transition-colors text-sm whitespace-nowrap disabled:opacity-50"
+                  className="px-5 py-3 bg-emerald-pro-600 dark:bg-xgrowth-500 hover:bg-emerald-pro-700 dark:hover:bg-xgrowth-400 text-white dark:text-deep-space font-medium rounded-lg transition-colors text-sm whitespace-nowrap disabled:opacity-50"
                 >
                   {isSubmitting ? "..." : "Get Guide"}
                 </button>
               </form>
             ) : (
-              <div className="flex items-center justify-center gap-2 text-neon-mint">
+              <div className="flex items-center justify-center gap-2 text-emerald-pro-500 dark:text-xgrowth-400">
                 <CheckCircle className="h-5 w-5" />
                 <span>Check your inbox for the B2B Cold Email Playbook!</span>
               </div>
             )}
-            <p className="text-steel text-xs mt-2">Get our free B2B Cold Email Playbook. No spam, unsubscribe anytime.</p>
+            <p className="text-light-text-muted dark:text-steel text-xs mt-2">Get our free B2B Cold Email Playbook. No spam, unsubscribe anytime.</p>
           </motion.div>
 
           {/* Hero Stats Grid */}
@@ -191,9 +191,9 @@ export function Hero() {
                 transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
                 className="stat-display group"
               >
-                <stat.icon className="w-6 h-6 text-electric-cyan mx-auto mb-2 group-hover:scale-110 transition-transform" />
+                <stat.icon className="w-6 h-6 text-emerald-pro-600 dark:text-xgrowth-500 mx-auto mb-2 group-hover:scale-110 transition-transform" />
                 <div className="stat-number text-2xl md:text-3xl">{stat.value}</div>
-                <div className="text-steel text-sm mt-1">{stat.label}</div>
+                <div className="text-light-text-muted dark:text-steel text-sm mt-1">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -203,16 +203,16 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="pt-8 border-t border-electric-cyan/10"
+            className="pt-8 border-t border-emerald-pro-600/10 dark:border-xgrowth-500/10"
           >
-            <p className="text-steel text-sm mb-4">Built for B2B companies in</p>
+            <p className="text-light-text-muted dark:text-steel text-sm mb-4">Built for B2B companies in</p>
             <div className="flex flex-wrap justify-center items-center gap-3">
               {["SaaS", "B2B Tech", "Healthcare", "Finance", "Professional Services"].map((industry) => (
                 <motion.span
                   key={industry}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="px-4 py-2 text-sm text-steel bg-midnight-blue/40 rounded-lg border border-graphite/30"
+                  className="px-4 py-2 text-sm text-light-text-muted dark:text-steel bg-light-bg-secondary dark:bg-midnight-blue/40 rounded-lg border border-border-default dark:border-graphite/30"
                 >
                   {industry}
                 </motion.span>
@@ -223,7 +223,7 @@ export function Hero() {
       </Container>
 
       {/* Bottom Gradient Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-deep-space to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white dark:from-deep-space to-transparent pointer-events-none" />
     </section>
   );
 }

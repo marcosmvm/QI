@@ -1,0 +1,19 @@
+<svg width="200" height="48" viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon -->
+  <circle cx="24" cy="24" r="24" fill="url(#gradient-light)"/>
+  <path d="M24 38V18" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M24 24C17.5 24 12.5 19 12.5 12.5C19 12.5 24 17.5 24 24Z" fill="#ffffff"/>
+  <path d="M24 24C30.5 24 35.5 19 35.5 12.5C29 12.5 24 17.5 24 24Z" fill="#ffffff"/>
+  
+  <!-- Wordmark -->
+  <text x="56" y="32" font-family="Figtree, sans-serif" font-weight="700" font-size="24" letter-spacing="-0.5">
+    <tspan fill="#059669">X</tspan><tspan fill="#0f172a">GrowthOS</tspan>
+  </text>
+  
+  <defs>
+    <linearGradient id="gradient-light" x1="0" y1="48" x2="48" y2="0">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Sora, Inter } from "next/font/google";
+import { Sora, Inter, Figtree } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
@@ -12,6 +12,12 @@ const sora = Sora({
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+const figtree = Figtree({
+  subsets: ["latin"],
+  variable: "--font-figtree",
   display: "swap",
 });
 
@@ -36,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${sora.variable} ${inter.variable} antialiased bg-deep-space text-silver min-h-screen`}>
+      <body className={`${sora.variable} ${inter.variable} ${figtree.variable} antialiased bg-white text-light-text min-h-screen`}>
         {children}
         <SpeedInsights />
       </body>

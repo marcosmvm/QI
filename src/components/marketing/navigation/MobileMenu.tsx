@@ -29,12 +29,12 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     <div className="fixed inset-0 z-40 lg:hidden">
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-slate-900/20 backdrop-blur-sm"
+        className="absolute inset-0 bg-light-text/10 dark:bg-slate-900/20 backdrop-blur-sm"
         onClick={onClose}
       />
 
       {/* Menu Panel */}
-      <div className="absolute right-0 top-0 h-full w-full max-w-sm bg-white border-l border-slate-200 shadow-xl overflow-y-auto">
+      <div className="absolute right-0 top-0 h-full w-full max-w-sm bg-white dark:bg-deep-space border-l border-border-default dark:border-graphite shadow-xl overflow-y-auto">
         <div className="p-6 pt-24">
           {/* Navigation Items */}
           <nav className="space-y-2">
@@ -44,7 +44,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   <div>
                     <button
                       onClick={() => toggleExpanded(item.label)}
-                      className="w-full flex items-center justify-between p-3 text-left text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
+                      className="w-full flex items-center justify-between p-3 text-left text-light-text-secondary dark:text-silver hover:text-light-text dark:hover:text-white hover:bg-light-bg-secondary dark:hover:bg-graphite/50 rounded-lg transition-colors"
                     >
                       <span className="font-medium">{item.label}</span>
                       <ChevronDown
@@ -59,7 +59,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                       <div className="mt-2 ml-4 space-y-1">
                         {item.dropdown.sections.map((section) => (
                           <div key={section.title} className="mb-4">
-                            <p className="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-slate-400">
+                            <p className="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-light-text-muted dark:text-steel">
                               {section.title}
                             </p>
                             {section.items.map((subItem) => (
@@ -67,12 +67,12 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                                 key={subItem.label}
                                 href={subItem.href}
                                 onClick={onClose}
-                                className="flex items-center gap-2 px-3 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
+                                className="flex items-center gap-2 px-3 py-2 text-sm text-light-text-secondary dark:text-silver hover:text-light-text dark:hover:text-white hover:bg-light-bg-secondary dark:hover:bg-graphite/50 rounded-lg transition-colors"
                               >
                                 {subItem.icon && <subItem.icon className="h-4 w-4" />}
                                 <span>{subItem.label}</span>
                                 {subItem.badge && (
-                                  <span className="ml-auto px-1.5 py-0.5 text-[10px] font-semibold bg-electric-cyan/10 text-electric-cyan rounded">
+                                  <span className="ml-auto px-1.5 py-0.5 text-[10px] font-semibold bg-emerald-pro-600/10 dark:bg-xgrowth-500/10 text-emerald-pro-600 dark:text-xgrowth-500 rounded">
                                     {subItem.badge}
                                   </span>
                                 )}
@@ -87,7 +87,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   <Link
                     href={item.href}
                     onClick={onClose}
-                    className="block p-3 font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
+                    className="block p-3 font-medium text-light-text-secondary dark:text-silver hover:text-light-text dark:hover:text-white hover:bg-light-bg-secondary dark:hover:bg-graphite/50 rounded-lg transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -97,9 +97,9 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           </nav>
 
           {/* CTA Button */}
-          <div className="mt-8 pt-6 border-t border-slate-200">
+          <div className="mt-8 pt-6 border-t border-border-default dark:border-graphite">
             <Link href="/contact" onClick={onClose}>
-              <Button className="w-full bg-electric-cyan hover:bg-cyan-dark text-white font-semibold">
+              <Button className="w-full bg-emerald-pro-600 dark:bg-xgrowth-500 hover:bg-emerald-pro-700 dark:hover:bg-xgrowth-400 text-white dark:text-deep-space font-semibold">
                 Book a Call
               </Button>
             </Link>
@@ -109,14 +109,14 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           <div className="mt-6 space-y-3">
             <a
               href={`mailto:${contactInfo.email}`}
-              className="flex items-center gap-3 p-3 text-sm text-slate-500 hover:text-electric-cyan rounded-lg transition-colors"
+              className="flex items-center gap-3 p-3 text-sm text-light-text-muted dark:text-steel hover:text-emerald-pro-600 dark:hover:text-xgrowth-500 rounded-lg transition-colors"
             >
               <Mail className="h-4 w-4" />
               {contactInfo.email}
             </a>
             <a
               href={`tel:${contactInfo.phone}`}
-              className="flex items-center gap-3 p-3 text-sm text-slate-500 hover:text-electric-cyan rounded-lg transition-colors"
+              className="flex items-center gap-3 p-3 text-sm text-light-text-muted dark:text-steel hover:text-emerald-pro-600 dark:hover:text-xgrowth-500 rounded-lg transition-colors"
             >
               <Phone className="h-4 w-4" />
               {contactInfo.phone}

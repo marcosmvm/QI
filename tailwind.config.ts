@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,25 +11,65 @@ const config: Config = {
     extend: {
       colors: {
         // ============================================
-        // BRAND BOARD v1.0 - PRIMARY PALETTE
+        // XGROWTHOS BRAND PALETTE
         // ============================================
 
-        // Backgrounds (Dark Theme)
-        "deep-space": "#0A1628",
-        "midnight-blue": "#1A2D4A",
-        "graphite": "#2A3F5F",
-        "slate": "#3D5A80",
+        // Primary Brand Colors (Green)
+        "xgrowth": {
+          50: "#f0fdf4",
+          100: "#dcfce7",
+          200: "#bbf7d0",
+          300: "#86efac",
+          400: "#4ade80",
+          500: "#22c55e",  // Primary dark mode accent
+          600: "#16a34a",
+          700: "#15803d",
+          800: "#166534",
+          900: "#14532d",
+          950: "#052e16",
+        },
+        "emerald-pro": {
+          400: "#34d399",
+          500: "#10b981",
+          600: "#059669",  // Primary light mode accent
+          700: "#047857",
+        },
 
-        // Text Colors
+        // ============================================
+        // LIGHT MODE COLORS (Default)
+        // ============================================
+
+        // Light backgrounds
+        "light-bg": "#ffffff",
+        "light-bg-secondary": "#f0fdf4",
+        "light-bg-elevated": "#ffffff",
+        "light-surface": "#f8fafc",
+
+        // Light text
+        "light-text": "#0f172a",
+        "light-text-secondary": "#334155",
+        "light-text-muted": "#64748b",
+
+        // ============================================
+        // DARK MODE COLORS (Legacy support)
+        // ============================================
+
+        // Dark backgrounds
+        "deep-space": "#080c08",
+        "midnight-blue": "#0a0f0a",
+        "graphite": "#1a2e1a",
+        "slate": "#2d4a2d",
+
+        // Dark text
         "white": "#FFFFFF",
         "silver": "#E8E8ED",
         "steel": "#9CA3AF",
         "muted-text": "#6B7280",
 
-        // Accent Colors
-        "electric-cyan": "#00D4FF",
-        "quantum-violet": "#7B61FF",
-        "neon-mint": "#00FFB2",
+        // Legacy accent colors (for backward compatibility)
+        "electric-cyan": "#22c55e",
+        "quantum-violet": "#059669",
+        "neon-mint": "#4ade80",
         "energy-orange": "#FF6B35",
         "alert-red": "#FF4757",
 
@@ -36,81 +77,83 @@ const config: Config = {
         // SEMANTIC COLOR MAPPINGS
         // ============================================
         background: {
-          DEFAULT: "#0A1628",
-          elevated: "#1A2D4A",
-          hover: "#2A3F5F",
+          DEFAULT: "#ffffff",
+          elevated: "#f8fafc",
+          hover: "#f0fdf4",
         },
 
         border: {
-          DEFAULT: "#2A3F5F",
-          light: "#3D5A80",
-          cyan: "rgba(0, 212, 255, 0.3)",
+          DEFAULT: "#e2e8f0",
+          light: "#f1f5f9",
+          green: "rgba(34, 197, 94, 0.3)",
         },
 
         foreground: {
-          DEFAULT: "#FFFFFF",
-          secondary: "#E8E8ED",
-          muted: "#9CA3AF",
+          DEFAULT: "#0f172a",
+          secondary: "#334155",
+          muted: "#64748b",
         },
 
         // Semantic Status Colors
         primary: {
-          DEFAULT: "#00D4FF",
-          hover: "rgba(0, 212, 255, 0.9)",
-          light: "rgba(0, 212, 255, 0.15)",
-          foreground: "#0A1628",
+          DEFAULT: "#059669",
+          hover: "#047857",
+          light: "rgba(5, 150, 105, 0.15)",
+          foreground: "#ffffff",
         },
         secondary: {
-          DEFAULT: "#7B61FF",
-          light: "rgba(123, 97, 255, 0.15)",
-          foreground: "#FFFFFF",
+          DEFAULT: "#22c55e",
+          light: "rgba(34, 197, 94, 0.15)",
+          foreground: "#ffffff",
         },
         success: {
-          DEFAULT: "#00FFB2",
-          light: "rgba(0, 255, 178, 0.15)",
-          foreground: "#0A1628",
+          DEFAULT: "#22c55e",
+          light: "rgba(34, 197, 94, 0.15)",
+          foreground: "#ffffff",
         },
         warning: {
           DEFAULT: "#FF6B35",
           light: "rgba(255, 107, 53, 0.15)",
-          foreground: "#0A1628",
+          foreground: "#0f172a",
         },
         destructive: {
           DEFAULT: "#FF4757",
           light: "rgba(255, 71, 87, 0.15)",
-          foreground: "#FFFFFF",
+          foreground: "#ffffff",
         },
         info: {
-          DEFAULT: "#7B61FF",
-          light: "rgba(123, 97, 255, 0.15)",
-          foreground: "#FFFFFF",
+          DEFAULT: "#059669",
+          light: "rgba(5, 150, 105, 0.15)",
+          foreground: "#ffffff",
         },
 
         // Component-specific
         card: {
-          DEFAULT: "#1A2D4A",
-          hover: "#2A3F5F",
-          foreground: "#FFFFFF",
+          DEFAULT: "#ffffff",
+          hover: "#f8fafc",
+          foreground: "#0f172a",
         },
         input: {
-          DEFAULT: "#1A2D4A",
-          focus: "#2A3F5F",
-          border: "#2A3F5F",
+          DEFAULT: "#ffffff",
+          focus: "#f0fdf4",
+          border: "#e2e8f0",
         },
         muted: {
-          DEFAULT: "#1A2D4A",
-          foreground: "#9CA3AF",
+          DEFAULT: "#f8fafc",
+          foreground: "#64748b",
         },
 
-        ring: "#00D4FF",
+        ring: "#059669",
       },
 
       // ============================================
       // TYPOGRAPHY
       // ============================================
       fontFamily: {
-        sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
-        display: ["Sora", "Inter", "-apple-system", "sans-serif"],
+        sans: ["var(--font-figtree)", "var(--font-inter)", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        display: ["var(--font-sora)", "var(--font-figtree)", "-apple-system", "sans-serif"],
+        sora: ["var(--font-sora)", "sans-serif"],
+        figtree: ["var(--font-figtree)", "sans-serif"],
         mono: ["JetBrains Mono", "Fira Code", "monospace"],
       },
 
@@ -164,32 +207,47 @@ const config: Config = {
       // SHADOWS & EFFECTS
       // ============================================
       boxShadow: {
-        // Glow effects
-        "glow-cyan": "0 0 20px rgba(0, 212, 255, 0.25)",
-        "glow-cyan-sm": "0 0 10px rgba(0, 212, 255, 0.2)",
-        "glow-cyan-lg": "0 0 30px rgba(0, 212, 255, 0.35)",
-        "glow-cyan-xl": "0 0 50px rgba(0, 212, 255, 0.5), 0 0 100px rgba(0, 212, 255, 0.2)",
-        "glow-violet": "0 0 20px rgba(123, 97, 255, 0.25)",
-        "glow-violet-lg": "0 0 30px rgba(123, 97, 255, 0.35)",
-        "glow-mint": "0 0 20px rgba(0, 255, 178, 0.25)",
-        "glow-mint-lg": "0 0 30px rgba(0, 255, 178, 0.35)",
+        // Light mode shadows
+        "soft": "0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06)",
+        "soft-md": "0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.06)",
+        "soft-lg": "0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.06)",
+        "soft-xl": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.06)",
 
-        // Depth shadows
-        "depth-sm": "0 1px 2px rgba(0, 0, 0, 0.3)",
-        "depth-md": "0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2)",
-        "depth-lg": "0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.2)",
-        "depth-xl": "0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2)",
+        // Green glow effects (for dark mode)
+        "glow-green": "0 0 20px rgba(34, 197, 94, 0.25)",
+        "glow-green-sm": "0 0 10px rgba(34, 197, 94, 0.2)",
+        "glow-green-lg": "0 0 30px rgba(34, 197, 94, 0.35)",
+        "glow-green-xl": "0 0 50px rgba(34, 197, 94, 0.5), 0 0 100px rgba(34, 197, 94, 0.2)",
+        "glow-emerald": "0 0 20px rgba(5, 150, 105, 0.25)",
+        "glow-emerald-lg": "0 0 30px rgba(5, 150, 105, 0.35)",
+
+        // Legacy cyan glow (mapped to green)
+        "glow-cyan": "0 0 20px rgba(34, 197, 94, 0.25)",
+        "glow-cyan-sm": "0 0 10px rgba(34, 197, 94, 0.2)",
+        "glow-cyan-lg": "0 0 30px rgba(34, 197, 94, 0.35)",
+        "glow-cyan-xl": "0 0 50px rgba(34, 197, 94, 0.5), 0 0 100px rgba(34, 197, 94, 0.2)",
+        "glow-violet": "0 0 20px rgba(5, 150, 105, 0.25)",
+        "glow-violet-lg": "0 0 30px rgba(5, 150, 105, 0.35)",
+        "glow-mint": "0 0 20px rgba(74, 222, 128, 0.25)",
+        "glow-mint-lg": "0 0 30px rgba(74, 222, 128, 0.35)",
+
+        // Depth shadows (light mode)
+        "depth-sm": "0 1px 2px rgba(0, 0, 0, 0.05)",
+        "depth-md": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05)",
+        "depth-lg": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05)",
+        "depth-xl": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05)",
 
         // Focus ring
-        "focus-ring": "0 0 0 3px rgba(0, 212, 255, 0.2)",
+        "focus-ring": "0 0 0 3px rgba(5, 150, 105, 0.2)",
 
-        // Card effects - premium
-        "card-hover": "0 8px 25px -5px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 212, 255, 0.08)",
-        "card-glow": "0 0 0 1px rgba(0, 212, 255, 0.15), 0 8px 30px -5px rgba(0, 0, 0, 0.3)",
-        "card-glow-active": "0 0 0 1px rgba(0, 212, 255, 0.4), 0 0 30px rgba(0, 212, 255, 0.15), 0 12px 40px -10px rgba(0, 0, 0, 0.4)",
+        // Card effects - light mode
+        "card-hover": "0 8px 25px -5px rgba(0, 0, 0, 0.1), 0 0 20px rgba(5, 150, 105, 0.08)",
+        "card-glow": "0 0 0 1px rgba(5, 150, 105, 0.15), 0 8px 30px -5px rgba(0, 0, 0, 0.1)",
+        "card-glow-active": "0 0 0 1px rgba(5, 150, 105, 0.4), 0 0 30px rgba(5, 150, 105, 0.15), 0 12px 40px -10px rgba(0, 0, 0, 0.15)",
 
         // Inner glow for buttons
-        "inner-glow-cyan": "inset 0 1px 0 0 rgba(0, 212, 255, 0.2)",
+        "inner-glow-green": "inset 0 1px 0 0 rgba(34, 197, 94, 0.2)",
+        "inner-glow-cyan": "inset 0 1px 0 0 rgba(34, 197, 94, 0.2)",
       },
 
       // ============================================
@@ -202,6 +260,7 @@ const config: Config = {
         lg: "12px",
         xl: "16px",
         "2xl": "20px",
+        "3xl": "24px",
       },
 
       // ============================================
@@ -280,8 +339,8 @@ const config: Config = {
           "50%, 100%": { left: "100%" },
         },
         "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 20px rgba(0, 212, 255, 0.3)" },
-          "50%": { boxShadow: "0 0 35px rgba(0, 212, 255, 0.5)" },
+          "0%, 100%": { boxShadow: "0 0 20px rgba(34, 197, 94, 0.3)" },
+          "50%": { boxShadow: "0 0 35px rgba(34, 197, 94, 0.5)" },
         },
         "bar-grow": {
           "0%": { transform: "scaleY(0)", transformOrigin: "bottom" },
@@ -317,12 +376,25 @@ const config: Config = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "gradient-cyan-violet": "linear-gradient(135deg, #00D4FF 0%, #7B61FF 100%)",
-        "gradient-dark": "linear-gradient(180deg, #0A1628 0%, #0D1B2A 100%)",
-        "gradient-card": "linear-gradient(145deg, rgba(26, 45, 74, 0.8) 0%, rgba(26, 45, 74, 0.4) 100%)",
+        // XGrowthOS gradients
+        "gradient-green": "linear-gradient(135deg, #059669 0%, #10b981 100%)",
+        "gradient-green-dark": "linear-gradient(135deg, #22c55e 0%, #4ade80 100%)",
+        // Legacy (mapped to green)
+        "gradient-cyan-violet": "linear-gradient(135deg, #059669 0%, #10b981 100%)",
+        // Light backgrounds
+        "gradient-light": "linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%)",
+        "gradient-card-light": "linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 253, 244, 0.6) 100%)",
+        // Dark backgrounds
+        "gradient-dark": "linear-gradient(180deg, #080c08 0%, #0a0f0a 100%)",
+        "gradient-card": "linear-gradient(145deg, rgba(26, 46, 26, 0.8) 0%, rgba(26, 46, 26, 0.4) 100%)",
+        // Ambient glows
         "ambient-glow": `
-          radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
-          radial-gradient(ellipse 60% 40% at 80% 50%, rgba(123, 97, 255, 0.05) 0%, transparent 50%)
+          radial-gradient(ellipse 80% 50% at 50% -20%, rgba(5, 150, 105, 0.08) 0%, transparent 50%),
+          radial-gradient(ellipse 60% 40% at 80% 50%, rgba(34, 197, 94, 0.05) 0%, transparent 50%)
+        `,
+        "ambient-glow-light": `
+          radial-gradient(ellipse 80% 50% at 50% -20%, rgba(5, 150, 105, 0.05) 0%, transparent 50%),
+          radial-gradient(ellipse 60% 40% at 80% 50%, rgba(34, 197, 94, 0.03) 0%, transparent 50%)
         `,
       },
     },
@@ -331,9 +403,15 @@ const config: Config = {
     // Custom plugin for additional utilities
     function({ addUtilities }: { addUtilities: (utilities: Record<string, Record<string, string>>) => void }) {
       addUtilities({
-        // Text gradient
+        // Text gradient (green)
         ".text-gradient": {
-          "background": "linear-gradient(135deg, #00D4FF 0%, #7B61FF 100%)",
+          "background": "linear-gradient(135deg, #059669 0%, #10b981 100%)",
+          "-webkit-background-clip": "text",
+          "-webkit-text-fill-color": "transparent",
+          "background-clip": "text",
+        },
+        ".text-gradient-green": {
+          "background": "linear-gradient(135deg, #22c55e 0%, #4ade80 100%)",
           "-webkit-background-clip": "text",
           "-webkit-text-fill-color": "transparent",
           "background-clip": "text",
@@ -343,9 +421,14 @@ const config: Config = {
           "font-variant-numeric": "tabular-nums",
           "letter-spacing": "-0.03em",
         },
-        // Glass effect
+        // Glass effect - light mode
         ".glass": {
-          "background": "rgba(26, 45, 74, 0.6)",
+          "background": "rgba(255, 255, 255, 0.8)",
+          "backdrop-filter": "blur(8px)",
+          "-webkit-backdrop-filter": "blur(8px)",
+        },
+        ".glass-dark": {
+          "background": "rgba(26, 46, 26, 0.6)",
           "backdrop-filter": "blur(8px)",
           "-webkit-backdrop-filter": "blur(8px)",
         },
