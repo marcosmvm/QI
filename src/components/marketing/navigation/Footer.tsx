@@ -47,9 +47,9 @@ export function Footer() {
           <motion.div variants={itemVariants} className="col-span-2 md:col-span-3 lg:col-span-1">
             <Link href="/" className="flex items-center space-x-2 mb-4 group">
               <div className="w-10 h-10 bg-gradient-to-br from-electric-cyan to-electric-cyan/60 rounded-lg flex items-center justify-center group-hover:shadow-glow-cyan-sm transition-all duration-300">
-                <span className="text-deep-space font-bold text-xl font-sora">Q</span>
+                <span className="text-deep-space font-bold text-xl font-sora">X</span>
               </div>
-              <span className="text-xl font-bold text-white font-sora group-hover:text-electric-cyan transition-colors">Quantum Insights</span>
+              <span className="text-xl font-bold text-white font-sora group-hover:text-electric-cyan transition-colors">XGrowthOS</span>
             </Link>
             <p className="text-steel text-sm">
               AI-Powered Cold Email That Books Meetings
@@ -134,7 +134,7 @@ export function Footer() {
           className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-graphite/30"
         >
           <p className="text-steel text-sm">
-            &copy; {currentYear} Quantum Insights. All rights reserved.
+            &copy; {currentYear} XGrowthOS. All rights reserved.
           </p>
           <div className="flex items-center space-x-4 mt-4 md:mt-0">
             <a

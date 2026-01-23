@@ -21,7 +21,7 @@ interface CTABannerProps {
 
 export function CTABanner({
   title = "Ready to Transform Your Outbound?",
-  description = "Book a strategy call with our team to see how Quantum Insights can fill your pipeline with qualified meetings.",
+  description = "Book a strategy call with our team to see how XGrowthOS can fill your pipeline with qualified meetings.",
   primaryCTA = { text: "Book a Strategy Call", href: "/contact" },
   secondaryCTA = { text: "View Pricing", href: "/pricing" },
 }: CTABannerProps) {

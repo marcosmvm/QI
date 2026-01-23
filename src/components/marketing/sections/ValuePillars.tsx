@@ -105,7 +105,7 @@ export function ValuePillars() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
             Why Companies Choose{" "}
             <span className="gradient-text-cyan-violet">
-              Quantum Insights
+              XGrowthOS
             </span>
           </h2>
           <p className="text-lg text-steel">

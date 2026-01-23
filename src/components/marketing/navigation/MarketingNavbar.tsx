@@ -46,9 +46,9 @@ export function MarketingNavbar() {
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2 group">
               <div className="w-10 h-10 bg-electric-cyan rounded-lg flex items-center justify-center group-hover:shadow-glow-cyan-sm transition-all duration-300">
-                <span className="text-deep-space font-bold text-xl">Q</span>
+                <span className="text-deep-space font-bold text-xl">X</span>
               </div>
-              <span className="text-xl font-bold text-white group-hover:text-electric-cyan transition-colors">Quantum Insights</span>
+              <span className="text-xl font-bold text-white group-hover:text-electric-cyan transition-colors">XGrowthOS</span>
             </Link>
 
             {/* Desktop Navigation */}

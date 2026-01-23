@@ -73,7 +73,7 @@ export default function CookiePolicyPage() {
 
             <h2 className="text-2xl font-sora font-bold text-white mb-4">Contact</h2>
             <p className="text-silver">
-              For questions about our cookie practices, contact privacy@quantuminsights.ai
+              For questions about our cookie practices, contact privacy@xgrowthos.com
             </p>
           </div>
         </Container>

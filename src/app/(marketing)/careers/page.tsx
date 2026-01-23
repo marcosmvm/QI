@@ -95,7 +95,7 @@ export default function CareersPage() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
               <h2 className="text-3xl md:text-4xl font-sora font-bold text-white mb-6">
-                Why Quantum Insights?
+                Why XGrowthOS?
               </h2>
               <p className="text-silver mb-8 leading-relaxed">
                 We&apos;re not just building another SaaS product—we&apos;re fundamentally changing how B2B companies grow. Join a team of passionate innovators working at the intersection of AI and sales.
@@ -154,7 +154,7 @@ export default function CareersPage() {
               Open Positions
             </h2>
             <p className="text-silver">
-              Find your next opportunity at Quantum Insights.
+              Find your next opportunity at XGrowthOS.
             </p>
           </motion.div>
 

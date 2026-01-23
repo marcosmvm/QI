@@ -41,7 +41,7 @@ export const caseStudies: CaseStudy[] = [
       { value: "$1.2M", label: "New Pipeline" },
     ],
     testimonial: {
-      quote: "Quantum Insights transformed our outbound. We went from questioning if cold email worked to building a predictable pipeline machine.",
+      quote: "XGrowthOS transformed our outbound. We went from questioning if cold email worked to building a predictable pipeline machine.",
       author: "Sarah Chen",
       title: "VP of Sales, TechScale",
     },
@@ -110,7 +110,7 @@ export const caseStudies: CaseStudy[] = [
       { value: "6 months", label: "Time to First Win" },
     ],
     testimonial: {
-      quote: "We never thought we could compete for enterprise healthcare contracts. Quantum Insights made it possible.",
+      quote: "We never thought we could compete for enterprise healthcare contracts. XGrowthOS made it possible.",
       author: "Dr. Robert Kim",
       title: "CEO, MedTech Health",
     },
@@ -133,7 +133,7 @@ export const caseStudies: CaseStudy[] = [
       { value: "60%", label: "Cost Savings" },
     ],
     testimonial: {
-      quote: "The pipeline numbers we built with Quantum Insights were crucial to closing our Series B.",
+      quote: "The pipeline numbers we built with XGrowthOS were crucial to closing our Series B.",
       author: "Amanda Liu",
       title: "Founder & CEO, PaymentPro",
     },

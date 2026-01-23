@@ -7,7 +7,7 @@ import { Container } from "@/components/marketing/layout/Container";
 
 const faqs = [
   {
-    question: "How is Quantum Insights different from other lead gen agencies?",
+    question: "How is XGrowthOS different from other lead gen agencies?",
     answer: "We're AI-first. While others rely on manual processes, our 5 specialized AI engines work 24/7 to optimize every aspect of your outbound campaigns. This means higher deliverability, better personalization, and more meetings—all with full transparency into our process.",
   },
   {
@@ -81,7 +81,7 @@ export function FAQ() {
             </span>
           </h2>
           <p className="text-lg text-steel">
-            Everything you need to know about working with Quantum Insights.
+            Everything you need to know about working with XGrowthOS.
           </p>
         </motion.div>
 

@@ -1,7 +1,7 @@
 import { ServiceDetailPage } from "@/components/marketing/pages/ServiceDetailPage";
 
 export const metadata = {
-  title: "Account-Based Marketing Services | Quantum Insights",
+  title: "Account-Based Marketing Services | XGrowthOS",
   description: "Target your dream accounts with precision. Coordinated campaigns that engage entire buying committees.",
 };
 

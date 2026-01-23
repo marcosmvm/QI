@@ -1,7 +1,7 @@
 import { ServiceDetailPage } from "@/components/marketing/pages/ServiceDetailPage";
 
 export const metadata = {
-  title: "Appointment Setting Services | Quantum Insights",
+  title: "Appointment Setting Services | XGrowthOS",
   description: "Fill your calendar with qualified meetings. We book appointments with decision-makers who are ready to buy.",
 };
 

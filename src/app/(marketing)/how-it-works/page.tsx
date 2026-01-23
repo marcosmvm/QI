@@ -178,7 +178,7 @@ export default function HowItWorksPage() {
             </motion.div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-white mb-8">
-              How Quantum Insights{" "}
+              How XGrowthOS{" "}
               <span className="headline-underline gradient-text-cyan-violet block mt-2">
                 Works
               </span>

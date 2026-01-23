@@ -69,7 +69,7 @@ export default function LoginPage() {
               <Zap className="h-6 w-6 text-electric-cyan" />
             </div>
             <span className="text-xl font-sora font-semibold text-white">
-              Quantum Insights
+              XGrowthOS
             </span>
           </div>
         </div>
@@ -101,7 +101,7 @@ export default function LoginPage() {
         </div>
 
         <div className="relative z-10 text-sm text-steel">
-          &copy; {new Date().getFullYear()} Quantum Insights. All rights reserved.
+          &copy; {new Date().getFullYear()} XGrowthOS. All rights reserved.
         </div>
       </div>
 
@@ -114,7 +114,7 @@ export default function LoginPage() {
               <Zap className="h-6 w-6 text-electric-cyan" />
             </div>
             <span className="text-xl font-sora font-semibold text-white">
-              Quantum Insights
+              XGrowthOS
             </span>
           </div>
 

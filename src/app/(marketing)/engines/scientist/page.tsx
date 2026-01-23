@@ -1,7 +1,7 @@
 import { EngineDetailPage } from "@/components/marketing/pages/EngineDetailPage";
 
 export const metadata = {
-  title: "The Scientist Engine | Campaign Optimization | Quantum Insights",
+  title: "The Scientist Engine | Campaign Optimization | XGrowthOS",
   description: "Continuously analyze engagement data to optimize send times, subject lines, and messaging for peak performance with the Scientist Engine.",
 };
 

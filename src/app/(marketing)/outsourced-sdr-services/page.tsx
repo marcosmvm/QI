@@ -1,7 +1,7 @@
 import { ServiceDetailPage } from "@/components/marketing/pages/ServiceDetailPage";
 
 export const metadata = {
-  title: "Outsourced SDR Services | Quantum Insights",
+  title: "Outsourced SDR Services | XGrowthOS",
   description: "A full sales development team on-demand. Experienced SDRs dedicated to your business.",
 };
 

@@ -1,7 +1,7 @@
 import { ServiceDetailPage } from "@/components/marketing/pages/ServiceDetailPage";
 
 export const metadata = {
-  title: "CRM Consulting Services | Quantum Insights",
+  title: "CRM Consulting Services | XGrowthOS",
   description: "Optimize your sales operations with CRM setup, integration, and ongoing optimization services.",
 };
 

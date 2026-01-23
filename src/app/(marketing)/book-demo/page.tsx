@@ -501,7 +501,7 @@ export default function BookDemoPage() {
                     <p className="text-sm text-steel">
                       Questions before the call?{" "}
                       <a
-                        href="mailto:hello@quantuminsights.ai"
+                        href="mailto:hello@xgrowthos.com"
                         className="text-electric-cyan hover:underline"
                       >
                         Email us

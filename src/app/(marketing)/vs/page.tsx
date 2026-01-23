@@ -98,7 +98,7 @@ export default function ComparisonHubPage() {
             </div>
 
             <h1 className="text-4xl md:text-5xl font-sora font-bold text-white mb-6">
-              Quantum Insights vs{" "}
+              XGrowthOS vs{" "}
               <span className="headline-underline gradient-text-cyan-violet">
                 The Competition
               </span>
@@ -132,7 +132,7 @@ export default function ComparisonHubPage() {
                   className="block p-6 rounded-2xl border border-graphite bg-midnight-blue/50 hover:border-electric-cyan/30 transition-colors h-full"
                 >
                   <h3 className="text-lg font-sora font-semibold text-white mb-1">
-                    Quantum Insights vs {competitor.name}
+                    XGrowthOS vs {competitor.name}
                   </h3>
                   <p className="text-sm text-steel mb-4">
                     {competitor.description}
@@ -175,7 +175,7 @@ export default function ComparisonHubPage() {
             className="text-center p-8 rounded-3xl border border-graphite bg-midnight-blue/50"
           >
             <h2 className="text-2xl font-sora font-bold text-white mb-4">
-              Why Companies Switch to Quantum Insights
+              Why Companies Switch to XGrowthOS
             </h2>
             <p className="text-steel mb-6">
               Traditional agencies rely on manual processes that can&apos;t match the

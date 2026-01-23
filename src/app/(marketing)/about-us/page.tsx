@@ -69,7 +69,7 @@ export default function AboutPage() {
               className="tech-badge mb-10"
             >
               <Building2 className="w-4 h-4 text-quantum-violet" />
-              <span className="text-sm font-medium text-quantum-violet">About Quantum Insights</span>
+              <span className="text-sm font-medium text-quantum-violet">About XGrowthOS</span>
               <Sparkles className="w-4 h-4 text-quantum-violet" />
             </motion.div>
 
@@ -80,7 +80,7 @@ export default function AboutPage() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-silver/90 max-w-3xl mx-auto leading-relaxed">
-              Quantum Insights was founded with a simple mission: make <span className="text-electric-cyan font-semibold">AI-powered lead generation</span> accessible to every B2B company.
+              XGrowthOS was founded with a simple mission: make <span className="text-electric-cyan font-semibold">AI-powered lead generation</span> accessible to every B2B company.
             </p>
           </motion.div>
         </Container>
@@ -150,7 +150,7 @@ export default function AboutPage() {
                 transition={{ delay: 0.1 }}
                 className="text-silver/90 leading-relaxed text-lg"
               >
-                Quantum Insights was born from frustration. Our founder, <span className="text-electric-cyan font-semibold">Marcos Matthews</span>, spent years watching B2B companies struggle with cold outreach—either doing it poorly themselves or paying agencies that delivered inconsistent results.
+                XGrowthOS was born from frustration. Our founder, <span className="text-electric-cyan font-semibold">Marcos Matthews</span>, spent years watching B2B companies struggle with cold outreach—either doing it poorly themselves or paying agencies that delivered inconsistent results.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, x: -20 }}
@@ -168,7 +168,7 @@ export default function AboutPage() {
                 transition={{ delay: 0.3 }}
                 className="text-silver/90 leading-relaxed text-lg"
               >
-                We built Quantum Insights to prove there&apos;s a better way. By combining <span className="text-quantum-violet font-semibold">cutting-edge AI</span> with deep expertise in deliverability, personalization, and sales psychology, we&apos;ve created a system that actually works—consistently, at scale.
+                We built XGrowthOS to prove there&apos;s a better way. By combining <span className="text-quantum-violet font-semibold">cutting-edge AI</span> with deep expertise in deliverability, personalization, and sales psychology, we&apos;ve created a system that actually works—consistently, at scale.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, x: -20 }}

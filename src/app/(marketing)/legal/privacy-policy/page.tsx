@@ -88,7 +88,7 @@ export default function PrivacyPolicyPage() {
 
             <h2 className="text-2xl font-sora font-bold text-white mb-4">8. Contact Us</h2>
             <p className="text-silver">
-              For privacy-related inquiries, contact us at privacy@quantuminsights.ai
+              For privacy-related inquiries, contact us at privacy@xgrowthos.com
             </p>
           </div>
         </Container>

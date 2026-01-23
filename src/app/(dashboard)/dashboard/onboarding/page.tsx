@@ -186,7 +186,7 @@ export default function OnboardingPage() {
           <span className="text-electric-cyan">Onboarding</span>
         </div>
         <h1 className="text-2xl font-sora font-bold text-white">
-          Welcome to Quantum Insights
+          Welcome to XGrowthOS
         </h1>
         <p className="text-steel mt-1">
           Let&apos;s get your account set up and ready to launch campaigns

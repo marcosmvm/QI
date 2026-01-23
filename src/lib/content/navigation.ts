@@ -133,7 +133,7 @@ export const footerNavigation = {
 };
 
 export const contactInfo = {
-  email: "sales@quantuminsights.ai",
+  email: "sales@xgrowthos.com",
   phone: "+1 (323) 555-0147",
   address: "Los Angeles, CA",
 };

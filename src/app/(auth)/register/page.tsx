@@ -46,7 +46,7 @@ export default function RegisterPage() {
               <Zap className="h-6 w-6 text-electric-cyan" />
             </div>
             <span className="text-xl font-sora font-semibold text-white">
-              Quantum Insights
+              XGrowthOS
             </span>
           </div>
         </div>
@@ -58,7 +58,7 @@ export default function RegisterPage() {
             <span className="text-electric-cyan">your outreach?</span>
           </h1>
           <p className="text-lg text-silver max-w-md">
-            Join leading B2B companies using Quantum Insights to automate their
+            Join leading B2B companies using XGrowthOS to automate their
             cold email campaigns with AI-powered precision.
           </p>
 
@@ -81,7 +81,7 @@ export default function RegisterPage() {
         </div>
 
         <div className="relative z-10 text-sm text-steel">
-          &copy; {new Date().getFullYear()} Quantum Insights. All rights reserved.
+          &copy; {new Date().getFullYear()} XGrowthOS. All rights reserved.
         </div>
       </div>
 
@@ -94,7 +94,7 @@ export default function RegisterPage() {
               <Zap className="h-6 w-6 text-electric-cyan" />
             </div>
             <span className="text-xl font-sora font-semibold text-white">
-              Quantum Insights
+              XGrowthOS
             </span>
           </div>
 
@@ -110,7 +110,7 @@ export default function RegisterPage() {
                   Request Submitted!
                 </h2>
                 <p className="text-steel mb-6">
-                  Thank you for your interest in Quantum Insights. Our team will
+                  Thank you for your interest in XGrowthOS. Our team will
                   review your request and reach out within 24-48 hours.
                 </p>
                 <Link href="/login">
@@ -126,7 +126,7 @@ export default function RegisterPage() {
                     Request Access
                   </h2>
                   <p className="text-steel">
-                    Fill out the form to get started with Quantum Insights
+                    Fill out the form to get started with XGrowthOS
                   </p>
                 </div>
 

@@ -570,7 +570,7 @@ export default function PilotProgramPage() {
             </div>
             <blockquote className="text-xl text-white font-medium mb-4">
               &ldquo;The pilot program gave us the confidence to invest in
-              Quantum Insights. We generated 47 qualified leads in the first
+              XGrowthOS. We generated 47 qualified leads in the first
               month alone.&rdquo;
             </blockquote>
             <p className="text-steel">

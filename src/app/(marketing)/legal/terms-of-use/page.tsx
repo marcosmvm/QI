@@ -41,12 +41,12 @@ export default function TermsOfUsePage() {
           <div className="prose prose-lg prose-invert max-w-none">
             <h2 className="text-2xl font-sora font-bold text-white mb-4">1. Acceptance of Terms</h2>
             <p className="text-silver mb-6">
-              By accessing or using Quantum Insights&apos; services, you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use our services.
+              By accessing or using XGrowthOS&apos; services, you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use our services.
             </p>
 
             <h2 className="text-2xl font-sora font-bold text-white mb-4">2. Description of Services</h2>
             <p className="text-silver mb-6">
-              Quantum Insights provides AI-powered B2B lead generation services, including but not limited to email outreach, lead research, and campaign management. Services are subject to the specific terms outlined in your service agreement.
+              XGrowthOS provides AI-powered B2B lead generation services, including but not limited to email outreach, lead research, and campaign management. Services are subject to the specific terms outlined in your service agreement.
             </p>
 
             <h2 className="text-2xl font-sora font-bold text-white mb-4">3. User Responsibilities</h2>
@@ -60,7 +60,7 @@ export default function TermsOfUsePage() {
 
             <h2 className="text-2xl font-sora font-bold text-white mb-4">4. Intellectual Property</h2>
             <p className="text-silver mb-6">
-              All content, trademarks, and technology used in our services remain the property of Quantum Insights. You may not copy, modify, or distribute our proprietary materials without written consent.
+              All content, trademarks, and technology used in our services remain the property of XGrowthOS. You may not copy, modify, or distribute our proprietary materials without written consent.
             </p>
 
             <h2 className="text-2xl font-sora font-bold text-white mb-4">5. Payment Terms</h2>
@@ -70,7 +70,7 @@ export default function TermsOfUsePage() {
 
             <h2 className="text-2xl font-sora font-bold text-white mb-4">6. Limitation of Liability</h2>
             <p className="text-silver mb-6">
-              Quantum Insights is not liable for any indirect, incidental, or consequential damages arising from your use of our services. Our total liability shall not exceed the fees paid by you in the preceding 12 months.
+              XGrowthOS is not liable for any indirect, incidental, or consequential damages arising from your use of our services. Our total liability shall not exceed the fees paid by you in the preceding 12 months.
             </p>
 
             <h2 className="text-2xl font-sora font-bold text-white mb-4">7. Termination</h2>
@@ -85,7 +85,7 @@ export default function TermsOfUsePage() {
 
             <h2 className="text-2xl font-sora font-bold text-white mb-4">9. Contact</h2>
             <p className="text-silver">
-              For questions about these terms, contact us at legal@quantuminsights.ai
+              For questions about these terms, contact us at legal@xgrowthos.com
             </p>
           </div>
         </Container>

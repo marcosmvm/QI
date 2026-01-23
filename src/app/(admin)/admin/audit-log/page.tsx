@@ -77,9 +77,9 @@ function getMockAuditLogs(): AuditLog[] {
   ];
 
   const users = [
-    { name: "Marcos Matthews", email: "marcos@quantuminsights.ai" },
-    { name: "Sarah Chen", email: "sarah@quantuminsights.ai" },
-    { name: "John Doe", email: "john@quantuminsights.ai" },
+    { name: "Marcos Matthews", email: "marcos@xgrowthos.com" },
+    { name: "Sarah Chen", email: "sarah@xgrowthos.com" },
+    { name: "John Doe", email: "john@xgrowthos.com" },
   ];
 
   return Array.from({ length: 20 }, (_, i) => {

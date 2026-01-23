@@ -104,7 +104,7 @@ export default function SettingsPage() {
           icon={Building2}
         >
           <div className="space-y-4">
-            <FormField label="Company Name" value="Quantum Insights" disabled />
+            <FormField label="Company Name" value="XGrowthOS" disabled />
             <FormField
               label="Admin Email"
               value={currentUser?.email || "Not set"}

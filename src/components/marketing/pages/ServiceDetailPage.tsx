@@ -266,7 +266,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-white mb-6">
                 Why Choose{" "}
-                <span className={`headline-underline ${colors.text}`}>Quantum Insights</span>
+                <span className={`headline-underline ${colors.text}`}>XGrowthOS</span>
               </h2>
               <p className="text-lg md:text-xl text-silver/90 mb-10">
                 The benefits of working with us for {service.name.toLowerCase()}.

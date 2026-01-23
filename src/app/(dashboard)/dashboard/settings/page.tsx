@@ -210,7 +210,7 @@ export default function SettingsPage() {
   });
 
   const [company, setCompany] = useState({
-    name: "Quantum Insights",
+    name: "XGrowthOS",
     website: "https://quantuminsights.io",
     industry: "B2B SaaS",
     size: "11-50",

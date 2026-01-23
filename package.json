@@ -1,8 +1,8 @@
 {
-  "name": "quantum-insights-portal",
+  "name": "xgrowthos-portal",
   "version": "1.0.0",
   "private": true,
-  "description": "Quantum Insights - B2B Cold Email Automation Client Portal",
+  "description": "XGrowthOS - B2B Cold Email Automation Client Portal",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -1,7 +1,7 @@
 import { ServiceDetailPage } from "@/components/marketing/pages/ServiceDetailPage";
 
 export const metadata = {
-  title: "Cold Email Outreach Services | Quantum Insights",
+  title: "Cold Email Outreach Services | XGrowthOS",
   description: "AI-powered email campaigns that reach the inbox and generate responses. Scale your outreach without sacrificing personalization.",
 };
 

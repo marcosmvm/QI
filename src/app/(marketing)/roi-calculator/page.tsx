@@ -28,7 +28,7 @@ function calculateROI(inputs: {
 }) {
   const { monthlyVolume, currentReplyRate, avgDealSize, salesCycleWeeks } = inputs;
 
-  // Quantum Insights performance targets
+  // XGrowthOS performance targets
   const quantumReplyRate = 3.5; // Target 3%+ reply rate
   const quantumMeetingRate = 30; // 30% of replies become meetings
   const quantumCloseRate = 20; // 20% of meetings close

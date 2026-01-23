@@ -261,7 +261,7 @@ export default async function SupportPage({
                       <span className="text-sm font-medium text-quantum-violet">QI</span>
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-white">Quantum Insights Support</p>
+                      <p className="text-sm font-medium text-white">XGrowthOS Support</p>
                       <p className="text-xs text-steel">We typically reply within a few hours</p>
                     </div>
                   </div>

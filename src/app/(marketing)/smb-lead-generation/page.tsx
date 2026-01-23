@@ -1,7 +1,7 @@
 import { ServiceDetailPage } from "@/components/marketing/pages/ServiceDetailPage";
 
 export const metadata = {
-  title: "SMB Lead Generation | Quantum Insights",
+  title: "SMB Lead Generation | XGrowthOS",
   description: "High-volume lead generation for the mid-market. Efficient, scalable campaigns for SMB targets.",
 };
 

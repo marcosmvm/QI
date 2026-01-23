@@ -79,7 +79,7 @@ const competitorData: Record<string, CompetitorData> = {
       },
     ],
     pricingNote:
-      "Belkins typically charges $3,000-$10,000/month with 3-6 month minimums. Quantum Insights offers flexible monthly plans starting at $997.",
+      "Belkins typically charges $3,000-$10,000/month with 3-6 month minimums. XGrowthOS offers flexible monthly plans starting at $997.",
   },
   cience: {
     name: "CIENCE",
@@ -118,7 +118,7 @@ const competitorData: Record<string, CompetitorData> = {
       },
     ],
     pricingNote:
-      "CIENCE typically charges $5,000-$15,000/month per SDR. Quantum Insights delivers comparable output at a fraction of the cost.",
+      "CIENCE typically charges $5,000-$15,000/month per SDR. XGrowthOS delivers comparable output at a fraction of the cost.",
   },
   saleshive: {
     name: "SalesHive",
@@ -157,7 +157,7 @@ const competitorData: Record<string, CompetitorData> = {
       },
     ],
     pricingNote:
-      "SalesHive charges per appointment or monthly retainer. Quantum Insights offers all-inclusive monthly plans.",
+      "SalesHive charges per appointment or monthly retainer. XGrowthOS offers all-inclusive monthly plans.",
   },
   "martal-group": {
     name: "Martal Group",
@@ -196,7 +196,7 @@ const competitorData: Record<string, CompetitorData> = {
       },
     ],
     pricingNote:
-      "Martal Group typically requires 6-12 month commitments. Quantum Insights offers month-to-month flexibility.",
+      "Martal Group typically requires 6-12 month commitments. XGrowthOS offers month-to-month flexibility.",
   },
   leadgen: {
     name: "LeadGen.com",
@@ -235,7 +235,7 @@ const competitorData: Record<string, CompetitorData> = {
       },
     ],
     pricingNote:
-      "LeadGen.com offers software tiers. Quantum Insights provides full-service campaigns with guaranteed support.",
+      "LeadGen.com offers software tiers. XGrowthOS provides full-service campaigns with guaranteed support.",
   },
   callbox: {
     name: "Callbox",
@@ -274,7 +274,7 @@ const competitorData: Record<string, CompetitorData> = {
       },
     ],
     pricingNote:
-      "Callbox uses pay-per-lead or retainer models. Quantum Insights offers predictable monthly pricing.",
+      "Callbox uses pay-per-lead or retainer models. XGrowthOS offers predictable monthly pricing.",
   },
 };
 
@@ -324,7 +324,7 @@ export default function CompetitorComparisonPage({ params }: PageProps) {
             </div>
 
             <h1 className="text-4xl md:text-5xl font-sora font-bold text-white mb-6">
-              Quantum Insights vs{" "}
+              XGrowthOS vs{" "}
               <span className="headline-underline gradient-text-cyan-violet">
                 {data.name}
               </span>
@@ -369,7 +369,7 @@ export default function CompetitorComparisonPage({ params }: PageProps) {
                     Feature
                   </th>
                   <th className="px-6 py-4 text-center text-sm font-medium text-electric-cyan">
-                    Quantum Insights
+                    XGrowthOS
                   </th>
                   <th className="px-6 py-4 text-center text-sm font-medium text-steel">
                     {data.name}
@@ -425,7 +425,7 @@ export default function CompetitorComparisonPage({ params }: PageProps) {
             <h2 className="text-3xl font-sora font-bold text-white mb-4">
               Why Choose{" "}
               <span className="gradient-text-cyan-violet">
-                Quantum Insights
+                XGrowthOS
               </span>
             </h2>
           </motion.div>
@@ -484,7 +484,7 @@ export default function CompetitorComparisonPage({ params }: PageProps) {
 
       <CTABanner
         title={`Ready to Switch from ${data.name}?`}
-        description="Book a demo to see the Quantum Insights difference firsthand."
+        description="Book a demo to see the XGrowthOS difference firsthand."
       />
     </>
   );

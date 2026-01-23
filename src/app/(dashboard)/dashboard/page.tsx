@@ -201,7 +201,7 @@ export default async function DashboardPage() {
             </div>
           </div>
 
-          <h1 className="text-2xl font-sora font-bold text-white mb-3">Welcome to Quantum Insights</h1>
+          <h1 className="text-2xl font-sora font-bold text-white mb-3">Welcome to XGrowthOS</h1>
           <p className="text-steel mb-8 leading-relaxed">
             Your account is being set up. Our team will reach out shortly to complete your onboarding and get your first campaigns running.
           </p>

@@ -83,7 +83,7 @@ export default function BlogPage() {
             </motion.div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-white mb-8">
-              The Quantum Insights{" "}
+              The XGrowthOS{" "}
               <span className="headline-underline gradient-text-cyan-violet block mt-2">
                 Blog
               </span>
