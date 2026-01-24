@@ -27,10 +27,10 @@ export function CTABanner({
 }: CTABannerProps) {
   return (
     <section className="relative py-32 overflow-hidden">
-      {/* Enhanced Ambient Orbs - More Prominent */}
+      {/* Enhanced Ambient Orbs - Brand Board Aligned */}
       <motion.div
         className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[120px]"
-        style={{ background: 'radial-gradient(circle, rgba(0, 212, 255, 0.25) 0%, rgba(0, 212, 255, 0) 70%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(5, 150, 105, 0.20) 0%, rgba(5, 150, 105, 0) 70%)' }}
         animate={{
           scale: [1, 1.15, 1],
           opacity: [0.6, 0.9, 0.6],
@@ -44,7 +44,7 @@ export function CTABanner({
       />
       <motion.div
         className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[120px]"
-        style={{ background: 'radial-gradient(circle, rgba(123, 97, 255, 0.25) 0%, rgba(123, 97, 255, 0) 70%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, rgba(16, 185, 129, 0) 70%)' }}
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.5, 0.8, 0.5],
@@ -59,7 +59,7 @@ export function CTABanner({
       />
       <motion.div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[150px]"
-        style={{ background: 'radial-gradient(circle, rgba(0, 255, 178, 0.1) 0%, rgba(0, 255, 178, 0) 70%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(52, 211, 153, 0.08) 0%, rgba(52, 211, 153, 0) 70%)' }}
         animate={{
           scale: [1, 1.1, 1],
           opacity: [0.3, 0.5, 0.3],
@@ -73,13 +73,13 @@ export function CTABanner({
       />
 
       {/* Glass Panel Background - Enhanced */}
-      <div className="absolute inset-0 bg-gradient-to-b from-midnight-blue/50 via-midnight-blue/30 to-midnight-blue/50 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-gradient-to-b from-light-bg-secondary/50 dark:from-midnight-blue/50 via-light-bg-secondary/30 dark:via-midnight-blue/30 to-light-bg-secondary/50 dark:to-midnight-blue/50 backdrop-blur-sm" />
 
       {/* Border Lines - Enhanced with Animation */}
       <motion.div
         className="absolute top-0 left-0 right-0 h-px"
         style={{
-          background: 'linear-gradient(90deg, transparent 0%, rgba(0, 212, 255, 0.5) 20%, rgba(123, 97, 255, 0.5) 50%, rgba(0, 212, 255, 0.5) 80%, transparent 100%)',
+          background: 'linear-gradient(90deg, transparent 0%, rgba(5, 150, 105, 0.5) 20%, rgba(16, 185, 129, 0.5) 50%, rgba(5, 150, 105, 0.5) 80%, transparent 100%)',
           backgroundSize: '200% 100%',
         }}
         animate={{
@@ -94,7 +94,7 @@ export function CTABanner({
       <motion.div
         className="absolute bottom-0 left-0 right-0 h-px"
         style={{
-          background: 'linear-gradient(90deg, transparent 0%, rgba(123, 97, 255, 0.5) 20%, rgba(0, 212, 255, 0.5) 50%, rgba(123, 97, 255, 0.5) 80%, transparent 100%)',
+          background: 'linear-gradient(90deg, transparent 0%, rgba(16, 185, 129, 0.5) 20%, rgba(5, 150, 105, 0.5) 50%, rgba(16, 185, 129, 0.5) 80%, transparent 100%)',
           backgroundSize: '200% 100%',
         }}
         animate={{
@@ -191,7 +191,7 @@ export function CTABanner({
               <Button
                 variant="outline"
                 size="lg"
-                className="border-emerald-pro-600/30 hover:border-emerald-pro-600/60 text-light-text dark:text-white hover:text-emerald-pro-600 bg-emerald-pro-600/5 hover:bg-emerald-pro-600/10 px-8 py-6 text-lg transition-all backdrop-blur-sm"
+                className="border-emerald-pro-600/30 dark:border-xgrowth-500/30 hover:border-emerald-pro-600/60 dark:hover:border-xgrowth-500/60 text-light-text dark:text-white hover:text-emerald-pro-600 dark:hover:text-xgrowth-500 bg-emerald-pro-600/5 dark:bg-xgrowth-500/5 hover:bg-emerald-pro-600/10 dark:hover:bg-xgrowth-500/10 px-8 py-6 text-lg transition-all backdrop-blur-sm"
               >
                 <Sparkles className="mr-2 h-5 w-5" />
                 {secondaryCTA.text}

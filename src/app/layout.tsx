@@ -42,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${sora.variable} ${inter.variable} ${figtree.variable} antialiased bg-white text-light-text min-h-screen`}>
+      <body className={`${sora.variable} ${inter.variable} ${figtree.variable} antialiased bg-light-bg dark:bg-deep-space text-light-text dark:text-white min-h-screen transition-colors duration-200`}>
         {children}
         <SpeedInsights />
       </body>

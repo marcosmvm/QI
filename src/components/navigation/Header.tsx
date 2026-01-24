@@ -35,7 +35,7 @@ export function Header({ title, subtitle, showNavTabs = true }: HeaderProps) {
   };
 
   return (
-    <header className="sticky top-0 z-30 bg-white/80 backdrop-blur-xl border-b border-slate-100">
+    <header className="sticky top-0 z-30 bg-light-bg/80 dark:bg-deep-space/80 backdrop-blur-xl border-b border-border-default dark:border-graphite">
       {/* Top Bar with Navigation */}
       <div className="flex items-center justify-between px-6 py-4">
         {/* Left: Logo/Icon + Nav Tabs */}
@@ -47,7 +47,7 @@ export function Header({ title, subtitle, showNavTabs = true }: HeaderProps) {
 
           {/* Navigation Tabs */}
           {showNavTabs && (
-            <nav className="flex items-center gap-1 bg-slate-100/80 rounded-full p-1">
+            <nav className="flex items-center gap-1 bg-light-bg-secondary/80 dark:bg-midnight-blue/80 rounded-full p-1">
               {navTabs.map((tab) => {
                 const isActive = pathname === tab.href ||
                   (tab.href !== "/dashboard" && pathname?.startsWith(tab.href));
@@ -74,16 +74,16 @@ export function Header({ title, subtitle, showNavTabs = true }: HeaderProps) {
         {/* Right: Actions */}
         <div className="flex items-center gap-3">
           {/* Add Widget Button */}
-          <button className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-xl transition-colors">
+          <button className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-light-text-secondary dark:text-silver hover:text-light-text dark:hover:text-white hover:bg-light-bg-secondary dark:hover:bg-midnight-blue rounded-xl transition-colors">
             <Plus className="h-4 w-4" />
             Add widget
           </button>
 
           {/* Date Range */}
-          <button className="flex items-center gap-2 px-4 py-2.5 bg-slate-50 hover:bg-slate-100 rounded-xl text-sm font-medium text-slate-700 transition-colors">
-            <Calendar className="h-4 w-4 text-slate-500" />
+          <button className="flex items-center gap-2 px-4 py-2.5 bg-light-bg-secondary dark:bg-midnight-blue hover:bg-light-surface dark:hover:bg-graphite rounded-xl text-sm font-medium text-light-text-secondary dark:text-silver transition-colors">
+            <Calendar className="h-4 w-4 text-light-text-muted dark:text-steel" />
             <span>{getCurrentDate()}</span>
-            <ChevronDown className="h-4 w-4 text-slate-400" />
+            <ChevronDown className="h-4 w-4 text-light-text-muted dark:text-steel" />
           </button>
 
           {/* Add Report Button */}
@@ -96,19 +96,19 @@ export function Header({ title, subtitle, showNavTabs = true }: HeaderProps) {
 
           {/* Search */}
           <div className="relative">
-            <Search className="h-4 w-4 text-slate-400" />
+            <Search className="h-4 w-4 text-light-text-muted dark:text-steel" />
           </div>
 
           {/* Notifications */}
-          <button className="relative p-2.5 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-xl transition-colors">
+          <button className="relative p-2.5 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-light-bg-secondary dark:hover:bg-midnight-blue rounded-xl transition-colors">
             <Bell className="h-5 w-5" />
             <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-red-500 animate-pulse" />
           </button>
 
           {/* User Avatar */}
-          <button className="flex items-center gap-2 p-1 hover:bg-slate-50 rounded-xl transition-colors">
-            <div className="h-9 w-9 rounded-full bg-gradient-to-br from-secondary to-secondary-light flex items-center justify-center">
-              <span className="text-xs font-bold text-light-text dark:text-white">MM</span>
+          <button className="flex items-center gap-2 p-1 hover:bg-light-bg-secondary dark:hover:bg-midnight-blue rounded-xl transition-colors">
+            <div className="h-9 w-9 rounded-full bg-gradient-to-br from-emerald-pro-600 to-emerald-pro-500 dark:from-xgrowth-500 dark:to-xgrowth-400 flex items-center justify-center">
+              <span className="text-xs font-bold text-white dark:text-deep-space">MM</span>
             </div>
           </button>
         </div>
@@ -117,13 +117,13 @@ export function Header({ title, subtitle, showNavTabs = true }: HeaderProps) {
       {/* Breadcrumb / Page Title Row */}
       {(title || subtitle) && (
         <div className="px-6 pb-4">
-          <div className="flex items-center gap-2 text-sm text-slate-500 mb-1">
+          <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-1">
             <span>Portal</span>
             <span>/</span>
-            <span className="text-slate-700">{title || 'Dashboard'}</span>
+            <span className="text-light-text-secondary dark:text-silver">{title || 'Dashboard'}</span>
           </div>
           {subtitle && (
-            <h1 className="text-2xl font-sora font-semibold text-slate-900">{subtitle}</h1>
+            <h1 className="text-2xl font-sora font-semibold text-light-text dark:text-white">{subtitle}</h1>
           )}
         </div>
       )}

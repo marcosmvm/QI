@@ -51,14 +51,14 @@ const config: Config = {
         "light-text-muted": "#64748b",
 
         // ============================================
-        // DARK MODE COLORS (Legacy support)
+        // DARK MODE COLORS (Brand Board Aligned)
         // ============================================
 
-        // Dark backgrounds
-        "deep-space": "#080c08",
-        "midnight-blue": "#0a0f0a",
-        "graphite": "#1a2e1a",
-        "slate": "#2d4a2d",
+        // Dark backgrounds - Brand Board Values
+        "deep-space": "#0F172A",      // Dark mode primary background
+        "midnight-blue": "#1E293B",   // Dark mode surface/secondary
+        "graphite": "#334155",        // Dark mode border color
+        "slate": "#475569",           // Dark mode muted elements
 
         // Dark text
         "white": "#FFFFFF",

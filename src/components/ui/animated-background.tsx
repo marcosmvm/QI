@@ -51,11 +51,11 @@ export function AnimatedBackground({
       {/* Subtle grid pattern */}
       {showGrid && (
         <div
-          className="absolute inset-0 opacity-[0.02] pointer-events-none"
+          className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03] pointer-events-none"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(0, 212, 255, 0.5) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(0, 212, 255, 0.5) 1px, transparent 1px)
+              linear-gradient(rgba(5, 150, 105, 0.5) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(5, 150, 105, 0.5) 1px, transparent 1px)
             `,
             backgroundSize: '50px 50px',
           }}
@@ -72,10 +72,10 @@ export function AnimatedBackground({
             height: orb.size,
             background:
               orb.color === 'cyan'
-                ? 'radial-gradient(circle, rgba(0, 212, 255, 0.25) 0%, rgba(0, 212, 255, 0) 70%)'
+                ? 'radial-gradient(circle, rgba(5, 150, 105, 0.20) 0%, rgba(5, 150, 105, 0) 70%)'
                 : orb.color === 'violet'
-                  ? 'radial-gradient(circle, rgba(123, 97, 255, 0.2) 0%, rgba(123, 97, 255, 0) 70%)'
-                  : 'radial-gradient(circle, rgba(0, 255, 178, 0.15) 0%, rgba(0, 255, 178, 0) 70%)',
+                  ? 'radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0) 70%)'
+                  : 'radial-gradient(circle, rgba(52, 211, 153, 0.12) 0%, rgba(52, 211, 153, 0) 70%)',
           }}
           animate={{
             scale: [1, 1.1, 0.95, 1.02, 1],

@@ -100,35 +100,35 @@ export const chartTheme = {
   },
 }
 
-// Dark mode chart theme
+// Dark mode chart theme - Brand Board Aligned
 export const chartThemeDark = {
   grid: {
-    stroke: '#2d4a2d',
+    stroke: '#334155',    // Brand board dark border
     strokeDasharray: '3 3',
   },
   axis: {
-    stroke: '#2d4a2d',
+    stroke: '#334155',    // Brand board dark border
     tick: {
-      fill: '#9ca3af',
+      fill: '#94A3B8',    // Brand board dark muted text
       fontSize: 12,
     },
   },
   tooltip: {
     contentStyle: {
-      backgroundColor: '#1a2e1a',
-      border: '1px solid #2d4a2d',
+      backgroundColor: '#1E293B',  // Brand board dark surface
+      border: '1px solid #334155', // Brand board dark border
       borderRadius: '8px',
       boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
       padding: '12px',
     },
     labelStyle: {
-      color: '#ffffff',
+      color: '#F8FAFC',   // Brand board dark primary text
       fontWeight: 600,
       marginBottom: '8px',
       fontSize: '14px',
     },
     itemStyle: {
-      color: '#e8e8ed',
+      color: '#CBD5E1',   // Brand board dark secondary text
       fontSize: '13px',
       padding: '2px 0',
     },
@@ -138,7 +138,7 @@ export const chartThemeDark = {
       paddingTop: '16px',
     },
     itemStyle: {
-      color: '#9ca3af',
+      color: '#94A3B8',   // Brand board dark muted text
       fontSize: '13px',
     },
   },
