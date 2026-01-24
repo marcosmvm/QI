@@ -21,7 +21,7 @@ const buttonVariants = cva(
         outline:
           "border border-emerald-pro-600 text-emerald-pro-600 bg-transparent hover:bg-emerald-pro-600/10 hover:shadow-glow-cyan-sm",
         secondary:
-          "bg-graphite text-light-text-secondary dark:text-silver hover:bg-slate hover:text-light-text dark:hover:text-white",
+          "bg-light-bg-secondary dark:bg-graphite text-light-text-secondary dark:text-silver hover:bg-emerald-pro-600/10 dark:hover:bg-slate hover:text-light-text dark:hover:text-white",
         ghost:
           "text-light-text-muted dark:text-steel hover:bg-light-bg-secondary dark:hover:bg-graphite/50 hover:text-light-text dark:hover:text-white",
         link:
@@ -37,7 +37,7 @@ const buttonVariants = cva(
           "bg-emerald-pro-500 text-light-text dark:text-white hover:shadow-glow-violet-lg hover:-translate-y-0.5 active:translate-y-0",
         // Glass variant - glassmorphism button
         glass:
-          "bg-light-bg-secondary dark:bg-midnight-blue/60 text-light-text dark:text-white border border-emerald-pro-600/20 backdrop-blur-sm hover:bg-light-bg-secondary dark:bg-midnight-blue/80 hover:border-emerald-pro-600/40 hover:shadow-glow-cyan-sm",
+          "bg-light-bg-secondary dark:bg-midnight-blue/60 text-light-text dark:text-white border border-emerald-pro-600/20 backdrop-blur-sm hover:bg-emerald-pro-600/5 dark:hover:bg-midnight-blue/80 hover:border-emerald-pro-600/40 hover:shadow-glow-cyan-sm",
       },
       size: {
         default: "h-11 px-6 py-3",

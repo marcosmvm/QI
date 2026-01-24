@@ -162,7 +162,7 @@ export function Hero() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="px-5 py-3 bg-emerald-pro-600 dark:bg-xgrowth-500 hover:bg-emerald-pro-700 dark:hover:bg-xgrowth-400 text-light-text dark:text-white dark:text-deep-space font-medium rounded-lg transition-colors text-sm whitespace-nowrap disabled:opacity-50"
+                  className="px-5 py-3 bg-emerald-pro-600 dark:bg-xgrowth-500 hover:bg-emerald-pro-700 dark:hover:bg-xgrowth-400 text-white dark:text-deep-space font-medium rounded-lg transition-colors text-sm whitespace-nowrap disabled:opacity-50"
                 >
                   {isSubmitting ? "..." : "Get Guide"}
                 </button>
