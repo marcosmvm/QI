@@ -28,7 +28,7 @@ export default function TermsOfUsePage() {
               <span className="gradient-text-cyan-violet headline-underline">Terms of Use</span>
             </h1>
             <p className="text-light-text-secondary dark:text-silver">
-              Last updated: January 2024
+              Last updated: January 2026
             </p>
           </motion.div>
         </Container>
@@ -46,7 +46,7 @@ export default function TermsOfUsePage() {
 
             <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white mb-4">2. Description of Services</h2>
             <p className="text-light-text-secondary dark:text-silver mb-6">
-              XGrowthOS provides AI-powered B2B lead generation services, including but not limited to email outreach, lead research, and campaign management. Services are subject to the specific terms outlined in your service agreement.
+              XGrowthOS provides autonomous B2B lead generation services powered by five AI engines: The Guardian (compliance), The Architect (campaign design), The Scientist (optimization), The Hunter (lead expansion), and The Sentinel (visitor intelligence). Services include campaign development, compliance monitoring, lead qualification, CRM integration, and performance reporting.
             </p>
 
             <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white mb-4">3. User Responsibilities</h2>

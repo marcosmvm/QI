@@ -26,49 +26,49 @@ const processSteps = [
   {
     step: 1,
     icon: Search,
-    title: "Discovery Call",
+    title: "Week 1: Discovery & Setup",
     description:
-      "We start with a 30-minute conversation to understand your ideal customer profile, value proposition, and growth goals.",
+      "Kickoff call within 3 days, dashboard access in 48 hours, ICP definition, domain warmup, and technical integrations.",
     details: [
-      "Define your target market",
-      "Understand your unique value",
-      "Set success metrics",
+      "60-minute kickoff call",
+      "Complete Discovery Questionnaire",
+      "Domain warmup initiated",
     ],
   },
   {
     step: 2,
     icon: Sparkles,
-    title: "AI Campaign Design",
+    title: "Week 2: Campaign Development",
     description:
-      "Our AI Architect engine crafts personalized email sequences tailored to your specific audience and messaging.",
+      "The Architect AI generates campaign copy, we configure SPF/DKIM/DMARC, and test CRM integration.",
     details: [
-      "AI-generated subject lines",
-      "Personalized copy at scale",
-      "Multi-touch sequences",
+      "AI-generated copy for approval",
+      "5 subject line variants",
+      "Personalization configured",
     ],
   },
   {
     step: 3,
     icon: TrendingUp,
-    title: "Launch & Monitor",
+    title: "Weeks 3-4: Launch & First Meetings",
     description:
-      "Our Scientist engine continuously monitors performance and optimizes campaigns in real-time.",
+      "First emails send, The Scientist monitors replies, The Guardian protects domain health. First meetings typically booked.",
     details: [
-      "24/7 performance tracking",
-      "A/B testing automation",
-      "Deliverability optimization",
+      "Guardian pre-launch compliance check",
+      "Daily monitoring enabled",
+      "Weekly reports begin",
     ],
   },
   {
     step: 4,
     icon: Rocket,
-    title: "Scale Results",
+    title: "Weeks 5-12: Optimization & Scale",
     description:
-      "As we identify winning strategies, we expand into new segments and scale your pipeline predictably.",
+      "The Scientist runs Mon/Wed A/B tests, The Hunter expands from positive replies (25-50 new leads each).",
     details: [
-      "Double down on what works",
-      "Expand to new markets",
-      "Predictable growth",
+      "Continuous A/B testing",
+      "Reply-based lead expansion",
+      "10%+ monthly improvement",
     ],
   },
 ];
@@ -76,46 +76,46 @@ const processSteps = [
 const engines = [
   {
     name: "Guardian",
-    codename: "Engine A",
+    codename: "Engines C+D",
     icon: Shield,
-    description: "Compliance & domain health verification",
+    description: "DNC verification, domain monitoring, deliverability protection",
     color: "emerald-pro-600",
   },
   {
     name: "Architect",
     codename: "Engine B",
     icon: Sparkles,
-    description: "AI-powered campaign design",
+    description: "Multi-agent AI copywriting, Master Library integration",
     color: "emerald-pro-500",
   },
   {
     name: "Scientist",
-    codename: "Engine C",
+    codename: "Engines A+F",
     icon: BarChart3,
-    description: "Campaign monitoring & optimization",
+    description: "Mon/Wed optimization cycles, A/B testing automation",
     color: "emerald-pro-400",
   },
   {
     name: "Hunter",
     codename: "Engine G",
     icon: Target,
-    description: "Reply-based lead expansion",
+    description: "25-50 new leads per positive reply",
     color: "energy-orange",
   },
   {
     name: "Sentinel",
     codename: "Engine H",
     icon: Users,
-    description: "Website visitor intelligence",
+    description: "8-15 contacts per identified website visitor",
     color: "emerald-pro-600",
   },
 ];
 
 const stats = [
-  { value: "3.5%+", label: "Avg Reply Rate" },
-  { value: "92%", label: "Deliverability" },
-  { value: "45%", label: "Open Rate" },
-  { value: "60+", label: "Meetings/Month" },
+  { value: "8%+", label: "Reply Rate Target" },
+  { value: "95%+", label: "Inbox Placement" },
+  { value: "40%+", label: "Open Rate Target" },
+  { value: "10-30", label: "Meetings in 90 Days" },
 ];
 
 const differentiators = [
@@ -172,7 +172,7 @@ export default function HowItWorksPage() {
             >
               <Sparkles className="w-4 h-4 text-emerald-pro-500" />
               <span className="text-sm font-medium text-emerald-pro-500">
-                The Quantum Approach
+                14 Days to First Campaign
               </span>
               <Zap className="w-4 h-4 text-emerald-pro-500" />
             </motion.div>

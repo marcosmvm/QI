@@ -7,8 +7,8 @@ import { type MetricStatus } from "@/types"
 import { motion, useInView } from 'framer-motion'
 
 // ============================================
-// QUANTUM INSIGHTS - PREMIUM METRICS CARD
-// Brand Board v1.0 - With Enhanced Animations
+// XGROWTHOS - PREMIUM METRICS CARD
+// Brand Board v2.0 - With Enhanced Animations
 // ============================================
 
 type AccentColor = 'cyan' | 'violet' | 'mint' | 'orange'

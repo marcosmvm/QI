@@ -7,19 +7,19 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/marketing/layout/Container";
 import { useState } from "react";
 
-// Capability-focused stats (not inflated metrics)
+// Capability-focused stats from XG-DOC-016 & XG-DOC-004
 const heroStats = [
   { value: "5", label: "AI Engines", icon: Brain },
-  { value: "24/7", label: "Automation", icon: Zap },
-  { value: "99%", label: "Inbox Rate Target", icon: Shield },
-  { value: "48h", label: "ICP to Inbox", icon: Target },
+  { value: "40%+", label: "Open Rate Target", icon: Zap },
+  { value: "8%+", label: "Reply Rate Target", icon: Shield },
+  { value: "14 Days", label: "To First Campaign", icon: Target },
 ];
 
-// Value propositions
+// Value propositions from XG-DOC-016
 const valueProps = [
-  "Your closers close, not prospect",
-  "Domain reputation protected",
-  "Performance-based pricing",
+  "Book 10-30 meetings in 90 days",
+  "95%+ inbox deliverability",
+  "Pay per qualified meeting",
 ];
 
 export function Hero() {

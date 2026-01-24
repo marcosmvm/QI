@@ -35,12 +35,12 @@ const values = [
   },
 ];
 
-// Honest capability stats (not inflated metrics)
+// Company stats from XG-DOC-026
 const stats = [
   { value: "5", label: "AI Engines" },
-  { value: "24/7", label: "Automation" },
+  { value: "90", label: "Day Pilot Program" },
   { value: "LA", label: "Based in Los Angeles" },
-  { value: "2024", label: "Founded" },
+  { value: "CSUN", label: "Entrepreneurship" },
 ];
 
 export default function AboutPage() {
@@ -150,7 +150,7 @@ export default function AboutPage() {
                 transition={{ delay: 0.1 }}
                 className="text-light-text-secondary/90 dark:text-silver/90 leading-relaxed text-lg"
               >
-                XGrowthOS was born from frustration. Our founder, <span className="text-emerald-pro-600 font-semibold">Marcos Matthews</span>, spent years watching B2B companies struggle with cold outreach—either doing it poorly themselves or paying agencies that delivered inconsistent results.
+                XGrowthOS was founded by <span className="text-emerald-pro-600 font-semibold">Marcos Matthews</span> in Los Angeles, CA. After observing that SDRs spend 65% of their time NOT selling—instead on prospecting, data entry, and admin—he knew there had to be a better way.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, x: -20 }}
@@ -159,7 +159,7 @@ export default function AboutPage() {
                 transition={{ delay: 0.2 }}
                 className="text-light-text-secondary/90 dark:text-silver/90 leading-relaxed text-lg"
               >
-                The problem wasn&apos;t effort—it was the approach. Traditional outbound relied on <span className="text-energy-orange">volume over quality</span>, generic messaging, and outdated tools. Companies were burning through domains, annoying prospects, and seeing diminishing returns.
+                The reality is clear: traditional cold outreach is broken. B2B companies pay <span className="text-energy-orange">$120K+ annually per SDR</span> while seeing only 5.1% average cold email reply rates. The result? Inconsistent pipeline, burnout, and turnover.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, x: -20 }}
@@ -168,7 +168,7 @@ export default function AboutPage() {
                 transition={{ delay: 0.3 }}
                 className="text-light-text-secondary/90 dark:text-silver/90 leading-relaxed text-lg"
               >
-                We built XGrowthOS to prove there&apos;s a better way. By combining <span className="text-emerald-pro-500 font-semibold">cutting-edge AI</span> with deep expertise in deliverability, personalization, and sales psychology, we&apos;ve created a system that actually works—consistently, at scale.
+                XGrowthOS is the solution: an <span className="text-emerald-pro-500 font-semibold">autonomous B2B lead generation platform</span> powered by five AI engines that work 24/7. We&apos;re not just another agency—we&apos;re building an autonomous growth operating system that continuously learns and improves.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, x: -20 }}
@@ -177,7 +177,7 @@ export default function AboutPage() {
                 transition={{ delay: 0.4 }}
                 className="text-light-text-secondary/90 dark:text-silver/90 leading-relaxed text-lg"
               >
-                Today, our <span className="text-emerald-pro-400 font-semibold">5 AI engines</span> are ready to power lead generation for B2B companies. We&apos;re launching our founding partner program—join us in building the infrastructure for modern outbound sales.
+                Our mission is to make <span className="text-emerald-pro-400 font-semibold">enterprise-grade sales automation</span> accessible to every B2B company. Join our Founding Partner program and experience the future of autonomous lead generation.
               </motion.p>
             </div>
           </motion.div>

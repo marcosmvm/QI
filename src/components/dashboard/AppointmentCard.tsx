@@ -6,8 +6,8 @@ import { Calendar, Clock, User, Building2, Video, Phone, MapPin } from "lucide-r
 import { Button } from "@/components/ui/button"
 
 // ============================================
-// QUANTUM INSIGHTS - ENHANCED APPOINTMENT CARD
-// Brand Board v1.0 - Dark Theme
+// XGROWTHOS - ENHANCED APPOINTMENT CARD
+// Brand Board v2.0 - Light/Dark Theme
 // ============================================
 
 interface Appointment {

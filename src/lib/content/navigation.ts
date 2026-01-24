@@ -133,7 +133,8 @@ export const footerNavigation = {
 };
 
 export const contactInfo = {
-  email: "sales@xgrowthos.com",
+  email: "support@xgrowthos.com",
   phone: "+1 (323) 555-0147",
   address: "Los Angeles, CA",
+  website: "xgrowthos.com",
 };

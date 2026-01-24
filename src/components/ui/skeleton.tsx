@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils"
 
 // ============================================
-// QUANTUM INSIGHTS - SKELETON LOADING COMPONENTS
-// Brand Board v1.0 - Loading States
+// XGROWTHOS - SKELETON LOADING COMPONENTS
+// Brand Board v2.0 - Loading States
 // ============================================
 
 interface SkeletonProps extends React.HTMLAttributes<HTMLDivElement> {

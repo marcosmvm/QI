@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils"
 
 // ============================================
-// QUANTUM INSIGHTS - ENHANCED PROGRESS RING
-// Brand Board v1.0 - Colored Variants
+// XGROWTHOS - ENHANCED PROGRESS RING
+// Brand Board v2.0 - Colored Variants
 // ============================================
 
 type ColorVariant = 'cyan' | 'violet' | 'mint' | 'orange'

@@ -119,7 +119,7 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
               <Zap className="h-5 w-5 text-emerald-pro-600" />
             </div>
             <span className="text-lg font-sora font-semibold text-light-text dark:text-white">
-              Quantum
+              <span className="text-emerald-pro-600 dark:text-xgrowth-500">X</span>GrowthOS
             </span>
           </Link>
         </div>

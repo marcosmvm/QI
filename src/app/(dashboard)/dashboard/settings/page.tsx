@@ -204,14 +204,14 @@ export default function SettingsPage() {
 
   const [profile, setProfile] = useState({
     name: "Marcos Matthews",
-    email: "marcos@quantuminsights.io",
+    email: "marcos@xgrowthos.com",
     role: "Admin",
     timezone: "America/Los_Angeles",
   });
 
   const [company, setCompany] = useState({
     name: "XGrowthOS",
-    website: "https://quantuminsights.io",
+    website: "https://xgrowthos.com",
     industry: "B2B SaaS",
     size: "11-50",
   });

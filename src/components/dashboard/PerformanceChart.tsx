@@ -14,8 +14,8 @@ import {
 import { chartColors, chartTheme, gridProps, xAxisProps, yAxisProps } from "@/lib/chart-config"
 
 // ============================================
-// QUANTUM INSIGHTS - ENHANCED PERFORMANCE CHART
-// Brand Board v1.0 - Dark Theme
+// XGROWTHOS - ENHANCED PERFORMANCE CHART
+// Brand Board v2.0 - Light/Dark Theme
 // ============================================
 
 interface DataPoint {

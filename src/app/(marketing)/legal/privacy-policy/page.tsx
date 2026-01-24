@@ -28,7 +28,7 @@ export default function PrivacyPolicyPage() {
               <span className="gradient-text-cyan-violet headline-underline">Privacy Policy</span>
             </h1>
             <p className="text-light-text-secondary dark:text-silver">
-              Last updated: January 2024
+              Last updated: January 2026
             </p>
           </motion.div>
         </Container>
@@ -81,14 +81,32 @@ export default function PrivacyPolicyPage() {
               We use cookies and similar technologies to improve your experience. See our Cookie Policy for more details.
             </p>
 
-            <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white mb-4">7. International Transfers</h2>
+            <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white mb-4">7. GDPR Compliance (EU)</h2>
+            <p className="text-light-text-secondary dark:text-silver mb-4">For EU prospects and data subjects, we:</p>
+            <ul className="text-light-text-secondary dark:text-silver mb-6 list-disc pl-6 space-y-2">
+              <li>Verify legitimate interest basis for processing</li>
+              <li>Include unsubscribe options in all emails</li>
+              <li>Honor data subject requests within 72 hours</li>
+              <li>Provide Data Processing Agreements upon request</li>
+            </ul>
+
+            <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white mb-4">8. CCPA Compliance (California)</h2>
+            <p className="text-light-text-secondary dark:text-silver mb-4">For California residents, we:</p>
+            <ul className="text-light-text-secondary dark:text-silver mb-6 list-disc pl-6 space-y-2">
+              <li>Act as a &quot;service provider&quot; under CCPA</li>
+              <li>Do not sell personal information</li>
+              <li>Honor opt-out requests promptly</li>
+              <li>Provide required disclosures about data collection</li>
+            </ul>
+
+            <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white mb-4">9. International Transfers</h2>
             <p className="text-light-text-secondary dark:text-silver mb-6">
-              Your data may be transferred to and processed in the United States. We ensure appropriate safeguards are in place for such transfers.
+              Your data may be transferred to and processed in the United States. We ensure appropriate safeguards are in place for such transfers, including Standard Contractual Clauses where required.
             </p>
 
-            <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white mb-4">8. Contact Us</h2>
+            <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white mb-4">10. Contact Us</h2>
             <p className="text-light-text-secondary dark:text-silver">
-              For privacy-related inquiries, contact us at privacy@xgrowthos.com
+              For privacy-related inquiries, contact us at privacy@xgrowthos.com or support@xgrowthos.com
             </p>
           </div>
         </Container>

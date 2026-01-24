@@ -5,8 +5,8 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 // ============================================
-// QUANTUM INSIGHTS - ENHANCED BUTTON COMPONENT
-// Brand Board v1.0 - Premium Dark Theme
+// XGROWTHOS - ENHANCED BUTTON COMPONENT
+// Brand Board v2.0 - Light/Dark Theme
 // ============================================
 
 const buttonVariants = cva(

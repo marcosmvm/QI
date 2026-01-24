@@ -37,19 +37,19 @@ const itemVariants = {
 // Mock domain health data
 const mockDomains = [
   {
-    domain: "outreach1.quantuminsights.io",
+    domain: "outreach1.xgrowthos.com",
     score: 95,
     status: "healthy",
     lastCheck: "2 minutes ago",
   },
   {
-    domain: "outreach2.quantuminsights.io",
+    domain: "outreach2.xgrowthos.com",
     score: 88,
     status: "warning",
     lastCheck: "5 minutes ago",
   },
   {
-    domain: "outreach3.quantuminsights.io",
+    domain: "outreach3.xgrowthos.com",
     score: 92,
     status: "healthy",
     lastCheck: "3 minutes ago",
@@ -59,12 +59,12 @@ const mockDomains = [
 const recentAlerts = [
   {
     type: "warning",
-    message: "DMARC not configured for outreach2.quantuminsights.io",
+    message: "DMARC not configured for outreach2.xgrowthos.com",
     time: "2 hours ago",
   },
   {
     type: "success",
-    message: "Domain outreach1.quantuminsights.io passed all health checks",
+    message: "Domain outreach1.xgrowthos.com passed all health checks",
     time: "4 hours ago",
   },
   {

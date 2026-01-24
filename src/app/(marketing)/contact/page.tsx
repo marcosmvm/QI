@@ -154,19 +154,19 @@ export default function ContactPage() {
                 <ul className="space-y-3 text-light-text-muted dark:text-steel text-sm">
                   <li className="flex items-start gap-2">
                     <ArrowRight className="h-4 w-4 text-emerald-pro-600 flex-shrink-0 mt-0.5" />
-                    30-minute discovery call
+                    60-minute discovery call within 3 business days
                   </li>
                   <li className="flex items-start gap-2">
                     <ArrowRight className="h-4 w-4 text-emerald-pro-500 flex-shrink-0 mt-0.5" />
-                    Discussion of your goals and target market
+                    ICP definition and targeting strategy discussion
                   </li>
                   <li className="flex items-start gap-2">
                     <ArrowRight className="h-4 w-4 text-emerald-pro-400 flex-shrink-0 mt-0.5" />
-                    Custom recommendation for your business
+                    Overview of all 5 AI engines and how they work
                   </li>
                   <li className="flex items-start gap-2">
                     <ArrowRight className="h-4 w-4 text-energy-orange flex-shrink-0 mt-0.5" />
-                    No pressure, no hard sell
+                    Founding Partner pricing (locked for life)
                   </li>
                 </ul>
               </div>

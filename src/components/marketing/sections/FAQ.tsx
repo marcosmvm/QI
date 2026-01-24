@@ -7,36 +7,44 @@ import { Container } from "@/components/marketing/layout/Container";
 
 const faqs = [
   {
-    question: "How is XGrowthOS different from other lead gen agencies?",
-    answer: "We're AI-first. While others rely on manual processes, our 5 specialized AI engines work 24/7 to optimize every aspect of your outbound campaigns. This means higher deliverability, better personalization, and more meetings—all with full transparency into our process.",
+    question: "What is XGrowthOS?",
+    answer: "XGrowthOS is an autonomous B2B lead generation platform powered by five specialized AI engines. We handle end-to-end cold email outreach to book qualified meetings with your ideal customers, operating 24/7 with continuous optimization.",
   },
   {
-    question: "What industries do you work with?",
-    answer: "We specialize in B2B companies across SaaS, professional services, fintech, healthcare tech, manufacturing, and more. Our AI adapts to any industry's unique terminology and buying cycles.",
+    question: "How is XGrowthOS different from other agencies?",
+    answer: "Traditional agencies use manual processes with reactive optimization and generic templates. XGrowthOS features five AI engines working autonomously with proactive Mon/Wed optimization cycles, a self-learning Master Library, real-time compliance protection, automatic lead expansion from positive replies, and website visitor intelligence.",
   },
   {
-    question: "How long until I see results?",
-    answer: "Most clients see their first qualified meetings within 2-3 weeks of campaign launch. However, we spend the first 1-2 weeks on proper setup, ICP research, and domain warming to ensure long-term success.",
+    question: "How long until my campaigns launch?",
+    answer: "Typical timeline: Days 1-3 for discovery questionnaire and kickoff call, Days 4-7 for campaign copy development, Days 7-10 for domain warmup and copy approval, Days 10-14 for first campaigns to launch. First meetings are typically booked in weeks 3-4.",
   },
   {
-    question: "Do you guarantee results?",
-    answer: "Yes. We offer a pilot program with guaranteed minimum deliverables. If we don't hit the agreed-upon meeting targets, you don't pay for our services—only the infrastructure costs.",
+    question: "What results can I expect?",
+    answer: "Our targets vs industry benchmarks: 40%+ open rate (vs 27.7% industry avg), 8%+ reply rate (vs 5.1% avg), 2%+ meeting book rate (vs 1% avg). Typical pilot results include 10-30 qualified meetings per 90-day pilot with positive ROI within 60-90 days.",
   },
   {
-    question: "What's included in your service?",
-    answer: "Everything. ICP research, list building, email infrastructure setup, copywriting, campaign management, A/B testing, deliverability monitoring, and detailed reporting. We handle the entire outbound process end-to-end.",
+    question: "What's included in the monthly fee?",
+    answer: "The $2,000/month retainer includes unlimited campaign management, all five AI engines active, dedicated sending infrastructure, daily monitoring and optimization, weekly performance reports, bi-weekly strategy calls, real-time Slack/Telegram support, and dashboard access.",
   },
   {
-    question: "How do you ensure emails don't go to spam?",
-    answer: "Our Guardian Engine monitors domain health 24/7, manages sending volumes intelligently, rotates domains automatically, and keeps you compliant with all regulations. We maintain 95%+ deliverability rates across all campaigns.",
+    question: "How does the performance bonus work?",
+    answer: "$250 per qualified meeting (Founding Partners), billed weekly. A qualified meeting must match your ICP, be confirmed and attended, and involve a decision-maker or influencer.",
   },
   {
-    question: "Can I see what emails are being sent on my behalf?",
-    answer: "Absolutely. You have full visibility into every email, every response, and every metric through your client dashboard. We believe in complete transparency.",
+    question: "How do you ensure deliverability?",
+    answer: "We use dedicated sending domains (not shared), proper warmup protocols (2-4 weeks), SPF/DKIM/DMARC authentication, real-time bounce monitoring, spam complaint tracking (<0.1% threshold), daily blacklist monitoring, volume pacing (50 emails/domain/day max), and Gmail/Yahoo 2024-2025 compliance.",
+  },
+  {
+    question: "What if we're not happy with results?",
+    answer: "Performance Guarantee: If reply rate stays below 3% for 30+ consecutive days despite optimization efforts, you can request a strategy pivot, terminate with 15 days notice, or receive a pro-rated refund of unused retainer.",
   },
   {
     question: "What CRM integrations do you support?",
-    answer: "We integrate with Salesforce, HubSpot, Pipedrive, and most major CRMs. Meetings and qualified leads flow directly into your existing workflow.",
+    answer: "We integrate with Salesforce, HubSpot, Pipedrive, Zoho CRM, Close.io, Monday.com CRM, and custom integrations are available.",
+  },
+  {
+    question: "Is XGrowthOS GDPR/CCPA compliant?",
+    answer: "Yes. For EU prospects, we verify legitimate interest basis, include unsubscribe in all emails, and honor data subject requests within 72 hours. For California prospects, we act as a 'service provider' under CCPA, don't sell personal information, and honor opt-out requests.",
   },
 ];
 

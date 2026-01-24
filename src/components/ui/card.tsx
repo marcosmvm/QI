@@ -2,8 +2,8 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 
 // ============================================
-// QUANTUM INSIGHTS - ENHANCED CARD COMPONENT
-// Brand Board v1.0 - Premium Dark Theme
+// XGROWTHOS - ENHANCED CARD COMPONENT
+// Brand Board v2.0 - Light/Dark Theme
 // ============================================
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {

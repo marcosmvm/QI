@@ -3,8 +3,8 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 // ============================================
-// QUANTUM INSIGHTS - BADGE COMPONENT
-// Brand Board v1.0 - Status Indicators
+// XGROWTHOS - BADGE COMPONENT
+// Brand Board v2.0 - Status Indicators
 // ============================================
 
 const badgeVariants = cva(

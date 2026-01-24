@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 
 // ============================================
-// QUANTUM INSIGHTS - AMBIENT BACKGROUND
+// XGROWTHOS - AMBIENT BACKGROUND
 // Premium subtle background effects for hero sections
 // ============================================
 

@@ -4,8 +4,8 @@ import { motion } from 'framer-motion'
 import { ReactNode } from 'react'
 
 // ============================================
-// QUANTUM INSIGHTS - PAGE TRANSITION COMPONENTS
-// Brand Board v1.0 - Smooth Animations
+// XGROWTHOS - PAGE TRANSITION COMPONENTS
+// Brand Board v2.0 - Smooth Animations
 // ============================================
 
 interface PageTransitionProps {
