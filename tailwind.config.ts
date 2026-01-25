@@ -11,139 +11,135 @@ const config: Config = {
     extend: {
       colors: {
         // ============================================
-        // XGROWTHOS BRAND PALETTE
+        // NEW BRAND SYSTEM - Greens + Blues
         // ============================================
 
-        // Primary Brand Colors (Green)
-        "xgrowth": {
-          50: "#f0fdf4",
-          100: "#dcfce7",
-          200: "#bbf7d0",
-          300: "#86efac",
-          400: "#4ade80",
-          500: "#22c55e",  // Primary dark mode accent
-          600: "#16a34a",
-          700: "#15803d",
-          800: "#166534",
-          900: "#14532d",
-          950: "#052e16",
-        },
-        "emerald-pro": {
-          400: "#34d399",
-          500: "#10b981",
-          600: "#059669",  // Primary light mode accent
-          700: "#047857",
+        // Background Colors (CSS Variable mapped)
+        bg: {
+          DEFAULT: "var(--bg)",
+          surface: "var(--bg-surface)",
+          subtle: "var(--bg-surface-subtle)",
         },
 
-        // ============================================
-        // LIGHT MODE COLORS (Default)
-        // ============================================
-
-        // Light backgrounds
-        "light-bg": "#ffffff",
-        "light-bg-secondary": "#f0fdf4",
-        "light-bg-elevated": "#ffffff",
-        "light-surface": "#f8fafc",
-
-        // Light text
-        "light-text": "#0f172a",
-        "light-text-secondary": "#334155",
-        "light-text-muted": "#64748b",
-
-        // ============================================
-        // DARK MODE COLORS (Brand Board Aligned)
-        // ============================================
-
-        // Dark backgrounds - Brand Board Values
-        "deep-space": "#0F172A",      // Dark mode primary background
-        "midnight-blue": "#1E293B",   // Dark mode surface/secondary
-        "graphite": "#334155",        // Dark mode border color
-        "slate": "#475569",           // Dark mode muted elements
-
-        // Dark text
-        "white": "#FFFFFF",
-        "silver": "#E8E8ED",
-        "steel": "#9CA3AF",
-        "muted-text": "#6B7280",
-
-        // Legacy accent colors (for backward compatibility)
-        "electric-cyan": "#22c55e",
-        "quantum-violet": "#059669",
-        "neon-mint": "#4ade80",
-        "energy-orange": "#FF6B35",
-        "alert-red": "#FF4757",
-
-        // ============================================
-        // SEMANTIC COLOR MAPPINGS
-        // ============================================
-        background: {
-          DEFAULT: "#ffffff",
-          elevated: "#f8fafc",
-          hover: "#f0fdf4",
+        // Text Colors (CSS Variable mapped)
+        text: {
+          primary: "var(--text-primary)",
+          secondary: "var(--text-secondary)",
+          muted: "var(--text-muted)",
         },
 
-        border: {
-          DEFAULT: "#e2e8f0",
-          light: "#f1f5f9",
-          green: "rgba(34, 197, 94, 0.3)",
-        },
-
-        foreground: {
-          DEFAULT: "#0f172a",
-          secondary: "#334155",
-          muted: "#64748b",
-        },
-
-        // Semantic Status Colors
+        // Primary Greens
         primary: {
+          50: "#F0FDF4",
+          100: "#DCFCE7",
+          200: "#BBF7D0",
+          300: "#86EFAC",
+          400: "#4ADE80",
+          500: "#22C55E",
+          600: "#16A34A",
+          700: "#15803D",
+          800: "#166534",
+          900: "#14532D",
+          950: "#052E16",
           DEFAULT: "#059669",
-          hover: "#047857",
-          light: "rgba(5, 150, 105, 0.15)",
-          foreground: "#ffffff",
+          light: "#34D399",
+          dark: "#047857",
         },
-        secondary: {
-          DEFAULT: "#22c55e",
-          light: "rgba(34, 197, 94, 0.15)",
-          foreground: "#ffffff",
+
+        // Accent Blues
+        accent: {
+          50: "#F0F9FF",
+          100: "#E0F2FE",
+          200: "#BAE6FD",
+          300: "#7DD3FC",
+          400: "#38BDF8",
+          500: "#0EA5E9",
+          600: "#0284C7",
+          700: "#0369A1",
+          800: "#075985",
+          900: "#0C4A6E",
+          DEFAULT: "#0EA5E9",
+          light: "#7DD3FC",
+          dark: "#0369A1",
         },
+
+        // Status Colors
         success: {
-          DEFAULT: "#22c55e",
+          DEFAULT: "#22C55E",
           light: "rgba(34, 197, 94, 0.15)",
-          foreground: "#ffffff",
+          foreground: "#FFFFFF",
         },
         warning: {
-          DEFAULT: "#FF6B35",
-          light: "rgba(255, 107, 53, 0.15)",
-          foreground: "#0f172a",
+          DEFAULT: "#F59E0B",
+          light: "rgba(245, 158, 11, 0.15)",
+          foreground: "#0F172A",
         },
-        destructive: {
-          DEFAULT: "#FF4757",
-          light: "rgba(255, 71, 87, 0.15)",
-          foreground: "#ffffff",
+        error: {
+          DEFAULT: "#EF4444",
+          light: "rgba(239, 68, 68, 0.15)",
+          foreground: "#FFFFFF",
         },
         info: {
-          DEFAULT: "#059669",
-          light: "rgba(5, 150, 105, 0.15)",
-          foreground: "#ffffff",
+          DEFAULT: "#0EA5E9",
+          light: "rgba(14, 165, 233, 0.15)",
+          foreground: "#FFFFFF",
         },
 
-        // Component-specific
+        // Border Colors
+        border: {
+          DEFAULT: "var(--border-default)",
+          subtle: "var(--border-subtle)",
+        },
+
+        // Component-specific (shadcn compatibility)
+        background: "var(--bg)",
+        foreground: "var(--text-primary)",
         card: {
-          DEFAULT: "#ffffff",
-          hover: "#f8fafc",
-          foreground: "#0f172a",
+          DEFAULT: "var(--bg-surface)",
+          foreground: "var(--text-primary)",
         },
         input: {
-          DEFAULT: "#ffffff",
-          focus: "#f0fdf4",
-          border: "#e2e8f0",
+          DEFAULT: "var(--bg-surface)",
+          border: "var(--border-default)",
         },
         muted: {
-          DEFAULT: "#f8fafc",
-          foreground: "#64748b",
+          DEFAULT: "var(--bg-surface-subtle)",
+          foreground: "var(--text-muted)",
         },
-
+        destructive: {
+          DEFAULT: "#EF4444",
+          foreground: "#FFFFFF",
+        },
         ring: "#059669",
+
+        // Legacy color mappings for backward compatibility
+        "emerald-pro": {
+          400: "#34D399",
+          500: "#10B981",
+          600: "#059669",
+          700: "#047857",
+        },
+        "xgrowth": {
+          50: "#F0FDF4",
+          100: "#DCFCE7",
+          200: "#BBF7D0",
+          300: "#86EFAC",
+          400: "#4ADE80",
+          500: "#22C55E",
+          600: "#16A34A",
+          700: "#15803D",
+          800: "#166534",
+          900: "#14532D",
+          950: "#052E16",
+        },
+        "deep-space": "#020617",
+        "midnight-blue": "#0F172A",
+        graphite: "#334155",
+        steel: "#64748B",
+        "energy-orange": "#F59E0B",
+        "alert-red": "#EF4444",
+        "cyan-dark": "#0369A1",
+        "cyan-light": "#38BDF8",
       },
 
       // ============================================
@@ -158,96 +154,39 @@ const config: Config = {
       },
 
       fontSize: {
-        // Body Text
-        "2xs": ["0.625rem", { lineHeight: "0.875rem" }],  // 10px
-        xs: ["0.75rem", { lineHeight: "1rem" }],          // 12px
-        sm: ["0.875rem", { lineHeight: "1.25rem" }],      // 14px
-        base: ["1rem", { lineHeight: "1.5rem" }],         // 16px
-        lg: ["1.125rem", { lineHeight: "1.75rem" }],      // 18px
-
-        // Headings
-        xl: ["1.25rem", { lineHeight: "1.75rem" }],       // 20px - h5
-        "2xl": ["1.5rem", { lineHeight: "2rem" }],        // 24px - h4/h3
-        "3xl": ["1.875rem", { lineHeight: "2.25rem" }],   // 30px - h2
-        "4xl": ["2.25rem", { lineHeight: "2.5rem" }],     // 36px - h1
-        "5xl": ["3rem", { lineHeight: "1.1" }],           // 48px - hero
-        "6xl": ["3.75rem", { lineHeight: "1" }],          // 60px - hero large
-
-        // Metric Numbers (Dashboard)
-        "metric-sm": ["1.25rem", { lineHeight: "1.5rem", fontWeight: "700" }],
-        "metric-md": ["1.5rem", { lineHeight: "1.75rem", fontWeight: "700" }],
-        "metric-lg": ["2.25rem", { lineHeight: "2.5rem", fontWeight: "700" }],
-        "metric-xl": ["3rem", { lineHeight: "1", fontWeight: "700" }],
-      },
-
-      fontWeight: {
-        normal: "400",
-        medium: "500",
-        semibold: "600",
-        bold: "700",
+        "2xs": ["0.625rem", { lineHeight: "0.875rem" }],
+        xs: ["0.75rem", { lineHeight: "1rem" }],
+        sm: ["0.875rem", { lineHeight: "1.25rem" }],
+        base: ["1rem", { lineHeight: "1.5rem" }],
+        lg: ["1.125rem", { lineHeight: "1.75rem" }],
+        xl: ["1.25rem", { lineHeight: "1.75rem" }],
+        "2xl": ["1.5rem", { lineHeight: "2rem" }],
+        "3xl": ["1.875rem", { lineHeight: "2.25rem" }],
+        "4xl": ["2.25rem", { lineHeight: "2.5rem" }],
+        "5xl": ["3rem", { lineHeight: "1.1" }],
+        "6xl": ["3.75rem", { lineHeight: "1" }],
+        "7xl": ["4.5rem", { lineHeight: "1" }],
       },
 
       letterSpacing: {
-        tighter: "-0.03em",
+        tighter: "-0.04em",
         tight: "-0.02em",
         normal: "0",
         wide: "0.05em",
       },
 
       // ============================================
-      // SPACING
-      // ============================================
-      spacing: {
-        "18": "4.5rem",
-        "88": "22rem",
-        "128": "32rem",
-      },
-
-      // ============================================
-      // SHADOWS & EFFECTS
+      // SHADOWS
       // ============================================
       boxShadow: {
-        // Light mode shadows
-        "soft": "0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06)",
-        "soft-md": "0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.06)",
-        "soft-lg": "0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.06)",
-        "soft-xl": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.06)",
-
-        // Green glow effects (for dark mode)
-        "glow-green": "0 0 20px rgba(34, 197, 94, 0.25)",
-        "glow-green-sm": "0 0 10px rgba(34, 197, 94, 0.2)",
-        "glow-green-lg": "0 0 30px rgba(34, 197, 94, 0.35)",
-        "glow-green-xl": "0 0 50px rgba(34, 197, 94, 0.5), 0 0 100px rgba(34, 197, 94, 0.2)",
-        "glow-emerald": "0 0 20px rgba(5, 150, 105, 0.25)",
-        "glow-emerald-lg": "0 0 30px rgba(5, 150, 105, 0.35)",
-
-        // Legacy cyan glow (mapped to green)
-        "glow-cyan": "0 0 20px rgba(34, 197, 94, 0.25)",
-        "glow-cyan-sm": "0 0 10px rgba(34, 197, 94, 0.2)",
-        "glow-cyan-lg": "0 0 30px rgba(34, 197, 94, 0.35)",
-        "glow-cyan-xl": "0 0 50px rgba(34, 197, 94, 0.5), 0 0 100px rgba(34, 197, 94, 0.2)",
-        "glow-violet": "0 0 20px rgba(5, 150, 105, 0.25)",
-        "glow-violet-lg": "0 0 30px rgba(5, 150, 105, 0.35)",
-        "glow-mint": "0 0 20px rgba(74, 222, 128, 0.25)",
-        "glow-mint-lg": "0 0 30px rgba(74, 222, 128, 0.35)",
-
-        // Depth shadows (light mode)
-        "depth-sm": "0 1px 2px rgba(0, 0, 0, 0.05)",
-        "depth-md": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05)",
-        "depth-lg": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05)",
-        "depth-xl": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05)",
-
-        // Focus ring
-        "focus-ring": "0 0 0 3px rgba(5, 150, 105, 0.2)",
-
-        // Card effects - light mode
-        "card-hover": "0 8px 25px -5px rgba(0, 0, 0, 0.1), 0 0 20px rgba(5, 150, 105, 0.08)",
-        "card-glow": "0 0 0 1px rgba(5, 150, 105, 0.15), 0 8px 30px -5px rgba(0, 0, 0, 0.1)",
-        "card-glow-active": "0 0 0 1px rgba(5, 150, 105, 0.4), 0 0 30px rgba(5, 150, 105, 0.15), 0 12px 40px -10px rgba(0, 0, 0, 0.15)",
-
-        // Inner glow for buttons
-        "inner-glow-green": "inset 0 1px 0 0 rgba(34, 197, 94, 0.2)",
-        "inner-glow-cyan": "inset 0 1px 0 0 rgba(34, 197, 94, 0.2)",
+        sm: "var(--shadow-sm)",
+        DEFAULT: "var(--shadow-md)",
+        md: "var(--shadow-md)",
+        lg: "var(--shadow-lg)",
+        "glow-green": "0 0 20px rgba(5, 150, 105, 0.25)",
+        "glow-green-lg": "0 0 40px rgba(5, 150, 105, 0.3)",
+        "glow-blue": "0 0 20px rgba(14, 165, 233, 0.25)",
+        "glow-blue-lg": "0 0 40px rgba(14, 165, 233, 0.3)",
       },
 
       // ============================================
@@ -264,50 +203,25 @@ const config: Config = {
       },
 
       // ============================================
-      // ANIMATIONS & TRANSITIONS
+      // ANIMATIONS
       // ============================================
       transitionDuration: {
         DEFAULT: "200ms",
         fast: "150ms",
         slow: "300ms",
-        slower: "500ms",
       },
 
       transitionTimingFunction: {
         "ease-out-expo": "cubic-bezier(0.16, 1, 0.3, 1)",
-        "ease-in-out-expo": "cubic-bezier(0.87, 0, 0.13, 1)",
       },
 
       animation: {
-        // Skeleton shimmer
-        "shimmer": "shimmer 1.5s ease-in-out infinite",
-        // Fade in up
         "fade-in-up": "fade-in-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        // Scale in
         "scale-in": "scale-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        // Subtle float
-        "float": "float 6s ease-in-out infinite",
-        // Pulse dot (for live badges)
-        "pulse-dot": "pulse-dot 2s ease-in-out infinite",
-        // Spin (for loaders)
-        "spin-slow": "spin 1.5s linear infinite",
-        // Gradient orb floating
-        "orb-float": "orb-float 20s ease-in-out infinite",
-        "orb-float-reverse": "orb-float 25s ease-in-out infinite reverse",
-        "orb-pulse": "orb-pulse 8s ease-in-out infinite",
-        // Button shine sweep
-        "shine": "shine 3s ease-in-out infinite",
-        // Glow pulse for CTAs
-        "glow-pulse": "glow-pulse 2s ease-in-out infinite",
-        // Chart bar grow
-        "bar-grow": "bar-grow 0.6s ease-out forwards",
+        shimmer: "shimmer 1.5s ease-in-out infinite",
       },
 
       keyframes: {
-        shimmer: {
-          "0%": { backgroundPosition: "200% 0" },
-          "100%": { backgroundPosition: "-200% 0" },
-        },
         "fade-in-up": {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
@@ -316,47 +230,31 @@ const config: Config = {
           "0%": { opacity: "0", transform: "scale(0.95)" },
           "100%": { opacity: "1", transform: "scale(1)" },
         },
-        float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
-        },
-        "pulse-dot": {
-          "0%, 100%": { opacity: "1", transform: "scale(1)" },
-          "50%": { opacity: "0.5", transform: "scale(1.2)" },
-        },
-        "orb-float": {
-          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
-          "25%": { transform: "translate(30px, 30px) scale(1.05)" },
-          "50%": { transform: "translate(15px, -20px) scale(0.95)" },
-          "75%": { transform: "translate(-20px, 15px) scale(1.02)" },
-        },
-        "orb-pulse": {
-          "0%, 100%": { opacity: "0.6" },
-          "50%": { opacity: "1" },
-        },
-        shine: {
-          "0%": { left: "-100%" },
-          "50%, 100%": { left: "100%" },
-        },
-        "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 20px rgba(34, 197, 94, 0.3)" },
-          "50%": { boxShadow: "0 0 35px rgba(34, 197, 94, 0.5)" },
-        },
-        "bar-grow": {
-          "0%": { transform: "scaleY(0)", transformOrigin: "bottom" },
-          "100%": { transform: "scaleY(1)", transformOrigin: "bottom" },
+        shimmer: {
+          "0%": { backgroundPosition: "200% 0" },
+          "100%": { backgroundPosition: "-200% 0" },
         },
       },
 
       // ============================================
-      // BACKDROP BLUR
+      // BACKGROUND GRADIENTS
       // ============================================
-      backdropBlur: {
-        xs: "2px",
-        sm: "4px",
-        DEFAULT: "8px",
-        md: "12px",
-        lg: "16px",
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-primary": "linear-gradient(135deg, #059669 0%, #0EA5E9 100%)",
+        "gradient-primary-dark": "linear-gradient(135deg, #22C55E 0%, #38BDF8 100%)",
+        "hero-light": "linear-gradient(180deg, #ECFDF5 0%, #F9FBFF 50%, #F0F9FF 100%)",
+        "hero-dark": "linear-gradient(180deg, rgba(5, 150, 105, 0.1) 0%, #020617 50%, rgba(14, 165, 233, 0.05) 100%)",
+      },
+
+      // ============================================
+      // SPACING
+      // ============================================
+      spacing: {
+        "18": "4.5rem",
+        "88": "22rem",
+        "128": "32rem",
       },
 
       // ============================================
@@ -369,75 +267,26 @@ const config: Config = {
         "90": "90",
         "100": "100",
       },
-
-      // ============================================
-      // BACKGROUND IMAGE (GRADIENTS)
-      // ============================================
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        // XGrowthOS gradients
-        "gradient-green": "linear-gradient(135deg, #059669 0%, #10b981 100%)",
-        "gradient-green-dark": "linear-gradient(135deg, #22c55e 0%, #4ade80 100%)",
-        // Legacy (mapped to green)
-        "gradient-cyan-violet": "linear-gradient(135deg, #059669 0%, #10b981 100%)",
-        // Light backgrounds
-        "gradient-light": "linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%)",
-        "gradient-card-light": "linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 253, 244, 0.6) 100%)",
-        // Dark backgrounds
-        "gradient-dark": "linear-gradient(180deg, #080c08 0%, #0a0f0a 100%)",
-        "gradient-card": "linear-gradient(145deg, rgba(26, 46, 26, 0.8) 0%, rgba(26, 46, 26, 0.4) 100%)",
-        // Ambient glows
-        "ambient-glow": `
-          radial-gradient(ellipse 80% 50% at 50% -20%, rgba(5, 150, 105, 0.08) 0%, transparent 50%),
-          radial-gradient(ellipse 60% 40% at 80% 50%, rgba(34, 197, 94, 0.05) 0%, transparent 50%)
-        `,
-        "ambient-glow-light": `
-          radial-gradient(ellipse 80% 50% at 50% -20%, rgba(5, 150, 105, 0.05) 0%, transparent 50%),
-          radial-gradient(ellipse 60% 40% at 80% 50%, rgba(34, 197, 94, 0.03) 0%, transparent 50%)
-        `,
-      },
     },
   },
   plugins: [
-    // Custom plugin for additional utilities
     function({ addUtilities }: { addUtilities: (utilities: Record<string, Record<string, string>>) => void }) {
       addUtilities({
-        // Text gradient (green)
         ".text-gradient": {
-          "background": "linear-gradient(135deg, #059669 0%, #10b981 100%)",
+          background: "linear-gradient(135deg, #059669 0%, #0EA5E9 100%)",
           "-webkit-background-clip": "text",
           "-webkit-text-fill-color": "transparent",
           "background-clip": "text",
         },
-        ".text-gradient-green": {
-          "background": "linear-gradient(135deg, #22c55e 0%, #4ade80 100%)",
-          "-webkit-background-clip": "text",
-          "-webkit-text-fill-color": "transparent",
-          "background-clip": "text",
-        },
-        // Metric value styling
         ".metric-value": {
           "font-variant-numeric": "tabular-nums",
           "letter-spacing": "-0.03em",
         },
-        // Glass effect - light mode
-        ".glass": {
-          "background": "rgba(255, 255, 255, 0.8)",
-          "backdrop-filter": "blur(8px)",
-          "-webkit-backdrop-filter": "blur(8px)",
-        },
-        ".glass-dark": {
-          "background": "rgba(26, 46, 26, 0.6)",
-          "backdrop-filter": "blur(8px)",
-          "-webkit-backdrop-filter": "blur(8px)",
-        },
-        // Hide scrollbar
         ".scrollbar-hide": {
           "-ms-overflow-style": "none",
           "scrollbar-width": "none",
         },
-      })
+      });
     },
   ],
 };

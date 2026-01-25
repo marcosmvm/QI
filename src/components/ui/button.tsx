@@ -5,45 +5,45 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 // ============================================
-// XGROWTHOS - ENHANCED BUTTON COMPONENT
-// Brand Board v2.0 - Light/Dark Theme
+// XGROWTHOS - BUTTON COMPONENT
+// New Brand System: Greens + Blues
 // ============================================
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-pro-600 focus-visible:ring-offset-2 focus-visible:ring-offset-deep-space disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
+        // Primary - Gradient CTAs (main actions)
         default:
-          "bg-emerald-pro-600 text-white dark:bg-xgrowth-500 dark:text-green-950 hover:shadow-glow-cyan hover:-translate-y-0.5 active:translate-y-0",
+          "bg-gradient-to-r from-emerald-600 to-sky-500 text-white shadow-sm hover:from-emerald-700 hover:to-sky-600 hover:-translate-y-0.5 active:translate-y-0 dark:from-emerald-500 dark:to-sky-400 dark:hover:from-emerald-400 dark:hover:to-sky-300",
+        // Destructive - Red actions
         destructive:
-          "bg-alert-red text-slate-900 dark:text-white hover:bg-alert-red/90",
+          "bg-red-500 text-white hover:bg-red-600 dark:bg-red-500 dark:text-slate-950",
+        // Outline - Secondary actions
         outline:
-          "border border-emerald-pro-600 text-emerald-pro-600 bg-transparent hover:bg-emerald-pro-600/10 hover:shadow-glow-cyan-sm",
+          "border border-emerald-200 text-emerald-700 bg-transparent hover:bg-emerald-50 dark:border-emerald-500/60 dark:text-emerald-300 dark:hover:bg-emerald-500/10",
+        // Secondary - Subtle actions
         secondary:
-          "bg-light-bg-secondary dark:bg-graphite text-slate-900 dark:text-slate-200 hover:bg-emerald-pro-600/10 dark:hover:bg-slate hover:text-slate-900 dark:hover:text-white",
+          "bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700",
+        // Ghost - Minimal visual emphasis
         ghost:
-          "text-slate-900 dark:text-slate-300 hover:bg-light-bg-secondary dark:hover:bg-graphite/50 hover:text-slate-900 dark:hover:text-white",
+          "text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800",
+        // Link - Text only
         link:
-          "text-emerald-pro-600 underline-offset-4 hover:underline",
-        // Premium glow variant - pulsing glow effect
+          "text-emerald-600 underline-offset-4 hover:underline dark:text-emerald-400",
+        // Glow - Enhanced gradient with glow effect
         glow:
-          "bg-emerald-pro-600 text-white dark:bg-xgrowth-500 dark:text-green-950 btn-pulse-glow hover:-translate-y-0.5 active:translate-y-0 hover:shadow-glow-cyan-xl",
-        // Premium shine variant - sweep animation
-        shine:
-          "bg-emerald-pro-600 text-white dark:bg-xgrowth-500 dark:text-green-950 btn-shine hover:shadow-glow-cyan-lg hover:-translate-y-0.5 active:translate-y-0",
-        // Emerald glow variant (renamed from glowViolet)
-        glowEmerald:
-          "bg-emerald-pro-500 text-white dark:bg-xgrowth-400 dark:text-green-950 hover:shadow-glow-cyan-lg hover:-translate-y-0.5 active:translate-y-0",
-        // Glass variant - glassmorphism button
+          "bg-gradient-to-r from-emerald-600 to-sky-500 text-white shadow-sm hover:shadow-glow-green hover:-translate-y-0.5 active:translate-y-0 dark:from-emerald-500 dark:to-sky-400",
+        // Glass - Glassmorphism effect
         glass:
-          "bg-light-bg-secondary dark:bg-midnight-blue/60 text-slate-900 dark:text-white border border-emerald-pro-600/20 backdrop-blur-sm hover:bg-emerald-pro-600/5 dark:hover:bg-midnight-blue/80 hover:border-emerald-pro-600/40 hover:shadow-glow-cyan-sm",
+          "bg-white/80 dark:bg-slate-900/60 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 backdrop-blur-sm hover:bg-white dark:hover:bg-slate-900/80 hover:border-emerald-300 dark:hover:border-emerald-500/50",
       },
       size: {
-        default: "h-11 px-6 py-3",
+        default: "h-10 px-5 py-2.5",
         sm: "h-9 px-4 py-2 text-xs",
-        lg: "h-12 px-8 py-3",
-        xl: "h-14 px-10 py-4 text-base",
+        lg: "h-11 px-6 py-3",
+        xl: "h-12 px-8 py-3 text-base",
         icon: "h-10 w-10",
       },
     },
@@ -73,7 +73,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {loading ? (
           <>
-            <span className="spinner" />
+            <span className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
             <span>Loading...</span>
           </>
         ) : (
