@@ -194,7 +194,7 @@ export default function ClientsPage() {
         </div>
         <Link
           href="/admin/clients/new"
-          className="flex items-center gap-2 px-4 py-2 bg-emerald-pro-600 text-deep-space font-medium rounded-lg hover:bg-emerald-pro-600/90 transition-colors"
+          className="flex items-center gap-2 px-4 py-2 bg-emerald-pro-600 dark:bg-xgrowth-500 text-white dark:text-green-950 font-medium rounded-lg hover:bg-emerald-pro-600/90 dark:hover:bg-xgrowth-400 transition-colors"
         >
           <Plus className="h-4 w-4" />
           Add Client

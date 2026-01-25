@@ -108,7 +108,7 @@ export function Header({ title, subtitle, showNavTabs = true }: HeaderProps) {
           {/* User Avatar */}
           <button className="flex items-center gap-2 p-1 hover:bg-light-bg-secondary dark:hover:bg-midnight-blue rounded-xl transition-colors">
             <div className="h-9 w-9 rounded-full bg-gradient-to-br from-emerald-pro-600 to-emerald-pro-500 dark:from-xgrowth-500 dark:to-xgrowth-400 flex items-center justify-center">
-              <span className="text-xs font-bold text-white dark:text-deep-space">MM</span>
+              <span className="text-xs font-bold text-white dark:text-green-950">MM</span>
             </div>
           </button>
         </div>

@@ -719,7 +719,7 @@ function NotesTab({
     <div>
       {/* Add Note Button */}
       <div className="flex justify-end mb-4">
-        <button className="flex items-center gap-2 px-4 py-2 bg-emerald-pro-600 text-deep-space font-medium rounded-lg hover:bg-emerald-pro-600/90 transition-colors">
+        <button className="flex items-center gap-2 px-4 py-2 bg-emerald-pro-600 dark:bg-xgrowth-500 text-white dark:text-green-950 font-medium rounded-lg hover:bg-emerald-pro-600/90 dark:hover:bg-xgrowth-400 transition-colors">
           <FileText className="h-4 w-4" />
           Add Note
         </button>

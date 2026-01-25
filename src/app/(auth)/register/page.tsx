@@ -148,7 +148,7 @@ export default function RegisterPage() {
                         onChange={handleChange}
                         placeholder="John Smith"
                         required
-                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space pl-10 pr-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 transition-colors"
+                        className="w-full h-11 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 pl-10 pr-4 text-slate-900 dark:text-slate-50 placeholder:text-slate-500 dark:placeholder:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 transition-colors"
                       />
                     </div>
                   </div>
@@ -170,7 +170,7 @@ export default function RegisterPage() {
                         onChange={handleChange}
                         placeholder="you@company.com"
                         required
-                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space pl-10 pr-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 transition-colors"
+                        className="w-full h-11 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 pl-10 pr-4 text-slate-900 dark:text-slate-50 placeholder:text-slate-500 dark:placeholder:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 transition-colors"
                       />
                     </div>
                   </div>
@@ -192,7 +192,7 @@ export default function RegisterPage() {
                         onChange={handleChange}
                         placeholder="Acme Inc."
                         required
-                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space pl-10 pr-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 transition-colors"
+                        className="w-full h-11 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 pl-10 pr-4 text-slate-900 dark:text-slate-50 placeholder:text-slate-500 dark:placeholder:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 transition-colors"
                       />
                     </div>
                   </div>
@@ -215,7 +215,7 @@ export default function RegisterPage() {
                         placeholder="Min. 8 characters"
                         required
                         minLength={8}
-                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space pl-10 pr-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 transition-colors"
+                        className="w-full h-11 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 pl-10 pr-4 text-slate-900 dark:text-slate-50 placeholder:text-slate-500 dark:placeholder:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 transition-colors"
                       />
                     </div>
                   </div>

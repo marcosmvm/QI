@@ -217,7 +217,7 @@ export function SupportInbox({ conversations, teamMembers }: SupportInboxProps) 
                       {conv.subject}
                     </span>
                     {conv.unreadCount > 0 && (
-                      <span className="ml-2 h-5 min-w-[20px] px-1.5 rounded-full bg-emerald-pro-600 text-deep-space text-xs font-medium flex items-center justify-center">
+                      <span className="ml-2 h-5 min-w-[20px] px-1.5 rounded-full bg-emerald-pro-600 dark:bg-xgrowth-500 text-white dark:text-green-950 text-xs font-medium flex items-center justify-center">
                         {conv.unreadCount}
                       </span>
                     )}
@@ -377,7 +377,7 @@ export function SupportInbox({ conversations, teamMembers }: SupportInboxProps) 
                   />
                   <button
                     disabled={!replyContent.trim()}
-                    className="self-end px-4 py-2 bg-emerald-pro-600 text-deep-space font-medium rounded-lg hover:bg-emerald-pro-600/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="self-end px-4 py-2 bg-emerald-pro-600 dark:bg-xgrowth-500 text-white dark:text-green-950 font-medium rounded-lg hover:bg-emerald-pro-600/90 dark:hover:bg-xgrowth-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <Send className="h-4 w-4" />
                   </button>

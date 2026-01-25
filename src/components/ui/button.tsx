@@ -15,7 +15,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-emerald-pro-600 text-deep-space hover:shadow-glow-cyan hover:-translate-y-0.5 active:translate-y-0",
+          "bg-emerald-pro-600 text-white dark:bg-xgrowth-500 dark:text-green-950 hover:shadow-glow-cyan hover:-translate-y-0.5 active:translate-y-0",
         destructive:
           "bg-alert-red text-light-text dark:text-white hover:bg-alert-red/90",
         outline:
@@ -28,13 +28,13 @@ const buttonVariants = cva(
           "text-emerald-pro-600 underline-offset-4 hover:underline",
         // Premium glow variant - pulsing glow effect
         glow:
-          "bg-emerald-pro-600 text-deep-space btn-pulse-glow hover:-translate-y-0.5 active:translate-y-0 hover:shadow-glow-cyan-xl",
+          "bg-emerald-pro-600 text-white dark:bg-xgrowth-500 dark:text-green-950 btn-pulse-glow hover:-translate-y-0.5 active:translate-y-0 hover:shadow-glow-cyan-xl",
         // Premium shine variant - sweep animation
         shine:
-          "bg-emerald-pro-600 text-deep-space btn-shine hover:shadow-glow-cyan-lg hover:-translate-y-0.5 active:translate-y-0",
-        // Violet glow variant
-        glowViolet:
-          "bg-emerald-pro-500 text-light-text dark:text-white hover:shadow-glow-violet-lg hover:-translate-y-0.5 active:translate-y-0",
+          "bg-emerald-pro-600 text-white dark:bg-xgrowth-500 dark:text-green-950 btn-shine hover:shadow-glow-cyan-lg hover:-translate-y-0.5 active:translate-y-0",
+        // Emerald glow variant (renamed from glowViolet)
+        glowEmerald:
+          "bg-emerald-pro-500 text-white dark:bg-xgrowth-400 dark:text-green-950 hover:shadow-glow-cyan-lg hover:-translate-y-0.5 active:translate-y-0",
         // Glass variant - glassmorphism button
         glass:
           "bg-light-bg-secondary dark:bg-midnight-blue/60 text-light-text dark:text-white border border-emerald-pro-600/20 backdrop-blur-sm hover:bg-emerald-pro-600/5 dark:hover:bg-midnight-blue/80 hover:border-emerald-pro-600/40 hover:shadow-glow-cyan-sm",

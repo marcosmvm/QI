@@ -99,7 +99,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           {/* CTA Button */}
           <div className="mt-8 pt-6 border-t border-border-default dark:border-graphite">
             <Link href="/contact" onClick={onClose}>
-              <Button className="w-full bg-emerald-pro-600 dark:bg-xgrowth-500 hover:bg-emerald-pro-700 dark:hover:bg-xgrowth-400 text-white dark:text-deep-space font-semibold">
+              <Button className="w-full bg-emerald-pro-600 dark:bg-xgrowth-500 hover:bg-emerald-pro-700 dark:hover:bg-xgrowth-400 text-white dark:text-green-950 font-semibold">
                 Book a Call
               </Button>
             </Link>

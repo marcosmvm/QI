@@ -110,7 +110,7 @@ export function MarketingNavbar() {
               {/* Primary Button with Glow */}
               <Link
                 href="/contact"
-                className="hidden lg:block bg-emerald-pro-600 dark:bg-xgrowth-500 text-white dark:text-deep-space px-6 py-2.5 rounded-lg font-semibold transition-all duration-300 hover:bg-emerald-pro-700 dark:hover:bg-xgrowth-400 hover:shadow-glow-emerald dark:hover:shadow-glow-green hover:-translate-y-0.5 active:translate-y-0"
+                className="hidden lg:block bg-emerald-pro-600 dark:bg-xgrowth-500 text-white dark:text-green-950 px-6 py-2.5 rounded-lg font-semibold transition-all duration-300 hover:bg-emerald-pro-700 dark:hover:bg-xgrowth-400 hover:shadow-glow-emerald dark:hover:shadow-glow-green hover:-translate-y-0.5 active:translate-y-0"
               >
                 Book a Call
               </Link>

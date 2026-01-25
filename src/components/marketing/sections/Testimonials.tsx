@@ -69,7 +69,7 @@ export function Testimonials() {
               {/* Author */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-pro-600 to-emerald-pro-500 dark:from-xgrowth-500 dark:to-xgrowth-400 flex items-center justify-center text-white dark:text-deep-space font-bold text-xl">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-pro-600 to-emerald-pro-500 dark:from-xgrowth-500 dark:to-xgrowth-400 flex items-center justify-center text-white dark:text-green-950 font-bold text-xl">
                     MM
                   </div>
                   <div>
@@ -139,7 +139,7 @@ export function Testimonials() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-pro-600 dark:bg-xgrowth-500 text-white dark:text-deep-space font-semibold hover:bg-emerald-pro-700 dark:hover:bg-xgrowth-400 hover:shadow-glow-emerald dark:hover:shadow-glow-green hover:-translate-y-0.5 transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-pro-600 dark:bg-xgrowth-500 text-white dark:text-green-950 font-semibold hover:bg-emerald-pro-700 dark:hover:bg-xgrowth-400 hover:shadow-glow-emerald dark:hover:shadow-glow-green hover:-translate-y-0.5 transition-all"
             >
               Become a Founding Partner
             </Link>

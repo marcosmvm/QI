@@ -234,7 +234,7 @@ export function BillingContent({ subscription, invoices, usage }: BillingContent
               <div className="text-center py-8">
                 <Zap className="h-12 w-12 text-light-text-muted dark:text-steel mx-auto mb-4" />
                 <p className="text-light-text-muted dark:text-steel mb-4">No active subscription</p>
-                <button className="px-6 py-2 bg-emerald-pro-600 text-deep-space font-medium rounded-lg hover:bg-emerald-pro-600/90 transition-colors">
+                <button className="px-6 py-2 bg-emerald-pro-600 dark:bg-xgrowth-500 text-white dark:text-green-950 font-medium rounded-lg hover:bg-emerald-pro-600/90 dark:hover:bg-xgrowth-400 transition-colors">
                   Choose a Plan
                 </button>
               </div>

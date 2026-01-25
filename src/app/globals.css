@@ -351,7 +351,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .dark .btn-primary {
   background: var(--xgrowth-500);
-  color: var(--deep-space);
+  color: #052e16; /* green-950 for high contrast on green bg */
 }
 
 .dark .btn-primary:hover {
@@ -728,7 +728,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dark .sidebar-logo-icon {
-  color: var(--deep-space);
+  color: #052e16; /* green-950 for high contrast on green bg */
 }
 
 .sidebar-nav-item {
@@ -1329,7 +1329,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dark .cta-magnetic {
-  color: var(--deep-space);
+  color: #052e16; /* green-950 for high contrast on green bg */
 }
 
 .cta-magnetic::before {

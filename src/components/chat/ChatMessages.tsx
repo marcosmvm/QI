@@ -206,7 +206,7 @@ export function ChatMessages({
           <button
             type="submit"
             disabled={!newMessage.trim() || isSending}
-            className="h-11 px-4 bg-emerald-pro-600 text-deep-space font-medium rounded-lg hover:bg-emerald-pro-600/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+            className="h-11 px-4 bg-emerald-pro-600 dark:bg-xgrowth-500 text-white dark:text-green-950 font-medium rounded-lg hover:bg-emerald-pro-600/90 dark:hover:bg-xgrowth-400 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
           >
             {isSending ? (
               <Loader2 className="h-4 w-4 animate-spin" />

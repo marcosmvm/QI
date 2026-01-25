@@ -193,9 +193,9 @@ export default function NewCampaignPage() {
                     className={cn(
                       "flex h-8 w-8 items-center justify-center rounded-full",
                       currentStep === step.id
-                        ? "bg-emerald-pro-600 text-deep-space"
+                        ? "bg-emerald-pro-600 dark:bg-xgrowth-500 text-white dark:text-green-950"
                         : currentStep > step.id
-                        ? "bg-emerald-pro-400 text-deep-space"
+                        ? "bg-emerald-pro-400 dark:bg-xgrowth-400 text-white dark:text-green-950"
                         : "bg-graphite text-light-text-muted dark:text-steel"
                     )}
                   >

@@ -115,7 +115,7 @@ export default function TeamPage() {
           <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">Team</h1>
           <p className="text-light-text-muted dark:text-steel mt-1">Manage your team members and roles</p>
         </div>
-        <button className="flex items-center gap-2 px-4 py-2 bg-emerald-pro-600 text-deep-space font-medium rounded-lg hover:bg-emerald-pro-600/90 transition-colors">
+        <button className="flex items-center gap-2 px-4 py-2 bg-emerald-pro-600 dark:bg-xgrowth-500 text-white dark:text-green-950 font-medium rounded-lg hover:bg-emerald-pro-600/90 dark:hover:bg-xgrowth-400 transition-colors">
           <UserPlus className="h-4 w-4" />
           Invite Member
         </button>

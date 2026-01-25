@@ -314,7 +314,7 @@ export default function ContactPage() {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-emerald-pro-600 hover:bg-emerald-pro-600/90 text-deep-space font-semibold py-6 disabled:opacity-50"
+                      className="w-full bg-emerald-pro-600 dark:bg-xgrowth-500 hover:bg-emerald-pro-600/90 dark:hover:bg-xgrowth-400 text-white dark:text-green-950 font-semibold py-6 disabled:opacity-50"
                     >
                       {isSubmitting ? (
                         "Sending..."
