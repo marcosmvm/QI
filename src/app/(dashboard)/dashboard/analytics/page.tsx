@@ -73,13 +73,13 @@ export default function AnalyticsPage() {
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-200 mb-2">
+        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-300 mb-2">
           <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
           <span>/</span>
           <span className="text-emerald-pro-600">Analytics</span>
         </div>
         <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">Analytics</h1>
-        <p className="text-sm text-slate-900 dark:text-slate-200 mt-1">
+        <p className="text-sm text-slate-900 dark:text-slate-300 mt-1">
           Campaign performance insights
         </p>
       </motion.div>
@@ -164,15 +164,15 @@ export default function AnalyticsPage() {
           <div className="flex items-center justify-center gap-6 mt-4 pt-4 border-t border-border-default dark:border-graphite/30">
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-emerald-pro-600" />
-              <span className="text-xs text-slate-900 dark:text-slate-200">Sent</span>
+              <span className="text-xs text-slate-900 dark:text-slate-300">Sent</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-emerald-pro-500" />
-              <span className="text-xs text-slate-900 dark:text-slate-200">Opened</span>
+              <span className="text-xs text-slate-900 dark:text-slate-300">Opened</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-emerald-pro-400" />
-              <span className="text-xs text-slate-900 dark:text-slate-200">Replied</span>
+              <span className="text-xs text-slate-900 dark:text-slate-300">Replied</span>
             </div>
           </div>
         </motion.div>

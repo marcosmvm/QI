@@ -64,7 +64,7 @@ export function OnboardingProgress({
       </div>
 
       {/* Progress bar */}
-      <div className="h-2 w-full rounded-full bg-white dark:bg-deep-space/50 mb-6">
+      <div className="h-2 w-full rounded-full bg-bg mb-6">
         <div
           className="h-full rounded-full bg-gradient-to-r from-emerald-pro-600 to-emerald-pro-500 transition-all duration-500"
           style={{ width: `${progressPercent}%` }}
@@ -84,18 +84,18 @@ export function OnboardingProgress({
                 "flex items-center gap-2 rounded-lg p-2 transition-colors",
                 isCompleted
                   ? "bg-emerald-pro-400/10"
-                  : "bg-white dark:bg-deep-space/30"
+                  : "bg-bg"
               )}
             >
               {isCompleted ? (
                 <CheckCircle2 className="h-4 w-4 text-emerald-pro-400 flex-shrink-0" />
               ) : (
-                <Circle className="h-4 w-4 text-slate-900 dark:text-slate-200 flex-shrink-0" />
+                <Circle className="h-4 w-4 text-slate-900 dark:text-slate-300 flex-shrink-0" />
               )}
               <span
                 className={cn(
                   "text-xs font-medium truncate",
-                  isCompleted ? "text-emerald-pro-400" : "text-slate-900 dark:text-slate-200"
+                  isCompleted ? "text-emerald-pro-400" : "text-slate-900 dark:text-slate-300"
                 )}
               >
                 {step.label}
@@ -122,7 +122,7 @@ export function OnboardingProgressBar({
 
   return (
     <div className={cn("flex items-center gap-2", className)}>
-      <div className="h-1.5 w-16 rounded-full bg-white dark:bg-deep-space/50">
+      <div className="h-1.5 w-16 rounded-full bg-bg">
         <div
           className={cn(
             "h-full rounded-full transition-all",
@@ -135,7 +135,7 @@ export function OnboardingProgressBar({
           style={{ width: `${progressPercent}%` }}
         />
       </div>
-      <span className="text-xs text-slate-900 dark:text-slate-200">
+      <span className="text-xs text-slate-900 dark:text-slate-300">
         {completedSteps}/{totalSteps}
       </span>
     </div>

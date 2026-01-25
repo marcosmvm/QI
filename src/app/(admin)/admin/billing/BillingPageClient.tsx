@@ -67,9 +67,9 @@ export default function BillingPageClient({
     >
       {/* Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <p className="text-sm text-slate-900 dark:text-slate-200 mb-1">Admin / <span className="text-emerald-pro-400">Billing</span></p>
+        <p className="text-sm text-slate-900 dark:text-slate-300 mb-1">Admin / <span className="text-emerald-pro-400">Billing</span></p>
         <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">Billing</h1>
-        <p className="text-slate-900 dark:text-slate-200 mt-1">Revenue and subscription management</p>
+        <p className="text-slate-900 dark:text-slate-300 mt-1">Revenue and subscription management</p>
       </motion.div>
 
       {/* Stats */}
@@ -111,8 +111,8 @@ export default function BillingPageClient({
           <div className="space-y-4">
             {subscriptions.filter((s) => s.status === "active").length === 0 ? (
               <div className="text-center py-8">
-                <CreditCard className="h-8 w-8 text-slate-900 dark:text-slate-200 mx-auto mb-2" />
-                <p className="text-slate-900 dark:text-slate-200 text-sm">No active subscriptions</p>
+                <CreditCard className="h-8 w-8 text-slate-900 dark:text-slate-300 mx-auto mb-2" />
+                <p className="text-slate-900 dark:text-slate-300 text-sm">No active subscriptions</p>
               </div>
             ) : (
               subscriptions
@@ -130,7 +130,7 @@ export default function BillingPageClient({
                         <p className="text-sm font-medium text-slate-900 dark:text-white">
                           {sub.organizations?.name || "Unknown"}
                         </p>
-                        <p className="text-xs text-slate-900 dark:text-slate-200 capitalize">
+                        <p className="text-xs text-slate-900 dark:text-slate-300 capitalize">
                           {sub.plan_type} Plan
                         </p>
                       </div>
@@ -139,7 +139,7 @@ export default function BillingPageClient({
                       <p className="text-sm font-medium text-slate-900 dark:text-white">
                         ${(sub.monthly_fee || 0).toLocaleString()}/mo
                       </p>
-                      <p className="text-xs text-slate-900 dark:text-slate-200">
+                      <p className="text-xs text-slate-900 dark:text-slate-300">
                         Renews{" "}
                         {sub.current_period_end
                           ? new Date(sub.current_period_end).toLocaleDateString()
@@ -160,8 +160,8 @@ export default function BillingPageClient({
           <div className="space-y-4">
             {invoices.length === 0 ? (
               <div className="text-center py-8">
-                <Receipt className="h-8 w-8 text-slate-900 dark:text-slate-200 mx-auto mb-2" />
-                <p className="text-slate-900 dark:text-slate-200 text-sm">No invoices yet</p>
+                <Receipt className="h-8 w-8 text-slate-900 dark:text-slate-300 mx-auto mb-2" />
+                <p className="text-slate-900 dark:text-slate-300 text-sm">No invoices yet</p>
               </div>
             ) : (
               invoices.map((invoice) => (
@@ -184,14 +184,14 @@ export default function BillingPageClient({
                       ) : invoice.status === "open" ? (
                         <AlertCircle className="h-5 w-5 text-energy-orange" />
                       ) : (
-                        <Receipt className="h-5 w-5 text-slate-900 dark:text-slate-200" />
+                        <Receipt className="h-5 w-5 text-slate-900 dark:text-slate-300" />
                       )}
                     </div>
                     <div>
                       <p className="text-sm font-medium text-slate-900 dark:text-white">
                         {invoice.organizations?.name || "Unknown"}
                       </p>
-                      <p className="text-xs text-slate-900 dark:text-slate-200">
+                      <p className="text-xs text-slate-900 dark:text-slate-300">
                         {new Date(invoice.created_at).toLocaleDateString()}
                       </p>
                     </div>
@@ -207,7 +207,7 @@ export default function BillingPageClient({
                             ? "text-emerald-pro-400"
                             : invoice.status === "open"
                             ? "text-energy-orange"
-                            : "text-slate-900 dark:text-slate-200"
+                            : "text-slate-900 dark:text-slate-300"
                         }`}
                       >
                         {invoice.status}
@@ -218,7 +218,7 @@ export default function BillingPageClient({
                         href={invoice.invoice_url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 rounded-lg text-slate-900 dark:text-slate-200 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 transition-colors"
+                        className="p-2 rounded-lg text-slate-900 dark:text-slate-300 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 transition-colors"
                         title="View invoice"
                       >
                         <ExternalLink className="h-4 w-4" />
@@ -269,8 +269,8 @@ function StatCard({
       </div>
       <div className="mt-4">
         <p className="text-2xl font-sora font-bold text-slate-900 dark:text-white">{value}</p>
-        <p className="text-sm text-slate-900 dark:text-slate-200 mt-1">{title}</p>
-        <p className="text-xs text-slate-900 dark:text-slate-200 mt-0.5">{subtitle}</p>
+        <p className="text-sm text-slate-900 dark:text-slate-300 mt-1">{title}</p>
+        <p className="text-xs text-slate-900 dark:text-slate-300 mt-0.5">{subtitle}</p>
       </div>
     </div>
   );

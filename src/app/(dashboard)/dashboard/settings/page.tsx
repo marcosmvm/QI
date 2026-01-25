@@ -233,13 +233,13 @@ export default function SettingsPage() {
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-200 mb-2">
+        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-300 mb-2">
           <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
           <span>/</span>
           <span className="text-emerald-pro-600">Settings</span>
         </div>
         <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">Settings</h1>
-        <p className="text-slate-900 dark:text-slate-200 mt-1">Manage your account and preferences</p>
+        <p className="text-slate-900 dark:text-slate-300 mt-1">Manage your account and preferences</p>
       </motion.div>
 
       <motion.div variants={itemVariants}>
@@ -255,7 +255,7 @@ export default function SettingsPage() {
                     "w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-colors",
                     activeTab === tab.id
                       ? "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20"
-                      : "text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:bg-light-bg-secondary dark:hover:bg-graphite/50"
+                      : "text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-light-bg-secondary dark:hover:bg-graphite/50"
                   )}
                 >
                   <tab.icon className="h-5 w-5" />
@@ -282,7 +282,7 @@ export default function SettingsPage() {
                       <Button variant="outline" size="sm">
                         Change Photo
                       </Button>
-                      <p className="text-xs text-slate-900 dark:text-slate-200 mt-2">
+                      <p className="text-xs text-slate-900 dark:text-slate-300 mt-2">
                         JPG, GIF or PNG. Max size 2MB.
                       </p>
                     </div>
@@ -290,46 +290,46 @@ export default function SettingsPage() {
 
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-slate-900 dark:text-slate-200 mb-2">
+                      <label className="block text-sm font-medium text-slate-900 dark:text-slate-300 mb-2">
                         Full Name
                       </label>
                       <input
                         type="text"
                         value={profile.name}
                         onChange={(e) => setProfile({ ...profile, name: e.target.value })}
-                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                        className="w-full h-11 rounded-lg input-base px-4 text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-slate-900 dark:text-slate-200 mb-2">
+                      <label className="block text-sm font-medium text-slate-900 dark:text-slate-300 mb-2">
                         Email Address
                       </label>
                       <input
                         type="email"
                         value={profile.email}
                         onChange={(e) => setProfile({ ...profile, email: e.target.value })}
-                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                        className="w-full h-11 rounded-lg input-base px-4 text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-slate-900 dark:text-slate-200 mb-2">
+                      <label className="block text-sm font-medium text-slate-900 dark:text-slate-300 mb-2">
                         Role
                       </label>
                       <input
                         type="text"
                         value={profile.role}
                         disabled
-                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space/50 px-4 text-slate-900 dark:text-slate-200 cursor-not-allowed"
+                        className="w-full h-11 card-base rounded-xl px-4 text-slate-900 dark:text-slate-300 cursor-not-allowed"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-slate-900 dark:text-slate-200 mb-2">
+                      <label className="block text-sm font-medium text-slate-900 dark:text-slate-300 mb-2">
                         Timezone
                       </label>
                       <select
                         value={profile.timezone}
                         onChange={(e) => setProfile({ ...profile, timezone: e.target.value })}
-                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                        className="w-full h-11 rounded-lg input-base px-4 text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                       >
                         <option value="America/Los_Angeles">Pacific Time (PT)</option>
                         <option value="America/Denver">Mountain Time (MT)</option>
@@ -358,35 +358,35 @@ export default function SettingsPage() {
                 <div className="space-y-6">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-slate-900 dark:text-slate-200 mb-2">
+                      <label className="block text-sm font-medium text-slate-900 dark:text-slate-300 mb-2">
                         Company Name
                       </label>
                       <input
                         type="text"
                         value={company.name}
                         onChange={(e) => setCompany({ ...company, name: e.target.value })}
-                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                        className="w-full h-11 rounded-lg input-base px-4 text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-slate-900 dark:text-slate-200 mb-2">
+                      <label className="block text-sm font-medium text-slate-900 dark:text-slate-300 mb-2">
                         Website
                       </label>
                       <input
                         type="url"
                         value={company.website}
                         onChange={(e) => setCompany({ ...company, website: e.target.value })}
-                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                        className="w-full h-11 rounded-lg input-base px-4 text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-slate-900 dark:text-slate-200 mb-2">
+                      <label className="block text-sm font-medium text-slate-900 dark:text-slate-300 mb-2">
                         Industry
                       </label>
                       <select
                         value={company.industry}
                         onChange={(e) => setCompany({ ...company, industry: e.target.value })}
-                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                        className="w-full h-11 rounded-lg input-base px-4 text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                       >
                         <option value="B2B SaaS">B2B SaaS</option>
                         <option value="Technology">Technology</option>
@@ -396,13 +396,13 @@ export default function SettingsPage() {
                       </select>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-slate-900 dark:text-slate-200 mb-2">
+                      <label className="block text-sm font-medium text-slate-900 dark:text-slate-300 mb-2">
                         Company Size
                       </label>
                       <select
                         value={company.size}
                         onChange={(e) => setCompany({ ...company, size: e.target.value })}
-                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                        className="w-full h-11 rounded-lg input-base px-4 text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                       >
                         <option value="1-10">1-10 employees</option>
                         <option value="11-50">11-50 employees</option>
@@ -439,11 +439,11 @@ export default function SettingsPage() {
                   ].map((item) => (
                     <div
                       key={item.key}
-                      className="flex items-center justify-between p-4 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space/50"
+                      className="flex items-center justify-between p-4 card-base rounded-xl"
                     >
                       <div>
                         <p className="font-medium text-slate-900 dark:text-white">{item.label}</p>
-                        <p className="text-sm text-slate-900 dark:text-slate-200">{item.description}</p>
+                        <p className="text-sm text-slate-900 dark:text-slate-300">{item.description}</p>
                       </div>
                       <button
                         onClick={() =>
@@ -481,46 +481,46 @@ export default function SettingsPage() {
                 </h3>
 
                 <div className="space-y-6">
-                  <div className="p-4 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space/50">
+                  <div className="p-4 card-base rounded-xl">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-4">Change Password</h4>
                     <div className="space-y-4">
                       <div>
-                        <label className="block text-sm font-medium text-slate-900 dark:text-slate-200 mb-2">
+                        <label className="block text-sm font-medium text-slate-900 dark:text-slate-300 mb-2">
                           Current Password
                         </label>
                         <input
                           type="password"
                           placeholder="Enter current password"
-                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                          className="w-full h-11 rounded-lg input-base px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-slate-900 dark:text-slate-200 mb-2">
+                        <label className="block text-sm font-medium text-slate-900 dark:text-slate-300 mb-2">
                           New Password
                         </label>
                         <input
                           type="password"
                           placeholder="Enter new password"
-                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                          className="w-full h-11 rounded-lg input-base px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-slate-900 dark:text-slate-200 mb-2">
+                        <label className="block text-sm font-medium text-slate-900 dark:text-slate-300 mb-2">
                           Confirm New Password
                         </label>
                         <input
                           type="password"
                           placeholder="Confirm new password"
-                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                          className="w-full h-11 rounded-lg input-base px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                         />
                       </div>
                       <Button>Update Password</Button>
                     </div>
                   </div>
 
-                  <div className="p-4 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space/50">
+                  <div className="p-4 card-base rounded-xl">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">Two-Factor Authentication</h4>
-                    <p className="text-sm text-slate-900 dark:text-slate-200 mb-4">
+                    <p className="text-sm text-slate-900 dark:text-slate-300 mb-4">
                       Add an extra layer of security to your account
                     </p>
                     <Button variant="outline">Enable 2FA</Button>
@@ -536,19 +536,19 @@ export default function SettingsPage() {
                 </h3>
 
                 <div className="space-y-6">
-                  <div className="p-4 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space/50">
+                  <div className="p-4 card-base rounded-xl">
                     <div className="flex items-center justify-between mb-4">
                       <div>
                         <h4 className="font-medium text-slate-900 dark:text-white">Production API Key</h4>
-                        <p className="text-sm text-slate-900 dark:text-slate-200">Use this key for production integrations</p>
+                        <p className="text-sm text-slate-900 dark:text-slate-300">Use this key for production integrations</p>
                       </div>
                       <span className="px-2 py-1 rounded bg-emerald-pro-400/20 text-emerald-pro-400 text-xs font-medium">
                         Active
                       </span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="flex-1 h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 flex items-center">
-                        <code className="text-sm text-slate-900 dark:text-slate-200 font-mono">
+                      <div className="flex-1 h-11 rounded-lg input-base px-4 flex items-center">
+                        <code className="text-sm text-slate-900 dark:text-slate-300 font-mono">
                           {showApiKey ? "qi_prod_a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6" : "qi_prod_••••••••••••••••••••••••••••••••"}
                         </code>
                       </div>
@@ -570,7 +570,7 @@ export default function SettingsPage() {
                       <Shield className="h-5 w-5 text-energy-orange shrink-0 mt-0.5" />
                       <div>
                         <h4 className="font-medium text-slate-900 dark:text-white">Keep your API key secure</h4>
-                        <p className="text-sm text-slate-900 dark:text-slate-200 mt-1">
+                        <p className="text-sm text-slate-900 dark:text-slate-300 mt-1">
                           Never share your API key in public repositories or client-side code.
                           Regenerate immediately if compromised.
                         </p>
@@ -599,20 +599,20 @@ export default function SettingsPage() {
                         <p className="text-2xl font-bold text-slate-900 dark:text-white">
                           {integrations.filter((i) => i.connected).length}
                         </p>
-                        <p className="text-sm text-slate-900 dark:text-slate-200">Connected</p>
+                        <p className="text-sm text-slate-900 dark:text-slate-300">Connected</p>
                       </div>
                     </div>
                   </div>
                   <div className="glass-premium p-4">
                     <div className="flex items-center gap-3">
                       <div className="h-10 w-10 rounded-lg bg-steel/20 flex items-center justify-center">
-                        <Link2 className="h-5 w-5 text-slate-900 dark:text-slate-200" />
+                        <Link2 className="h-5 w-5 text-slate-900 dark:text-slate-300" />
                       </div>
                       <div>
                         <p className="text-2xl font-bold text-slate-900 dark:text-white">
                           {integrations.filter((i) => !i.connected).length}
                         </p>
-                        <p className="text-sm text-slate-900 dark:text-slate-200">Available</p>
+                        <p className="text-sm text-slate-900 dark:text-slate-300">Available</p>
                       </div>
                     </div>
                   </div>
@@ -623,7 +623,7 @@ export default function SettingsPage() {
                       </div>
                       <div>
                         <p className="text-2xl font-bold text-slate-900 dark:text-white">5 min</p>
-                        <p className="text-sm text-slate-900 dark:text-slate-200">Last Sync</p>
+                        <p className="text-sm text-slate-900 dark:text-slate-300">Last Sync</p>
                       </div>
                     </div>
                   </div>
@@ -647,7 +647,7 @@ export default function SettingsPage() {
                           <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">
                             {categoryLabels[category].label}
                           </h3>
-                          <span className="ml-2 px-2 py-0.5 rounded-full bg-white dark:bg-deep-space text-xs text-slate-900 dark:text-slate-200">
+                          <span className="ml-2 px-2 py-0.5 rounded-full bg-bg text-xs text-slate-900 dark:text-slate-300">
                             {categoryIntegrations.filter((i) => i.connected).length}/
                             {categoryIntegrations.length} connected
                           </span>
@@ -680,11 +680,11 @@ export default function SettingsPage() {
                                       </span>
                                     )}
                                   </div>
-                                  <p className="text-sm text-slate-900 dark:text-slate-200">
+                                  <p className="text-sm text-slate-900 dark:text-slate-300">
                                     {integration.description}
                                   </p>
                                   {integration.lastSync && (
-                                    <p className="text-xs text-slate-900 dark:text-slate-200 mt-1">
+                                    <p className="text-xs text-slate-900 dark:text-slate-300 mt-1">
                                       Last synced: {integration.lastSync}
                                     </p>
                                   )}
@@ -734,7 +734,7 @@ export default function SettingsPage() {
                 )}
 
                 {/* Request Integration */}
-                <div className="rounded-xl border border-dashed border-border-default dark:border-graphite bg-white dark:bg-deep-space/30 p-6">
+                <div className="rounded-xl border border-dashed card-base p-6">
                   <div className="text-center">
                     <div className="h-12 w-12 rounded-lg bg-emerald-pro-500/20 flex items-center justify-center mx-auto mb-3">
                       <Zap className="h-6 w-6 text-emerald-pro-500" />
@@ -742,7 +742,7 @@ export default function SettingsPage() {
                     <h4 className="font-medium text-slate-900 dark:text-white mb-1">
                       Need a different integration?
                     </h4>
-                    <p className="text-sm text-slate-900 dark:text-slate-200 mb-4">
+                    <p className="text-sm text-slate-900 dark:text-slate-300 mb-4">
                       We're always adding new integrations. Let us know what you need.
                     </p>
                     <Button variant="outline">Request Integration</Button>

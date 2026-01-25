@@ -22,7 +22,7 @@ const commitments = [
 
 export function Testimonials() {
   return (
-    <section className="py-24 relative bg-white dark:bg-slate-900/50">
+    <section className="py-24 relative bg-bg">
       {/* Subtle background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-50/50 dark:via-slate-900/50 to-transparent" />
 
@@ -41,7 +41,7 @@ export function Testimonials() {
               Founder
             </span>
           </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-200">
+          <p className="text-lg text-slate-600 dark:text-slate-300">
             Built by someone who understands your pipeline challenges.
           </p>
         </motion.div>
@@ -55,9 +55,9 @@ export function Testimonials() {
             transition={{ duration: 0.5 }}
             className="relative"
           >
-            <div className="relative p-8 md:p-12 rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 backdrop-blur-sm shadow-sm">
+            <div className="relative p-8 md:p-12 card-base rounded-3xl backdrop-blur-sm">
               {/* Quote Icon */}
-              <div className="absolute -top-6 left-8 p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 backdrop-blur-sm shadow-sm">
+              <div className="absolute -top-6 left-8 p-4 rounded-2xl card-base backdrop-blur-sm">
                 <Quote className="h-6 w-6 text-emerald-600 dark:text-green-400" />
               </div>
 
@@ -108,7 +108,7 @@ export function Testimonials() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: 0.3 + index * 0.1 }}
-                  className="p-6 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 hover:border-emerald-300 dark:hover:border-green-500/30 transition-colors text-center shadow-sm"
+                  className="p-6 rounded-2xl card-base hover:border-primary/30 transition-colors text-center"
                 >
                   <div className="flex justify-center mb-4">
                     <div className="p-3 rounded-xl bg-emerald-100 dark:bg-green-500/10 border border-emerald-200 dark:border-green-500/20">
@@ -116,7 +116,7 @@ export function Testimonials() {
                     </div>
                   </div>
                   <h4 className="text-slate-900 dark:text-white font-semibold mb-2">{item.title}</h4>
-                  <p className="text-slate-600 dark:text-slate-200 text-sm">{item.description}</p>
+                  <p className="text-slate-600 dark:text-slate-300 text-sm">{item.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -134,7 +134,7 @@ export function Testimonials() {
               <Rocket className="h-4 w-4" />
               Limited Founding Partner Spots Available
             </div>
-            <p className="text-slate-600 dark:text-slate-200 mb-6 max-w-xl mx-auto">
+            <p className="text-slate-600 dark:text-slate-300 mb-6 max-w-xl mx-auto">
               Join our founding partner program and lock in exclusive rates while helping shape the future of B2B outreach automation.
             </p>
             <Link

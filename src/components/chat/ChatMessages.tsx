@@ -151,7 +151,7 @@ export function ChatMessages({
           <div key={groupIndex}>
             {/* Date separator */}
             <div className="flex items-center justify-center my-4">
-              <span className="text-xs text-slate-900 dark:text-slate-200 bg-white dark:bg-deep-space px-3 py-1 rounded-full">
+              <span className="text-xs text-slate-900 dark:text-slate-300 bg-bg-surface px-3 py-1 rounded-full">
                 {group.date}
               </span>
             </div>
@@ -169,7 +169,7 @@ export function ChatMessages({
                       className={`max-w-[70%] ${
                         isOwn
                           ? "bg-emerald-pro-600/10 border border-emerald-pro-600/30"
-                          : "bg-light-bg-secondary dark:bg-midnight-blue/50 border border-border-default dark:border-graphite/30"
+                          : "bg-bg-subtle border border-border"
                       } rounded-2xl px-4 py-3`}
                     >
                       {!isOwn && message.sender && (
@@ -180,7 +180,7 @@ export function ChatMessages({
                       <p className="text-sm text-slate-900 dark:text-white whitespace-pre-wrap">
                         {message.content}
                       </p>
-                      <p className={`text-xs mt-1 ${isOwn ? "text-emerald-pro-600/60" : "text-slate-900 dark:text-slate-200"}`}>
+                      <p className={`text-xs mt-1 ${isOwn ? "text-emerald-pro-600/60" : "text-slate-900 dark:text-slate-300"}`}>
                         {formatTime(message.created_at)}
                       </p>
                     </div>
@@ -194,14 +194,14 @@ export function ChatMessages({
       </div>
 
       {/* Input */}
-      <form onSubmit={handleSend} className="p-4 border-t border-border-default dark:border-graphite/50">
+      <form onSubmit={handleSend} className="p-4 border-t border-border">
         <div className="flex gap-3">
           <input
             type="text"
             value={newMessage}
             onChange={(e) => setNewMessage(e.target.value)}
             placeholder="Type your message..."
-            className="flex-1 h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 transition-colors"
+            className="flex-1 h-11 rounded-lg input-base px-4"
           />
           <button
             type="submit"

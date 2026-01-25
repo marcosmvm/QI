@@ -6,7 +6,7 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-white dark:bg-deep-space dashboard-bg">
+    <div className="min-h-screen bg-bg dashboard-bg">
       <Sidebar variant="admin" />
       {/* Ambient Background Orbs */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">

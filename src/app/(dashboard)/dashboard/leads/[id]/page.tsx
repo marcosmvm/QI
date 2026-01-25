@@ -157,7 +157,7 @@ const activityColors: Record<string, { bg: string; text: string; border: string 
   click: { bg: "bg-emerald-pro-500/10", text: "text-emerald-pro-500", border: "border-emerald-pro-500/20" },
   open: { bg: "bg-emerald-pro-600/10", text: "text-emerald-pro-600", border: "border-emerald-pro-600/20" },
   sent: { bg: "bg-energy-orange/10", text: "text-energy-orange", border: "border-energy-orange/20" },
-  added: { bg: "bg-steel/10", text: "text-slate-900 dark:text-slate-200", border: "border-steel/20" },
+  added: { bg: "bg-steel/10", text: "text-slate-900 dark:text-slate-300", border: "border-steel/20" },
 };
 
 const stageOptions = [
@@ -177,7 +177,7 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
     <div className="min-h-screen bg-white dark:bg-deep-space p-8">
       {/* Page Header */}
       <div className="mb-6">
-        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-200 mb-2">
+        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-300 mb-2">
           <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
           <span>/</span>
           <Link href="/dashboard/leads" className="hover:text-emerald-pro-600 transition-colors">Leads</Link>
@@ -190,7 +190,7 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
         {/* Back Button */}
         <Link
           href="/dashboard/leads"
-          className="inline-flex items-center gap-2 text-sm text-slate-900 dark:text-slate-200 hover:text-emerald-pro-600 transition-colors mb-6"
+          className="inline-flex items-center gap-2 text-sm text-slate-900 dark:text-slate-300 hover:text-emerald-pro-600 transition-colors mb-6"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to Leads
@@ -213,7 +213,7 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
                       </h2>
                       <button
                         onClick={() => setStarred(!starred)}
-                        className="text-slate-900 dark:text-slate-200 hover:text-energy-orange transition-colors"
+                        className="text-slate-900 dark:text-slate-300 hover:text-energy-orange transition-colors"
                       >
                         {starred ? (
                           <Star className="h-5 w-5 fill-energy-orange text-energy-orange" />
@@ -222,7 +222,7 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
                         )}
                       </button>
                     </div>
-                    <p className="text-slate-900 dark:text-slate-200 flex items-center gap-2 mt-1">
+                    <p className="text-slate-900 dark:text-slate-300 flex items-center gap-2 mt-1">
                       <Briefcase className="h-4 w-4" />
                       {leadData.title} at {leadData.company}
                     </p>
@@ -230,7 +230,7 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white">
+                  <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
                     <Edit3 className="h-4 w-4 mr-2" />
                     Edit
                   </Button>
@@ -248,7 +248,7 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
                     <Zap className="h-6 w-6 text-emerald-pro-400" />
                   </div>
                   <div>
-                    <p className="text-xs text-slate-900 dark:text-slate-200">Lead Score</p>
+                    <p className="text-xs text-slate-900 dark:text-slate-300">Lead Score</p>
                     <p className="text-2xl font-sora font-bold text-emerald-pro-400">{leadData.score}</p>
                   </div>
                 </div>
@@ -256,7 +256,7 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
                 <div className="h-12 w-px bg-emerald-pro-600/20" />
 
                 <div>
-                  <p className="text-xs text-slate-900 dark:text-slate-200 mb-2">Stage</p>
+                  <p className="text-xs text-slate-900 dark:text-slate-300 mb-2">Stage</p>
                   <div className="flex items-center gap-2">
                     {stageOptions.map((stage) => (
                       <button
@@ -274,7 +274,7 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
                             ? "bg-emerald-pro-400/20 text-emerald-pro-400 border-emerald-pro-400/30"
                             : currentStage === stage.id && stage.color === "rose"
                             ? "bg-rose/20 text-rose border-rose/30"
-                            : "bg-white dark:bg-deep-space/50 text-slate-900 dark:text-slate-200 border-emerald-pro-600/10 hover:border-emerald-pro-600/30",
+                            : "bg-white dark:bg-deep-space/50 text-slate-900 dark:text-slate-300 border-emerald-pro-600/10 hover:border-emerald-pro-600/30",
                           currentStage === stage.id && stage.color === "emerald-pro-600" && "bg-emerald-pro-600/20 text-emerald-pro-600 border-emerald-pro-600/30",
                           currentStage === stage.id && stage.color === "emerald-pro-500" && "bg-emerald-pro-500/20 text-emerald-pro-500 border-emerald-pro-500/30",
                           currentStage === stage.id && stage.color === "energy-orange" && "bg-energy-orange/20 text-energy-orange border-energy-orange/30",
@@ -324,7 +324,7 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
                     "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all",
                     activeTab === tab.id
                       ? "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20"
-                      : "text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/5"
+                      : "text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/5"
                   )}
                 >
                   <tab.icon className="h-4 w-4" />
@@ -358,27 +358,27 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
                         <div className="flex-1 pb-6">
                           <div className="flex items-center justify-between mb-1">
                             <h4 className="font-medium text-slate-900 dark:text-white">{activity.title}</h4>
-                            <span className="text-xs text-slate-900 dark:text-slate-200">{activity.timestamp}</span>
+                            <span className="text-xs text-slate-900 dark:text-slate-300">{activity.timestamp}</span>
                           </div>
-                          <p className="text-sm text-slate-900 dark:text-slate-200 mb-2">{activity.description}</p>
+                          <p className="text-sm text-slate-900 dark:text-slate-300 mb-2">{activity.description}</p>
                           {activity.details && (
                             <div className="p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-emerald-pro-600/10">
                               {activity.details.subject && (
-                                <p className="text-xs text-slate-900 dark:text-slate-200">
+                                <p className="text-xs text-slate-900 dark:text-slate-300">
                                   Subject: <span className="text-slate-900 dark:text-white">{activity.details.subject}</span>
                                 </p>
                               )}
                               {activity.details.preview && (
-                                <p className="text-sm text-slate-900 dark:text-slate-200 mt-1 italic">"{activity.details.preview}"</p>
+                                <p className="text-sm text-slate-900 dark:text-slate-300 mt-1 italic">"{activity.details.preview}"</p>
                               )}
                               {activity.details.page && (
-                                <p className="text-xs text-slate-900 dark:text-slate-200">
+                                <p className="text-xs text-slate-900 dark:text-slate-300">
                                   Page: <span className="text-emerald-pro-600">{activity.details.page}</span>
                                   {activity.details.duration && ` • Duration: ${activity.details.duration}`}
                                 </p>
                               )}
                               {activity.details.opens && (
-                                <p className="text-xs text-slate-900 dark:text-slate-200">
+                                <p className="text-xs text-slate-900 dark:text-slate-300">
                                   Total opens: <span className="text-slate-900 dark:text-white">{activity.details.opens}</span>
                                 </p>
                               )}
@@ -423,7 +423,7 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
                           </div>
                           <div>
                             <p className="font-medium text-slate-900 dark:text-white">{email.subject}</p>
-                            <p className="text-xs text-slate-900 dark:text-slate-200">{email.sequence}</p>
+                            <p className="text-xs text-slate-900 dark:text-slate-300">{email.sequence}</p>
                           </div>
                         </div>
                         <span className={cn(
@@ -434,7 +434,7 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
                           {email.status === "replied" ? "Replied" : "Scheduled"}
                         </span>
                       </div>
-                      <div className="flex items-center gap-4 text-xs text-slate-900 dark:text-slate-200">
+                      <div className="flex items-center gap-4 text-xs text-slate-900 dark:text-slate-300">
                         {email.sentAt && <span>Sent {email.sentAt}</span>}
                         {email.scheduledFor && <span>Scheduled for {email.scheduledFor}</span>}
                         {email.openRate && <span>{email.openRate}</span>}
@@ -456,8 +456,8 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
                   </Button>
                 </div>
                 <div className="p-4 rounded-xl border border-emerald-pro-600/10 bg-white dark:bg-deep-space/50">
-                  <p className="text-sm text-slate-900 dark:text-slate-200">{leadData.notes}</p>
-                  <p className="text-xs text-slate-900 dark:text-slate-200/60 mt-3">Added on {leadData.createdAt}</p>
+                  <p className="text-sm text-slate-900 dark:text-slate-300">{leadData.notes}</p>
+                  <p className="text-xs text-slate-900 dark:text-slate-300/60 mt-3">Added on {leadData.createdAt}</p>
                 </div>
               </div>
             )}
@@ -472,24 +472,24 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
                 <div className="flex items-center gap-3 p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-emerald-pro-600/10">
                   <Mail className="h-4 w-4 text-emerald-pro-600" />
                   <div className="flex-1 min-w-0">
-                    <p className="text-xs text-slate-900 dark:text-slate-200">Email</p>
+                    <p className="text-xs text-slate-900 dark:text-slate-300">Email</p>
                     <p className="text-sm text-slate-900 dark:text-white truncate">{leadData.email}</p>
                   </div>
-                  <button className="text-slate-900 dark:text-slate-200 hover:text-emerald-pro-600 transition-colors">
+                  <button className="text-slate-900 dark:text-slate-300 hover:text-emerald-pro-600 transition-colors">
                     <ExternalLink className="h-4 w-4" />
                   </button>
                 </div>
                 <div className="flex items-center gap-3 p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-emerald-pro-600/10">
                   <Phone className="h-4 w-4 text-emerald-pro-600" />
                   <div className="flex-1 min-w-0">
-                    <p className="text-xs text-slate-900 dark:text-slate-200">Phone</p>
+                    <p className="text-xs text-slate-900 dark:text-slate-300">Phone</p>
                     <p className="text-sm text-slate-900 dark:text-white">{leadData.phone}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-emerald-pro-600/10">
                   <MapPin className="h-4 w-4 text-emerald-pro-600" />
                   <div className="flex-1 min-w-0">
-                    <p className="text-xs text-slate-900 dark:text-slate-200">Location</p>
+                    <p className="text-xs text-slate-900 dark:text-slate-300">Location</p>
                     <p className="text-sm text-slate-900 dark:text-white">{leadData.location}</p>
                   </div>
                 </div>
@@ -501,7 +501,7 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
                   href={`https://${leadData.linkedin}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 p-2 rounded-lg border border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/5 transition-all"
+                  className="flex-1 flex items-center justify-center gap-2 p-2 rounded-lg border border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/5 transition-all"
                 >
                   <Linkedin className="h-4 w-4" />
                   <span className="text-xs">LinkedIn</span>
@@ -510,7 +510,7 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
                   href={`https://twitter.com/${leadData.twitter.replace("@", "")}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 p-2 rounded-lg border border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/5 transition-all"
+                  className="flex-1 flex items-center justify-center gap-2 p-2 rounded-lg border border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/5 transition-all"
                 >
                   <Twitter className="h-4 w-4" />
                   <span className="text-xs">Twitter</span>
@@ -524,29 +524,29 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
               <div className="space-y-3">
                 <div className="flex items-center justify-between p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-emerald-pro-600/10">
                   <div className="flex items-center gap-2">
-                    <Building2 className="h-4 w-4 text-slate-900 dark:text-slate-200" />
-                    <span className="text-sm text-slate-900 dark:text-slate-200">Company</span>
+                    <Building2 className="h-4 w-4 text-slate-900 dark:text-slate-300" />
+                    <span className="text-sm text-slate-900 dark:text-slate-300">Company</span>
                   </div>
                   <span className="text-sm text-slate-900 dark:text-white font-medium">{leadData.company}</span>
                 </div>
                 <div className="flex items-center justify-between p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-emerald-pro-600/10">
                   <div className="flex items-center gap-2">
-                    <Target className="h-4 w-4 text-slate-900 dark:text-slate-200" />
-                    <span className="text-sm text-slate-900 dark:text-slate-200">Industry</span>
+                    <Target className="h-4 w-4 text-slate-900 dark:text-slate-300" />
+                    <span className="text-sm text-slate-900 dark:text-slate-300">Industry</span>
                   </div>
                   <span className="text-sm text-slate-900 dark:text-white font-medium">{leadData.industry}</span>
                 </div>
                 <div className="flex items-center justify-between p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-emerald-pro-600/10">
                   <div className="flex items-center gap-2">
-                    <User className="h-4 w-4 text-slate-900 dark:text-slate-200" />
-                    <span className="text-sm text-slate-900 dark:text-slate-200">Size</span>
+                    <User className="h-4 w-4 text-slate-900 dark:text-slate-300" />
+                    <span className="text-sm text-slate-900 dark:text-slate-300">Size</span>
                   </div>
                   <span className="text-sm text-slate-900 dark:text-white font-medium">{leadData.companySize}</span>
                 </div>
                 <div className="flex items-center justify-between p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-emerald-pro-600/10">
                   <div className="flex items-center gap-2">
-                    <TrendingUp className="h-4 w-4 text-slate-900 dark:text-slate-200" />
-                    <span className="text-sm text-slate-900 dark:text-slate-200">Revenue</span>
+                    <TrendingUp className="h-4 w-4 text-slate-900 dark:text-slate-300" />
+                    <span className="text-sm text-slate-900 dark:text-slate-300">Revenue</span>
                   </div>
                   <span className="text-sm text-slate-900 dark:text-white font-medium">{leadData.revenue}</span>
                 </div>
@@ -557,8 +557,8 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
                   className="flex items-center justify-between p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-emerald-pro-600/10 hover:border-emerald-pro-600/30 transition-all"
                 >
                   <div className="flex items-center gap-2">
-                    <Globe className="h-4 w-4 text-slate-900 dark:text-slate-200" />
-                    <span className="text-sm text-slate-900 dark:text-slate-200">Website</span>
+                    <Globe className="h-4 w-4 text-slate-900 dark:text-slate-300" />
+                    <span className="text-sm text-slate-900 dark:text-slate-300">Website</span>
                   </div>
                   <div className="flex items-center gap-1 text-emerald-pro-600">
                     <span className="text-sm font-medium">{leadData.website}</span>
@@ -573,16 +573,16 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
               <h3 className="font-semibold text-slate-900 dark:text-white mb-4">Campaign Info</h3>
               <div className="space-y-3">
                 <div className="p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-emerald-pro-600/10">
-                  <p className="text-xs text-slate-900 dark:text-slate-200 mb-1">Active Campaign</p>
+                  <p className="text-xs text-slate-900 dark:text-slate-300 mb-1">Active Campaign</p>
                   <p className="text-sm text-slate-900 dark:text-white font-medium">{leadData.campaign}</p>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="flex-1 p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-emerald-pro-600/10">
-                    <p className="text-xs text-slate-900 dark:text-slate-200 mb-1">Source</p>
+                    <p className="text-xs text-slate-900 dark:text-slate-300 mb-1">Source</p>
                     <p className="text-sm text-slate-900 dark:text-white font-medium">{leadData.source}</p>
                   </div>
                   <div className="flex-1 p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-emerald-pro-600/10">
-                    <p className="text-xs text-slate-900 dark:text-slate-200 mb-1">Added</p>
+                    <p className="text-xs text-slate-900 dark:text-slate-300 mb-1">Added</p>
                     <p className="text-sm text-slate-900 dark:text-white font-medium">{leadData.createdAt}</p>
                   </div>
                 </div>

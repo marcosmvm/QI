@@ -193,7 +193,7 @@ const statusColors = {
 const impactColors = {
   high: { bg: "bg-emerald-pro-400/10", text: "text-emerald-pro-400", border: "border-emerald-pro-400/20" },
   medium: { bg: "bg-energy-orange/10", text: "text-energy-orange", border: "border-energy-orange/20" },
-  low: { bg: "bg-steel/10", text: "text-slate-900 dark:text-slate-200", border: "border-steel/20" },
+  low: { bg: "bg-steel/10", text: "text-slate-900 dark:text-slate-300", border: "border-steel/20" },
 };
 
 export default function ScientistPage() {
@@ -205,13 +205,13 @@ export default function ScientistPage() {
     <motion.div initial="hidden" animate="visible" variants={containerVariants} className="min-h-screen p-8">
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-200 mb-2">
+        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-300 mb-2">
           <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
           <span>/</span>
           <span className="text-emerald-pro-600">Scientist Engine</span>
         </div>
         <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">Scientist Engine</h1>
-        <p className="text-slate-900 dark:text-slate-200 mt-1">Campaign Optimization & A/B Testing Intelligence</p>
+        <p className="text-slate-900 dark:text-slate-300 mt-1">Campaign Optimization & A/B Testing Intelligence</p>
       </motion.div>
 
       <div className="space-y-6">
@@ -239,7 +239,7 @@ export default function ScientistPage() {
                   </span>
                 </div>
                 <h2 className="text-xl font-sora font-bold text-slate-900 dark:text-white mt-1">Campaign Scientist</h2>
-                <p className="text-sm text-slate-900 dark:text-slate-200">Real-time optimization, A/B testing, and performance intelligence</p>
+                <p className="text-sm text-slate-900 dark:text-slate-300">Real-time optimization, A/B testing, and performance intelligence</p>
               </div>
             </div>
 
@@ -278,7 +278,7 @@ export default function ScientistPage() {
                 className="rounded-xl border border-emerald-pro-600/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-4 hover:border-emerald-pro-600/20 transition-all"
               >
                 <div className="flex items-center justify-between mb-2">
-                  <p className="text-xs text-slate-900 dark:text-slate-200">{metric.label}</p>
+                  <p className="text-xs text-slate-900 dark:text-slate-300">{metric.label}</p>
                   <div className={cn(
                     "flex h-8 w-8 items-center justify-center rounded-lg",
                     metric.color === "emerald-pro-600" && "bg-emerald-pro-600/10 border border-emerald-pro-600/20",
@@ -328,7 +328,7 @@ export default function ScientistPage() {
                 "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all",
                 activeTab === tab.id
                   ? "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20"
-                  : "text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/5"
+                  : "text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/5"
               )}
             >
               <tab.icon className="h-4 w-4" />
@@ -345,16 +345,16 @@ export default function ScientistPage() {
               <div className="flex items-center justify-between mb-6">
                 <div>
                   <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">Hourly Performance</h3>
-                  <p className="text-sm text-slate-900 dark:text-slate-200">Best engagement windows for your campaigns</p>
+                  <p className="text-sm text-slate-900 dark:text-slate-300">Best engagement windows for your campaigns</p>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="flex items-center gap-2">
                     <span className="h-3 w-3 rounded-full bg-emerald-pro-600"></span>
-                    <span className="text-xs text-slate-900 dark:text-slate-200">Opens</span>
+                    <span className="text-xs text-slate-900 dark:text-slate-300">Opens</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="h-3 w-3 rounded-full bg-emerald-pro-400"></span>
-                    <span className="text-xs text-slate-900 dark:text-slate-200">Replies</span>
+                    <span className="text-xs text-slate-900 dark:text-slate-300">Replies</span>
                   </div>
                 </div>
               </div>
@@ -372,7 +372,7 @@ export default function ScientistPage() {
                         style={{ height: `${(hour.replies / maxOpens) * 140}px` }}
                       />
                     </div>
-                    <span className="text-[10px] text-slate-900 dark:text-slate-200 mt-2">{hour.hour}</span>
+                    <span className="text-[10px] text-slate-900 dark:text-slate-300 mt-2">{hour.hour}</span>
                   </div>
                 ))}
               </div>
@@ -382,7 +382,7 @@ export default function ScientistPage() {
                   <Sparkles className="h-4 w-4 text-emerald-pro-400" />
                   <span className="text-sm font-medium text-emerald-pro-400">AI Insight</span>
                 </div>
-                <p className="text-sm text-slate-900 dark:text-slate-200 mt-1">
+                <p className="text-sm text-slate-900 dark:text-slate-300 mt-1">
                   Peak engagement occurs between 9-11 AM. Consider scheduling your highest-priority sends during this window for maximum impact.
                 </p>
               </div>
@@ -398,7 +398,7 @@ export default function ScientistPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-900 dark:text-white">Active Tests</h3>
-                    <p className="text-xs text-slate-900 dark:text-slate-200">Currently running experiments</p>
+                    <p className="text-xs text-slate-900 dark:text-slate-300">Currently running experiments</p>
                   </div>
                 </div>
 
@@ -409,7 +409,7 @@ export default function ScientistPage() {
                         <span className="text-sm font-medium text-slate-900 dark:text-white truncate">{test.name}</span>
                         <span className="text-xs text-emerald-pro-400">{test.confidence}%</span>
                       </div>
-                      <p className="text-xs text-slate-900 dark:text-slate-200">Leading: Variant {test.winner}</p>
+                      <p className="text-xs text-slate-900 dark:text-slate-300">Leading: Variant {test.winner}</p>
                     </div>
                   ))}
                 </div>
@@ -428,7 +428,7 @@ export default function ScientistPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-900 dark:text-white">Recent Wins</h3>
-                    <p className="text-xs text-slate-900 dark:text-slate-200">Successful optimizations</p>
+                    <p className="text-xs text-slate-900 dark:text-slate-300">Successful optimizations</p>
                   </div>
                 </div>
 
@@ -437,21 +437,21 @@ export default function ScientistPage() {
                     <CheckCircle2 className="h-5 w-5 text-emerald-pro-400" />
                     <div>
                       <p className="text-sm text-slate-900 dark:text-white">+44% reply rate</p>
-                      <p className="text-xs text-slate-900 dark:text-slate-200">CTA Variation Test</p>
+                      <p className="text-xs text-slate-900 dark:text-slate-300">CTA Variation Test</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 p-3 rounded-lg bg-emerald-pro-400/5 border border-emerald-pro-400/20">
                     <CheckCircle2 className="h-5 w-5 text-emerald-pro-400" />
                     <div>
                       <p className="text-sm text-slate-900 dark:text-white">-33% bounce rate</p>
-                      <p className="text-xs text-slate-900 dark:text-slate-200">List cleaning applied</p>
+                      <p className="text-xs text-slate-900 dark:text-slate-300">List cleaning applied</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 p-3 rounded-lg bg-emerald-pro-400/5 border border-emerald-pro-400/20">
                     <CheckCircle2 className="h-5 w-5 text-emerald-pro-400" />
                     <div>
                       <p className="text-sm text-slate-900 dark:text-white">+21% open rate</p>
-                      <p className="text-xs text-slate-900 dark:text-slate-200">Subject line optimization</p>
+                      <p className="text-xs text-slate-900 dark:text-slate-300">Subject line optimization</p>
                     </div>
                   </div>
                 </div>
@@ -486,7 +486,7 @@ export default function ScientistPage() {
                           {test.status.charAt(0).toUpperCase() + test.status.slice(1)}
                         </span>
                       </div>
-                      <p className="text-sm text-slate-900 dark:text-slate-200">
+                      <p className="text-sm text-slate-900 dark:text-slate-300">
                         Campaign: {test.campaign} • Started {test.startDate}
                       </p>
                     </div>
@@ -497,7 +497,7 @@ export default function ScientistPage() {
                           Pause
                         </Button>
                       )}
-                      <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white">
+                      <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
                         <MoreHorizontal className="h-4 w-4" />
                       </Button>
                     </div>
@@ -538,29 +538,29 @@ export default function ScientistPage() {
                           </div>
 
                           {variant.subject !== "-" && (
-                            <p className="text-xs text-slate-900 dark:text-slate-200 mb-3 truncate">
+                            <p className="text-xs text-slate-900 dark:text-slate-300 mb-3 truncate">
                               Subject: "{variant.subject}"
                             </p>
                           )}
 
                           <div className="grid grid-cols-4 gap-3">
                             <div>
-                              <p className="text-xs text-slate-900 dark:text-slate-200">Sent</p>
+                              <p className="text-xs text-slate-900 dark:text-slate-300">Sent</p>
                               <p className="text-sm font-semibold text-slate-900 dark:text-white">{variant.sent}</p>
                             </div>
                             <div>
-                              <p className="text-xs text-slate-900 dark:text-slate-200">Opens</p>
+                              <p className="text-xs text-slate-900 dark:text-slate-300">Opens</p>
                               <p className="text-sm font-semibold text-slate-900 dark:text-white">{variant.opens}</p>
                             </div>
                             <div>
-                              <p className="text-xs text-slate-900 dark:text-slate-200">Open Rate</p>
+                              <p className="text-xs text-slate-900 dark:text-slate-300">Open Rate</p>
                               <p className={cn(
                                 "text-sm font-semibold",
                                 isWinner ? "text-emerald-pro-400" : "text-slate-900 dark:text-white"
                               )}>{variant.openRate}%</p>
                             </div>
                             <div>
-                              <p className="text-xs text-slate-900 dark:text-slate-200">Reply Rate</p>
+                              <p className="text-xs text-slate-900 dark:text-slate-300">Reply Rate</p>
                               <p className={cn(
                                 "text-sm font-semibold",
                                 isWinner ? "text-emerald-pro-400" : "text-slate-900 dark:text-white"
@@ -576,17 +576,17 @@ export default function ScientistPage() {
                   <div className="flex items-center justify-between p-4 rounded-xl bg-white dark:bg-deep-space/50 border border-emerald-pro-600/10">
                     <div className="flex items-center gap-6">
                       <div>
-                        <p className="text-xs text-slate-900 dark:text-slate-200">Statistical Confidence</p>
+                        <p className="text-xs text-slate-900 dark:text-slate-300">Statistical Confidence</p>
                         <p className="text-lg font-semibold text-emerald-pro-600">{test.confidence}%</p>
                       </div>
                       <div className="h-8 w-px bg-emerald-pro-600/20" />
                       <div>
-                        <p className="text-xs text-slate-900 dark:text-slate-200">Improvement</p>
+                        <p className="text-xs text-slate-900 dark:text-slate-300">Improvement</p>
                         <p className="text-lg font-semibold text-emerald-pro-400">{test.improvement}</p>
                       </div>
                       <div className="h-8 w-px bg-emerald-pro-600/20" />
                       <div>
-                        <p className="text-xs text-slate-900 dark:text-slate-200">Recommended Action</p>
+                        <p className="text-xs text-slate-900 dark:text-slate-300">Recommended Action</p>
                         <p className="text-sm text-slate-900 dark:text-white">
                           {test.confidence >= 95 ? "Apply winning variant" : "Continue testing"}
                         </p>
@@ -631,7 +631,7 @@ export default function ScientistPage() {
                       </div>
                       <div>
                         <h4 className="font-medium text-slate-900 dark:text-white">{rec.title}</h4>
-                        <p className="text-xs text-slate-900 dark:text-slate-200">{rec.campaign}</p>
+                        <p className="text-xs text-slate-900 dark:text-slate-300">{rec.campaign}</p>
                       </div>
                     </div>
                     <span className={cn(
@@ -644,12 +644,12 @@ export default function ScientistPage() {
                     </span>
                   </div>
 
-                  <p className="text-sm text-slate-900 dark:text-slate-200 mb-4">{rec.description}</p>
+                  <p className="text-sm text-slate-900 dark:text-slate-300 mb-4">{rec.description}</p>
 
                   <div className="flex items-center justify-between pt-3 border-t border-emerald-pro-600/10">
                     <div className="flex items-center gap-2">
                       <Lightbulb className="h-4 w-4 text-emerald-pro-500" />
-                      <span className="text-xs text-slate-900 dark:text-slate-200">AI-generated recommendation</span>
+                      <span className="text-xs text-slate-900 dark:text-slate-300">AI-generated recommendation</span>
                     </div>
                     {rec.actionable && (
                       <Button size="sm" variant="ghost" className="text-emerald-pro-600 hover:bg-emerald-pro-600/10">

@@ -167,7 +167,7 @@ export default function TeamMemberDetailPage({ params }: PageProps) {
   if (loading || !member) {
     return (
       <div className="min-h-screen p-8 flex items-center justify-center">
-        <div className="text-slate-900 dark:text-slate-200">Loading...</div>
+        <div className="text-slate-900 dark:text-slate-300">Loading...</div>
       </div>
     );
   }
@@ -231,7 +231,7 @@ export default function TeamMemberDetailPage({ params }: PageProps) {
       border: "border-emerald-pro-400/30",
     },
     steel: {
-      text: "text-slate-900 dark:text-slate-200",
+      text: "text-slate-900 dark:text-slate-300",
       bg: "bg-steel/10",
       border: "border-steel/30",
     },
@@ -243,7 +243,7 @@ export default function TeamMemberDetailPage({ params }: PageProps) {
     <motion.div initial="hidden" animate="visible" variants={containerVariants} className="min-h-screen p-8">
       {/* Breadcrumb Header */}
       <motion.div variants={itemVariants} className="mb-6">
-        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-200 mb-4">
+        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-300 mb-4">
           <Link href="/admin" className="hover:text-slate-900 dark:hover:text-white transition-colors">Admin</Link>
           <span className="text-graphite">/</span>
           <Link href="/admin/team" className="hover:text-slate-900 dark:hover:text-white transition-colors">Team</Link>
@@ -252,7 +252,7 @@ export default function TeamMemberDetailPage({ params }: PageProps) {
         </div>
         <Link
           href="/admin/team"
-          className="inline-flex items-center gap-2 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white transition-colors"
+          className="inline-flex items-center gap-2 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to Team
@@ -285,12 +285,12 @@ export default function TeamMemberDetailPage({ params }: PageProps) {
               )}
             </div>
             <div className="flex items-center gap-4 mt-2">
-              <span className="flex items-center gap-1 text-sm text-slate-900 dark:text-slate-200">
+              <span className="flex items-center gap-1 text-sm text-slate-900 dark:text-slate-300">
                 <Mail className="h-3.5 w-3.5" />
                 {profile?.email || "No email"}
               </span>
               {member.hired_at && (
-                <span className="text-sm text-slate-900 dark:text-slate-200">
+                <span className="text-sm text-slate-900 dark:text-slate-300">
                   <Calendar className="h-3.5 w-3.5 inline mr-1" />
                   Joined {new Date(member.hired_at).toLocaleDateString()}
                 </span>
@@ -305,7 +305,7 @@ export default function TeamMemberDetailPage({ params }: PageProps) {
             <Edit2 className="h-4 w-4" />
             Edit
           </button>
-          <button className="p-2 border border-border-default dark:border-graphite text-slate-900 dark:text-slate-200 rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors">
+          <button className="p-2 border border-border-default dark:border-graphite text-slate-900 dark:text-slate-300 rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors">
             <MoreHorizontal className="h-4 w-4" />
           </button>
         </div>
@@ -325,7 +325,7 @@ export default function TeamMemberDetailPage({ params }: PageProps) {
                 <h2 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">
                   Permissions
                 </h2>
-                <p className="text-sm text-slate-900 dark:text-slate-200">{role.description}</p>
+                <p className="text-sm text-slate-900 dark:text-slate-300">{role.description}</p>
               </div>
             </div>
 
@@ -335,13 +335,13 @@ export default function TeamMemberDetailPage({ params }: PageProps) {
                   key={key}
                   className="flex items-center justify-between p-3 bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30 rounded-lg"
                 >
-                  <span className="text-sm text-slate-900 dark:text-slate-200 capitalize">
+                  <span className="text-sm text-slate-900 dark:text-slate-300 capitalize">
                     {key.replace(/_/g, " ")}
                   </span>
                   {value ? (
                     <Check className="h-4 w-4 text-emerald-pro-400" />
                   ) : (
-                    <X className="h-4 w-4 text-slate-900 dark:text-slate-200" />
+                    <X className="h-4 w-4 text-slate-900 dark:text-slate-300" />
                   )}
                 </div>
               ))}
@@ -359,7 +359,7 @@ export default function TeamMemberDetailPage({ params }: PageProps) {
                   <h2 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">
                     Assigned Clients
                   </h2>
-                  <p className="text-sm text-slate-900 dark:text-slate-200">
+                  <p className="text-sm text-slate-900 dark:text-slate-300">
                     {assignedClients.length} client{assignedClients.length !== 1 ? "s" : ""}
                   </p>
                 </div>
@@ -371,8 +371,8 @@ export default function TeamMemberDetailPage({ params }: PageProps) {
 
             {assignedClients.length === 0 ? (
               <div className="text-center py-8">
-                <Users className="h-10 w-10 text-slate-900 dark:text-slate-200 mx-auto mb-3" />
-                <p className="text-slate-900 dark:text-slate-200 text-sm">No clients assigned</p>
+                <Users className="h-10 w-10 text-slate-900 dark:text-slate-300 mx-auto mb-3" />
+                <p className="text-slate-900 dark:text-slate-300 text-sm">No clients assigned</p>
               </div>
             ) : (
               <div className="space-y-3">
@@ -390,7 +390,7 @@ export default function TeamMemberDetailPage({ params }: PageProps) {
                         <p className="text-sm font-medium text-slate-900 dark:text-white">
                           {client.organizations?.name || "Unknown Client"}
                         </p>
-                        <p className="text-xs text-slate-900 dark:text-slate-200">
+                        <p className="text-xs text-slate-900 dark:text-slate-300">
                           Assigned {new Date(client.assigned_at).toLocaleDateString()}
                         </p>
                       </div>
@@ -415,14 +415,14 @@ export default function TeamMemberDetailPage({ params }: PageProps) {
                 <h2 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">
                   Recent Activity
                 </h2>
-                <p className="text-sm text-slate-900 dark:text-slate-200">Last 10 actions</p>
+                <p className="text-sm text-slate-900 dark:text-slate-300">Last 10 actions</p>
               </div>
             </div>
 
             {activityLogs.length === 0 ? (
               <div className="text-center py-8">
-                <Clock className="h-10 w-10 text-slate-900 dark:text-slate-200 mx-auto mb-3" />
-                <p className="text-slate-900 dark:text-slate-200 text-sm">No activity recorded</p>
+                <Clock className="h-10 w-10 text-slate-900 dark:text-slate-300 mx-auto mb-3" />
+                <p className="text-slate-900 dark:text-slate-300 text-sm">No activity recorded</p>
               </div>
             ) : (
               <div className="space-y-3">
@@ -434,7 +434,7 @@ export default function TeamMemberDetailPage({ params }: PageProps) {
                     <p className="text-sm text-slate-900 dark:text-white capitalize">
                       {log.action.replace(/_/g, " ")}
                     </p>
-                    <p className="text-xs text-slate-900 dark:text-slate-200 mt-1">
+                    <p className="text-xs text-slate-900 dark:text-slate-300 mt-1">
                       {log.resource_type} •{" "}
                       {new Date(log.created_at).toLocaleString()}
                     </p>
@@ -460,7 +460,7 @@ export default function TeamMemberDetailPage({ params }: PageProps) {
                     <p className="text-sm font-medium text-slate-900 dark:text-white">
                       Deactivate Member
                     </p>
-                    <p className="text-xs text-slate-900 dark:text-slate-200 mt-0.5">
+                    <p className="text-xs text-slate-900 dark:text-slate-300 mt-0.5">
                       Revoke access to all systems
                     </p>
                   </div>
@@ -471,7 +471,7 @@ export default function TeamMemberDetailPage({ params }: PageProps) {
                     <p className="text-sm font-medium text-slate-900 dark:text-white">
                       Reactivate Member
                     </p>
-                    <p className="text-xs text-slate-900 dark:text-slate-200 mt-0.5">
+                    <p className="text-xs text-slate-900 dark:text-slate-300 mt-0.5">
                       Restore access to assigned resources
                     </p>
                   </div>
@@ -483,7 +483,7 @@ export default function TeamMemberDetailPage({ params }: PageProps) {
                   <p className="text-sm font-medium text-red-400">
                     Remove from Team
                   </p>
-                  <p className="text-xs text-slate-900 dark:text-slate-200 mt-0.5">
+                  <p className="text-xs text-slate-900 dark:text-slate-300 mt-0.5">
                     Permanently delete this team member
                   </p>
                 </div>
@@ -501,8 +501,8 @@ function StatusBadge({ status }: { status: string }) {
     active: "bg-emerald-pro-400/10 text-emerald-pro-400 border-emerald-pro-400/30",
     pilot: "bg-emerald-pro-600/10 text-emerald-pro-600 border-emerald-pro-600/30",
     paused: "bg-energy-orange/10 text-energy-orange border-energy-orange/30",
-    churned: "bg-steel/10 text-slate-900 dark:text-slate-200 border-steel/30",
-    inactive: "bg-steel/10 text-slate-900 dark:text-slate-200 border-steel/30",
+    churned: "bg-steel/10 text-slate-900 dark:text-slate-300 border-steel/30",
+    inactive: "bg-steel/10 text-slate-900 dark:text-slate-300 border-steel/30",
   };
 
   return (

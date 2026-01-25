@@ -228,7 +228,7 @@ export default function HunterPage() {
       case "negative":
         return { bg: "bg-rose/10", text: "text-rose", border: "border-rose/30", icon: ThumbsDown };
       default:
-        return { bg: "bg-steel/10", text: "text-slate-900 dark:text-slate-200", border: "border-steel/30", icon: Minus };
+        return { bg: "bg-steel/10", text: "text-slate-900 dark:text-slate-300", border: "border-steel/30", icon: Minus };
     }
   };
 
@@ -243,7 +243,7 @@ export default function HunterPage() {
       case "unsubscribed":
         return { label: "Unsubscribed", color: "text-rose" };
       default:
-        return { label: "Pending Review", color: "text-slate-900 dark:text-slate-200" };
+        return { label: "Pending Review", color: "text-slate-900 dark:text-slate-300" };
     }
   };
 
@@ -256,13 +256,13 @@ export default function HunterPage() {
       {/* Page Header */}
       <motion.div variants={itemVariants}>
         <div className="mb-8">
-          <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-200 mb-2">
+          <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-300 mb-2">
             <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
             <span>/</span>
             <span className="text-emerald-pro-600">The Hunter</span>
           </div>
           <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">The Hunter</h1>
-          <p className="text-slate-900 dark:text-slate-200 mt-1">Reply-Based Lead Expansion Engine</p>
+          <p className="text-slate-900 dark:text-slate-300 mt-1">Reply-Based Lead Expansion Engine</p>
         </div>
       </motion.div>
 
@@ -288,17 +288,17 @@ export default function HunterPage() {
                     <span className="text-sm font-medium text-emerald-pro-400">ACTIVE</span>
                   </span>
                 </div>
-                <p className="text-slate-900 dark:text-slate-200 mt-1">Converting positive replies into qualified opportunities</p>
+                <p className="text-slate-900 dark:text-slate-300 mt-1">Converting positive replies into qualified opportunities</p>
               </div>
             </div>
 
             <div className="flex items-center gap-4">
               <div className="text-right">
-                <p className="text-sm text-slate-900 dark:text-slate-200">Last Processed</p>
+                <p className="text-sm text-slate-900 dark:text-slate-300">Last Processed</p>
                 <p className="text-slate-900 dark:text-white font-medium">{overallStats.lastProcessed}</p>
               </div>
               <div className="text-right">
-                <p className="text-sm text-slate-900 dark:text-slate-200">Today's Replies</p>
+                <p className="text-sm text-slate-900 dark:text-slate-300">Today's Replies</p>
                 <p className="text-slate-900 dark:text-white font-medium">47 new</p>
               </div>
               <Button
@@ -324,8 +324,8 @@ export default function HunterPage() {
               </span>
             </div>
             <p className="text-3xl font-sora font-bold text-slate-900 dark:text-white">{overallStats.repliesProcessed.toLocaleString()}</p>
-            <p className="text-sm text-slate-900 dark:text-slate-200 mt-1">Total Replies Processed</p>
-            <p className="text-xs text-slate-900 dark:text-slate-200 mt-2">This month</p>
+            <p className="text-sm text-slate-900 dark:text-slate-300 mt-1">Total Replies Processed</p>
+            <p className="text-xs text-slate-900 dark:text-slate-300 mt-2">This month</p>
           </div>
 
           <div className="glass-premium p-6">
@@ -336,8 +336,8 @@ export default function HunterPage() {
               </span>
             </div>
             <p className="text-3xl font-sora font-bold text-slate-900 dark:text-white">{overallStats.positiveRate}%</p>
-            <p className="text-sm text-slate-900 dark:text-slate-200 mt-1">Positive Reply Rate</p>
-            <p className="text-xs text-slate-900 dark:text-slate-200 mt-2">Industry avg: 45%</p>
+            <p className="text-sm text-slate-900 dark:text-slate-300 mt-1">Positive Reply Rate</p>
+            <p className="text-xs text-slate-900 dark:text-slate-300 mt-2">Industry avg: 45%</p>
           </div>
 
           <div className="glass-premium p-6">
@@ -348,8 +348,8 @@ export default function HunterPage() {
               </span>
             </div>
             <p className="text-3xl font-sora font-bold text-slate-900 dark:text-white">{overallStats.leadsQualified.toLocaleString()}</p>
-            <p className="text-sm text-slate-900 dark:text-slate-200 mt-1">Leads Qualified</p>
-            <p className="text-xs text-slate-900 dark:text-slate-200 mt-2">From positive replies</p>
+            <p className="text-sm text-slate-900 dark:text-slate-300 mt-1">Leads Qualified</p>
+            <p className="text-xs text-slate-900 dark:text-slate-300 mt-2">From positive replies</p>
           </div>
 
           <div className="glass-premium p-6">
@@ -360,8 +360,8 @@ export default function HunterPage() {
               </span>
             </div>
             <p className="text-3xl font-sora font-bold text-slate-900 dark:text-white">{overallStats.referralsGenerated}</p>
-            <p className="text-sm text-slate-900 dark:text-slate-200 mt-1">Referrals Generated</p>
-            <p className="text-xs text-slate-900 dark:text-slate-200 mt-2">New leads from replies</p>
+            <p className="text-sm text-slate-900 dark:text-slate-300 mt-1">Referrals Generated</p>
+            <p className="text-xs text-slate-900 dark:text-slate-300 mt-2">New leads from replies</p>
           </div>
         </motion.div>
 
@@ -387,7 +387,7 @@ export default function HunterPage() {
                     style={{ width: `${(replyBreakdown.positive / replyBreakdown.total) * 100}%` }}
                   />
                 </div>
-                <p className="text-xs text-slate-900 dark:text-slate-200 mt-1">{((replyBreakdown.positive / replyBreakdown.total) * 100).toFixed(1)}% of replies</p>
+                <p className="text-xs text-slate-900 dark:text-slate-300 mt-1">{((replyBreakdown.positive / replyBreakdown.total) * 100).toFixed(1)}% of replies</p>
               </div>
 
               {/* Neutral */}
@@ -405,7 +405,7 @@ export default function HunterPage() {
                     style={{ width: `${(replyBreakdown.neutral / replyBreakdown.total) * 100}%` }}
                   />
                 </div>
-                <p className="text-xs text-slate-900 dark:text-slate-200 mt-1">{((replyBreakdown.neutral / replyBreakdown.total) * 100).toFixed(1)}% of replies</p>
+                <p className="text-xs text-slate-900 dark:text-slate-300 mt-1">{((replyBreakdown.neutral / replyBreakdown.total) * 100).toFixed(1)}% of replies</p>
               </div>
 
               {/* Negative */}
@@ -423,13 +423,13 @@ export default function HunterPage() {
                     style={{ width: `${(replyBreakdown.negative / replyBreakdown.total) * 100}%` }}
                   />
                 </div>
-                <p className="text-xs text-slate-900 dark:text-slate-200 mt-1">{((replyBreakdown.negative / replyBreakdown.total) * 100).toFixed(1)}% of replies</p>
+                <p className="text-xs text-slate-900 dark:text-slate-300 mt-1">{((replyBreakdown.negative / replyBreakdown.total) * 100).toFixed(1)}% of replies</p>
               </div>
             </div>
 
             <div className="mt-6 pt-4 border-t border-border-default dark:border-graphite/30">
               <div className="flex items-center justify-between text-sm">
-                <span className="text-slate-900 dark:text-slate-200">Total Replies</span>
+                <span className="text-slate-900 dark:text-slate-300">Total Replies</span>
                 <span className="text-slate-900 dark:text-white font-bold">{replyBreakdown.total.toLocaleString()}</span>
               </div>
             </div>
@@ -458,7 +458,7 @@ export default function HunterPage() {
                     )}>
                       {stage.count.toLocaleString()}
                     </p>
-                    <p className="text-xs text-slate-900 dark:text-slate-200 mt-1">{stage.stage}</p>
+                    <p className="text-xs text-slate-900 dark:text-slate-300 mt-1">{stage.stage}</p>
                   </div>
                   {index < qualificationPipeline.length - 1 && (
                     <ArrowRight className="absolute top-1/2 -right-3 -translate-y-1/2 h-5 w-5 text-graphite z-10" />
@@ -470,15 +470,15 @@ export default function HunterPage() {
             <div className="mt-6 grid grid-cols-3 gap-4">
               <div className="p-4 rounded-lg bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30 text-center">
                 <p className="text-2xl font-sora font-bold text-emerald-pro-400">68%</p>
-                <p className="text-xs text-slate-900 dark:text-slate-200 mt-1">Positive → Qualified</p>
+                <p className="text-xs text-slate-900 dark:text-slate-300 mt-1">Positive → Qualified</p>
               </div>
               <div className="p-4 rounded-lg bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30 text-center">
                 <p className="text-2xl font-sora font-bold text-emerald-pro-500">38%</p>
-                <p className="text-xs text-slate-900 dark:text-slate-200 mt-1">Qualified → Meeting</p>
+                <p className="text-xs text-slate-900 dark:text-slate-300 mt-1">Qualified → Meeting</p>
               </div>
               <div className="p-4 rounded-lg bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30 text-center">
                 <p className="text-2xl font-sora font-bold text-energy-orange">19%</p>
-                <p className="text-xs text-slate-900 dark:text-slate-200 mt-1">Reply → Meeting</p>
+                <p className="text-xs text-slate-900 dark:text-slate-300 mt-1">Reply → Meeting</p>
               </div>
             </div>
           </div>
@@ -500,7 +500,7 @@ export default function HunterPage() {
                         "px-3 py-1.5 rounded-md text-xs font-medium transition-colors capitalize",
                         sentimentFilter === filter
                           ? "bg-emerald-pro-600/20 text-emerald-pro-600"
-                          : "text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"
+                          : "text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
                       )}
                     >
                       {filter}
@@ -534,7 +534,7 @@ export default function HunterPage() {
                             <p className="font-medium text-slate-900 dark:text-white">{reply.leadName}</p>
                             {reply.score >= 90 && <Star className="h-4 w-4 text-energy-orange fill-energy-orange" />}
                           </div>
-                          <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-200">
+                          <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-300">
                             <Building2 className="h-3.5 w-3.5" />
                             <span>{reply.company}</span>
                           </div>
@@ -542,16 +542,16 @@ export default function HunterPage() {
                       </div>
                       <div className="text-right">
                         <span className={cn("text-sm font-medium", action.color)}>{action.label}</span>
-                        <p className="text-xs text-slate-900 dark:text-slate-200 mt-0.5">{reply.receivedAt}</p>
+                        <p className="text-xs text-slate-900 dark:text-slate-300 mt-0.5">{reply.receivedAt}</p>
                       </div>
                     </div>
 
                     <div className="pl-13">
                       <p className="text-sm text-slate-900 dark:text-white mb-1">{reply.subject}</p>
-                      <p className="text-sm text-slate-900 dark:text-slate-200 italic">"{reply.preview}"</p>
+                      <p className="text-sm text-slate-900 dark:text-slate-300 italic">"{reply.preview}"</p>
                       <div className="flex items-center gap-4 mt-3 text-xs">
-                        <span className="text-slate-900 dark:text-slate-200">Campaign: <span className="text-emerald-pro-600">{reply.campaign}</span></span>
-                        <span className="text-slate-900 dark:text-slate-200">Score: <span className={cn(
+                        <span className="text-slate-900 dark:text-slate-300">Campaign: <span className="text-emerald-pro-600">{reply.campaign}</span></span>
+                        <span className="text-slate-900 dark:text-slate-300">Score: <span className={cn(
                           reply.score >= 80 ? "text-emerald-pro-400" : reply.score >= 50 ? "text-energy-orange" : "text-rose"
                         )}>{reply.score}</span></span>
                       </div>
@@ -576,7 +576,7 @@ export default function HunterPage() {
               </span>
             </div>
 
-            <p className="text-sm text-slate-900 dark:text-slate-200 mb-4">
+            <p className="text-sm text-slate-900 dark:text-slate-300 mb-4">
               New leads generated from positive reply mentions and referrals.
             </p>
 
@@ -589,7 +589,7 @@ export default function HunterPage() {
                   <div className="flex items-start justify-between mb-2">
                     <div>
                       <p className="font-medium text-slate-900 dark:text-white">{lead.name}</p>
-                      <p className="text-sm text-slate-900 dark:text-slate-200">{lead.title}</p>
+                      <p className="text-sm text-slate-900 dark:text-slate-300">{lead.title}</p>
                     </div>
                     <span className={cn(
                       "text-xs px-2 py-0.5 rounded-full capitalize",
@@ -601,13 +601,13 @@ export default function HunterPage() {
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-200 mb-2">
+                  <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-300 mb-2">
                     <Building2 className="h-3.5 w-3.5" />
                     <span>{lead.company}</span>
                   </div>
 
                   <div className="flex items-center justify-between text-xs">
-                    <span className="text-slate-900 dark:text-slate-200">
+                    <span className="text-slate-900 dark:text-slate-300">
                       Referred by <span className="text-emerald-pro-500">{lead.referredBy}</span>
                     </span>
                     <span className="text-emerald-pro-400 font-medium">Score: {lead.score}</span>
@@ -636,12 +636,12 @@ export default function HunterPage() {
             <table className="w-full">
               <thead>
                 <tr className="border-b border-border-default dark:border-graphite/50">
-                  <th className="text-left text-sm font-medium text-slate-900 dark:text-slate-200 pb-4">Campaign</th>
-                  <th className="text-center text-sm font-medium text-slate-900 dark:text-slate-200 pb-4">Total Replies</th>
-                  <th className="text-center text-sm font-medium text-slate-900 dark:text-slate-200 pb-4">Positive</th>
-                  <th className="text-center text-sm font-medium text-slate-900 dark:text-slate-200 pb-4">Qualified</th>
-                  <th className="text-center text-sm font-medium text-slate-900 dark:text-slate-200 pb-4">Meetings</th>
-                  <th className="text-right text-sm font-medium text-slate-900 dark:text-slate-200 pb-4">Conversion</th>
+                  <th className="text-left text-sm font-medium text-slate-900 dark:text-slate-300 pb-4">Campaign</th>
+                  <th className="text-center text-sm font-medium text-slate-900 dark:text-slate-300 pb-4">Total Replies</th>
+                  <th className="text-center text-sm font-medium text-slate-900 dark:text-slate-300 pb-4">Positive</th>
+                  <th className="text-center text-sm font-medium text-slate-900 dark:text-slate-300 pb-4">Qualified</th>
+                  <th className="text-center text-sm font-medium text-slate-900 dark:text-slate-300 pb-4">Meetings</th>
+                  <th className="text-right text-sm font-medium text-slate-900 dark:text-slate-300 pb-4">Conversion</th>
                 </tr>
               </thead>
               <tbody>
@@ -651,7 +651,7 @@ export default function HunterPage() {
                       <span className="text-slate-900 dark:text-white font-medium">{campaign.name}</span>
                     </td>
                     <td className="py-4 text-center">
-                      <span className="text-slate-900 dark:text-slate-200">{campaign.replies}</span>
+                      <span className="text-slate-900 dark:text-slate-300">{campaign.replies}</span>
                     </td>
                     <td className="py-4 text-center">
                       <span className="text-emerald-pro-400 font-semibold">{campaign.positive}</span>

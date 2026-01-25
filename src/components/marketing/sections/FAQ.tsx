@@ -88,7 +88,7 @@ export function FAQ() {
               Questions
             </span>
           </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-200">
+          <p className="text-lg text-slate-600 dark:text-slate-300">
             Everything you need to know about working with XGrowthOS.
           </p>
         </motion.div>
@@ -105,7 +105,7 @@ export function FAQ() {
               <motion.div key={index} variants={itemVariants}>
                 <Accordion.Item
                   value={`item-${index}`}
-                  className="group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 backdrop-blur-sm overflow-hidden data-[state=open]:border-emerald-300 dark:data-[state=open]:border-green-500/30 data-[state=open]:shadow-sm hover:border-emerald-200 dark:hover:border-slate-600 transition-all duration-300"
+                  className="group card-base rounded-xl overflow-hidden data-[state=open]:border-primary/30 data-[state=open]:shadow-sm hover:border-primary/20 transition-all duration-300"
                 >
                   <Accordion.Header>
                     <Accordion.Trigger className="flex w-full items-center justify-between px-6 py-5 text-left">
@@ -116,7 +116,7 @@ export function FAQ() {
                     </Accordion.Trigger>
                   </Accordion.Header>
                   <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                    <div className="px-6 pb-5 text-slate-600 dark:text-slate-200 leading-relaxed">
+                    <div className="px-6 pb-5 text-slate-600 dark:text-slate-300 leading-relaxed">
                       {faq.answer}
                     </div>
                   </Accordion.Content>

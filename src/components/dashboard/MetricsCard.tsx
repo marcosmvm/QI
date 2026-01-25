@@ -108,7 +108,7 @@ export function MetricsCard({
     ? 'text-emerald-500 dark:text-green-400'
     : change && change < 0
       ? 'text-red-500'
-      : 'text-slate-500 dark:text-slate-200'
+      : 'text-slate-500 dark:text-slate-300'
 
   if (loading) {
     return (
@@ -143,12 +143,12 @@ export function MetricsCard({
     >
       <div className="flex justify-between items-start">
         <div>
-          <p className="text-xs font-medium text-slate-500 dark:text-slate-200 uppercase tracking-wide mb-2">
+          <p className="text-xs font-medium text-slate-500 dark:text-slate-300 uppercase tracking-wide mb-2">
             {title}
           </p>
           <p className="text-3xl font-bold text-slate-900 dark:text-white metric-value">
             {formatValue(displayValue)}
-            {suffix && <span className="text-lg text-slate-500 dark:text-slate-200 ml-1">{suffix}</span>}
+            {suffix && <span className="text-lg text-slate-500 dark:text-slate-300 ml-1">{suffix}</span>}
           </p>
           {change !== undefined && (
             <motion.div
@@ -161,12 +161,12 @@ export function MetricsCard({
               <span className="font-medium">
                 {change > 0 ? '+' : ''}{change}%
               </span>
-              <span className="text-slate-500 dark:text-slate-200 ml-1 text-xs">{changeLabel}</span>
+              <span className="text-slate-500 dark:text-slate-300 ml-1 text-xs">{changeLabel}</span>
             </motion.div>
           )}
         </div>
         {Icon && (
-          <div className="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-200 group-hover:text-emerald-600 dark:group-hover:text-green-400 group-hover:bg-emerald-100 dark:group-hover:bg-green-500/10 transition-all duration-200">
+          <div className="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-300 group-hover:text-emerald-600 dark:group-hover:text-green-400 group-hover:bg-emerald-100 dark:group-hover:bg-green-500/10 transition-all duration-200">
             <Icon className="w-5 h-5 transition-transform duration-200 group-hover:scale-110" />
           </div>
         )}

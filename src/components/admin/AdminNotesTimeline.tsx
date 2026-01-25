@@ -35,7 +35,7 @@ const noteTypeConfig: Record<
 > = {
   general: {
     icon: MessageSquare,
-    color: "text-slate-900 dark:text-slate-200 bg-steel/10 border-steel/30",
+    color: "text-slate-900 dark:text-slate-300 bg-steel/10 border-steel/30",
     label: "Note",
   },
   call: {
@@ -87,8 +87,8 @@ export function AdminNotesTimeline({
 
       {notes.length === 0 ? (
         <div className="text-center py-8">
-          <MessageSquare className="h-8 w-8 text-slate-900 dark:text-slate-200 mx-auto mb-2" />
-          <p className="text-sm text-slate-900 dark:text-slate-200">No notes yet</p>
+          <MessageSquare className="h-8 w-8 text-slate-900 dark:text-slate-300 mx-auto mb-2" />
+          <p className="text-sm text-slate-900 dark:text-slate-300">No notes yet</p>
         </div>
       ) : (
         <div className="space-y-4">
@@ -124,10 +124,10 @@ function NoteItem({ note }: { note: AdminNote }) {
       </div>
 
       {/* Note content */}
-      <div className="bg-white dark:bg-deep-space/30 rounded-lg p-4 border border-border-default dark:border-graphite/30">
+      <div className="card-base rounded-xl p-4">
         <div className="flex items-start justify-between gap-2 mb-2">
           <div className="flex items-center gap-2">
-            <span className="text-xs font-medium text-slate-900 dark:text-slate-200">
+            <span className="text-xs font-medium text-slate-900 dark:text-slate-300">
               {note.authorName}
             </span>
             {note.isPinned && (
@@ -135,16 +135,16 @@ function NoteItem({ note }: { note: AdminNote }) {
             )}
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-xs text-slate-900 dark:text-slate-200">
+            <span className="text-xs text-slate-900 dark:text-slate-300">
               {formatDistanceToNow(new Date(note.createdAt), { addSuffix: true })}
             </span>
-            <button className="text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:text-slate-200 transition-colors">
+            <button className="text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:text-slate-300 transition-colors">
               <MoreHorizontal className="h-4 w-4" />
             </button>
           </div>
         </div>
 
-        <p className="text-sm text-slate-900 dark:text-slate-200 whitespace-pre-wrap">
+        <p className="text-sm text-slate-900 dark:text-slate-300 whitespace-pre-wrap">
           {note.content}
         </p>
 

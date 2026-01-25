@@ -14,7 +14,7 @@ const capabilities = [
 
 export function StatsBar() {
   return (
-    <section className="py-20 bg-white dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
+    <section className="py-20 bg-bg-surface border-y border-border">
       <Container>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {capabilities.map((cap, index) => (
@@ -42,7 +42,7 @@ export function StatsBar() {
               <p className="text-slate-900 dark:text-white mt-2 text-sm md:text-base font-medium">
                 {cap.label}
               </p>
-              <p className="text-slate-600 dark:text-slate-200 text-xs mt-1">
+              <p className="text-slate-600 dark:text-slate-300 text-xs mt-1">
                 {cap.description}
               </p>
             </motion.div>

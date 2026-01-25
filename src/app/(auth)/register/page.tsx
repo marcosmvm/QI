@@ -57,7 +57,7 @@ export default function RegisterPage() {
             <br />
             <span className="text-gradient">your outreach?</span>
           </h1>
-          <p className="text-lg text-slate-600 dark:text-slate-200 max-w-md">
+          <p className="text-lg text-slate-600 dark:text-slate-300 max-w-md">
             Join leading B2B companies using XGrowthOS to automate their
             cold email campaigns with AI-powered precision.
           </p>
@@ -74,19 +74,19 @@ export default function RegisterPage() {
                 <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 dark:bg-green-500/10">
                   <CheckCircle className="h-4 w-4 text-emerald-500 dark:text-green-400" />
                 </div>
-                <span className="text-slate-700 dark:text-slate-200">{feature}</span>
+                <span className="text-slate-700 dark:text-slate-300">{feature}</span>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="relative z-10 text-sm text-slate-500 dark:text-slate-200">
+        <div className="relative z-10 text-sm text-slate-500 dark:text-slate-300">
           &copy; {new Date().getFullYear()} XGrowthOS. All rights reserved.
         </div>
       </div>
 
       {/* Right side - Register Form */}
-      <div className="flex-1 flex items-center justify-center p-8 bg-white dark:bg-slate-900">
+      <div className="flex-1 flex items-center justify-center p-8 bg-bg">
         <div className="w-full max-w-md">
           {/* Mobile logo */}
           <div className="lg:hidden flex items-center justify-center gap-3 mb-8">
@@ -98,7 +98,7 @@ export default function RegisterPage() {
             </span>
           </div>
 
-          <div className="p-8 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+          <div className="p-8 rounded-2xl card-base">
             {isSubmitted ? (
               <div className="text-center py-8">
                 <div className="flex justify-center mb-6">
@@ -109,7 +109,7 @@ export default function RegisterPage() {
                 <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-2">
                   Request Submitted!
                 </h2>
-                <p className="text-slate-600 dark:text-slate-200 mb-6">
+                <p className="text-slate-600 dark:text-slate-300 mb-6">
                   Thank you for your interest in XGrowthOS. Our team will
                   review your request and reach out within 24-48 hours.
                 </p>
@@ -125,7 +125,7 @@ export default function RegisterPage() {
                   <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-2">
                     Request Access
                   </h2>
-                  <p className="text-slate-600 dark:text-slate-200">
+                  <p className="text-slate-600 dark:text-slate-300">
                     Fill out the form to get started with XGrowthOS
                   </p>
                 </div>
@@ -134,7 +134,7 @@ export default function RegisterPage() {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-medium text-slate-900 dark:text-slate-200 mb-2"
+                      className="block text-sm font-medium text-slate-900 dark:text-slate-300 mb-2"
                     >
                       Full name
                     </label>
@@ -148,7 +148,7 @@ export default function RegisterPage() {
                         onChange={handleChange}
                         placeholder="John Smith"
                         required
-                        className="w-full h-11 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 pl-10 pr-4 text-slate-900 dark:text-slate-50 placeholder:text-slate-500 dark:placeholder:text-slate-400 focus:border-emerald-500 dark:focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 dark:focus:ring-green-500 transition-colors"
+                        className="w-full h-11 rounded-lg input-base pl-10 pr-4"
                       />
                     </div>
                   </div>
@@ -156,7 +156,7 @@ export default function RegisterPage() {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-slate-900 dark:text-slate-200 mb-2"
+                      className="block text-sm font-medium text-slate-900 dark:text-slate-300 mb-2"
                     >
                       Work email
                     </label>
@@ -170,7 +170,7 @@ export default function RegisterPage() {
                         onChange={handleChange}
                         placeholder="you@company.com"
                         required
-                        className="w-full h-11 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 pl-10 pr-4 text-slate-900 dark:text-slate-50 placeholder:text-slate-500 dark:placeholder:text-slate-400 focus:border-emerald-500 dark:focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 dark:focus:ring-green-500 transition-colors"
+                        className="w-full h-11 rounded-lg input-base pl-10 pr-4"
                       />
                     </div>
                   </div>
@@ -178,7 +178,7 @@ export default function RegisterPage() {
                   <div>
                     <label
                       htmlFor="company"
-                      className="block text-sm font-medium text-slate-900 dark:text-slate-200 mb-2"
+                      className="block text-sm font-medium text-slate-900 dark:text-slate-300 mb-2"
                     >
                       Company name
                     </label>
@@ -192,7 +192,7 @@ export default function RegisterPage() {
                         onChange={handleChange}
                         placeholder="Acme Inc."
                         required
-                        className="w-full h-11 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 pl-10 pr-4 text-slate-900 dark:text-slate-50 placeholder:text-slate-500 dark:placeholder:text-slate-400 focus:border-emerald-500 dark:focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 dark:focus:ring-green-500 transition-colors"
+                        className="w-full h-11 rounded-lg input-base pl-10 pr-4"
                       />
                     </div>
                   </div>
@@ -200,7 +200,7 @@ export default function RegisterPage() {
                   <div>
                     <label
                       htmlFor="password"
-                      className="block text-sm font-medium text-slate-900 dark:text-slate-200 mb-2"
+                      className="block text-sm font-medium text-slate-900 dark:text-slate-300 mb-2"
                     >
                       Create password
                     </label>
@@ -215,7 +215,7 @@ export default function RegisterPage() {
                         placeholder="Min. 8 characters"
                         required
                         minLength={8}
-                        className="w-full h-11 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 pl-10 pr-4 text-slate-900 dark:text-slate-50 placeholder:text-slate-500 dark:placeholder:text-slate-400 focus:border-emerald-500 dark:focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 dark:focus:ring-green-500 transition-colors"
+                        className="w-full h-11 rounded-lg input-base pl-10 pr-4"
                       />
                     </div>
                   </div>

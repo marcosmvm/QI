@@ -80,7 +80,7 @@ export function ProcessSteps() {
               Works
             </span>
           </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-200">
+          <p className="text-lg text-slate-600 dark:text-slate-300">
             Our proven 5-step process transforms cold outreach into a predictable meeting machine.
           </p>
         </motion.div>
@@ -114,21 +114,21 @@ export function ProcessSteps() {
               >
                 {/* Step Icon */}
                 <div className="relative z-10 flex-shrink-0">
-                  <div className="w-16 h-16 rounded-2xl bg-white dark:bg-slate-800 backdrop-blur-sm border border-slate-200 dark:border-slate-700 flex items-center justify-center group-hover:border-emerald-300 dark:group-hover:border-green-500/40 group-hover:shadow-sm transition-all duration-300">
+                  <div className="w-16 h-16 rounded-2xl card-base backdrop-blur-sm flex items-center justify-center group-hover:border-primary/40 group-hover:shadow-sm transition-all duration-300">
                     <step.icon className="h-7 w-7 text-emerald-600 dark:text-green-400 group-hover:scale-110 transition-transform duration-300" />
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 pb-8">
-                  <div className="p-5 rounded-xl bg-white dark:bg-slate-800/50 backdrop-blur-sm border border-slate-200 dark:border-slate-700 group-hover:border-emerald-200 dark:group-hover:border-green-500/30 transition-all duration-300">
+                  <div className="p-5 rounded-xl card-base backdrop-blur-sm group-hover:border-primary/30 transition-all duration-300">
                     <div className="flex items-center gap-3 mb-2">
                       <span className="text-emerald-600 dark:text-green-400 font-mono text-sm font-semibold">{step.number}</span>
                       <h3 className="text-xl md:text-2xl font-sora font-semibold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-green-400 transition-colors">
                         {step.title}
                       </h3>
                     </div>
-                    <p className="text-slate-600 dark:text-slate-200 max-w-2xl transition-colors">
+                    <p className="text-slate-600 dark:text-slate-300 max-w-2xl transition-colors">
                       {step.description}
                     </p>
                   </div>

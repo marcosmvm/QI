@@ -149,7 +149,7 @@ export function ClientsTable({ clients, industries }: ClientsTableProps) {
       {/* Search and Filter Bar */}
       <div className="flex items-center gap-4 mb-6">
         <div className="relative flex-1 max-w-md">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-900 dark:text-slate-200" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-900 dark:text-slate-300" />
           <input
             type="text"
             placeholder="Search by name, domain, or industry..."
@@ -158,12 +158,12 @@ export function ClientsTable({ clients, industries }: ClientsTableProps) {
               setSearchQuery(e.target.value);
               setCurrentPage(1);
             }}
-            className="w-full h-10 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space pl-10 pr-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 transition-colors"
+            className="w-full h-10 rounded-lg input-base pl-10 pr-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 transition-colors"
           />
           {searchQuery && (
             <button
               onClick={() => setSearchQuery("")}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
             >
               <X className="h-4 w-4" />
             </button>
@@ -175,7 +175,7 @@ export function ClientsTable({ clients, industries }: ClientsTableProps) {
           className={`flex items-center gap-2 px-4 py-2 border rounded-lg transition-colors ${
             showFilters || hasActiveFilters
               ? "border-emerald-pro-600/50 text-emerald-pro-600 bg-emerald-pro-600/10"
-              : "border-border-default dark:border-graphite text-slate-900 dark:text-slate-200 hover:bg-light-bg-secondary dark:bg-midnight-blue/30"
+              : "border-border-default dark:border-graphite text-slate-900 dark:text-slate-300 hover:bg-light-bg-secondary dark:bg-midnight-blue/30"
           }`}
         >
           <Filter className="h-4 w-4" />
@@ -188,7 +188,7 @@ export function ClientsTable({ clients, industries }: ClientsTableProps) {
         {hasActiveFilters && (
           <button
             onClick={clearFilters}
-            className="text-sm text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white transition-colors"
+            className="text-sm text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
           >
             Clear all
           </button>
@@ -200,14 +200,14 @@ export function ClientsTable({ clients, industries }: ClientsTableProps) {
         <div className="flex items-center gap-4 mb-6 p-4 bg-light-bg-secondary dark:bg-midnight-blue/20 border border-border-default dark:border-graphite/30 rounded-lg">
           {/* Status Filter */}
           <div className="flex items-center gap-2">
-            <label className="text-xs text-slate-900 dark:text-slate-200">Status:</label>
+            <label className="text-xs text-slate-900 dark:text-slate-300">Status:</label>
             <select
               value={statusFilter}
               onChange={(e) => {
                 setStatusFilter(e.target.value);
                 setCurrentPage(1);
               }}
-              className="h-8 px-3 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space text-sm text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none"
+              className="h-8 px-3 rounded-lg input-base text-sm text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none"
             >
               <option value="all">All</option>
               <option value="active">Active</option>
@@ -219,14 +219,14 @@ export function ClientsTable({ clients, industries }: ClientsTableProps) {
 
           {/* Industry Filter */}
           <div className="flex items-center gap-2">
-            <label className="text-xs text-slate-900 dark:text-slate-200">Industry:</label>
+            <label className="text-xs text-slate-900 dark:text-slate-300">Industry:</label>
             <select
               value={industryFilter}
               onChange={(e) => {
                 setIndustryFilter(e.target.value);
                 setCurrentPage(1);
               }}
-              className="h-8 px-3 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space text-sm text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none"
+              className="h-8 px-3 rounded-lg input-base text-sm text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none"
             >
               <option value="all">All</option>
               {industries.map((industry) => (
@@ -239,14 +239,14 @@ export function ClientsTable({ clients, industries }: ClientsTableProps) {
 
           {/* Health Filter */}
           <div className="flex items-center gap-2">
-            <label className="text-xs text-slate-900 dark:text-slate-200">Health:</label>
+            <label className="text-xs text-slate-900 dark:text-slate-300">Health:</label>
             <select
               value={healthFilter}
               onChange={(e) => {
                 setHealthFilter(e.target.value);
                 setCurrentPage(1);
               }}
-              className="h-8 px-3 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space text-sm text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none"
+              className="h-8 px-3 rounded-lg input-base text-sm text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none"
             >
               <option value="all">All</option>
               <option value="healthy">Healthy (80+)</option>
@@ -260,7 +260,7 @@ export function ClientsTable({ clients, industries }: ClientsTableProps) {
 
       {/* Results count */}
       <div className="flex items-center justify-between mb-4">
-        <p className="text-sm text-slate-900 dark:text-slate-200">
+        <p className="text-sm text-slate-900 dark:text-slate-300">
           Showing {paginatedClients.length} of {filteredClients.length} clients
           {filteredClients.length !== clients.length && (
             <span> (filtered from {clients.length} total)</span>
@@ -301,7 +301,7 @@ export function ClientsTable({ clients, industries }: ClientsTableProps) {
                 currentOrder={sortOrder}
                 onSort={handleSort}
               />
-              <th className="text-left text-xs font-medium text-slate-900 dark:text-slate-200 uppercase tracking-wider px-6 py-4">
+              <th className="text-left text-xs font-medium text-slate-900 dark:text-slate-300 uppercase tracking-wider px-6 py-4">
                 Campaigns
               </th>
               <SortableHeader
@@ -311,7 +311,7 @@ export function ClientsTable({ clients, industries }: ClientsTableProps) {
                 currentOrder={sortOrder}
                 onSort={handleSort}
               />
-              <th className="text-right text-xs font-medium text-slate-900 dark:text-slate-200 uppercase tracking-wider px-6 py-4">
+              <th className="text-right text-xs font-medium text-slate-900 dark:text-slate-300 uppercase tracking-wider px-6 py-4">
                 Actions
               </th>
             </tr>
@@ -320,7 +320,7 @@ export function ClientsTable({ clients, industries }: ClientsTableProps) {
             {paginatedClients.length === 0 ? (
               <tr>
                 <td colSpan={7} className="px-6 py-12 text-center">
-                  <p className="text-slate-900 dark:text-slate-200">No clients match your filters</p>
+                  <p className="text-slate-900 dark:text-slate-300">No clients match your filters</p>
                   <button
                     onClick={clearFilters}
                     className="text-emerald-pro-600 hover:underline text-sm mt-2"
@@ -349,7 +349,7 @@ export function ClientsTable({ clients, industries }: ClientsTableProps) {
                         <p className="text-sm font-medium text-slate-900 dark:text-white hover:text-emerald-pro-600 transition-colors truncate">
                           {client.name}
                         </p>
-                        <p className="text-xs text-slate-900 dark:text-slate-200 truncate">
+                        <p className="text-xs text-slate-900 dark:text-slate-300 truncate">
                           {client.domain || client.industry || "-"}
                         </p>
                       </div>
@@ -362,18 +362,18 @@ export function ClientsTable({ clients, industries }: ClientsTableProps) {
                     <ClientHealthBadge score={client.healthScore} size="sm" />
                   </td>
                   <td className="px-6 py-4">
-                    <span className="text-sm text-slate-900 dark:text-slate-200 capitalize">
+                    <span className="text-sm text-slate-900 dark:text-slate-300 capitalize">
                       {client.planType || "-"}
                     </span>
                   </td>
                   <td className="px-6 py-4">
-                    <span className="text-sm text-slate-900 dark:text-slate-200">
+                    <span className="text-sm text-slate-900 dark:text-slate-300">
                       {client.activeCampaigns}/{client.campaignCount}
                     </span>
-                    <span className="text-xs text-slate-900 dark:text-slate-200 ml-1">active</span>
+                    <span className="text-xs text-slate-900 dark:text-slate-300 ml-1">active</span>
                   </td>
                   <td className="px-6 py-4">
-                    <span className="text-sm text-slate-900 dark:text-slate-200">
+                    <span className="text-sm text-slate-900 dark:text-slate-300">
                       {new Date(client.createdAt).toLocaleDateString()}
                     </span>
                   </td>
@@ -381,19 +381,19 @@ export function ClientsTable({ clients, industries }: ClientsTableProps) {
                     <div className="flex items-center justify-end gap-2">
                       <Link
                         href={`/admin/clients/${client.id}`}
-                        className="p-2 rounded-lg text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-colors"
+                        className="p-2 rounded-lg text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-colors"
                         title="View details"
                       >
                         <TrendingUp className="h-4 w-4" />
                       </Link>
                       <button
-                        className="p-2 rounded-lg text-slate-900 dark:text-slate-200 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 transition-colors"
+                        className="p-2 rounded-lg text-slate-900 dark:text-slate-300 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 transition-colors"
                         title="Send email"
                       >
                         <Mail className="h-4 w-4" />
                       </button>
                       <button
-                        className="p-2 rounded-lg text-slate-900 dark:text-slate-200 hover:text-emerald-pro-500 hover:bg-emerald-pro-500/10 transition-colors"
+                        className="p-2 rounded-lg text-slate-900 dark:text-slate-300 hover:text-emerald-pro-500 hover:bg-emerald-pro-500/10 transition-colors"
                         title="Team"
                       >
                         <Users className="h-4 w-4" />
@@ -411,14 +411,14 @@ export function ClientsTable({ clients, industries }: ClientsTableProps) {
       {totalPages > 1 && (
         <div className="flex items-center justify-between mt-4">
           <div className="flex items-center gap-2">
-            <span className="text-sm text-slate-900 dark:text-slate-200">Show:</span>
+            <span className="text-sm text-slate-900 dark:text-slate-300">Show:</span>
             <select
               value={pageSize}
               onChange={(e) => {
                 setPageSize(Number(e.target.value));
                 setCurrentPage(1);
               }}
-              className="h-8 px-2 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space text-sm text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none"
+              className="h-8 px-2 rounded-lg input-base text-sm text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none"
             >
               {PAGE_SIZE_OPTIONS.map((size) => (
                 <option key={size} value={size}>
@@ -432,19 +432,19 @@ export function ClientsTable({ clients, industries }: ClientsTableProps) {
             <button
               onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
               disabled={currentPage === 1}
-              className="p-2 rounded-lg border border-border-default dark:border-graphite text-slate-900 dark:text-slate-200 hover:bg-light-bg-secondary dark:bg-midnight-blue/30 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="p-2 rounded-lg border border-border-default dark:border-graphite text-slate-900 dark:text-slate-300 hover:bg-light-bg-secondary dark:bg-midnight-blue/30 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               <ChevronLeft className="h-4 w-4" />
             </button>
 
-            <span className="text-sm text-slate-900 dark:text-slate-200 px-3">
+            <span className="text-sm text-slate-900 dark:text-slate-300 px-3">
               Page {currentPage} of {totalPages}
             </span>
 
             <button
               onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
               disabled={currentPage === totalPages}
-              className="p-2 rounded-lg border border-border-default dark:border-graphite text-slate-900 dark:text-slate-200 hover:bg-light-bg-secondary dark:bg-midnight-blue/30 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="p-2 rounded-lg border border-border-default dark:border-graphite text-slate-900 dark:text-slate-300 hover:bg-light-bg-secondary dark:bg-midnight-blue/30 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               <ChevronRight className="h-4 w-4" />
             </button>
@@ -475,7 +475,7 @@ function SortableHeader({
       <button
         onClick={() => onSort(field)}
         className={`flex items-center gap-1 text-xs font-medium uppercase tracking-wider transition-colors ${
-          isActive ? "text-emerald-pro-600" : "text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:text-slate-200"
+          isActive ? "text-emerald-pro-600" : "text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:text-slate-300"
         }`}
       >
         {label}
@@ -494,7 +494,7 @@ function StatusBadge({ status }: { status: string }) {
     active: "bg-emerald-pro-400/10 text-emerald-pro-400 border-emerald-pro-400/30",
     pilot: "bg-emerald-pro-600/10 text-emerald-pro-600 border-emerald-pro-600/30",
     paused: "bg-energy-orange/10 text-energy-orange border-energy-orange/30",
-    churned: "bg-steel/10 text-slate-900 dark:text-slate-200 border-steel/30",
+    churned: "bg-steel/10 text-slate-900 dark:text-slate-300 border-steel/30",
   };
 
   return (

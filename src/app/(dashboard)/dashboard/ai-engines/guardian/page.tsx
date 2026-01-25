@@ -178,7 +178,7 @@ export default function GuardianPage() {
       case "invalid":
         return { bg: "bg-rose/10", text: "text-rose", border: "border-rose/30" };
       default:
-        return { bg: "bg-steel/10", text: "text-slate-900 dark:text-slate-200", border: "border-steel/30" };
+        return { bg: "bg-steel/10", text: "text-slate-900 dark:text-slate-300", border: "border-steel/30" };
     }
   };
 
@@ -191,13 +191,13 @@ export default function GuardianPage() {
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-200 mb-2">
+        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-300 mb-2">
           <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
           <span>/</span>
           <span className="text-emerald-pro-600">The Guardian</span>
         </div>
         <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">The Guardian</h1>
-        <p className="text-slate-900 dark:text-slate-200 mt-1">Compliance & Deliverability Engine</p>
+        <p className="text-slate-900 dark:text-slate-300 mt-1">Compliance & Deliverability Engine</p>
       </motion.div>
 
       <div className="space-y-6">
@@ -222,17 +222,17 @@ export default function GuardianPage() {
                     <span className="text-sm font-medium text-emerald-pro-400">ACTIVE</span>
                   </span>
                 </div>
-                <p className="text-slate-900 dark:text-slate-200 mt-1">Protecting your sender reputation 24/7</p>
+                <p className="text-slate-900 dark:text-slate-300 mt-1">Protecting your sender reputation 24/7</p>
               </div>
             </div>
 
             <div className="flex items-center gap-4">
               <div className="text-right">
-                <p className="text-sm text-slate-900 dark:text-slate-200">Last Check</p>
+                <p className="text-sm text-slate-900 dark:text-slate-300">Last Check</p>
                 <p className="text-slate-900 dark:text-white font-medium">{overallHealth.lastCheck}</p>
               </div>
               <div className="text-right">
-                <p className="text-sm text-slate-900 dark:text-slate-200">Next Check</p>
+                <p className="text-sm text-slate-900 dark:text-slate-300">Next Check</p>
                 <p className="text-slate-900 dark:text-white font-medium">{overallHealth.nextCheck}</p>
               </div>
               <Button
@@ -253,7 +253,7 @@ export default function GuardianPage() {
           {/* Overall Health Score - Larger card */}
           <div className="lg:col-span-1 glass-premium p-6">
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-emerald-pro-600/40 to-transparent" />
-            <h3 className="text-sm font-medium text-slate-900 dark:text-slate-200 mb-4">Overall Health Score</h3>
+            <h3 className="text-sm font-medium text-slate-900 dark:text-slate-300 mb-4">Overall Health Score</h3>
             <div className="flex flex-col items-center justify-center py-4">
               <div className="relative">
                 <svg className="w-32 h-32 transform -rotate-90">
@@ -280,7 +280,7 @@ export default function GuardianPage() {
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
                   <span className="text-4xl font-sora font-bold text-slate-900 dark:text-white">{overallHealth.score}</span>
-                  <span className="text-sm text-slate-900 dark:text-slate-200">/100</span>
+                  <span className="text-sm text-slate-900 dark:text-slate-300">/100</span>
                 </div>
               </div>
               <span className={cn(
@@ -303,8 +303,8 @@ export default function GuardianPage() {
                 </span>
               </div>
               <p className="text-3xl font-sora font-bold text-slate-900 dark:text-white">99.2%</p>
-              <p className="text-sm text-slate-900 dark:text-slate-200 mt-1">Inbox Placement</p>
-              <p className="text-xs text-slate-900 dark:text-slate-200 mt-2">Target: &gt;98%</p>
+              <p className="text-sm text-slate-900 dark:text-slate-300 mt-1">Inbox Placement</p>
+              <p className="text-xs text-slate-900 dark:text-slate-300 mt-2">Target: &gt;98%</p>
             </div>
 
             <div className="glass-premium p-6">
@@ -315,18 +315,18 @@ export default function GuardianPage() {
                 </span>
               </div>
               <p className="text-3xl font-sora font-bold text-slate-900 dark:text-white">0.3%</p>
-              <p className="text-sm text-slate-900 dark:text-slate-200 mt-1">Spam Rate</p>
-              <p className="text-xs text-slate-900 dark:text-slate-200 mt-2">Target: &lt;1%</p>
+              <p className="text-sm text-slate-900 dark:text-slate-300 mt-1">Spam Rate</p>
+              <p className="text-xs text-slate-900 dark:text-slate-300 mt-2">Target: &lt;1%</p>
             </div>
 
             <div className="glass-premium p-6">
               <div className="flex items-center justify-between mb-3">
                 <Activity className="h-5 w-5 text-emerald-pro-600" />
-                <span className="text-slate-900 dark:text-slate-200 text-sm font-medium">Same</span>
+                <span className="text-slate-900 dark:text-slate-300 text-sm font-medium">Same</span>
               </div>
               <p className="text-3xl font-sora font-bold text-slate-900 dark:text-white">0.5%</p>
-              <p className="text-sm text-slate-900 dark:text-slate-200 mt-1">Bounce Rate</p>
-              <p className="text-xs text-slate-900 dark:text-slate-200 mt-2">Target: &lt;2%</p>
+              <p className="text-sm text-slate-900 dark:text-slate-300 mt-1">Bounce Rate</p>
+              <p className="text-xs text-slate-900 dark:text-slate-300 mt-2">Target: &lt;2%</p>
             </div>
           </div>
         </motion.div>
@@ -347,11 +347,11 @@ export default function GuardianPage() {
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-border-default dark:border-graphite/50">
-                    <th className="text-left text-sm font-medium text-slate-900 dark:text-slate-200 pb-4">Mailbox</th>
-                    <th className="text-center text-sm font-medium text-slate-900 dark:text-slate-200 pb-4">Health</th>
-                    <th className="text-center text-sm font-medium text-slate-900 dark:text-slate-200 pb-4">Inbox Rate</th>
-                    <th className="text-center text-sm font-medium text-slate-900 dark:text-slate-200 pb-4">Status</th>
-                    <th className="text-right text-sm font-medium text-slate-900 dark:text-slate-200 pb-4">Last Check</th>
+                    <th className="text-left text-sm font-medium text-slate-900 dark:text-slate-300 pb-4">Mailbox</th>
+                    <th className="text-center text-sm font-medium text-slate-900 dark:text-slate-300 pb-4">Health</th>
+                    <th className="text-center text-sm font-medium text-slate-900 dark:text-slate-300 pb-4">Inbox Rate</th>
+                    <th className="text-center text-sm font-medium text-slate-900 dark:text-slate-300 pb-4">Status</th>
+                    <th className="text-right text-sm font-medium text-slate-900 dark:text-slate-300 pb-4">Last Check</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -371,7 +371,7 @@ export default function GuardianPage() {
                           </span>
                         </td>
                         <td className="py-4 text-center">
-                          <span className="text-slate-900 dark:text-slate-200">{mailbox.inboxRate}%</span>
+                          <span className="text-slate-900 dark:text-slate-300">{mailbox.inboxRate}%</span>
                         </td>
                         <td className="py-4 text-center">
                           <span className={cn(
@@ -382,7 +382,7 @@ export default function GuardianPage() {
                             {mailbox.status === "watch" ? "Watch" : "Good"}
                           </span>
                         </td>
-                        <td className="py-4 text-right text-sm text-slate-900 dark:text-slate-200">{mailbox.lastCheck}</td>
+                        <td className="py-4 text-right text-sm text-slate-900 dark:text-slate-300">{mailbox.lastCheck}</td>
                       </tr>
                     );
                   })}
@@ -430,14 +430,14 @@ export default function GuardianPage() {
                   <CheckCircle className="h-6 w-6 text-emerald-pro-400" />
                   <span className="text-xl font-sora font-bold text-emerald-pro-400">ALL CLEAR</span>
                 </div>
-                <p className="text-sm text-slate-900 dark:text-slate-200">Checked: {blacklistStatus.checked} blacklists</p>
+                <p className="text-sm text-slate-900 dark:text-slate-300">Checked: {blacklistStatus.checked} blacklists</p>
                 <div className="flex justify-center gap-6 mt-4 text-sm">
                   <div>
-                    <p className="text-slate-900 dark:text-slate-200">Last Check</p>
+                    <p className="text-slate-900 dark:text-slate-300">Last Check</p>
                     <p className="text-slate-900 dark:text-white">{blacklistStatus.lastCheck}</p>
                   </div>
                   <div>
-                    <p className="text-slate-900 dark:text-slate-200">Next Check</p>
+                    <p className="text-slate-900 dark:text-slate-300">Next Check</p>
                     <p className="text-slate-900 dark:text-white">{blacklistStatus.nextCheck}</p>
                   </div>
                 </div>
@@ -473,7 +473,7 @@ export default function GuardianPage() {
                   <div className="bg-energy-orange" style={{ width: `${inboxPlacement.gmail.promotions}%` }} />
                   <div className="bg-rose" style={{ width: `${inboxPlacement.gmail.spam}%` }} />
                 </div>
-                <div className="flex justify-between mt-1 text-xs text-slate-900 dark:text-slate-200">
+                <div className="flex justify-between mt-1 text-xs text-slate-900 dark:text-slate-300">
                   <span>Promotions: {inboxPlacement.gmail.promotions}%</span>
                   <span>Spam: {inboxPlacement.gmail.spam}%</span>
                 </div>
@@ -490,7 +490,7 @@ export default function GuardianPage() {
                   <div className="bg-energy-orange" style={{ width: `${inboxPlacement.outlook.junk}%` }} />
                   <div className="bg-steel" style={{ width: `${inboxPlacement.outlook.other}%` }} />
                 </div>
-                <div className="flex justify-between mt-1 text-xs text-slate-900 dark:text-slate-200">
+                <div className="flex justify-between mt-1 text-xs text-slate-900 dark:text-slate-300">
                   <span>Junk: {inboxPlacement.outlook.junk}%</span>
                   <span>Other: {inboxPlacement.outlook.other}%</span>
                 </div>
@@ -506,7 +506,7 @@ export default function GuardianPage() {
                   <div className="bg-emerald-pro-400" style={{ width: `${inboxPlacement.yahoo.inbox}%` }} />
                   <div className="bg-rose" style={{ width: `${inboxPlacement.yahoo.spam}%` }} />
                 </div>
-                <div className="flex justify-between mt-1 text-xs text-slate-900 dark:text-slate-200">
+                <div className="flex justify-between mt-1 text-xs text-slate-900 dark:text-slate-300">
                   <span>Spam: {inboxPlacement.yahoo.spam}%</span>
                 </div>
               </div>
@@ -517,7 +517,7 @@ export default function GuardianPage() {
                 <AlertTriangle className="h-4 w-4 text-energy-orange mt-0.5" />
                 <div>
                   <p className="text-sm text-slate-900 dark:text-white font-medium">Outlook showing higher junk placement</p>
-                  <p className="text-xs text-slate-900 dark:text-slate-200 mt-1">Reduce HTML formatting and image-to-text ratio</p>
+                  <p className="text-xs text-slate-900 dark:text-slate-300 mt-1">Reduce HTML formatting and image-to-text ratio</p>
                 </div>
               </div>
             </div>
@@ -530,13 +530,13 @@ export default function GuardianPage() {
               <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">Do Not Contact Check</h3>
             </div>
 
-            <p className="text-sm text-slate-900 dark:text-slate-200 mb-4">
+            <p className="text-sm text-slate-900 dark:text-slate-300 mb-4">
               Check if an email address is on your Do Not Contact list before adding to campaigns.
             </p>
 
             <div className="flex gap-3">
               <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-900 dark:text-slate-200" />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-900 dark:text-slate-300" />
                 <input
                   type="email"
                   value={dncEmail}
@@ -545,7 +545,7 @@ export default function GuardianPage() {
                     setDncResult(null);
                   }}
                   placeholder="Enter email address..."
-                  className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space pl-10 pr-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                  className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space pl-10 pr-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                 />
               </div>
               <Button onClick={handleDNCCheck} disabled={!dncEmail || isCheckingDnc}>
@@ -571,7 +571,7 @@ export default function GuardianPage() {
                     <XCircle className="h-5 w-5 text-rose" />
                     <div>
                       <p className="font-medium text-rose">On DNC List</p>
-                      <p className="text-sm text-slate-900 dark:text-slate-200">
+                      <p className="text-sm text-slate-900 dark:text-slate-300">
                         This email should not be contacted.
                       </p>
                     </div>
@@ -581,7 +581,7 @@ export default function GuardianPage() {
                     <CheckCircle className="h-5 w-5 text-emerald-pro-400" />
                     <div>
                       <p className="font-medium text-emerald-pro-400">Clear to Contact</p>
-                      <p className="text-sm text-slate-900 dark:text-slate-200">
+                      <p className="text-sm text-slate-900 dark:text-slate-300">
                         This email is safe to include in campaigns.
                       </p>
                     </div>
@@ -608,7 +608,7 @@ export default function GuardianPage() {
                     )}
                     <div className="flex-1 min-w-0">
                       <p className="text-sm text-slate-900 dark:text-white truncate">{alert.message}</p>
-                      <p className="text-xs text-slate-900 dark:text-slate-200 mt-0.5">{alert.time}</p>
+                      <p className="text-xs text-slate-900 dark:text-slate-300 mt-0.5">{alert.time}</p>
                     </div>
                     {alert.resolved && (
                       <span className="text-xs text-emerald-pro-400">Resolved</span>

@@ -80,33 +80,33 @@ export default function LoginPage() {
             <br />
             <span className="text-gradient">Amplify your results.</span>
           </h1>
-          <p className="text-lg text-slate-600 dark:text-slate-200 max-w-md">
+          <p className="text-lg text-slate-600 dark:text-slate-300 max-w-md">
             Access your campaign dashboard, monitor performance, and track
             your results in real-time.
           </p>
           <div className="flex items-center gap-8 pt-4">
             <div>
               <p className="text-3xl font-sora font-bold text-slate-900 dark:text-white">95%+</p>
-              <p className="text-sm text-slate-600 dark:text-slate-200">Deliverability Rate</p>
+              <p className="text-sm text-slate-600 dark:text-slate-300">Deliverability Rate</p>
             </div>
             <div>
               <p className="text-3xl font-sora font-bold text-slate-900 dark:text-white">3x</p>
-              <p className="text-sm text-slate-600 dark:text-slate-200">Reply Rate Increase</p>
+              <p className="text-sm text-slate-600 dark:text-slate-300">Reply Rate Increase</p>
             </div>
             <div>
               <p className="text-3xl font-sora font-bold text-slate-900 dark:text-white">24/7</p>
-              <p className="text-sm text-slate-600 dark:text-slate-200">Support Available</p>
+              <p className="text-sm text-slate-600 dark:text-slate-300">Support Available</p>
             </div>
           </div>
         </div>
 
-        <div className="relative z-10 text-sm text-slate-500 dark:text-slate-200">
+        <div className="relative z-10 text-sm text-slate-500 dark:text-slate-300">
           &copy; {new Date().getFullYear()} XGrowthOS. All rights reserved.
         </div>
       </div>
 
       {/* Right side - Login Form */}
-      <div className="flex-1 flex items-center justify-center p-8 bg-white dark:bg-slate-900">
+      <div className="flex-1 flex items-center justify-center p-8 bg-bg">
         <div className="w-full max-w-md">
           {/* Mobile logo */}
           <div className="lg:hidden flex items-center justify-center gap-3 mb-8">
@@ -118,12 +118,12 @@ export default function LoginPage() {
             </span>
           </div>
 
-          <div className="p-8 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+          <div className="p-8 rounded-2xl card-base">
             <div className="text-center mb-8">
               <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-2">
                 Welcome back
               </h2>
-              <p className="text-slate-600 dark:text-slate-200">Sign in to access your dashboard</p>
+              <p className="text-slate-600 dark:text-slate-300">Sign in to access your dashboard</p>
             </div>
 
             {error && (
@@ -137,7 +137,7 @@ export default function LoginPage() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2"
+                  className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
                 >
                   Email address
                 </label>
@@ -150,7 +150,7 @@ export default function LoginPage() {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="you@company.com"
                     required
-                    className="w-full h-11 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 pl-10 pr-4 text-slate-900 dark:text-slate-50 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-emerald-500 dark:focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 dark:focus:ring-green-500 transition-colors"
+                    className="w-full h-11 rounded-lg input-base pl-10 pr-4"
                   />
                 </div>
               </div>
@@ -159,7 +159,7 @@ export default function LoginPage() {
                 <div className="flex items-center justify-between mb-2">
                   <label
                     htmlFor="password"
-                    className="block text-sm font-medium text-slate-700 dark:text-slate-200"
+                    className="block text-sm font-medium text-slate-700 dark:text-slate-300"
                   >
                     Password
                   </label>
@@ -179,7 +179,7 @@ export default function LoginPage() {
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter your password"
                     required
-                    className="w-full h-11 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 pl-10 pr-4 text-slate-900 dark:text-slate-50 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-emerald-500 dark:focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 dark:focus:ring-green-500 transition-colors"
+                    className="w-full h-11 rounded-lg input-base pl-10 pr-4"
                   />
                 </div>
               </div>
@@ -222,7 +222,7 @@ export default function LoginPage() {
             </form>
 
             <div className="mt-6 text-center">
-              <p className="text-slate-600 dark:text-slate-200 text-sm">
+              <p className="text-slate-600 dark:text-slate-300 text-sm">
                 Don&apos;t have an account?{" "}
                 <Link
                   href="/register"

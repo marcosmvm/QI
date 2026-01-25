@@ -273,13 +273,13 @@ export default function ReportsPage() {
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-200 mb-2">
+        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-300 mb-2">
           <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
           <span>/</span>
           <span className="text-emerald-pro-600">Reports</span>
         </div>
         <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">Reports</h1>
-        <p className="text-slate-900 dark:text-slate-200 mt-1">Automated reports and performance insights</p>
+        <p className="text-slate-900 dark:text-slate-300 mt-1">Automated reports and performance insights</p>
       </motion.div>
 
       <div className="space-y-6">
@@ -331,7 +331,7 @@ export default function ReportsPage() {
                   "px-4 py-2 rounded-lg text-sm font-medium transition-all",
                   activeTab === tab.id
                     ? "bg-emerald-pro-600/10 text-emerald-pro-600"
-                    : "text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"
+                    : "text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
                 )}
               >
                 {tab.label}
@@ -344,7 +344,7 @@ export default function ReportsPage() {
               <Button
                 variant="outline"
                 size="sm"
-                className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"
+                className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
                 onClick={() => setShowDatePicker(!showDatePicker)}
               >
                 <Calendar className="h-4 w-4 mr-2" />
@@ -360,23 +360,23 @@ export default function ReportsPage() {
                   >
                     <div className="flex items-center justify-between mb-4">
                       <span className="text-sm font-medium text-slate-900 dark:text-white">Select Date Range</span>
-                      <button onClick={() => setShowDatePicker(false)} className="text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white">
+                      <button onClick={() => setShowDatePicker(false)} className="text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
                         <X className="h-4 w-4" />
                       </button>
                     </div>
                     <div className="space-y-3">
                       <div>
-                        <label className="text-xs text-slate-900 dark:text-slate-200 mb-1 block">Start Date</label>
+                        <label className="text-xs text-slate-900 dark:text-slate-300 mb-1 block">Start Date</label>
                         <input
                           type="date"
-                          className="w-full h-9 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-3 text-sm text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none"
+                          className="w-full h-9 rounded-lg input-base px-3 text-sm text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none"
                         />
                       </div>
                       <div>
-                        <label className="text-xs text-slate-900 dark:text-slate-200 mb-1 block">End Date</label>
+                        <label className="text-xs text-slate-900 dark:text-slate-300 mb-1 block">End Date</label>
                         <input
                           type="date"
-                          className="w-full h-9 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-3 text-sm text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none"
+                          className="w-full h-9 rounded-lg input-base px-3 text-sm text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none"
                         />
                       </div>
                       <Button
@@ -397,7 +397,7 @@ export default function ReportsPage() {
             <Button
               variant="outline"
               size="sm"
-              className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"
+              className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
               onClick={() => window.location.reload()}
             >
               <RefreshCw className="h-4 w-4 mr-2" />
@@ -459,22 +459,22 @@ export default function ReportsPage() {
                       </div>
                       <div>
                         <p className="font-medium text-slate-900 dark:text-white">{report.title}</p>
-                        <p className="text-sm text-slate-900 dark:text-slate-200">{report.date}</p>
+                        <p className="text-sm text-slate-900 dark:text-slate-300">{report.date}</p>
                       </div>
                     </div>
 
                     <div className="flex items-center gap-6">
                       <div className="hidden md:flex items-center gap-6 text-sm">
                         <div className="text-center">
-                          <p className="text-xs text-slate-900 dark:text-slate-200">Sent</p>
+                          <p className="text-xs text-slate-900 dark:text-slate-300">Sent</p>
                           <p className="text-slate-900 dark:text-white font-medium">{report.metrics.sent.toLocaleString()}</p>
                         </div>
                         <div className="text-center">
-                          <p className="text-xs text-slate-900 dark:text-slate-200">Open Rate</p>
+                          <p className="text-xs text-slate-900 dark:text-slate-300">Open Rate</p>
                           <p className="text-slate-900 dark:text-white font-medium">{report.metrics.openRate}%</p>
                         </div>
                         <div className="text-center">
-                          <p className="text-xs text-slate-900 dark:text-slate-200">Reply Rate</p>
+                          <p className="text-xs text-slate-900 dark:text-slate-300">Reply Rate</p>
                           <p className="text-emerald-pro-400 font-medium">{report.metrics.replyRate}%</p>
                         </div>
                       </div>
@@ -485,7 +485,7 @@ export default function ReportsPage() {
                             <Button
                               variant="outline"
                               size="sm"
-                              className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"
+                              className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
                               onClick={(e) => {
                                 e.stopPropagation();
                                 handleViewReport(report as typeof selectedReport);
@@ -494,7 +494,7 @@ export default function ReportsPage() {
                               View
                             </Button>
                             <button
-                              className="p-2 text-slate-900 dark:text-slate-200 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors"
+                              className="p-2 text-slate-900 dark:text-slate-300 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors"
                               onClick={(e) => {
                                 e.stopPropagation();
                                 setSelectedReport(report as typeof selectedReport);
@@ -521,14 +521,14 @@ export default function ReportsPage() {
               <div className="flex items-center justify-between mb-6">
                 <div>
                   <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Report Preview</h3>
-                  <p className="text-sm text-slate-900 dark:text-slate-200">{selectedReport.date}</p>
+                  <p className="text-sm text-slate-900 dark:text-slate-300">{selectedReport.date}</p>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white">
+                  <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
                     <Share2 className="h-4 w-4 mr-2" />
                     Share
                   </Button>
-                  <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white">
+                  <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
                     <Printer className="h-4 w-4 mr-2" />
                     Print
                   </Button>
@@ -545,10 +545,10 @@ export default function ReportsPage() {
                 ].map((metric) => (
                   <div
                     key={metric.label}
-                    className="p-4 rounded-xl border border-emerald-pro-600/10 bg-white dark:bg-deep-space/50"
+                    className="p-4 card-base rounded-xl"
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <metric.icon className="h-4 w-4 text-slate-900 dark:text-slate-200" />
+                      <metric.icon className="h-4 w-4 text-slate-900 dark:text-slate-300" />
                       <div className={cn(
                         "flex items-center gap-1 text-xs font-medium",
                         metric.trend === "up" ? "text-emerald-pro-400" : "text-rose"
@@ -562,13 +562,13 @@ export default function ReportsPage() {
                       </div>
                     </div>
                     <p className="text-2xl font-sora font-bold text-slate-900 dark:text-white">{metric.value}</p>
-                    <p className="text-xs text-slate-900 dark:text-slate-200 mt-1">{metric.label}</p>
+                    <p className="text-xs text-slate-900 dark:text-slate-300 mt-1">{metric.label}</p>
                   </div>
                 ))}
               </div>
 
               {/* Key Insights */}
-              <div className="p-4 rounded-xl border border-emerald-pro-600/10 bg-white dark:bg-deep-space/50">
+              <div className="p-4 card-base rounded-xl">
                 <h4 className="font-medium text-slate-900 dark:text-white mb-4">Key Insights</h4>
                 <div className="space-y-3">
                   {latestInsights.map((insight, index) => (
@@ -589,7 +589,7 @@ export default function ReportsPage() {
                       </div>
                       <div>
                         <p className="text-sm font-medium text-slate-900 dark:text-white">{insight.title}</p>
-                        <p className="text-xs text-slate-900 dark:text-slate-200">{insight.description}</p>
+                        <p className="text-xs text-slate-900 dark:text-slate-300">{insight.description}</p>
                       </div>
                     </div>
                   ))}
@@ -616,8 +616,8 @@ export default function ReportsPage() {
                     className={cn(
                       "p-3 rounded-xl border transition-all",
                       report.enabled
-                        ? "border-emerald-pro-600/10 bg-white dark:bg-deep-space/50"
-                        : "border-emerald-pro-600/5 bg-white dark:bg-deep-space/30 opacity-60"
+                        ? "card-base"
+                        : "card-base opacity-60"
                     )}
                   >
                     <div className="flex items-start justify-between mb-2">
@@ -627,21 +627,21 @@ export default function ReportsPage() {
                         report.enabled ? "bg-emerald-pro-400" : "bg-steel"
                       )} />
                     </div>
-                    <div className="flex items-center gap-2 text-xs text-slate-900 dark:text-slate-200 mb-1">
+                    <div className="flex items-center gap-2 text-xs text-slate-900 dark:text-slate-300 mb-1">
                       <Clock className="h-3 w-3" />
                       {report.frequency}
                     </div>
                     <div className="flex items-center justify-between">
-                      <p className="text-[10px] text-slate-900 dark:text-slate-200">
+                      <p className="text-[10px] text-slate-900 dark:text-slate-300">
                         {report.recipients.length} recipient{report.recipients.length > 1 ? "s" : ""}
                       </p>
-                      <p className="text-[10px] text-slate-900 dark:text-slate-200">Last: {report.lastSent}</p>
+                      <p className="text-[10px] text-slate-900 dark:text-slate-300">Last: {report.lastSent}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <Button variant="outline" className="w-full mt-4 border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white">
+              <Button variant="outline" className="w-full mt-4 border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
                 <Plus className="h-4 w-4 mr-2" />
                 Add Schedule
               </Button>
@@ -659,16 +659,16 @@ export default function ReportsPage() {
                   <button
                     key={option.format}
                     onClick={() => handleExport(option.format)}
-                    className="w-full flex items-center gap-3 p-3 rounded-xl border border-emerald-pro-600/10 bg-white dark:bg-deep-space/50 text-left hover:border-emerald-pro-600/30 hover:bg-emerald-pro-600/5 transition-all group"
+                    className="w-full flex items-center gap-3 p-3 rounded-xl border card-base text-left hover:border-emerald-pro-600/30 hover:bg-emerald-pro-600/5 transition-all group"
                   >
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-pro-600/10 border border-emerald-pro-600/20 group-hover:bg-emerald-pro-600/20 transition-colors">
                       <option.icon className="h-5 w-5 text-emerald-pro-600" />
                     </div>
                     <div className="flex-1">
                       <p className="text-sm font-medium text-slate-900 dark:text-white">{option.label}</p>
-                      <p className="text-xs text-slate-900 dark:text-slate-200">{option.description}</p>
+                      <p className="text-xs text-slate-900 dark:text-slate-300">{option.description}</p>
                     </div>
-                    <Download className="h-4 w-4 text-slate-900 dark:text-slate-200 group-hover:text-emerald-pro-600 transition-colors" />
+                    <Download className="h-4 w-4 text-slate-900 dark:text-slate-300 group-hover:text-emerald-pro-600 transition-colors" />
                   </button>
                 ))}
               </div>
@@ -680,7 +680,7 @@ export default function ReportsPage() {
               <div className="space-y-2">
                 <Button
                   variant="outline"
-                  className="w-full justify-start border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"
+                  className="w-full justify-start border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
                   onClick={() => alert("This will email the latest report. Connect to email service in production.")}
                 >
                   <Mail className="h-4 w-4 mr-2" />
@@ -688,7 +688,7 @@ export default function ReportsPage() {
                 </Button>
                 <Button
                   variant="outline"
-                  className="w-full justify-start border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"
+                  className="w-full justify-start border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
                   onClick={() => alert("Report comparison feature coming soon!")}
                 >
                   <BarChart3 className="h-4 w-4 mr-2" />
@@ -696,7 +696,7 @@ export default function ReportsPage() {
                 </Button>
                 <Button
                   variant="outline"
-                  className="w-full justify-start border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"
+                  className="w-full justify-start border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
                   onClick={() => alert("Alert threshold configuration coming soon!")}
                 >
                   <Bell className="h-4 w-4 mr-2" />
@@ -717,7 +717,7 @@ export default function ReportsPage() {
               className="fixed inset-0 z-50 flex items-center justify-center p-4"
             >
               <div
-                className="absolute inset-0 bg-white dark:bg-deep-space/80 backdrop-blur-sm"
+                className="absolute inset-0 bg-bg backdrop-blur-sm"
                 onClick={() => setShowReportPreview(false)}
               />
               <motion.div
@@ -728,42 +728,42 @@ export default function ReportsPage() {
               >
                 <button
                   onClick={() => setShowReportPreview(false)}
-                  className="absolute top-4 right-4 p-2 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white rounded-lg hover:bg-emerald-pro-600/10 transition-colors"
+                  className="absolute top-4 right-4 p-2 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white rounded-lg hover:bg-emerald-pro-600/10 transition-colors"
                 >
                   <X className="h-5 w-5" />
                 </button>
 
                 <div className="mb-6">
                   <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">{previewReport.title}</h2>
-                  <p className="text-slate-900 dark:text-slate-200">{previewReport.date}</p>
+                  <p className="text-slate-900 dark:text-slate-300">{previewReport.date}</p>
                 </div>
 
                 {/* Report Metrics Grid */}
                 <div className="grid grid-cols-4 gap-4 mb-6">
-                  <div className="p-4 rounded-xl border border-emerald-pro-600/10 bg-white dark:bg-deep-space/50">
+                  <div className="p-4 card-base rounded-xl">
                     <Mail className="h-5 w-5 text-emerald-pro-600 mb-2" />
                     <p className="text-2xl font-bold text-slate-900 dark:text-white">{previewReport.metrics.sent.toLocaleString()}</p>
-                    <p className="text-xs text-slate-900 dark:text-slate-200">Emails Sent</p>
+                    <p className="text-xs text-slate-900 dark:text-slate-300">Emails Sent</p>
                   </div>
                   <div className="p-4 rounded-xl border border-emerald-pro-400/20 bg-emerald-pro-400/5">
                     <Eye className="h-5 w-5 text-emerald-pro-400 mb-2" />
                     <p className="text-2xl font-bold text-emerald-pro-400">{previewReport.metrics.openRate}%</p>
-                    <p className="text-xs text-slate-900 dark:text-slate-200">Open Rate</p>
+                    <p className="text-xs text-slate-900 dark:text-slate-300">Open Rate</p>
                   </div>
                   <div className="p-4 rounded-xl border border-emerald-pro-500/20 bg-emerald-pro-500/5">
                     <MessageSquare className="h-5 w-5 text-emerald-pro-500 mb-2" />
                     <p className="text-2xl font-bold text-emerald-pro-500">{previewReport.metrics.replyRate}%</p>
-                    <p className="text-xs text-slate-900 dark:text-slate-200">Reply Rate</p>
+                    <p className="text-xs text-slate-900 dark:text-slate-300">Reply Rate</p>
                   </div>
                   <div className="p-4 rounded-xl border border-energy-orange/20 bg-energy-orange/5">
                     <Calendar className="h-5 w-5 text-energy-orange mb-2" />
                     <p className="text-2xl font-bold text-energy-orange">{previewReport.metrics.meetings || 0}</p>
-                    <p className="text-xs text-slate-900 dark:text-slate-200">Meetings Booked</p>
+                    <p className="text-xs text-slate-900 dark:text-slate-300">Meetings Booked</p>
                   </div>
                 </div>
 
                 {/* Key Insights */}
-                <div className="p-4 rounded-xl border border-emerald-pro-600/10 bg-white dark:bg-deep-space/50 mb-6">
+                <div className="p-4 card-base rounded-xl mb-6">
                   <h4 className="font-semibold text-slate-900 dark:text-white mb-4">Key Insights</h4>
                   <div className="space-y-3">
                     {latestInsights.map((insight, index) => (
@@ -784,7 +784,7 @@ export default function ReportsPage() {
                         </div>
                         <div>
                           <p className="text-sm font-medium text-slate-900 dark:text-white">{insight.title}</p>
-                          <p className="text-xs text-slate-900 dark:text-slate-200">{insight.description}</p>
+                          <p className="text-xs text-slate-900 dark:text-slate-300">{insight.description}</p>
                         </div>
                       </div>
                     ))}
