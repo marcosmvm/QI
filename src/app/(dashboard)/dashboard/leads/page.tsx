@@ -198,7 +198,7 @@ const stageColors: Record<string, { bg: string; text: string; border: string }> 
 const scoreColors = (score: number) => {
   if (score >= 80) return { bg: "bg-emerald-pro-400/10", text: "text-emerald-pro-400", border: "border-emerald-pro-400/30" };
   if (score >= 60) return { bg: "bg-energy-orange/10", text: "text-energy-orange", border: "border-energy-orange/30" };
-  return { bg: "bg-steel/10", text: "text-slate-900 dark:text-slate-300", border: "border-steel/30" };
+  return { bg: "bg-steel/10", text: "text-slate-900 dark:text-slate-200", border: "border-steel/30" };
 };
 
 export default function LeadsPage() {
@@ -302,13 +302,13 @@ export default function LeadsPage() {
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-300 mb-2">
+        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-200 mb-2">
           <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
           <span>/</span>
           <span className="text-emerald-pro-600">Leads</span>
         </div>
         <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">Leads</h1>
-        <p className="text-slate-900 dark:text-slate-300 mt-1">Pipeline management and lead tracking</p>
+        <p className="text-slate-900 dark:text-slate-200 mt-1">Pipeline management and lead tracking</p>
       </motion.div>
 
       <div className="space-y-6">
@@ -361,13 +361,13 @@ export default function LeadsPage() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-900 dark:text-slate-300" />
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-900 dark:text-slate-200" />
               <input
                 type="text"
                 placeholder="Search leads..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="h-10 w-80 rounded-xl border border-emerald-pro-600/20 bg-light-bg-secondary dark:bg-midnight-blue/50 pl-10 pr-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-2 focus:ring-emerald-pro-600/20 transition-all"
+                className="h-10 w-80 rounded-xl border border-emerald-pro-600/20 bg-light-bg-secondary dark:bg-midnight-blue/50 pl-10 pr-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-2 focus:ring-emerald-pro-600/20 transition-all"
               />
             </div>
 
@@ -377,7 +377,7 @@ export default function LeadsPage() {
                 variant="outline"
                 size="sm"
                 className={cn(
-                  "border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white",
+                  "border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white",
                   (filterSource || selectedStage) && "border-emerald-pro-600/50 text-emerald-pro-600"
                 )}
                 onClick={() => setShowFilterDropdown(!showFilterDropdown)}
@@ -413,7 +413,7 @@ export default function LeadsPage() {
 
                     <div className="space-y-3">
                       <div>
-                        <label className="text-xs text-slate-900 dark:text-slate-300 mb-2 block">Source</label>
+                        <label className="text-xs text-slate-900 dark:text-slate-200 mb-2 block">Source</label>
                         <div className="flex flex-wrap gap-1">
                           {["LinkedIn", "Cold Email", "Website Visitor", "Referral"].map(source => (
                             <button
@@ -423,7 +423,7 @@ export default function LeadsPage() {
                                 "px-2 py-1 text-xs rounded-lg border transition-all",
                                 filterSource === source
                                   ? "bg-emerald-pro-600/20 text-emerald-pro-600 border-emerald-pro-600/30"
-                                  : "bg-white dark:bg-deep-space/50 text-slate-900 dark:text-slate-300 border-emerald-pro-600/10 hover:border-emerald-pro-600/30"
+                                  : "bg-white dark:bg-deep-space/50 text-slate-900 dark:text-slate-200 border-emerald-pro-600/10 hover:border-emerald-pro-600/30"
                               )}
                             >
                               {source}
@@ -433,7 +433,7 @@ export default function LeadsPage() {
                       </div>
 
                       <div>
-                        <label className="text-xs text-slate-900 dark:text-slate-300 mb-2 block">Stage</label>
+                        <label className="text-xs text-slate-900 dark:text-slate-200 mb-2 block">Stage</label>
                         <div className="flex flex-wrap gap-1">
                           {pipelineStages.map(stage => (
                             <button
@@ -443,7 +443,7 @@ export default function LeadsPage() {
                                 "px-2 py-1 text-xs rounded-lg border transition-all",
                                 selectedStage === stage.id
                                   ? "bg-emerald-pro-600/20 text-emerald-pro-600 border-emerald-pro-600/30"
-                                  : "bg-white dark:bg-deep-space/50 text-slate-900 dark:text-slate-300 border-emerald-pro-600/10 hover:border-emerald-pro-600/30"
+                                  : "bg-white dark:bg-deep-space/50 text-slate-900 dark:text-slate-200 border-emerald-pro-600/10 hover:border-emerald-pro-600/30"
                               )}
                             >
                               {stage.name}
@@ -469,7 +469,7 @@ export default function LeadsPage() {
               <Button
                 variant="outline"
                 size="sm"
-                className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+                className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"
                 onClick={() => setShowSortDropdown(!showSortDropdown)}
               >
                 <ArrowUpDown className="h-4 w-4 mr-2" />
@@ -504,7 +504,7 @@ export default function LeadsPage() {
                           "w-full flex items-center justify-between px-3 py-2 text-sm rounded-lg transition-colors",
                           sortBy === option.id
                             ? "bg-emerald-pro-600/10 text-emerald-pro-600"
-                            : "text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/5"
+                            : "text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/5"
                         )}
                       >
                         {option.label}
@@ -528,7 +528,7 @@ export default function LeadsPage() {
                   "p-2 rounded-md transition-all",
                   viewMode === "pipeline"
                     ? "bg-emerald-pro-600/10 text-emerald-pro-600"
-                    : "text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+                    : "text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"
                 )}
                 title="Pipeline View"
               >
@@ -540,7 +540,7 @@ export default function LeadsPage() {
                   "p-2 rounded-md transition-all",
                   viewMode === "list"
                     ? "bg-emerald-pro-600/10 text-emerald-pro-600"
-                    : "text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+                    : "text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"
                 )}
                 title="List View"
               >
@@ -551,7 +551,7 @@ export default function LeadsPage() {
             <Button
               variant="outline"
               size="sm"
-              className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+              className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"
               onClick={handleExport}
             >
               <Download className="h-4 w-4 mr-2" />
@@ -560,7 +560,7 @@ export default function LeadsPage() {
             <Button
               variant="outline"
               size="sm"
-              className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+              className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"
               onClick={handleImportClick}
             >
               <Upload className="h-4 w-4 mr-2" />
@@ -654,7 +654,7 @@ export default function LeadsPage() {
                                 <p className="text-sm font-medium text-slate-900 dark:text-white group-hover:text-emerald-pro-600 transition-colors">
                                   {lead.firstName} {lead.lastName}
                                 </p>
-                                <p className="text-xs text-slate-900 dark:text-slate-300">{lead.title}</p>
+                                <p className="text-xs text-slate-900 dark:text-slate-200">{lead.title}</p>
                               </div>
                             </div>
                             <button
@@ -663,7 +663,7 @@ export default function LeadsPage() {
                                 e.stopPropagation();
                                 toggleStar(lead.id);
                               }}
-                              className="text-slate-900 dark:text-slate-300 hover:text-energy-orange transition-colors"
+                              className="text-slate-900 dark:text-slate-200 hover:text-energy-orange transition-colors"
                             >
                               {lead.starred ? (
                                 <Star className="h-4 w-4 fill-energy-orange text-energy-orange" />
@@ -674,8 +674,8 @@ export default function LeadsPage() {
                           </div>
 
                           <div className="flex items-center gap-1.5 mb-2">
-                            <Building2 className="h-3 w-3 text-slate-900 dark:text-slate-300" />
-                            <span className="text-xs text-slate-900 dark:text-slate-300 truncate">{lead.company}</span>
+                            <Building2 className="h-3 w-3 text-slate-900 dark:text-slate-200" />
+                            <span className="text-xs text-slate-900 dark:text-slate-200 truncate">{lead.company}</span>
                           </div>
 
                           <div className="flex items-center justify-between">
@@ -688,14 +688,14 @@ export default function LeadsPage() {
                               <Zap className="h-3 w-3" />
                               {lead.score}
                             </div>
-                            <span className="text-[10px] text-slate-900 dark:text-slate-300">{lead.lastActivityTime}</span>
+                            <span className="text-[10px] text-slate-900 dark:text-slate-200">{lead.lastActivityTime}</span>
                           </div>
                         </Link>
                       );
                     })}
 
                     {/* Add Lead to Stage */}
-                    <button className="w-full p-3 rounded-xl border border-dashed border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-emerald-pro-600 hover:border-emerald-pro-600/40 transition-all flex items-center justify-center gap-2">
+                    <button className="w-full p-3 rounded-xl border border-dashed border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-emerald-pro-600 hover:border-emerald-pro-600/40 transition-all flex items-center justify-center gap-2">
                       <Plus className="h-4 w-4" />
                       <span className="text-xs">Add Lead</span>
                     </button>
@@ -713,13 +713,13 @@ export default function LeadsPage() {
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-emerald-pro-600/10">
-                    <th className="text-left text-xs font-semibold text-slate-900 dark:text-slate-300 uppercase tracking-wider px-6 py-4">Lead</th>
-                    <th className="text-left text-xs font-semibold text-slate-900 dark:text-slate-300 uppercase tracking-wider px-4 py-4">Company</th>
-                    <th className="text-left text-xs font-semibold text-slate-900 dark:text-slate-300 uppercase tracking-wider px-4 py-4">Stage</th>
-                    <th className="text-center text-xs font-semibold text-slate-900 dark:text-slate-300 uppercase tracking-wider px-4 py-4">Score</th>
-                    <th className="text-left text-xs font-semibold text-slate-900 dark:text-slate-300 uppercase tracking-wider px-4 py-4">Campaign</th>
-                    <th className="text-left text-xs font-semibold text-slate-900 dark:text-slate-300 uppercase tracking-wider px-4 py-4">Last Activity</th>
-                    <th className="text-right text-xs font-semibold text-slate-900 dark:text-slate-300 uppercase tracking-wider px-6 py-4">Actions</th>
+                    <th className="text-left text-xs font-semibold text-slate-900 dark:text-slate-200 uppercase tracking-wider px-6 py-4">Lead</th>
+                    <th className="text-left text-xs font-semibold text-slate-900 dark:text-slate-200 uppercase tracking-wider px-4 py-4">Company</th>
+                    <th className="text-left text-xs font-semibold text-slate-900 dark:text-slate-200 uppercase tracking-wider px-4 py-4">Stage</th>
+                    <th className="text-center text-xs font-semibold text-slate-900 dark:text-slate-200 uppercase tracking-wider px-4 py-4">Score</th>
+                    <th className="text-left text-xs font-semibold text-slate-900 dark:text-slate-200 uppercase tracking-wider px-4 py-4">Campaign</th>
+                    <th className="text-left text-xs font-semibold text-slate-900 dark:text-slate-200 uppercase tracking-wider px-4 py-4">Last Activity</th>
+                    <th className="text-right text-xs font-semibold text-slate-900 dark:text-slate-200 uppercase tracking-wider px-6 py-4">Actions</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-emerald-pro-600/5">
@@ -736,7 +736,7 @@ export default function LeadsPage() {
                                 e.stopPropagation();
                                 toggleStar(lead.id);
                               }}
-                              className="text-slate-900 dark:text-slate-300 hover:text-energy-orange transition-colors"
+                              className="text-slate-900 dark:text-slate-200 hover:text-energy-orange transition-colors"
                             >
                               {lead.starred ? (
                                 <Star className="h-4 w-4 fill-energy-orange text-energy-orange" />
@@ -755,7 +755,7 @@ export default function LeadsPage() {
                                 {lead.firstName} {lead.lastName}
                               </Link>
                               <div className="flex items-center gap-2 mt-0.5">
-                                <span className="text-xs text-slate-900 dark:text-slate-300">{lead.title}</span>
+                                <span className="text-xs text-slate-900 dark:text-slate-200">{lead.title}</span>
                               </div>
                             </div>
                           </div>
@@ -764,8 +764,8 @@ export default function LeadsPage() {
                           <div>
                             <p className="text-sm text-slate-900 dark:text-white">{lead.company}</p>
                             <div className="flex items-center gap-1 mt-0.5">
-                              <MapPin className="h-3 w-3 text-slate-900 dark:text-slate-300" />
-                              <span className="text-xs text-slate-900 dark:text-slate-300">{lead.location}</span>
+                              <MapPin className="h-3 w-3 text-slate-900 dark:text-slate-200" />
+                              <span className="text-xs text-slate-900 dark:text-slate-200">{lead.location}</span>
                             </div>
                           </div>
                         </td>
@@ -792,27 +792,27 @@ export default function LeadsPage() {
                         </td>
                         <td className="px-4 py-4">
                           <p className="text-sm text-slate-900 dark:text-white">{lead.campaign}</p>
-                          <p className="text-xs text-slate-900 dark:text-slate-300 mt-0.5">via {lead.source}</p>
+                          <p className="text-xs text-slate-900 dark:text-slate-200 mt-0.5">via {lead.source}</p>
                         </td>
                         <td className="px-4 py-4">
                           <p className="text-sm text-slate-900 dark:text-white">{lead.lastActivity}</p>
-                          <p className="text-xs text-slate-900 dark:text-slate-300 mt-0.5">{lead.lastActivityTime}</p>
+                          <p className="text-xs text-slate-900 dark:text-slate-200 mt-0.5">{lead.lastActivityTime}</p>
                         </td>
                         <td className="px-6 py-4">
                           <div className="flex items-center justify-end gap-1">
                             <Link
                               href={`/dashboard/leads/${lead.id}`}
-                              className="p-2 text-slate-900 dark:text-slate-300 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors"
+                              className="p-2 text-slate-900 dark:text-slate-200 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors"
                             >
                               <Eye className="h-4 w-4" />
                             </Link>
-                            <button className="p-2 text-slate-900 dark:text-slate-300 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
+                            <button className="p-2 text-slate-900 dark:text-slate-200 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                               <Mail className="h-4 w-4" />
                             </button>
-                            <button className="p-2 text-slate-900 dark:text-slate-300 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
+                            <button className="p-2 text-slate-900 dark:text-slate-200 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                               <Phone className="h-4 w-4" />
                             </button>
-                            <button className="p-2 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
+                            <button className="p-2 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                               <MoreHorizontal className="h-4 w-4" />
                             </button>
                           </div>
@@ -826,14 +826,14 @@ export default function LeadsPage() {
 
             {/* Pagination */}
             <div className="flex items-center justify-between px-6 py-4 border-t border-emerald-pro-600/10">
-              <p className="text-sm text-slate-900 dark:text-slate-300">
+              <p className="text-sm text-slate-900 dark:text-slate-200">
                 Showing <span className="text-slate-900 dark:text-white font-medium">1-6</span> of <span className="text-slate-900 dark:text-white font-medium">547</span> leads
               </p>
               <div className="flex items-center gap-2">
-                <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white" disabled>
+                <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white" disabled>
                   Previous
                 </Button>
-                <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
+                <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white">
                   Next
                 </Button>
               </div>
@@ -862,7 +862,7 @@ export default function LeadsPage() {
               >
                 <button
                   onClick={() => setShowAddLeadModal(false)}
-                  className="absolute top-4 right-4 p-2 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white rounded-lg hover:bg-emerald-pro-600/10 transition-colors"
+                  className="absolute top-4 right-4 p-2 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white rounded-lg hover:bg-emerald-pro-600/10 transition-colors"
                 >
                   <X className="h-4 w-4" />
                 </button>
@@ -873,7 +873,7 @@ export default function LeadsPage() {
                   </div>
                   <div>
                     <h2 className="text-xl font-sora font-bold text-slate-900 dark:text-white">Add New Lead</h2>
-                    <p className="text-sm text-slate-900 dark:text-slate-300">Enter the lead details below</p>
+                    <p className="text-sm text-slate-900 dark:text-slate-200">Enter the lead details below</p>
                   </div>
                 </div>
 
@@ -911,7 +911,7 @@ export default function LeadsPage() {
                         name="firstName"
                         required
                         placeholder="John"
-                        className="w-full h-10 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                        className="w-full h-10 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                       />
                     </div>
                     <div>
@@ -920,7 +920,7 @@ export default function LeadsPage() {
                         name="lastName"
                         required
                         placeholder="Doe"
-                        className="w-full h-10 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                        className="w-full h-10 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                       />
                     </div>
                   </div>
@@ -932,7 +932,7 @@ export default function LeadsPage() {
                       type="email"
                       required
                       placeholder="john.doe@company.com"
-                      className="w-full h-10 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                      className="w-full h-10 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                     />
                   </div>
 
@@ -942,7 +942,7 @@ export default function LeadsPage() {
                       name="phone"
                       type="tel"
                       placeholder="+1 (555) 123-4567"
-                      className="w-full h-10 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                      className="w-full h-10 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                     />
                   </div>
 
@@ -953,7 +953,7 @@ export default function LeadsPage() {
                         name="company"
                         required
                         placeholder="Acme Inc"
-                        className="w-full h-10 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                        className="w-full h-10 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                       />
                     </div>
                     <div>
@@ -962,7 +962,7 @@ export default function LeadsPage() {
                         name="title"
                         required
                         placeholder="VP of Sales"
-                        className="w-full h-10 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                        className="w-full h-10 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                       />
                     </div>
                   </div>

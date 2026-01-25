@@ -28,7 +28,7 @@ const buttonVariants = cva(
           "bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700",
         // Ghost - Minimal visual emphasis
         ghost:
-          "text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800",
+          "text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-200 dark:hover:text-white dark:hover:bg-slate-800",
         // Link - Text only
         link:
           "text-emerald-600 underline-offset-4 hover:underline dark:text-emerald-400",

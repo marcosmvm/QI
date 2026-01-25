@@ -167,7 +167,7 @@ export default async function IntegrationsPage() {
     <div className="min-h-screen p-8">
       {/* Page Header */}
       <div className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-300 mb-2">
+        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-200 mb-2">
           <Link
             href="/dashboard"
             className="hover:text-emerald-pro-600 transition-colors"
@@ -182,12 +182,12 @@ export default async function IntegrationsPage() {
             <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">
               Integrations
             </h1>
-            <p className="text-slate-900 dark:text-slate-300 mt-1">
+            <p className="text-slate-900 dark:text-slate-200 mt-1">
               Connect your tools and automate your workflow
             </p>
           </div>
           <div className="flex items-center gap-2 px-4 py-2 bg-light-bg-secondary dark:bg-midnight-blue/30 border border-border-default dark:border-graphite/50 rounded-lg">
-            <span className="text-sm text-slate-900 dark:text-slate-300">
+            <span className="text-sm text-slate-900 dark:text-slate-200">
               {connectedCount} of {integrations.length} connected
             </span>
           </div>
@@ -209,7 +209,7 @@ export default async function IntegrationsPage() {
               key={category.id}
               className="glass-premium p-4"
             >
-              <p className="text-sm text-slate-900 dark:text-slate-300">{category.name}</p>
+              <p className="text-sm text-slate-900 dark:text-slate-200">{category.name}</p>
               <p className="text-lg font-sora font-bold text-slate-900 dark:text-white">
                 {connectedInCategory}/{category.count}
               </p>
@@ -253,7 +253,7 @@ export default async function IntegrationsPage() {
             <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white mb-1">
               Need a custom integration?
             </h3>
-            <p className="text-slate-900 dark:text-slate-300 mb-4">
+            <p className="text-slate-900 dark:text-slate-200 mb-4">
               We can build custom integrations for your specific tech stack.
               Contact our team to discuss your requirements.
             </p>
@@ -294,7 +294,7 @@ function IntegrationCard({ integration }: { integration: Integration }) {
           >
             <Icon
               className={`h-5 w-5 ${
-                integration.connected ? "text-emerald-pro-400" : "text-slate-900 dark:text-slate-300"
+                integration.connected ? "text-emerald-pro-400" : "text-slate-900 dark:text-slate-200"
               }`}
             />
           </div>
@@ -324,7 +324,7 @@ function IntegrationCard({ integration }: { integration: Integration }) {
         </div>
       </div>
 
-      <p className="text-sm text-slate-900 dark:text-slate-300 mb-4">{integration.description}</p>
+      <p className="text-sm text-slate-900 dark:text-slate-200 mb-4">{integration.description}</p>
 
       <div className="flex items-center gap-2">
         {integration.connected ? (
@@ -333,7 +333,7 @@ function IntegrationCard({ integration }: { integration: Integration }) {
               <Settings className="h-3.5 w-3.5" />
               Configure
             </button>
-            <button className="flex items-center gap-2 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-300 border border-border-default dark:border-graphite rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-colors">
+            <button className="flex items-center gap-2 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-200 border border-border-default dark:border-graphite rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-colors">
               <RefreshCw className="h-3.5 w-3.5" />
               Sync
             </button>

@@ -212,7 +212,7 @@ export default function SentinelPage() {
       case "warm":
         return { bg: "bg-energy-orange/10", text: "text-energy-orange", border: "border-energy-orange/30" };
       case "cold":
-        return { bg: "bg-steel/10", text: "text-slate-900 dark:text-slate-300", border: "border-steel/30" };
+        return { bg: "bg-steel/10", text: "text-slate-900 dark:text-slate-200", border: "border-steel/30" };
       default:
         return { bg: "bg-emerald-pro-600/10", text: "text-emerald-pro-600", border: "border-emerald-pro-600/30" };
     }
@@ -226,13 +226,13 @@ export default function SentinelPage() {
     <motion.div initial="hidden" animate="visible" variants={containerVariants} className="min-h-screen p-8">
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-300 mb-2">
+        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-200 mb-2">
           <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
           <span>/</span>
           <span className="text-emerald-pro-600">The Sentinel</span>
         </div>
         <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">The Sentinel</h1>
-        <p className="text-slate-900 dark:text-slate-300 mt-1">Website Visitor Intelligence Engine</p>
+        <p className="text-slate-900 dark:text-slate-200 mt-1">Website Visitor Intelligence Engine</p>
       </motion.div>
 
       <div className="space-y-6">
@@ -257,17 +257,17 @@ export default function SentinelPage() {
                     <span className="text-sm font-medium text-emerald-pro-400">ACTIVE</span>
                   </span>
                 </div>
-                <p className="text-slate-900 dark:text-slate-300 mt-1">Identifying anonymous visitors and revealing buyer intent</p>
+                <p className="text-slate-900 dark:text-slate-200 mt-1">Identifying anonymous visitors and revealing buyer intent</p>
               </div>
             </div>
 
             <div className="flex items-center gap-4">
               <div className="text-right">
-                <p className="text-sm text-slate-900 dark:text-slate-300">Last Update</p>
+                <p className="text-sm text-slate-900 dark:text-slate-200">Last Update</p>
                 <p className="text-slate-900 dark:text-white font-medium">{overallStats.lastCheck}</p>
               </div>
               <div className="text-right">
-                <p className="text-sm text-slate-900 dark:text-slate-300">Live Visitors</p>
+                <p className="text-sm text-slate-900 dark:text-slate-200">Live Visitors</p>
                 <p className="text-slate-900 dark:text-white font-medium">23 on site</p>
               </div>
               <Button
@@ -293,8 +293,8 @@ export default function SentinelPage() {
               </span>
             </div>
             <p className="text-3xl font-sora font-bold text-slate-900 dark:text-white">{overallStats.visitorsIdentified.toLocaleString()}</p>
-            <p className="text-sm text-slate-900 dark:text-slate-300 mt-1">Visitors Identified</p>
-            <p className="text-xs text-slate-900 dark:text-slate-300 mt-2">Last 30 days</p>
+            <p className="text-sm text-slate-900 dark:text-slate-200 mt-1">Visitors Identified</p>
+            <p className="text-xs text-slate-900 dark:text-slate-200 mt-2">Last 30 days</p>
           </div>
 
           <div className="glass-premium p-6">
@@ -305,8 +305,8 @@ export default function SentinelPage() {
               </span>
             </div>
             <p className="text-3xl font-sora font-bold text-slate-900 dark:text-white">{overallStats.companiesRevealed.toLocaleString()}</p>
-            <p className="text-sm text-slate-900 dark:text-slate-300 mt-1">Companies Revealed</p>
-            <p className="text-xs text-slate-900 dark:text-slate-300 mt-2">Unique organizations</p>
+            <p className="text-sm text-slate-900 dark:text-slate-200 mt-1">Companies Revealed</p>
+            <p className="text-xs text-slate-900 dark:text-slate-200 mt-2">Unique organizations</p>
           </div>
 
           <div className="glass-premium p-6">
@@ -317,8 +317,8 @@ export default function SentinelPage() {
               </span>
             </div>
             <p className="text-3xl font-sora font-bold text-slate-900 dark:text-white">{overallStats.highIntentLeads}</p>
-            <p className="text-sm text-slate-900 dark:text-slate-300 mt-1">High Intent Leads</p>
-            <p className="text-xs text-slate-900 dark:text-slate-300 mt-2">Score 80+</p>
+            <p className="text-sm text-slate-900 dark:text-slate-200 mt-1">High Intent Leads</p>
+            <p className="text-xs text-slate-900 dark:text-slate-200 mt-2">Score 80+</p>
           </div>
 
           <div className="glass-premium p-6">
@@ -329,8 +329,8 @@ export default function SentinelPage() {
               </span>
             </div>
             <p className="text-3xl font-sora font-bold text-slate-900 dark:text-white">{overallStats.conversionRate}%</p>
-            <p className="text-sm text-slate-900 dark:text-slate-300 mt-1">Identification Rate</p>
-            <p className="text-xs text-slate-900 dark:text-slate-300 mt-2">Industry avg: 8%</p>
+            <p className="text-sm text-slate-900 dark:text-slate-200 mt-1">Identification Rate</p>
+            <p className="text-xs text-slate-900 dark:text-slate-200 mt-2">Industry avg: 8%</p>
           </div>
         </motion.div>
 
@@ -350,7 +350,7 @@ export default function SentinelPage() {
                         "px-3 py-1.5 rounded-md text-xs font-medium transition-colors capitalize",
                         statusFilter === filter
                           ? "bg-emerald-pro-600/20 text-emerald-pro-600"
-                          : "text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+                          : "text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"
                       )}
                     >
                       {filter}
@@ -384,7 +384,7 @@ export default function SentinelPage() {
                               {visitor.status}
                             </span>
                           </div>
-                          <div className="flex items-center gap-3 text-sm text-slate-900 dark:text-slate-300 mt-0.5">
+                          <div className="flex items-center gap-3 text-sm text-slate-900 dark:text-slate-200 mt-0.5">
                             <span>{visitor.industry}</span>
                             <span>•</span>
                             <span className="flex items-center gap-1">
@@ -396,40 +396,40 @@ export default function SentinelPage() {
                       </div>
                       <div className="text-right">
                         <div className="flex items-center gap-2">
-                          <span className="text-sm text-slate-900 dark:text-slate-300">Intent Score:</span>
+                          <span className="text-sm text-slate-900 dark:text-slate-200">Intent Score:</span>
                           <span className={cn(
                             "text-lg font-bold",
                             visitor.intentScore >= 80 ? "text-emerald-pro-400" :
-                            visitor.intentScore >= 50 ? "text-energy-orange" : "text-slate-900 dark:text-slate-300"
+                            visitor.intentScore >= 50 ? "text-energy-orange" : "text-slate-900 dark:text-slate-200"
                           )}>
                             {visitor.intentScore}
                           </span>
                         </div>
-                        <p className="text-xs text-slate-900 dark:text-slate-300 mt-0.5">{visitor.lastVisit}</p>
+                        <p className="text-xs text-slate-900 dark:text-slate-200 mt-0.5">{visitor.lastVisit}</p>
                       </div>
                     </div>
 
                     <div className="grid grid-cols-4 gap-4 mt-4 pt-4 border-t border-border-default dark:border-graphite/30">
                       <div className="text-center">
-                        <p className="text-xs text-slate-900 dark:text-slate-300">Visits</p>
+                        <p className="text-xs text-slate-900 dark:text-slate-200">Visits</p>
                         <p className="text-sm font-semibold text-slate-900 dark:text-white">{visitor.visits}</p>
                       </div>
                       <div className="text-center">
-                        <p className="text-xs text-slate-900 dark:text-slate-300">Duration</p>
+                        <p className="text-xs text-slate-900 dark:text-slate-200">Duration</p>
                         <p className="text-sm font-semibold text-slate-900 dark:text-white">{visitor.duration}</p>
                       </div>
                       <div className="text-center">
-                        <p className="text-xs text-slate-900 dark:text-slate-300">Employees</p>
+                        <p className="text-xs text-slate-900 dark:text-slate-200">Employees</p>
                         <p className="text-sm font-semibold text-slate-900 dark:text-white">{visitor.employees}</p>
                       </div>
                       <div className="text-center">
-                        <p className="text-xs text-slate-900 dark:text-slate-300">Revenue</p>
+                        <p className="text-xs text-slate-900 dark:text-slate-200">Revenue</p>
                         <p className="text-sm font-semibold text-slate-900 dark:text-white">{visitor.revenue}</p>
                       </div>
                     </div>
 
                     <div className="flex items-center gap-2 mt-3">
-                      <span className="text-xs text-slate-900 dark:text-slate-300">Pages:</span>
+                      <span className="text-xs text-slate-900 dark:text-slate-200">Pages:</span>
                       {visitor.pages.map((page, i) => (
                         <span
                           key={i}
@@ -469,7 +469,7 @@ export default function SentinelPage() {
                       )} />
                       <div>
                         <p className="text-sm text-slate-900 dark:text-white">{signal.signal}</p>
-                        <p className="text-xs text-slate-900 dark:text-slate-300">{signal.weight} weight</p>
+                        <p className="text-xs text-slate-900 dark:text-slate-200">{signal.weight} weight</p>
                       </div>
                     </div>
                     <span className="text-sm font-semibold text-slate-900 dark:text-white">{signal.occurrences}</span>
@@ -485,7 +485,7 @@ export default function SentinelPage() {
                   <div key={index}>
                     <div className="flex items-center justify-between mb-1">
                       <span className="text-sm text-slate-900 dark:text-white">{item.industry}</span>
-                      <span className="text-sm text-slate-900 dark:text-slate-300">{item.count}</span>
+                      <span className="text-sm text-slate-900 dark:text-slate-200">{item.count}</span>
                     </div>
                     <div className="h-2 rounded-full bg-graphite/30 overflow-hidden">
                       <div
@@ -523,12 +523,12 @@ export default function SentinelPage() {
                     </div>
                     <div>
                       <p className="font-medium text-slate-900 dark:text-white">{page.page}</p>
-                      <p className="text-xs text-slate-900 dark:text-slate-300">{page.visits.toLocaleString()} visits</p>
+                      <p className="text-xs text-slate-900 dark:text-slate-200">{page.visits.toLocaleString()} visits</p>
                     </div>
                   </div>
                   <div className="text-right">
                     <p className="font-semibold text-emerald-pro-400">{page.conversionRate}%</p>
-                    <p className="text-xs text-slate-900 dark:text-slate-300">conversion</p>
+                    <p className="text-xs text-slate-900 dark:text-slate-200">conversion</p>
                   </div>
                 </div>
               ))}
@@ -563,7 +563,7 @@ export default function SentinelPage() {
                 <CheckCircle className="h-5 w-5 text-emerald-pro-400 mt-0.5" />
                 <div>
                   <p className="font-medium text-emerald-pro-400">High-Intent Alert</p>
-                  <p className="text-sm text-slate-900 dark:text-slate-300 mt-1">
+                  <p className="text-sm text-slate-900 dark:text-slate-200 mt-1">
                     3 hot leads from target accounts are currently on site. Consider reaching out via Architect engine.
                   </p>
                   <Button size="sm" className="mt-3 bg-emerald-pro-400/20 text-emerald-pro-400 hover:bg-emerald-pro-400/30 border border-emerald-pro-400/30">
@@ -578,15 +578,15 @@ export default function SentinelPage() {
               <div className="grid grid-cols-3 gap-3">
                 <div className="text-center p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30">
                   <p className="text-lg font-bold text-slate-900 dark:text-white">892</p>
-                  <p className="text-xs text-slate-900 dark:text-slate-300">New Companies</p>
+                  <p className="text-xs text-slate-900 dark:text-slate-200">New Companies</p>
                 </div>
                 <div className="text-center p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30">
                   <p className="text-lg font-bold text-emerald-pro-400">156</p>
-                  <p className="text-xs text-slate-900 dark:text-slate-300">Hot Leads</p>
+                  <p className="text-xs text-slate-900 dark:text-slate-200">Hot Leads</p>
                 </div>
                 <div className="text-center p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30">
                   <p className="text-lg font-bold text-emerald-pro-500">34</p>
-                  <p className="text-xs text-slate-900 dark:text-slate-300">Added to CRM</p>
+                  <p className="text-xs text-slate-900 dark:text-slate-200">Added to CRM</p>
                 </div>
               </div>
             </div>

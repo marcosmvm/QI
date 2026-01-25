@@ -20,7 +20,7 @@ const healthStyles: Record<HealthLevel, string> = {
   healthy: "bg-emerald-pro-400/10 text-emerald-pro-400 border-emerald-pro-400/30",
   warning: "bg-energy-orange/10 text-energy-orange border-energy-orange/30",
   critical: "bg-red-500/10 text-red-400 border-red-500/30",
-  unknown: "bg-steel/10 text-slate-900 dark:text-slate-300 border-steel/30",
+  unknown: "bg-steel/10 text-slate-900 dark:text-slate-200 border-steel/30",
 };
 
 const healthLabels: Record<HealthLevel, string> = {

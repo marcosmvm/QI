@@ -57,7 +57,7 @@ export default function RegisterPage() {
             <br />
             <span className="text-gradient">your outreach?</span>
           </h1>
-          <p className="text-lg text-slate-600 dark:text-slate-300 max-w-md">
+          <p className="text-lg text-slate-600 dark:text-slate-200 max-w-md">
             Join leading B2B companies using XGrowthOS to automate their
             cold email campaigns with AI-powered precision.
           </p>
@@ -74,13 +74,13 @@ export default function RegisterPage() {
                 <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 dark:bg-green-500/10">
                   <CheckCircle className="h-4 w-4 text-emerald-500 dark:text-green-400" />
                 </div>
-                <span className="text-slate-700 dark:text-slate-300">{feature}</span>
+                <span className="text-slate-700 dark:text-slate-200">{feature}</span>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="relative z-10 text-sm text-slate-500 dark:text-slate-400">
+        <div className="relative z-10 text-sm text-slate-500 dark:text-slate-200">
           &copy; {new Date().getFullYear()} XGrowthOS. All rights reserved.
         </div>
       </div>
@@ -109,7 +109,7 @@ export default function RegisterPage() {
                 <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-2">
                   Request Submitted!
                 </h2>
-                <p className="text-slate-600 dark:text-slate-400 mb-6">
+                <p className="text-slate-600 dark:text-slate-200 mb-6">
                   Thank you for your interest in XGrowthOS. Our team will
                   review your request and reach out within 24-48 hours.
                 </p>
@@ -125,7 +125,7 @@ export default function RegisterPage() {
                   <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-2">
                     Request Access
                   </h2>
-                  <p className="text-slate-600 dark:text-slate-400">
+                  <p className="text-slate-600 dark:text-slate-200">
                     Fill out the form to get started with XGrowthOS
                   </p>
                 </div>

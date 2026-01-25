@@ -181,7 +181,7 @@ const statusConfig = {
   },
   draft: {
     bg: "bg-steel/10",
-    text: "text-slate-900 dark:text-slate-300",
+    text: "text-slate-900 dark:text-slate-200",
     border: "border-steel/20",
     dot: "bg-steel",
     label: "Draft",
@@ -279,13 +279,13 @@ export default function CampaignsPage() {
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-300 mb-2">
+        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-200 mb-2">
           <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
           <span>/</span>
           <span className="text-emerald-pro-600">Campaigns</span>
         </div>
         <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">Campaigns</h1>
-        <p className="text-slate-900 dark:text-slate-300 mt-1">Manage and monitor your email campaigns</p>
+        <p className="text-slate-900 dark:text-slate-200 mt-1">Manage and monitor your email campaigns</p>
       </motion.div>
 
       <div className="space-y-6">
@@ -332,7 +332,7 @@ export default function CampaignsPage() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-900 dark:text-slate-300" />
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-900 dark:text-slate-200" />
               <input
                 type="text"
                 placeholder="Search campaigns..."
@@ -348,7 +348,7 @@ export default function CampaignsPage() {
                   "px-3 py-1.5 rounded-md text-xs font-medium transition-all",
                   !statusFilter
                     ? "bg-emerald-pro-600/10 text-emerald-pro-600"
-                    : "text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+                    : "text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"
                 )}
               >
                 All
@@ -361,7 +361,7 @@ export default function CampaignsPage() {
                     "px-3 py-1.5 rounded-md text-xs font-medium transition-all",
                     statusFilter === key
                       ? `${config.bg} ${config.text}`
-                      : "text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+                      : "text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"
                   )}
                 >
                   {config.label}
@@ -374,7 +374,7 @@ export default function CampaignsPage() {
             <Button
               variant="outline"
               size="sm"
-              className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:border-emerald-pro-600/40"
+              className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:border-emerald-pro-600/40"
               onClick={handleExport}
             >
               <Download className="h-4 w-4 mr-2" />
@@ -383,7 +383,7 @@ export default function CampaignsPage() {
             <Button
               variant="outline"
               size="sm"
-              className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:border-emerald-pro-600/40"
+              className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:border-emerald-pro-600/40"
               onClick={handleRefresh}
               disabled={isRefreshing}
             >
@@ -408,15 +408,15 @@ export default function CampaignsPage() {
             <table className="w-full">
               <thead>
                 <tr className="border-b border-emerald-pro-600/10">
-                  <th className="text-left text-xs font-semibold text-slate-900 dark:text-slate-300 uppercase tracking-wider px-6 py-4">Campaign</th>
-                  <th className="text-left text-xs font-semibold text-slate-900 dark:text-slate-300 uppercase tracking-wider px-4 py-4">Status</th>
-                  <th className="text-center text-xs font-semibold text-slate-900 dark:text-slate-300 uppercase tracking-wider px-4 py-4">Sent</th>
-                  <th className="text-center text-xs font-semibold text-slate-900 dark:text-slate-300 uppercase tracking-wider px-4 py-4">Delivered</th>
-                  <th className="text-center text-xs font-semibold text-slate-900 dark:text-slate-300 uppercase tracking-wider px-4 py-4">Opened</th>
-                  <th className="text-center text-xs font-semibold text-slate-900 dark:text-slate-300 uppercase tracking-wider px-4 py-4">Replied</th>
-                  <th className="text-center text-xs font-semibold text-slate-900 dark:text-slate-300 uppercase tracking-wider px-4 py-4">Open Rate</th>
-                  <th className="text-center text-xs font-semibold text-slate-900 dark:text-slate-300 uppercase tracking-wider px-4 py-4">Reply Rate</th>
-                  <th className="text-right text-xs font-semibold text-slate-900 dark:text-slate-300 uppercase tracking-wider px-6 py-4">Actions</th>
+                  <th className="text-left text-xs font-semibold text-slate-900 dark:text-slate-200 uppercase tracking-wider px-6 py-4">Campaign</th>
+                  <th className="text-left text-xs font-semibold text-slate-900 dark:text-slate-200 uppercase tracking-wider px-4 py-4">Status</th>
+                  <th className="text-center text-xs font-semibold text-slate-900 dark:text-slate-200 uppercase tracking-wider px-4 py-4">Sent</th>
+                  <th className="text-center text-xs font-semibold text-slate-900 dark:text-slate-200 uppercase tracking-wider px-4 py-4">Delivered</th>
+                  <th className="text-center text-xs font-semibold text-slate-900 dark:text-slate-200 uppercase tracking-wider px-4 py-4">Opened</th>
+                  <th className="text-center text-xs font-semibold text-slate-900 dark:text-slate-200 uppercase tracking-wider px-4 py-4">Replied</th>
+                  <th className="text-center text-xs font-semibold text-slate-900 dark:text-slate-200 uppercase tracking-wider px-4 py-4">Open Rate</th>
+                  <th className="text-center text-xs font-semibold text-slate-900 dark:text-slate-200 uppercase tracking-wider px-4 py-4">Reply Rate</th>
+                  <th className="text-right text-xs font-semibold text-slate-900 dark:text-slate-200 uppercase tracking-wider px-6 py-4">Actions</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-emerald-pro-600/5">
@@ -435,7 +435,7 @@ export default function CampaignsPage() {
                           <p className="font-medium text-slate-900 dark:text-white group-hover:text-emerald-pro-600 transition-colors">
                             {campaign.name}
                           </p>
-                          <p className="text-xs text-slate-900 dark:text-slate-300 mt-0.5">
+                          <p className="text-xs text-slate-900 dark:text-slate-200 mt-0.5">
                             Created {new Date(campaign.createdAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
                           </p>
                         </Link>
@@ -456,7 +456,7 @@ export default function CampaignsPage() {
                       </td>
                       <td className="px-4 py-4 text-center">
                         <span className="text-sm text-slate-900 dark:text-white">{campaign.metrics.delivered.toLocaleString()}</span>
-                        <span className="text-xs text-slate-900 dark:text-slate-300 ml-1">
+                        <span className="text-xs text-slate-900 dark:text-slate-200 ml-1">
                           ({campaign.metrics.deliverabilityRate}%)
                         </span>
                       </td>
@@ -491,7 +491,7 @@ export default function CampaignsPage() {
                           {campaign.status === "active" ? (
                             <button
                               onClick={() => handleToggleStatus(campaign.id)}
-                              className="p-2 text-slate-900 dark:text-slate-300 hover:text-energy-orange hover:bg-energy-orange/10 rounded-lg transition-colors"
+                              className="p-2 text-slate-900 dark:text-slate-200 hover:text-energy-orange hover:bg-energy-orange/10 rounded-lg transition-colors"
                               title="Pause campaign"
                             >
                               <Pause className="h-4 w-4" />
@@ -499,7 +499,7 @@ export default function CampaignsPage() {
                           ) : campaign.status === "paused" ? (
                             <button
                               onClick={() => handleToggleStatus(campaign.id)}
-                              className="p-2 text-slate-900 dark:text-slate-300 hover:text-emerald-pro-400 hover:bg-emerald-pro-400/10 rounded-lg transition-colors"
+                              className="p-2 text-slate-900 dark:text-slate-200 hover:text-emerald-pro-400 hover:bg-emerald-pro-400/10 rounded-lg transition-colors"
                               title="Resume campaign"
                             >
                               <Play className="h-4 w-4" />
@@ -507,26 +507,26 @@ export default function CampaignsPage() {
                           ) : null}
                           <Link
                             href={`/dashboard/campaigns/${campaign.id}`}
-                            className="p-2 text-slate-900 dark:text-slate-300 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors"
+                            className="p-2 text-slate-900 dark:text-slate-200 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors"
                             title="View campaign"
                           >
                             <Eye className="h-4 w-4" />
                           </Link>
                           <Link
                             href={`/dashboard/campaigns/${campaign.id}/edit`}
-                            className="p-2 text-slate-900 dark:text-slate-300 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors"
+                            className="p-2 text-slate-900 dark:text-slate-200 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors"
                             title="Edit campaign"
                           >
                             <Edit3 className="h-4 w-4" />
                           </Link>
                           <button
                             onClick={() => handleCopyCampaign(campaign)}
-                            className="p-2 text-slate-900 dark:text-slate-300 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors"
+                            className="p-2 text-slate-900 dark:text-slate-200 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors"
                             title="Copy campaign"
                           >
                             <Copy className="h-4 w-4" />
                           </button>
-                          <button className="p-2 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors" title="More options">
+                          <button className="p-2 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors" title="More options">
                             <MoreHorizontal className="h-4 w-4" />
                           </button>
                         </div>
@@ -540,15 +540,15 @@ export default function CampaignsPage() {
 
           {/* Pagination */}
           <div className="flex items-center justify-between px-6 py-4 border-t border-border-default dark:border-graphite/30">
-            <p className="text-sm text-slate-900 dark:text-slate-300">
+            <p className="text-sm text-slate-900 dark:text-slate-200">
               Showing <span className="text-slate-900 dark:text-white font-medium">{filteredCampaigns.length}</span> of{" "}
               <span className="text-slate-900 dark:text-white font-medium">{campaigns.length}</span> campaigns
             </p>
             <div className="flex items-center gap-2">
-              <Button variant="outline" size="sm" className="border-border-default dark:border-graphite/50 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:border-emerald-pro-600/30" disabled>
+              <Button variant="outline" size="sm" className="border-border-default dark:border-graphite/50 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:border-emerald-pro-600/30" disabled>
                 Previous
               </Button>
-              <Button variant="outline" size="sm" className="border-border-default dark:border-graphite/50 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:border-emerald-pro-600/30">
+              <Button variant="outline" size="sm" className="border-border-default dark:border-graphite/50 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:border-emerald-pro-600/30">
                 Next
               </Button>
             </div>
@@ -561,7 +561,7 @@ export default function CampaignsPage() {
           <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-6">
               <h3 className="font-semibold text-slate-900 dark:text-white">Top Performing</h3>
-              <span className="text-xs text-slate-900 dark:text-slate-300">By reply rate</span>
+              <span className="text-xs text-slate-900 dark:text-slate-200">By reply rate</span>
             </div>
             <div className="space-y-3">
               {mockCampaigns
@@ -584,11 +584,11 @@ export default function CampaignsPage() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-medium text-slate-900 dark:text-white truncate">{campaign.name}</p>
-                      <p className="text-xs text-slate-900 dark:text-slate-300">{campaign.metrics.sent.toLocaleString()} sent</p>
+                      <p className="text-xs text-slate-900 dark:text-slate-200">{campaign.metrics.sent.toLocaleString()} sent</p>
                     </div>
                     <div className="text-right">
                       <p className="text-sm font-semibold text-emerald-pro-400">{campaign.metrics.replyRate}%</p>
-                      <p className="text-xs text-slate-900 dark:text-slate-300">reply rate</p>
+                      <p className="text-xs text-slate-900 dark:text-slate-200">reply rate</p>
                     </div>
                   </Link>
                 ))}
@@ -599,7 +599,7 @@ export default function CampaignsPage() {
           <div className="glass-premium p-6">
             <div className="flex items-center justify-between mb-6">
               <h3 className="font-semibold text-slate-900 dark:text-white">Needs Attention</h3>
-              <span className="text-xs text-slate-900 dark:text-slate-300">Low performance</span>
+              <span className="text-xs text-slate-900 dark:text-slate-200">Low performance</span>
             </div>
             <div className="space-y-3">
               {mockCampaigns
@@ -622,14 +622,14 @@ export default function CampaignsPage() {
                         {campaign.metrics.replyRate < 2 && `Low reply rate (${campaign.metrics.replyRate}%)`}
                       </p>
                     </div>
-                    <ChevronRight className="h-4 w-4 text-slate-900 dark:text-slate-300" />
+                    <ChevronRight className="h-4 w-4 text-slate-900 dark:text-slate-200" />
                   </Link>
                 ))}
               {mockCampaigns.filter(c => c.metrics.sent > 0 && (c.metrics.openRate < 30 || c.metrics.replyRate < 2)).length === 0 && (
                 <div className="flex items-center justify-center py-8">
                   <div className="text-center">
                     <CheckCircle2 className="h-10 w-10 text-emerald-pro-400/30 mx-auto mb-2" />
-                    <p className="text-sm text-slate-900 dark:text-slate-300">All campaigns performing well!</p>
+                    <p className="text-sm text-slate-900 dark:text-slate-200">All campaigns performing well!</p>
                   </div>
                 </div>
               )}

@@ -202,7 +202,7 @@ export default function AuditLogPage() {
   if (loading) {
     return (
       <div className="min-h-screen p-8 flex items-center justify-center">
-        <div className="text-slate-900 dark:text-slate-300">Loading audit logs...</div>
+        <div className="text-slate-900 dark:text-slate-200">Loading audit logs...</div>
       </div>
     );
   }
@@ -212,14 +212,14 @@ export default function AuditLogPage() {
       {/* Header */}
       <motion.div variants={itemVariants} className="flex items-center justify-between mb-8">
         <div>
-          <p className="text-sm text-slate-900 dark:text-slate-300 mb-1">Admin / <span className="text-emerald-pro-500">Audit Log</span></p>
+          <p className="text-sm text-slate-900 dark:text-slate-200 mb-1">Admin / <span className="text-emerald-pro-500">Audit Log</span></p>
           <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">Audit Log</h1>
-          <p className="text-slate-900 dark:text-slate-300 mt-1">
+          <p className="text-slate-900 dark:text-slate-200 mt-1">
             Track all changes and actions across the platform
           </p>
         </div>
         <div className="flex items-center gap-3">
-          <button className="flex items-center gap-2 px-4 py-2 border border-border-default dark:border-graphite text-slate-900 dark:text-slate-300 rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors">
+          <button className="flex items-center gap-2 px-4 py-2 border border-border-default dark:border-graphite text-slate-900 dark:text-slate-200 rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors">
             <Filter className="h-4 w-4" />
             Filter
           </button>
@@ -233,11 +233,11 @@ export default function AuditLogPage() {
       {/* Search and Filters */}
       <div className="flex items-center gap-4 mb-6">
         <div className="relative flex-1 max-w-md">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-900 dark:text-slate-300" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-900 dark:text-slate-200" />
           <input
             type="text"
             placeholder="Search audit logs..."
-            className="w-full h-10 rounded-lg border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue/30 pl-10 pr-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none"
+            className="w-full h-10 rounded-lg border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue/30 pl-10 pr-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none"
           />
         </div>
         <select className="h-10 rounded-lg border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue/30 px-4 text-slate-900 dark:text-white">
@@ -290,7 +290,7 @@ export default function AuditLogPage() {
       <div className="space-y-8">
         {Object.entries(groupedLogs).map(([date, logs]) => (
           <div key={date}>
-            <h3 className="text-sm font-medium text-slate-900 dark:text-slate-300 mb-3">{date}</h3>
+            <h3 className="text-sm font-medium text-slate-900 dark:text-slate-200 mb-3">{date}</h3>
             <div className="space-y-2">
               {logs.map((log) => (
                 <AuditLogRow key={log.id} log={log} />
@@ -302,9 +302,9 @@ export default function AuditLogPage() {
 
       {auditLogs.length === 0 && (
         <div className="glass-premium p-12 text-center">
-          <Clock className="h-12 w-12 text-slate-900 dark:text-slate-300 mx-auto mb-4" />
-          <p className="text-slate-900 dark:text-slate-300">No audit logs yet</p>
-          <p className="text-sm text-slate-900 dark:text-slate-300/70 mt-1">
+          <Clock className="h-12 w-12 text-slate-900 dark:text-slate-200 mx-auto mb-4" />
+          <p className="text-slate-900 dark:text-slate-200">No audit logs yet</p>
+          <p className="text-sm text-slate-900 dark:text-slate-200/70 mt-1">
             Actions will be recorded as users interact with the platform
           </p>
         </div>
@@ -338,7 +338,7 @@ function AuditLogRow({ log }: { log: AuditLog }) {
     steel: {
       bg: "bg-steel/10",
       border: "border-steel/30",
-      text: "text-slate-900 dark:text-slate-300",
+      text: "text-slate-900 dark:text-slate-200",
     },
   };
 
@@ -365,19 +365,19 @@ function AuditLogRow({ log }: { log: AuditLog }) {
           <span className={`text-sm ${colors.text}`}>{action.label}</span>
           <span className="text-sm text-slate-900 dark:text-slate-200">a</span>
           <div className="flex items-center gap-1">
-            <ResourceIcon className="h-4 w-4 text-slate-900 dark:text-slate-300" />
+            <ResourceIcon className="h-4 w-4 text-slate-900 dark:text-slate-200" />
             <span className="text-sm text-slate-900 dark:text-slate-200">{resource.label}</span>
           </div>
         </div>
-        <p className="text-sm text-slate-900 dark:text-slate-300 truncate">
+        <p className="text-sm text-slate-900 dark:text-slate-200 truncate">
           {resourceName}
         </p>
       </div>
 
       {/* Timestamp */}
       <div className="text-right flex-shrink-0">
-        <p className="text-sm text-slate-900 dark:text-slate-300">{formatTimeAgo(log.created_at)}</p>
-        <p className="text-xs text-slate-900 dark:text-slate-300/70">
+        <p className="text-sm text-slate-900 dark:text-slate-200">{formatTimeAgo(log.created_at)}</p>
+        <p className="text-xs text-slate-900 dark:text-slate-200/70">
           {new Date(log.created_at).toLocaleTimeString()}
         </p>
       </div>
@@ -426,7 +426,7 @@ function StatCard({
         </div>
         <div>
           <p className="text-xl font-sora font-bold text-slate-900 dark:text-white">{value}</p>
-          <p className="text-xs text-slate-900 dark:text-slate-300">{label}</p>
+          <p className="text-xs text-slate-900 dark:text-slate-200">{label}</p>
         </div>
       </div>
     </div>

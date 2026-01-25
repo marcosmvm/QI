@@ -92,7 +92,7 @@ export function AdminStatCard({
       <div className="mt-4">
         <p className="text-2xl font-sora font-bold text-slate-900 dark:text-white">
           {value}
-          {suffix && <span className="text-lg text-slate-900 dark:text-slate-300 ml-1">{suffix}</span>}
+          {suffix && <span className="text-lg text-slate-900 dark:text-slate-200 ml-1">{suffix}</span>}
         </p>
         <p className="text-sm text-slate-900 dark:text-slate-200 mt-1">{title}</p>
       </div>
@@ -111,13 +111,13 @@ export function AdminStatCard({
                 ? "text-emerald-pro-400"
                 : change < 0
                 ? "text-energy-orange"
-                : "text-slate-900 dark:text-slate-300"
+                : "text-slate-900 dark:text-slate-200"
             )}
           >
             {change > 0 ? "+" : ""}
             {change}%
           </span>
-          <span className="text-xs text-slate-900 dark:text-slate-300">{changeLabel}</span>
+          <span className="text-xs text-slate-900 dark:text-slate-200">{changeLabel}</span>
         </div>
       )}
     </div>

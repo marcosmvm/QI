@@ -177,13 +177,13 @@ export default function EnginesPage() {
       {/* Header */}
       <motion.div variants={itemVariants} className="flex items-center justify-between mb-8">
         <div>
-          <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-300 mb-2">
+          <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-200 mb-2">
             <span>Admin</span>
             <span className="text-graphite">/</span>
             <span className="text-emerald-pro-600">Engines</span>
           </div>
           <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">Engine Monitoring</h1>
-          <p className="text-slate-900 dark:text-slate-300 mt-1">
+          <p className="text-slate-900 dark:text-slate-200 mt-1">
             Monitor the health and performance of all AI engines
           </p>
         </div>
@@ -257,7 +257,7 @@ export default function EnginesPage() {
             <p className="text-2xl font-sora font-bold text-slate-900 dark:text-slate-200">
               {systemHealth.errorRate.toFixed(2)}%
             </p>
-            <p className="text-xs text-slate-900 dark:text-slate-300 mt-2">Error Rate</p>
+            <p className="text-xs text-slate-900 dark:text-slate-200 mt-2">Error Rate</p>
           </div>
         </div>
       </div>
@@ -287,19 +287,19 @@ export default function EnginesPage() {
         <table className="w-full">
           <thead>
             <tr className="border-b border-border-default dark:border-graphite/50">
-              <th className="text-left text-xs font-medium text-slate-900 dark:text-slate-300 uppercase tracking-wider px-6 py-4">
+              <th className="text-left text-xs font-medium text-slate-900 dark:text-slate-200 uppercase tracking-wider px-6 py-4">
                 Engine
               </th>
-              <th className="text-left text-xs font-medium text-slate-900 dark:text-slate-300 uppercase tracking-wider px-6 py-4">
+              <th className="text-left text-xs font-medium text-slate-900 dark:text-slate-200 uppercase tracking-wider px-6 py-4">
                 Status
               </th>
-              <th className="text-left text-xs font-medium text-slate-900 dark:text-slate-300 uppercase tracking-wider px-6 py-4">
+              <th className="text-left text-xs font-medium text-slate-900 dark:text-slate-200 uppercase tracking-wider px-6 py-4">
                 Webhook Endpoint
               </th>
-              <th className="text-left text-xs font-medium text-slate-900 dark:text-slate-300 uppercase tracking-wider px-6 py-4">
+              <th className="text-left text-xs font-medium text-slate-900 dark:text-slate-200 uppercase tracking-wider px-6 py-4">
                 Avg. Execution Time
               </th>
-              <th className="text-left text-xs font-medium text-slate-900 dark:text-slate-300 uppercase tracking-wider px-6 py-4">
+              <th className="text-left text-xs font-medium text-slate-900 dark:text-slate-200 uppercase tracking-wider px-6 py-4">
                 24h Success Rate
               </th>
             </tr>
@@ -328,7 +328,7 @@ export default function EnginesPage() {
                         <p className="text-sm font-medium text-slate-900 dark:text-white">
                           {engine.name}
                         </p>
-                        <p className="text-xs text-slate-900 dark:text-slate-300">
+                        <p className="text-xs text-slate-900 dark:text-slate-200">
                           Engine {engine.codename}
                         </p>
                       </div>
@@ -338,7 +338,7 @@ export default function EnginesPage() {
                     <EngineStatusBadge status={engine.status} />
                   </td>
                   <td className="px-6 py-4">
-                    <code className="text-xs text-slate-900 dark:text-slate-300 bg-white dark:bg-deep-space/50 px-2 py-1 rounded">
+                    <code className="text-xs text-slate-900 dark:text-slate-200 bg-white dark:bg-deep-space/50 px-2 py-1 rounded">
                       {engine.webhookEndpoint}
                     </code>
                   </td>

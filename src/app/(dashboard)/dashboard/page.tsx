@@ -202,7 +202,7 @@ export default async function DashboardPage() {
           </div>
 
           <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-3">Welcome to XGrowthOS</h1>
-          <p className="text-slate-900 dark:text-slate-300 mb-8 leading-relaxed">
+          <p className="text-slate-900 dark:text-slate-200 mb-8 leading-relaxed">
             Your account is being set up. Our team will reach out shortly to complete your onboarding and get your first campaigns running.
           </p>
 

@@ -41,12 +41,12 @@ export function RevenueChart({
         <div className="mt-2 flex items-center gap-6">
           <div className="flex items-center gap-2">
             <span className="h-0.5 w-4 bg-emerald-pro-600 rounded" />
-            <span className="text-xs text-slate-900 dark:text-slate-300">MRR</span>
+            <span className="text-xs text-slate-900 dark:text-slate-200">MRR</span>
           </div>
           {showARR && (
             <div className="flex items-center gap-2">
               <span className="h-0.5 w-4 bg-emerald-pro-500 rounded" />
-              <span className="text-xs text-slate-900 dark:text-slate-300">ARR</span>
+              <span className="text-xs text-slate-900 dark:text-slate-200">ARR</span>
             </div>
           )}
         </div>

@@ -173,7 +173,7 @@ export default function ClientsPage() {
   if (loading) {
     return (
       <div className="min-h-screen p-8 flex items-center justify-center">
-        <div className="text-slate-900 dark:text-slate-300">Loading...</div>
+        <div className="text-slate-900 dark:text-slate-200">Loading...</div>
       </div>
     );
   }
@@ -188,9 +188,9 @@ export default function ClientsPage() {
       {/* Header */}
       <motion.div variants={itemVariants} className="flex items-center justify-between mb-8">
         <div>
-          <p className="text-sm text-slate-900 dark:text-slate-300 mb-1">Admin / <span className="text-emerald-pro-500">Clients</span></p>
+          <p className="text-sm text-slate-900 dark:text-slate-200 mb-1">Admin / <span className="text-emerald-pro-500">Clients</span></p>
           <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">Clients</h1>
-          <p className="text-slate-900 dark:text-slate-300 mt-1">Manage your client relationships</p>
+          <p className="text-slate-900 dark:text-slate-200 mt-1">Manage your client relationships</p>
         </div>
         <Link
           href="/admin/clients/new"
@@ -213,8 +213,8 @@ export default function ClientsPage() {
       <motion.div variants={itemVariants}>
         {clients.length === 0 ? (
           <div className="glass-premium p-12 text-center">
-            <Building2 className="h-12 w-12 text-slate-900 dark:text-slate-300 mx-auto mb-4" />
-            <p className="text-slate-900 dark:text-slate-300">No clients yet</p>
+            <Building2 className="h-12 w-12 text-slate-900 dark:text-slate-200 mx-auto mb-4" />
+            <p className="text-slate-900 dark:text-slate-200">No clients yet</p>
             <Link
               href="/admin/clients/new"
               className="text-emerald-pro-600 hover:underline text-sm mt-2 inline-block"
@@ -251,7 +251,7 @@ function StatCard({
       <p className={`text-2xl font-sora font-bold ${colorClasses[color]}`}>
         {value}
       </p>
-      <p className="text-sm text-slate-900 dark:text-slate-300 mt-1">{label}</p>
+      <p className="text-sm text-slate-900 dark:text-slate-200 mt-1">{label}</p>
     </div>
   );
 }

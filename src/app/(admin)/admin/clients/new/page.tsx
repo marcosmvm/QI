@@ -129,7 +129,7 @@ export default function NewClientPage() {
           <h2 className="text-xl font-sora font-semibold text-slate-900 dark:text-white mb-2">
             Client Created Successfully
           </h2>
-          <p className="text-slate-900 dark:text-slate-300">Redirecting to clients list...</p>
+          <p className="text-slate-900 dark:text-slate-200">Redirecting to clients list...</p>
         </div>
       </div>
     );
@@ -141,7 +141,7 @@ export default function NewClientPage() {
       <motion.div variants={itemVariants}>
         <Link
           href="/admin/clients"
-          className="inline-flex items-center gap-2 text-slate-900 dark:text-slate-300 hover:text-emerald-pro-600 transition-colors mb-6"
+          className="inline-flex items-center gap-2 text-slate-900 dark:text-slate-200 hover:text-emerald-pro-600 transition-colors mb-6"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to Clients
@@ -149,9 +149,9 @@ export default function NewClientPage() {
 
         {/* Header */}
         <div className="mb-8">
-          <p className="text-sm text-slate-900 dark:text-slate-300 mb-1">Admin / Clients / <span className="text-emerald-pro-500">New</span></p>
+          <p className="text-sm text-slate-900 dark:text-slate-200 mb-1">Admin / Clients / <span className="text-emerald-pro-500">New</span></p>
           <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">Add New Client</h1>
-          <p className="text-slate-900 dark:text-slate-300 mt-1">
+          <p className="text-slate-900 dark:text-slate-200 mt-1">
             Create a new client organization and subscription
           </p>
         </div>
@@ -169,7 +169,7 @@ export default function NewClientPage() {
                 <h2 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">
                   Company Information
                 </h2>
-                <p className="text-sm text-slate-900 dark:text-slate-300">Basic client details</p>
+                <p className="text-sm text-slate-900 dark:text-slate-200">Basic client details</p>
               </div>
             </div>
 
@@ -184,7 +184,7 @@ export default function NewClientPage() {
                   onChange={handleChange}
                   placeholder="Enter company name"
                   required
-                  className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                  className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                 />
               </div>
 
@@ -198,7 +198,7 @@ export default function NewClientPage() {
                   value={formData.domain}
                   onChange={handleChange}
                   placeholder="example.com"
-                  className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                  className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                 />
               </div>
 
@@ -256,7 +256,7 @@ export default function NewClientPage() {
                 <h2 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">
                   Contact Information
                 </h2>
-                <p className="text-sm text-slate-900 dark:text-slate-300">Primary contact details</p>
+                <p className="text-sm text-slate-900 dark:text-slate-200">Primary contact details</p>
               </div>
             </div>
 
@@ -271,9 +271,9 @@ export default function NewClientPage() {
                 onChange={handleChange}
                 placeholder="contact@example.com"
                 required
-                className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
               />
-              <p className="text-xs text-slate-900 dark:text-slate-300 mt-2">
+              <p className="text-xs text-slate-900 dark:text-slate-200 mt-2">
                 An invitation will be sent to this email address
               </p>
             </div>
@@ -289,7 +289,7 @@ export default function NewClientPage() {
                 <h2 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">
                   Subscription
                 </h2>
-                <p className="text-sm text-slate-900 dark:text-slate-300">Plan and billing details</p>
+                <p className="text-sm text-slate-900 dark:text-slate-200">Plan and billing details</p>
               </div>
             </div>
 
@@ -311,7 +311,7 @@ export default function NewClientPage() {
                       className={`p-3 rounded-lg border text-center transition-colors ${
                         formData.planType === plan.value
                           ? "border-emerald-pro-600/50 bg-emerald-pro-600/10 text-slate-900 dark:text-white"
-                          : "border-border-default dark:border-graphite bg-white dark:bg-deep-space/50 text-slate-900 dark:text-slate-300 hover:border-emerald-pro-600/30"
+                          : "border-border-default dark:border-graphite bg-white dark:bg-deep-space/50 text-slate-900 dark:text-slate-200 hover:border-emerald-pro-600/30"
                       }`}
                     >
                       <p className="text-sm font-medium">{plan.label}</p>
@@ -330,7 +330,7 @@ export default function NewClientPage() {
                   Monthly Fee
                 </label>
                 <div className="relative">
-                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-900 dark:text-slate-300">
+                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-900 dark:text-slate-200">
                     $
                   </span>
                   <input
@@ -339,10 +339,10 @@ export default function NewClientPage() {
                     value={formData.monthlyFee}
                     onChange={handleChange}
                     placeholder="0"
-                    className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space pl-8 pr-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                    className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space pl-8 pr-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                   />
                 </div>
-                <p className="text-xs text-slate-900 dark:text-slate-300 mt-2">
+                <p className="text-xs text-slate-900 dark:text-slate-200 mt-2">
                   Override the default plan price if needed
                 </p>
               </div>
@@ -359,7 +359,7 @@ export default function NewClientPage() {
                 <h2 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">
                   Internal Notes
                 </h2>
-                <p className="text-sm text-slate-900 dark:text-slate-300">
+                <p className="text-sm text-slate-900 dark:text-slate-200">
                   Additional information (not visible to client)
                 </p>
               </div>
@@ -371,7 +371,7 @@ export default function NewClientPage() {
               onChange={handleChange}
               placeholder="Any relevant notes about this client..."
               rows={4}
-              className="w-full rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 resize-none"
+              className="w-full rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 resize-none"
             />
           </div>
 
@@ -379,7 +379,7 @@ export default function NewClientPage() {
           <div className="flex items-center justify-between pt-4">
             <Link
               href="/admin/clients"
-              className="px-4 py-2 border border-border-default dark:border-graphite text-slate-900 dark:text-slate-300 rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors"
+              className="px-4 py-2 border border-border-default dark:border-graphite text-slate-900 dark:text-slate-200 rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors"
             >
               Cancel
             </Link>

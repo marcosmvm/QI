@@ -196,7 +196,7 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-6">
-        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-300 mb-2">
+        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-200 mb-2">
           <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
           <span>/</span>
           <Link href="/dashboard/campaigns" className="hover:text-emerald-pro-600 transition-colors">Campaigns</Link>
@@ -209,7 +209,7 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
         {/* Back Button */}
         <Link
           href="/dashboard/campaigns"
-          className="inline-flex items-center gap-2 text-sm text-slate-900 dark:text-slate-300 hover:text-emerald-pro-600 transition-colors mb-6"
+          className="inline-flex items-center gap-2 text-sm text-slate-900 dark:text-slate-200 hover:text-emerald-pro-600 transition-colors mb-6"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to Campaigns
@@ -230,17 +230,17 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
                     Active
                   </span>
                 </div>
-                <p className="text-sm text-slate-900 dark:text-slate-300">{campaignData.description}</p>
+                <p className="text-sm text-slate-900 dark:text-slate-200">{campaignData.description}</p>
                 <div className="flex items-center gap-4 mt-2">
-                  <span className="text-xs text-slate-900 dark:text-slate-300 flex items-center gap-1">
+                  <span className="text-xs text-slate-900 dark:text-slate-200 flex items-center gap-1">
                     <Calendar className="h-3 w-3" />
                     Created {campaignData.createdAt}
                   </span>
-                  <span className="text-xs text-slate-900 dark:text-slate-300 flex items-center gap-1">
+                  <span className="text-xs text-slate-900 dark:text-slate-200 flex items-center gap-1">
                     <Users className="h-3 w-3" />
                     {campaignData.totalLeads.toLocaleString()} leads
                   </span>
-                  <span className="text-xs text-slate-900 dark:text-slate-300 flex items-center gap-1">
+                  <span className="text-xs text-slate-900 dark:text-slate-200 flex items-center gap-1">
                     <GitBranch className="h-3 w-3" />
                     {campaignData.sequences} sequences
                   </span>
@@ -253,15 +253,15 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
                 <Pause className="h-4 w-4 mr-2" />
                 Pause
               </Button>
-              <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
+              <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white">
                 <Edit3 className="h-4 w-4 mr-2" />
                 Edit
               </Button>
-              <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
+              <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white">
                 <Download className="h-4 w-4 mr-2" />
                 Export
               </Button>
-              <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
+              <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white">
                 <MoreHorizontal className="h-4 w-4" />
               </Button>
             </div>
@@ -287,7 +287,7 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
                 {/* Top accent line on hover */}
                 <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-emerald-pro-600 to-emerald-pro-500 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                 <div className="flex items-center justify-between mb-2">
-                  <p className="text-xs text-slate-900 dark:text-slate-300">{metric.label}</p>
+                  <p className="text-xs text-slate-900 dark:text-slate-200">{metric.label}</p>
                   <div className={cn(
                     "flex h-8 w-8 items-center justify-center rounded-lg border",
                     metricStatus ? `${metricStatus.bg} ${metricStatus.border}` :
@@ -311,7 +311,7 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
                   {metric.value}
                 </p>
                 {metric.sublabel && (
-                  <p className="text-xs text-slate-900 dark:text-slate-300 mt-1">{metric.sublabel} total</p>
+                  <p className="text-xs text-slate-900 dark:text-slate-200 mt-1">{metric.sublabel} total</p>
                 )}
               </div>
             );
@@ -337,7 +337,7 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
                 )}
               >
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-slate-900 dark:text-slate-300">{metric.label}</span>
+                  <span className="text-sm text-slate-900 dark:text-slate-200">{metric.label}</span>
                   <span className={cn("text-xs font-medium", colors.text)}>
                     Target: {"<"}{metric.target}{metric.unit}
                   </span>
@@ -373,7 +373,7 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
                 "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all",
                 activeTab === tab.id
                   ? "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20"
-                  : "text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/5"
+                  : "text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/5"
               )}
             >
               <tab.icon className="h-4 w-4" />
@@ -392,15 +392,15 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
                 <div className="flex items-center gap-4">
                   <div className="flex items-center gap-2">
                     <span className="h-3 w-3 rounded-full bg-emerald-pro-600"></span>
-                    <span className="text-xs text-slate-900 dark:text-slate-300">Sent</span>
+                    <span className="text-xs text-slate-900 dark:text-slate-200">Sent</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="h-3 w-3 rounded-full bg-emerald-pro-500"></span>
-                    <span className="text-xs text-slate-900 dark:text-slate-300">Opened</span>
+                    <span className="text-xs text-slate-900 dark:text-slate-200">Opened</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="h-3 w-3 rounded-full bg-emerald-pro-400"></span>
-                    <span className="text-xs text-slate-900 dark:text-slate-300">Replied</span>
+                    <span className="text-xs text-slate-900 dark:text-slate-200">Replied</span>
                   </div>
                 </div>
               </div>
@@ -422,7 +422,7 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
                         style={{ height: `${(day.replied / maxSent) * 100}%` }}
                       />
                     </div>
-                    <span className="text-[10px] text-slate-900 dark:text-slate-300 mt-2">{day.date}</span>
+                    <span className="text-[10px] text-slate-900 dark:text-slate-200 mt-2">{day.date}</span>
                   </div>
                 ))}
               </div>
@@ -447,11 +447,11 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
                     </div>
                     <div className="grid grid-cols-2 gap-2 text-xs">
                       <div>
-                        <span className="text-slate-900 dark:text-slate-300">Open Rate</span>
+                        <span className="text-slate-900 dark:text-slate-200">Open Rate</span>
                         <p className="text-slate-900 dark:text-white font-medium">{seq.openRate}%</p>
                       </div>
                       <div>
-                        <span className="text-slate-900 dark:text-slate-300">Reply Rate</span>
+                        <span className="text-slate-900 dark:text-slate-200">Reply Rate</span>
                         <p className="text-emerald-pro-400 font-medium">{seq.replyRate}%</p>
                       </div>
                     </div>
@@ -477,14 +477,14 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-emerald-pro-600/10">
-                    <th className="text-left text-xs font-semibold text-slate-900 dark:text-slate-300 uppercase tracking-wider px-6 py-4">Step</th>
-                    <th className="text-left text-xs font-semibold text-slate-900 dark:text-slate-300 uppercase tracking-wider px-4 py-4">Name</th>
-                    <th className="text-center text-xs font-semibold text-slate-900 dark:text-slate-300 uppercase tracking-wider px-4 py-4">Sent</th>
-                    <th className="text-center text-xs font-semibold text-slate-900 dark:text-slate-300 uppercase tracking-wider px-4 py-4">Opened</th>
-                    <th className="text-center text-xs font-semibold text-slate-900 dark:text-slate-300 uppercase tracking-wider px-4 py-4">Replied</th>
-                    <th className="text-center text-xs font-semibold text-slate-900 dark:text-slate-300 uppercase tracking-wider px-4 py-4">Open Rate</th>
-                    <th className="text-center text-xs font-semibold text-slate-900 dark:text-slate-300 uppercase tracking-wider px-4 py-4">Reply Rate</th>
-                    <th className="text-right text-xs font-semibold text-slate-900 dark:text-slate-300 uppercase tracking-wider px-6 py-4">Actions</th>
+                    <th className="text-left text-xs font-semibold text-slate-900 dark:text-slate-200 uppercase tracking-wider px-6 py-4">Step</th>
+                    <th className="text-left text-xs font-semibold text-slate-900 dark:text-slate-200 uppercase tracking-wider px-4 py-4">Name</th>
+                    <th className="text-center text-xs font-semibold text-slate-900 dark:text-slate-200 uppercase tracking-wider px-4 py-4">Sent</th>
+                    <th className="text-center text-xs font-semibold text-slate-900 dark:text-slate-200 uppercase tracking-wider px-4 py-4">Opened</th>
+                    <th className="text-center text-xs font-semibold text-slate-900 dark:text-slate-200 uppercase tracking-wider px-4 py-4">Replied</th>
+                    <th className="text-center text-xs font-semibold text-slate-900 dark:text-slate-200 uppercase tracking-wider px-4 py-4">Open Rate</th>
+                    <th className="text-center text-xs font-semibold text-slate-900 dark:text-slate-200 uppercase tracking-wider px-4 py-4">Reply Rate</th>
+                    <th className="text-right text-xs font-semibold text-slate-900 dark:text-slate-200 uppercase tracking-wider px-6 py-4">Actions</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-emerald-pro-600/5">
@@ -513,20 +513,20 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
                       <td className="px-4 py-4 text-center">
                         <span className={cn(
                           "text-sm font-semibold",
-                          seq.replyRate >= 5 ? "text-emerald-pro-400" : seq.replyRate >= 3 ? "text-energy-orange" : "text-slate-900 dark:text-slate-300"
+                          seq.replyRate >= 5 ? "text-emerald-pro-400" : seq.replyRate >= 3 ? "text-energy-orange" : "text-slate-900 dark:text-slate-200"
                         )}>
                           {seq.replyRate}%
                         </span>
                       </td>
                       <td className="px-6 py-4">
                         <div className="flex items-center justify-end gap-1">
-                          <button className="p-2 text-slate-900 dark:text-slate-300 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
+                          <button className="p-2 text-slate-900 dark:text-slate-200 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                             <Eye className="h-4 w-4" />
                           </button>
-                          <button className="p-2 text-slate-900 dark:text-slate-300 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
+                          <button className="p-2 text-slate-900 dark:text-slate-200 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                             <Edit3 className="h-4 w-4" />
                           </button>
-                          <button className="p-2 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
+                          <button className="p-2 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                             <MoreHorizontal className="h-4 w-4" />
                           </button>
                         </div>
@@ -544,7 +544,7 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
           <motion.div variants={itemVariants} className="glass-premium p-6">
             <div className="flex items-center justify-between mb-6">
               <h3 className="font-semibold text-slate-900 dark:text-white">Recent Activity</h3>
-              <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
+              <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white">
                 <RefreshCw className="h-4 w-4 mr-2" />
                 Refresh
               </Button>
@@ -577,15 +577,15 @@ export default function CampaignDetailPage({ params }: { params: { id: string } 
                       <div className="flex items-center justify-between mb-1">
                         <div className="flex items-center gap-2">
                           <span className="font-medium text-slate-900 dark:text-white">{activity.lead}</span>
-                          <span className="text-xs text-slate-900 dark:text-slate-300">at {activity.company}</span>
+                          <span className="text-xs text-slate-900 dark:text-slate-200">at {activity.company}</span>
                         </div>
-                        <span className="text-xs text-slate-900 dark:text-slate-300">{activity.time}</span>
+                        <span className="text-xs text-slate-900 dark:text-slate-200">{activity.time}</span>
                       </div>
-                      <p className="text-sm text-slate-900 dark:text-slate-300">{activity.message}</p>
+                      <p className="text-sm text-slate-900 dark:text-slate-200">{activity.message}</p>
                     </div>
                     <Link
                       href={`/dashboard/leads/lead-001`}
-                      className="p-2 text-slate-900 dark:text-slate-300 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors"
+                      className="p-2 text-slate-900 dark:text-slate-200 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors"
                     >
                       <ChevronRight className="h-4 w-4" />
                     </Link>
