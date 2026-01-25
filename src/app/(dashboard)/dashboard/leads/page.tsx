@@ -423,7 +423,7 @@ export default function LeadsPage() {
                                 "px-2 py-1 text-xs rounded-lg border transition-all",
                                 filterSource === source
                                   ? "bg-emerald-pro-600/20 text-emerald-pro-600 border-emerald-pro-600/30"
-                                  : "card-base hover:border-emerald-pro-600/30"
+                                  : "card-base text-slate-900 dark:text-slate-100 hover:border-emerald-pro-600/30"
                               )}
                             >
                               {source}
@@ -443,7 +443,7 @@ export default function LeadsPage() {
                                 "px-2 py-1 text-xs rounded-lg border transition-all",
                                 selectedStage === stage.id
                                   ? "bg-emerald-pro-600/20 text-emerald-pro-600 border-emerald-pro-600/30"
-                                  : "card-base hover:border-emerald-pro-600/30"
+                                  : "card-base text-slate-900 dark:text-slate-100 hover:border-emerald-pro-600/30"
                               )}
                             >
                               {stage.name}
