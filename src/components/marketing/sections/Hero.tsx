@@ -98,7 +98,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto mb-8 leading-relaxed"
+            className="text-xl md:text-2xl text-slate-600 dark:text-slate-200 max-w-3xl mx-auto mb-8 leading-relaxed"
           >
             Our <span className="text-emerald-600 dark:text-green-400 font-semibold">5 proprietary AI engines</span> handle compliance, personalization, and optimization—so your cold emails actually get read.
           </motion.p>
@@ -111,7 +111,7 @@ export function Hero() {
             className="flex flex-wrap justify-center gap-6 mb-12"
           >
             {valueProps.map((prop, i) => (
-              <div key={i} className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+              <div key={i} className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
                 <CheckCircle className="h-4 w-4 text-emerald-500 dark:text-green-400" />
                 <span className="text-sm">{prop}</span>
               </div>
@@ -173,7 +173,7 @@ export function Hero() {
                 <span>Check your inbox for the B2B Cold Email Playbook!</span>
               </div>
             )}
-            <p className="text-slate-500 dark:text-slate-400 text-xs mt-2">Get our free B2B Cold Email Playbook. No spam, unsubscribe anytime.</p>
+            <p className="text-slate-500 dark:text-slate-200 text-xs mt-2">Get our free B2B Cold Email Playbook. No spam, unsubscribe anytime.</p>
           </motion.div>
 
           {/* Hero Stats Grid */}
@@ -193,7 +193,7 @@ export function Hero() {
               >
                 <stat.icon className="w-6 h-6 text-emerald-600 dark:text-green-400 mx-auto mb-2 group-hover:scale-110 transition-transform" />
                 <div className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">{stat.value}</div>
-                <div className="text-slate-600 dark:text-slate-400 text-sm mt-1">{stat.label}</div>
+                <div className="text-slate-600 dark:text-slate-200 text-sm mt-1">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -205,14 +205,14 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.7 }}
             className="pt-8 border-t border-slate-200 dark:border-slate-800"
           >
-            <p className="text-slate-500 dark:text-slate-400 text-sm mb-4">Built for B2B companies in</p>
+            <p className="text-slate-500 dark:text-slate-200 text-sm mb-4">Built for B2B companies in</p>
             <div className="flex flex-wrap justify-center items-center gap-3">
               {["SaaS", "B2B Tech", "Healthcare", "Finance", "Professional Services"].map((industry) => (
                 <motion.span
                   key={industry}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="px-4 py-2 text-sm text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700"
+                  className="px-4 py-2 text-sm text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700"
                 >
                   {industry}
                 </motion.span>

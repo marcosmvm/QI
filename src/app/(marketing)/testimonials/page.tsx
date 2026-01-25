@@ -77,7 +77,7 @@ export default function TestimonialsPage() {
 
             {/* Quote */}
             <blockquote className="text-xl md:text-2xl text-slate-900 dark:text-white font-medium leading-relaxed mb-8 mt-4">
-              &ldquo;I built XGrowthOS because I was tired of seeing B2B companies waste their best sales reps on cold outreach. Your closers should be closing, not prospecting. Our 11 AI engines do the heavy lifting so your team can focus on what they do best—building relationships and closing deals.&rdquo;
+              &ldquo;I built XGrowthOS because I was tired of seeing B2B companies waste their best sales reps on cold outreach. Your closers should be closing, not prospecting. Our 5 AI engines do the heavy lifting so your team can focus on what they do best—building relationships and closing deals.&rdquo;
             </blockquote>
 
             {/* Author */}
@@ -89,7 +89,7 @@ export default function TestimonialsPage() {
                 <div>
                   <p className="font-semibold text-slate-900 dark:text-white text-lg">Marcos Matthews</p>
                   <p className="text-emerald-pro-600 text-sm font-medium">Founder & CEO</p>
-                  <div className="flex items-center gap-3 mt-1 text-slate-900 dark:text-slate-300 text-xs">
+                  <div className="flex items-center gap-3 mt-1 text-slate-900 dark:text-slate-200 text-xs">
                     <span className="flex items-center gap-1">
                       <MapPin className="h-3 w-3" />
                       Los Angeles, CA
@@ -185,7 +185,7 @@ export default function TestimonialsPage() {
                 <CheckCircle className="h-6 w-6 text-emerald-pro-400 flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold text-slate-900 dark:text-white mb-1">{benefit.title}</h4>
-                  <p className="text-slate-900 dark:text-slate-300 text-sm">{benefit.description}</p>
+                  <p className="text-slate-900 dark:text-slate-200 text-sm">{benefit.description}</p>
                 </div>
               </motion.div>
             ))}

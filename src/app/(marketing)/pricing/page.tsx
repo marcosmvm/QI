@@ -48,7 +48,7 @@ export default function PricingPage() {
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-slate-900/90 dark:text-slate-200/90 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-slate-900 dark:text-slate-200 max-w-2xl mx-auto leading-relaxed">
               Choose the plan that matches your growth goals. All plans include <span className="text-emerald-pro-600">setup</span>, <span className="text-emerald-pro-500">training</span>, and <span className="text-emerald-pro-400">ongoing optimization</span>.
             </p>
           </motion.div>
@@ -89,7 +89,7 @@ export default function PricingPage() {
                   <h3 className="text-2xl lg:text-3xl font-sora font-bold text-slate-900 dark:text-white mb-2">
                     {tier.name}
                   </h3>
-                  <p className="text-slate-900 dark:text-slate-300 text-sm">{tier.tagline}</p>
+                  <p className="text-slate-900 dark:text-slate-200 text-sm">{tier.tagline}</p>
                 </div>
 
                 {/* Price - Enhanced */}
@@ -101,9 +101,9 @@ export default function PricingPage() {
                     )}>
                       {tier.price}
                     </span>
-                    <span className="text-slate-900 dark:text-slate-300 text-lg">{tier.priceSubtext}</span>
+                    <span className="text-slate-900 dark:text-slate-200 text-lg">{tier.priceSubtext}</span>
                   </div>
-                  <p className="text-slate-900 dark:text-slate-300 text-sm mt-3">{tier.description}</p>
+                  <p className="text-slate-900 dark:text-slate-200 text-sm mt-3">{tier.description}</p>
                 </div>
 
                 {/* Features - Enhanced */}

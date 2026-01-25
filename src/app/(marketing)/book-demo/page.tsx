@@ -155,7 +155,7 @@ export default function BookDemoPage() {
               </span>
             </h1>
 
-            <p className="text-xl text-slate-900 dark:text-slate-300">
+            <p className="text-xl text-slate-900 dark:text-slate-200">
               See how AI-powered cold outreach can transform your sales pipeline.
               No commitment, no pressure—just valuable insights.
             </p>
@@ -191,7 +191,7 @@ export default function BookDemoPage() {
                         <h3 className="text-sm font-medium text-slate-900 dark:text-white">
                           {item.title}
                         </h3>
-                        <p className="text-sm text-slate-900 dark:text-slate-300">{item.description}</p>
+                        <p className="text-sm text-slate-900 dark:text-slate-200">{item.description}</p>
                       </div>
                     </div>
                   ))}
@@ -220,7 +220,7 @@ export default function BookDemoPage() {
                       <p className="text-sm font-medium text-slate-900 dark:text-white">
                         {testimonial.author}
                       </p>
-                      <p className="text-xs text-slate-900 dark:text-slate-300">{testimonial.role}</p>
+                      <p className="text-xs text-slate-900 dark:text-slate-200">{testimonial.role}</p>
                     </div>
                   </div>
                 ))}
@@ -230,11 +230,11 @@ export default function BookDemoPage() {
               <div className="flex items-center gap-4 pt-4">
                 <div className="flex items-center gap-2">
                   <Shield className="h-5 w-5 text-emerald-pro-400" />
-                  <span className="text-sm text-slate-900 dark:text-slate-300">No spam, ever</span>
+                  <span className="text-sm text-slate-900 dark:text-slate-200">No spam, ever</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle className="h-5 w-5 text-emerald-pro-400" />
-                  <span className="text-sm text-slate-900 dark:text-slate-300">Free consultation</span>
+                  <span className="text-sm text-slate-900 dark:text-slate-200">Free consultation</span>
                 </div>
               </div>
             </motion.div>
@@ -260,7 +260,7 @@ export default function BookDemoPage() {
                           onChange={handleChange}
                           placeholder="John"
                           required
-                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                         />
                       </div>
                       <div>
@@ -273,7 +273,7 @@ export default function BookDemoPage() {
                           onChange={handleChange}
                           placeholder="Smith"
                           required
-                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                         />
                       </div>
                     </div>
@@ -290,7 +290,7 @@ export default function BookDemoPage() {
                         onChange={handleChange}
                         placeholder="john@company.com"
                         required
-                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                       />
                     </div>
 
@@ -306,7 +306,7 @@ export default function BookDemoPage() {
                           onChange={handleChange}
                           placeholder="Your Company"
                           required
-                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                         />
                       </div>
                       <div>
@@ -320,7 +320,7 @@ export default function BookDemoPage() {
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder="+1 (555) 000-0000"
-                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                         />
                       </div>
                     </div>
@@ -372,7 +372,7 @@ export default function BookDemoPage() {
                         onChange={handleChange}
                         placeholder="Tell us about your goals or specific challenges..."
                         rows={3}
-                        className="w-full rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 resize-none"
+                        className="w-full rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 resize-none"
                       />
                     </div>
 
@@ -414,7 +414,7 @@ export default function BookDemoPage() {
                           className={`p-3 rounded-lg border text-center transition-colors ${
                             selectedDate?.toDateString() === date.toDateString()
                               ? "border-emerald-pro-600/50 bg-emerald-pro-600/10 text-slate-900 dark:text-white"
-                              : "border-border-default dark:border-graphite bg-white dark:bg-deep-space/50 text-slate-900 dark:text-slate-300 hover:border-emerald-pro-600/30"
+                              : "border-border-default dark:border-graphite bg-white dark:bg-deep-space/50 text-slate-900 dark:text-slate-200 hover:border-emerald-pro-600/30"
                           }`}
                         >
                           <p className="text-xs">
@@ -430,7 +430,7 @@ export default function BookDemoPage() {
 
                     {selectedDate && (
                       <div>
-                        <p className="text-sm text-slate-900 dark:text-slate-300 mb-3">
+                        <p className="text-sm text-slate-900 dark:text-slate-200 mb-3">
                           Available times for{" "}
                           {selectedDate.toLocaleDateString("en-US", {
                             weekday: "long",
@@ -446,7 +446,7 @@ export default function BookDemoPage() {
                               className={`p-2 rounded-lg border text-sm transition-colors ${
                                 selectedTime === time
                                   ? "border-emerald-pro-600/50 bg-emerald-pro-600/10 text-slate-900 dark:text-white"
-                                  : "border-border-default dark:border-graphite bg-white dark:bg-deep-space/50 text-slate-900 dark:text-slate-300 hover:border-emerald-pro-600/30"
+                                  : "border-border-default dark:border-graphite bg-white dark:bg-deep-space/50 text-slate-900 dark:text-slate-200 hover:border-emerald-pro-600/30"
                               }`}
                             >
                               {time}
@@ -484,7 +484,7 @@ export default function BookDemoPage() {
                     <h3 className="text-xl font-sora font-semibold text-slate-900 dark:text-white mb-2">
                       You&apos;re All Set!
                     </h3>
-                    <p className="text-slate-900 dark:text-slate-300 mb-4">
+                    <p className="text-slate-900 dark:text-slate-200 mb-4">
                       We&apos;ve sent a calendar invite to {formData.email}.
                     </p>
                     <div className="p-4 bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30 rounded-lg mb-6">
@@ -498,7 +498,7 @@ export default function BookDemoPage() {
                         at {selectedTime}
                       </p>
                     </div>
-                    <p className="text-sm text-slate-900 dark:text-slate-300">
+                    <p className="text-sm text-slate-900 dark:text-slate-200">
                       Questions before the call?{" "}
                       <a
                         href="mailto:hello@xgrowthos.com"

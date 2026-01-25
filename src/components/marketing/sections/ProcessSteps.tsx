@@ -80,7 +80,7 @@ export function ProcessSteps() {
               Works
             </span>
           </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400">
+          <p className="text-lg text-slate-600 dark:text-slate-200">
             Our proven 5-step process transforms cold outreach into a predictable meeting machine.
           </p>
         </motion.div>
@@ -128,7 +128,7 @@ export function ProcessSteps() {
                         {step.title}
                       </h3>
                     </div>
-                    <p className="text-slate-600 dark:text-slate-400 max-w-2xl transition-colors">
+                    <p className="text-slate-600 dark:text-slate-200 max-w-2xl transition-colors">
                       {step.description}
                     </p>
                   </div>

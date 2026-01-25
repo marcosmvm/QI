@@ -89,7 +89,7 @@ export const mainNavigation: NavLink[] = [
       ],
       featured: {
         title: "See All Engines",
-        description: "Learn how our 11 AI engines work together",
+        description: "Learn how our 5 AI engines work together",
         href: "/engines",
       },
     },

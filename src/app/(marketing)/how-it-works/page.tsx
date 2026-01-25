@@ -229,7 +229,7 @@ export default function HowItWorksPage() {
                 Process
               </span>
             </h2>
-            <p className="text-slate-900 dark:text-slate-300">
+            <p className="text-slate-900 dark:text-slate-200">
               From discovery to scale, here&apos;s how we build your outbound engine.
             </p>
           </motion.div>
@@ -263,7 +263,7 @@ export default function HowItWorksPage() {
                     <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-sm text-slate-900 dark:text-slate-300 mb-4">{step.description}</p>
+                    <p className="text-sm text-slate-900 dark:text-slate-200 mb-4">{step.description}</p>
                     <ul className="space-y-2">
                       {step.details.map((detail, i) => (
                         <li
@@ -299,10 +299,10 @@ export default function HowItWorksPage() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Powered by{" "}
               <span className="headline-underline text-gradient">
-                11 AI Engines
+                5 AI Engines
               </span>
             </h2>
-            <p className="text-slate-900 dark:text-slate-300">
+            <p className="text-slate-900 dark:text-slate-200">
               Each engine handles a specialized part of your outreach, working together
               to maximize results.
             </p>
@@ -354,11 +354,11 @@ export default function HowItWorksPage() {
                     >
                       <engine.icon className={`h-6 w-6 ${colors.text}`} />
                     </div>
-                    <p className="text-xs text-slate-900 dark:text-slate-300 mb-1">{engine.codename}</p>
+                    <p className="text-xs text-slate-900 dark:text-slate-200 mb-1">{engine.codename}</p>
                     <h3 className="text-base font-sora font-semibold text-slate-900 dark:text-white mb-1">
                       {engine.name}
                     </h3>
-                    <p className="text-xs text-slate-900 dark:text-slate-300">{engine.description}</p>
+                    <p className="text-xs text-slate-900 dark:text-slate-200">{engine.description}</p>
                   </Link>
                 </motion.div>
               );
@@ -399,7 +399,7 @@ export default function HowItWorksPage() {
                   <p className="text-3xl md:text-4xl font-sora font-bold text-emerald-pro-600 mb-1">
                     {stat.value}
                   </p>
-                  <p className="text-sm text-slate-900 dark:text-slate-300">{stat.label}</p>
+                  <p className="text-sm text-slate-900 dark:text-slate-200">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -426,7 +426,7 @@ export default function HowItWorksPage() {
                 Different
               </span>
             </h2>
-            <p className="text-slate-900 dark:text-slate-300">
+            <p className="text-slate-900 dark:text-slate-200">
               Traditional agencies rely on manual processes and guesswork. We use
               AI to deliver consistent, scalable results.
             </p>
@@ -449,7 +449,7 @@ export default function HowItWorksPage() {
                   <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-slate-900 dark:text-slate-300">{item.description}</p>
+                  <p className="text-slate-900 dark:text-slate-200">{item.description}</p>
                 </div>
               </motion.div>
             ))}

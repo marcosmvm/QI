@@ -128,7 +128,7 @@ export default function BlogPage() {
                     </p>
 
                     {/* Meta */}
-                    <div className="flex items-center justify-between text-slate-900 dark:text-slate-300 text-xs">
+                    <div className="flex items-center justify-between text-slate-900 dark:text-slate-200 text-xs">
                       <div className="flex items-center gap-1">
                         <Calendar className="h-3 w-3" />
                         {post.date}

@@ -104,7 +104,7 @@ export default function ComparisonHubPage() {
               </span>
             </h1>
 
-            <p className="text-xl text-slate-900 dark:text-slate-300">
+            <p className="text-xl text-slate-900 dark:text-slate-200">
               See how our AI-powered approach compares to traditional lead
               generation agencies.
             </p>
@@ -134,7 +134,7 @@ export default function ComparisonHubPage() {
                   <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white mb-1">
                     XGrowthOS vs {competitor.name}
                   </h3>
-                  <p className="text-sm text-slate-900 dark:text-slate-300 mb-4">
+                  <p className="text-sm text-slate-900 dark:text-slate-200 mb-4">
                     {competitor.description}
                   </p>
 
@@ -177,7 +177,7 @@ export default function ComparisonHubPage() {
             <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Why Companies Switch to XGrowthOS
             </h2>
-            <p className="text-slate-900 dark:text-slate-300 mb-6">
+            <p className="text-slate-900 dark:text-slate-200 mb-6">
               Traditional agencies rely on manual processes that can&apos;t match the
               speed, personalization, and optimization that AI delivers.
             </p>

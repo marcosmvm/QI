@@ -139,7 +139,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
                     <p className={`stat-number text-3xl md:text-4xl ${colors.text}`}>
                       {stat.value}
                     </p>
-                    <p className="text-slate-900 dark:text-slate-300 text-sm mt-2">{stat.label}</p>
+                    <p className="text-slate-900 dark:text-slate-200 text-sm mt-2">{stat.label}</p>
                   </motion.div>
                 ))}
               </div>

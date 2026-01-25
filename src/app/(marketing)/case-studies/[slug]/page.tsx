@@ -46,7 +46,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
           >
             <Link
               href="/case-studies"
-              className="inline-flex items-center gap-2 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               All Case Studies
@@ -70,7 +70,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
 
             {/* Company */}
             <p className="text-emerald-pro-600 text-lg font-medium mb-2">{study.company}</p>
-            <p className="text-slate-900 dark:text-slate-300 mb-4">{study.industry}</p>
+            <p className="text-slate-900 dark:text-slate-200 mb-4">{study.industry}</p>
 
             {/* Title */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-slate-900 dark:text-white mb-6">
@@ -107,7 +107,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
                 <p className="text-4xl md:text-5xl font-sora font-bold text-gradient">
                   {metric.value}
                 </p>
-                <p className="text-slate-900 dark:text-slate-300 mt-1">{metric.label}</p>
+                <p className="text-slate-900 dark:text-slate-200 mt-1">{metric.label}</p>
               </motion.div>
             ))}
           </div>
@@ -194,7 +194,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
                 </div>
                 <div>
                   <p className="font-semibold text-slate-900 dark:text-white">{study.testimonial.author}</p>
-                  <p className="text-slate-900 dark:text-slate-300 text-sm">{study.testimonial.title}</p>
+                  <p className="text-slate-900 dark:text-slate-200 text-sm">{study.testimonial.title}</p>
                 </div>
               </div>
             </motion.div>
@@ -245,7 +245,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
             {prevStudy ? (
               <Link
                 href={`/case-studies/${prevStudy.id}`}
-                className="flex items-center gap-3 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors group"
+                className="flex items-center gap-3 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white transition-colors group"
               >
                 <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
                 <span>
@@ -267,7 +267,7 @@ export default function CaseStudyDetailPage({ params }: { params: Promise<{ slug
             {nextStudy ? (
               <Link
                 href={`/case-studies/${nextStudy.id}`}
-                className="flex items-center gap-3 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors group text-right"
+                className="flex items-center gap-3 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white transition-colors group text-right"
               >
                 <span>
                   <span className="text-sm block">Next</span>

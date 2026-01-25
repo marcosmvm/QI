@@ -62,7 +62,7 @@ export function MarketingNavbar() {
                         "flex items-center gap-1 text-sm font-medium transition-colors duration-150",
                         activeDropdown === item.label
                           ? "text-emerald-600 dark:text-green-400"
-                          : "text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+                          : "text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"
                       )}
                     >
                       {item.label}
@@ -80,7 +80,7 @@ export function MarketingNavbar() {
                         "text-sm font-medium transition-colors duration-150",
                         pathname === item.href || pathname.startsWith(item.href + "/")
                           ? "text-emerald-600 dark:text-green-400"
-                          : "text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+                          : "text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"
                       )}
                     >
                       {item.label}
@@ -103,7 +103,7 @@ export function MarketingNavbar() {
               {/* Ghost Button for Login */}
               <Link
                 href="/login"
-                className="hidden lg:block text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white font-medium px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-200"
+                className="hidden lg:block text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white font-medium px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-200"
               >
                 Login
               </Link>
@@ -118,7 +118,7 @@ export function MarketingNavbar() {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-all duration-150"
+                className="lg:hidden p-2 text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-all duration-150"
               >
                 {isMobileMenuOpen ? (
                   <X className="h-6 w-6" />

@@ -79,7 +79,7 @@ export default function AboutPage() {
                 B2B Outbound
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-900/90 dark:text-slate-200/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-slate-900 dark:text-slate-200 max-w-3xl mx-auto leading-relaxed">
               XGrowthOS was founded with a simple mission: make <span className="text-emerald-pro-600 font-semibold">AI-powered lead generation</span> accessible to every B2B company.
             </p>
           </motion.div>
@@ -123,7 +123,7 @@ export default function AboutPage() {
                 <p className="stat-number text-4xl md:text-5xl">
                   {stat.value}
                 </p>
-                <p className="text-slate-900 dark:text-slate-300 mt-2">{stat.label}</p>
+                <p className="text-slate-900 dark:text-slate-200 mt-2">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -148,7 +148,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-slate-900/90 dark:text-slate-200/90 leading-relaxed text-lg"
+                className="text-slate-900 dark:text-slate-200 leading-relaxed text-lg"
               >
                 XGrowthOS was founded by <span className="text-emerald-pro-600 font-semibold">Marcos Matthews</span> in Los Angeles, CA. After observing that SDRs spend 65% of their time NOT selling—instead on prospecting, data entry, and admin—he knew there had to be a better way.
               </motion.p>
@@ -157,7 +157,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="text-slate-900/90 dark:text-slate-200/90 leading-relaxed text-lg"
+                className="text-slate-900 dark:text-slate-200 leading-relaxed text-lg"
               >
                 The reality is clear: traditional cold outreach is broken. B2B companies pay <span className="text-energy-orange">$120K+ annually per SDR</span> while seeing only 5.1% average cold email reply rates. The result? Inconsistent pipeline, burnout, and turnover.
               </motion.p>
@@ -166,7 +166,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="text-slate-900/90 dark:text-slate-200/90 leading-relaxed text-lg"
+                className="text-slate-900 dark:text-slate-200 leading-relaxed text-lg"
               >
                 XGrowthOS is the solution: an <span className="text-emerald-pro-500 font-semibold">autonomous B2B lead generation platform</span> powered by five AI engines that work 24/7. We&apos;re not just another agency—we&apos;re building an autonomous growth operating system that continuously learns and improves.
               </motion.p>
@@ -175,7 +175,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
-                className="text-slate-900/90 dark:text-slate-200/90 leading-relaxed text-lg"
+                className="text-slate-900 dark:text-slate-200 leading-relaxed text-lg"
               >
                 Our mission is to make <span className="text-emerald-pro-400 font-semibold">enterprise-grade sales automation</span> accessible to every B2B company. Join our Founding Partner program and experience the future of autonomous lead generation.
               </motion.p>
@@ -200,7 +200,7 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 dark:text-white mb-6">
               Our <span className="headline-underline text-gradient">Values</span>
             </h2>
-            <p className="text-lg md:text-xl text-slate-900/90 dark:text-slate-200/90 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-slate-900 dark:text-slate-200 max-w-2xl mx-auto">
               The principles that guide everything we do.
             </p>
           </motion.div>

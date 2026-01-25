@@ -7,7 +7,7 @@ import Link from "next/link";
 
 // Founder mission statement instead of fake testimonials
 const founderMission = {
-  quote: "I built XGrowthOS because I was tired of seeing B2B companies waste their best sales reps on cold outreach. Your closers should be closing, not prospecting. Our 11 AI engines do the heavy lifting so your team can focus on what they do best—building relationships and closing deals.",
+  quote: "I built XGrowthOS because I was tired of seeing B2B companies waste their best sales reps on cold outreach. Your closers should be closing, not prospecting. Our 5 AI engines do the heavy lifting so your team can focus on what they do best—building relationships and closing deals.",
   author: "Marcos Matthews",
   title: "Founder & CEO",
   location: "Los Angeles, CA",
@@ -41,7 +41,7 @@ export function Testimonials() {
               Founder
             </span>
           </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400">
+          <p className="text-lg text-slate-600 dark:text-slate-200">
             Built by someone who understands your pipeline challenges.
           </p>
         </motion.div>
@@ -75,7 +75,7 @@ export function Testimonials() {
                   <div>
                     <p className="font-semibold text-slate-900 dark:text-white text-lg">{founderMission.author}</p>
                     <p className="text-emerald-600 dark:text-green-400 text-sm font-medium">{founderMission.title}</p>
-                    <div className="flex items-center gap-3 mt-1 text-slate-500 dark:text-slate-400 text-xs">
+                    <div className="flex items-center gap-3 mt-1 text-slate-500 dark:text-slate-200 text-xs">
                       <span className="flex items-center gap-1">
                         <MapPin className="h-3 w-3" />
                         {founderMission.location}
@@ -116,7 +116,7 @@ export function Testimonials() {
                     </div>
                   </div>
                   <h4 className="text-slate-900 dark:text-white font-semibold mb-2">{item.title}</h4>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm">{item.description}</p>
+                  <p className="text-slate-600 dark:text-slate-200 text-sm">{item.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -134,7 +134,7 @@ export function Testimonials() {
               <Rocket className="h-4 w-4" />
               Limited Founding Partner Spots Available
             </div>
-            <p className="text-slate-600 dark:text-slate-400 mb-6 max-w-xl mx-auto">
+            <p className="text-slate-600 dark:text-slate-200 mb-6 max-w-xl mx-auto">
               Join our founding partner program and lock in exclusive rates while helping shape the future of B2B outreach automation.
             </p>
             <Link

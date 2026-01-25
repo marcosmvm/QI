@@ -98,7 +98,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
           >
             <Link
               href="/engines"
-              className="inline-flex items-center gap-2 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               All Engines
@@ -171,7 +171,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
                     <p className={`text-4xl font-sora font-bold ${colors.text}`}>
                       {stat.value}
                     </p>
-                    <p className="text-slate-900 dark:text-slate-300 text-sm mt-1">{stat.label}</p>
+                    <p className="text-slate-900 dark:text-slate-200 text-sm mt-1">{stat.label}</p>
                   </motion.div>
                 ))}
               </div>
@@ -312,11 +312,11 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
             {prevEngine ? (
               <Link
                 href={`/engines/${prevEngine.id}`}
-                className="flex items-center gap-3 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors group p-4 rounded-xl hover:bg-light-bg-secondary dark:bg-midnight-blue/30"
+                className="flex items-center gap-3 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white transition-colors group p-4 rounded-xl hover:bg-light-bg-secondary dark:bg-midnight-blue/30"
               >
                 <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
                 <span>
-                  <span className="text-sm block text-slate-900 dark:text-slate-300/70">Previous</span>
+                  <span className="text-sm block text-slate-900 dark:text-slate-200/70">Previous</span>
                   <span className="font-semibold">{prevEngine.name}</span>
                 </span>
               </Link>
@@ -334,10 +334,10 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
             {nextEngine ? (
               <Link
                 href={`/engines/${nextEngine.id}`}
-                className="flex items-center gap-3 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors group text-right p-4 rounded-xl hover:bg-light-bg-secondary dark:bg-midnight-blue/30"
+                className="flex items-center gap-3 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white transition-colors group text-right p-4 rounded-xl hover:bg-light-bg-secondary dark:bg-midnight-blue/30"
               >
                 <span>
-                  <span className="text-sm block text-slate-900 dark:text-slate-300/70">Next</span>
+                  <span className="text-sm block text-slate-900 dark:text-slate-200/70">Next</span>
                   <span className="font-semibold">{nextEngine.name}</span>
                 </span>
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />

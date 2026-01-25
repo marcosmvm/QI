@@ -97,14 +97,14 @@ export default function EnginesPage() {
             </motion.div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-slate-900 dark:text-white mb-8">
-              11 AI Engines.{" "}
+              5 AI Engines.{" "}
               <span className="headline-underline text-gradient block mt-2">
                 One Powerful Platform.
               </span>
             </h1>
 
             <p className="text-xl md:text-2xl text-slate-900/90 dark:text-slate-200/90 max-w-3xl mx-auto mb-12 leading-relaxed">
-              5 Lead Generation engines and 6 CSM Automation engines work in harmony. Together, they form an <span className="text-emerald-pro-600 font-semibold">unstoppable</span> autonomous growth platform.
+              5 specialized AI engines work in harmony. Together, they form an <span className="text-emerald-pro-600 font-semibold">unstoppable</span> autonomous growth platform.
             </p>
 
             <Link href="/contact">
@@ -187,7 +187,7 @@ export default function EnginesPage() {
                               <p className={`text-2xl font-sora font-bold ${colors.text}`}>
                                 {stat.value}
                               </p>
-                              <p className="text-slate-900 dark:text-slate-300 text-xs">{stat.label}</p>
+                              <p className="text-slate-900 dark:text-slate-200 text-xs">{stat.label}</p>
                             </motion.div>
                           ))}
                         </div>
@@ -268,7 +268,7 @@ export default function EnginesPage() {
                 color: "mint",
               },
               {
-                title: "All Eleven United",
+                title: "All Five United",
                 description: "Data flows between all engines, creating a self-improving system that gets smarter with every interaction.",
                 color: "gradient",
               },

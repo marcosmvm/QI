@@ -93,7 +93,7 @@ const pilotFaqs = [
   {
     question: "What's included in the pilot?",
     answer:
-      "You'll receive one full campaign with up to 5,000 emails, access to all 11 AI engines, weekly optimization calls, and a dedicated Slack channel. We also provide detailed analytics and a performance review at the end.",
+      "You'll receive one full campaign with up to 5,000 emails, access to all 5 AI engines, weekly optimization calls, and a dedicated Slack channel. We also provide detailed analytics and a performance review at the end.",
   },
   {
     question: "What happens after the pilot?",
@@ -174,7 +174,7 @@ export default function PilotProgramPage() {
               </span>
             </h1>
 
-            <p className="text-xl text-slate-900 dark:text-slate-300 max-w-2xl mx-auto mb-8">
+            <p className="text-xl text-slate-900 dark:text-slate-200 max-w-2xl mx-auto mb-8">
               Join our 60-day pilot program and see firsthand how AI-powered campaigns
               can transform your pipeline. Limited spots available each month.
             </p>
@@ -219,7 +219,7 @@ export default function PilotProgramPage() {
                 Pilot Program
               </span>
             </h2>
-            <p className="text-slate-900 dark:text-slate-300">
+            <p className="text-slate-900 dark:text-slate-200">
               Everything you need to evaluate our platform and generate real results.
             </p>
           </motion.div>
@@ -240,7 +240,7 @@ export default function PilotProgramPage() {
                 <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white mb-2">
                   {benefit.title}
                 </h3>
-                <p className="text-slate-900 dark:text-slate-300 text-sm">{benefit.description}</p>
+                <p className="text-slate-900 dark:text-slate-200 text-sm">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -263,7 +263,7 @@ export default function PilotProgramPage() {
                 Works
               </span>
             </h2>
-            <p className="text-slate-900 dark:text-slate-300">
+            <p className="text-slate-900 dark:text-slate-200">
               A simple, transparent process to evaluate our platform.
             </p>
           </motion.div>
@@ -288,7 +288,7 @@ export default function PilotProgramPage() {
                     <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-slate-900 dark:text-slate-300 text-sm">{step.description}</p>
+                    <p className="text-slate-900 dark:text-slate-200 text-sm">{step.description}</p>
                   </div>
                   {index < pilotSteps.length - 1 && (
                     <div className="hidden md:block absolute top-7 left-full w-full h-0.5 bg-gradient-to-r from-emerald-pro-600 to-transparent -translate-x-1/2" />
@@ -319,7 +319,7 @@ export default function PilotProgramPage() {
               </h2>
             </div>
 
-            <p className="text-slate-900 dark:text-slate-300 mb-6">
+            <p className="text-slate-900 dark:text-slate-200 mb-6">
               The pilot program is designed for B2B companies ready to scale their
               outbound efforts. Here&apos;s what we look for:
             </p>
@@ -352,7 +352,7 @@ export default function PilotProgramPage() {
                 Pilot Program
               </span>
             </h2>
-            <p className="text-slate-900 dark:text-slate-300">
+            <p className="text-slate-900 dark:text-slate-200">
               Fill out the form below and we&apos;ll be in touch within 24 hours.
             </p>
           </motion.div>
@@ -372,7 +372,7 @@ export default function PilotProgramPage() {
                 <h3 className="text-xl font-sora font-semibold text-slate-900 dark:text-white mb-2">
                   Application Received!
                 </h3>
-                <p className="text-slate-900 dark:text-slate-300 max-w-md mx-auto">
+                <p className="text-slate-900 dark:text-slate-200 max-w-md mx-auto">
                   Thanks for your interest in the pilot program. Our team will review
                   your application and reach out within 24 hours to schedule a
                   discovery call.
@@ -392,7 +392,7 @@ export default function PilotProgramPage() {
                       onChange={handleChange}
                       placeholder="John Smith"
                       required
-                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                     />
                   </div>
                   <div>
@@ -407,7 +407,7 @@ export default function PilotProgramPage() {
                       onChange={handleChange}
                       placeholder="john@company.com"
                       required
-                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                     />
                   </div>
                 </div>
@@ -424,7 +424,7 @@ export default function PilotProgramPage() {
                       onChange={handleChange}
                       placeholder="Your Company"
                       required
-                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                     />
                   </div>
                   <div>
@@ -437,7 +437,7 @@ export default function PilotProgramPage() {
                       value={formData.website}
                       onChange={handleChange}
                       placeholder="https://yourcompany.com"
-                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                     />
                   </div>
                 </div>
@@ -472,7 +472,7 @@ export default function PilotProgramPage() {
                     onChange={handleChange}
                     placeholder="What are you hoping to achieve with outbound? Who is your ideal customer?"
                     rows={4}
-                    className="w-full rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 resize-none"
+                    className="w-full rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-200 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 resize-none"
                   />
                 </div>
 
@@ -539,7 +539,7 @@ export default function PilotProgramPage() {
                     </Accordion.Trigger>
                   </Accordion.Header>
                   <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                    <div className="px-6 pb-5 text-slate-900 dark:text-slate-300 leading-relaxed">
+                    <div className="px-6 pb-5 text-slate-900 dark:text-slate-200 leading-relaxed">
                       {faq.answer}
                     </div>
                   </Accordion.Content>
@@ -573,7 +573,7 @@ export default function PilotProgramPage() {
               XGrowthOS. We generated 47 qualified leads in the first
               month alone.&rdquo;
             </blockquote>
-            <p className="text-slate-900 dark:text-slate-300">
+            <p className="text-slate-900 dark:text-slate-200">
               — Sarah Chen, VP of Sales at TechFlow Inc.
             </p>
           </motion.div>
@@ -601,7 +601,7 @@ export default function PilotProgramPage() {
             <h2 className="text-3xl md:text-4xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Limited Spots Available
             </h2>
-            <p className="text-slate-900 dark:text-slate-300 mb-8">
+            <p className="text-slate-900 dark:text-slate-200 mb-8">
               We only accept a limited number of pilot clients each month to ensure
               everyone gets the attention they deserve. Apply now to secure your spot.
             </p>

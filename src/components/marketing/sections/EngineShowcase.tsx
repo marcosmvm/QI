@@ -129,12 +129,12 @@ export function EngineShowcase() {
             <span className="text-sm font-medium text-emerald-pro-500">Our Technology</span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 dark:text-white mb-6">
-            11 AI Engines Working{" "}
+            5 AI Engines Working{" "}
             <span className="text-gradient">
               In Harmony
             </span>
           </h2>
-          <p className="text-lg text-slate-900 dark:text-slate-300">
+          <p className="text-lg text-slate-900 dark:text-slate-200">
             Each specialized engine handles a critical part of the outbound process, working together to maximize your meeting output.
           </p>
         </motion.div>
@@ -164,7 +164,7 @@ export function EngineShowcase() {
                       <div className={`p-3 rounded-xl ${colors.bg} border border-transparent group-hover:border-current/20 transition-all duration-300`}>
                         <engine.icon className={`h-6 w-6 ${colors.text}`} />
                       </div>
-                      <span className="text-xs font-mono text-slate-900 dark:text-slate-300 group-hover:text-slate-900 dark:text-slate-200 transition-colors">
+                      <span className="text-xs font-mono text-slate-900 dark:text-slate-200 group-hover:text-slate-900 dark:text-slate-200 transition-colors">
                         ENGINE {engine.codename}
                       </span>
                     </div>
@@ -175,7 +175,7 @@ export function EngineShowcase() {
                         {engine.name}
                       </h3>
                       <p className={`text-sm ${colors.text} mb-3`}>{engine.tagline}</p>
-                      <p className="text-slate-900 dark:text-slate-300 text-sm leading-relaxed mb-4 group-hover:text-silver/80 transition-colors">
+                      <p className="text-slate-900 dark:text-slate-200 text-sm leading-relaxed mb-4 group-hover:text-silver/80 transition-colors">
                         {engine.description}
                       </p>
 

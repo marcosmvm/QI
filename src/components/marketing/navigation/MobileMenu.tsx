@@ -59,7 +59,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                       <div className="mt-2 ml-4 space-y-1">
                         {item.dropdown.sections.map((section) => (
                           <div key={section.title} className="mb-4">
-                            <p className="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                            <p className="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-200">
                               {section.title}
                             </p>
                             {section.items.map((subItem) => (
@@ -67,7 +67,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                                 key={subItem.label}
                                 href={subItem.href}
                                 onClick={onClose}
-                                className="flex items-center gap-2 px-3 py-2 text-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors"
+                                className="flex items-center gap-2 px-3 py-2 text-sm text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors"
                               >
                                 {subItem.icon && <subItem.icon className="h-4 w-4" />}
                                 <span>{subItem.label}</span>
@@ -109,14 +109,14 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           <div className="mt-6 space-y-3">
             <a
               href={`mailto:${contactInfo.email}`}
-              className="flex items-center gap-3 p-3 text-sm text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-green-400 rounded-lg transition-colors"
+              className="flex items-center gap-3 p-3 text-sm text-slate-600 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-green-400 rounded-lg transition-colors"
             >
               <Mail className="h-4 w-4" />
               {contactInfo.email}
             </a>
             <a
               href={`tel:${contactInfo.phone}`}
-              className="flex items-center gap-3 p-3 text-sm text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-green-400 rounded-lg transition-colors"
+              className="flex items-center gap-3 p-3 text-sm text-slate-600 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-green-400 rounded-lg transition-colors"
             >
               <Phone className="h-4 w-4" />
               {contactInfo.phone}
