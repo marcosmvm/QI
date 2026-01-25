@@ -215,7 +215,7 @@ export default async function NotificationsPage() {
     <div className="min-h-screen p-8">
       {/* Page Header */}
       <div className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-200 mb-2">
+        <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300 mb-2">
           <Link
             href="/dashboard"
             className="hover:text-emerald-pro-600 transition-colors"
@@ -230,14 +230,14 @@ export default async function NotificationsPage() {
             <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">
               Notifications
             </h1>
-            <p className="text-slate-900 dark:text-slate-200 mt-1">
+            <p className="text-slate-600 dark:text-slate-300 mt-1">
               {unreadCount > 0
                 ? `You have ${unreadCount} unread notification${unreadCount !== 1 ? "s" : ""}`
                 : "You're all caught up!"}
             </p>
           </div>
           <div className="flex items-center gap-3">
-            <button className="flex items-center gap-2 px-4 py-2 border border-border-default dark:border-graphite text-slate-900 dark:text-slate-200 rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors">
+            <button className="flex items-center gap-2 px-4 py-2 border border-border-default dark:border-graphite text-slate-600 dark:text-slate-300 rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors">
               <Filter className="h-4 w-4" />
               Filter
             </button>
@@ -275,7 +275,7 @@ export default async function NotificationsPage() {
                 </div>
                 <div>
                   <p className="text-lg font-sora font-bold text-slate-900 dark:text-white">{count}</p>
-                  <p className="text-xs text-slate-900 dark:text-slate-200">{config.label}</p>
+                  <p className="text-xs text-slate-600 dark:text-slate-300">{config.label}</p>
                 </div>
               </div>
             </div>
@@ -286,9 +286,9 @@ export default async function NotificationsPage() {
       {/* Notifications List */}
       {notifications.length === 0 ? (
         <div className="glass-premium p-12 text-center">
-          <Bell className="h-12 w-12 text-slate-900 dark:text-slate-200 mx-auto mb-4" />
-          <p className="text-slate-900 dark:text-slate-200">No notifications yet</p>
-          <p className="text-sm text-slate-900 dark:text-slate-200/70 mt-1">
+          <Bell className="h-12 w-12 text-slate-600 dark:text-slate-300 mx-auto mb-4" />
+          <p className="text-slate-600 dark:text-slate-300">No notifications yet</p>
+          <p className="text-sm text-slate-600 dark:text-slate-300/70 mt-1">
             We&apos;ll notify you when something important happens
           </p>
         </div>
@@ -296,7 +296,7 @@ export default async function NotificationsPage() {
         <div className="space-y-8">
           {Object.entries(groupedByDate).map(([date, items]) => (
             <div key={date}>
-              <h3 className="text-sm font-medium text-slate-900 dark:text-slate-200 mb-3">{date}</h3>
+              <h3 className="text-sm font-medium text-slate-600 dark:text-slate-300 mb-3">{date}</h3>
               <div className="space-y-3">
                 {items.map((notification) => (
                   <NotificationCard
@@ -345,7 +345,7 @@ function NotificationCard({ notification }: { notification: Notification }) {
     steel: {
       bg: "bg-steel/10",
       border: "border-steel/30",
-      text: "text-slate-900 dark:text-slate-200",
+      text: "text-slate-600 dark:text-slate-300",
     },
   };
 
@@ -377,9 +377,9 @@ function NotificationCard({ notification }: { notification: Notification }) {
                 <span className="h-2 w-2 rounded-full bg-emerald-pro-600" />
               )}
             </div>
-            <p className="text-sm text-slate-900 dark:text-slate-200 mt-1">{notification.message}</p>
+            <p className="text-sm text-slate-600 dark:text-slate-300 mt-1">{notification.message}</p>
           </div>
-          <span className="text-xs text-slate-900 dark:text-slate-200 whitespace-nowrap">
+          <span className="text-xs text-slate-600 dark:text-slate-300 whitespace-nowrap">
             {formatTimeAgo(notification.created_at)}
           </span>
         </div>
@@ -392,10 +392,10 @@ function NotificationCard({ notification }: { notification: Notification }) {
             >
               View details
             </Link>
-            <button className="text-sm text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white">
+            <button className="text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
               <Check className="h-4 w-4" />
             </button>
-            <button className="text-sm text-slate-900 dark:text-slate-200 hover:text-energy-orange">
+            <button className="text-sm text-slate-600 dark:text-slate-300 hover:text-energy-orange">
               <Trash2 className="h-4 w-4" />
             </button>
           </div>

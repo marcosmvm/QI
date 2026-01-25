@@ -200,7 +200,7 @@ export default function HowItWorksPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-border-default dark:border-graphite hover:border-emerald-pro-600/50 hover:text-emerald-pro-600"
+                  className="border-slate-300 dark:border-slate-600 hover:border-emerald-pro-600/50 hover:text-emerald-pro-600"
                 >
                   Explore the Engines
                 </Button>
@@ -229,7 +229,7 @@ export default function HowItWorksPage() {
                 Process
               </span>
             </h2>
-            <p className="text-slate-900 dark:text-slate-200">
+            <p className="text-slate-600 dark:text-slate-300">
               From discovery to scale, here&apos;s how we build your outbound engine.
             </p>
           </motion.div>
@@ -249,12 +249,12 @@ export default function HowItWorksPage() {
                   className="relative"
                 >
                   <div className="text-center mb-6">
-                    <div className="h-16 w-16 rounded-full bg-emerald-pro-600/10 border-2 border-emerald-pro-600 flex items-center justify-center mx-auto relative z-10 bg-white dark:bg-deep-space">
+                    <div className="h-16 w-16 rounded-full bg-emerald-pro-600/10 border-2 border-emerald-pro-600 flex items-center justify-center mx-auto relative z-10 bg-bg-surface">
                       <step.icon className="h-7 w-7 text-emerald-pro-600" />
                     </div>
                   </div>
 
-                  <div className="p-6 rounded-2xl border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue/50 hover:border-emerald-pro-600/30 transition-colors">
+                  <div className="p-6 rounded-2xl border border-slate-300 dark:border-slate-600 bg-bg-surface hover:border-emerald-pro-600/30 transition-colors">
                     <div className="flex items-center gap-2 mb-3">
                       <span className="text-xs font-medium text-emerald-pro-600 bg-emerald-pro-600/10 px-2 py-1 rounded">
                         Step {step.step}
@@ -263,12 +263,12 @@ export default function HowItWorksPage() {
                     <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-sm text-slate-900 dark:text-slate-200 mb-4">{step.description}</p>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 mb-4">{step.description}</p>
                     <ul className="space-y-2">
                       {step.details.map((detail, i) => (
                         <li
                           key={i}
-                          className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-200"
+                          className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300"
                         >
                           <CheckCircle className="h-4 w-4 text-emerald-pro-400 flex-shrink-0" />
                           {detail}
@@ -302,7 +302,7 @@ export default function HowItWorksPage() {
                 5 AI Engines
               </span>
             </h2>
-            <p className="text-slate-900 dark:text-slate-200">
+            <p className="text-slate-600 dark:text-slate-300">
               Each engine handles a specialized part of your outreach, working together
               to maximize results.
             </p>
@@ -347,18 +347,18 @@ export default function HowItWorksPage() {
                 >
                   <Link
                     href={`/engines/${engine.name.toLowerCase()}`}
-                    className="block p-5 rounded-xl border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue/50 hover:border-emerald-pro-600/30 transition-colors text-center"
+                    className="block p-5 rounded-xl border border-slate-300 dark:border-slate-600 bg-bg-surface hover:border-emerald-pro-600/30 transition-colors text-center"
                   >
                     <div
                       className={`h-12 w-12 rounded-xl ${colors.bg} border ${colors.border} flex items-center justify-center mx-auto mb-3`}
                     >
                       <engine.icon className={`h-6 w-6 ${colors.text}`} />
                     </div>
-                    <p className="text-xs text-slate-900 dark:text-slate-200 mb-1">{engine.codename}</p>
+                    <p className="text-xs text-slate-600 dark:text-slate-300 mb-1">{engine.codename}</p>
                     <h3 className="text-base font-sora font-semibold text-slate-900 dark:text-white mb-1">
                       {engine.name}
                     </h3>
-                    <p className="text-xs text-slate-900 dark:text-slate-200">{engine.description}</p>
+                    <p className="text-xs text-slate-600 dark:text-slate-300">{engine.description}</p>
                   </Link>
                 </motion.div>
               );
@@ -388,7 +388,7 @@ export default function HowItWorksPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="p-8 rounded-3xl border border-border-default dark:border-graphite bg-gradient-to-br from-midnight-blue/80 to-deep-space"
+            className="p-8 rounded-3xl border border-slate-300 dark:border-slate-600 bg-bg-surface"
           >
             <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white text-center mb-8">
               Average Results Our Clients See
@@ -399,7 +399,7 @@ export default function HowItWorksPage() {
                   <p className="text-3xl md:text-4xl font-sora font-bold text-emerald-pro-600 mb-1">
                     {stat.value}
                   </p>
-                  <p className="text-sm text-slate-900 dark:text-slate-200">{stat.label}</p>
+                  <p className="text-sm text-slate-600 dark:text-slate-300">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -426,7 +426,7 @@ export default function HowItWorksPage() {
                 Different
               </span>
             </h2>
-            <p className="text-slate-900 dark:text-slate-200">
+            <p className="text-slate-600 dark:text-slate-300">
               Traditional agencies rely on manual processes and guesswork. We use
               AI to deliver consistent, scalable results.
             </p>
@@ -449,7 +449,7 @@ export default function HowItWorksPage() {
                   <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-slate-900 dark:text-slate-200">{item.description}</p>
+                  <p className="text-slate-600 dark:text-slate-300">{item.description}</p>
                 </div>
               </motion.div>
             ))}

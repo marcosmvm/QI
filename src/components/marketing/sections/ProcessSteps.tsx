@@ -114,14 +114,14 @@ export function ProcessSteps() {
               >
                 {/* Step Icon */}
                 <div className="relative z-10 flex-shrink-0">
-                  <div className="w-16 h-16 rounded-2xl card-base backdrop-blur-sm flex items-center justify-center group-hover:border-primary/40 group-hover:shadow-sm transition-all duration-300">
+                  <div className="w-16 h-16 rounded-2xl bg-bg-surface border border-slate-300 dark:border-slate-600 backdrop-blur-sm flex items-center justify-center group-hover:border-emerald-500/50 dark:group-hover:border-green-500/50 group-hover:shadow-sm transition-all duration-300">
                     <step.icon className="h-7 w-7 text-emerald-600 dark:text-green-400 group-hover:scale-110 transition-transform duration-300" />
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 pb-8">
-                  <div className="p-5 rounded-xl card-base backdrop-blur-sm group-hover:border-primary/30 transition-all duration-300">
+                  <div className="p-5 rounded-xl bg-bg-surface border border-slate-300 dark:border-slate-600 backdrop-blur-sm group-hover:border-emerald-500/50 dark:group-hover:border-green-500/50 transition-all duration-300">
                     <div className="flex items-center gap-3 mb-2">
                       <span className="text-emerald-600 dark:text-green-400 font-mono text-sm font-semibold">{step.number}</span>
                       <h3 className="text-xl md:text-2xl font-sora font-semibold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-green-400 transition-colors">

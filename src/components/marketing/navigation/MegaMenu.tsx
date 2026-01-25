@@ -33,7 +33,7 @@ export function MegaMenu({ sections, featured }: MegaMenuProps) {
           )}>
             {sections.map((section) => (
               <div key={section.title}>
-                <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-300 mb-4">
+                <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-600 dark:text-slate-400 mb-4">
                   {section.title}
                 </h3>
                 <ul className="space-y-1">
@@ -45,12 +45,12 @@ export function MegaMenu({ sections, featured }: MegaMenuProps) {
                       >
                         {item.icon && (
                           <div className="flex-shrink-0 mt-0.5">
-                            <item.icon className="h-4 w-4 text-slate-500 dark:text-slate-300 group-hover:text-emerald-600 dark:group-hover:text-green-400 transition-colors" />
+                            <item.icon className="h-4 w-4 text-slate-600 dark:text-slate-400 group-hover:text-emerald-600 dark:group-hover:text-green-400 transition-colors" />
                           </div>
                         )}
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2">
-                            <span className="text-sm font-medium text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
+                            <span className="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-slate-950 dark:group-hover:text-white transition-colors">
                               {item.label}
                             </span>
                             {item.badge && (
@@ -60,7 +60,7 @@ export function MegaMenu({ sections, featured }: MegaMenuProps) {
                             )}
                           </div>
                           {item.description && (
-                            <p className="text-xs text-slate-500 dark:text-slate-300 mt-0.5 line-clamp-2">
+                            <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5 line-clamp-2">
                               {item.description}
                             </p>
                           )}

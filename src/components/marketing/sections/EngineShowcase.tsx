@@ -134,7 +134,7 @@ export function EngineShowcase() {
               In Harmony
             </span>
           </h2>
-          <p className="text-lg text-slate-900 dark:text-slate-200">
+          <p className="text-lg text-slate-600 dark:text-slate-300">
             Each specialized engine handles a critical part of the outbound process, working together to maximize your meeting output.
           </p>
         </motion.div>
@@ -155,7 +155,7 @@ export function EngineShowcase() {
                 variants={itemVariants}
               >
                 <Link href={engine.href} className="block group h-full">
-                  <div className={`relative h-full p-6 rounded-2xl border border-border-default dark:border-graphite/50 bg-light-bg-secondary dark:bg-midnight-blue/30 backdrop-blur-sm ${colors.border} ${colors.glow} hover:-translate-y-1 transition-all duration-300 overflow-hidden`}>
+                  <div className={`relative h-full p-6 rounded-2xl border border-slate-300 dark:border-slate-600 bg-bg-surface backdrop-blur-sm ${colors.border} ${colors.glow} hover:-translate-y-1 transition-all duration-300 overflow-hidden`}>
                     {/* Accent line at top */}
                     <div className={`absolute top-0 left-0 right-0 h-[2px] ${colors.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
 
@@ -164,7 +164,7 @@ export function EngineShowcase() {
                       <div className={`p-3 rounded-xl ${colors.bg} border border-transparent group-hover:border-current/20 transition-all duration-300`}>
                         <engine.icon className={`h-6 w-6 ${colors.text}`} />
                       </div>
-                      <span className="text-xs font-mono text-slate-900 dark:text-slate-200 group-hover:text-slate-900 dark:text-slate-200 transition-colors">
+                      <span className="text-xs font-mono text-slate-600 dark:text-slate-400 group-hover:text-slate-800 dark:group-hover:text-slate-200 transition-colors">
                         ENGINE {engine.codename}
                       </span>
                     </div>
@@ -175,7 +175,7 @@ export function EngineShowcase() {
                         {engine.name}
                       </h3>
                       <p className={`text-sm ${colors.text} mb-3`}>{engine.tagline}</p>
-                      <p className="text-slate-900 dark:text-slate-200 text-sm leading-relaxed mb-4 group-hover:text-silver/80 transition-colors">
+                      <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4 group-hover:text-slate-700 dark:group-hover:text-slate-200 transition-colors">
                         {engine.description}
                       </p>
 

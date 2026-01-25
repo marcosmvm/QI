@@ -48,7 +48,7 @@ export default function PricingPage() {
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-slate-900 dark:text-slate-200 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
               Choose the plan that matches your growth goals. All plans include <span className="text-emerald-pro-600">setup</span>, <span className="text-emerald-pro-500">training</span>, and <span className="text-emerald-pro-400">ongoing optimization</span>.
             </p>
           </motion.div>
@@ -89,7 +89,7 @@ export default function PricingPage() {
                   <h3 className="text-2xl lg:text-3xl font-sora font-bold text-slate-900 dark:text-white mb-2">
                     {tier.name}
                   </h3>
-                  <p className="text-slate-900 dark:text-slate-200 text-sm">{tier.tagline}</p>
+                  <p className="text-slate-600 dark:text-slate-300 text-sm">{tier.tagline}</p>
                 </div>
 
                 {/* Price - Enhanced */}
@@ -101,9 +101,9 @@ export default function PricingPage() {
                     )}>
                       {tier.price}
                     </span>
-                    <span className="text-slate-900 dark:text-slate-200 text-lg">{tier.priceSubtext}</span>
+                    <span className="text-slate-600 dark:text-slate-300 text-lg">{tier.priceSubtext}</span>
                   </div>
-                  <p className="text-slate-900 dark:text-slate-200 text-sm mt-3">{tier.description}</p>
+                  <p className="text-slate-600 dark:text-slate-300 text-sm mt-3">{tier.description}</p>
                 </div>
 
                 {/* Features - Enhanced */}
@@ -125,13 +125,13 @@ export default function PricingPage() {
                           <Check className="h-3.5 w-3.5 text-emerald-pro-400" />
                         </div>
                       ) : (
-                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-graphite/20 border border-border-default dark:border-graphite/30 flex items-center justify-center mt-0.5">
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-graphite/20 border border-slate-300 dark:border-slate-600/30 flex items-center justify-center mt-0.5">
                           <X className="h-3.5 w-3.5 text-graphite" />
                         </div>
                       )}
                       <span className={cn(
                         "text-sm leading-relaxed",
-                        feature.included ? "text-slate-900 dark:text-slate-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors" : "text-graphite"
+                        feature.included ? "text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors" : "text-graphite"
                       )}>
                         {feature.text}
                       </span>
@@ -186,7 +186,7 @@ export default function PricingPage() {
             <h3 className="text-2xl lg:text-3xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Not sure which plan is right?
             </h3>
-            <p className="text-slate-900 dark:text-slate-200 text-lg mb-8 max-w-xl mx-auto">
+            <p className="text-slate-600 dark:text-slate-300 text-lg mb-8 max-w-xl mx-auto">
               Book a call with our team and we&apos;ll help you determine the best fit based on your goals, target market, and current pipeline.
             </p>
             <button className="cta-magnetic">
@@ -243,7 +243,7 @@ export default function PricingPage() {
                       </Accordion.Trigger>
                     </Accordion.Header>
                     <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                      <div className="px-6 pb-6 text-slate-900 dark:text-slate-200 leading-relaxed border-t border-border-default dark:border-graphite/30 pt-4">
+                      <div className="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-300 dark:border-slate-600/30 pt-4">
                         {faq.answer}
                       </div>
                     </Accordion.Content>
