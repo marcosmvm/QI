@@ -26,9 +26,9 @@ export const pricingTiers: PricingTier[] = [
     priceSubtext: "/month",
     onboardingFee: "$2,500",
     meetingBonus: "$250",
-    description: "Lock in founding partner rates forever. All 5 AI engines, full service, preferred pricing.",
+    description: "Lock in founding partner rates forever. All 11 AI engines, full service, preferred pricing.",
     features: [
-      { text: "All 5 AI Engines active", included: true },
+      { text: "All 11 AI Engines active", included: true },
       { text: "3 dedicated sending domains", included: true },
       { text: "4,500 emails/month capacity", included: true },
       { text: "Guardian Engine (compliance)", included: true },
@@ -55,7 +55,7 @@ export const pricingTiers: PricingTier[] = [
     meetingBonus: "$350",
     description: "Full XGrowthOS platform access with enhanced support and higher capacity.",
     features: [
-      { text: "All 5 AI Engines active", included: true },
+      { text: "All 11 AI Engines active", included: true },
       { text: "5 dedicated sending domains", included: true },
       { text: "7,500 emails/month capacity", included: true },
       { text: "Guardian Engine (compliance)", included: true },
@@ -82,7 +82,7 @@ export const pricingTiers: PricingTier[] = [
     meetingBonus: "$500",
     description: "Maximum scale with custom solutions, dedicated team, and enterprise-grade support.",
     features: [
-      { text: "All 5 AI Engines active", included: true },
+      { text: "All 11 AI Engines active", included: true },
       { text: "10+ dedicated sending domains", included: true },
       { text: "15,000+ emails/month capacity", included: true },
       { text: "All standard features", included: true },

@@ -92,7 +92,7 @@ export const services: Service[] = [
     name: "Cold Email Outreach",
     tagline: "AI-Powered Email Campaigns That Convert",
     shortDescription: "Reach your ideal buyers with personalized email sequences that feel human but scale infinitely.",
-    longDescription: "Our cold email service leverages all 5 AI engines to deliver highly personalized, compliant email campaigns that land in the inbox and generate responses. From infrastructure setup to copy optimization, we handle everything.",
+    longDescription: "Our cold email service leverages all 11 AI engines to deliver highly personalized, compliant email campaigns that land in the inbox and generate responses. From infrastructure setup to copy optimization, we handle everything.",
     icon: Mail,
     color: "emerald-pro-500",
     features: [

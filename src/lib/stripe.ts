@@ -34,7 +34,7 @@ export const PLANS: Record<string, PlanConfig> = {
     monthlyFee: 3000,
     features: [
       'Unlimited campaigns',
-      'All 5 AI engines',
+      'All 11 AI engines',
       'Priority support',
       'Monthly strategy calls',
       'Custom reporting',

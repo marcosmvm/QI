@@ -77,7 +77,7 @@ export default function TestimonialsPage() {
 
             {/* Quote */}
             <blockquote className="text-xl md:text-2xl text-light-text dark:text-white font-medium leading-relaxed mb-8 mt-4">
-              &ldquo;I built XGrowthOS because I was tired of seeing B2B companies waste their best sales reps on cold outreach. Your closers should be closing, not prospecting. Our 5 AI engines do the heavy lifting so your team can focus on what they do best—building relationships and closing deals.&rdquo;
+              &ldquo;I built XGrowthOS because I was tired of seeing B2B companies waste their best sales reps on cold outreach. Your closers should be closing, not prospecting. Our 11 AI engines do the heavy lifting so your team can focus on what they do best—building relationships and closing deals.&rdquo;
             </blockquote>
 
             {/* Author */}

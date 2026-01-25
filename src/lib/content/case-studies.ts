@@ -32,7 +32,7 @@ export const caseStudies: CaseStudy[] = [
     title: "8x More Qualified Meetings in 90 Days",
     subtitle: "How a B2B SaaS company transformed their outbound engine",
     challenge: "TechScale was struggling to generate enough qualified meetings to hit their aggressive growth targets. Their in-house SDR team was burning out and deliverability issues plagued their email campaigns.",
-    solution: "We implemented our full 5-engine approach: Guardian fixed their deliverability, Architect redesigned their campaigns, Scientist optimized messaging, Hunter expanded from successful replies, and Sentinel captured website visitors.",
+    solution: "We implemented our full 11-engine approach: Guardian fixed their deliverability, Architect redesigned their campaigns, Scientist optimized messaging, Hunter expanded from successful replies, Sentinel captured website visitors, and our CSM Automation Suite (Informant, Judge, Navigator) ensured exceptional ongoing service.",
     results: "Within 90 days, TechScale went from 2-3 meetings per month to 15-20 qualified opportunities. Their pipeline grew 8x and they closed their first 7-figure enterprise deal.",
     metrics: [
       { value: "8x", label: "More Meetings" },

@@ -129,7 +129,7 @@ export function EngineShowcase() {
             <span className="text-sm font-medium text-emerald-pro-500">Our Technology</span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
-            5 AI Engines Working{" "}
+            11 AI Engines Working{" "}
             <span className="gradient-text-cyan-violet">
               In Harmony
             </span>

@@ -286,7 +286,7 @@ export default function HowItWorksPage() {
       {/* Section Divider */}
       <div className="section-divider max-w-4xl mx-auto" />
 
-      {/* The 5 Engines */}
+      {/* The 11 Engines */}
       <SectionWrapper variant="dark">
         <Container>
           <motion.div
@@ -299,7 +299,7 @@ export default function HowItWorksPage() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-4">
               Powered by{" "}
               <span className="headline-underline gradient-text-cyan-violet">
-                5 AI Engines
+                11 AI Engines
               </span>
             </h2>
             <p className="text-light-text-muted dark:text-steel">

@@ -93,7 +93,7 @@ const pilotFaqs = [
   {
     question: "What's included in the pilot?",
     answer:
-      "You'll receive one full campaign with up to 5,000 emails, access to all 5 AI engines, weekly optimization calls, and a dedicated Slack channel. We also provide detailed analytics and a performance review at the end.",
+      "You'll receive one full campaign with up to 5,000 emails, access to all 11 AI engines, weekly optimization calls, and a dedicated Slack channel. We also provide detailed analytics and a performance review at the end.",
   },
   {
     question: "What happens after the pilot?",

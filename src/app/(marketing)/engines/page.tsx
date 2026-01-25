@@ -46,6 +46,24 @@ const colorClasses = {
     accentLine: "bg-energy-orange",
     iconBg: "orange",
   },
+  "blue-500": {
+    bg: "bg-blue-500/10",
+    border: "border-blue-500/30",
+    text: "text-blue-500",
+    gradient: "from-blue-500/20 to-transparent",
+    glow: "rgba(59,130,246,0.25)",
+    accentLine: "bg-blue-500",
+    iconBg: "blue",
+  },
+  "purple-500": {
+    bg: "bg-purple-500/10",
+    border: "border-purple-500/30",
+    text: "text-purple-500",
+    gradient: "from-purple-500/20 to-transparent",
+    glow: "rgba(168,85,247,0.25)",
+    accentLine: "bg-purple-500",
+    iconBg: "purple",
+  },
 };
 
 export default function EnginesPage() {
@@ -79,14 +97,14 @@ export default function EnginesPage() {
             </motion.div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-light-text dark:text-white mb-8">
-              5 AI Engines.{" "}
+              11 AI Engines.{" "}
               <span className="headline-underline gradient-text-cyan-violet block mt-2">
                 One Powerful Platform.
               </span>
             </h1>
 
             <p className="text-xl md:text-2xl text-light-text-secondary/90 dark:text-silver/90 max-w-3xl mx-auto mb-12 leading-relaxed">
-              Each engine is specialized for a <span className="text-emerald-pro-500 font-semibold">critical part</span> of the outbound process. Together, they form an <span className="text-emerald-pro-600 font-semibold">unstoppable</span> lead generation machine.
+              5 Lead Generation engines and 6 CSM Automation engines work in harmony. Together, they form an <span className="text-emerald-pro-600 font-semibold">unstoppable</span> autonomous growth platform.
             </p>
 
             <Link href="/contact">
@@ -235,12 +253,22 @@ export default function EnginesPage() {
                 color: "orange",
               },
               {
-                title: "Sentinel + Guardian",
-                description: "Sentinel triggers personalized outreach that Guardian delivers to the inbox reliably.",
+                title: "Informant + Monitor",
+                description: "Informant generates weekly reports while Monitor tracks health scores to predict churn risk.",
                 color: "cyan",
               },
               {
-                title: "All Five United",
+                title: "Judge + Navigator",
+                description: "Judge auto-fixes issues proactively while Navigator gives clients self-serve control.",
+                color: "violet",
+              },
+              {
+                title: "Keeper + Launcher",
+                description: "Keeper maintains institutional knowledge while Launcher automates client onboarding.",
+                color: "mint",
+              },
+              {
+                title: "All Eleven United",
                 description: "Data flows between all engines, creating a self-improving system that gets smarter with every interaction.",
                 color: "gradient",
               },

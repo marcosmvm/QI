@@ -45,6 +45,22 @@ const colorClasses = {
     glow: "shadow-[0_0_60px_rgba(255,107,53,0.3)]",
     iconBg: "orange",
   },
+  "blue-500": {
+    bg: "bg-blue-500/10",
+    border: "border-blue-500/30",
+    text: "text-blue-500",
+    gradient: "from-blue-500 to-blue-600",
+    glow: "shadow-[0_0_60px_rgba(59,130,246,0.3)]",
+    iconBg: "blue",
+  },
+  "purple-500": {
+    bg: "bg-purple-500/10",
+    border: "border-purple-500/30",
+    text: "text-purple-500",
+    gradient: "from-purple-500 to-purple-600",
+    glow: "shadow-[0_0_60px_rgba(168,85,247,0.3)]",
+    iconBg: "purple",
+  },
 };
 
 export function EngineDetailPage({ engineId }: EngineDetailPageProps) {

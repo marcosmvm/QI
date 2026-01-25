@@ -13,6 +13,12 @@ import {
   Eye,
   Building2,
   Briefcase,
+  FileText,
+  Scale,
+  Brain,
+  Rocket,
+  Activity,
+  Compass,
   type LucideIcon,
 } from "lucide-react";
 
@@ -60,7 +66,7 @@ export const mainNavigation: NavLink[] = [
     dropdown: {
       sections: [
         {
-          title: "Our 5 AI Engines",
+          title: "Lead Generation Engines",
           items: [
             { label: "The Guardian", href: "/engines/guardian", icon: Shield, description: "Compliance & Domain Health" },
             { label: "The Architect", href: "/engines/architect", icon: Cpu, description: "AI Campaign Design" },
@@ -69,10 +75,21 @@ export const mainNavigation: NavLink[] = [
             { label: "The Sentinel", href: "/engines/sentinel", icon: Eye, description: "Website Visitor Intelligence" },
           ],
         },
+        {
+          title: "CSM Automation Suite",
+          items: [
+            { label: "The Informant", href: "/engines/informant", icon: FileText, description: "Automated Reporting" },
+            { label: "The Judge", href: "/engines/judge", icon: Scale, description: "Issue Detection & Auto-Fix" },
+            { label: "The Keeper", href: "/engines/keeper", icon: Brain, description: "AI Knowledge Brain" },
+            { label: "The Launcher", href: "/engines/launcher", icon: Rocket, description: "Automated Onboarding" },
+            { label: "The Monitor", href: "/engines/monitor", icon: Activity, description: "Churn Risk Detection" },
+            { label: "The Navigator", href: "/engines/navigator", icon: Compass, description: "Self-Serve Client Portal" },
+          ],
+        },
       ],
       featured: {
         title: "See All Engines",
-        description: "Learn how our 5 AI engines work together",
+        description: "Learn how our 11 AI engines work together",
         href: "/engines",
       },
     },
@@ -105,6 +122,12 @@ export const footerNavigation = {
       { label: "The Scientist", href: "/engines/scientist" },
       { label: "The Hunter", href: "/engines/hunter" },
       { label: "The Sentinel", href: "/engines/sentinel" },
+      { label: "The Informant", href: "/engines/informant" },
+      { label: "The Judge", href: "/engines/judge" },
+      { label: "The Keeper", href: "/engines/keeper" },
+      { label: "The Launcher", href: "/engines/launcher" },
+      { label: "The Monitor", href: "/engines/monitor" },
+      { label: "The Navigator", href: "/engines/navigator" },
     ],
   },
   industries: {

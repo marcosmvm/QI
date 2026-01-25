@@ -7,7 +7,7 @@ import Link from "next/link";
 
 // Founder mission statement instead of fake testimonials
 const founderMission = {
-  quote: "I built XGrowthOS because I was tired of seeing B2B companies waste their best sales reps on cold outreach. Your closers should be closing, not prospecting. Our 5 AI engines do the heavy lifting so your team can focus on what they do best—building relationships and closing deals.",
+  quote: "I built XGrowthOS because I was tired of seeing B2B companies waste their best sales reps on cold outreach. Your closers should be closing, not prospecting. Our 11 AI engines do the heavy lifting so your team can focus on what they do best—building relationships and closing deals.",
   author: "Marcos Matthews",
   title: "Founder & CEO",
   location: "Los Angeles, CA",
