@@ -184,7 +184,7 @@ export default function HowItWorksPage() {
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-slate-700/90 dark:text-slate-200/90 max-w-3xl mx-auto mb-12 leading-relaxed">
+            <p className="text-xl md:text-2xl text-slate-800 dark:text-slate-200 max-w-3xl mx-auto mb-12 leading-relaxed">
               A proven process powered by AI that transforms <span className="text-emerald-pro-600 font-semibold">cold outreach</span> into
               warm conversations and <span className="text-emerald-pro-500 font-semibold">qualified meetings</span>.
             </p>
@@ -229,7 +229,7 @@ export default function HowItWorksPage() {
                 Process
               </span>
             </h2>
-            <p className="text-slate-500 dark:text-slate-400">
+            <p className="text-slate-700 dark:text-slate-400">
               From discovery to scale, here&apos;s how we build your outbound engine.
             </p>
           </motion.div>
@@ -263,7 +263,7 @@ export default function HowItWorksPage() {
                     <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">{step.description}</p>
+                    <p className="text-sm text-slate-700 dark:text-slate-400 mb-4">{step.description}</p>
                     <ul className="space-y-2">
                       {step.details.map((detail, i) => (
                         <li
@@ -302,7 +302,7 @@ export default function HowItWorksPage() {
                 11 AI Engines
               </span>
             </h2>
-            <p className="text-slate-500 dark:text-slate-400">
+            <p className="text-slate-700 dark:text-slate-400">
               Each engine handles a specialized part of your outreach, working together
               to maximize results.
             </p>
@@ -354,11 +354,11 @@ export default function HowItWorksPage() {
                     >
                       <engine.icon className={`h-6 w-6 ${colors.text}`} />
                     </div>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 mb-1">{engine.codename}</p>
+                    <p className="text-xs text-slate-700 dark:text-slate-400 mb-1">{engine.codename}</p>
                     <h3 className="text-base font-sora font-semibold text-slate-900 dark:text-white mb-1">
                       {engine.name}
                     </h3>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">{engine.description}</p>
+                    <p className="text-xs text-slate-700 dark:text-slate-400">{engine.description}</p>
                   </Link>
                 </motion.div>
               );
@@ -399,7 +399,7 @@ export default function HowItWorksPage() {
                   <p className="text-3xl md:text-4xl font-sora font-bold text-emerald-pro-600 mb-1">
                     {stat.value}
                   </p>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">{stat.label}</p>
+                  <p className="text-sm text-slate-700 dark:text-slate-400">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -426,7 +426,7 @@ export default function HowItWorksPage() {
                 Different
               </span>
             </h2>
-            <p className="text-slate-500 dark:text-slate-400">
+            <p className="text-slate-700 dark:text-slate-400">
               Traditional agencies rely on manual processes and guesswork. We use
               AI to deliver consistent, scalable results.
             </p>
@@ -449,7 +449,7 @@ export default function HowItWorksPage() {
                   <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-slate-500 dark:text-slate-400">{item.description}</p>
+                  <p className="text-slate-700 dark:text-slate-400">{item.description}</p>
                 </div>
               </motion.div>
             ))}

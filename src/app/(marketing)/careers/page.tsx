@@ -120,19 +120,19 @@ export default function CareersPage() {
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
                   <p className="text-4xl font-sora font-bold text-emerald-pro-600">5</p>
-                  <p className="text-slate-500 dark:text-slate-400 text-sm">AI Engines</p>
+                  <p className="text-slate-700 dark:text-slate-400 text-sm">AI Engines</p>
                 </div>
                 <div className="text-center">
                   <p className="text-4xl font-sora font-bold text-emerald-pro-500">LA</p>
-                  <p className="text-slate-500 dark:text-slate-400 text-sm">Based</p>
+                  <p className="text-slate-700 dark:text-slate-400 text-sm">Based</p>
                 </div>
                 <div className="text-center">
                   <p className="text-4xl font-sora font-bold text-emerald-pro-400">2024</p>
-                  <p className="text-slate-500 dark:text-slate-400 text-sm">Founded</p>
+                  <p className="text-slate-700 dark:text-slate-400 text-sm">Founded</p>
                 </div>
                 <div className="text-center">
                   <p className="text-4xl font-sora font-bold text-energy-orange">Remote</p>
-                  <p className="text-slate-500 dark:text-slate-400 text-sm">First</p>
+                  <p className="text-slate-700 dark:text-slate-400 text-sm">First</p>
                 </div>
               </div>
             </motion.div>
@@ -175,11 +175,11 @@ export default function CareersPage() {
                           {job.title}
                         </h3>
                         <div className="flex flex-wrap items-center gap-4 mt-2">
-                          <span className="flex items-center gap-1 text-slate-500 dark:text-slate-400 text-sm">
+                          <span className="flex items-center gap-1 text-slate-700 dark:text-slate-400 text-sm">
                             <Briefcase className="h-4 w-4" />
                             {job.department}
                           </span>
-                          <span className="flex items-center gap-1 text-slate-500 dark:text-slate-400 text-sm">
+                          <span className="flex items-center gap-1 text-slate-700 dark:text-slate-400 text-sm">
                             <MapPin className="h-4 w-4" />
                             {job.location}
                           </span>

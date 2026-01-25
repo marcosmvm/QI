@@ -123,7 +123,7 @@ export default function AboutPage() {
                 <p className="stat-number text-4xl md:text-5xl">
                   {stat.value}
                 </p>
-                <p className="text-slate-500 dark:text-slate-400 mt-2">{stat.label}</p>
+                <p className="text-slate-700 dark:text-slate-400 mt-2">{stat.label}</p>
               </motion.div>
             ))}
           </div>

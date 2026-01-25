@@ -233,13 +233,13 @@ export default function SettingsPage() {
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-2">
+        <div className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-400 mb-2">
           <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
           <span>/</span>
           <span className="text-emerald-pro-600">Settings</span>
         </div>
         <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">Settings</h1>
-        <p className="text-slate-500 dark:text-slate-400 mt-1">Manage your account and preferences</p>
+        <p className="text-slate-700 dark:text-slate-400 mt-1">Manage your account and preferences</p>
       </motion.div>
 
       <motion.div variants={itemVariants}>
@@ -255,7 +255,7 @@ export default function SettingsPage() {
                     "w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-colors",
                     activeTab === tab.id
                       ? "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20"
-                      : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-light-bg-secondary dark:hover:bg-graphite/50"
+                      : "text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-light-bg-secondary dark:hover:bg-graphite/50"
                   )}
                 >
                   <tab.icon className="h-5 w-5" />
@@ -282,7 +282,7 @@ export default function SettingsPage() {
                       <Button variant="outline" size="sm">
                         Change Photo
                       </Button>
-                      <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">
+                      <p className="text-xs text-slate-700 dark:text-slate-400 mt-2">
                         JPG, GIF or PNG. Max size 2MB.
                       </p>
                     </div>
@@ -319,7 +319,7 @@ export default function SettingsPage() {
                         type="text"
                         value={profile.role}
                         disabled
-                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space/50 px-4 text-slate-500 dark:text-slate-400 cursor-not-allowed"
+                        className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space/50 px-4 text-slate-700 dark:text-slate-400 cursor-not-allowed"
                       />
                     </div>
                     <div>
@@ -443,7 +443,7 @@ export default function SettingsPage() {
                     >
                       <div>
                         <p className="font-medium text-slate-900 dark:text-white">{item.label}</p>
-                        <p className="text-sm text-slate-500 dark:text-slate-400">{item.description}</p>
+                        <p className="text-sm text-slate-700 dark:text-slate-400">{item.description}</p>
                       </div>
                       <button
                         onClick={() =>
@@ -491,7 +491,7 @@ export default function SettingsPage() {
                         <input
                           type="password"
                           placeholder="Enter current password"
-                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-500 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-700 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                         />
                       </div>
                       <div>
@@ -501,7 +501,7 @@ export default function SettingsPage() {
                         <input
                           type="password"
                           placeholder="Enter new password"
-                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-500 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-700 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                         />
                       </div>
                       <div>
@@ -511,7 +511,7 @@ export default function SettingsPage() {
                         <input
                           type="password"
                           placeholder="Confirm new password"
-                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-500 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                          className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-700 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                         />
                       </div>
                       <Button>Update Password</Button>
@@ -520,7 +520,7 @@ export default function SettingsPage() {
 
                   <div className="p-4 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space/50">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">Two-Factor Authentication</h4>
-                    <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
+                    <p className="text-sm text-slate-700 dark:text-slate-400 mb-4">
                       Add an extra layer of security to your account
                     </p>
                     <Button variant="outline">Enable 2FA</Button>
@@ -540,7 +540,7 @@ export default function SettingsPage() {
                     <div className="flex items-center justify-between mb-4">
                       <div>
                         <h4 className="font-medium text-slate-900 dark:text-white">Production API Key</h4>
-                        <p className="text-sm text-slate-500 dark:text-slate-400">Use this key for production integrations</p>
+                        <p className="text-sm text-slate-700 dark:text-slate-400">Use this key for production integrations</p>
                       </div>
                       <span className="px-2 py-1 rounded bg-emerald-pro-400/20 text-emerald-pro-400 text-xs font-medium">
                         Active
@@ -548,7 +548,7 @@ export default function SettingsPage() {
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="flex-1 h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 flex items-center">
-                        <code className="text-sm text-slate-500 dark:text-slate-400 font-mono">
+                        <code className="text-sm text-slate-700 dark:text-slate-400 font-mono">
                           {showApiKey ? "qi_prod_a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6" : "qi_prod_••••••••••••••••••••••••••••••••"}
                         </code>
                       </div>
@@ -570,7 +570,7 @@ export default function SettingsPage() {
                       <Shield className="h-5 w-5 text-energy-orange shrink-0 mt-0.5" />
                       <div>
                         <h4 className="font-medium text-slate-900 dark:text-white">Keep your API key secure</h4>
-                        <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
+                        <p className="text-sm text-slate-700 dark:text-slate-400 mt-1">
                           Never share your API key in public repositories or client-side code.
                           Regenerate immediately if compromised.
                         </p>
@@ -599,20 +599,20 @@ export default function SettingsPage() {
                         <p className="text-2xl font-bold text-slate-900 dark:text-white">
                           {integrations.filter((i) => i.connected).length}
                         </p>
-                        <p className="text-sm text-slate-500 dark:text-slate-400">Connected</p>
+                        <p className="text-sm text-slate-700 dark:text-slate-400">Connected</p>
                       </div>
                     </div>
                   </div>
                   <div className="glass-premium p-4">
                     <div className="flex items-center gap-3">
                       <div className="h-10 w-10 rounded-lg bg-steel/20 flex items-center justify-center">
-                        <Link2 className="h-5 w-5 text-slate-500 dark:text-slate-400" />
+                        <Link2 className="h-5 w-5 text-slate-700 dark:text-slate-400" />
                       </div>
                       <div>
                         <p className="text-2xl font-bold text-slate-900 dark:text-white">
                           {integrations.filter((i) => !i.connected).length}
                         </p>
-                        <p className="text-sm text-slate-500 dark:text-slate-400">Available</p>
+                        <p className="text-sm text-slate-700 dark:text-slate-400">Available</p>
                       </div>
                     </div>
                   </div>
@@ -623,7 +623,7 @@ export default function SettingsPage() {
                       </div>
                       <div>
                         <p className="text-2xl font-bold text-slate-900 dark:text-white">5 min</p>
-                        <p className="text-sm text-slate-500 dark:text-slate-400">Last Sync</p>
+                        <p className="text-sm text-slate-700 dark:text-slate-400">Last Sync</p>
                       </div>
                     </div>
                   </div>
@@ -647,7 +647,7 @@ export default function SettingsPage() {
                           <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">
                             {categoryLabels[category].label}
                           </h3>
-                          <span className="ml-2 px-2 py-0.5 rounded-full bg-white dark:bg-deep-space text-xs text-slate-500 dark:text-slate-400">
+                          <span className="ml-2 px-2 py-0.5 rounded-full bg-white dark:bg-deep-space text-xs text-slate-700 dark:text-slate-400">
                             {categoryIntegrations.filter((i) => i.connected).length}/
                             {categoryIntegrations.length} connected
                           </span>
@@ -680,11 +680,11 @@ export default function SettingsPage() {
                                       </span>
                                     )}
                                   </div>
-                                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                                  <p className="text-sm text-slate-700 dark:text-slate-400">
                                     {integration.description}
                                   </p>
                                   {integration.lastSync && (
-                                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                                    <p className="text-xs text-slate-700 dark:text-slate-400 mt-1">
                                       Last synced: {integration.lastSync}
                                     </p>
                                   )}
@@ -742,7 +742,7 @@ export default function SettingsPage() {
                     <h4 className="font-medium text-slate-900 dark:text-white mb-1">
                       Need a different integration?
                     </h4>
-                    <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
+                    <p className="text-sm text-slate-700 dark:text-slate-400 mb-4">
                       We're always adding new integrations. Let us know what you need.
                     </p>
                     <Button variant="outline">Request Integration</Button>

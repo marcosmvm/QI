@@ -140,7 +140,7 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
               >
                 <item.icon className={cn(
                   "h-4 w-4",
-                  isActive(item.href) ? "text-emerald-pro-600" : "text-slate-500 dark:text-slate-400"
+                  isActive(item.href) ? "text-emerald-pro-600" : "text-slate-700 dark:text-slate-400"
                 )} />
                 <span>{item.name}</span>
               </Link>
@@ -164,7 +164,7 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
               >
                 <item.icon className={cn(
                   "h-4 w-4",
-                  isActive(item.href) ? "text-emerald-pro-600" : "text-slate-500 dark:text-slate-400"
+                  isActive(item.href) ? "text-emerald-pro-600" : "text-slate-700 dark:text-slate-400"
                 )} />
                 <span>{item.name}</span>
               </Link>
@@ -184,13 +184,13 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
               <p className="text-sm font-medium text-slate-900 dark:text-white truncate">
                 {isLoading ? "Loading..." : profile?.full_name || "User"}
               </p>
-              <p className="text-xs text-slate-500 dark:text-slate-400 truncate capitalize">
+              <p className="text-xs text-slate-700 dark:text-slate-400 truncate capitalize">
                 {isLoading ? "" : profile?.role || "client"}
               </p>
             </div>
             <button
               onClick={handleSignOut}
-              className="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-energy-orange hover:bg-energy-orange/10 transition-colors"
+              className="p-2 rounded-lg text-slate-700 dark:text-slate-400 hover:text-energy-orange hover:bg-energy-orange/10 transition-colors"
               title="Sign out"
             >
               <LogOut className="h-4 w-4" />

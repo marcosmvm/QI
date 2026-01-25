@@ -95,13 +95,13 @@ export function DashboardContent({
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-2">
+        <div className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-400 mb-2">
           <span className="text-slate-900 dark:text-white">Portal</span>
           <span>/</span>
           <span className="text-emerald-pro-600">Dashboard</span>
         </div>
         <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">Dashboard</h1>
-        <p className="text-slate-500 dark:text-slate-400 mt-1">
+        <p className="text-slate-700 dark:text-slate-400 mt-1">
           Welcome back! Here&apos;s an overview of your campaign performance.
         </p>
       </motion.div>
@@ -174,14 +174,14 @@ export function DashboardContent({
                   title={`Sent: ${day.sent}`}
                 />
               </div>
-              <span className="text-xs text-slate-500 dark:text-slate-400">{day.date}</span>
+              <span className="text-xs text-slate-700 dark:text-slate-400">{day.date}</span>
             </motion.div>
           ))}
         </div>
         <div className="flex items-center justify-center gap-6 mt-4 pt-4 border-t border-border-default dark:border-graphite/30">
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded bg-emerald-pro-600/40" />
-            <span className="text-xs text-slate-500 dark:text-slate-400">Emails Sent</span>
+            <span className="text-xs text-slate-700 dark:text-slate-400">Emails Sent</span>
           </div>
         </div>
       </motion.div>
@@ -198,7 +198,7 @@ export function DashboardContent({
               <h2 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">
                 Active Campaigns
               </h2>
-              <p className="text-sm text-slate-500 dark:text-slate-400">
+              <p className="text-sm text-slate-700 dark:text-slate-400">
                 {activeCampaigns} campaigns running
               </p>
             </div>
@@ -212,8 +212,8 @@ export function DashboardContent({
           <div className="space-y-3">
             {campaigns.length === 0 ? (
               <div className="text-center py-8">
-                <Mail className="h-8 w-8 text-slate-500 dark:text-slate-400 mx-auto mb-3" />
-                <p className="text-slate-500 dark:text-slate-400 text-sm mb-3">No campaigns yet</p>
+                <Mail className="h-8 w-8 text-slate-700 dark:text-slate-400 mx-auto mb-3" />
+                <p className="text-slate-700 dark:text-slate-400 text-sm mb-3">No campaigns yet</p>
                 <Link
                   href="/dashboard/campaigns/new"
                   className="inline-flex items-center gap-2 text-sm text-emerald-pro-600 hover:underline"
@@ -253,7 +253,7 @@ export function DashboardContent({
                           ? 'bg-emerald-pro-400/10 text-emerald-pro-400 border-emerald-pro-400/30'
                           : campaign.status === 'paused'
                             ? 'bg-energy-orange/10 text-energy-orange border-energy-orange/30'
-                            : 'bg-steel/10 text-slate-500 dark:text-slate-400 border-steel/30'
+                            : 'bg-steel/10 text-slate-700 dark:text-slate-400 border-steel/30'
                       }`}
                     >
                       {campaign.status}
@@ -275,7 +275,7 @@ export function DashboardContent({
               <h2 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">
                 Recent Leads
               </h2>
-              <p className="text-sm text-slate-500 dark:text-slate-400">{leads.length} new leads</p>
+              <p className="text-sm text-slate-700 dark:text-slate-400">{leads.length} new leads</p>
             </div>
             <Link
               href="/dashboard/leads"
@@ -287,8 +287,8 @@ export function DashboardContent({
           <div className="space-y-3">
             {leads.length === 0 ? (
               <div className="text-center py-8">
-                <Users className="h-8 w-8 text-slate-500 dark:text-slate-400 mx-auto mb-3" />
-                <p className="text-slate-500 dark:text-slate-400 text-sm mb-3">No leads yet</p>
+                <Users className="h-8 w-8 text-slate-700 dark:text-slate-400 mx-auto mb-3" />
+                <p className="text-slate-700 dark:text-slate-400 text-sm mb-3">No leads yet</p>
                 <Link
                   href="/dashboard/leads"
                   className="inline-flex items-center gap-2 text-sm text-emerald-pro-600 hover:underline"
@@ -319,7 +319,7 @@ export function DashboardContent({
                         <p className="text-sm font-medium text-slate-900 dark:text-white">
                           {lead.first_name} {lead.last_name}
                         </p>
-                        <p className="text-xs text-slate-500 dark:text-slate-400">{lead.company}</p>
+                        <p className="text-xs text-slate-700 dark:text-slate-400">{lead.company}</p>
                       </div>
                     </div>
                     <span
@@ -328,7 +328,7 @@ export function DashboardContent({
                           ? 'bg-emerald-pro-400/10 text-emerald-pro-400 border-emerald-pro-400/30'
                           : lead.stage === 'engaged'
                             ? 'bg-emerald-pro-600/10 text-emerald-pro-600 border-emerald-pro-600/30'
-                            : 'bg-steel/10 text-slate-500 dark:text-slate-400 border-steel/30'
+                            : 'bg-steel/10 text-slate-700 dark:text-slate-400 border-steel/30'
                       }`}
                     >
                       {lead.stage}
@@ -357,7 +357,7 @@ export function DashboardContent({
             <p className="text-sm font-medium text-slate-900 dark:text-white group-hover:text-emerald-pro-600 transition-colors">
               Weekly Reports
             </p>
-            <p className="text-xs text-slate-500 dark:text-slate-400">View your performance reports</p>
+            <p className="text-xs text-slate-700 dark:text-slate-400">View your performance reports</p>
           </div>
         </Link>
         <Link
@@ -371,7 +371,7 @@ export function DashboardContent({
             <p className="text-sm font-medium text-slate-900 dark:text-white group-hover:text-emerald-pro-500 transition-colors">
               Contact Support
             </p>
-            <p className="text-xs text-slate-500 dark:text-slate-400">Chat with our team</p>
+            <p className="text-xs text-slate-700 dark:text-slate-400">Chat with our team</p>
           </div>
         </Link>
         <Link
@@ -385,7 +385,7 @@ export function DashboardContent({
             <p className="text-sm font-medium text-slate-900 dark:text-white group-hover:text-emerald-pro-400 transition-colors">
               Deep Analytics
             </p>
-            <p className="text-xs text-slate-500 dark:text-slate-400">Detailed performance insights</p>
+            <p className="text-xs text-slate-700 dark:text-slate-400">Detailed performance insights</p>
           </div>
         </Link>
       </motion.div>

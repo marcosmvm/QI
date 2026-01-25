@@ -108,7 +108,7 @@ export function MetricsCard({
     ? 'text-emerald-pro-400'
     : change && change < 0
       ? 'text-alert-red'
-      : 'text-slate-500 dark:text-slate-400'
+      : 'text-slate-700 dark:text-slate-400'
 
   if (loading) {
     return (
@@ -143,12 +143,12 @@ export function MetricsCard({
     >
       <div className="flex justify-between items-start">
         <div>
-          <p className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">
+          <p className="text-xs font-medium text-slate-700 dark:text-slate-400 uppercase tracking-wide mb-2">
             {title}
           </p>
           <p className="text-3xl font-bold text-slate-900 dark:text-white metric-value">
             {formatValue(displayValue)}
-            {suffix && <span className="text-lg text-slate-500 dark:text-slate-400 ml-1">{suffix}</span>}
+            {suffix && <span className="text-lg text-slate-700 dark:text-slate-400 ml-1">{suffix}</span>}
           </p>
           {change !== undefined && (
             <motion.div
@@ -161,12 +161,12 @@ export function MetricsCard({
               <span className="font-medium">
                 {change > 0 ? '+' : ''}{change}%
               </span>
-              <span className="text-slate-500 dark:text-slate-400 ml-1 text-xs">{changeLabel}</span>
+              <span className="text-slate-700 dark:text-slate-400 ml-1 text-xs">{changeLabel}</span>
             </motion.div>
           )}
         </div>
         {Icon && (
-          <div className="w-10 h-10 rounded-lg bg-graphite/50 flex items-center justify-center text-slate-500 dark:text-slate-400 group-hover:text-emerald-pro-600 group-hover:bg-emerald-pro-600/10 group-hover:border group-hover:border-emerald-pro-600/30 transition-all duration-200">
+          <div className="w-10 h-10 rounded-lg bg-graphite/50 flex items-center justify-center text-slate-700 dark:text-slate-400 group-hover:text-emerald-pro-600 group-hover:bg-emerald-pro-600/10 group-hover:border group-hover:border-emerald-pro-600/30 transition-all duration-200">
             <Icon className="w-5 h-5 transition-transform duration-200 group-hover:scale-110" />
           </div>
         )}

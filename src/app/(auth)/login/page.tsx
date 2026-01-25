@@ -87,20 +87,20 @@ export default function LoginPage() {
           <div className="flex items-center gap-8 pt-4">
             <div>
               <p className="text-3xl font-sora font-bold text-slate-900 dark:text-white">95%+</p>
-              <p className="text-sm text-slate-500 dark:text-slate-400">Deliverability Rate</p>
+              <p className="text-sm text-slate-700 dark:text-slate-400">Deliverability Rate</p>
             </div>
             <div>
               <p className="text-3xl font-sora font-bold text-slate-900 dark:text-white">3x</p>
-              <p className="text-sm text-slate-500 dark:text-slate-400">Reply Rate Increase</p>
+              <p className="text-sm text-slate-700 dark:text-slate-400">Reply Rate Increase</p>
             </div>
             <div>
               <p className="text-3xl font-sora font-bold text-slate-900 dark:text-white">24/7</p>
-              <p className="text-sm text-slate-500 dark:text-slate-400">Support Available</p>
+              <p className="text-sm text-slate-700 dark:text-slate-400">Support Available</p>
             </div>
           </div>
         </div>
 
-        <div className="relative z-10 text-sm text-slate-500 dark:text-slate-400">
+        <div className="relative z-10 text-sm text-slate-700 dark:text-slate-400">
           &copy; {new Date().getFullYear()} XGrowthOS. All rights reserved.
         </div>
       </div>
@@ -123,7 +123,7 @@ export default function LoginPage() {
               <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-2">
                 Welcome back
               </h2>
-              <p className="text-slate-500 dark:text-slate-400">Sign in to access your dashboard</p>
+              <p className="text-slate-700 dark:text-slate-400">Sign in to access your dashboard</p>
             </div>
 
             {error && (
@@ -142,7 +142,7 @@ export default function LoginPage() {
                   Email address
                 </label>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-500 dark:text-slate-400" />
+                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-700 dark:text-slate-400" />
                   <input
                     id="email"
                     type="email"
@@ -171,7 +171,7 @@ export default function LoginPage() {
                   </Link>
                 </div>
                 <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-500 dark:text-slate-400" />
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-700 dark:text-slate-400" />
                   <input
                     id="password"
                     type="password"
@@ -222,7 +222,7 @@ export default function LoginPage() {
             </form>
 
             <div className="mt-6 text-center">
-              <p className="text-slate-500 dark:text-slate-400 text-sm">
+              <p className="text-slate-700 dark:text-slate-400 text-sm">
                 Don&apos;t have an account?{" "}
                 <Link
                   href="/register"

@@ -187,7 +187,7 @@ export default function EnginesPage() {
                               <p className={`text-2xl font-sora font-bold ${colors.text}`}>
                                 {stat.value}
                               </p>
-                              <p className="text-slate-500 dark:text-slate-400 text-xs">{stat.label}</p>
+                              <p className="text-slate-700 dark:text-slate-400 text-xs">{stat.label}</p>
                             </motion.div>
                           ))}
                         </div>

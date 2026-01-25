@@ -49,21 +49,21 @@ export function PerformanceChart({
               className="h-0.5 w-4 rounded"
               style={{ backgroundColor: chartColors.primary }}
             />
-            <span className="text-xs text-slate-500 dark:text-slate-400">Sent</span>
+            <span className="text-xs text-slate-700 dark:text-slate-400">Sent</span>
           </div>
           <div className="flex items-center gap-2">
             <span
               className="h-0.5 w-4 rounded"
               style={{ backgroundColor: chartColors.secondary }}
             />
-            <span className="text-xs text-slate-500 dark:text-slate-400">Opened</span>
+            <span className="text-xs text-slate-700 dark:text-slate-400">Opened</span>
           </div>
           <div className="flex items-center gap-2">
             <span
               className="h-0.5 w-4 rounded"
               style={{ backgroundColor: chartColors.tertiary }}
             />
-            <span className="text-xs text-slate-500 dark:text-slate-400">Replied</span>
+            <span className="text-xs text-slate-700 dark:text-slate-400">Replied</span>
           </div>
         </div>
       </div>

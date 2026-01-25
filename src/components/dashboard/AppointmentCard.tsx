@@ -42,7 +42,7 @@ const typeConfig = {
 const statusConfig = {
   upcoming: { label: "Upcoming", dot: "bg-emerald-pro-600", text: "text-emerald-pro-600" },
   completed: { label: "Completed", dot: "bg-emerald-pro-400", text: "text-emerald-pro-400" },
-  cancelled: { label: "Cancelled", dot: "bg-steel", text: "text-slate-500 dark:text-slate-400" },
+  cancelled: { label: "Cancelled", dot: "bg-steel", text: "text-slate-700 dark:text-slate-400" },
   "no-show": { label: "No Show", dot: "bg-alert-red", text: "text-alert-red" },
 }
 
@@ -54,16 +54,16 @@ export function AppointmentCard({ appointment, className }: AppointmentCardProps
   return (
     <div className={cn("rounded-xl border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue/60 p-4 backdrop-blur-sm transition-all duration-200 hover:border-emerald-pro-600/30", className)}>
       <div className="flex items-start gap-3 mb-3">
-        <TypeIcon className="h-4 w-4 text-slate-500 dark:text-slate-400 mt-0.5" />
+        <TypeIcon className="h-4 w-4 text-slate-700 dark:text-slate-400 mt-0.5" />
         <div className="flex-1 min-w-0">
           <p className="text-sm font-medium text-slate-900 dark:text-white">{appointment.title}</p>
-          <p className="text-xs text-slate-500 dark:text-slate-400">{type.label}</p>
+          <p className="text-xs text-slate-700 dark:text-slate-400">{type.label}</p>
         </div>
       </div>
 
       <div className="space-y-2 text-xs text-slate-700 dark:text-slate-200">
         <div className="flex items-center gap-2">
-          <Calendar className="h-3.5 w-3.5 text-slate-500 dark:text-slate-400" />
+          <Calendar className="h-3.5 w-3.5 text-slate-700 dark:text-slate-400" />
           <span>
             {new Date(appointment.date).toLocaleDateString("en-US", {
               weekday: "short",
@@ -73,11 +73,11 @@ export function AppointmentCard({ appointment, className }: AppointmentCardProps
           </span>
         </div>
         <div className="flex items-center gap-2">
-          <Clock className="h-3.5 w-3.5 text-slate-500 dark:text-slate-400" />
+          <Clock className="h-3.5 w-3.5 text-slate-700 dark:text-slate-400" />
           <span>{appointment.time} ({appointment.duration} min)</span>
         </div>
         <div className="flex items-center gap-2">
-          <User className="h-3.5 w-3.5 text-slate-500 dark:text-slate-400" />
+          <User className="h-3.5 w-3.5 text-slate-700 dark:text-slate-400" />
           <Link
             href={`/dashboard/leads/${appointment.lead.id}`}
             className="hover:text-emerald-pro-600 transition-colors"
@@ -86,7 +86,7 @@ export function AppointmentCard({ appointment, className }: AppointmentCardProps
           </Link>
         </div>
         <div className="flex items-center gap-2">
-          <Building2 className="h-3.5 w-3.5 text-slate-500 dark:text-slate-400" />
+          <Building2 className="h-3.5 w-3.5 text-slate-700 dark:text-slate-400" />
           <span>{appointment.lead.company}</span>
         </div>
       </div>

@@ -77,7 +77,7 @@ export default function PricingPage() {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
-                    className="absolute -top-5 left-1/2 -translate-x-1/2 px-6 py-2 rounded-full bg-gradient-to-r from-emerald-pro-600 to-emerald-pro-500 text-deep-space text-sm font-bold shadow-lg shadow-emerald-pro-600/30 flex items-center gap-2"
+                    className="absolute -top-5 left-1/2 -translate-x-1/2 px-6 py-2 rounded-full bg-gradient-to-r from-emerald-pro-600 to-emerald-pro-500 text-white text-sm font-bold shadow-lg shadow-emerald-pro-600/30 flex items-center gap-2"
                   >
                     <Zap className="w-4 h-4" />
                     Most Popular
@@ -89,7 +89,7 @@ export default function PricingPage() {
                   <h3 className="text-2xl lg:text-3xl font-sora font-bold text-slate-900 dark:text-white mb-2">
                     {tier.name}
                   </h3>
-                  <p className="text-slate-500 dark:text-slate-400 text-sm">{tier.tagline}</p>
+                  <p className="text-slate-700 dark:text-slate-400 text-sm">{tier.tagline}</p>
                 </div>
 
                 {/* Price - Enhanced */}
@@ -101,9 +101,9 @@ export default function PricingPage() {
                     )}>
                       {tier.price}
                     </span>
-                    <span className="text-slate-500 dark:text-slate-400 text-lg">{tier.priceSubtext}</span>
+                    <span className="text-slate-700 dark:text-slate-400 text-lg">{tier.priceSubtext}</span>
                   </div>
-                  <p className="text-slate-500 dark:text-slate-400 text-sm mt-3">{tier.description}</p>
+                  <p className="text-slate-700 dark:text-slate-400 text-sm mt-3">{tier.description}</p>
                 </div>
 
                 {/* Features - Enhanced */}

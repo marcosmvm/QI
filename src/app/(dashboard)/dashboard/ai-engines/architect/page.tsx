@@ -201,7 +201,7 @@ const statusColors = {
   },
   draft: {
     bg: "bg-steel/10",
-    text: "text-slate-500 dark:text-slate-400",
+    text: "text-slate-700 dark:text-slate-400",
     border: "border-steel/20",
     dot: "bg-steel",
   },
@@ -220,13 +220,13 @@ export default function ArchitectPage() {
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-2">
+        <div className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-400 mb-2">
           <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
           <span>/</span>
           <span className="text-emerald-pro-600">Architect Engine</span>
         </div>
         <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">Architect Engine</h1>
-        <p className="text-slate-500 dark:text-slate-400 mt-1">AI-Powered Campaign Design & Sequence Building</p>
+        <p className="text-slate-700 dark:text-slate-400 mt-1">AI-Powered Campaign Design & Sequence Building</p>
       </motion.div>
 
       <div className="space-y-6">
@@ -254,7 +254,7 @@ export default function ArchitectPage() {
                   </span>
                 </div>
                 <h2 className="text-xl font-sora font-bold text-slate-900 dark:text-white mt-1">Campaign Architect</h2>
-                <p className="text-sm text-slate-500 dark:text-slate-400">AI-driven campaign creation, sequence building, and multi-variant generation</p>
+                <p className="text-sm text-slate-700 dark:text-slate-400">AI-driven campaign creation, sequence building, and multi-variant generation</p>
               </div>
             </div>
 
@@ -325,7 +325,7 @@ export default function ArchitectPage() {
                 "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all",
                 activeTab === tab.id
                   ? "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20"
-                  : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/5"
+                  : "text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/5"
               )}
             >
               <tab.icon className="h-4 w-4" />
@@ -340,21 +340,21 @@ export default function ArchitectPage() {
             {/* Search and Filters */}
             <div className="flex items-center justify-between">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500 dark:text-slate-400" />
+                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-700 dark:text-slate-400" />
                 <input
                   type="text"
                   placeholder="Search campaigns..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="h-10 w-80 rounded-xl border border-emerald-pro-600/20 bg-light-bg-secondary dark:bg-midnight-blue/50 pl-10 pr-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-500 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-2 focus:ring-emerald-pro-600/20 transition-all"
+                  className="h-10 w-80 rounded-xl border border-emerald-pro-600/20 bg-light-bg-secondary dark:bg-midnight-blue/50 pl-10 pr-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-700 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-2 focus:ring-emerald-pro-600/20 transition-all"
                 />
               </div>
               <div className="flex items-center gap-2">
-                <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
+                <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
                   <Filter className="h-4 w-4 mr-2" />
                   Filter
                 </Button>
-                <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
+                <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
                   <RefreshCw className="h-4 w-4 mr-2" />
                   Refresh
                 </Button>
@@ -367,15 +367,15 @@ export default function ArchitectPage() {
                 <table className="w-full">
                   <thead>
                     <tr className="border-b border-emerald-pro-600/10">
-                      <th className="text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider px-6 py-4">Campaign</th>
-                      <th className="text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider px-4 py-4">Status</th>
-                      <th className="text-center text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider px-4 py-4">Sequences</th>
-                      <th className="text-center text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider px-4 py-4">Leads</th>
-                      <th className="text-center text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider px-4 py-4">Contacted</th>
-                      <th className="text-center text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider px-4 py-4">Replied</th>
-                      <th className="text-center text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider px-4 py-4">Meetings</th>
-                      <th className="text-center text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider px-4 py-4">Reply Rate</th>
-                      <th className="text-right text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider px-6 py-4">Actions</th>
+                      <th className="text-left text-xs font-semibold text-slate-700 dark:text-slate-400 uppercase tracking-wider px-6 py-4">Campaign</th>
+                      <th className="text-left text-xs font-semibold text-slate-700 dark:text-slate-400 uppercase tracking-wider px-4 py-4">Status</th>
+                      <th className="text-center text-xs font-semibold text-slate-700 dark:text-slate-400 uppercase tracking-wider px-4 py-4">Sequences</th>
+                      <th className="text-center text-xs font-semibold text-slate-700 dark:text-slate-400 uppercase tracking-wider px-4 py-4">Leads</th>
+                      <th className="text-center text-xs font-semibold text-slate-700 dark:text-slate-400 uppercase tracking-wider px-4 py-4">Contacted</th>
+                      <th className="text-center text-xs font-semibold text-slate-700 dark:text-slate-400 uppercase tracking-wider px-4 py-4">Replied</th>
+                      <th className="text-center text-xs font-semibold text-slate-700 dark:text-slate-400 uppercase tracking-wider px-4 py-4">Meetings</th>
+                      <th className="text-center text-xs font-semibold text-slate-700 dark:text-slate-400 uppercase tracking-wider px-4 py-4">Reply Rate</th>
+                      <th className="text-right text-xs font-semibold text-slate-700 dark:text-slate-400 uppercase tracking-wider px-6 py-4">Actions</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-emerald-pro-600/5">
@@ -388,7 +388,7 @@ export default function ArchitectPage() {
                               <p className="font-medium text-slate-900 dark:text-white group-hover:text-emerald-pro-600 transition-colors">
                                 {campaign.name}
                               </p>
-                              <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                              <p className="text-xs text-slate-700 dark:text-slate-400 mt-0.5">
                                 Created {campaign.createdAt} • Last activity {campaign.lastActivity}
                               </p>
                             </div>
@@ -422,7 +422,7 @@ export default function ArchitectPage() {
                           <td className="px-4 py-4 text-center">
                             <span className={cn(
                               "text-sm font-semibold",
-                              campaign.replyRate >= 8 ? "text-emerald-pro-400" : campaign.replyRate >= 5 ? "text-energy-orange" : "text-slate-500 dark:text-slate-400"
+                              campaign.replyRate >= 8 ? "text-emerald-pro-400" : campaign.replyRate >= 5 ? "text-energy-orange" : "text-slate-700 dark:text-slate-400"
                             )}>
                               {campaign.replyRate}%
                             </span>
@@ -430,21 +430,21 @@ export default function ArchitectPage() {
                           <td className="px-6 py-4">
                             <div className="flex items-center justify-end gap-1">
                               {campaign.status === "active" ? (
-                                <button className="p-2 text-slate-500 dark:text-slate-400 hover:text-energy-orange hover:bg-energy-orange/10 rounded-lg transition-colors">
+                                <button className="p-2 text-slate-700 dark:text-slate-400 hover:text-energy-orange hover:bg-energy-orange/10 rounded-lg transition-colors">
                                   <Pause className="h-4 w-4" />
                                 </button>
                               ) : campaign.status === "paused" ? (
-                                <button className="p-2 text-slate-500 dark:text-slate-400 hover:text-emerald-pro-400 hover:bg-emerald-pro-400/10 rounded-lg transition-colors">
+                                <button className="p-2 text-slate-700 dark:text-slate-400 hover:text-emerald-pro-400 hover:bg-emerald-pro-400/10 rounded-lg transition-colors">
                                   <Play className="h-4 w-4" />
                                 </button>
                               ) : null}
-                              <button className="p-2 text-slate-500 dark:text-slate-400 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
+                              <button className="p-2 text-slate-700 dark:text-slate-400 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                                 <Eye className="h-4 w-4" />
                               </button>
-                              <button className="p-2 text-slate-500 dark:text-slate-400 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
+                              <button className="p-2 text-slate-700 dark:text-slate-400 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                                 <Edit3 className="h-4 w-4" />
                               </button>
-                              <button className="p-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
+                              <button className="p-2 text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                                 <MoreHorizontal className="h-4 w-4" />
                               </button>
                             </div>
@@ -465,16 +465,16 @@ export default function ArchitectPage() {
             {/* Search and Create */}
             <div className="flex items-center justify-between">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500 dark:text-slate-400" />
+                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-700 dark:text-slate-400" />
                 <input
                   type="text"
                   placeholder="Search sequences..."
-                  className="h-10 w-80 rounded-xl border border-emerald-pro-600/20 bg-light-bg-secondary dark:bg-midnight-blue/50 pl-10 pr-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-500 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-2 focus:ring-emerald-pro-600/20 transition-all"
+                  className="h-10 w-80 rounded-xl border border-emerald-pro-600/20 bg-light-bg-secondary dark:bg-midnight-blue/50 pl-10 pr-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-700 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-2 focus:ring-emerald-pro-600/20 transition-all"
                 />
               </div>
               <Button
                 size="sm"
-                className="bg-gradient-to-r from-emerald-pro-600 to-cyan-dark hover:from-cyan-light hover:to-emerald-pro-600 text-deep-space font-semibold"
+                className="bg-gradient-to-r from-emerald-pro-600 to-cyan-dark hover:from-cyan-light hover:to-emerald-pro-600 text-white font-semibold"
               >
                 <Plus className="h-4 w-4 mr-2" />
                 Create Sequence
@@ -497,17 +497,17 @@ export default function ArchitectPage() {
                         <h4 className="font-medium text-slate-900 dark:text-white group-hover:text-emerald-pro-600 transition-colors">
                           {sequence.name}
                         </h4>
-                        <span className="text-xs text-slate-500 dark:text-slate-400 px-2 py-0.5 rounded-md bg-light-bg-secondary dark:bg-midnight-blue border border-emerald-pro-600/10">
+                        <span className="text-xs text-slate-700 dark:text-slate-400 px-2 py-0.5 rounded-md bg-light-bg-secondary dark:bg-midnight-blue border border-emerald-pro-600/10">
                           {sequence.category}
                         </span>
                       </div>
                     </div>
-                    <button className="p-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors opacity-0 group-hover:opacity-100">
+                    <button className="p-2 text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors opacity-0 group-hover:opacity-100">
                       <MoreHorizontal className="h-4 w-4" />
                     </button>
                   </div>
 
-                  <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">{sequence.description}</p>
+                  <p className="text-sm text-slate-700 dark:text-slate-400 mb-4">{sequence.description}</p>
 
                   {/* Sequence Flow Visual */}
                   <div className="flex items-center gap-2 mb-4 p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-emerald-pro-600/10">
@@ -517,7 +517,7 @@ export default function ArchitectPage() {
                           <Mail className="h-4 w-4 text-emerald-pro-600" />
                         </div>
                         {i < sequence.steps - 1 && (
-                          <ArrowRight className="h-4 w-4 text-slate-500 dark:text-slate-400 mx-1" />
+                          <ArrowRight className="h-4 w-4 text-slate-700 dark:text-slate-400 mx-1" />
                         )}
                       </div>
                     ))}
@@ -528,11 +528,11 @@ export default function ArchitectPage() {
                       <div className="flex items-center gap-1.5">
                         <BarChart3 className="h-4 w-4 text-emerald-pro-400" />
                         <span className="text-sm text-slate-900 dark:text-white font-medium">{sequence.avgReplyRate}%</span>
-                        <span className="text-xs text-slate-500 dark:text-slate-400">avg reply</span>
+                        <span className="text-xs text-slate-700 dark:text-slate-400">avg reply</span>
                       </div>
                       <div className="flex items-center gap-1.5">
-                        <Copy className="h-4 w-4 text-slate-500 dark:text-slate-400" />
-                        <span className="text-xs text-slate-500 dark:text-slate-400">{sequence.timesUsed} uses</span>
+                        <Copy className="h-4 w-4 text-slate-700 dark:text-slate-400" />
+                        <span className="text-xs text-slate-700 dark:text-slate-400">{sequence.timesUsed} uses</span>
                       </div>
                     </div>
                     <Button variant="ghost" size="sm" className="text-emerald-pro-600 hover:bg-emerald-pro-600/10">
@@ -558,42 +558,42 @@ export default function ArchitectPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-900 dark:text-white">AI Email Generator</h3>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">Generate personalized variants</p>
+                    <p className="text-xs text-slate-700 dark:text-slate-400">Generate personalized variants</p>
                   </div>
                 </div>
 
                 <div className="space-y-4">
                   <div>
-                    <label className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2 block">
+                    <label className="text-xs font-medium text-slate-700 dark:text-slate-400 uppercase tracking-wider mb-2 block">
                       Target Audience
                     </label>
                     <input
                       type="text"
                       placeholder="e.g., VP of Sales at SaaS companies"
-                      className="w-full h-10 rounded-xl border border-emerald-pro-600/20 bg-white dark:bg-deep-space/50 px-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-500 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none transition-all"
+                      className="w-full h-10 rounded-xl border border-emerald-pro-600/20 bg-white dark:bg-deep-space/50 px-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-700 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none transition-all"
                     />
                   </div>
 
                   <div>
-                    <label className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2 block">
+                    <label className="text-xs font-medium text-slate-700 dark:text-slate-400 uppercase tracking-wider mb-2 block">
                       Pain Point / Value Prop
                     </label>
                     <textarea
                       rows={3}
                       placeholder="e.g., Struggling with long sales cycles..."
-                      className="w-full rounded-xl border border-emerald-pro-600/20 bg-white dark:bg-deep-space/50 px-4 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-500 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none transition-all resize-none"
+                      className="w-full rounded-xl border border-emerald-pro-600/20 bg-white dark:bg-deep-space/50 px-4 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-700 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none transition-all resize-none"
                     />
                   </div>
 
                   <div>
-                    <label className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2 block">
+                    <label className="text-xs font-medium text-slate-700 dark:text-slate-400 uppercase tracking-wider mb-2 block">
                       Tone
                     </label>
                     <div className="flex items-center gap-2">
                       {["Professional", "Casual", "Direct"].map((tone) => (
                         <button
                           key={tone}
-                          className="px-3 py-1.5 rounded-lg text-xs font-medium border border-emerald-pro-600/20 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/10 transition-all"
+                          className="px-3 py-1.5 rounded-lg text-xs font-medium border border-emerald-pro-600/20 text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/10 transition-all"
                         >
                           {tone}
                         </button>
@@ -602,7 +602,7 @@ export default function ArchitectPage() {
                   </div>
 
                   <div>
-                    <label className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2 block">
+                    <label className="text-xs font-medium text-slate-700 dark:text-slate-400 uppercase tracking-wider mb-2 block">
                       Number of Variants
                     </label>
                     <select className="w-full h-10 rounded-xl border border-emerald-pro-600/20 bg-white dark:bg-deep-space/50 px-4 text-sm text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none transition-all">
@@ -624,15 +624,15 @@ export default function ArchitectPage() {
                 <h3 className="font-semibold text-slate-900 dark:text-white mb-3">Brand Voice Settings</h3>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-emerald-pro-600/10">
-                    <span className="text-sm text-slate-500 dark:text-slate-400">Formality Level</span>
+                    <span className="text-sm text-slate-700 dark:text-slate-400">Formality Level</span>
                     <span className="text-sm text-slate-900 dark:text-white font-medium">Business Casual</span>
                   </div>
                   <div className="flex items-center justify-between p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-emerald-pro-600/10">
-                    <span className="text-sm text-slate-500 dark:text-slate-400">Personalization</span>
+                    <span className="text-sm text-slate-700 dark:text-slate-400">Personalization</span>
                     <span className="text-sm text-emerald-pro-400 font-medium">High</span>
                   </div>
                   <div className="flex items-center justify-between p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-emerald-pro-600/10">
-                    <span className="text-sm text-slate-500 dark:text-slate-400">CTA Style</span>
+                    <span className="text-sm text-slate-700 dark:text-slate-400">CTA Style</span>
                     <span className="text-sm text-slate-900 dark:text-white font-medium">Soft Ask</span>
                   </div>
                 </div>
@@ -644,7 +644,7 @@ export default function ArchitectPage() {
               <div className="flex items-center justify-between">
                 <h3 className="font-semibold text-slate-900 dark:text-white">Generated Variants</h3>
                 <div className="flex items-center gap-2">
-                  <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
+                  <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
                     <RefreshCw className="h-4 w-4 mr-2" />
                     Regenerate
                   </Button>
@@ -678,11 +678,11 @@ export default function ArchitectPage() {
                     </div>
                     <div className="flex items-center gap-4">
                       <div className="text-right">
-                        <p className="text-xs text-slate-500 dark:text-slate-400">Predicted Open</p>
+                        <p className="text-xs text-slate-700 dark:text-slate-400">Predicted Open</p>
                         <p className="text-sm font-semibold text-emerald-pro-400">{variant.openRate}%</p>
                       </div>
                       <div className="text-right">
-                        <p className="text-xs text-slate-500 dark:text-slate-400">Predicted Reply</p>
+                        <p className="text-xs text-slate-700 dark:text-slate-400">Predicted Reply</p>
                         <p className="text-sm font-semibold text-emerald-pro-500">{variant.replyRate}%</p>
                       </div>
                     </div>
@@ -690,24 +690,24 @@ export default function ArchitectPage() {
 
                   <div className="space-y-2 mb-4">
                     <div>
-                      <p className="text-xs text-slate-500 dark:text-slate-400 mb-1">Subject Line</p>
+                      <p className="text-xs text-slate-700 dark:text-slate-400 mb-1">Subject Line</p>
                       <p className="text-slate-900 dark:text-white font-medium">{variant.subject}</p>
                     </div>
                     <div>
-                      <p className="text-xs text-slate-500 dark:text-slate-400 mb-1">Preview</p>
-                      <p className="text-slate-500 dark:text-slate-400">{variant.preview}</p>
+                      <p className="text-xs text-slate-700 dark:text-slate-400 mb-1">Preview</p>
+                      <p className="text-slate-700 dark:text-slate-400">{variant.preview}</p>
                     </div>
                   </div>
 
                   <div className="flex items-center justify-between pt-3 border-t border-emerald-pro-600/10">
                     <div className="flex items-center gap-2">
-                      <button className="p-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
+                      <button className="p-2 text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                         <Copy className="h-4 w-4" />
                       </button>
-                      <button className="p-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
+                      <button className="p-2 text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                         <Edit3 className="h-4 w-4" />
                       </button>
-                      <button className="p-2 text-slate-500 dark:text-slate-400 hover:text-rose hover:bg-rose/10 rounded-lg transition-colors">
+                      <button className="p-2 text-slate-700 dark:text-slate-400 hover:text-rose hover:bg-rose/10 rounded-lg transition-colors">
                         <Trash2 className="h-4 w-4" />
                       </button>
                     </div>

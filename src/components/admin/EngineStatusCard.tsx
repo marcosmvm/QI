@@ -125,7 +125,7 @@ export function EngineStatusCard({
           </div>
           <div>
             <h3 className="text-sm font-semibold text-slate-900 dark:text-white">{name}</h3>
-            <p className="text-xs text-slate-500 dark:text-slate-400">Engine {codename}</p>
+            <p className="text-xs text-slate-700 dark:text-slate-400">Engine {codename}</p>
           </div>
         </div>
 
@@ -144,19 +144,19 @@ export function EngineStatusCard({
 
       <div className="mt-4 grid grid-cols-3 gap-4">
         <div>
-          <p className="text-xs text-slate-500 dark:text-slate-400">Last Heartbeat</p>
+          <p className="text-xs text-slate-700 dark:text-slate-400">Last Heartbeat</p>
           <p className="text-sm font-medium text-slate-700 dark:text-slate-200 mt-0.5">
             {formatTimeAgo(lastHeartbeat)}
           </p>
         </div>
         <div>
-          <p className="text-xs text-slate-500 dark:text-slate-400">24h Executions</p>
+          <p className="text-xs text-slate-700 dark:text-slate-400">24h Executions</p>
           <p className="text-sm font-medium text-slate-700 dark:text-slate-200 mt-0.5">
             {executions24h.toLocaleString()}
           </p>
         </div>
         <div>
-          <p className="text-xs text-slate-500 dark:text-slate-400">24h Errors</p>
+          <p className="text-xs text-slate-700 dark:text-slate-400">24h Errors</p>
           <p
             className={cn(
               "text-sm font-medium mt-0.5",
@@ -194,7 +194,7 @@ export function EngineStatusCompact({
   return (
     <div className="flex items-center justify-between py-2">
       <div className="flex items-center gap-2">
-        <Icon className="h-4 w-4 text-slate-500 dark:text-slate-400" />
+        <Icon className="h-4 w-4 text-slate-700 dark:text-slate-400" />
         <span className="text-sm text-slate-700 dark:text-slate-200">{name}</span>
       </div>
       <div className="flex items-center gap-3">

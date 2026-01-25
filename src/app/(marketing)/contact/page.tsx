@@ -100,7 +100,7 @@ export default function ContactPage() {
               <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-6">
                 Get in Touch
               </h2>
-              <p className="text-slate-500 dark:text-slate-400 mb-8">
+              <p className="text-slate-700 dark:text-slate-400 mb-8">
                 Have questions? Want to learn more about how we can help your business grow? Reach out and we&apos;ll get back to you within 24 hours.
               </p>
 
@@ -141,7 +141,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-slate-900 dark:text-white font-medium">Location</p>
-                    <p className="text-slate-500 dark:text-slate-400">{contactInfo.address}</p>
+                    <p className="text-slate-700 dark:text-slate-400">{contactInfo.address}</p>
                   </div>
                 </div>
               </div>
@@ -151,7 +151,7 @@ export default function ContactPage() {
                 <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white mb-4">
                   What to Expect
                 </h3>
-                <ul className="space-y-3 text-slate-500 dark:text-slate-400 text-sm">
+                <ul className="space-y-3 text-slate-700 dark:text-slate-400 text-sm">
                   <li className="flex items-start gap-2">
                     <ArrowRight className="h-4 w-4 text-emerald-pro-600 flex-shrink-0 mt-0.5" />
                     60-minute discovery call within 3 business days
@@ -189,7 +189,7 @@ export default function ContactPage() {
                     <h3 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-4">
                       Thanks for reaching out!
                     </h3>
-                    <p className="text-slate-500 dark:text-slate-400 max-w-md mx-auto">
+                    <p className="text-slate-700 dark:text-slate-400 max-w-md mx-auto">
                       We&apos;ve received your message and will get back to you within 24 hours. In the meantime, feel free to explore our case studies.
                     </p>
                   </div>
@@ -326,7 +326,7 @@ export default function ContactPage() {
                       )}
                     </Button>
 
-                    <p className="text-center text-slate-500 dark:text-slate-400 text-sm">
+                    <p className="text-center text-slate-700 dark:text-slate-400 text-sm">
                       By submitting this form, you agree to our{" "}
                       <a href="/legal/privacy-policy" className="text-emerald-pro-600 hover:underline">
                         Privacy Policy

@@ -83,13 +83,13 @@ export default function TestimonialsPage() {
             {/* Author */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-pro-600 to-emerald-pro-500 flex items-center justify-center text-deep-space font-bold text-xl">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-pro-600 to-emerald-pro-500 flex items-center justify-center text-white font-bold text-xl">
                   MM
                 </div>
                 <div>
                   <p className="font-semibold text-slate-900 dark:text-white text-lg">Marcos Matthews</p>
                   <p className="text-emerald-pro-600 text-sm font-medium">Founder & CEO</p>
-                  <div className="flex items-center gap-3 mt-1 text-slate-500 dark:text-slate-400 text-xs">
+                  <div className="flex items-center gap-3 mt-1 text-slate-700 dark:text-slate-400 text-xs">
                     <span className="flex items-center gap-1">
                       <MapPin className="h-3 w-3" />
                       Los Angeles, CA
@@ -185,7 +185,7 @@ export default function TestimonialsPage() {
                 <CheckCircle className="h-6 w-6 text-emerald-pro-400 flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold text-slate-900 dark:text-white mb-1">{benefit.title}</h4>
-                  <p className="text-slate-500 dark:text-slate-400 text-sm">{benefit.description}</p>
+                  <p className="text-slate-700 dark:text-slate-400 text-sm">{benefit.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -210,7 +210,7 @@ export default function TestimonialsPage() {
               Limited spots available. Book a call to discuss if we&apos;re a fit for each other.
             </p>
             <Link href="/contact">
-              <Button className="bg-gradient-to-r from-emerald-pro-600 to-cyan-dark hover:from-cyan-light hover:to-emerald-pro-600 text-deep-space font-semibold">
+              <Button className="bg-gradient-to-r from-emerald-pro-600 to-cyan-dark hover:from-cyan-light hover:to-emerald-pro-600 text-white font-semibold">
                 Book a Consultation
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>

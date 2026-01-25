@@ -42,7 +42,7 @@ export function StatsBar() {
               <p className="text-slate-900 dark:text-white mt-2 text-sm md:text-base font-medium">
                 {cap.label}
               </p>
-              <p className="text-slate-500 dark:text-slate-400 text-xs mt-1">
+              <p className="text-slate-700 dark:text-slate-400 text-xs mt-1">
                 {cap.description}
               </p>
             </motion.div>

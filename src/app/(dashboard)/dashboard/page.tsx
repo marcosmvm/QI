@@ -202,14 +202,14 @@ export default async function DashboardPage() {
           </div>
 
           <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-3">Welcome to XGrowthOS</h1>
-          <p className="text-slate-500 dark:text-slate-400 mb-8 leading-relaxed">
+          <p className="text-slate-700 dark:text-slate-400 mb-8 leading-relaxed">
             Your account is being set up. Our team will reach out shortly to complete your onboarding and get your first campaigns running.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/dashboard/support"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-pro-600 to-cyan-dark text-deep-space font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-pro-600/20 transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-pro-600 to-cyan-dark text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-pro-600/20 transition-all"
             >
               Contact Support
             </Link>

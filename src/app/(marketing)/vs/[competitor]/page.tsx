@@ -303,7 +303,7 @@ export default function CompetitorComparisonPage({ params }: PageProps) {
         <Container className="relative z-10">
           <Link
             href="/vs"
-            className="inline-flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-emerald-pro-600 transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-400 hover:text-emerald-pro-600 transition-colors mb-8"
           >
             <ArrowLeft className="h-4 w-4" />
             All Comparisons
@@ -330,9 +330,9 @@ export default function CompetitorComparisonPage({ params }: PageProps) {
               </span>
             </h1>
 
-            <p className="text-xl text-slate-500 dark:text-slate-400 mb-8">{data.description}</p>
+            <p className="text-xl text-slate-700 dark:text-slate-400 mb-8">{data.description}</p>
 
-            <div className="flex flex-wrap gap-4 text-sm text-slate-500 dark:text-slate-400">
+            <div className="flex flex-wrap gap-4 text-sm text-slate-700 dark:text-slate-400">
               <span>Founded: {data.founded}</span>
               <span>•</span>
               <span>{data.headquarters}</span>
@@ -365,13 +365,13 @@ export default function CompetitorComparisonPage({ params }: PageProps) {
             <table className="w-full">
               <thead>
                 <tr className="bg-light-bg-secondary dark:bg-midnight-blue">
-                  <th className="px-6 py-4 text-left text-sm font-medium text-slate-500 dark:text-slate-400">
+                  <th className="px-6 py-4 text-left text-sm font-medium text-slate-700 dark:text-slate-400">
                     Feature
                   </th>
                   <th className="px-6 py-4 text-center text-sm font-medium text-emerald-pro-600">
                     XGrowthOS
                   </th>
-                  <th className="px-6 py-4 text-center text-sm font-medium text-slate-500 dark:text-slate-400">
+                  <th className="px-6 py-4 text-center text-sm font-medium text-slate-700 dark:text-slate-400">
                     {data.name}
                   </th>
                 </tr>
@@ -391,14 +391,14 @@ export default function CompetitorComparisonPage({ params }: PageProps) {
                       {feature.quantum ? (
                         <Check className="h-5 w-5 text-emerald-pro-400 mx-auto" />
                       ) : (
-                        <X className="h-5 w-5 text-slate-500 dark:text-slate-400 mx-auto" />
+                        <X className="h-5 w-5 text-slate-700 dark:text-slate-400 mx-auto" />
                       )}
                     </td>
                     <td className="px-6 py-4 text-center">
                       {feature.competitor ? (
-                        <Check className="h-5 w-5 text-slate-500 dark:text-slate-400 mx-auto" />
+                        <Check className="h-5 w-5 text-slate-700 dark:text-slate-400 mx-auto" />
                       ) : (
-                        <X className="h-5 w-5 text-slate-500 dark:text-slate-400/50 mx-auto" />
+                        <X className="h-5 w-5 text-slate-700 dark:text-slate-400/50 mx-auto" />
                       )}
                     </td>
                   </tr>
@@ -449,7 +449,7 @@ export default function CompetitorComparisonPage({ params }: PageProps) {
                   <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white mb-2">
                     {advantage.title}
                   </h3>
-                  <p className="text-slate-500 dark:text-slate-400">{advantage.description}</p>
+                  <p className="text-slate-700 dark:text-slate-400">{advantage.description}</p>
                 </motion.div>
               );
             })}
@@ -473,7 +473,7 @@ export default function CompetitorComparisonPage({ params }: PageProps) {
             <h3 className="text-xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Pricing Comparison
             </h3>
-            <p className="text-slate-500 dark:text-slate-400 mb-6">{data.pricingNote}</p>
+            <p className="text-slate-700 dark:text-slate-400 mb-6">{data.pricingNote}</p>
             <Link href="/pricing" className="cta-magnetic inline-flex gap-2">
               View Our Pricing
               <ArrowRight className="h-4 w-4" />

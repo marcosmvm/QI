@@ -56,18 +56,18 @@ export function LeadCard({ lead, className }: LeadCardProps) {
         <div className="flex-1 min-w-0">
           <p className="text-sm font-medium text-slate-900 dark:text-white truncate">{lead.name}</p>
           {lead.title && (
-            <p className="text-xs text-slate-500 dark:text-slate-400 truncate">{lead.title}</p>
+            <p className="text-xs text-slate-700 dark:text-slate-400 truncate">{lead.title}</p>
           )}
         </div>
       </div>
 
       <div className="mt-4 space-y-2">
         <div className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200">
-          <Building2 className="h-4 w-4 text-slate-500 dark:text-slate-400" />
+          <Building2 className="h-4 w-4 text-slate-700 dark:text-slate-400" />
           <span className="truncate">{lead.company}</span>
         </div>
         <div className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200">
-          <Mail className="h-4 w-4 text-slate-500 dark:text-slate-400" />
+          <Mail className="h-4 w-4 text-slate-700 dark:text-slate-400" />
           <span className="truncate">{lead.email}</span>
         </div>
       </div>
@@ -78,7 +78,7 @@ export function LeadCard({ lead, className }: LeadCardProps) {
           {status.label}
         </span>
         {lead.score !== undefined && (
-          <span className="text-xs text-slate-500 dark:text-slate-400">Score: {lead.score}</span>
+          <span className="text-xs text-slate-700 dark:text-slate-400">Score: {lead.score}</span>
         )}
       </div>
     </Link>

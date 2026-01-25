@@ -23,7 +23,7 @@ const buttonVariants = cva(
         secondary:
           "bg-light-bg-secondary dark:bg-graphite text-slate-700 dark:text-slate-200 hover:bg-emerald-pro-600/10 dark:hover:bg-slate hover:text-slate-900 dark:hover:text-white",
         ghost:
-          "text-slate-500 dark:text-slate-400 hover:bg-light-bg-secondary dark:hover:bg-graphite/50 hover:text-slate-900 dark:hover:text-white",
+          "text-slate-700 dark:text-slate-400 hover:bg-light-bg-secondary dark:hover:bg-graphite/50 hover:text-slate-900 dark:hover:text-white",
         link:
           "text-emerald-pro-600 underline-offset-4 hover:underline",
         // Premium glow variant - pulsing glow effect

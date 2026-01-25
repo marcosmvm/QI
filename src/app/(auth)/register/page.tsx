@@ -80,7 +80,7 @@ export default function RegisterPage() {
           </div>
         </div>
 
-        <div className="relative z-10 text-sm text-slate-500 dark:text-slate-400">
+        <div className="relative z-10 text-sm text-slate-700 dark:text-slate-400">
           &copy; {new Date().getFullYear()} XGrowthOS. All rights reserved.
         </div>
       </div>
@@ -109,7 +109,7 @@ export default function RegisterPage() {
                 <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-2">
                   Request Submitted!
                 </h2>
-                <p className="text-slate-500 dark:text-slate-400 mb-6">
+                <p className="text-slate-700 dark:text-slate-400 mb-6">
                   Thank you for your interest in XGrowthOS. Our team will
                   review your request and reach out within 24-48 hours.
                 </p>
@@ -125,7 +125,7 @@ export default function RegisterPage() {
                   <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-2">
                     Request Access
                   </h2>
-                  <p className="text-slate-500 dark:text-slate-400">
+                  <p className="text-slate-700 dark:text-slate-400">
                     Fill out the form to get started with XGrowthOS
                   </p>
                 </div>
@@ -139,7 +139,7 @@ export default function RegisterPage() {
                       Full name
                     </label>
                     <div className="relative">
-                      <User className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-500 dark:text-slate-400" />
+                      <User className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-700 dark:text-slate-400" />
                       <input
                         id="name"
                         name="name"
@@ -161,7 +161,7 @@ export default function RegisterPage() {
                       Work email
                     </label>
                     <div className="relative">
-                      <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-500 dark:text-slate-400" />
+                      <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-700 dark:text-slate-400" />
                       <input
                         id="email"
                         name="email"
@@ -183,7 +183,7 @@ export default function RegisterPage() {
                       Company name
                     </label>
                     <div className="relative">
-                      <Building className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-500 dark:text-slate-400" />
+                      <Building className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-700 dark:text-slate-400" />
                       <input
                         id="company"
                         name="company"
@@ -205,7 +205,7 @@ export default function RegisterPage() {
                       Create password
                     </label>
                     <div className="relative">
-                      <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-500 dark:text-slate-400" />
+                      <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-700 dark:text-slate-400" />
                       <input
                         id="password"
                         name="password"
@@ -256,7 +256,7 @@ export default function RegisterPage() {
                     )}
                   </Button>
 
-                  <p className="text-xs text-slate-500 dark:text-slate-400 text-center">
+                  <p className="text-xs text-slate-700 dark:text-slate-400 text-center">
                     By requesting access, you agree to our{" "}
                     <Link href="/terms" className="text-emerald-pro-600 hover:underline">
                       Terms of Service
@@ -269,7 +269,7 @@ export default function RegisterPage() {
                 </form>
 
                 <div className="mt-6 text-center">
-                  <p className="text-slate-500 dark:text-slate-400 text-sm">
+                  <p className="text-slate-700 dark:text-slate-400 text-sm">
                     Already have an account?{" "}
                     <Link
                       href="/login"

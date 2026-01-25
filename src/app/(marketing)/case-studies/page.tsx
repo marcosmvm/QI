@@ -69,7 +69,7 @@ export default function CaseStudiesPage() {
             <Link href="/contact">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-emerald-pro-600 to-cyan-dark hover:from-cyan-light hover:to-emerald-pro-600 text-deep-space font-semibold px-8"
+                className="bg-gradient-to-r from-emerald-pro-600 to-cyan-dark hover:from-cyan-light hover:to-emerald-pro-600 text-white font-semibold px-8"
               >
                 Become a Founding Partner
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -115,7 +115,7 @@ export default function CaseStudiesPage() {
                 <p className="text-3xl font-sora font-bold text-emerald-pro-600 mb-2">
                   {benchmark.value}
                 </p>
-                <p className="text-slate-500 dark:text-slate-400 text-sm">{benchmark.label}</p>
+                <p className="text-slate-700 dark:text-slate-400 text-sm">{benchmark.label}</p>
               </motion.div>
             ))}
           </div>
@@ -196,7 +196,7 @@ export default function CaseStudiesPage() {
                   <CheckCircle className="h-6 w-6 text-emerald-pro-400 flex-shrink-0" />
                   <div>
                     <h4 className="font-semibold text-slate-900 dark:text-white mb-1">{benefit.title}</h4>
-                    <p className="text-slate-500 dark:text-slate-400 text-sm">{benefit.description}</p>
+                    <p className="text-slate-700 dark:text-slate-400 text-sm">{benefit.description}</p>
                   </div>
                 </motion.div>
               ))}

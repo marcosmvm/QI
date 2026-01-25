@@ -84,13 +84,13 @@ export default function CompliancePage() {
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-2">
+        <div className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-400 mb-2">
           <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
           <span>/</span>
           <span className="text-emerald-pro-600">Compliance</span>
         </div>
         <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">Compliance</h1>
-        <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
+        <p className="text-sm text-slate-700 dark:text-slate-400 mt-1">
           Domain health and deliverability monitoring
         </p>
       </motion.div>
@@ -125,7 +125,7 @@ export default function CompliancePage() {
           <div className="flex items-center justify-between px-6 py-4 border-b border-emerald-pro-600/10">
             <div>
               <h3 className="text-base font-semibold text-slate-900 dark:text-white">Domain Health</h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400">Monitor your sending domains</p>
+              <p className="text-xs text-slate-700 dark:text-slate-400">Monitor your sending domains</p>
             </div>
             <button className="flex items-center gap-2 text-sm text-emerald-pro-600 hover:text-emerald-pro-600/80 transition-colors">
               <RefreshCw className="h-4 w-4" />
@@ -136,10 +136,10 @@ export default function CompliancePage() {
           <div className="divide-y divide-emerald-pro-600/5">
             {mockDomains.map((domain) => (
               <div key={domain.domain} className="flex items-center px-6 py-4 hover:bg-emerald-pro-600/5 transition-colors">
-                <Globe className="h-4 w-4 text-slate-500 dark:text-slate-400 mr-3" />
+                <Globe className="h-4 w-4 text-slate-700 dark:text-slate-400 mr-3" />
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-slate-900 dark:text-white">{domain.domain}</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">Last check: {domain.lastCheck}</p>
+                  <p className="text-xs text-slate-700 dark:text-slate-400">Last check: {domain.lastCheck}</p>
                 </div>
                 <div className="flex items-center gap-4">
                   <span
@@ -176,7 +176,7 @@ export default function CompliancePage() {
         <div className="col-span-4 glass-premium">
           <div className="px-6 py-4 border-b border-emerald-pro-600/10">
             <h3 className="text-base font-semibold text-slate-900 dark:text-white">Recent Alerts</h3>
-            <p className="text-xs text-slate-500 dark:text-slate-400">{recentAlerts.length} alerts</p>
+            <p className="text-xs text-slate-700 dark:text-slate-400">{recentAlerts.length} alerts</p>
           </div>
 
           <div className="divide-y divide-emerald-pro-600/5">
@@ -197,7 +197,7 @@ export default function CompliancePage() {
                 )}
                 <div className="flex-1 min-w-0">
                   <p className="text-sm text-slate-900 dark:text-white">{alert.message}</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{alert.time}</p>
+                  <p className="text-xs text-slate-700 dark:text-slate-400 mt-0.5">{alert.time}</p>
                 </div>
               </div>
             ))}

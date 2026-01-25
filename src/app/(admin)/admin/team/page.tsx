@@ -107,13 +107,13 @@ export default function TeamPage() {
       {/* Header */}
       <motion.div variants={itemVariants} className="flex items-center justify-between mb-8">
         <div>
-          <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-2">
+          <div className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-400 mb-2">
             <span>Admin</span>
             <span className="text-graphite">/</span>
             <span className="text-emerald-pro-600">Team</span>
           </div>
           <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">Team</h1>
-          <p className="text-slate-500 dark:text-slate-400 mt-1">Manage your team members and roles</p>
+          <p className="text-slate-700 dark:text-slate-400 mt-1">Manage your team members and roles</p>
         </div>
         <button className="flex items-center gap-2 px-4 py-2 bg-emerald-pro-600 dark:bg-xgrowth-500 text-white dark:text-green-950 font-medium rounded-lg hover:bg-emerald-pro-600/90 dark:hover:bg-xgrowth-400 transition-colors">
           <UserPlus className="h-4 w-4" />
@@ -153,8 +153,8 @@ export default function TeamPage() {
       {/* Team Members Grid */}
       {teamMembers.length === 0 ? (
         <div className="glass-premium p-12 text-center">
-          <Users className="h-12 w-12 text-slate-500 dark:text-slate-400 mx-auto mb-4" />
-          <p className="text-slate-500 dark:text-slate-400">No team members yet</p>
+          <Users className="h-12 w-12 text-slate-700 dark:text-slate-400 mx-auto mb-4" />
+          <p className="text-slate-700 dark:text-slate-400">No team members yet</p>
           <button className="text-emerald-pro-600 hover:underline text-sm mt-2">
             Invite your first team member
           </button>
@@ -231,7 +231,7 @@ function StatCard({
       border: "border-emerald-pro-400/30",
     },
     steel: {
-      text: "text-slate-500 dark:text-slate-400",
+      text: "text-slate-700 dark:text-slate-400",
       bg: "bg-steel/10",
       border: "border-steel/30",
     },
@@ -249,7 +249,7 @@ function StatCard({
         </div>
       </div>
       <p className="text-2xl font-sora font-bold text-slate-900 dark:text-white">{value}</p>
-      <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">{label}</p>
+      <p className="text-sm text-slate-700 dark:text-slate-400 mt-1">{label}</p>
     </div>
   );
 }
@@ -260,7 +260,7 @@ function TeamMemberCard({ member }: { member: TeamMemberWithProfile }) {
     admin: "bg-emerald-pro-500/10 text-emerald-pro-500 border-emerald-pro-500/30",
     account_manager: "bg-emerald-pro-600/10 text-emerald-pro-600 border-emerald-pro-600/30",
     support: "bg-emerald-pro-400/10 text-emerald-pro-400 border-emerald-pro-400/30",
-    viewer: "bg-steel/10 text-slate-500 dark:text-slate-400 border-steel/30",
+    viewer: "bg-steel/10 text-slate-700 dark:text-slate-400 border-steel/30",
   };
 
   const roleLabels: Record<string, string> = {
@@ -302,19 +302,19 @@ function TeamMemberCard({ member }: { member: TeamMemberWithProfile }) {
             </span>
           </div>
         </div>
-        <button className="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-colors">
+        <button className="p-2 rounded-lg text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-colors">
           <MoreHorizontal className="h-4 w-4" />
         </button>
       </div>
 
       <div className="space-y-2">
         <div className="flex items-center gap-2 text-sm">
-          <Mail className="h-4 w-4 text-slate-500 dark:text-slate-400" />
+          <Mail className="h-4 w-4 text-slate-700 dark:text-slate-400" />
           <span className="text-slate-700 dark:text-slate-200 truncate">{profile.email}</span>
         </div>
         {member.hired_at && (
           <div className="flex items-center gap-2 text-sm">
-            <Calendar className="h-4 w-4 text-slate-500 dark:text-slate-400" />
+            <Calendar className="h-4 w-4 text-slate-700 dark:text-slate-400" />
             <span className="text-slate-700 dark:text-slate-200">
               Joined {new Date(member.hired_at).toLocaleDateString()}
             </span>
@@ -365,7 +365,7 @@ function RoleCard({
       border: "border-emerald-pro-400/30",
     },
     steel: {
-      text: "text-slate-500 dark:text-slate-400",
+      text: "text-slate-700 dark:text-slate-400",
       bg: "bg-steel/10",
       border: "border-steel/30",
     },
@@ -381,7 +381,7 @@ function RoleCard({
         <Icon className={`h-5 w-5 ${colors.text}`} />
       </div>
       <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-1">{role}</h3>
-      <p className="text-xs text-slate-500 dark:text-slate-400">{description}</p>
+      <p className="text-xs text-slate-700 dark:text-slate-400">{description}</p>
     </div>
   );
 }
