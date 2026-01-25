@@ -7,6 +7,23 @@
 @import "tailwindcss";
 
 /* ============================================================
+   TAILWIND V4 THEME - Custom Colors
+   ============================================================ */
+@theme {
+  /* Light mode backgrounds */
+  --color-light-bg-secondary: #F1F5F9;
+  --color-light-bg-tertiary: #E2E8F0;
+
+  /* Dark mode specific colors */
+  --color-midnight-blue: #0F172A;
+  --color-deep-space: #020617;
+  --color-graphite: #334155;
+
+  /* Background surface colors */
+  --color-bg-surface: var(--bg-surface);
+}
+
+/* ============================================================
    CSS CUSTOM PROPERTIES - LIGHT MODE (DEFAULT)
    ============================================================ */
 :root {
@@ -319,9 +336,13 @@
   background: var(--bg-surface);
   border: 1px solid var(--border-default);
   border-radius: 12px;
-  color: var(--text-primary);
+  color: #0F172A; /* Explicit dark text for light mode */
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-base) var(--ease-out-expo);
+}
+
+.dark .card-base {
+  color: #F1F5F9; /* Explicit light text for dark mode */
 }
 
 .card-base:hover {
@@ -371,6 +392,11 @@
   border-radius: 16px;
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-base) var(--ease-out-expo);
+  color: #0F172A; /* Explicit dark text for light mode */
+}
+
+.dark .glass-premium {
+  color: #F1F5F9; /* Explicit light text for dark mode */
 }
 
 .glass-premium:hover {
@@ -394,8 +420,12 @@
   border-radius: 8px;
   background: var(--bg-surface);
   border: 1px solid var(--border-default);
-  color: var(--text-primary);
+  color: #0F172A; /* Explicit dark text for light mode */
   transition: all var(--transition-base);
+}
+
+.dark .input-base {
+  color: #F1F5F9; /* Explicit light text for dark mode */
 }
 
 .input-base::placeholder {
