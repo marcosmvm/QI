@@ -303,7 +303,7 @@ export default function CompetitorComparisonPage({ params }: PageProps) {
         <Container className="relative z-10">
           <Link
             href="/vs"
-            className="inline-flex items-center gap-2 text-light-text-muted dark:text-steel hover:text-emerald-pro-600 transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-emerald-pro-600 transition-colors mb-8"
           >
             <ArrowLeft className="h-4 w-4" />
             All Comparisons
@@ -323,16 +323,16 @@ export default function CompetitorComparisonPage({ params }: PageProps) {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
+            <h1 className="text-4xl md:text-5xl font-sora font-bold text-slate-900 dark:text-white mb-6">
               XGrowthOS vs{" "}
-              <span className="headline-underline gradient-text-cyan-violet">
+              <span className="headline-underline text-gradient">
                 {data.name}
               </span>
             </h1>
 
-            <p className="text-xl text-light-text-muted dark:text-steel mb-8">{data.description}</p>
+            <p className="text-xl text-slate-500 dark:text-slate-400 mb-8">{data.description}</p>
 
-            <div className="flex flex-wrap gap-4 text-sm text-light-text-muted dark:text-steel">
+            <div className="flex flex-wrap gap-4 text-sm text-slate-500 dark:text-slate-400">
               <span>Founded: {data.founded}</span>
               <span>•</span>
               <span>{data.headquarters}</span>
@@ -356,7 +356,7 @@ export default function CompetitorComparisonPage({ params }: PageProps) {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="mb-8"
           >
-            <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white mb-4">
+            <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Feature Comparison
             </h2>
           </motion.div>
@@ -365,13 +365,13 @@ export default function CompetitorComparisonPage({ params }: PageProps) {
             <table className="w-full">
               <thead>
                 <tr className="bg-light-bg-secondary dark:bg-midnight-blue">
-                  <th className="px-6 py-4 text-left text-sm font-medium text-light-text-muted dark:text-steel">
+                  <th className="px-6 py-4 text-left text-sm font-medium text-slate-500 dark:text-slate-400">
                     Feature
                   </th>
                   <th className="px-6 py-4 text-center text-sm font-medium text-emerald-pro-600">
                     XGrowthOS
                   </th>
-                  <th className="px-6 py-4 text-center text-sm font-medium text-light-text-muted dark:text-steel">
+                  <th className="px-6 py-4 text-center text-sm font-medium text-slate-500 dark:text-slate-400">
                     {data.name}
                   </th>
                 </tr>
@@ -384,21 +384,21 @@ export default function CompetitorComparisonPage({ params }: PageProps) {
                       index % 2 === 0 ? "bg-white dark:bg-deep-space/50" : "bg-light-bg-secondary dark:bg-midnight-blue/30"
                     }`}
                   >
-                    <td className="px-6 py-4 text-sm text-light-text-secondary dark:text-silver">
+                    <td className="px-6 py-4 text-sm text-slate-700 dark:text-slate-200">
                       {feature.name}
                     </td>
                     <td className="px-6 py-4 text-center">
                       {feature.quantum ? (
                         <Check className="h-5 w-5 text-emerald-pro-400 mx-auto" />
                       ) : (
-                        <X className="h-5 w-5 text-light-text-muted dark:text-steel mx-auto" />
+                        <X className="h-5 w-5 text-slate-500 dark:text-slate-400 mx-auto" />
                       )}
                     </td>
                     <td className="px-6 py-4 text-center">
                       {feature.competitor ? (
-                        <Check className="h-5 w-5 text-light-text-muted dark:text-steel mx-auto" />
+                        <Check className="h-5 w-5 text-slate-500 dark:text-slate-400 mx-auto" />
                       ) : (
-                        <X className="h-5 w-5 text-light-text-muted dark:text-steel/50 mx-auto" />
+                        <X className="h-5 w-5 text-slate-500 dark:text-slate-400/50 mx-auto" />
                       )}
                     </td>
                   </tr>
@@ -422,9 +422,9 @@ export default function CompetitorComparisonPage({ params }: PageProps) {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-sora font-bold text-light-text dark:text-white mb-4">
+            <h2 className="text-3xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Why Choose{" "}
-              <span className="gradient-text-cyan-violet">
+              <span className="text-gradient">
                 XGrowthOS
               </span>
             </h2>
@@ -446,10 +446,10 @@ export default function CompetitorComparisonPage({ params }: PageProps) {
                   <div className="icon-container-animated cyan mb-4">
                     <Icon className="h-6 w-6 text-emerald-pro-600" />
                   </div>
-                  <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-2">
+                  <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white mb-2">
                     {advantage.title}
                   </h3>
-                  <p className="text-light-text-muted dark:text-steel">{advantage.description}</p>
+                  <p className="text-slate-500 dark:text-slate-400">{advantage.description}</p>
                 </motion.div>
               );
             })}
@@ -470,10 +470,10 @@ export default function CompetitorComparisonPage({ params }: PageProps) {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="p-8 rounded-3xl border border-emerald-pro-600/30 bg-gradient-to-br from-emerald-pro-600/10 to-emerald-pro-500/10"
           >
-            <h3 className="text-xl font-sora font-bold text-light-text dark:text-white mb-4">
+            <h3 className="text-xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Pricing Comparison
             </h3>
-            <p className="text-light-text-muted dark:text-steel mb-6">{data.pricingNote}</p>
+            <p className="text-slate-500 dark:text-slate-400 mb-6">{data.pricingNote}</p>
             <Link href="/pricing" className="cta-magnetic inline-flex gap-2">
               View Our Pricing
               <ArrowRight className="h-4 w-4" />

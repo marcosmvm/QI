@@ -167,7 +167,7 @@ export default async function IntegrationsPage() {
     <div className="min-h-screen p-8">
       {/* Page Header */}
       <div className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-2">
+        <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-2">
           <Link
             href="/dashboard"
             className="hover:text-emerald-pro-600 transition-colors"
@@ -179,15 +179,15 @@ export default async function IntegrationsPage() {
         </div>
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">
+            <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">
               Integrations
             </h1>
-            <p className="text-light-text-muted dark:text-steel mt-1">
+            <p className="text-slate-500 dark:text-slate-400 mt-1">
               Connect your tools and automate your workflow
             </p>
           </div>
           <div className="flex items-center gap-2 px-4 py-2 bg-light-bg-secondary dark:bg-midnight-blue/30 border border-border-default dark:border-graphite/50 rounded-lg">
-            <span className="text-sm text-light-text-muted dark:text-steel">
+            <span className="text-sm text-slate-500 dark:text-slate-400">
               {connectedCount} of {integrations.length} connected
             </span>
           </div>
@@ -209,8 +209,8 @@ export default async function IntegrationsPage() {
               key={category.id}
               className="glass-premium p-4"
             >
-              <p className="text-sm text-light-text-muted dark:text-steel">{category.name}</p>
-              <p className="text-lg font-sora font-bold text-light-text dark:text-white">
+              <p className="text-sm text-slate-500 dark:text-slate-400">{category.name}</p>
+              <p className="text-lg font-sora font-bold text-slate-900 dark:text-white">
                 {connectedInCategory}/{category.count}
               </p>
             </div>
@@ -227,7 +227,7 @@ export default async function IntegrationsPage() {
 
           return (
             <div key={category.id}>
-              <h2 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-4">
+              <h2 className="text-lg font-sora font-semibold text-slate-900 dark:text-white mb-4">
                 {category.name}
               </h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -250,10 +250,10 @@ export default async function IntegrationsPage() {
             <Link2 className="h-5 w-5 text-emerald-pro-600" />
           </div>
           <div>
-            <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-1">
+            <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white mb-1">
               Need a custom integration?
             </h3>
-            <p className="text-light-text-muted dark:text-steel mb-4">
+            <p className="text-slate-500 dark:text-slate-400 mb-4">
               We can build custom integrations for your specific tech stack.
               Contact our team to discuss your requirements.
             </p>
@@ -294,12 +294,12 @@ function IntegrationCard({ integration }: { integration: Integration }) {
           >
             <Icon
               className={`h-5 w-5 ${
-                integration.connected ? "text-emerald-pro-400" : "text-light-text-muted dark:text-steel"
+                integration.connected ? "text-emerald-pro-400" : "text-slate-500 dark:text-slate-400"
               }`}
             />
           </div>
           <div>
-            <h3 className="text-base font-medium text-light-text dark:text-white">
+            <h3 className="text-base font-medium text-slate-900 dark:text-white">
               {integration.name}
             </h3>
             {integration.connected && integration.status && (
@@ -324,16 +324,16 @@ function IntegrationCard({ integration }: { integration: Integration }) {
         </div>
       </div>
 
-      <p className="text-sm text-light-text-muted dark:text-steel mb-4">{integration.description}</p>
+      <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">{integration.description}</p>
 
       <div className="flex items-center gap-2">
         {integration.connected ? (
           <>
-            <button className="flex items-center gap-2 px-3 py-1.5 text-sm text-light-text-secondary dark:text-silver border border-border-default dark:border-graphite rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-colors">
+            <button className="flex items-center gap-2 px-3 py-1.5 text-sm text-slate-700 dark:text-slate-200 border border-border-default dark:border-graphite rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-colors">
               <Settings className="h-3.5 w-3.5" />
               Configure
             </button>
-            <button className="flex items-center gap-2 px-3 py-1.5 text-sm text-light-text-muted dark:text-steel border border-border-default dark:border-graphite rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-colors">
+            <button className="flex items-center gap-2 px-3 py-1.5 text-sm text-slate-500 dark:text-slate-400 border border-border-default dark:border-graphite rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-colors">
               <RefreshCw className="h-3.5 w-3.5" />
               Sync
             </button>

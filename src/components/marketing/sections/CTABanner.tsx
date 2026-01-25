@@ -157,7 +157,7 @@ export function CTABanner({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-sora font-bold text-light-text dark:text-white mb-8"
+            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-sora font-bold text-slate-900 dark:text-white mb-8"
           >
             {title}
           </motion.h2>
@@ -168,7 +168,7 @@ export function CTABanner({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-lg md:text-xl text-light-text-secondary/90 dark:text-silver/90 mb-12 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-slate-700/90 dark:text-slate-200/90 mb-12 max-w-2xl mx-auto leading-relaxed"
           >
             {description}
           </motion.p>
@@ -191,7 +191,7 @@ export function CTABanner({
               <Button
                 variant="outline"
                 size="lg"
-                className="border-emerald-pro-600/30 dark:border-xgrowth-500/30 hover:border-emerald-pro-600/60 dark:hover:border-xgrowth-500/60 text-light-text dark:text-white hover:text-emerald-pro-600 dark:hover:text-xgrowth-500 bg-emerald-pro-600/5 dark:bg-xgrowth-500/5 hover:bg-emerald-pro-600/10 dark:hover:bg-xgrowth-500/10 px-8 py-6 text-lg transition-all backdrop-blur-sm"
+                className="border-emerald-pro-600/30 dark:border-xgrowth-500/30 hover:border-emerald-pro-600/60 dark:hover:border-xgrowth-500/60 text-slate-900 dark:text-white hover:text-emerald-pro-600 dark:hover:text-xgrowth-500 bg-emerald-pro-600/5 dark:bg-xgrowth-500/5 hover:bg-emerald-pro-600/10 dark:hover:bg-xgrowth-500/10 px-8 py-6 text-lg transition-all backdrop-blur-sm"
               >
                 <Sparkles className="mr-2 h-5 w-5" />
                 {secondaryCTA.text}

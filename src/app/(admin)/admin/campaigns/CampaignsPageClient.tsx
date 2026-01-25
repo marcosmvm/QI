@@ -67,9 +67,9 @@ export default function CampaignsPageClient({
       <motion.div variants={itemVariants}>
         <div className="flex items-center justify-between mb-8">
           <div>
-            <p className="text-sm text-light-text-muted dark:text-steel mb-1">Admin / <span className="text-emerald-pro-600">Campaigns</span></p>
-            <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">Campaigns</h1>
-            <p className="text-light-text-muted dark:text-steel mt-1">
+            <p className="text-sm text-slate-500 dark:text-slate-400 mb-1">Admin / <span className="text-emerald-pro-600">Campaigns</span></p>
+            <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">Campaigns</h1>
+            <p className="text-slate-500 dark:text-slate-400 mt-1">
               Monitor and manage campaigns across all clients
             </p>
           </div>
@@ -100,8 +100,8 @@ export default function CampaignsPageClient({
       <motion.div variants={itemVariants}>
         {campaigns.length === 0 ? (
           <div className="glass-premium p-12 text-center">
-            <Mail className="h-12 w-12 text-light-text-muted dark:text-steel mx-auto mb-4" />
-            <p className="text-light-text-muted dark:text-steel">No campaigns yet</p>
+            <Mail className="h-12 w-12 text-slate-500 dark:text-slate-400 mx-auto mb-4" />
+            <p className="text-slate-500 dark:text-slate-400">No campaigns yet</p>
           </div>
         ) : (
           <CampaignsTable campaigns={campaigns} clients={clients} />
@@ -127,7 +127,7 @@ function StatCard({
     "emerald-pro-400": "text-emerald-pro-400",
     "energy-orange": "text-energy-orange",
     "emerald-pro-500": "text-emerald-pro-500",
-    steel: "text-light-text-muted dark:text-steel",
+    steel: "text-slate-500 dark:text-slate-400",
   };
 
   return (
@@ -138,7 +138,7 @@ function StatCard({
         </p>
         {Icon && <Icon className={`h-5 w-5 ${colorClasses[color]}`} />}
       </div>
-      <p className="text-sm text-light-text-muted dark:text-steel mt-1">{label}</p>
+      <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">{label}</p>
     </div>
   );
 }

@@ -339,13 +339,13 @@ export default async function AdminDashboardPage() {
     <div className="min-h-screen p-8">
       {/* Header */}
       <div className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-2">
+        <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-2">
           <span className="text-emerald-pro-600">Admin</span>
           <span>/</span>
           <span className="text-emerald-pro-500">Dashboard</span>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">Admin Dashboard</h1>
-        <p className="text-light-text-muted dark:text-steel mt-1">Overview of your business operations</p>
+        <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">Admin Dashboard</h1>
+        <p className="text-slate-500 dark:text-slate-400 mt-1">Overview of your business operations</p>
       </div>
 
       {/* Alerts */}
@@ -411,41 +411,41 @@ export default async function AdminDashboardPage() {
 
       {/* Today's Snapshot */}
       <div className="mb-8">
-        <h2 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-4">Today&apos;s Activity</h2>
+        <h2 className="text-lg font-sora font-semibold text-slate-900 dark:text-white mb-4">Today&apos;s Activity</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="bg-light-bg-secondary dark:bg-midnight-blue/30 border border-border-default dark:border-graphite/50 rounded-xl p-4 backdrop-blur-sm hover:border-emerald-pro-600/30 hover:-translate-y-0.5 hover:shadow-glow-cyan-sm transition-all duration-300">
-            <div className="flex items-center gap-2 text-light-text-muted dark:text-steel mb-2">
+            <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400 mb-2">
               <Send className="h-4 w-4 text-emerald-pro-600" />
               <span className="text-xs">Emails Sent</span>
             </div>
-            <p className="text-xl font-sora font-bold text-light-text dark:text-white">
+            <p className="text-xl font-sora font-bold text-slate-900 dark:text-white">
               {stats.todayStats.sent.toLocaleString()}
             </p>
           </div>
           <div className="bg-light-bg-secondary dark:bg-midnight-blue/30 border border-border-default dark:border-graphite/50 rounded-xl p-4 backdrop-blur-sm hover:border-emerald-pro-500/30 hover:-translate-y-0.5 hover:shadow-glow-violet-lg transition-all duration-300">
-            <div className="flex items-center gap-2 text-light-text-muted dark:text-steel mb-2">
+            <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400 mb-2">
               <Eye className="h-4 w-4 text-emerald-pro-500" />
               <span className="text-xs">Opens</span>
             </div>
-            <p className="text-xl font-sora font-bold text-light-text dark:text-white">
+            <p className="text-xl font-sora font-bold text-slate-900 dark:text-white">
               {stats.todayStats.opened.toLocaleString()}
             </p>
           </div>
           <div className="bg-light-bg-secondary dark:bg-midnight-blue/30 border border-border-default dark:border-graphite/50 rounded-xl p-4 backdrop-blur-sm hover:border-emerald-pro-400/30 hover:-translate-y-0.5 hover:shadow-glow-mint-lg transition-all duration-300">
-            <div className="flex items-center gap-2 text-light-text-muted dark:text-steel mb-2">
+            <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400 mb-2">
               <Reply className="h-4 w-4 text-emerald-pro-400" />
               <span className="text-xs">Replies</span>
             </div>
-            <p className="text-xl font-sora font-bold text-light-text dark:text-white">
+            <p className="text-xl font-sora font-bold text-slate-900 dark:text-white">
               {stats.todayStats.replied.toLocaleString()}
             </p>
           </div>
           <div className="bg-light-bg-secondary dark:bg-midnight-blue/30 border border-border-default dark:border-graphite/50 rounded-xl p-4 backdrop-blur-sm hover:border-energy-orange/30 hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(255,107,53,0.2)] transition-all duration-300">
-            <div className="flex items-center gap-2 text-light-text-muted dark:text-steel mb-2">
+            <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400 mb-2">
               <UserPlus className="h-4 w-4 text-energy-orange" />
               <span className="text-xs">New Leads</span>
             </div>
-            <p className="text-xl font-sora font-bold text-light-text dark:text-white">
+            <p className="text-xl font-sora font-bold text-slate-900 dark:text-white">
               {stats.newLeadsToday.toLocaleString()}
             </p>
           </div>
@@ -460,7 +460,7 @@ export default async function AdminDashboardPage() {
 
         <div className="glass-premium p-6">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white">Engine Status</h3>
+            <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">Engine Status</h3>
             <Link href="/admin/engines" className="text-sm text-emerald-pro-600 hover:underline">
               View all
             </Link>
@@ -481,7 +481,7 @@ export default async function AdminDashboardPage() {
       {/* Client Health Matrix */}
       <div className="mb-8">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg font-sora font-semibold text-light-text dark:text-white">Client Health Overview</h2>
+          <h2 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">Client Health Overview</h2>
           <Link href="/admin/clients" className="text-sm text-emerald-pro-600 hover:underline">
             View all clients
           </Link>
@@ -506,10 +506,10 @@ export default async function AdminDashboardPage() {
             <p className="text-xs text-red-400 mt-1">Critical</p>
           </div>
           <div className="bg-steel/10 border border-steel/30 rounded-xl p-4 text-center">
-            <p className="text-2xl font-sora font-bold text-light-text-muted dark:text-steel">
+            <p className="text-2xl font-sora font-bold text-slate-500 dark:text-slate-400">
               {healthDistribution.unknown}
             </p>
-            <p className="text-xs text-light-text-muted dark:text-steel mt-1">No Data</p>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">No Data</p>
           </div>
         </div>
       </div>
@@ -519,14 +519,14 @@ export default async function AdminDashboardPage() {
         {/* Recent Clients */}
         <div className="glass-premium p-6">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-lg font-sora font-semibold text-light-text dark:text-white">Recent Clients</h2>
+            <h2 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">Recent Clients</h2>
             <Link href="/admin/clients" className="text-sm text-emerald-pro-600 hover:underline">
               View all
             </Link>
           </div>
           <div className="space-y-4">
             {recentClients.length === 0 ? (
-              <p className="text-light-text-muted dark:text-steel text-sm">No clients yet</p>
+              <p className="text-slate-500 dark:text-slate-400 text-sm">No clients yet</p>
             ) : (
               recentClients.map((client) => {
                 const clientWithHealth = clientsWithHealth.find((c) => c.id === client.id);
@@ -545,8 +545,8 @@ export default async function AdminDashboardPage() {
                         <Users className="h-4 w-4 text-emerald-pro-500" />
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-light-text dark:text-white">{client.name}</p>
-                        <p className="text-xs text-light-text-muted dark:text-steel">
+                        <p className="text-sm font-medium text-slate-900 dark:text-white">{client.name}</p>
+                        <p className="text-xs text-slate-500 dark:text-slate-400">
                           {new Date(client.created_at).toLocaleDateString()}
                         </p>
                       </div>
@@ -565,7 +565,7 @@ export default async function AdminDashboardPage() {
         {/* Open Support Tickets */}
         <div className="glass-premium p-6">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-lg font-sora font-semibold text-light-text dark:text-white">Open Support</h2>
+            <h2 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">Open Support</h2>
             <Link href="/admin/support" className="text-sm text-emerald-pro-600 hover:underline">
               View all
             </Link>
@@ -576,8 +576,8 @@ export default async function AdminDashboardPage() {
                 <div className="h-12 w-12 rounded-full bg-emerald-pro-400/10 border border-emerald-pro-400/30 flex items-center justify-center mx-auto mb-3">
                   <TrendingUp className="h-6 w-6 text-emerald-pro-400" />
                 </div>
-                <p className="text-light-text-muted dark:text-steel text-sm">All caught up!</p>
-                <p className="text-light-text-muted dark:text-steel/60 text-xs">No open support tickets</p>
+                <p className="text-slate-500 dark:text-slate-400 text-sm">All caught up!</p>
+                <p className="text-slate-500 dark:text-slate-400/60 text-xs">No open support tickets</p>
               </div>
             ) : (
               openConversations.map((conv) => (
@@ -601,10 +601,10 @@ export default async function AdminDashboardPage() {
                       )}
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-light-text dark:text-white">
+                      <p className="text-sm font-medium text-slate-900 dark:text-white">
                         {conv.subject || "No subject"}
                       </p>
-                      <p className="text-xs text-light-text-muted dark:text-steel">
+                      <p className="text-xs text-slate-500 dark:text-slate-400">
                         {(conv.organizations as { name: string } | null)?.name || "Unknown"}
                       </p>
                     </div>
@@ -625,7 +625,7 @@ function StatusBadge({ status }: { status: string }) {
     active: "bg-emerald-pro-400/10 text-emerald-pro-400 border-emerald-pro-400/30",
     pilot: "bg-emerald-pro-600/10 text-emerald-pro-600 border-emerald-pro-600/30",
     paused: "bg-energy-orange/10 text-energy-orange border-energy-orange/30",
-    churned: "bg-steel/10 text-light-text-muted dark:text-steel border-steel/30",
+    churned: "bg-steel/10 text-slate-500 dark:text-slate-400 border-steel/30",
   };
 
   return (
@@ -642,7 +642,7 @@ function PriorityBadge({ priority }: { priority: string }) {
     urgent: "bg-energy-orange/10 text-energy-orange border-energy-orange/30",
     high: "bg-emerald-pro-500/10 text-emerald-pro-500 border-emerald-pro-500/30",
     normal: "bg-emerald-pro-600/10 text-emerald-pro-600 border-emerald-pro-600/30",
-    low: "bg-steel/10 text-light-text-muted dark:text-steel border-steel/30",
+    low: "bg-steel/10 text-slate-500 dark:text-slate-400 border-steel/30",
   };
 
   return (

@@ -97,14 +97,14 @@ export default function ComparisonHubPage() {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
+            <h1 className="text-4xl md:text-5xl font-sora font-bold text-slate-900 dark:text-white mb-6">
               XGrowthOS vs{" "}
-              <span className="headline-underline gradient-text-cyan-violet">
+              <span className="headline-underline text-gradient">
                 The Competition
               </span>
             </h1>
 
-            <p className="text-xl text-light-text-muted dark:text-steel">
+            <p className="text-xl text-slate-500 dark:text-slate-400">
               See how our AI-powered approach compares to traditional lead
               generation agencies.
             </p>
@@ -131,10 +131,10 @@ export default function ComparisonHubPage() {
                   href={`/vs/${competitor.slug}`}
                   className="block p-6 rounded-2xl border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue/50 hover:border-emerald-pro-600/30 transition-colors h-full"
                 >
-                  <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-1">
+                  <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white mb-1">
                     XGrowthOS vs {competitor.name}
                   </h3>
-                  <p className="text-sm text-light-text-muted dark:text-steel mb-4">
+                  <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
                     {competitor.description}
                   </p>
 
@@ -142,7 +142,7 @@ export default function ComparisonHubPage() {
                     {competitor.differentiators.map((diff, i) => (
                       <div
                         key={i}
-                        className="flex items-center gap-2 text-sm text-light-text-secondary dark:text-silver"
+                        className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200"
                       >
                         <CheckCircle className="h-4 w-4 text-emerald-pro-400 flex-shrink-0" />
                         {diff}
@@ -174,10 +174,10 @@ export default function ComparisonHubPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center p-8 rounded-3xl border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue/50"
           >
-            <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white mb-4">
+            <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Why Companies Switch to XGrowthOS
             </h2>
-            <p className="text-light-text-muted dark:text-steel mb-6">
+            <p className="text-slate-500 dark:text-slate-400 mb-6">
               Traditional agencies rely on manual processes that can&apos;t match the
               speed, personalization, and optimization that AI delivers.
             </p>
@@ -187,7 +187,7 @@ export default function ComparisonHubPage() {
                 <p className="text-3xl font-sora font-bold text-emerald-pro-600 mb-2">
                   3x
                 </p>
-                <p className="text-sm text-light-text-secondary dark:text-silver">
+                <p className="text-sm text-slate-700 dark:text-slate-200">
                   Faster campaign deployment
                 </p>
               </div>
@@ -195,13 +195,13 @@ export default function ComparisonHubPage() {
                 <p className="text-3xl font-sora font-bold text-emerald-pro-400 mb-2">
                   40%
                 </p>
-                <p className="text-sm text-light-text-secondary dark:text-silver">Lower cost per meeting</p>
+                <p className="text-sm text-slate-700 dark:text-slate-200">Lower cost per meeting</p>
               </div>
               <div>
                 <p className="text-3xl font-sora font-bold text-emerald-pro-500 mb-2">
                   24/7
                 </p>
-                <p className="text-sm text-light-text-secondary dark:text-silver">Continuous optimization</p>
+                <p className="text-sm text-slate-700 dark:text-slate-200">Continuous optimization</p>
               </div>
             </div>
           </motion.div>

@@ -151,7 +151,7 @@ export function ChatMessages({
           <div key={groupIndex}>
             {/* Date separator */}
             <div className="flex items-center justify-center my-4">
-              <span className="text-xs text-light-text-muted dark:text-steel bg-white dark:bg-deep-space px-3 py-1 rounded-full">
+              <span className="text-xs text-slate-500 dark:text-slate-400 bg-white dark:bg-deep-space px-3 py-1 rounded-full">
                 {group.date}
               </span>
             </div>
@@ -177,10 +177,10 @@ export function ChatMessages({
                           {message.sender.full_name || "Support"}
                         </p>
                       )}
-                      <p className="text-sm text-light-text dark:text-white whitespace-pre-wrap">
+                      <p className="text-sm text-slate-900 dark:text-white whitespace-pre-wrap">
                         {message.content}
                       </p>
-                      <p className={`text-xs mt-1 ${isOwn ? "text-emerald-pro-600/60" : "text-light-text-muted dark:text-steel"}`}>
+                      <p className={`text-xs mt-1 ${isOwn ? "text-emerald-pro-600/60" : "text-slate-500 dark:text-slate-400"}`}>
                         {formatTime(message.created_at)}
                       </p>
                     </div>
@@ -201,7 +201,7 @@ export function ChatMessages({
             value={newMessage}
             onChange={(e) => setNewMessage(e.target.value)}
             placeholder="Type your message..."
-            className="flex-1 h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 transition-colors"
+            className="flex-1 h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-500 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 transition-colors"
           />
           <button
             type="submit"

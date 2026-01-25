@@ -177,17 +177,17 @@ export default function EnginesPage() {
       {/* Header */}
       <motion.div variants={itemVariants} className="flex items-center justify-between mb-8">
         <div>
-          <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-2">
+          <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-2">
             <span>Admin</span>
             <span className="text-graphite">/</span>
             <span className="text-emerald-pro-600">Engines</span>
           </div>
-          <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">Engine Monitoring</h1>
-          <p className="text-light-text-muted dark:text-steel mt-1">
+          <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">Engine Monitoring</h1>
+          <p className="text-slate-500 dark:text-slate-400 mt-1">
             Monitor the health and performance of all AI engines
           </p>
         </div>
-        <button className="flex items-center gap-2 px-4 py-2 border border-border-default dark:border-graphite text-light-text-secondary dark:text-silver rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors">
+        <button className="flex items-center gap-2 px-4 py-2 border border-border-default dark:border-graphite text-slate-700 dark:text-slate-200 rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors">
           <RefreshCw className="h-4 w-4" />
           Refresh Status
         </button>
@@ -196,7 +196,7 @@ export default function EnginesPage() {
       {/* System Health Overview */}
       <div className="glass-premium p-6 mb-8">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-lg font-sora font-semibold text-light-text dark:text-white">
+          <h2 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">
             System Health Overview
           </h2>
           <SystemStatusBadge status={systemHealth.overallStatus} />
@@ -254,10 +254,10 @@ export default function EnginesPage() {
           </div>
 
           <div className="text-center p-4 bg-steel/10 border border-steel/30 rounded-xl">
-            <p className="text-2xl font-sora font-bold text-light-text-secondary dark:text-silver">
+            <p className="text-2xl font-sora font-bold text-slate-700 dark:text-slate-200">
               {systemHealth.errorRate.toFixed(2)}%
             </p>
-            <p className="text-xs text-light-text-muted dark:text-steel mt-2">Error Rate</p>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">Error Rate</p>
           </div>
         </div>
       </div>
@@ -280,26 +280,26 @@ export default function EnginesPage() {
       {/* Engine Details Table */}
       <div className="mt-8 glass-premium overflow-hidden">
         <div className="px-6 py-4 border-b border-border-default dark:border-graphite/50">
-          <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white">
+          <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">
             Engine Details
           </h3>
         </div>
         <table className="w-full">
           <thead>
             <tr className="border-b border-border-default dark:border-graphite/50">
-              <th className="text-left text-xs font-medium text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">
+              <th className="text-left text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider px-6 py-4">
                 Engine
               </th>
-              <th className="text-left text-xs font-medium text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">
+              <th className="text-left text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider px-6 py-4">
                 Status
               </th>
-              <th className="text-left text-xs font-medium text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">
+              <th className="text-left text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider px-6 py-4">
                 Webhook Endpoint
               </th>
-              <th className="text-left text-xs font-medium text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">
+              <th className="text-left text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider px-6 py-4">
                 Avg. Execution Time
               </th>
-              <th className="text-left text-xs font-medium text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">
+              <th className="text-left text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider px-6 py-4">
                 24h Success Rate
               </th>
             </tr>
@@ -325,10 +325,10 @@ export default function EnginesPage() {
                         <Icon className="h-4 w-4 text-emerald-pro-600" />
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-light-text dark:text-white">
+                        <p className="text-sm font-medium text-slate-900 dark:text-white">
                           {engine.name}
                         </p>
-                        <p className="text-xs text-light-text-muted dark:text-steel">
+                        <p className="text-xs text-slate-500 dark:text-slate-400">
                           Engine {engine.codename}
                         </p>
                       </div>
@@ -338,12 +338,12 @@ export default function EnginesPage() {
                     <EngineStatusBadge status={engine.status} />
                   </td>
                   <td className="px-6 py-4">
-                    <code className="text-xs text-light-text-muted dark:text-steel bg-white dark:bg-deep-space/50 px-2 py-1 rounded">
+                    <code className="text-xs text-slate-500 dark:text-slate-400 bg-white dark:bg-deep-space/50 px-2 py-1 rounded">
                       {engine.webhookEndpoint}
                     </code>
                   </td>
                   <td className="px-6 py-4">
-                    <span className="text-sm text-light-text-secondary dark:text-silver">
+                    <span className="text-sm text-slate-700 dark:text-slate-200">
                       {engine.avgExecutionTime
                         ? `${(engine.avgExecutionTime / 1000).toFixed(1)}s`
                         : "-"}
@@ -355,7 +355,7 @@ export default function EnginesPage() {
                         successRate >= 99
                           ? "text-emerald-pro-400"
                           : successRate >= 95
-                          ? "text-light-text-secondary dark:text-silver"
+                          ? "text-slate-700 dark:text-slate-200"
                           : "text-energy-orange"
                       }`}
                     >

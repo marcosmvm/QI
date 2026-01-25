@@ -128,13 +128,13 @@ export function EngineShowcase() {
             <Cpu className="w-4 h-4 text-emerald-pro-500" />
             <span className="text-sm font-medium text-emerald-pro-500">Our Technology</span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 dark:text-white mb-6">
             11 AI Engines Working{" "}
-            <span className="gradient-text-cyan-violet">
+            <span className="text-gradient">
               In Harmony
             </span>
           </h2>
-          <p className="text-lg text-light-text-muted dark:text-steel">
+          <p className="text-lg text-slate-500 dark:text-slate-400">
             Each specialized engine handles a critical part of the outbound process, working together to maximize your meeting output.
           </p>
         </motion.div>
@@ -164,18 +164,18 @@ export function EngineShowcase() {
                       <div className={`p-3 rounded-xl ${colors.bg} border border-transparent group-hover:border-current/20 transition-all duration-300`}>
                         <engine.icon className={`h-6 w-6 ${colors.text}`} />
                       </div>
-                      <span className="text-xs font-mono text-light-text-muted dark:text-steel group-hover:text-light-text-secondary dark:text-silver transition-colors">
+                      <span className="text-xs font-mono text-slate-500 dark:text-slate-400 group-hover:text-slate-700 dark:text-slate-200 transition-colors">
                         ENGINE {engine.codename}
                       </span>
                     </div>
 
                     {/* Content */}
                     <div className="relative">
-                      <h3 className={`text-xl font-sora font-semibold text-light-text dark:text-white mb-1 group-hover:${colors.text.replace('text-', '')} transition-colors`}>
+                      <h3 className={`text-xl font-sora font-semibold text-slate-900 dark:text-white mb-1 group-hover:${colors.text.replace('text-', '')} transition-colors`}>
                         {engine.name}
                       </h3>
                       <p className={`text-sm ${colors.text} mb-3`}>{engine.tagline}</p>
-                      <p className="text-light-text-muted dark:text-steel text-sm leading-relaxed mb-4 group-hover:text-silver/80 transition-colors">
+                      <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4 group-hover:text-silver/80 transition-colors">
                         {engine.description}
                       </p>
 

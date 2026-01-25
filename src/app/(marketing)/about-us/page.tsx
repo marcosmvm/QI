@@ -73,13 +73,13 @@ export default function AboutPage() {
               <Sparkles className="w-4 h-4 text-emerald-pro-500" />
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-light-text dark:text-white mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-slate-900 dark:text-white mb-8">
               We&apos;re Building the Future of{" "}
-              <span className="headline-underline gradient-text-cyan-violet block mt-2">
+              <span className="headline-underline text-gradient block mt-2">
                 B2B Outbound
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-light-text-secondary/90 dark:text-silver/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-slate-700/90 dark:text-slate-200/90 max-w-3xl mx-auto leading-relaxed">
               XGrowthOS was founded with a simple mission: make <span className="text-emerald-pro-600 font-semibold">AI-powered lead generation</span> accessible to every B2B company.
             </p>
           </motion.div>
@@ -123,7 +123,7 @@ export default function AboutPage() {
                 <p className="stat-number text-4xl md:text-5xl">
                   {stat.value}
                 </p>
-                <p className="text-light-text-muted dark:text-steel mt-2">{stat.label}</p>
+                <p className="text-slate-500 dark:text-slate-400 mt-2">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -139,8 +139,8 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-10 text-center">
-              Our <span className="headline-underline gradient-text-cyan-violet">Story</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 dark:text-white mb-10 text-center">
+              Our <span className="headline-underline text-gradient">Story</span>
             </h2>
             <div className="prose prose-lg prose-invert max-w-none space-y-6">
               <motion.p
@@ -148,7 +148,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-light-text-secondary/90 dark:text-silver/90 leading-relaxed text-lg"
+                className="text-slate-700/90 dark:text-slate-200/90 leading-relaxed text-lg"
               >
                 XGrowthOS was founded by <span className="text-emerald-pro-600 font-semibold">Marcos Matthews</span> in Los Angeles, CA. After observing that SDRs spend 65% of their time NOT selling—instead on prospecting, data entry, and admin—he knew there had to be a better way.
               </motion.p>
@@ -157,7 +157,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="text-light-text-secondary/90 dark:text-silver/90 leading-relaxed text-lg"
+                className="text-slate-700/90 dark:text-slate-200/90 leading-relaxed text-lg"
               >
                 The reality is clear: traditional cold outreach is broken. B2B companies pay <span className="text-energy-orange">$120K+ annually per SDR</span> while seeing only 5.1% average cold email reply rates. The result? Inconsistent pipeline, burnout, and turnover.
               </motion.p>
@@ -166,7 +166,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="text-light-text-secondary/90 dark:text-silver/90 leading-relaxed text-lg"
+                className="text-slate-700/90 dark:text-slate-200/90 leading-relaxed text-lg"
               >
                 XGrowthOS is the solution: an <span className="text-emerald-pro-500 font-semibold">autonomous B2B lead generation platform</span> powered by five AI engines that work 24/7. We&apos;re not just another agency—we&apos;re building an autonomous growth operating system that continuously learns and improves.
               </motion.p>
@@ -175,7 +175,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
-                className="text-light-text-secondary/90 dark:text-silver/90 leading-relaxed text-lg"
+                className="text-slate-700/90 dark:text-slate-200/90 leading-relaxed text-lg"
               >
                 Our mission is to make <span className="text-emerald-pro-400 font-semibold">enterprise-grade sales automation</span> accessible to every B2B company. Join our Founding Partner program and experience the future of autonomous lead generation.
               </motion.p>
@@ -197,10 +197,10 @@ export default function AboutPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
-              Our <span className="headline-underline gradient-text-cyan-violet">Values</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 dark:text-white mb-6">
+              Our <span className="headline-underline text-gradient">Values</span>
             </h2>
-            <p className="text-lg md:text-xl text-light-text-secondary/90 dark:text-silver/90 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-slate-700/90 dark:text-slate-200/90 max-w-2xl mx-auto">
               The principles that guide everything we do.
             </p>
           </motion.div>
@@ -231,7 +231,7 @@ export default function AboutPage() {
                     'text-energy-orange'
                   }`} />
                 </div>
-                <h3 className={`text-xl lg:text-2xl font-sora font-semibold text-light-text dark:text-white mb-3 group-hover:${
+                <h3 className={`text-xl lg:text-2xl font-sora font-semibold text-slate-900 dark:text-white mb-3 group-hover:${
                   value.color === 'cyan' ? 'text-emerald-pro-600' :
                   value.color === 'violet' ? 'text-emerald-pro-500' :
                   value.color === 'mint' ? 'text-emerald-pro-400' :
@@ -239,7 +239,7 @@ export default function AboutPage() {
                 } transition-colors`}>
                   {value.title}
                 </h3>
-                <p className="text-light-text-secondary dark:text-silver leading-relaxed group-hover:text-light-text dark:group-hover:text-white/80 transition-colors">
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed group-hover:text-slate-900 dark:group-hover:text-white/80 transition-colors">
                   {value.description}
                 </p>
               </motion.div>
@@ -267,10 +267,10 @@ export default function AboutPage() {
             >
               <Users className="h-8 w-8 text-emerald-pro-500" />
             </motion.div>
-            <h3 className="text-2xl lg:text-3xl font-sora font-bold text-light-text dark:text-white mb-4">
+            <h3 className="text-2xl lg:text-3xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Join Our Team
             </h3>
-            <p className="text-light-text-secondary dark:text-silver text-lg mb-8 max-w-md mx-auto">
+            <p className="text-slate-700 dark:text-slate-200 text-lg mb-8 max-w-md mx-auto">
               We&apos;re always looking for talented people who share our passion for innovation and results.
             </p>
             <Link href="/careers">

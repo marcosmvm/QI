@@ -119,12 +119,12 @@ export default function ClientDetailPageClient({
     >
       {/* Back link & Header */}
       <motion.div variants={itemVariants}>
-        <p className="text-sm text-light-text-muted dark:text-steel mb-4">
+        <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
           Admin / <Link href="/admin/clients" className="hover:text-emerald-pro-600 transition-colors">Clients</Link> / <span className="text-emerald-pro-500">{client.name}</span>
         </p>
         <Link
           href="/admin/clients"
-          className="inline-flex items-center gap-2 text-light-text-muted dark:text-steel hover:text-emerald-pro-600 transition-colors mb-6"
+          className="inline-flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-emerald-pro-600 transition-colors mb-6"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to Clients
@@ -140,7 +140,7 @@ export default function ClientDetailPageClient({
             </div>
             <div>
               <div className="flex items-center gap-3">
-                <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">
+                <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">
                   {client.name}
                 </h1>
                 <StatusBadge status={client.status} />
@@ -152,7 +152,7 @@ export default function ClientDetailPageClient({
                     href={`https://${client.domain}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-sm text-light-text-muted dark:text-steel hover:text-emerald-pro-600 transition-colors"
+                    className="flex items-center gap-1 text-sm text-slate-500 dark:text-slate-400 hover:text-emerald-pro-600 transition-colors"
                   >
                     <Globe className="h-3.5 w-3.5" />
                     {client.domain}
@@ -160,11 +160,11 @@ export default function ClientDetailPageClient({
                   </a>
                 )}
                 {client.industry && (
-                  <span className="text-sm text-light-text-muted dark:text-steel">
+                  <span className="text-sm text-slate-500 dark:text-slate-400">
                     {client.industry}
                   </span>
                 )}
-                <span className="text-sm text-light-text-muted dark:text-steel">
+                <span className="text-sm text-slate-500 dark:text-slate-400">
                   <Calendar className="h-3.5 w-3.5 inline mr-1" />
                   Joined {new Date(client.createdAt).toLocaleDateString()}
                 </span>
@@ -185,11 +185,11 @@ export default function ClientDetailPageClient({
                 Resume
               </button>
             )}
-            <button className="flex items-center gap-2 px-4 py-2 border border-border-default dark:border-graphite text-light-text-muted dark:text-steel rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors">
+            <button className="flex items-center gap-2 px-4 py-2 border border-border-default dark:border-graphite text-slate-500 dark:text-slate-400 rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors">
               <Archive className="h-4 w-4" />
               Archive
             </button>
-            <button className="p-2 border border-border-default dark:border-graphite text-light-text-muted dark:text-steel rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors">
+            <button className="p-2 border border-border-default dark:border-graphite text-slate-500 dark:text-slate-400 rounded-lg hover:bg-light-bg-secondary dark:bg-midnight-blue/30 transition-colors">
               <MoreHorizontal className="h-4 w-4" />
             </button>
           </div>
@@ -254,7 +254,7 @@ function StatusBadge({ status }: { status: string }) {
     active: "bg-emerald-pro-400/10 text-emerald-pro-400 border-emerald-pro-400/30",
     pilot: "bg-emerald-pro-600/10 text-emerald-pro-600 border-emerald-pro-600/30",
     paused: "bg-energy-orange/10 text-energy-orange border-energy-orange/30",
-    churned: "bg-steel/10 text-light-text-muted dark:text-steel border-steel/30",
+    churned: "bg-steel/10 text-slate-500 dark:text-slate-400 border-steel/30",
   };
 
   return (
@@ -281,15 +281,15 @@ function QuickStat({
 }) {
   return (
     <div className="glass-premium p-4 hover:border-emerald-pro-600/30 hover:-translate-y-0.5 hover:shadow-card-hover transition-all duration-300">
-      <p className="text-xs text-light-text-muted dark:text-steel mb-1">{label}</p>
+      <p className="text-xs text-slate-500 dark:text-slate-400 mb-1">{label}</p>
       <p
         className={`text-xl font-sora font-bold capitalize ${
-          highlight ? "text-energy-orange" : "text-light-text dark:text-white"
+          highlight ? "text-energy-orange" : "text-slate-900 dark:text-white"
         }`}
       >
         {value}
       </p>
-      {subtext && <p className="text-xs text-light-text-muted dark:text-steel mt-1">{subtext}</p>}
+      {subtext && <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{subtext}</p>}
     </div>
   );
 }

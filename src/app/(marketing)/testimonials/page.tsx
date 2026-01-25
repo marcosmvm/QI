@@ -47,13 +47,13 @@ export default function TestimonialsPage() {
               <span className="text-sm font-medium text-emerald-pro-500">Launching February 2026</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-light-text dark:text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-slate-900 dark:text-white mb-6">
               Our Commitment to{" "}
-              <span className="gradient-text-cyan-violet">
+              <span className="text-gradient">
                 Founding Partners
               </span>
             </h1>
-            <p className="text-xl text-light-text-secondary dark:text-silver max-w-2xl mx-auto">
+            <p className="text-xl text-slate-700 dark:text-slate-200 max-w-2xl mx-auto">
               We&apos;re building something special. Here&apos;s what we promise to every founding partner who joins us.
             </p>
           </motion.div>
@@ -76,7 +76,7 @@ export default function TestimonialsPage() {
             </div>
 
             {/* Quote */}
-            <blockquote className="text-xl md:text-2xl text-light-text dark:text-white font-medium leading-relaxed mb-8 mt-4">
+            <blockquote className="text-xl md:text-2xl text-slate-900 dark:text-white font-medium leading-relaxed mb-8 mt-4">
               &ldquo;I built XGrowthOS because I was tired of seeing B2B companies waste their best sales reps on cold outreach. Your closers should be closing, not prospecting. Our 11 AI engines do the heavy lifting so your team can focus on what they do best—building relationships and closing deals.&rdquo;
             </blockquote>
 
@@ -87,9 +87,9 @@ export default function TestimonialsPage() {
                   MM
                 </div>
                 <div>
-                  <p className="font-semibold text-light-text dark:text-white text-lg">Marcos Matthews</p>
+                  <p className="font-semibold text-slate-900 dark:text-white text-lg">Marcos Matthews</p>
                   <p className="text-emerald-pro-600 text-sm font-medium">Founder & CEO</p>
-                  <div className="flex items-center gap-3 mt-1 text-light-text-muted dark:text-steel text-xs">
+                  <div className="flex items-center gap-3 mt-1 text-slate-500 dark:text-slate-400 text-xs">
                     <span className="flex items-center gap-1">
                       <MapPin className="h-3 w-3" />
                       Los Angeles, CA
@@ -116,10 +116,10 @@ export default function TestimonialsPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Our Promise to You
             </h2>
-            <p className="text-light-text-secondary dark:text-silver max-w-2xl mx-auto">
+            <p className="text-slate-700 dark:text-slate-200 max-w-2xl mx-auto">
               These aren&apos;t marketing claims—they&apos;re commitments we stand behind.
             </p>
           </motion.div>
@@ -139,8 +139,8 @@ export default function TestimonialsPage() {
                     <commitment.icon className="h-8 w-8 text-emerald-pro-600" />
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-light-text dark:text-white mb-3">{commitment.title}</h3>
-                <p className="text-light-text-secondary dark:text-silver">{commitment.description}</p>
+                <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-3">{commitment.title}</h3>
+                <p className="text-slate-700 dark:text-slate-200">{commitment.description}</p>
               </motion.div>
             ))}
           </div>
@@ -157,10 +157,10 @@ export default function TestimonialsPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Why Join as a Founding Partner?
             </h2>
-            <p className="text-light-text-secondary dark:text-silver max-w-2xl mx-auto">
+            <p className="text-slate-700 dark:text-slate-200 max-w-2xl mx-auto">
               Early adopters get exclusive benefits that won&apos;t be available later.
             </p>
           </motion.div>
@@ -184,8 +184,8 @@ export default function TestimonialsPage() {
               >
                 <CheckCircle className="h-6 w-6 text-emerald-pro-400 flex-shrink-0" />
                 <div>
-                  <h4 className="font-semibold text-light-text dark:text-white mb-1">{benefit.title}</h4>
-                  <p className="text-light-text-muted dark:text-steel text-sm">{benefit.description}</p>
+                  <h4 className="font-semibold text-slate-900 dark:text-white mb-1">{benefit.title}</h4>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm">{benefit.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -203,10 +203,10 @@ export default function TestimonialsPage() {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
-            <h2 className="text-3xl font-sora font-bold text-light-text dark:text-white mb-4">
+            <h2 className="text-3xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Ready to Be a Founding Partner?
             </h2>
-            <p className="text-light-text-secondary dark:text-silver mb-8 max-w-xl mx-auto">
+            <p className="text-slate-700 dark:text-slate-200 mb-8 max-w-xl mx-auto">
               Limited spots available. Book a call to discuss if we&apos;re a fit for each other.
             </p>
             <Link href="/contact">

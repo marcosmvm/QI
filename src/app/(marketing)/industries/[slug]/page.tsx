@@ -46,7 +46,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
   if (!industry) {
     return (
       <Container className="py-24 text-center">
-        <h1 className="text-2xl text-light-text dark:text-white">Industry not found</h1>
+        <h1 className="text-2xl text-slate-900 dark:text-white">Industry not found</h1>
         <Link href="/industries" className="text-emerald-pro-600 hover:underline mt-4 block">
           View all industries
         </Link>
@@ -81,7 +81,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
           >
             <Link
               href="/industries"
-              className="inline-flex items-center gap-2 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               All Industries
@@ -103,15 +103,15 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
                 </span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl font-sora font-bold text-light-text dark:text-white mb-4">
-                <span className="headline-underline gradient-text-cyan-violet">{industry.name}</span>
+              <h1 className="text-4xl md:text-5xl font-sora font-bold text-slate-900 dark:text-white mb-4">
+                <span className="headline-underline text-gradient">{industry.name}</span>
               </h1>
 
               <p className={`text-xl ${colors.text} font-medium mb-4`}>
                 {industry.tagline}
               </p>
 
-              <p className="text-lg text-light-text-secondary dark:text-silver mb-8 leading-relaxed">
+              <p className="text-lg text-slate-700 dark:text-slate-200 mb-8 leading-relaxed">
                 {industry.longDescription}
               </p>
 
@@ -136,7 +136,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
                     <p className={`text-4xl font-sora font-bold ${colors.text}`}>
                       {stat.value}
                     </p>
-                    <p className="text-light-text-muted dark:text-steel text-sm mt-1">{stat.label}</p>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">{stat.label}</p>
                   </div>
                 ))}
               </div>
@@ -158,11 +158,11 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-sora font-bold text-slate-900 dark:text-white mb-6">
                 Challenges in{" "}
                 <span className={colors.text}>{industry.name}</span>
               </h2>
-              <p className="text-lg text-light-text-secondary dark:text-silver mb-8">
+              <p className="text-lg text-slate-700 dark:text-slate-200 mb-8">
                 We understand the unique obstacles you face when selling to this market.
               </p>
 
@@ -179,8 +179,8 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
                     <div className="flex items-start gap-3">
                       <AlertCircle className={`h-5 w-5 ${colors.text} flex-shrink-0 mt-0.5`} />
                       <div>
-                        <h4 className="text-light-text dark:text-white font-semibold">{challenge.title}</h4>
-                        <p className="text-light-text-secondary dark:text-silver text-sm">{challenge.description}</p>
+                        <h4 className="text-slate-900 dark:text-white font-semibold">{challenge.title}</h4>
+                        <p className="text-slate-700 dark:text-slate-200 text-sm">{challenge.description}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -194,11 +194,11 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-sora font-bold text-slate-900 dark:text-white mb-6">
                 Our{" "}
                 <span className={colors.text}>Solutions</span>
               </h2>
-              <p className="text-lg text-light-text-secondary dark:text-silver mb-8">
+              <p className="text-lg text-slate-700 dark:text-slate-200 mb-8">
                 How we help {industry.name.toLowerCase()} companies overcome these challenges.
               </p>
 
@@ -213,7 +213,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
                     className="flex items-start gap-3"
                   >
                     <CheckCircle className={`h-6 w-6 ${colors.text} flex-shrink-0 mt-0.5`} />
-                    <span className="text-light-text-secondary dark:text-silver">{solution}</span>
+                    <span className="text-slate-700 dark:text-slate-200">{solution}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -235,11 +235,11 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-3xl mx-auto mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-slate-900 dark:text-white mb-6">
               Who We{" "}
               <span className={colors.text}>Target</span>
             </h2>
-            <p className="text-lg text-light-text-secondary dark:text-silver">
+            <p className="text-lg text-slate-700 dark:text-slate-200">
               The decision-makers we help you reach in {industry.name.toLowerCase()}.
             </p>
           </motion.div>
@@ -275,10 +275,10 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="text-center max-w-3xl mx-auto mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-sora font-bold text-slate-900 dark:text-white mb-6">
                 Case Studies
               </h2>
-              <p className="text-lg text-light-text-secondary dark:text-silver">
+              <p className="text-lg text-slate-700 dark:text-slate-200">
                 See how we&apos;ve helped other {industry.name.toLowerCase()} companies.
               </p>
             </motion.div>
@@ -294,11 +294,11 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
                 >
                   <Link href={`/case-studies/${study.id}`} className="block group">
                     <div className={`p-6 rounded-2xl border ${colors.border} bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 hover:border-opacity-60 transition-all`}>
-                      <p className="text-light-text-muted dark:text-steel text-sm mb-2">{study.company}</p>
-                      <h3 className="text-xl font-sora font-semibold text-light-text dark:text-white mb-3">
+                      <p className="text-slate-500 dark:text-slate-400 text-sm mb-2">{study.company}</p>
+                      <h3 className="text-xl font-sora font-semibold text-slate-900 dark:text-white mb-3">
                         {study.title}
                       </h3>
-                      <p className="text-light-text-secondary dark:text-silver text-sm mb-4">{study.subtitle}</p>
+                      <p className="text-slate-700 dark:text-slate-200 text-sm mb-4">{study.subtitle}</p>
 
                       <div className="flex gap-4 mb-4">
                         {study.metrics.slice(0, 2).map((metric) => (
@@ -306,7 +306,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
                             <p className={`text-lg font-sora font-bold ${colors.text}`}>
                               {metric.value}
                             </p>
-                            <p className="text-light-text-muted dark:text-steel text-xs">{metric.label}</p>
+                            <p className="text-slate-500 dark:text-slate-400 text-xs">{metric.label}</p>
                           </div>
                         ))}
                       </div>
@@ -331,7 +331,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
             {prevIndustry ? (
               <Link
                 href={`/industries/${prevIndustry.id}`}
-                className="flex items-center gap-3 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white transition-colors group"
+                className="flex items-center gap-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors group"
               >
                 <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
                 <span>
@@ -353,7 +353,7 @@ export default function IndustryDetailPage({ params }: { params: Promise<{ slug:
             {nextIndustry ? (
               <Link
                 href={`/industries/${nextIndustry.id}`}
-                className="flex items-center gap-3 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white transition-colors group text-right"
+                className="flex items-center gap-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors group text-right"
               >
                 <span>
                   <span className="text-sm block">Next</span>

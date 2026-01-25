@@ -74,13 +74,13 @@ export function ProcessSteps() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 dark:text-white mb-6">
             How It{" "}
-            <span className="gradient-text-cyan-violet">
+            <span className="text-gradient">
               Works
             </span>
           </h2>
-          <p className="text-lg text-light-text-muted dark:text-steel">
+          <p className="text-lg text-slate-500 dark:text-slate-400">
             Our proven 5-step process transforms cold outreach into a predictable meeting machine.
           </p>
         </motion.div>
@@ -124,11 +124,11 @@ export function ProcessSteps() {
                   <div className="p-5 rounded-xl bg-light-bg-secondary dark:bg-midnight-blue/30 backdrop-blur-sm border border-border-default dark:border-graphite/30 group-hover:border-emerald-pro-600/30 group-hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-all duration-300">
                     <div className="flex items-center gap-3 mb-2">
                       <span className="text-emerald-pro-600 font-mono text-sm font-semibold">{step.number}</span>
-                      <h3 className="text-xl md:text-2xl font-sora font-semibold text-light-text dark:text-white group-hover:text-emerald-pro-600 transition-colors">
+                      <h3 className="text-xl md:text-2xl font-sora font-semibold text-slate-900 dark:text-white group-hover:text-emerald-pro-600 transition-colors">
                         {step.title}
                       </h3>
                     </div>
-                    <p className="text-light-text-muted dark:text-steel max-w-2xl group-hover:text-silver/80 transition-colors">
+                    <p className="text-slate-500 dark:text-slate-400 max-w-2xl group-hover:text-silver/80 transition-colors">
                       {step.description}
                     </p>
                   </div>

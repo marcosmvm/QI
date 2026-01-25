@@ -35,13 +35,13 @@ export function Testimonials() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-figtree dark:font-sora font-bold text-light-text dark:text-white mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-figtree dark:font-sora font-bold text-slate-900 dark:text-white mb-6">
             Meet the{" "}
             <span className="text-gradient">
               Founder
             </span>
           </h2>
-          <p className="text-lg text-light-text-muted dark:text-steel">
+          <p className="text-lg text-slate-500 dark:text-slate-400">
             Built by someone who understands your pipeline challenges.
           </p>
         </motion.div>
@@ -62,7 +62,7 @@ export function Testimonials() {
               </div>
 
               {/* Quote */}
-              <blockquote className="text-xl md:text-2xl text-light-text dark:text-white font-medium leading-relaxed mb-8 mt-4">
+              <blockquote className="text-xl md:text-2xl text-slate-900 dark:text-white font-medium leading-relaxed mb-8 mt-4">
                 &ldquo;{founderMission.quote}&rdquo;
               </blockquote>
 
@@ -73,9 +73,9 @@ export function Testimonials() {
                     MM
                   </div>
                   <div>
-                    <p className="font-semibold text-light-text dark:text-white text-lg">{founderMission.author}</p>
+                    <p className="font-semibold text-slate-900 dark:text-white text-lg">{founderMission.author}</p>
                     <p className="text-emerald-pro-600 dark:text-xgrowth-500 text-sm font-medium">{founderMission.title}</p>
-                    <div className="flex items-center gap-3 mt-1 text-light-text-muted dark:text-steel text-xs">
+                    <div className="flex items-center gap-3 mt-1 text-slate-500 dark:text-slate-400 text-xs">
                       <span className="flex items-center gap-1">
                         <MapPin className="h-3 w-3" />
                         {founderMission.location}
@@ -99,7 +99,7 @@ export function Testimonials() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-12"
           >
-            <h3 className="text-center text-lg font-semibold text-light-text dark:text-white mb-8">Our Commitment to You</h3>
+            <h3 className="text-center text-lg font-semibold text-slate-900 dark:text-white mb-8">Our Commitment to You</h3>
             <div className="grid md:grid-cols-3 gap-6">
               {commitments.map((item, index) => (
                 <motion.div
@@ -115,8 +115,8 @@ export function Testimonials() {
                       <item.icon className="h-6 w-6 text-emerald-pro-600 dark:text-xgrowth-500" />
                     </div>
                   </div>
-                  <h4 className="text-light-text dark:text-white font-semibold mb-2">{item.title}</h4>
-                  <p className="text-light-text-muted dark:text-steel text-sm">{item.description}</p>
+                  <h4 className="text-slate-900 dark:text-white font-semibold mb-2">{item.title}</h4>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm">{item.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -134,7 +134,7 @@ export function Testimonials() {
               <Rocket className="h-4 w-4" />
               Limited Founding Partner Spots Available
             </div>
-            <p className="text-light-text-muted dark:text-steel mb-6 max-w-xl mx-auto">
+            <p className="text-slate-500 dark:text-slate-400 mb-6 max-w-xl mx-auto">
               Join our founding partner program and lock in exclusive rates while helping shape the future of B2B outreach automation.
             </p>
             <Link

@@ -68,14 +68,14 @@ export default function ContactPage() {
               <Zap className="w-4 h-4 text-emerald-pro-600" />
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-light-text dark:text-white mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-slate-900 dark:text-white mb-8">
               Start Your{" "}
-              <span className="headline-underline gradient-text-cyan-violet block mt-2">
+              <span className="headline-underline text-gradient block mt-2">
                 Growth Journey
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-light-text-secondary/90 dark:text-silver/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-slate-700/90 dark:text-slate-200/90 max-w-3xl mx-auto leading-relaxed">
               Book a strategy call with our team to discuss how we can help fill your pipeline with <span className="text-emerald-pro-600 font-semibold">qualified meetings</span>.
             </p>
           </motion.div>
@@ -97,10 +97,10 @@ export default function ContactPage() {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-2"
             >
-              <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white mb-6">
+              <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-6">
                 Get in Touch
               </h2>
-              <p className="text-light-text-muted dark:text-steel mb-8">
+              <p className="text-slate-500 dark:text-slate-400 mb-8">
                 Have questions? Want to learn more about how we can help your business grow? Reach out and we&apos;ll get back to you within 24 hours.
               </p>
 
@@ -110,7 +110,7 @@ export default function ContactPage() {
                     <Mail className="h-5 w-5 text-emerald-pro-600" />
                   </div>
                   <div>
-                    <p className="text-light-text dark:text-white font-medium">Email</p>
+                    <p className="text-slate-900 dark:text-white font-medium">Email</p>
                     <a
                       href={`mailto:${contactInfo.email}`}
                       className="text-emerald-pro-600 hover:text-cyan-light transition-colors"
@@ -125,7 +125,7 @@ export default function ContactPage() {
                     <Phone className="h-5 w-5 text-emerald-pro-500" />
                   </div>
                   <div>
-                    <p className="text-light-text dark:text-white font-medium">Phone</p>
+                    <p className="text-slate-900 dark:text-white font-medium">Phone</p>
                     <a
                       href={`tel:${contactInfo.phone}`}
                       className="text-emerald-pro-500 hover:text-violet-light transition-colors"
@@ -140,18 +140,18 @@ export default function ContactPage() {
                     <MapPin className="h-5 w-5 text-emerald-pro-400" />
                   </div>
                   <div>
-                    <p className="text-light-text dark:text-white font-medium">Location</p>
-                    <p className="text-light-text-muted dark:text-steel">{contactInfo.address}</p>
+                    <p className="text-slate-900 dark:text-white font-medium">Location</p>
+                    <p className="text-slate-500 dark:text-slate-400">{contactInfo.address}</p>
                   </div>
                 </div>
               </div>
 
               {/* What to Expect */}
               <div className="mt-12 feature-grid-item">
-                <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-4">
+                <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white mb-4">
                   What to Expect
                 </h3>
-                <ul className="space-y-3 text-light-text-muted dark:text-steel text-sm">
+                <ul className="space-y-3 text-slate-500 dark:text-slate-400 text-sm">
                   <li className="flex items-start gap-2">
                     <ArrowRight className="h-4 w-4 text-emerald-pro-600 flex-shrink-0 mt-0.5" />
                     60-minute discovery call within 3 business days
@@ -186,10 +186,10 @@ export default function ContactPage() {
                     <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-pro-600/10 border border-emerald-pro-600/30 mb-6">
                       <Send className="h-8 w-8 text-emerald-pro-600" />
                     </div>
-                    <h3 className="text-2xl font-sora font-bold text-light-text dark:text-white mb-4">
+                    <h3 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-4">
                       Thanks for reaching out!
                     </h3>
-                    <p className="text-light-text-muted dark:text-steel max-w-md mx-auto">
+                    <p className="text-slate-500 dark:text-slate-400 max-w-md mx-auto">
                       We&apos;ve received your message and will get back to you within 24 hours. In the meantime, feel free to explore our case studies.
                     </p>
                   </div>
@@ -197,7 +197,7 @@ export default function ContactPage() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="firstName" className="block text-sm font-medium text-light-text dark:text-white mb-2">
+                        <label htmlFor="firstName" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
                           First Name *
                         </label>
                         <input
@@ -207,12 +207,12 @@ export default function ContactPage() {
                           required
                           value={formState.firstName}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-xl bg-white dark:bg-deep-space border border-border-default dark:border-graphite text-light-text dark:text-white placeholder-steel focus:border-emerald-pro-600 focus:ring-1 focus:ring-emerald-pro-600 transition-all outline-none"
+                          className="w-full px-4 py-3 rounded-xl bg-white dark:bg-deep-space border border-border-default dark:border-graphite text-slate-900 dark:text-white placeholder-steel focus:border-emerald-pro-600 focus:ring-1 focus:ring-emerald-pro-600 transition-all outline-none"
                           placeholder="John"
                         />
                       </div>
                       <div>
-                        <label htmlFor="lastName" className="block text-sm font-medium text-light-text dark:text-white mb-2">
+                        <label htmlFor="lastName" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
                           Last Name *
                         </label>
                         <input
@@ -222,14 +222,14 @@ export default function ContactPage() {
                           required
                           value={formState.lastName}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-xl bg-white dark:bg-deep-space border border-border-default dark:border-graphite text-light-text dark:text-white placeholder-steel focus:border-emerald-pro-600 focus:ring-1 focus:ring-emerald-pro-600 transition-all outline-none"
+                          className="w-full px-4 py-3 rounded-xl bg-white dark:bg-deep-space border border-border-default dark:border-graphite text-slate-900 dark:text-white placeholder-steel focus:border-emerald-pro-600 focus:ring-1 focus:ring-emerald-pro-600 transition-all outline-none"
                           placeholder="Smith"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-light-text dark:text-white mb-2">
+                      <label htmlFor="email" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
                         Work Email *
                       </label>
                       <input
@@ -239,14 +239,14 @@ export default function ContactPage() {
                         required
                         value={formState.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-xl bg-white dark:bg-deep-space border border-border-default dark:border-graphite text-light-text dark:text-white placeholder-steel focus:border-emerald-pro-600 focus:ring-1 focus:ring-emerald-pro-600 transition-all outline-none"
+                        className="w-full px-4 py-3 rounded-xl bg-white dark:bg-deep-space border border-border-default dark:border-graphite text-slate-900 dark:text-white placeholder-steel focus:border-emerald-pro-600 focus:ring-1 focus:ring-emerald-pro-600 transition-all outline-none"
                         placeholder="john@company.com"
                       />
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="company" className="block text-sm font-medium text-light-text dark:text-white mb-2">
+                        <label htmlFor="company" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
                           Company *
                         </label>
                         <input
@@ -256,12 +256,12 @@ export default function ContactPage() {
                           required
                           value={formState.company}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-xl bg-white dark:bg-deep-space border border-border-default dark:border-graphite text-light-text dark:text-white placeholder-steel focus:border-emerald-pro-600 focus:ring-1 focus:ring-emerald-pro-600 transition-all outline-none"
+                          className="w-full px-4 py-3 rounded-xl bg-white dark:bg-deep-space border border-border-default dark:border-graphite text-slate-900 dark:text-white placeholder-steel focus:border-emerald-pro-600 focus:ring-1 focus:ring-emerald-pro-600 transition-all outline-none"
                           placeholder="Acme Inc."
                         />
                       </div>
                       <div>
-                        <label htmlFor="phone" className="block text-sm font-medium text-light-text dark:text-white mb-2">
+                        <label htmlFor="phone" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
                           Phone
                         </label>
                         <input
@@ -270,14 +270,14 @@ export default function ContactPage() {
                           name="phone"
                           value={formState.phone}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-xl bg-white dark:bg-deep-space border border-border-default dark:border-graphite text-light-text dark:text-white placeholder-steel focus:border-emerald-pro-600 focus:ring-1 focus:ring-emerald-pro-600 transition-all outline-none"
+                          className="w-full px-4 py-3 rounded-xl bg-white dark:bg-deep-space border border-border-default dark:border-graphite text-slate-900 dark:text-white placeholder-steel focus:border-emerald-pro-600 focus:ring-1 focus:ring-emerald-pro-600 transition-all outline-none"
                           placeholder="+1 (555) 000-0000"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label htmlFor="source" className="block text-sm font-medium text-light-text dark:text-white mb-2">
+                      <label htmlFor="source" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
                         How did you hear about us?
                       </label>
                       <select
@@ -285,7 +285,7 @@ export default function ContactPage() {
                         name="source"
                         value={formState.source}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-xl bg-white dark:bg-deep-space border border-border-default dark:border-graphite text-light-text dark:text-white focus:border-emerald-pro-600 focus:ring-1 focus:ring-emerald-pro-600 transition-all outline-none"
+                        className="w-full px-4 py-3 rounded-xl bg-white dark:bg-deep-space border border-border-default dark:border-graphite text-slate-900 dark:text-white focus:border-emerald-pro-600 focus:ring-1 focus:ring-emerald-pro-600 transition-all outline-none"
                       >
                         <option value="">Select an option</option>
                         <option value="google">Google Search</option>
@@ -297,7 +297,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-light-text dark:text-white mb-2">
+                      <label htmlFor="message" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
                         Tell us about your goals
                       </label>
                       <textarea
@@ -306,7 +306,7 @@ export default function ContactPage() {
                         rows={4}
                         value={formState.message}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-xl bg-white dark:bg-deep-space border border-border-default dark:border-graphite text-light-text dark:text-white placeholder-steel focus:border-emerald-pro-600 focus:ring-1 focus:ring-emerald-pro-600 transition-all outline-none resize-none"
+                        className="w-full px-4 py-3 rounded-xl bg-white dark:bg-deep-space border border-border-default dark:border-graphite text-slate-900 dark:text-white placeholder-steel focus:border-emerald-pro-600 focus:ring-1 focus:ring-emerald-pro-600 transition-all outline-none resize-none"
                         placeholder="What are you looking to achieve with outbound lead generation?"
                       />
                     </div>
@@ -326,7 +326,7 @@ export default function ContactPage() {
                       )}
                     </Button>
 
-                    <p className="text-center text-light-text-muted dark:text-steel text-sm">
+                    <p className="text-center text-slate-500 dark:text-slate-400 text-sm">
                       By submitting this form, you agree to our{" "}
                       <a href="/legal/privacy-policy" className="text-emerald-pro-600 hover:underline">
                         Privacy Policy

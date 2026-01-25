@@ -27,7 +27,7 @@ function getCardColor(id: string) {
 function TrustBadge({ label }: { label: string }) {
   return (
     <div className="bg-light-bg-secondary dark:bg-midnight-blue border border-border-default dark:border-graphite rounded-lg px-6 py-3">
-      <span className="text-light-text-secondary dark:text-silver text-sm">{label}</span>
+      <span className="text-slate-700 dark:text-slate-200 text-sm">{label}</span>
     </div>
   );
 }
@@ -61,12 +61,12 @@ export default function IndustriesPage() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl md:text-5xl font-bold text-light-text dark:text-white mb-6">
-              <span className="headline-underline gradient-text-cyan-violet">Industries We Serve</span>
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+              <span className="headline-underline text-gradient">Industries We Serve</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg text-light-text-secondary dark:text-silver max-w-3xl mx-auto mb-12">
+            <p className="text-lg text-slate-700 dark:text-slate-200 max-w-3xl mx-auto mb-12">
               We understand the unique challenges of B2B sales across verticals. Our
               AI-powered cold email campaigns are tailored to each industry&apos;s specific
               buyer personas and decision-making processes.
@@ -117,11 +117,11 @@ export default function IndustriesPage() {
                         <div className={`w-12 h-12 ${colors.iconBg} rounded-lg flex items-center justify-center transition-all duration-200 group-hover:bg-emerald-pro-600/10 group-hover:border group-hover:border-emerald-pro-600/30`}>
                           <Icon className={`h-5 w-5 ${colors.text} transition-all duration-200 group-hover:text-emerald-pro-600 group-hover:scale-110`} />
                         </div>
-                        <ArrowRight className="h-5 w-5 text-light-text-muted dark:text-steel opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:text-emerald-pro-600 transition-all duration-200" />
+                        <ArrowRight className="h-5 w-5 text-slate-500 dark:text-slate-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:text-emerald-pro-600 transition-all duration-200" />
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-xl font-semibold text-light-text dark:text-white mb-2 group-hover:text-emerald-pro-600 transition-colors">
+                      <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2 group-hover:text-emerald-pro-600 transition-colors">
                         {industry.name}
                       </h3>
 
@@ -131,7 +131,7 @@ export default function IndustriesPage() {
                       </p>
 
                       {/* Description */}
-                      <p className="text-light-text-muted dark:text-steel text-sm leading-relaxed">
+                      <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
                         {industry.shortDescription}
                       </p>
                     </div>
@@ -180,10 +180,10 @@ export default function IndustriesPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-light-text dark:text-white mb-6">
-              Ready to <span className="headline-underline gradient-text-cyan-violet">Dominate Your Industry</span>?
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">
+              Ready to <span className="headline-underline text-gradient">Dominate Your Industry</span>?
             </h2>
-            <p className="text-lg text-light-text-secondary dark:text-silver mb-10">
+            <p className="text-lg text-slate-700 dark:text-slate-200 mb-10">
               Join hundreds of B2B companies using our AI-powered cold email system to book more qualified meetings and accelerate growth.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -197,7 +197,7 @@ export default function IndustriesPage() {
               {/* Brand Board v1.0 - Ghost Button */}
               <Link
                 href="/case-studies"
-                className="text-light-text-muted dark:text-steel px-6 py-3 rounded-lg font-medium hover:text-light-text dark:hover:text-white hover:bg-light-bg-secondary dark:hover:bg-graphite transition-all duration-200"
+                className="text-slate-500 dark:text-slate-400 px-6 py-3 rounded-lg font-medium hover:text-slate-900 dark:hover:text-white hover:bg-light-bg-secondary dark:hover:bg-graphite transition-all duration-200"
               >
                 View Case Studies
               </Link>

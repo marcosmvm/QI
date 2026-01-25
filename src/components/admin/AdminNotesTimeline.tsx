@@ -35,7 +35,7 @@ const noteTypeConfig: Record<
 > = {
   general: {
     icon: MessageSquare,
-    color: "text-light-text-muted dark:text-steel bg-steel/10 border-steel/30",
+    color: "text-slate-500 dark:text-slate-400 bg-steel/10 border-steel/30",
     label: "Note",
   },
   call: {
@@ -72,7 +72,7 @@ export function AdminNotesTimeline({
   return (
     <div className={cn("rounded-xl border border-border-default dark:border-graphite/50 bg-light-bg-secondary dark:bg-midnight-blue/30 p-6", className)}>
       <div className="flex items-center justify-between mb-6">
-        <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white">
+        <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">
           Admin Notes
         </h3>
         {onAddNote && (
@@ -87,8 +87,8 @@ export function AdminNotesTimeline({
 
       {notes.length === 0 ? (
         <div className="text-center py-8">
-          <MessageSquare className="h-8 w-8 text-light-text-muted dark:text-steel mx-auto mb-2" />
-          <p className="text-sm text-light-text-muted dark:text-steel">No notes yet</p>
+          <MessageSquare className="h-8 w-8 text-slate-500 dark:text-slate-400 mx-auto mb-2" />
+          <p className="text-sm text-slate-500 dark:text-slate-400">No notes yet</p>
         </div>
       ) : (
         <div className="space-y-4">
@@ -127,7 +127,7 @@ function NoteItem({ note }: { note: AdminNote }) {
       <div className="bg-white dark:bg-deep-space/30 rounded-lg p-4 border border-border-default dark:border-graphite/30">
         <div className="flex items-start justify-between gap-2 mb-2">
           <div className="flex items-center gap-2">
-            <span className="text-xs font-medium text-light-text-secondary dark:text-silver">
+            <span className="text-xs font-medium text-slate-700 dark:text-slate-200">
               {note.authorName}
             </span>
             {note.isPinned && (
@@ -135,16 +135,16 @@ function NoteItem({ note }: { note: AdminNote }) {
             )}
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-xs text-light-text-muted dark:text-steel">
+            <span className="text-xs text-slate-500 dark:text-slate-400">
               {formatDistanceToNow(new Date(note.createdAt), { addSuffix: true })}
             </span>
-            <button className="text-light-text-muted dark:text-steel hover:text-light-text-secondary dark:text-silver transition-colors">
+            <button className="text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:text-slate-200 transition-colors">
               <MoreHorizontal className="h-4 w-4" />
             </button>
           </div>
         </div>
 
-        <p className="text-sm text-light-text-secondary dark:text-silver whitespace-pre-wrap">
+        <p className="text-sm text-slate-700 dark:text-slate-200 whitespace-pre-wrap">
           {note.content}
         </p>
 

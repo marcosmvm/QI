@@ -55,14 +55,14 @@ export default function CaseStudiesPage() {
               <span className="text-sm font-medium text-emerald-pro-500">Founding Partner Program</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-light-text dark:text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-slate-900 dark:text-white mb-6">
               Results We&apos;re{" "}
-              <span className="gradient-text-cyan-violet">
+              <span className="text-gradient">
                 Targeting
               </span>
             </h1>
 
-            <p className="text-xl text-light-text-secondary dark:text-silver max-w-2xl mx-auto mb-10">
+            <p className="text-xl text-slate-700 dark:text-slate-200 max-w-2xl mx-auto mb-10">
               We&apos;re launching with ambitious benchmarks backed by proven AI technology. Be among our founding partners and help us build case studies together.
             </p>
 
@@ -89,10 +89,10 @@ export default function CaseStudiesPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Our Performance Targets
             </h2>
-            <p className="text-light-text-secondary dark:text-silver max-w-2xl mx-auto">
+            <p className="text-slate-700 dark:text-slate-200 max-w-2xl mx-auto">
               These are the benchmarks we&apos;re building our platform to achieve. Our pilot partners will help validate these targets.
             </p>
           </motion.div>
@@ -115,7 +115,7 @@ export default function CaseStudiesPage() {
                 <p className="text-3xl font-sora font-bold text-emerald-pro-600 mb-2">
                   {benchmark.value}
                 </p>
-                <p className="text-light-text-muted dark:text-steel text-sm">{benchmark.label}</p>
+                <p className="text-slate-500 dark:text-slate-400 text-sm">{benchmark.label}</p>
               </motion.div>
             ))}
           </div>
@@ -128,10 +128,10 @@ export default function CaseStudiesPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               How We&apos;ll Achieve These Results
             </h2>
-            <p className="text-light-text-secondary dark:text-silver max-w-2xl mx-auto">
+            <p className="text-slate-700 dark:text-slate-200 max-w-2xl mx-auto">
               Our 11 AI engines work together to maximize deliverability and conversions.
             </p>
           </motion.div>
@@ -150,9 +150,9 @@ export default function CaseStudiesPage() {
                   <div className="p-3 rounded-xl bg-emerald-pro-600/10 border border-emerald-pro-600/20">
                     <item.icon className="h-6 w-6 text-emerald-pro-600" />
                   </div>
-                  <h3 className="text-lg font-semibold text-light-text dark:text-white">{item.title}</h3>
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{item.title}</h3>
                 </div>
-                <p className="text-light-text-secondary dark:text-silver text-sm">{item.description}</p>
+                <p className="text-slate-700 dark:text-slate-200 text-sm">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -170,10 +170,10 @@ export default function CaseStudiesPage() {
               transition={{ duration: 0.5 }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-sora font-bold text-slate-900 dark:text-white mb-4">
                 Why Become a Founding Partner?
               </h2>
-              <p className="text-light-text-secondary dark:text-silver max-w-2xl mx-auto">
+              <p className="text-slate-700 dark:text-slate-200 max-w-2xl mx-auto">
                 Early adopters get exclusive benefits while helping shape the future of B2B outreach.
               </p>
             </motion.div>
@@ -195,8 +195,8 @@ export default function CaseStudiesPage() {
                 >
                   <CheckCircle className="h-6 w-6 text-emerald-pro-400 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold text-light-text dark:text-white mb-1">{benefit.title}</h4>
-                    <p className="text-light-text-muted dark:text-steel text-sm">{benefit.description}</p>
+                    <h4 className="font-semibold text-slate-900 dark:text-white mb-1">{benefit.title}</h4>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm">{benefit.description}</p>
                   </div>
                 </motion.div>
               ))}

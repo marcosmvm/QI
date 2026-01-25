@@ -62,7 +62,7 @@ export function Logo({
 
   // Text colors based on variant
   const xColor = variant === "light" ? "text-emerald-pro-600" : "text-xgrowth-500";
-  const textColor = variant === "light" ? "text-light-text" : "text-light-text dark:text-white";
+  const textColor = variant === "light" ? "text-slate-900" : "text-slate-900 dark:text-white";
 
   return (
     <Link href="/" className={cn("flex items-center", s.gap, className)}>

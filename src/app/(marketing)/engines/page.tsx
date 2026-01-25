@@ -96,14 +96,14 @@ export default function EnginesPage() {
               <CircuitBoard className="w-4 h-4 text-emerald-pro-500" />
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-light-text dark:text-white mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-slate-900 dark:text-white mb-8">
               11 AI Engines.{" "}
-              <span className="headline-underline gradient-text-cyan-violet block mt-2">
+              <span className="headline-underline text-gradient block mt-2">
                 One Powerful Platform.
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-light-text-secondary/90 dark:text-silver/90 max-w-3xl mx-auto mb-12 leading-relaxed">
+            <p className="text-xl md:text-2xl text-slate-700/90 dark:text-slate-200/90 max-w-3xl mx-auto mb-12 leading-relaxed">
               5 Lead Generation engines and 6 CSM Automation engines work in harmony. Together, they form an <span className="text-emerald-pro-600 font-semibold">unstoppable</span> autonomous growth platform.
             </p>
 
@@ -159,7 +159,7 @@ export default function EnginesPage() {
                             >
                               ENGINE {engine.codename}
                             </motion.span>
-                            <h2 className="text-2xl md:text-3xl font-sora font-bold text-light-text dark:text-white mt-1 group-hover:text-gradient transition-all">
+                            <h2 className="text-2xl md:text-3xl font-sora font-bold text-slate-900 dark:text-white mt-1 group-hover:text-gradient transition-all">
                               {engine.name}
                             </h2>
                             <p className={`${colors.text} font-medium text-sm md:text-base`}>{engine.tagline}</p>
@@ -168,7 +168,7 @@ export default function EnginesPage() {
 
                         {/* Description */}
                         <div className="flex-1">
-                          <p className="text-light-text-secondary dark:text-silver leading-relaxed group-hover:text-light-text dark:group-hover:text-white/90 transition-colors">
+                          <p className="text-slate-700 dark:text-slate-200 leading-relaxed group-hover:text-slate-900 dark:group-hover:text-white/90 transition-colors">
                             {engine.shortDescription}
                           </p>
                         </div>
@@ -187,7 +187,7 @@ export default function EnginesPage() {
                               <p className={`text-2xl font-sora font-bold ${colors.text}`}>
                                 {stat.value}
                               </p>
-                              <p className="text-light-text-muted dark:text-steel text-xs">{stat.label}</p>
+                              <p className="text-slate-500 dark:text-slate-400 text-xs">{stat.label}</p>
                             </motion.div>
                           ))}
                         </div>
@@ -219,13 +219,13 @@ export default function EnginesPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 dark:text-white mb-6">
               How They Work{" "}
-              <span className="headline-underline gradient-text-cyan-violet">
+              <span className="headline-underline text-gradient">
                 Together
               </span>
             </h2>
-            <p className="text-lg md:text-xl text-light-text-secondary dark:text-silver leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-700 dark:text-slate-200 leading-relaxed">
               Our engines don&apos;t operate in isolation. They share data, learn from each other, and <span className="text-emerald-pro-600">continuously optimize</span> the entire funnel.
             </p>
           </motion.div>
@@ -295,11 +295,11 @@ export default function EnginesPage() {
                   combo.color === 'violet' ? 'text-emerald-pro-500' :
                   combo.color === 'mint' ? 'text-emerald-pro-400' :
                   combo.color === 'orange' ? 'text-energy-orange' :
-                  'text-light-text dark:text-white'
+                  'text-slate-900 dark:text-white'
                 }`}>
                   {combo.title}
                 </h3>
-                <p className="text-light-text-secondary dark:text-silver text-sm leading-relaxed group-hover:text-light-text dark:group-hover:text-white/80 transition-colors">
+                <p className="text-slate-700 dark:text-slate-200 text-sm leading-relaxed group-hover:text-slate-900 dark:group-hover:text-white/80 transition-colors">
                   {combo.description}
                 </p>
 

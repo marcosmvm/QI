@@ -39,10 +39,10 @@ export function StatsBar() {
                   {cap.suffix}
                 </span>
               </div>
-              <p className="text-light-text dark:text-white mt-2 text-sm md:text-base font-medium">
+              <p className="text-slate-900 dark:text-white mt-2 text-sm md:text-base font-medium">
                 {cap.label}
               </p>
-              <p className="text-light-text-muted dark:text-steel text-xs mt-1">
+              <p className="text-slate-500 dark:text-slate-400 text-xs mt-1">
                 {cap.description}
               </p>
             </motion.div>

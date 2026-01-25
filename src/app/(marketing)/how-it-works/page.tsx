@@ -177,14 +177,14 @@ export default function HowItWorksPage() {
               <Zap className="w-4 h-4 text-emerald-pro-500" />
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-light-text dark:text-white mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-slate-900 dark:text-white mb-8">
               How XGrowthOS{" "}
-              <span className="headline-underline gradient-text-cyan-violet block mt-2">
+              <span className="headline-underline text-gradient block mt-2">
                 Works
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-light-text-secondary/90 dark:text-silver/90 max-w-3xl mx-auto mb-12 leading-relaxed">
+            <p className="text-xl md:text-2xl text-slate-700/90 dark:text-slate-200/90 max-w-3xl mx-auto mb-12 leading-relaxed">
               A proven process powered by AI that transforms <span className="text-emerald-pro-600 font-semibold">cold outreach</span> into
               warm conversations and <span className="text-emerald-pro-500 font-semibold">qualified meetings</span>.
             </p>
@@ -223,13 +223,13 @@ export default function HowItWorksPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-2xl mx-auto mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               The 4-Step{" "}
-              <span className="headline-underline gradient-text-cyan-violet">
+              <span className="headline-underline text-gradient">
                 Process
               </span>
             </h2>
-            <p className="text-light-text-muted dark:text-steel">
+            <p className="text-slate-500 dark:text-slate-400">
               From discovery to scale, here&apos;s how we build your outbound engine.
             </p>
           </motion.div>
@@ -260,15 +260,15 @@ export default function HowItWorksPage() {
                         Step {step.step}
                       </span>
                     </div>
-                    <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-2">
+                    <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-sm text-light-text-muted dark:text-steel mb-4">{step.description}</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">{step.description}</p>
                     <ul className="space-y-2">
                       {step.details.map((detail, i) => (
                         <li
                           key={i}
-                          className="flex items-center gap-2 text-sm text-light-text-secondary dark:text-silver"
+                          className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200"
                         >
                           <CheckCircle className="h-4 w-4 text-emerald-pro-400 flex-shrink-0" />
                           {detail}
@@ -296,13 +296,13 @@ export default function HowItWorksPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-2xl mx-auto mb-12"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Powered by{" "}
-              <span className="headline-underline gradient-text-cyan-violet">
+              <span className="headline-underline text-gradient">
                 11 AI Engines
               </span>
             </h2>
-            <p className="text-light-text-muted dark:text-steel">
+            <p className="text-slate-500 dark:text-slate-400">
               Each engine handles a specialized part of your outreach, working together
               to maximize results.
             </p>
@@ -354,11 +354,11 @@ export default function HowItWorksPage() {
                     >
                       <engine.icon className={`h-6 w-6 ${colors.text}`} />
                     </div>
-                    <p className="text-xs text-light-text-muted dark:text-steel mb-1">{engine.codename}</p>
-                    <h3 className="text-base font-sora font-semibold text-light-text dark:text-white mb-1">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mb-1">{engine.codename}</p>
+                    <h3 className="text-base font-sora font-semibold text-slate-900 dark:text-white mb-1">
                       {engine.name}
                     </h3>
-                    <p className="text-xs text-light-text-muted dark:text-steel">{engine.description}</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">{engine.description}</p>
                   </Link>
                 </motion.div>
               );
@@ -390,7 +390,7 @@ export default function HowItWorksPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="p-8 rounded-3xl border border-border-default dark:border-graphite bg-gradient-to-br from-midnight-blue/80 to-deep-space"
           >
-            <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white text-center mb-8">
+            <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white text-center mb-8">
               Average Results Our Clients See
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -399,7 +399,7 @@ export default function HowItWorksPage() {
                   <p className="text-3xl md:text-4xl font-sora font-bold text-emerald-pro-600 mb-1">
                     {stat.value}
                   </p>
-                  <p className="text-sm text-light-text-muted dark:text-steel">{stat.label}</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -420,13 +420,13 @@ export default function HowItWorksPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-2xl mx-auto mb-12"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Why We&apos;re{" "}
-              <span className="headline-underline gradient-text-cyan-violet">
+              <span className="headline-underline text-gradient">
                 Different
               </span>
             </h2>
-            <p className="text-light-text-muted dark:text-steel">
+            <p className="text-slate-500 dark:text-slate-400">
               Traditional agencies rely on manual processes and guesswork. We use
               AI to deliver consistent, scalable results.
             </p>
@@ -446,10 +446,10 @@ export default function HowItWorksPage() {
                   <item.icon className="h-6 w-6 text-emerald-pro-600" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-2">
+                  <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-light-text-muted dark:text-steel">{item.description}</p>
+                  <p className="text-slate-500 dark:text-slate-400">{item.description}</p>
                 </div>
               </motion.div>
             ))}

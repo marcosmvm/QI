@@ -90,7 +90,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
                 <Sparkles className={`w-4 h-4 ${colors.text}`} />
               </motion.div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-light-text dark:text-white mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-slate-900 dark:text-white mb-6">
                 {service.name}
               </h1>
 
@@ -98,7 +98,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
                 {service.tagline}
               </p>
 
-              <p className="text-lg text-light-text-secondary/90 dark:text-silver/90 mb-10 leading-relaxed">
+              <p className="text-lg text-slate-700/90 dark:text-slate-200/90 mb-10 leading-relaxed">
                 {service.longDescription}
               </p>
 
@@ -113,7 +113,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-emerald-pro-600/30 hover:border-emerald-pro-600/60 text-light-text dark:text-white hover:text-emerald-pro-600 bg-emerald-pro-600/5 hover:bg-emerald-pro-600/10 px-8 py-6 text-lg transition-all backdrop-blur-sm"
+                    className="border-emerald-pro-600/30 hover:border-emerald-pro-600/60 text-slate-900 dark:text-white hover:text-emerald-pro-600 bg-emerald-pro-600/5 hover:bg-emerald-pro-600/10 px-8 py-6 text-lg transition-all backdrop-blur-sm"
                   >
                     View Pricing
                   </Button>
@@ -139,7 +139,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
                     <p className={`stat-number text-3xl md:text-4xl ${colors.text}`}>
                       {stat.value}
                     </p>
-                    <p className="text-light-text-muted dark:text-steel text-sm mt-2">{stat.label}</p>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm mt-2">{stat.label}</p>
                   </motion.div>
                 ))}
               </div>
@@ -161,11 +161,11 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 dark:text-white mb-6">
               What&apos;s{" "}
               <span className={`headline-underline ${colors.text}`}>Included</span>
             </h2>
-            <p className="text-lg md:text-xl text-light-text-secondary/90 dark:text-silver/90">
+            <p className="text-lg md:text-xl text-slate-700/90 dark:text-slate-200/90">
               Everything you get with our {service.name.toLowerCase()} service.
             </p>
           </motion.div>
@@ -183,10 +183,10 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
                 {/* Accent line on hover */}
                 <div className={`absolute top-0 left-0 right-0 h-1 rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity ${colors.text.replace('text-', 'bg-')}`} />
 
-                <h3 className={`text-lg font-sora font-semibold text-light-text dark:text-white mb-3 group-hover:${colors.text} transition-colors`}>
+                <h3 className={`text-lg font-sora font-semibold text-slate-900 dark:text-white mb-3 group-hover:${colors.text} transition-colors`}>
                   {feature.title}
                 </h3>
-                <p className="text-light-text-secondary dark:text-silver text-sm leading-relaxed group-hover:text-light-text dark:group-hover:text-white/80 transition-colors">
+                <p className="text-slate-700 dark:text-slate-200 text-sm leading-relaxed group-hover:text-slate-900 dark:group-hover:text-white/80 transition-colors">
                   {feature.description}
                 </p>
               </motion.div>
@@ -205,11 +205,11 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 dark:text-white mb-6">
               How It{" "}
               <span className={`headline-underline ${colors.text}`}>Works</span>
             </h2>
-            <p className="text-lg md:text-xl text-light-text-secondary/90 dark:text-silver/90">
+            <p className="text-lg md:text-xl text-slate-700/90 dark:text-slate-200/90">
               Our proven process for delivering results.
             </p>
           </motion.div>
@@ -240,10 +240,10 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
 
                   {/* Content */}
                   <div className="flex-1 pb-8 pt-2">
-                    <h3 className={`text-xl md:text-2xl font-sora font-semibold text-light-text dark:text-white mb-3 group-hover:${colors.text} transition-colors`}>
+                    <h3 className={`text-xl md:text-2xl font-sora font-semibold text-slate-900 dark:text-white mb-3 group-hover:${colors.text} transition-colors`}>
                       {step.title}
                     </h3>
-                    <p className="text-light-text-secondary dark:text-silver leading-relaxed group-hover:text-light-text dark:group-hover:text-white/80 transition-colors">
+                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed group-hover:text-slate-900 dark:group-hover:text-white/80 transition-colors">
                       {step.description}
                     </p>
                   </div>
@@ -264,11 +264,11 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 dark:text-white mb-6">
                 Why Choose{" "}
                 <span className={`headline-underline ${colors.text}`}>XGrowthOS</span>
               </h2>
-              <p className="text-lg md:text-xl text-light-text-secondary/90 dark:text-silver/90 mb-10">
+              <p className="text-lg md:text-xl text-slate-700/90 dark:text-slate-200/90 mb-10">
                 The benefits of working with us for {service.name.toLowerCase()}.
               </p>
 
@@ -285,7 +285,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
                     <div className={`flex-shrink-0 w-8 h-8 rounded-full ${colors.bg} border ${colors.border} flex items-center justify-center group-hover:scale-110 transition-transform`}>
                       <CheckCircle className={`h-5 w-5 ${colors.text}`} />
                     </div>
-                    <span className="text-light-text-secondary dark:text-silver text-lg leading-relaxed group-hover:text-light-text dark:group-hover:text-white transition-colors">{benefit}</span>
+                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed group-hover:text-slate-900 dark:group-hover:text-white transition-colors">{benefit}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -301,10 +301,10 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
               <div className={`icon-container-animated ${colors.iconBg} mb-8`}>
                 <Icon className={`h-8 w-8 ${colors.text}`} />
               </div>
-              <h3 className="text-2xl lg:text-3xl font-sora font-bold text-light-text dark:text-white mb-4">
+              <h3 className="text-2xl lg:text-3xl font-sora font-bold text-slate-900 dark:text-white mb-4">
                 Ready to get started?
               </h3>
-              <p className="text-light-text-secondary dark:text-silver text-lg mb-8">
+              <p className="text-slate-700 dark:text-slate-200 text-lg mb-8">
                 Book a call with our team to discuss how {service.name.toLowerCase()} can help grow your business.
               </p>
               <Link href="/contact">
@@ -331,7 +331,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-2xl mx-auto mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 dark:text-white mb-6">
               Frequently Asked{" "}
               <span className={`headline-underline ${colors.text}`}>Questions</span>
             </h2>
@@ -358,14 +358,14 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
                   >
                     <Accordion.Header>
                       <Accordion.Trigger className="flex w-full items-center justify-between px-6 py-6 text-left hover:bg-emerald-pro-600/5 transition-colors">
-                        <span className="text-light-text dark:text-white font-medium pr-4 text-lg">{faq.question}</span>
+                        <span className="text-slate-900 dark:text-white font-medium pr-4 text-lg">{faq.question}</span>
                         <div className={`flex-shrink-0 w-8 h-8 rounded-full ${colors.bg} border ${colors.border} flex items-center justify-center group-hover:scale-110 transition-all`}>
                           <ChevronDown className={`h-4 w-4 ${colors.text} transition-transform duration-300 group-data-[state=open]:rotate-180`} />
                         </div>
                       </Accordion.Trigger>
                     </Accordion.Header>
                     <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                      <div className="px-6 pb-6 text-light-text-secondary dark:text-silver leading-relaxed border-t border-border-default dark:border-graphite/30 pt-4">
+                      <div className="px-6 pb-6 text-slate-700 dark:text-slate-200 leading-relaxed border-t border-border-default dark:border-graphite/30 pt-4">
                         {faq.answer}
                       </div>
                     </Accordion.Content>

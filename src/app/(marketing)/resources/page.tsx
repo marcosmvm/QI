@@ -76,13 +76,13 @@ export default function ResourcesPage() {
               <Zap className="w-4 h-4 text-emerald-pro-500" />
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-light-text dark:text-white mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-slate-900 dark:text-white mb-8">
               Resources to Accelerate{" "}
-              <span className="headline-underline gradient-text-cyan-violet block mt-2">
+              <span className="headline-underline text-gradient block mt-2">
                 Your Growth
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-light-text-secondary/90 dark:text-silver/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-slate-700/90 dark:text-slate-200/90 max-w-3xl mx-auto leading-relaxed">
               Guides, templates, and tools to help you <span className="text-emerald-pro-500 font-semibold">master B2B lead generation</span>.
             </p>
           </motion.div>
@@ -124,12 +124,12 @@ export default function ResourcesPage() {
                       </span>
 
                       {/* Title */}
-                      <h2 className="text-xl font-sora font-semibold text-light-text dark:text-white mb-2 group-hover:text-gradient transition-all">
+                      <h2 className="text-xl font-sora font-semibold text-slate-900 dark:text-white mb-2 group-hover:text-gradient transition-all">
                         {resource.title}
                       </h2>
 
                       {/* Description */}
-                      <p className="text-light-text-secondary dark:text-silver text-sm mb-4 group-hover:text-light-text dark:group-hover:text-white/80 transition-colors">
+                      <p className="text-slate-700 dark:text-slate-200 text-sm mb-4 group-hover:text-slate-900 dark:group-hover:text-white/80 transition-colors">
                         {resource.description}
                       </p>
 

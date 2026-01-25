@@ -98,7 +98,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
           >
             <Link
               href="/engines"
-              className="inline-flex items-center gap-2 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               All Engines
@@ -129,7 +129,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
                   <Icon className={`h-10 w-10 ${colors.text}`} />
                 </div>
                 <div>
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-light-text dark:text-white">
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-slate-900 dark:text-white">
                     <span className={`headline-underline ${colors.text}`}>
                       {engine.name}
                     </span>
@@ -141,7 +141,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
                 {engine.tagline}
               </p>
 
-              <p className="text-lg md:text-xl text-light-text-secondary/90 dark:text-silver/90 mb-10 leading-relaxed">
+              <p className="text-lg md:text-xl text-slate-700/90 dark:text-slate-200/90 mb-10 leading-relaxed">
                 {engine.longDescription}
               </p>
 
@@ -171,7 +171,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
                     <p className={`text-4xl font-sora font-bold ${colors.text}`}>
                       {stat.value}
                     </p>
-                    <p className="text-light-text-muted dark:text-steel text-sm mt-1">{stat.label}</p>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">{stat.label}</p>
                   </motion.div>
                 ))}
               </div>
@@ -193,11 +193,11 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 dark:text-white mb-6">
               Key{" "}
               <span className={`headline-underline ${colors.text}`}>Features</span>
             </h2>
-            <p className="text-lg md:text-xl text-light-text-secondary dark:text-silver leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-700 dark:text-slate-200 leading-relaxed">
               Everything {engine.name} does to <span className={colors.text}>optimize</span> your outbound campaigns.
             </p>
           </motion.div>
@@ -219,10 +219,10 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
                   colors.iconBg === 'mint' ? 'bg-emerald-pro-400' : 'bg-energy-orange'
                 }`} />
 
-                <h3 className={`text-lg font-sora font-semibold text-light-text dark:text-white mb-2 group-hover:${colors.text} transition-colors`}>
+                <h3 className={`text-lg font-sora font-semibold text-slate-900 dark:text-white mb-2 group-hover:${colors.text} transition-colors`}>
                   {feature.title}
                 </h3>
-                <p className="text-light-text-secondary dark:text-silver text-sm leading-relaxed group-hover:text-light-text dark:group-hover:text-white/80 transition-colors">
+                <p className="text-slate-700 dark:text-slate-200 text-sm leading-relaxed group-hover:text-slate-900 dark:group-hover:text-white/80 transition-colors">
                   {feature.description}
                 </p>
               </motion.div>
@@ -244,11 +244,11 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 dark:text-white mb-6">
                 Perfect{" "}
                 <span className={`headline-underline ${colors.text}`}>For</span>
               </h2>
-              <p className="text-lg md:text-xl text-light-text-secondary dark:text-silver mb-8 leading-relaxed">
+              <p className="text-lg md:text-xl text-slate-700 dark:text-slate-200 mb-8 leading-relaxed">
                 {engine.name} is ideal for teams who need to:
               </p>
 
@@ -263,7 +263,7 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
                     className="flex items-start gap-3 group"
                   >
                     <CheckCircle className={`h-6 w-6 ${colors.text} flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform`} />
-                    <span className="text-light-text-secondary dark:text-silver group-hover:text-light-text dark:group-hover:text-white/90 transition-colors">{useCase}</span>
+                    <span className="text-slate-700 dark:text-slate-200 group-hover:text-slate-900 dark:group-hover:text-white/90 transition-colors">{useCase}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -279,10 +279,10 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
               <div className={`icon-container-animated ${colors.iconBg} mb-6`}>
                 <Icon className={`h-12 w-12 ${colors.text}`} />
               </div>
-              <h3 className="text-2xl font-sora font-bold text-light-text dark:text-white mb-4">
+              <h3 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-4">
                 Ready to deploy {engine.name}?
               </h3>
-              <p className="text-light-text-secondary dark:text-silver mb-6 leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-200 mb-6 leading-relaxed">
                 Our team will set up and configure {engine.name} specifically for your use case. See results in <span className={colors.text}>weeks, not months</span>.
               </p>
               <Link href="/contact">
@@ -312,11 +312,11 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
             {prevEngine ? (
               <Link
                 href={`/engines/${prevEngine.id}`}
-                className="flex items-center gap-3 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white transition-colors group p-4 rounded-xl hover:bg-light-bg-secondary dark:bg-midnight-blue/30"
+                className="flex items-center gap-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors group p-4 rounded-xl hover:bg-light-bg-secondary dark:bg-midnight-blue/30"
               >
                 <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
                 <span>
-                  <span className="text-sm block text-light-text-muted dark:text-steel/70">Previous</span>
+                  <span className="text-sm block text-slate-500 dark:text-slate-400/70">Previous</span>
                   <span className="font-semibold">{prevEngine.name}</span>
                 </span>
               </Link>
@@ -334,10 +334,10 @@ export function EngineDetailPage({ engineId }: EngineDetailPageProps) {
             {nextEngine ? (
               <Link
                 href={`/engines/${nextEngine.id}`}
-                className="flex items-center gap-3 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white transition-colors group text-right p-4 rounded-xl hover:bg-light-bg-secondary dark:bg-midnight-blue/30"
+                className="flex items-center gap-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors group text-right p-4 rounded-xl hover:bg-light-bg-secondary dark:bg-midnight-blue/30"
               >
                 <span>
-                  <span className="text-sm block text-light-text-muted dark:text-steel/70">Next</span>
+                  <span className="text-sm block text-slate-500 dark:text-slate-400/70">Next</span>
                   <span className="font-semibold">{nextEngine.name}</span>
                 </span>
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />

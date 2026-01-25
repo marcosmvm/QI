@@ -118,7 +118,7 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-pro-600/10 border border-emerald-pro-600/30">
               <Zap className="h-5 w-5 text-emerald-pro-600" />
             </div>
-            <span className="text-lg font-sora font-semibold text-light-text dark:text-white">
+            <span className="text-lg font-sora font-semibold text-slate-900 dark:text-white">
               <span className="text-emerald-pro-600 dark:text-xgrowth-500">X</span>GrowthOS
             </span>
           </Link>
@@ -135,12 +135,12 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
                   "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200",
                   isActive(item.href)
                     ? "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20"
-                    : "text-light-text-secondary dark:text-silver hover:bg-light-bg-secondary dark:bg-midnight-blue/50 hover:text-light-text dark:hover:text-white border border-transparent"
+                    : "text-slate-700 dark:text-slate-200 hover:bg-light-bg-secondary dark:bg-midnight-blue/50 hover:text-slate-900 dark:hover:text-white border border-transparent"
                 )}
               >
                 <item.icon className={cn(
                   "h-4 w-4",
-                  isActive(item.href) ? "text-emerald-pro-600" : "text-light-text-muted dark:text-steel"
+                  isActive(item.href) ? "text-emerald-pro-600" : "text-slate-500 dark:text-slate-400"
                 )} />
                 <span>{item.name}</span>
               </Link>
@@ -159,12 +159,12 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
                   "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200",
                   isActive(item.href)
                     ? "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20"
-                    : "text-light-text-secondary dark:text-silver hover:bg-light-bg-secondary dark:bg-midnight-blue/50 hover:text-light-text dark:hover:text-white border border-transparent"
+                    : "text-slate-700 dark:text-slate-200 hover:bg-light-bg-secondary dark:bg-midnight-blue/50 hover:text-slate-900 dark:hover:text-white border border-transparent"
                 )}
               >
                 <item.icon className={cn(
                   "h-4 w-4",
-                  isActive(item.href) ? "text-emerald-pro-600" : "text-light-text-muted dark:text-steel"
+                  isActive(item.href) ? "text-emerald-pro-600" : "text-slate-500 dark:text-slate-400"
                 )} />
                 <span>{item.name}</span>
               </Link>
@@ -181,16 +181,16 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
               </span>
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-light-text dark:text-white truncate">
+              <p className="text-sm font-medium text-slate-900 dark:text-white truncate">
                 {isLoading ? "Loading..." : profile?.full_name || "User"}
               </p>
-              <p className="text-xs text-light-text-muted dark:text-steel truncate capitalize">
+              <p className="text-xs text-slate-500 dark:text-slate-400 truncate capitalize">
                 {isLoading ? "" : profile?.role || "client"}
               </p>
             </div>
             <button
               onClick={handleSignOut}
-              className="p-2 rounded-lg text-light-text-muted dark:text-steel hover:text-energy-orange hover:bg-energy-orange/10 transition-colors"
+              className="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-energy-orange hover:bg-energy-orange/10 transition-colors"
               title="Sign out"
             >
               <LogOut className="h-4 w-4" />

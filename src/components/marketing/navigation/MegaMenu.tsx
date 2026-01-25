@@ -34,7 +34,7 @@ export function MegaMenu({ sections, featured }: MegaMenuProps) {
           )}>
             {sections.map((section) => (
               <div key={section.title}>
-                <h3 className="text-xs font-semibold uppercase tracking-widest text-light-text-muted dark:text-steel mb-4">
+                <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-4">
                   {section.title}
                 </h3>
                 <ul className="space-y-1">
@@ -46,12 +46,12 @@ export function MegaMenu({ sections, featured }: MegaMenuProps) {
                       >
                         {item.icon && (
                           <div className="flex-shrink-0 mt-0.5">
-                            <item.icon className="h-4 w-4 text-light-text-muted dark:text-steel group-hover:text-emerald-pro-600 dark:group-hover:text-xgrowth-500 transition-colors" />
+                            <item.icon className="h-4 w-4 text-slate-500 dark:text-slate-400 group-hover:text-emerald-pro-600 dark:group-hover:text-xgrowth-500 transition-colors" />
                           </div>
                         )}
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2">
-                            <span className="text-sm font-medium text-light-text-secondary dark:text-silver group-hover:text-light-text dark:group-hover:text-white transition-colors">
+                            <span className="text-sm font-medium text-slate-700 dark:text-slate-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
                               {item.label}
                             </span>
                             {item.badge && (
@@ -61,7 +61,7 @@ export function MegaMenu({ sections, featured }: MegaMenuProps) {
                             )}
                           </div>
                           {item.description && (
-                            <p className="text-xs text-light-text-muted dark:text-steel mt-0.5 line-clamp-2">
+                            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 line-clamp-2">
                               {item.description}
                             </p>
                           )}
@@ -81,10 +81,10 @@ export function MegaMenu({ sections, featured }: MegaMenuProps) {
                   className="group block h-full p-4 rounded-xl bg-light-bg-secondary dark:bg-graphite/30 border border-border-default dark:border-graphite hover:border-emerald-pro-600/50 dark:hover:border-xgrowth-500/50 transition-all"
                 >
                   <div className="flex flex-col h-full">
-                    <h4 className="text-sm font-semibold text-light-text dark:text-white mb-2">
+                    <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-2">
                       {featured.title}
                     </h4>
-                    <p className="text-xs text-light-text-muted dark:text-steel flex-1">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 flex-1">
                       {featured.description}
                     </p>
                     <div className="flex items-center gap-1 mt-4 text-xs font-medium text-emerald-pro-600 dark:text-xgrowth-500 group-hover:gap-2 transition-all">

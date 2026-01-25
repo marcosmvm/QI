@@ -68,39 +68,39 @@ export default function LoginPage() {
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-pro-600/10 border border-emerald-pro-600/30">
               <Zap className="h-6 w-6 text-emerald-pro-600" />
             </div>
-            <span className="text-xl font-sora font-semibold text-light-text dark:text-white">
+            <span className="text-xl font-sora font-semibold text-slate-900 dark:text-white">
               XGrowthOS
             </span>
           </div>
         </div>
 
         <div className="relative z-10 space-y-6">
-          <h1 className="text-4xl font-sora font-bold text-light-text dark:text-white leading-tight">
+          <h1 className="text-4xl font-sora font-bold text-slate-900 dark:text-white leading-tight">
             Automate your outreach.
             <br />
             <span className="text-emerald-pro-600">Amplify your results.</span>
           </h1>
-          <p className="text-lg text-light-text-secondary dark:text-silver max-w-md">
+          <p className="text-lg text-slate-700 dark:text-slate-200 max-w-md">
             Access your campaign dashboard, monitor performance, and track
             your results in real-time.
           </p>
           <div className="flex items-center gap-8 pt-4">
             <div>
-              <p className="text-3xl font-sora font-bold text-light-text dark:text-white">95%+</p>
-              <p className="text-sm text-light-text-muted dark:text-steel">Deliverability Rate</p>
+              <p className="text-3xl font-sora font-bold text-slate-900 dark:text-white">95%+</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Deliverability Rate</p>
             </div>
             <div>
-              <p className="text-3xl font-sora font-bold text-light-text dark:text-white">3x</p>
-              <p className="text-sm text-light-text-muted dark:text-steel">Reply Rate Increase</p>
+              <p className="text-3xl font-sora font-bold text-slate-900 dark:text-white">3x</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Reply Rate Increase</p>
             </div>
             <div>
-              <p className="text-3xl font-sora font-bold text-light-text dark:text-white">24/7</p>
-              <p className="text-sm text-light-text-muted dark:text-steel">Support Available</p>
+              <p className="text-3xl font-sora font-bold text-slate-900 dark:text-white">24/7</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Support Available</p>
             </div>
           </div>
         </div>
 
-        <div className="relative z-10 text-sm text-light-text-muted dark:text-steel">
+        <div className="relative z-10 text-sm text-slate-500 dark:text-slate-400">
           &copy; {new Date().getFullYear()} XGrowthOS. All rights reserved.
         </div>
       </div>
@@ -113,17 +113,17 @@ export default function LoginPage() {
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-pro-600/10 border border-emerald-pro-600/30">
               <Zap className="h-6 w-6 text-emerald-pro-600" />
             </div>
-            <span className="text-xl font-sora font-semibold text-light-text dark:text-white">
+            <span className="text-xl font-sora font-semibold text-slate-900 dark:text-white">
               XGrowthOS
             </span>
           </div>
 
           <div className="glass-card p-8">
             <div className="text-center mb-8">
-              <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white mb-2">
+              <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-2">
                 Welcome back
               </h2>
-              <p className="text-light-text-muted dark:text-steel">Sign in to access your dashboard</p>
+              <p className="text-slate-500 dark:text-slate-400">Sign in to access your dashboard</p>
             </div>
 
             {error && (
@@ -137,12 +137,12 @@ export default function LoginPage() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2"
+                  className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2"
                 >
                   Email address
                 </label>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-light-text-muted dark:text-steel" />
+                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-500 dark:text-slate-400" />
                   <input
                     id="email"
                     type="email"
@@ -159,7 +159,7 @@ export default function LoginPage() {
                 <div className="flex items-center justify-between mb-2">
                   <label
                     htmlFor="password"
-                    className="block text-sm font-medium text-light-text-secondary dark:text-silver"
+                    className="block text-sm font-medium text-slate-700 dark:text-slate-200"
                   >
                     Password
                   </label>
@@ -171,7 +171,7 @@ export default function LoginPage() {
                   </Link>
                 </div>
                 <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-light-text-muted dark:text-steel" />
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-500 dark:text-slate-400" />
                   <input
                     id="password"
                     type="password"
@@ -222,7 +222,7 @@ export default function LoginPage() {
             </form>
 
             <div className="mt-6 text-center">
-              <p className="text-light-text-muted dark:text-steel text-sm">
+              <p className="text-slate-500 dark:text-slate-400 text-sm">
                 Don&apos;t have an account?{" "}
                 <Link
                   href="/register"

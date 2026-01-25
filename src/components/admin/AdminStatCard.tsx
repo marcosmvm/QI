@@ -90,11 +90,11 @@ export function AdminStatCard({
       </div>
 
       <div className="mt-4">
-        <p className="text-2xl font-sora font-bold text-light-text dark:text-white">
+        <p className="text-2xl font-sora font-bold text-slate-900 dark:text-white">
           {value}
-          {suffix && <span className="text-lg text-light-text-muted dark:text-steel ml-1">{suffix}</span>}
+          {suffix && <span className="text-lg text-slate-500 dark:text-slate-400 ml-1">{suffix}</span>}
         </p>
-        <p className="text-sm text-light-text-secondary dark:text-silver mt-1">{title}</p>
+        <p className="text-sm text-slate-700 dark:text-slate-200 mt-1">{title}</p>
       </div>
 
       {change !== undefined && (
@@ -111,13 +111,13 @@ export function AdminStatCard({
                 ? "text-emerald-pro-400"
                 : change < 0
                 ? "text-energy-orange"
-                : "text-light-text-muted dark:text-steel"
+                : "text-slate-500 dark:text-slate-400"
             )}
           >
             {change > 0 ? "+" : ""}
             {change}%
           </span>
-          <span className="text-xs text-light-text-muted dark:text-steel">{changeLabel}</span>
+          <span className="text-xs text-slate-500 dark:text-slate-400">{changeLabel}</span>
         </div>
       )}
     </div>

@@ -41,14 +41,14 @@ export default function PricingPage() {
               <Sparkles className="w-4 h-4 text-emerald-pro-400" />
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-light-text dark:text-white mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sora font-bold text-slate-900 dark:text-white mb-8">
               Invest in{" "}
-              <span className="headline-underline gradient-text-cyan-violet">
+              <span className="headline-underline text-gradient">
                 Predictable Growth
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-light-text-secondary/90 dark:text-silver/90 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-slate-700/90 dark:text-slate-200/90 max-w-2xl mx-auto leading-relaxed">
               Choose the plan that matches your growth goals. All plans include <span className="text-emerald-pro-600">setup</span>, <span className="text-emerald-pro-500">training</span>, and <span className="text-emerald-pro-400">ongoing optimization</span>.
             </p>
           </motion.div>
@@ -86,10 +86,10 @@ export default function PricingPage() {
 
                 {/* Header */}
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl lg:text-3xl font-sora font-bold text-light-text dark:text-white mb-2">
+                  <h3 className="text-2xl lg:text-3xl font-sora font-bold text-slate-900 dark:text-white mb-2">
                     {tier.name}
                   </h3>
-                  <p className="text-light-text-muted dark:text-steel text-sm">{tier.tagline}</p>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm">{tier.tagline}</p>
                 </div>
 
                 {/* Price - Enhanced */}
@@ -101,9 +101,9 @@ export default function PricingPage() {
                     )}>
                       {tier.price}
                     </span>
-                    <span className="text-light-text-muted dark:text-steel text-lg">{tier.priceSubtext}</span>
+                    <span className="text-slate-500 dark:text-slate-400 text-lg">{tier.priceSubtext}</span>
                   </div>
-                  <p className="text-light-text-muted dark:text-steel text-sm mt-3">{tier.description}</p>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm mt-3">{tier.description}</p>
                 </div>
 
                 {/* Features - Enhanced */}
@@ -131,7 +131,7 @@ export default function PricingPage() {
                       )}
                       <span className={cn(
                         "text-sm leading-relaxed",
-                        feature.included ? "text-light-text-secondary dark:text-silver group-hover:text-light-text dark:group-hover:text-white transition-colors" : "text-graphite"
+                        feature.included ? "text-slate-700 dark:text-slate-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors" : "text-graphite"
                       )}>
                         {feature.text}
                       </span>
@@ -148,7 +148,7 @@ export default function PricingPage() {
                     </button>
                   ) : (
                     <Button
-                      className="w-full font-semibold bg-transparent border border-emerald-pro-600/30 hover:border-emerald-pro-600/60 hover:bg-emerald-pro-600/10 text-light-text dark:text-white hover:text-emerald-pro-600 transition-all py-6"
+                      className="w-full font-semibold bg-transparent border border-emerald-pro-600/30 hover:border-emerald-pro-600/60 hover:bg-emerald-pro-600/10 text-slate-900 dark:text-white hover:text-emerald-pro-600 transition-all py-6"
                     >
                       {tier.cta}
                       <ArrowRight className="ml-2 h-4 w-4" />
@@ -183,10 +183,10 @@ export default function PricingPage() {
             >
               <Sparkles className="w-8 h-8 text-emerald-pro-500" />
             </motion.div>
-            <h3 className="text-2xl lg:text-3xl font-sora font-bold text-light-text dark:text-white mb-4">
+            <h3 className="text-2xl lg:text-3xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Not sure which plan is right?
             </h3>
-            <p className="text-light-text-secondary dark:text-silver text-lg mb-8 max-w-xl mx-auto">
+            <p className="text-slate-700 dark:text-slate-200 text-lg mb-8 max-w-xl mx-auto">
               Book a call with our team and we&apos;ll help you determine the best fit based on your goals, target market, and current pipeline.
             </p>
             <button className="cta-magnetic">
@@ -207,9 +207,9 @@ export default function PricingPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-2xl mx-auto mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 dark:text-white mb-6">
               Pricing{" "}
-              <span className="headline-underline gradient-text-cyan-violet">
+              <span className="headline-underline text-gradient">
                 FAQ
               </span>
             </h2>
@@ -236,14 +236,14 @@ export default function PricingPage() {
                   >
                     <Accordion.Header>
                       <Accordion.Trigger className="flex w-full items-center justify-between px-6 py-6 text-left hover:bg-emerald-pro-600/5 transition-colors">
-                        <span className="text-light-text dark:text-white font-medium pr-4 text-lg">{faq.question}</span>
+                        <span className="text-slate-900 dark:text-white font-medium pr-4 text-lg">{faq.question}</span>
                         <div className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-pro-600/10 border border-emerald-pro-600/20 flex items-center justify-center group-hover:bg-emerald-pro-600/20 transition-colors">
                           <ChevronDown className="h-4 w-4 text-emerald-pro-600 transition-transform duration-300 group-data-[state=open]:rotate-180" />
                         </div>
                       </Accordion.Trigger>
                     </Accordion.Header>
                     <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                      <div className="px-6 pb-6 text-light-text-secondary dark:text-silver leading-relaxed border-t border-border-default dark:border-graphite/30 pt-4">
+                      <div className="px-6 pb-6 text-slate-700 dark:text-slate-200 leading-relaxed border-t border-border-default dark:border-graphite/30 pt-4">
                         {faq.answer}
                       </div>
                     </Accordion.Content>

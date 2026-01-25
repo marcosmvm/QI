@@ -17,13 +17,13 @@ const buttonVariants = cva(
         default:
           "bg-emerald-pro-600 text-white dark:bg-xgrowth-500 dark:text-green-950 hover:shadow-glow-cyan hover:-translate-y-0.5 active:translate-y-0",
         destructive:
-          "bg-alert-red text-light-text dark:text-white hover:bg-alert-red/90",
+          "bg-alert-red text-slate-900 dark:text-white hover:bg-alert-red/90",
         outline:
           "border border-emerald-pro-600 text-emerald-pro-600 bg-transparent hover:bg-emerald-pro-600/10 hover:shadow-glow-cyan-sm",
         secondary:
-          "bg-light-bg-secondary dark:bg-graphite text-light-text-secondary dark:text-silver hover:bg-emerald-pro-600/10 dark:hover:bg-slate hover:text-light-text dark:hover:text-white",
+          "bg-light-bg-secondary dark:bg-graphite text-slate-700 dark:text-slate-200 hover:bg-emerald-pro-600/10 dark:hover:bg-slate hover:text-slate-900 dark:hover:text-white",
         ghost:
-          "text-light-text-muted dark:text-steel hover:bg-light-bg-secondary dark:hover:bg-graphite/50 hover:text-light-text dark:hover:text-white",
+          "text-slate-500 dark:text-slate-400 hover:bg-light-bg-secondary dark:hover:bg-graphite/50 hover:text-slate-900 dark:hover:text-white",
         link:
           "text-emerald-pro-600 underline-offset-4 hover:underline",
         // Premium glow variant - pulsing glow effect
@@ -37,7 +37,7 @@ const buttonVariants = cva(
           "bg-emerald-pro-500 text-white dark:bg-xgrowth-400 dark:text-green-950 hover:shadow-glow-cyan-lg hover:-translate-y-0.5 active:translate-y-0",
         // Glass variant - glassmorphism button
         glass:
-          "bg-light-bg-secondary dark:bg-midnight-blue/60 text-light-text dark:text-white border border-emerald-pro-600/20 backdrop-blur-sm hover:bg-emerald-pro-600/5 dark:hover:bg-midnight-blue/80 hover:border-emerald-pro-600/40 hover:shadow-glow-cyan-sm",
+          "bg-light-bg-secondary dark:bg-midnight-blue/60 text-slate-900 dark:text-white border border-emerald-pro-600/20 backdrop-blur-sm hover:bg-emerald-pro-600/5 dark:hover:bg-midnight-blue/80 hover:border-emerald-pro-600/40 hover:shadow-glow-cyan-sm",
       },
       size: {
         default: "h-11 px-6 py-3",

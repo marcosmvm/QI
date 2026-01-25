@@ -153,22 +153,22 @@ export default function NewCampaignPage() {
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-2">
+        <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-2">
           <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
           <span>/</span>
           <Link href="/dashboard/campaigns" className="hover:text-emerald-pro-600 transition-colors">Campaigns</Link>
           <span>/</span>
           <span className="text-emerald-pro-600">New</span>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">AI-powered campaign builder</h1>
-        <p className="text-light-text-muted dark:text-steel mt-1">Build intelligent outreach sequences with AI Architect</p>
+        <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">AI-powered campaign builder</h1>
+        <p className="text-slate-500 dark:text-slate-400 mt-1">Build intelligent outreach sequences with AI Architect</p>
       </motion.div>
 
       <div>
         {/* Back link */}
         <Link
           href="/dashboard/campaigns"
-          className="inline-flex items-center gap-2 text-light-text-muted dark:text-steel hover:text-emerald-pro-600 transition-colors mb-6"
+          className="inline-flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-emerald-pro-600 transition-colors mb-6"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to campaigns
@@ -196,7 +196,7 @@ export default function NewCampaignPage() {
                         ? "bg-emerald-pro-600 dark:bg-xgrowth-500 text-white dark:text-green-950"
                         : currentStep > step.id
                         ? "bg-emerald-pro-400 dark:bg-xgrowth-400 text-white dark:text-green-950"
-                        : "bg-graphite text-light-text-muted dark:text-steel"
+                        : "bg-graphite text-slate-500 dark:text-slate-400"
                     )}
                   >
                     {currentStep > step.id ? (
@@ -212,7 +212,7 @@ export default function NewCampaignPage() {
                         ? "text-emerald-pro-600"
                         : currentStep > step.id
                         ? "text-emerald-pro-400"
-                        : "text-light-text-muted dark:text-steel"
+                        : "text-slate-500 dark:text-slate-400"
                     )}
                   >
                     {step.name}
@@ -240,10 +240,10 @@ export default function NewCampaignPage() {
                   <Target className="h-6 w-6 text-emerald-pro-600" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-sora font-semibold text-light-text dark:text-white">
+                  <h2 className="text-xl font-sora font-semibold text-slate-900 dark:text-white">
                     Campaign Details
                   </h2>
-                  <p className="text-light-text-muted dark:text-steel">
+                  <p className="text-slate-500 dark:text-slate-400">
                     Tell us about your target audience and goals
                   </p>
                 </div>
@@ -251,7 +251,7 @@ export default function NewCampaignPage() {
 
               <div className="space-y-6">
                 <div>
-                  <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">
                     Campaign Name
                   </label>
                   <input
@@ -259,13 +259,13 @@ export default function NewCampaignPage() {
                     value={formData.campaignName}
                     onChange={handleChange}
                     placeholder="e.g., Q1 Enterprise Outreach"
-                    className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                    className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-500 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                   />
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">
                       <Building className="inline h-4 w-4 mr-1" />
                       Target Industry
                     </label>
@@ -273,7 +273,7 @@ export default function NewCampaignPage() {
                       name="targetIndustry"
                       value={formData.targetIndustry}
                       onChange={handleChange}
-                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                     >
                       <option value="">Select industry</option>
                       <option value="Technology">Technology</option>
@@ -285,7 +285,7 @@ export default function NewCampaignPage() {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">
                       <Users className="inline h-4 w-4 mr-1" />
                       Target Role
                     </label>
@@ -294,13 +294,13 @@ export default function NewCampaignPage() {
                       value={formData.targetRole}
                       onChange={handleChange}
                       placeholder="e.g., VP of Sales, CRO"
-                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-500 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">
                     <Zap className="inline h-4 w-4 mr-1" />
                     Value Proposition
                   </label>
@@ -310,12 +310,12 @@ export default function NewCampaignPage() {
                     onChange={handleChange}
                     placeholder="What unique value do you offer? What problem do you solve?"
                     rows={3}
-                    className="w-full rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 py-3 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 resize-none"
+                    className="w-full rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-500 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 resize-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">
                     <MessageSquare className="inline h-4 w-4 mr-1" />
                     Call to Action
                   </label>
@@ -324,7 +324,7 @@ export default function NewCampaignPage() {
                     value={formData.callToAction}
                     onChange={handleChange}
                     placeholder="e.g., Would you be open to a quick 15-minute call?"
-                    className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                    className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-500 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                   />
                 </div>
 
@@ -354,10 +354,10 @@ export default function NewCampaignPage() {
                   <Users className="h-6 w-6 text-emerald-pro-400" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-sora font-semibold text-light-text dark:text-white">
+                  <h2 className="text-xl font-sora font-semibold text-slate-900 dark:text-white">
                     Select Lead Lists
                   </h2>
-                  <p className="text-light-text-muted dark:text-steel">
+                  <p className="text-slate-500 dark:text-slate-400">
                     Choose which leads to include in this campaign
                   </p>
                 </div>
@@ -367,18 +367,18 @@ export default function NewCampaignPage() {
               <div className="grid grid-cols-3 gap-4 mb-6">
                 <button className="p-4 rounded-lg border border-emerald-pro-600/30 bg-emerald-pro-600/10 text-center">
                   <Database className="h-6 w-6 text-emerald-pro-600 mx-auto mb-2" />
-                  <p className="text-sm font-medium text-light-text dark:text-white">Existing Lists</p>
-                  <p className="text-xs text-light-text-muted dark:text-steel">Select from saved lists</p>
+                  <p className="text-sm font-medium text-slate-900 dark:text-white">Existing Lists</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">Select from saved lists</p>
                 </button>
                 <button className="p-4 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space/50 text-center hover:border-emerald-pro-600/30 transition-colors">
-                  <Upload className="h-6 w-6 text-light-text-muted dark:text-steel mx-auto mb-2" />
-                  <p className="text-sm font-medium text-light-text-secondary dark:text-silver">Upload CSV</p>
-                  <p className="text-xs text-light-text-muted dark:text-steel">Import new contacts</p>
+                  <Upload className="h-6 w-6 text-slate-500 dark:text-slate-400 mx-auto mb-2" />
+                  <p className="text-sm font-medium text-slate-700 dark:text-slate-200">Upload CSV</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">Import new contacts</p>
                 </button>
                 <button className="p-4 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space/50 text-center hover:border-emerald-pro-600/30 transition-colors">
-                  <Search className="h-6 w-6 text-light-text-muted dark:text-steel mx-auto mb-2" />
-                  <p className="text-sm font-medium text-light-text-secondary dark:text-silver">Build List</p>
-                  <p className="text-xs text-light-text-muted dark:text-steel">Create from filters</p>
+                  <Search className="h-6 w-6 text-slate-500 dark:text-slate-400 mx-auto mb-2" />
+                  <p className="text-sm font-medium text-slate-700 dark:text-slate-200">Build List</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">Create from filters</p>
                 </button>
               </div>
 
@@ -409,8 +409,8 @@ export default function NewCampaignPage() {
                         )}
                       </div>
                       <div>
-                        <p className="font-medium text-light-text dark:text-white">{list.name}</p>
-                        <div className="flex items-center gap-3 text-sm text-light-text-muted dark:text-steel">
+                        <p className="font-medium text-slate-900 dark:text-white">{list.name}</p>
+                        <div className="flex items-center gap-3 text-sm text-slate-500 dark:text-slate-400">
                           <span>{list.industry}</span>
                           <span>•</span>
                           <span>Updated {list.lastUpdated}</span>
@@ -418,8 +418,8 @@ export default function NewCampaignPage() {
                       </div>
                     </div>
                     <div className="text-right">
-                      <p className="text-lg font-bold text-light-text dark:text-white">{list.count.toLocaleString()}</p>
-                      <p className="text-xs text-light-text-muted dark:text-steel">contacts</p>
+                      <p className="text-lg font-bold text-slate-900 dark:text-white">{list.count.toLocaleString()}</p>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">contacts</p>
                     </div>
                   </div>
                 ))}
@@ -430,13 +430,13 @@ export default function NewCampaignPage() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <Info className="h-5 w-5 text-emerald-pro-600" />
-                    <span className="text-light-text-secondary dark:text-silver">
+                    <span className="text-slate-700 dark:text-slate-200">
                       {selectedLeadLists.length} list{selectedLeadLists.length !== 1 ? "s" : ""} selected
                     </span>
                   </div>
                   <div className="text-right">
-                    <span className="text-2xl font-bold text-light-text dark:text-white">{totalSelectedLeads.toLocaleString()}</span>
-                    <span className="text-light-text-muted dark:text-steel ml-2">total contacts</span>
+                    <span className="text-2xl font-bold text-slate-900 dark:text-white">{totalSelectedLeads.toLocaleString()}</span>
+                    <span className="text-slate-500 dark:text-slate-400 ml-2">total contacts</span>
                   </div>
                 </div>
               </div>
@@ -465,10 +465,10 @@ export default function NewCampaignPage() {
                   <Sparkles className="h-6 w-6 text-emerald-pro-500" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-sora font-semibold text-light-text dark:text-white">
+                  <h2 className="text-xl font-sora font-semibold text-slate-900 dark:text-white">
                     AI Architect Engine
                   </h2>
-                  <p className="text-light-text-muted dark:text-steel">
+                  <p className="text-slate-500 dark:text-slate-400">
                     Let AI generate your email sequences
                   </p>
                 </div>
@@ -484,38 +484,38 @@ export default function NewCampaignPage() {
                         <Sparkles className="absolute inset-0 m-auto h-8 w-8 text-emerald-pro-500" />
                       </div>
                     </div>
-                    <p className="text-lg font-medium text-light-text dark:text-white">
+                    <p className="text-lg font-medium text-slate-900 dark:text-white">
                       AI Architect is crafting your campaign...
                     </p>
-                    <p className="text-light-text-muted dark:text-steel">
+                    <p className="text-slate-500 dark:text-slate-400">
                       Analyzing your inputs and generating personalized email sequences
                     </p>
                   </div>
                 ) : (
                   <div className="space-y-6">
                     <div className="rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space/50 p-6 text-left">
-                      <h3 className="font-medium text-light-text dark:text-white mb-4">Campaign Summary</h3>
+                      <h3 className="font-medium text-slate-900 dark:text-white mb-4">Campaign Summary</h3>
                       <div className="grid grid-cols-2 gap-4 text-sm">
                         <div>
-                          <p className="text-light-text-muted dark:text-steel">Campaign Name</p>
-                          <p className="text-light-text dark:text-white">{formData.campaignName}</p>
+                          <p className="text-slate-500 dark:text-slate-400">Campaign Name</p>
+                          <p className="text-slate-900 dark:text-white">{formData.campaignName}</p>
                         </div>
                         <div>
-                          <p className="text-light-text-muted dark:text-steel">Target Industry</p>
-                          <p className="text-light-text dark:text-white">{formData.targetIndustry}</p>
+                          <p className="text-slate-500 dark:text-slate-400">Target Industry</p>
+                          <p className="text-slate-900 dark:text-white">{formData.targetIndustry}</p>
                         </div>
                         <div>
-                          <p className="text-light-text-muted dark:text-steel">Target Role</p>
-                          <p className="text-light-text dark:text-white">{formData.targetRole}</p>
+                          <p className="text-slate-500 dark:text-slate-400">Target Role</p>
+                          <p className="text-slate-900 dark:text-white">{formData.targetRole}</p>
                         </div>
                         <div>
-                          <p className="text-light-text-muted dark:text-steel">Value Proposition</p>
-                          <p className="text-light-text dark:text-white truncate">{formData.valueProposition}</p>
+                          <p className="text-slate-500 dark:text-slate-400">Value Proposition</p>
+                          <p className="text-slate-900 dark:text-white truncate">{formData.valueProposition}</p>
                         </div>
                       </div>
                     </div>
 
-                    <p className="text-light-text-muted dark:text-steel">
+                    <p className="text-slate-500 dark:text-slate-400">
                       Click the button below to generate AI-powered email sequences
                       tailored to your campaign goals.
                     </p>
@@ -545,10 +545,10 @@ export default function NewCampaignPage() {
                     <CheckCircle className="h-6 w-6 text-emerald-pro-400" />
                   </div>
                   <div>
-                    <h2 className="text-xl font-sora font-semibold text-light-text dark:text-white">
+                    <h2 className="text-xl font-sora font-semibold text-slate-900 dark:text-white">
                       Review & Launch
                     </h2>
-                    <p className="text-light-text-muted dark:text-steel">
+                    <p className="text-slate-500 dark:text-slate-400">
                       Review your AI-generated email sequences
                     </p>
                   </div>
@@ -565,14 +565,14 @@ export default function NewCampaignPage() {
                           {seq.step}
                         </div>
                         <div>
-                          <p className="font-medium text-light-text dark:text-white">{seq.subject}</p>
-                          <p className="text-sm text-light-text-muted dark:text-steel">
+                          <p className="font-medium text-slate-900 dark:text-white">{seq.subject}</p>
+                          <p className="text-sm text-slate-500 dark:text-slate-400">
                             {seq.delay === 0 ? "Sent immediately" : `Sent after ${seq.delay} days`}
                           </p>
                         </div>
                       </div>
                       <div className="pl-11">
-                        <pre className="text-sm text-light-text-secondary dark:text-silver whitespace-pre-wrap font-sans">
+                        <pre className="text-sm text-slate-700 dark:text-slate-200 whitespace-pre-wrap font-sans">
                           {seq.body}
                         </pre>
                       </div>

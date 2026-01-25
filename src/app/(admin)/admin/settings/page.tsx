@@ -85,13 +85,13 @@ export default function SettingsPage() {
     <motion.div initial="hidden" animate="visible" variants={containerVariants} className="min-h-screen p-8">
       {/* Header */}
       <motion.div variants={itemVariants} className="mb-8 max-w-4xl">
-        <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-2">
+        <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-2">
           <span>Admin</span>
           <span className="text-graphite">/</span>
           <span className="text-emerald-pro-600">Settings</span>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">Settings</h1>
-        <p className="text-light-text-muted dark:text-steel mt-1">
+        <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">Settings</h1>
+        <p className="text-slate-500 dark:text-slate-400 mt-1">
           Configure your admin portal and integrations
         </p>
       </motion.div>
@@ -246,10 +246,10 @@ export default function SettingsPage() {
           <div className="space-y-4">
             <div className="flex items-center justify-between p-4 bg-white dark:bg-deep-space/30 rounded-lg border border-border-default dark:border-graphite/30">
               <div>
-                <p className="text-sm font-medium text-light-text dark:text-white">
+                <p className="text-sm font-medium text-slate-900 dark:text-white">
                   Two-Factor Authentication
                 </p>
-                <p className="text-xs text-light-text-muted dark:text-steel mt-0.5">
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                   Managed through Supabase Auth
                 </p>
               </div>
@@ -266,12 +266,12 @@ export default function SettingsPage() {
 
             <div className="flex items-center justify-between p-4 bg-white dark:bg-deep-space/30 rounded-lg border border-border-default dark:border-graphite/30">
               <div>
-                <p className="text-sm font-medium text-light-text dark:text-white">Session Timeout</p>
-                <p className="text-xs text-light-text-muted dark:text-steel mt-0.5">
+                <p className="text-sm font-medium text-slate-900 dark:text-white">Session Timeout</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                   Sessions expire after 7 days of inactivity
                 </p>
               </div>
-              <span className="text-sm text-light-text-secondary dark:text-silver">7 days</span>
+              <span className="text-sm text-slate-700 dark:text-slate-200">7 days</span>
             </div>
           </div>
         </SettingsSection>
@@ -281,17 +281,17 @@ export default function SettingsPage() {
           <h3 className="text-lg font-sora font-semibold text-red-400 mb-2">
             Danger Zone
           </h3>
-          <p className="text-sm text-light-text-muted dark:text-steel mb-4">
+          <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
             Irreversible actions that affect your entire organization
           </p>
 
           <div className="space-y-3">
             <div className="flex items-center justify-between p-4 bg-red-500/10 rounded-lg border border-red-500/20">
               <div>
-                <p className="text-sm font-medium text-light-text dark:text-white">
+                <p className="text-sm font-medium text-slate-900 dark:text-white">
                   Export All Data
                 </p>
-                <p className="text-xs text-light-text-muted dark:text-steel mt-0.5">
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                   Download all organization data as JSON
                 </p>
               </div>
@@ -302,10 +302,10 @@ export default function SettingsPage() {
 
             <div className="flex items-center justify-between p-4 bg-red-500/10 rounded-lg border border-red-500/20">
               <div>
-                <p className="text-sm font-medium text-light-text dark:text-white">
+                <p className="text-sm font-medium text-slate-900 dark:text-white">
                   Delete All Test Data
                 </p>
-                <p className="text-xs text-light-text-muted dark:text-steel mt-0.5">
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                   Remove all campaigns and leads marked as test
                 </p>
               </div>
@@ -338,8 +338,8 @@ function SettingsSection({
           <Icon className="h-5 w-5 text-emerald-pro-600" />
         </div>
         <div>
-          <h2 className="text-lg font-sora font-semibold text-light-text dark:text-white">{title}</h2>
-          <p className="text-sm text-light-text-muted dark:text-steel mt-0.5">{description}</p>
+          <h2 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">{title}</h2>
+          <p className="text-sm text-slate-500 dark:text-slate-400 mt-0.5">{description}</p>
         </div>
       </div>
       {children}
@@ -358,12 +358,12 @@ function FormField({
 }) {
   return (
     <div>
-      <label className="block text-xs text-light-text-muted dark:text-steel mb-1.5">{label}</label>
+      <label className="block text-xs text-slate-500 dark:text-slate-400 mb-1.5">{label}</label>
       <input
         type="text"
         value={value}
         disabled={disabled}
-        className="w-full h-10 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-3 text-sm text-light-text dark:text-white disabled:opacity-60 focus:border-emerald-pro-600/50 focus:outline-none"
+        className="w-full h-10 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-3 text-sm text-slate-900 dark:text-white disabled:opacity-60 focus:border-emerald-pro-600/50 focus:outline-none"
       />
     </div>
   );
@@ -397,8 +397,8 @@ function IntegrationCard({
           )}
         </div>
         <div>
-          <p className="text-sm font-medium text-light-text dark:text-white">{name}</p>
-          <p className="text-xs text-light-text-muted dark:text-steel">{description}</p>
+          <p className="text-sm font-medium text-slate-900 dark:text-white">{name}</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400">{description}</p>
         </div>
       </div>
       <div className="text-right">
@@ -409,7 +409,7 @@ function IntegrationCard({
         >
           {configured ? "Connected" : "Not Configured"}
         </p>
-        <p className="text-xs text-light-text-muted dark:text-steel mt-0.5 max-w-[200px] truncate">
+        <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 max-w-[200px] truncate">
           {details}
         </p>
       </div>
@@ -429,8 +429,8 @@ function NotificationToggle({
   return (
     <div className="flex items-center justify-between p-4 bg-white dark:bg-deep-space/30 rounded-lg border border-border-default dark:border-graphite/30">
       <div>
-        <p className="text-sm font-medium text-light-text dark:text-white">{label}</p>
-        <p className="text-xs text-light-text-muted dark:text-steel mt-0.5">{description}</p>
+        <p className="text-sm font-medium text-slate-900 dark:text-white">{label}</p>
+        <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{description}</p>
       </div>
       <label className="relative inline-flex items-center cursor-pointer">
         <input
@@ -461,7 +461,7 @@ function ThresholdSetting({
 }) {
   return (
     <div className="p-4 bg-white dark:bg-deep-space/30 rounded-lg border border-border-default dark:border-graphite/30">
-      <p className="text-sm font-medium text-light-text dark:text-white mb-3">{label}</p>
+      <p className="text-sm font-medium text-slate-900 dark:text-white mb-3">{label}</p>
       <div className="space-y-2">
         <div className="flex items-center justify-between">
           <span className="text-xs text-emerald-pro-400">Target</span>

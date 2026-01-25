@@ -254,13 +254,13 @@ export default function AppointmentsPage() {
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-2">
+        <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-2">
           <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
           <span>/</span>
           <span className="text-emerald-pro-600">Appointments</span>
         </div>
-        <h1 className="text-2xl font-sora font-bold text-light-text dark:text-white">Appointments</h1>
-        <p className="text-light-text-muted dark:text-steel mt-1">Meeting scheduling and calendar management</p>
+        <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">Appointments</h1>
+        <p className="text-slate-500 dark:text-slate-400 mt-1">Meeting scheduling and calendar management</p>
       </motion.div>
 
       <div className="space-y-6">
@@ -307,11 +307,11 @@ export default function AppointmentsPage() {
         {/* Actions Bar */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white">
+            <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
               <Filter className="h-4 w-4 mr-2" />
               Filter
             </Button>
-            <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white">
+            <Button variant="outline" size="sm" className="border-emerald-pro-600/20 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
               <RefreshCw className="h-4 w-4 mr-2" />
               Sync Calendar
             </Button>
@@ -326,7 +326,7 @@ export default function AppointmentsPage() {
                   "p-2 rounded-md transition-all",
                   viewMode === "calendar"
                     ? "bg-emerald-pro-600/10 text-emerald-pro-600"
-                    : "text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white"
+                    : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                 )}
               >
                 <LayoutGrid className="h-4 w-4" />
@@ -337,7 +337,7 @@ export default function AppointmentsPage() {
                   "p-2 rounded-md transition-all",
                   viewMode === "list"
                     ? "bg-emerald-pro-600/10 text-emerald-pro-600"
-                    : "text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white"
+                    : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                 )}
               >
                 <List className="h-4 w-4" />
@@ -361,25 +361,25 @@ export default function AppointmentsPage() {
             <div className="col-span-2 glass-premium p-6">
               {/* Calendar Header */}
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-xl font-sora font-bold text-light-text dark:text-white">
+                <h3 className="text-xl font-sora font-bold text-slate-900 dark:text-white">
                   {months[currentDate.getMonth()]} {currentDate.getFullYear()}
                 </h3>
                 <div className="flex items-center gap-2">
                   <button
                     onClick={previousMonth}
-                    className="p-2 rounded-lg border border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-emerald-pro-600/10 transition-all"
+                    className="p-2 rounded-lg border border-emerald-pro-600/20 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/10 transition-all"
                   >
                     <ChevronLeft className="h-4 w-4" />
                   </button>
                   <button
                     onClick={() => setCurrentDate(new Date(2026, 0, 20))}
-                    className="px-3 py-2 rounded-lg border border-emerald-pro-600/20 text-sm text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-emerald-pro-600/10 transition-all"
+                    className="px-3 py-2 rounded-lg border border-emerald-pro-600/20 text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/10 transition-all"
                   >
                     Today
                   </button>
                   <button
                     onClick={nextMonth}
-                    className="p-2 rounded-lg border border-emerald-pro-600/20 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-emerald-pro-600/10 transition-all"
+                    className="p-2 rounded-lg border border-emerald-pro-600/20 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/10 transition-all"
                   >
                     <ChevronRight className="h-4 w-4" />
                   </button>
@@ -389,7 +389,7 @@ export default function AppointmentsPage() {
               {/* Week Days */}
               <div className="grid grid-cols-7 gap-2 mb-2">
                 {weekDays.map((day) => (
-                  <div key={day} className="text-center text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider py-2">
+                  <div key={day} className="text-center text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider py-2">
                     {day}
                   </div>
                 ))}
@@ -417,7 +417,7 @@ export default function AppointmentsPage() {
                     >
                       <span className={cn(
                         "text-sm font-medium",
-                        day.currentMonth ? "text-light-text dark:text-white" : "text-light-text-muted dark:text-steel",
+                        day.currentMonth ? "text-slate-900 dark:text-white" : "text-slate-500 dark:text-slate-400",
                         isToday && "text-emerald-pro-600"
                       )}>
                         {day.date}
@@ -440,7 +440,7 @@ export default function AppointmentsPage() {
                             );
                           })}
                           {appointments.length > 2 && (
-                            <div className="text-[10px] text-light-text-muted dark:text-steel px-1">
+                            <div className="text-[10px] text-slate-500 dark:text-slate-400 px-1">
                               +{appointments.length - 2} more
                             </div>
                           )}
@@ -455,7 +455,7 @@ export default function AppointmentsPage() {
             {/* Selected Day Details */}
             <div className="space-y-4">
               <div className="glass-premium p-5">
-                <h3 className="font-semibold text-light-text dark:text-white mb-4">
+                <h3 className="font-semibold text-slate-900 dark:text-white mb-4">
                   {selectedDate
                     ? new Date(selectedDate + "T00:00:00").toLocaleDateString("en-US", {
                         weekday: "long",
@@ -467,8 +467,8 @@ export default function AppointmentsPage() {
 
                 {selectedDateAppointments.length === 0 ? (
                   <div className="text-center py-8">
-                    <Calendar className="h-12 w-12 text-light-text-muted dark:text-steel/30 mx-auto mb-3" />
-                    <p className="text-sm text-light-text-muted dark:text-steel">No appointments scheduled</p>
+                    <Calendar className="h-12 w-12 text-slate-500 dark:text-slate-400/30 mx-auto mb-3" />
+                    <p className="text-sm text-slate-500 dark:text-slate-400">No appointments scheduled</p>
                     <Button
                       size="sm"
                       className="mt-4 bg-emerald-pro-600/10 text-emerald-pro-600 hover:bg-emerald-pro-600/20 border border-emerald-pro-600/20"
@@ -498,8 +498,8 @@ export default function AppointmentsPage() {
                                 <TypeIcon className={cn("h-4 w-4", status.text)} />
                               </div>
                               <div>
-                                <p className="text-sm font-medium text-light-text dark:text-white">{apt.time}</p>
-                                <p className="text-xs text-light-text-muted dark:text-steel">{apt.duration}</p>
+                                <p className="text-sm font-medium text-slate-900 dark:text-white">{apt.time}</p>
+                                <p className="text-xs text-slate-500 dark:text-slate-400">{apt.duration}</p>
                               </div>
                             </div>
                             <span className={cn(
@@ -512,15 +512,15 @@ export default function AppointmentsPage() {
                             </span>
                           </div>
 
-                          <h4 className="font-medium text-light-text dark:text-white mb-2">{apt.title}</h4>
+                          <h4 className="font-medium text-slate-900 dark:text-white mb-2">{apt.title}</h4>
 
                           <div className="flex items-center gap-2 mb-3">
-                            <div className="h-6 w-6 rounded-md bg-gradient-to-br from-emerald-pro-500 to-violet-dark flex items-center justify-center text-[10px] font-bold text-light-text dark:text-white">
+                            <div className="h-6 w-6 rounded-md bg-gradient-to-br from-emerald-pro-500 to-violet-dark flex items-center justify-center text-[10px] font-bold text-slate-900 dark:text-white">
                               {apt.lead.name.split(" ").map(n => n[0]).join("")}
                             </div>
                             <div>
-                              <p className="text-xs text-light-text dark:text-white">{apt.lead.name}</p>
-                              <p className="text-[10px] text-light-text-muted dark:text-steel">{apt.lead.company}</p>
+                              <p className="text-xs text-slate-900 dark:text-white">{apt.lead.name}</p>
+                              <p className="text-[10px] text-slate-500 dark:text-slate-400">{apt.lead.company}</p>
                             </div>
                           </div>
 
@@ -536,10 +536,10 @@ export default function AppointmentsPage() {
                                 Join Meeting
                               </a>
                             )}
-                            <button className="p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
+                            <button className="p-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                               <Edit3 className="h-4 w-4" />
                             </button>
-                            <button className="p-2 text-light-text-muted dark:text-steel hover:text-rose hover:bg-rose/10 rounded-lg transition-colors">
+                            <button className="p-2 text-slate-500 dark:text-slate-400 hover:text-rose hover:bg-rose/10 rounded-lg transition-colors">
                               <Trash2 className="h-4 w-4" />
                             </button>
                           </div>
@@ -552,7 +552,7 @@ export default function AppointmentsPage() {
 
               {/* Upcoming Appointments Quick View */}
               <div className="glass-premium p-5">
-                <h3 className="font-semibold text-light-text dark:text-white mb-4">Upcoming This Week</h3>
+                <h3 className="font-semibold text-slate-900 dark:text-white mb-4">Upcoming This Week</h3>
                 <div className="space-y-2">
                   {appointmentsData.slice(0, 4).map((apt) => {
                     const status = statusColors[apt.status as keyof typeof statusColors];
@@ -563,8 +563,8 @@ export default function AppointmentsPage() {
                       >
                         <div className={cn("h-2 w-2 rounded-full", status.dot)} />
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm text-light-text dark:text-white truncate">{apt.lead.name}</p>
-                          <p className="text-xs text-light-text-muted dark:text-steel">{apt.date} • {apt.time}</p>
+                          <p className="text-sm text-slate-900 dark:text-white truncate">{apt.lead.name}</p>
+                          <p className="text-xs text-slate-500 dark:text-slate-400">{apt.date} • {apt.time}</p>
                         </div>
                       </div>
                     );
@@ -582,13 +582,13 @@ export default function AppointmentsPage() {
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-emerald-pro-600/10">
-                    <th className="text-left text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">Meeting</th>
-                    <th className="text-left text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-4 py-4">Lead</th>
-                    <th className="text-left text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-4 py-4">Date & Time</th>
-                    <th className="text-left text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-4 py-4">Type</th>
-                    <th className="text-left text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-4 py-4">Status</th>
-                    <th className="text-left text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-4 py-4">Campaign</th>
-                    <th className="text-right text-xs font-semibold text-light-text-muted dark:text-steel uppercase tracking-wider px-6 py-4">Actions</th>
+                    <th className="text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider px-6 py-4">Meeting</th>
+                    <th className="text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider px-4 py-4">Lead</th>
+                    <th className="text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider px-4 py-4">Date & Time</th>
+                    <th className="text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider px-4 py-4">Type</th>
+                    <th className="text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider px-4 py-4">Status</th>
+                    <th className="text-left text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider px-4 py-4">Campaign</th>
+                    <th className="text-right text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider px-6 py-4">Actions</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-emerald-pro-600/5">
@@ -599,33 +599,33 @@ export default function AppointmentsPage() {
                     return (
                       <tr key={apt.id} className="hover:bg-emerald-pro-600/5 transition-colors">
                         <td className="px-6 py-4">
-                          <p className="font-medium text-light-text dark:text-white">{apt.title}</p>
-                          <p className="text-xs text-light-text-muted dark:text-steel mt-0.5">{apt.duration}</p>
+                          <p className="font-medium text-slate-900 dark:text-white">{apt.title}</p>
+                          <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{apt.duration}</p>
                         </td>
                         <td className="px-4 py-4">
                           <div className="flex items-center gap-3">
-                            <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-emerald-pro-500 to-violet-dark flex items-center justify-center text-xs font-bold text-light-text dark:text-white">
+                            <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-emerald-pro-500 to-violet-dark flex items-center justify-center text-xs font-bold text-slate-900 dark:text-white">
                               {apt.lead.name.split(" ").map(n => n[0]).join("")}
                             </div>
                             <div>
                               <Link
                                 href={`/dashboard/leads/${apt.lead.id}`}
-                                className="text-sm font-medium text-light-text dark:text-white hover:text-emerald-pro-600 transition-colors"
+                                className="text-sm font-medium text-slate-900 dark:text-white hover:text-emerald-pro-600 transition-colors"
                               >
                                 {apt.lead.name}
                               </Link>
-                              <p className="text-xs text-light-text-muted dark:text-steel">{apt.lead.company}</p>
+                              <p className="text-xs text-slate-500 dark:text-slate-400">{apt.lead.company}</p>
                             </div>
                           </div>
                         </td>
                         <td className="px-4 py-4">
-                          <p className="text-sm text-light-text dark:text-white">{apt.date}</p>
-                          <p className="text-xs text-light-text-muted dark:text-steel">{apt.time}</p>
+                          <p className="text-sm text-slate-900 dark:text-white">{apt.date}</p>
+                          <p className="text-xs text-slate-500 dark:text-slate-400">{apt.time}</p>
                         </td>
                         <td className="px-4 py-4">
                           <div className="flex items-center gap-2">
-                            <TypeIcon className="h-4 w-4 text-light-text-muted dark:text-steel" />
-                            <span className="text-sm text-light-text dark:text-white capitalize">{apt.type}</span>
+                            <TypeIcon className="h-4 w-4 text-slate-500 dark:text-slate-400" />
+                            <span className="text-sm text-slate-900 dark:text-white capitalize">{apt.type}</span>
                           </div>
                         </td>
                         <td className="px-4 py-4">
@@ -640,7 +640,7 @@ export default function AppointmentsPage() {
                           </span>
                         </td>
                         <td className="px-4 py-4">
-                          <p className="text-sm text-light-text dark:text-white">{apt.campaign}</p>
+                          <p className="text-sm text-slate-900 dark:text-white">{apt.campaign}</p>
                         </td>
                         <td className="px-6 py-4">
                           <div className="flex items-center justify-end gap-1">
@@ -654,13 +654,13 @@ export default function AppointmentsPage() {
                                 <Link2 className="h-4 w-4" />
                               </a>
                             )}
-                            <button className="p-2 text-light-text-muted dark:text-steel hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
+                            <button className="p-2 text-slate-500 dark:text-slate-400 hover:text-emerald-pro-600 hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                               <Edit3 className="h-4 w-4" />
                             </button>
-                            <button className="p-2 text-light-text-muted dark:text-steel hover:text-rose hover:bg-rose/10 rounded-lg transition-colors">
+                            <button className="p-2 text-slate-500 dark:text-slate-400 hover:text-rose hover:bg-rose/10 rounded-lg transition-colors">
                               <Trash2 className="h-4 w-4" />
                             </button>
-                            <button className="p-2 text-light-text-muted dark:text-steel hover:text-light-text dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
+                            <button className="p-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-emerald-pro-600/10 rounded-lg transition-colors">
                               <MoreHorizontal className="h-4 w-4" />
                             </button>
                           </div>

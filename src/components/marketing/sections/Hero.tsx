@@ -85,7 +85,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-figtree dark:font-sora font-bold text-light-text dark:text-white leading-[1.1] mb-8">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-figtree dark:font-sora font-bold text-slate-900 dark:text-white leading-[1.1] mb-8">
               <span className="block">Book 3x More Meetings.</span>
               <span className="headline-underline text-gradient block mt-2">
                 Zero Spam Folders.
@@ -98,7 +98,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-xl md:text-2xl text-light-text-secondary dark:text-silver max-w-3xl mx-auto mb-8 leading-relaxed"
+            className="text-xl md:text-2xl text-slate-700 dark:text-slate-200 max-w-3xl mx-auto mb-8 leading-relaxed"
           >
             Our <span className="text-emerald-pro-600 dark:text-xgrowth-500 font-semibold">5 proprietary AI engines</span> handle compliance, personalization, and optimization—so your cold emails actually get read.
           </motion.p>
@@ -111,7 +111,7 @@ export function Hero() {
             className="flex flex-wrap justify-center gap-6 mb-12"
           >
             {valueProps.map((prop, i) => (
-              <div key={i} className="flex items-center gap-2 text-light-text-secondary dark:text-silver">
+              <div key={i} className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
                 <CheckCircle className="h-4 w-4 text-emerald-pro-500 dark:text-xgrowth-400" />
                 <span className="text-sm">{prop}</span>
               </div>
@@ -135,7 +135,7 @@ export function Hero() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-emerald-pro-600/30 dark:border-xgrowth-500/30 hover:border-emerald-pro-600/60 dark:hover:border-xgrowth-500/60 text-light-text dark:text-white hover:text-emerald-pro-600 dark:hover:text-xgrowth-500 bg-emerald-pro-600/5 dark:bg-xgrowth-500/5 hover:bg-emerald-pro-600/10 dark:hover:bg-xgrowth-500/10 px-8 py-6 text-lg transition-all backdrop-blur-sm"
+                className="border-emerald-pro-600/30 dark:border-xgrowth-500/30 hover:border-emerald-pro-600/60 dark:hover:border-xgrowth-500/60 text-slate-900 dark:text-white hover:text-emerald-pro-600 dark:hover:text-xgrowth-500 bg-emerald-pro-600/5 dark:bg-xgrowth-500/5 hover:bg-emerald-pro-600/10 dark:hover:bg-xgrowth-500/10 px-8 py-6 text-lg transition-all backdrop-blur-sm"
               >
                 See How It Works
               </Button>
@@ -173,7 +173,7 @@ export function Hero() {
                 <span>Check your inbox for the B2B Cold Email Playbook!</span>
               </div>
             )}
-            <p className="text-light-text-muted dark:text-steel text-xs mt-2">Get our free B2B Cold Email Playbook. No spam, unsubscribe anytime.</p>
+            <p className="text-slate-500 dark:text-slate-400 text-xs mt-2">Get our free B2B Cold Email Playbook. No spam, unsubscribe anytime.</p>
           </motion.div>
 
           {/* Hero Stats Grid */}
@@ -193,7 +193,7 @@ export function Hero() {
               >
                 <stat.icon className="w-6 h-6 text-emerald-pro-600 dark:text-xgrowth-500 mx-auto mb-2 group-hover:scale-110 transition-transform" />
                 <div className="stat-number text-2xl md:text-3xl">{stat.value}</div>
-                <div className="text-light-text-muted dark:text-steel text-sm mt-1">{stat.label}</div>
+                <div className="text-slate-500 dark:text-slate-400 text-sm mt-1">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -205,14 +205,14 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.7 }}
             className="pt-8 border-t border-emerald-pro-600/10 dark:border-xgrowth-500/10"
           >
-            <p className="text-light-text-muted dark:text-steel text-sm mb-4">Built for B2B companies in</p>
+            <p className="text-slate-500 dark:text-slate-400 text-sm mb-4">Built for B2B companies in</p>
             <div className="flex flex-wrap justify-center items-center gap-3">
               {["SaaS", "B2B Tech", "Healthcare", "Finance", "Professional Services"].map((industry) => (
                 <motion.span
                   key={industry}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="px-4 py-2 text-sm text-light-text-muted dark:text-steel bg-light-bg-secondary dark:bg-midnight-blue/40 rounded-lg border border-border-default dark:border-graphite/30"
+                  className="px-4 py-2 text-sm text-slate-500 dark:text-slate-400 bg-light-bg-secondary dark:bg-midnight-blue/40 rounded-lg border border-border-default dark:border-graphite/30"
                 >
                   {industry}
                 </motion.span>

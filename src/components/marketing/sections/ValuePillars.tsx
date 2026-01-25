@@ -102,13 +102,13 @@ export function ValuePillars() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-light-text dark:text-white mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sora font-bold text-slate-900 dark:text-white mb-6">
             Why Companies Choose{" "}
-            <span className="gradient-text-cyan-violet">
+            <span className="text-gradient">
               XGrowthOS
             </span>
           </h2>
-          <p className="text-lg text-light-text-muted dark:text-steel">
+          <p className="text-lg text-slate-500 dark:text-slate-400">
             Our AI-first approach delivers predictable pipeline growth with industry-leading deliverability and conversion rates.
           </p>
         </motion.div>
@@ -138,10 +138,10 @@ export function ValuePillars() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-sora font-semibold text-light-text dark:text-white mb-2 group-hover:text-emerald-pro-600 transition-colors">
+                <h3 className="text-xl font-sora font-semibold text-slate-900 dark:text-white mb-2 group-hover:text-emerald-pro-600 transition-colors">
                   {pillar.title}
                 </h3>
-                <p className="text-light-text-muted dark:text-steel text-sm leading-relaxed group-hover:text-silver/80 transition-colors">
+                <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed group-hover:text-silver/80 transition-colors">
                   {pillar.description}
                 </p>
               </motion.div>

@@ -167,14 +167,14 @@ export default function PilotProgramPage() {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-light-text dark:text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-slate-900 dark:text-white mb-6">
               Experience the Future of{" "}
-              <span className="headline-underline gradient-text-cyan-violet">
+              <span className="headline-underline text-gradient">
                 Cold Outreach
               </span>
             </h1>
 
-            <p className="text-xl text-light-text-muted dark:text-steel max-w-2xl mx-auto mb-8">
+            <p className="text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mb-8">
               Join our 60-day pilot program and see firsthand how AI-powered campaigns
               can transform your pipeline. Limited spots available each month.
             </p>
@@ -190,7 +190,7 @@ export default function PilotProgramPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-emerald-pro-600/30 hover:border-emerald-pro-600/60 text-light-text dark:text-white hover:text-emerald-pro-600 bg-emerald-pro-600/5 hover:bg-emerald-pro-600/10 px-8 py-6 text-lg transition-all backdrop-blur-sm"
+                  className="border-emerald-pro-600/30 hover:border-emerald-pro-600/60 text-slate-900 dark:text-white hover:text-emerald-pro-600 bg-emerald-pro-600/5 hover:bg-emerald-pro-600/10 px-8 py-6 text-lg transition-all backdrop-blur-sm"
                 >
                   How It Works
                 </Button>
@@ -213,13 +213,13 @@ export default function PilotProgramPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-2xl mx-auto mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               What You Get in the{" "}
-              <span className="headline-underline gradient-text-cyan-violet">
+              <span className="headline-underline text-gradient">
                 Pilot Program
               </span>
             </h2>
-            <p className="text-light-text-muted dark:text-steel">
+            <p className="text-slate-500 dark:text-slate-400">
               Everything you need to evaluate our platform and generate real results.
             </p>
           </motion.div>
@@ -237,10 +237,10 @@ export default function PilotProgramPage() {
                 <div className="h-12 w-12 rounded-xl bg-emerald-pro-600/10 border border-emerald-pro-600/30 flex items-center justify-center mb-4">
                   <benefit.icon className="h-6 w-6 text-emerald-pro-600" />
                 </div>
-                <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-2">
+                <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white mb-2">
                   {benefit.title}
                 </h3>
-                <p className="text-light-text-muted dark:text-steel text-sm">{benefit.description}</p>
+                <p className="text-slate-500 dark:text-slate-400 text-sm">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -257,13 +257,13 @@ export default function PilotProgramPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-2xl mx-auto mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               How the Pilot{" "}
-              <span className="headline-underline gradient-text-cyan-violet">
+              <span className="headline-underline text-gradient">
                 Works
               </span>
             </h2>
-            <p className="text-light-text-muted dark:text-steel">
+            <p className="text-slate-500 dark:text-slate-400">
               A simple, transparent process to evaluate our platform.
             </p>
           </motion.div>
@@ -285,10 +285,10 @@ export default function PilotProgramPage() {
                         {step.step}
                       </span>
                     </div>
-                    <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white mb-2">
+                    <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-light-text-muted dark:text-steel text-sm">{step.description}</p>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm">{step.description}</p>
                   </div>
                   {index < pilotSteps.length - 1 && (
                     <div className="hidden md:block absolute top-7 left-full w-full h-0.5 bg-gradient-to-r from-emerald-pro-600 to-transparent -translate-x-1/2" />
@@ -314,12 +314,12 @@ export default function PilotProgramPage() {
               <div className="h-10 w-10 rounded-lg bg-emerald-pro-500/10 border border-emerald-pro-500/30 flex items-center justify-center">
                 <CheckCircle className="h-5 w-5 text-emerald-pro-500" />
               </div>
-              <h2 className="text-2xl font-sora font-bold text-light-text dark:text-white">
+              <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">
                 Who Qualifies?
               </h2>
             </div>
 
-            <p className="text-light-text-muted dark:text-steel mb-6">
+            <p className="text-slate-500 dark:text-slate-400 mb-6">
               The pilot program is designed for B2B companies ready to scale their
               outbound efforts. Here&apos;s what we look for:
             </p>
@@ -328,7 +328,7 @@ export default function PilotProgramPage() {
               {pilotRequirements.map((req, index) => (
                 <li key={index} className="flex items-start gap-3">
                   <Check className="h-5 w-5 text-emerald-pro-400 flex-shrink-0 mt-0.5" />
-                  <span className="text-light-text-secondary dark:text-silver">{req}</span>
+                  <span className="text-slate-700 dark:text-slate-200">{req}</span>
                 </li>
               ))}
             </ul>
@@ -346,13 +346,13 @@ export default function PilotProgramPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Apply for the{" "}
-              <span className="headline-underline gradient-text-cyan-violet">
+              <span className="headline-underline text-gradient">
                 Pilot Program
               </span>
             </h2>
-            <p className="text-light-text-muted dark:text-steel">
+            <p className="text-slate-500 dark:text-slate-400">
               Fill out the form below and we&apos;ll be in touch within 24 hours.
             </p>
           </motion.div>
@@ -369,10 +369,10 @@ export default function PilotProgramPage() {
                 <div className="h-16 w-16 rounded-full bg-emerald-pro-400/10 border border-emerald-pro-400/30 flex items-center justify-center mx-auto mb-4">
                   <CheckCircle className="h-8 w-8 text-emerald-pro-400" />
                 </div>
-                <h3 className="text-xl font-sora font-semibold text-light-text dark:text-white mb-2">
+                <h3 className="text-xl font-sora font-semibold text-slate-900 dark:text-white mb-2">
                   Application Received!
                 </h3>
-                <p className="text-light-text-muted dark:text-steel max-w-md mx-auto">
+                <p className="text-slate-500 dark:text-slate-400 max-w-md mx-auto">
                   Thanks for your interest in the pilot program. Our team will review
                   your application and reach out within 24 hours to schedule a
                   discovery call.
@@ -382,7 +382,7 @@ export default function PilotProgramPage() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">
                       <Users className="inline h-4 w-4 mr-1" />
                       Full Name *
                     </label>
@@ -392,11 +392,11 @@ export default function PilotProgramPage() {
                       onChange={handleChange}
                       placeholder="John Smith"
                       required
-                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-500 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">
                       <Mail className="inline h-4 w-4 mr-1" />
                       Work Email *
                     </label>
@@ -407,14 +407,14 @@ export default function PilotProgramPage() {
                       onChange={handleChange}
                       placeholder="john@company.com"
                       required
-                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-500 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                     />
                   </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">
                       <Building2 className="inline h-4 w-4 mr-1" />
                       Company Name *
                     </label>
@@ -424,11 +424,11 @@ export default function PilotProgramPage() {
                       onChange={handleChange}
                       placeholder="Your Company"
                       required
-                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-500 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">
                       <Globe className="inline h-4 w-4 mr-1" />
                       Website
                     </label>
@@ -437,20 +437,20 @@ export default function PilotProgramPage() {
                       value={formData.website}
                       onChange={handleChange}
                       placeholder="https://yourcompany.com"
-                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                      className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-500 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">
                     Current Monthly Email Volume
                   </label>
                   <select
                     name="monthlyVolume"
                     value={formData.monthlyVolume}
                     onChange={handleChange}
-                    className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-light-text dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                    className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                   >
                     <option value="">Select volume</option>
                     <option value="0">Not currently doing outbound</option>
@@ -462,7 +462,7 @@ export default function PilotProgramPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-light-text-secondary dark:text-silver mb-2">
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">
                     <MessageSquare className="inline h-4 w-4 mr-1" />
                     Tell us about your goals
                   </label>
@@ -472,7 +472,7 @@ export default function PilotProgramPage() {
                     onChange={handleChange}
                     placeholder="What are you hoping to achieve with outbound? Who is your ideal customer?"
                     rows={4}
-                    className="w-full rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 py-3 text-light-text dark:text-white placeholder:text-light-text-muted dark:text-steel focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 resize-none"
+                    className="w-full rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-500 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 resize-none"
                   />
                 </div>
 
@@ -509,9 +509,9 @@ export default function PilotProgramPage() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-2xl mx-auto mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Pilot Program{" "}
-              <span className="headline-underline gradient-text-cyan-violet">
+              <span className="headline-underline text-gradient">
                 FAQ
               </span>
             </h2>
@@ -532,14 +532,14 @@ export default function PilotProgramPage() {
                 >
                   <Accordion.Header>
                     <Accordion.Trigger className="flex w-full items-center justify-between px-6 py-5 text-left">
-                      <span className="text-light-text dark:text-white font-medium pr-4">
+                      <span className="text-slate-900 dark:text-white font-medium pr-4">
                         {faq.question}
                       </span>
                       <ChevronDown className="h-5 w-5 text-emerald-pro-600 shrink-0 transition-transform duration-200 group-data-[state=open]:rotate-180" />
                     </Accordion.Trigger>
                   </Accordion.Header>
                   <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                    <div className="px-6 pb-5 text-light-text-muted dark:text-steel leading-relaxed">
+                    <div className="px-6 pb-5 text-slate-500 dark:text-slate-400 leading-relaxed">
                       {faq.answer}
                     </div>
                   </Accordion.Content>
@@ -568,12 +568,12 @@ export default function PilotProgramPage() {
                 />
               ))}
             </div>
-            <blockquote className="text-xl text-light-text dark:text-white font-medium mb-4">
+            <blockquote className="text-xl text-slate-900 dark:text-white font-medium mb-4">
               &ldquo;The pilot program gave us the confidence to invest in
               XGrowthOS. We generated 47 qualified leads in the first
               month alone.&rdquo;
             </blockquote>
-            <p className="text-light-text-muted dark:text-steel">
+            <p className="text-slate-500 dark:text-slate-400">
               — Sarah Chen, VP of Sales at TechFlow Inc.
             </p>
           </motion.div>
@@ -598,10 +598,10 @@ export default function PilotProgramPage() {
             className="text-center max-w-2xl mx-auto"
           >
             <Clock className="h-12 w-12 text-emerald-pro-600 mx-auto mb-6" />
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Limited Spots Available
             </h2>
-            <p className="text-light-text-muted dark:text-steel mb-8">
+            <p className="text-slate-500 dark:text-slate-400 mb-8">
               We only accept a limited number of pilot clients each month to ensure
               everyone gets the attention they deserve. Apply now to secure your spot.
             </p>

@@ -55,7 +55,7 @@ export function OnboardingProgress({
   return (
     <div className={cn("rounded-xl border border-border-default dark:border-graphite/50 bg-light-bg-secondary dark:bg-midnight-blue/30 p-6", className)}>
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-sora font-semibold text-light-text dark:text-white">
+        <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">
           Onboarding Progress
         </h3>
         <span className="text-sm font-medium text-emerald-pro-600">
@@ -90,12 +90,12 @@ export function OnboardingProgress({
               {isCompleted ? (
                 <CheckCircle2 className="h-4 w-4 text-emerald-pro-400 flex-shrink-0" />
               ) : (
-                <Circle className="h-4 w-4 text-light-text-muted dark:text-steel flex-shrink-0" />
+                <Circle className="h-4 w-4 text-slate-500 dark:text-slate-400 flex-shrink-0" />
               )}
               <span
                 className={cn(
                   "text-xs font-medium truncate",
-                  isCompleted ? "text-emerald-pro-400" : "text-light-text-muted dark:text-steel"
+                  isCompleted ? "text-emerald-pro-400" : "text-slate-500 dark:text-slate-400"
                 )}
               >
                 {step.label}
@@ -135,7 +135,7 @@ export function OnboardingProgressBar({
           style={{ width: `${progressPercent}%` }}
         />
       </div>
-      <span className="text-xs text-light-text-muted dark:text-steel">
+      <span className="text-xs text-slate-500 dark:text-slate-400">
         {completedSteps}/{totalSteps}
       </span>
     </div>

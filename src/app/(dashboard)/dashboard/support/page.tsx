@@ -114,9 +114,9 @@ export default async function SupportPage({
     return (
       <div className="min-h-screen p-8 flex items-center justify-center">
         <div className="text-center">
-          <MessageSquare className="h-12 w-12 text-light-text-muted dark:text-steel mx-auto mb-4" />
-          <h1 className="text-xl font-sora font-bold text-light-text dark:text-white mb-2">Support Unavailable</h1>
-          <p className="text-light-text-muted dark:text-steel">Please complete your onboarding first.</p>
+          <MessageSquare className="h-12 w-12 text-slate-500 dark:text-slate-400 mx-auto mb-4" />
+          <h1 className="text-xl font-sora font-bold text-slate-900 dark:text-white mb-2">Support Unavailable</h1>
+          <p className="text-slate-500 dark:text-slate-400">Please complete your onboarding first.</p>
         </div>
       </div>
     );
@@ -141,13 +141,13 @@ export default async function SupportPage({
       <div className="h-screen flex flex-col">
         {/* Page Header */}
         <div className="p-4 border-b border-border-default dark:border-graphite/50 bg-light-bg-secondary dark:bg-midnight-blue/50 flex-shrink-0">
-          <div className="flex items-center gap-2 text-sm text-light-text-muted dark:text-steel mb-1">
+          <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-1">
             <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">Portal</Link>
             <span>/</span>
             <span className="text-emerald-pro-600">Support</span>
           </div>
-          <h1 className="text-xl font-sora font-bold text-light-text dark:text-white">Support</h1>
-          <p className="text-light-text-muted dark:text-steel text-sm">Get help from our team</p>
+          <h1 className="text-xl font-sora font-bold text-slate-900 dark:text-white">Support</h1>
+          <p className="text-slate-500 dark:text-slate-400 text-sm">Get help from our team</p>
         </div>
 
         <div className="flex-1 flex overflow-hidden">
@@ -155,7 +155,7 @@ export default async function SupportPage({
           <div className="w-80 border-r border-border-default dark:border-graphite/50 flex flex-col bg-light-bg-secondary dark:bg-midnight-blue/30">
             <div className="p-4 border-b border-border-default dark:border-graphite/50 bg-light-bg-secondary dark:bg-midnight-blue/50">
               <div className="flex items-center justify-between">
-                <h2 className="text-base font-sora font-semibold text-light-text dark:text-white">Conversations</h2>
+                <h2 className="text-base font-sora font-semibold text-slate-900 dark:text-white">Conversations</h2>
                 <form
                   action={async () => {
                     "use server";
@@ -203,7 +203,7 @@ export default async function SupportPage({
             <div className="flex-1 overflow-y-auto">
               {conversations.length === 0 ? (
                 <div className="p-4 text-center">
-                  <p className="text-light-text-muted dark:text-steel text-sm">No conversations yet</p>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm">No conversations yet</p>
                 </div>
               ) : (
                 <div className="divide-y divide-graphite/30">
@@ -226,10 +226,10 @@ export default async function SupportPage({
                           }`} />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm font-medium text-light-text dark:text-white truncate">
+                          <p className="text-sm font-medium text-slate-900 dark:text-white truncate">
                             {conv.subject || "Conversation"}
                           </p>
-                          <p className="text-xs text-light-text-muted dark:text-steel">
+                          <p className="text-xs text-slate-500 dark:text-slate-400">
                             {new Date(conv.updated_at).toLocaleDateString()}
                           </p>
                         </div>
@@ -238,7 +238,7 @@ export default async function SupportPage({
                             ? "bg-emerald-pro-600/10 text-emerald-pro-600"
                             : conv.status === "resolved"
                             ? "bg-emerald-pro-400/10 text-emerald-pro-400"
-                            : "bg-steel/10 text-light-text-muted dark:text-steel"
+                            : "bg-steel/10 text-slate-500 dark:text-slate-400"
                         }`}>
                           {conv.status}
                         </span>
@@ -261,8 +261,8 @@ export default async function SupportPage({
                       <span className="text-sm font-medium text-emerald-pro-500">QI</span>
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-light-text dark:text-white">XGrowthOS Support</p>
-                      <p className="text-xs text-light-text-muted dark:text-steel">We typically reply within a few hours</p>
+                      <p className="text-sm font-medium text-slate-900 dark:text-white">XGrowthOS Support</p>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">We typically reply within a few hours</p>
                     </div>
                   </div>
                 </div>
@@ -279,8 +279,8 @@ export default async function SupportPage({
             ) : (
               <div className="flex-1 flex items-center justify-center">
                 <div className="text-center">
-                  <MessageSquare className="h-12 w-12 text-light-text-muted dark:text-steel mx-auto mb-4" />
-                  <p className="text-light-text-muted dark:text-steel">Select a conversation to continue</p>
+                  <MessageSquare className="h-12 w-12 text-slate-500 dark:text-slate-400 mx-auto mb-4" />
+                  <p className="text-slate-500 dark:text-slate-400">Select a conversation to continue</p>
                 </div>
               </div>
             )}

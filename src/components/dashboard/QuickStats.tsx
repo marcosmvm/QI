@@ -18,15 +18,15 @@ export function QuickStats({ stats, className }: QuickStatsProps) {
     <div className={cn("grid grid-cols-2 md:grid-cols-4 gap-4", className)}>
       {stats.map((stat, index) => (
         <div key={index} className="bg-light-bg-secondary dark:bg-midnight-blue border border-border-default dark:border-graphite rounded-xl p-6">
-          <p className="text-sm text-light-text-muted dark:text-steel font-medium uppercase tracking-wide">
+          <p className="text-sm text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">
             {stat.label}
           </p>
           <div className="mt-2 flex items-baseline gap-1">
-            <span className="text-metric-lg font-bold text-light-text dark:text-white">
+            <span className="text-metric-lg font-bold text-slate-900 dark:text-white">
               {stat.value}
             </span>
             {stat.suffix && (
-              <span className="text-sm text-light-text-muted dark:text-steel">{stat.suffix}</span>
+              <span className="text-sm text-slate-500 dark:text-slate-400">{stat.suffix}</span>
             )}
           </div>
           {stat.change !== undefined && (
@@ -37,7 +37,7 @@ export function QuickStats({ stats, className }: QuickStatsProps) {
                   ? "text-emerald-pro-400"
                   : stat.change < 0
                   ? "text-alert-red"
-                  : "text-light-text-muted dark:text-steel"
+                  : "text-slate-500 dark:text-slate-400"
               )}
             >
               {stat.change > 0 ? "+" : ""}

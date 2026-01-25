@@ -71,13 +71,13 @@ export default function CareersPage() {
               <span className="text-sm font-medium text-emerald-pro-400">We&apos;re Hiring</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-light-text dark:text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-slate-900 dark:text-white mb-6">
               Join the Team Building the{" "}
-              <span className="gradient-text-cyan-violet headline-underline">
+              <span className="text-gradient headline-underline">
                 Future of Sales
               </span>
             </h1>
-            <p className="text-xl text-light-text-secondary dark:text-silver max-w-2xl mx-auto">
+            <p className="text-xl text-slate-700 dark:text-slate-200 max-w-2xl mx-auto">
               We&apos;re looking for talented people who want to revolutionize B2B lead generation with AI.
             </p>
           </motion.div>
@@ -94,17 +94,17 @@ export default function CareersPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-sora font-bold text-slate-900 dark:text-white mb-6">
                 Why XGrowthOS?
               </h2>
-              <p className="text-light-text-secondary dark:text-silver mb-8 leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-200 mb-8 leading-relaxed">
                 We&apos;re not just building another SaaS product—we&apos;re fundamentally changing how B2B companies grow. Join a team of passionate innovators working at the intersection of AI and sales.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-center gap-2">
                     <Zap className="h-4 w-4 text-emerald-pro-600" />
-                    <span className="text-light-text-secondary dark:text-silver text-sm">{benefit}</span>
+                    <span className="text-slate-700 dark:text-slate-200 text-sm">{benefit}</span>
                   </div>
                 ))}
               </div>
@@ -120,19 +120,19 @@ export default function CareersPage() {
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
                   <p className="text-4xl font-sora font-bold text-emerald-pro-600">5</p>
-                  <p className="text-light-text-muted dark:text-steel text-sm">AI Engines</p>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm">AI Engines</p>
                 </div>
                 <div className="text-center">
                   <p className="text-4xl font-sora font-bold text-emerald-pro-500">LA</p>
-                  <p className="text-light-text-muted dark:text-steel text-sm">Based</p>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm">Based</p>
                 </div>
                 <div className="text-center">
                   <p className="text-4xl font-sora font-bold text-emerald-pro-400">2024</p>
-                  <p className="text-light-text-muted dark:text-steel text-sm">Founded</p>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm">Founded</p>
                 </div>
                 <div className="text-center">
                   <p className="text-4xl font-sora font-bold text-energy-orange">Remote</p>
-                  <p className="text-light-text-muted dark:text-steel text-sm">First</p>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm">First</p>
                 </div>
               </div>
             </motion.div>
@@ -150,10 +150,10 @@ export default function CareersPage() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-sora font-bold text-light-text dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Open Positions
             </h2>
-            <p className="text-light-text-secondary dark:text-silver">
+            <p className="text-slate-700 dark:text-slate-200">
               Find your next opportunity at XGrowthOS.
             </p>
           </motion.div>
@@ -171,15 +171,15 @@ export default function CareersPage() {
                   <div className="p-6 rounded-2xl border border-emerald-pro-600/20 bg-gradient-to-br from-midnight-blue/50 to-deep-space/50 hover:border-emerald-pro-600/40 transition-all">
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                       <div>
-                        <h3 className="text-xl font-sora font-semibold text-light-text dark:text-white group-hover:text-emerald-pro-600 transition-colors">
+                        <h3 className="text-xl font-sora font-semibold text-slate-900 dark:text-white group-hover:text-emerald-pro-600 transition-colors">
                           {job.title}
                         </h3>
                         <div className="flex flex-wrap items-center gap-4 mt-2">
-                          <span className="flex items-center gap-1 text-light-text-muted dark:text-steel text-sm">
+                          <span className="flex items-center gap-1 text-slate-500 dark:text-slate-400 text-sm">
                             <Briefcase className="h-4 w-4" />
                             {job.department}
                           </span>
-                          <span className="flex items-center gap-1 text-light-text-muted dark:text-steel text-sm">
+                          <span className="flex items-center gap-1 text-slate-500 dark:text-slate-400 text-sm">
                             <MapPin className="h-4 w-4" />
                             {job.location}
                           </span>

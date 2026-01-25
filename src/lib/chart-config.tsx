@@ -173,7 +173,7 @@ export const CustomTooltip = ({ active, payload, label, formatter }: CustomToolt
         className="bg-white dark:bg-midnight-blue border border-border-default dark:border-graphite rounded-lg p-3 shadow-lg"
         style={{ boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)' }}
       >
-        <p className="text-light-text dark:text-white font-semibold text-sm mb-2">{label}</p>
+        <p className="text-slate-900 dark:text-white font-semibold text-sm mb-2">{label}</p>
         {payload.map((entry, index) => (
           <p
             key={index}
