@@ -41,7 +41,7 @@ export function LogoBar() {
                 <div className="flex-shrink-0 p-2 rounded-lg bg-emerald-pro-600/10 border border-emerald-pro-600/20">
                   <item.icon className="h-5 w-5 text-emerald-pro-600" />
                 </div>
-                <p className="text-slate-700 dark:text-slate-200 text-sm font-medium">{item.text}</p>
+                <p className="text-slate-900 dark:text-slate-200 text-sm font-medium">{item.text}</p>
               </motion.div>
             ))}
           </div>

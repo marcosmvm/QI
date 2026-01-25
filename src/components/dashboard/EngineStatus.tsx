@@ -54,7 +54,7 @@ export function EngineStatus({ engines }: EngineStatusProps) {
       {/* Header */}
       <div className="mb-4">
         <h3 className="text-2xl font-semibold text-slate-900 dark:text-white">AI Engines</h3>
-        <p className="text-sm text-slate-700 dark:text-slate-400">
+        <p className="text-sm text-slate-900 dark:text-slate-300">
           {operationalCount}/{engines.length} operational
         </p>
       </div>
@@ -71,10 +71,10 @@ export function EngineStatus({ engines }: EngineStatusProps) {
               key={engine.name}
               className="flex items-center gap-3"
             >
-              <Icon className="h-5 w-5 text-slate-700 dark:text-slate-400" />
+              <Icon className="h-5 w-5 text-slate-900 dark:text-slate-300" />
               <div className="flex-1 min-w-0">
                 <p className="text-sm font-medium text-slate-900 dark:text-white">{engine.name}</p>
-                <p className="text-xs text-slate-700 dark:text-slate-400">{config.description}</p>
+                <p className="text-xs text-slate-900 dark:text-slate-300">{config.description}</p>
               </div>
               <span className={cn("h-2 w-2 rounded-full", status.dot)} />
             </div>

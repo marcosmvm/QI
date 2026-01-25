@@ -116,8 +116,8 @@ function StatusBadge({ status }: { status: string }) {
     active: "bg-emerald-pro-400/10 text-emerald-pro-400 border-emerald-pro-400/30",
     trialing: "bg-emerald-pro-600/10 text-emerald-pro-600 border-emerald-pro-600/30",
     past_due: "bg-energy-orange/10 text-energy-orange border-energy-orange/30",
-    canceled: "bg-steel/10 text-slate-700 dark:text-slate-400 border-steel/30",
-    inactive: "bg-steel/10 text-slate-700 dark:text-slate-400 border-steel/30",
+    canceled: "bg-steel/10 text-slate-900 dark:text-slate-300 border-steel/30",
+    inactive: "bg-steel/10 text-slate-900 dark:text-slate-300 border-steel/30",
   };
 
   return (
@@ -144,7 +144,7 @@ export function BillingContent({ subscription, invoices, usage }: BillingContent
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-400 mb-2">
+        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-300 mb-2">
           <Link
             href="/dashboard"
             className="hover:text-emerald-pro-600 transition-colors"
@@ -157,7 +157,7 @@ export function BillingContent({ subscription, invoices, usage }: BillingContent
         <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">
           Billing & Subscription
         </h1>
-        <p className="text-slate-700 dark:text-slate-400 mt-1">
+        <p className="text-slate-900 dark:text-slate-300 mt-1">
           Manage your subscription, payment methods, and billing history
         </p>
       </motion.div>
@@ -179,7 +179,7 @@ export function BillingContent({ subscription, invoices, usage }: BillingContent
                   <h2 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">
                     Current Plan
                   </h2>
-                  <p className="text-sm text-slate-700 dark:text-slate-400">
+                  <p className="text-sm text-slate-900 dark:text-slate-300">
                     {subscription
                       ? `Member since ${new Date(subscription.created_at).toLocaleDateString()}`
                       : "No active subscription"}
@@ -197,7 +197,7 @@ export function BillingContent({ subscription, invoices, usage }: BillingContent
                       {subscription.plan_type} Plan
                     </p>
                     {subscription.monthly_fee && (
-                      <p className="text-slate-700 dark:text-slate-400">
+                      <p className="text-slate-900 dark:text-slate-300">
                         ${subscription.monthly_fee.toLocaleString()}/month
                       </p>
                     )}
@@ -208,12 +208,12 @@ export function BillingContent({ subscription, invoices, usage }: BillingContent
                 </div>
 
                 <div className="border-t border-border-default dark:border-graphite/30 pt-4">
-                  <p className="text-sm text-slate-700 dark:text-slate-400 mb-3">Plan includes:</p>
+                  <p className="text-sm text-slate-900 dark:text-slate-300 mb-3">Plan includes:</p>
                   <div className="grid grid-cols-2 gap-2">
                     {getPlanFeatures(subscription.plan_type).map((feature, i) => (
                       <div
                         key={i}
-                        className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200"
+                        className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-200"
                       >
                         <CheckCircle className="h-4 w-4 text-emerald-pro-400 flex-shrink-0" />
                         {feature}
@@ -223,7 +223,7 @@ export function BillingContent({ subscription, invoices, usage }: BillingContent
                 </div>
 
                 {subscription.current_period_end && (
-                  <div className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-400 pt-2 border-t border-border-default dark:border-graphite/30">
+                  <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-300 pt-2 border-t border-border-default dark:border-graphite/30">
                     <Calendar className="h-4 w-4" />
                     Next billing date:{" "}
                     {new Date(subscription.current_period_end).toLocaleDateString()}
@@ -232,8 +232,8 @@ export function BillingContent({ subscription, invoices, usage }: BillingContent
               </div>
             ) : (
               <div className="text-center py-8">
-                <Zap className="h-12 w-12 text-slate-700 dark:text-slate-400 mx-auto mb-4" />
-                <p className="text-slate-700 dark:text-slate-400 mb-4">No active subscription</p>
+                <Zap className="h-12 w-12 text-slate-900 dark:text-slate-300 mx-auto mb-4" />
+                <p className="text-slate-900 dark:text-slate-300 mb-4">No active subscription</p>
                 <button className="px-6 py-2 bg-emerald-pro-600 dark:bg-xgrowth-500 text-white dark:text-green-950 font-medium rounded-lg hover:bg-emerald-pro-600/90 dark:hover:bg-xgrowth-400 transition-colors">
                   Choose a Plan
                 </button>
@@ -255,7 +255,7 @@ export function BillingContent({ subscription, invoices, usage }: BillingContent
                   <h2 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">
                     Payment Method
                   </h2>
-                  <p className="text-sm text-slate-700 dark:text-slate-400">Manage your payment details</p>
+                  <p className="text-sm text-slate-900 dark:text-slate-300">Manage your payment details</p>
                 </div>
               </div>
             </div>
@@ -269,7 +269,7 @@ export function BillingContent({ subscription, invoices, usage }: BillingContent
                   <p className="text-sm font-medium text-slate-900 dark:text-white">
                     **** **** **** 4242
                   </p>
-                  <p className="text-xs text-slate-700 dark:text-slate-400">Expires 12/2025</p>
+                  <p className="text-xs text-slate-900 dark:text-slate-300">Expires 12/2025</p>
                 </div>
               </div>
               <button className="text-sm text-emerald-pro-600 hover:underline">
@@ -277,7 +277,7 @@ export function BillingContent({ subscription, invoices, usage }: BillingContent
               </button>
             </div>
 
-            <div className="flex items-center gap-2 mt-4 text-sm text-slate-700 dark:text-slate-400">
+            <div className="flex items-center gap-2 mt-4 text-sm text-slate-900 dark:text-slate-300">
               <Shield className="h-4 w-4" />
               <span>Payments are secured with Stripe</span>
             </div>
@@ -297,7 +297,7 @@ export function BillingContent({ subscription, invoices, usage }: BillingContent
                   <h2 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">
                     Billing History
                   </h2>
-                  <p className="text-sm text-slate-700 dark:text-slate-400">
+                  <p className="text-sm text-slate-900 dark:text-slate-300">
                     Download your past invoices
                   </p>
                 </div>
@@ -306,8 +306,8 @@ export function BillingContent({ subscription, invoices, usage }: BillingContent
 
             {invoices.length === 0 ? (
               <div className="text-center py-8">
-                <FileText className="h-10 w-10 text-slate-700 dark:text-slate-400 mx-auto mb-3" />
-                <p className="text-slate-700 dark:text-slate-400 text-sm">No invoices yet</p>
+                <FileText className="h-10 w-10 text-slate-900 dark:text-slate-300 mx-auto mb-3" />
+                <p className="text-slate-900 dark:text-slate-300 text-sm">No invoices yet</p>
               </div>
             ) : (
               <div className="space-y-3">
@@ -336,7 +336,7 @@ export function BillingContent({ subscription, invoices, usage }: BillingContent
                             }
                           )}
                         </p>
-                        <p className="text-xs text-slate-700 dark:text-slate-400 capitalize">
+                        <p className="text-xs text-slate-900 dark:text-slate-300 capitalize">
                           {invoice.status}
                         </p>
                       </div>
@@ -345,7 +345,7 @@ export function BillingContent({ subscription, invoices, usage }: BillingContent
                       <span className="text-sm font-medium text-slate-900 dark:text-white">
                         ${invoice.amount.toLocaleString()}
                       </span>
-                      <button className="p-2 text-slate-700 dark:text-slate-400 hover:text-emerald-pro-600 transition-colors">
+                      <button className="p-2 text-slate-900 dark:text-slate-300 hover:text-emerald-pro-600 transition-colors">
                         <Download className="h-4 w-4" />
                       </button>
                     </div>
@@ -371,14 +371,14 @@ export function BillingContent({ subscription, invoices, usage }: BillingContent
                 <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white">
                   Current Usage
                 </h3>
-                <p className="text-sm text-slate-700 dark:text-slate-400">This billing period</p>
+                <p className="text-sm text-slate-900 dark:text-slate-300">This billing period</p>
               </div>
             </div>
 
             <div className="space-y-4">
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-slate-700 dark:text-slate-400">Emails Sent</span>
+                  <span className="text-sm text-slate-900 dark:text-slate-300">Emails Sent</span>
                   <span className="text-sm font-medium text-slate-900 dark:text-white">
                     {usage.emailsSent.toLocaleString()} /{" "}
                     {usage.limit.toLocaleString()}
@@ -392,7 +392,7 @@ export function BillingContent({ subscription, invoices, usage }: BillingContent
                     style={{ width: `${usagePercentage}%` }}
                   />
                 </div>
-                <p className="text-xs text-slate-700 dark:text-slate-400 mt-1">
+                <p className="text-xs text-slate-900 dark:text-slate-300 mt-1">
                   {Math.round(usagePercentage)}% of monthly limit used
                 </p>
               </div>
@@ -404,7 +404,7 @@ export function BillingContent({ subscription, invoices, usage }: BillingContent
                     <p className="text-sm font-medium text-energy-orange">
                       Approaching limit
                     </p>
-                    <p className="text-xs text-slate-700 dark:text-slate-400">
+                    <p className="text-xs text-slate-900 dark:text-slate-300">
                       Consider upgrading to avoid service interruption.
                     </p>
                   </div>
@@ -427,21 +427,21 @@ export function BillingContent({ subscription, invoices, usage }: BillingContent
                   <TrendingUp className="h-4 w-4 text-emerald-pro-600" />
                   <span className="text-sm text-slate-900 dark:text-white">Upgrade Plan</span>
                 </div>
-                <ArrowUpRight className="h-4 w-4 text-slate-700 dark:text-slate-400" />
+                <ArrowUpRight className="h-4 w-4 text-slate-900 dark:text-slate-300" />
               </button>
               <button className="w-full flex items-center justify-between p-3 bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30 rounded-lg hover:border-emerald-pro-500/30 transition-colors">
                 <div className="flex items-center gap-3">
                   <CreditCard className="h-4 w-4 text-emerald-pro-500" />
                   <span className="text-sm text-slate-900 dark:text-white">Update Card</span>
                 </div>
-                <ArrowUpRight className="h-4 w-4 text-slate-700 dark:text-slate-400" />
+                <ArrowUpRight className="h-4 w-4 text-slate-900 dark:text-slate-300" />
               </button>
               <button className="w-full flex items-center justify-between p-3 bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30 rounded-lg hover:border-emerald-pro-400/30 transition-colors">
                 <div className="flex items-center gap-3">
                   <Download className="h-4 w-4 text-emerald-pro-400" />
                   <span className="text-sm text-slate-900 dark:text-white">Download All Invoices</span>
                 </div>
-                <ArrowUpRight className="h-4 w-4 text-slate-700 dark:text-slate-400" />
+                <ArrowUpRight className="h-4 w-4 text-slate-900 dark:text-slate-300" />
               </button>
             </div>
           </motion.div>
@@ -452,9 +452,9 @@ export function BillingContent({ subscription, invoices, usage }: BillingContent
             className="bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30 rounded-xl p-4 hover:border-emerald-pro-600/20 transition-colors"
           >
             <div className="flex items-start gap-3">
-              <Clock className="h-5 w-5 text-slate-700 dark:text-slate-400 flex-shrink-0" />
+              <Clock className="h-5 w-5 text-slate-900 dark:text-slate-300 flex-shrink-0" />
               <div>
-                <p className="text-sm text-slate-700 dark:text-slate-200">
+                <p className="text-sm text-slate-900 dark:text-slate-200">
                   Need help with billing?
                 </p>
                 <Link

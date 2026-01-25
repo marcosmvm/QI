@@ -77,7 +77,7 @@ export default function CareersPage() {
                 Future of Sales
               </span>
             </h1>
-            <p className="text-xl text-slate-700 dark:text-slate-200 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-900 dark:text-slate-200 max-w-2xl mx-auto">
               We&apos;re looking for talented people who want to revolutionize B2B lead generation with AI.
             </p>
           </motion.div>
@@ -97,14 +97,14 @@ export default function CareersPage() {
               <h2 className="text-3xl md:text-4xl font-sora font-bold text-slate-900 dark:text-white mb-6">
                 Why XGrowthOS?
               </h2>
-              <p className="text-slate-700 dark:text-slate-200 mb-8 leading-relaxed">
+              <p className="text-slate-900 dark:text-slate-200 mb-8 leading-relaxed">
                 We&apos;re not just building another SaaS product—we&apos;re fundamentally changing how B2B companies grow. Join a team of passionate innovators working at the intersection of AI and sales.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-center gap-2">
                     <Zap className="h-4 w-4 text-emerald-pro-600" />
-                    <span className="text-slate-700 dark:text-slate-200 text-sm">{benefit}</span>
+                    <span className="text-slate-900 dark:text-slate-200 text-sm">{benefit}</span>
                   </div>
                 ))}
               </div>
@@ -120,19 +120,19 @@ export default function CareersPage() {
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
                   <p className="text-4xl font-sora font-bold text-emerald-pro-600">5</p>
-                  <p className="text-slate-700 dark:text-slate-400 text-sm">AI Engines</p>
+                  <p className="text-slate-900 dark:text-slate-300 text-sm">AI Engines</p>
                 </div>
                 <div className="text-center">
                   <p className="text-4xl font-sora font-bold text-emerald-pro-500">LA</p>
-                  <p className="text-slate-700 dark:text-slate-400 text-sm">Based</p>
+                  <p className="text-slate-900 dark:text-slate-300 text-sm">Based</p>
                 </div>
                 <div className="text-center">
                   <p className="text-4xl font-sora font-bold text-emerald-pro-400">2024</p>
-                  <p className="text-slate-700 dark:text-slate-400 text-sm">Founded</p>
+                  <p className="text-slate-900 dark:text-slate-300 text-sm">Founded</p>
                 </div>
                 <div className="text-center">
                   <p className="text-4xl font-sora font-bold text-energy-orange">Remote</p>
-                  <p className="text-slate-700 dark:text-slate-400 text-sm">First</p>
+                  <p className="text-slate-900 dark:text-slate-300 text-sm">First</p>
                 </div>
               </div>
             </motion.div>
@@ -153,7 +153,7 @@ export default function CareersPage() {
             <h2 className="text-3xl md:text-4xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Open Positions
             </h2>
-            <p className="text-slate-700 dark:text-slate-200">
+            <p className="text-slate-900 dark:text-slate-200">
               Find your next opportunity at XGrowthOS.
             </p>
           </motion.div>
@@ -175,11 +175,11 @@ export default function CareersPage() {
                           {job.title}
                         </h3>
                         <div className="flex flex-wrap items-center gap-4 mt-2">
-                          <span className="flex items-center gap-1 text-slate-700 dark:text-slate-400 text-sm">
+                          <span className="flex items-center gap-1 text-slate-900 dark:text-slate-300 text-sm">
                             <Briefcase className="h-4 w-4" />
                             {job.department}
                           </span>
-                          <span className="flex items-center gap-1 text-slate-700 dark:text-slate-400 text-sm">
+                          <span className="flex items-center gap-1 text-slate-900 dark:text-slate-300 text-sm">
                             <MapPin className="h-4 w-4" />
                             {job.location}
                           </span>

@@ -136,7 +136,7 @@ export default function ROICalculatorPage() {
               </span>
             </h1>
 
-            <p className="text-xl text-slate-700 dark:text-slate-400">
+            <p className="text-xl text-slate-900 dark:text-slate-300">
               See how much additional revenue you could generate with AI-powered
               cold outreach.
             </p>
@@ -166,7 +166,7 @@ export default function ROICalculatorPage() {
                   {/* Monthly Volume */}
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <label className="text-sm font-medium text-slate-700 dark:text-slate-200 flex items-center gap-2">
+                      <label className="text-sm font-medium text-slate-900 dark:text-slate-200 flex items-center gap-2">
                         <Mail className="h-4 w-4 text-emerald-pro-600" />
                         Monthly Email Volume
                       </label>
@@ -185,7 +185,7 @@ export default function ROICalculatorPage() {
                       }
                       className="w-full h-2 bg-graphite rounded-lg appearance-none cursor-pointer slider"
                     />
-                    <div className="flex justify-between text-xs text-slate-700 dark:text-slate-400 mt-1">
+                    <div className="flex justify-between text-xs text-slate-900 dark:text-slate-300 mt-1">
                       <span>1K</span>
                       <span>100K</span>
                     </div>
@@ -194,7 +194,7 @@ export default function ROICalculatorPage() {
                   {/* Current Reply Rate */}
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <label className="text-sm font-medium text-slate-700 dark:text-slate-200 flex items-center gap-2">
+                      <label className="text-sm font-medium text-slate-900 dark:text-slate-200 flex items-center gap-2">
                         <Users className="h-4 w-4 text-emerald-pro-500" />
                         Current Reply Rate
                       </label>
@@ -213,7 +213,7 @@ export default function ROICalculatorPage() {
                       }
                       className="w-full h-2 bg-graphite rounded-lg appearance-none cursor-pointer slider"
                     />
-                    <div className="flex justify-between text-xs text-slate-700 dark:text-slate-400 mt-1">
+                    <div className="flex justify-between text-xs text-slate-900 dark:text-slate-300 mt-1">
                       <span>0%</span>
                       <span>5%</span>
                     </div>
@@ -222,7 +222,7 @@ export default function ROICalculatorPage() {
                   {/* Average Deal Size */}
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <label className="text-sm font-medium text-slate-700 dark:text-slate-200 flex items-center gap-2">
+                      <label className="text-sm font-medium text-slate-900 dark:text-slate-200 flex items-center gap-2">
                         <DollarSign className="h-4 w-4 text-emerald-pro-400" />
                         Average Deal Size
                       </label>
@@ -241,7 +241,7 @@ export default function ROICalculatorPage() {
                       }
                       className="w-full h-2 bg-graphite rounded-lg appearance-none cursor-pointer slider"
                     />
-                    <div className="flex justify-between text-xs text-slate-700 dark:text-slate-400 mt-1">
+                    <div className="flex justify-between text-xs text-slate-900 dark:text-slate-300 mt-1">
                       <span>$1K</span>
                       <span>$100K</span>
                     </div>
@@ -250,7 +250,7 @@ export default function ROICalculatorPage() {
                   {/* Sales Cycle */}
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <label className="text-sm font-medium text-slate-700 dark:text-slate-200 flex items-center gap-2">
+                      <label className="text-sm font-medium text-slate-900 dark:text-slate-200 flex items-center gap-2">
                         <Calendar className="h-4 w-4 text-energy-orange" />
                         Sales Cycle Length
                       </label>
@@ -269,7 +269,7 @@ export default function ROICalculatorPage() {
                       }
                       className="w-full h-2 bg-graphite rounded-lg appearance-none cursor-pointer slider"
                     />
-                    <div className="flex justify-between text-xs text-slate-700 dark:text-slate-400 mt-1">
+                    <div className="flex justify-between text-xs text-slate-900 dark:text-slate-300 mt-1">
                       <span>2 weeks</span>
                       <span>24 weeks</span>
                     </div>
@@ -296,7 +296,7 @@ export default function ROICalculatorPage() {
                     {results.impact.roi > 0 ? "+" : ""}
                     {results.impact.roi}%
                   </p>
-                  <p className="text-slate-700 dark:text-slate-400">Annual Return on Investment</p>
+                  <p className="text-slate-900 dark:text-slate-300">Annual Return on Investment</p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 mb-6">
@@ -304,18 +304,18 @@ export default function ROICalculatorPage() {
                     <p className="text-2xl font-sora font-bold text-emerald-pro-400">
                       ${results.impact.additionalMonthlyRevenue.toLocaleString()}
                     </p>
-                    <p className="text-xs text-slate-700 dark:text-slate-400">Additional Monthly Revenue</p>
+                    <p className="text-xs text-slate-900 dark:text-slate-300">Additional Monthly Revenue</p>
                   </div>
                   <div className="p-4 bg-white dark:bg-deep-space/50 rounded-xl text-center">
                     <p className="text-2xl font-sora font-bold text-emerald-pro-400">
                       ${results.impact.additionalAnnualRevenue.toLocaleString()}
                     </p>
-                    <p className="text-xs text-slate-700 dark:text-slate-400">Additional Annual Revenue</p>
+                    <p className="text-xs text-slate-900 dark:text-slate-300">Additional Annual Revenue</p>
                   </div>
                 </div>
 
                 <div className="flex items-center justify-between p-4 bg-white dark:bg-deep-space/50 rounded-xl">
-                  <span className="text-sm text-slate-700 dark:text-slate-400">Time to first new deal</span>
+                  <span className="text-sm text-slate-900 dark:text-slate-300">Time to first new deal</span>
                   <span className="text-sm font-medium text-slate-900 dark:text-white">
                     ~{results.impact.monthsToFirstDeal} month
                     {results.impact.monthsToFirstDeal !== 1 ? "s" : ""}
@@ -325,14 +325,14 @@ export default function ROICalculatorPage() {
 
               {/* Comparison */}
               <div className="p-6 rounded-2xl border border-border-default dark:border-graphite bg-light-bg-secondary dark:bg-midnight-blue/50">
-                <h3 className="text-sm font-medium text-slate-700 dark:text-slate-400 mb-4">
+                <h3 className="text-sm font-medium text-slate-900 dark:text-slate-300 mb-4">
                   Performance Comparison
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-slate-700 dark:text-slate-200">Replies/Month</span>
+                    <span className="text-sm text-slate-900 dark:text-slate-200">Replies/Month</span>
                     <div className="flex items-center gap-4">
-                      <span className="text-sm text-slate-700 dark:text-slate-400">
+                      <span className="text-sm text-slate-900 dark:text-slate-300">
                         {results.current.replies}
                       </span>
                       <ArrowRight className="h-4 w-4 text-emerald-pro-600" />
@@ -342,9 +342,9 @@ export default function ROICalculatorPage() {
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-slate-700 dark:text-slate-200">Meetings/Month</span>
+                    <span className="text-sm text-slate-900 dark:text-slate-200">Meetings/Month</span>
                     <div className="flex items-center gap-4">
-                      <span className="text-sm text-slate-700 dark:text-slate-400">
+                      <span className="text-sm text-slate-900 dark:text-slate-300">
                         {results.current.meetings}
                       </span>
                       <ArrowRight className="h-4 w-4 text-emerald-pro-600" />
@@ -354,9 +354,9 @@ export default function ROICalculatorPage() {
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-slate-700 dark:text-slate-200">Deals/Month</span>
+                    <span className="text-sm text-slate-900 dark:text-slate-200">Deals/Month</span>
                     <div className="flex items-center gap-4">
-                      <span className="text-sm text-slate-700 dark:text-slate-400">
+                      <span className="text-sm text-slate-900 dark:text-slate-300">
                         {results.current.deals}
                       </span>
                       <ArrowRight className="h-4 w-4 text-emerald-pro-600" />
@@ -405,7 +405,7 @@ export default function ROICalculatorPage() {
             <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               How We <span className="headline-underline text-gradient">Calculate</span> This
             </h2>
-            <p className="text-slate-700 dark:text-slate-400">
+            <p className="text-slate-900 dark:text-slate-300">
               Based on our documented performance across 100+ client campaigns.
             </p>
           </motion.div>
@@ -429,7 +429,7 @@ export default function ROICalculatorPage() {
                 <p className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-1">
                   {metric.value}
                 </p>
-                <p className="text-xs text-slate-700 dark:text-slate-400">{metric.label}</p>
+                <p className="text-xs text-slate-900 dark:text-slate-300">{metric.label}</p>
               </motion.div>
             ))}
           </div>
@@ -448,7 +448,7 @@ export default function ROICalculatorPage() {
             <h3 className="text-xl font-sora font-bold text-slate-900 dark:text-white mb-2">
               Get Your Detailed ROI Report
             </h3>
-            <p className="text-slate-700 dark:text-slate-400 mb-6">
+            <p className="text-slate-900 dark:text-slate-300 mb-6">
               We&apos;ll send you a customized report with your projections and
               recommendations.
             </p>
@@ -460,7 +460,7 @@ export default function ROICalculatorPage() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your work email"
                 required
-                className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-700 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
               />
 
               <div className="flex gap-4">

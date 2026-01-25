@@ -73,7 +73,7 @@ export function ProgressRing({
           {Math.round(percentage)}%
         </span>
         {label && (
-          <span className="text-2xs text-slate-700 dark:text-slate-400 uppercase tracking-wide">
+          <span className="text-2xs text-slate-900 dark:text-slate-300 uppercase tracking-wide">
             {label}
           </span>
         )}

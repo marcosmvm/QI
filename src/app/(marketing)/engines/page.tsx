@@ -103,7 +103,7 @@ export default function EnginesPage() {
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-slate-700/90 dark:text-slate-200/90 max-w-3xl mx-auto mb-12 leading-relaxed">
+            <p className="text-xl md:text-2xl text-slate-900/90 dark:text-slate-200/90 max-w-3xl mx-auto mb-12 leading-relaxed">
               5 Lead Generation engines and 6 CSM Automation engines work in harmony. Together, they form an <span className="text-emerald-pro-600 font-semibold">unstoppable</span> autonomous growth platform.
             </p>
 
@@ -168,7 +168,7 @@ export default function EnginesPage() {
 
                         {/* Description */}
                         <div className="flex-1">
-                          <p className="text-slate-700 dark:text-slate-200 leading-relaxed group-hover:text-slate-900 dark:group-hover:text-white/90 transition-colors">
+                          <p className="text-slate-900 dark:text-slate-200 leading-relaxed group-hover:text-slate-900 dark:group-hover:text-white/90 transition-colors">
                             {engine.shortDescription}
                           </p>
                         </div>
@@ -187,7 +187,7 @@ export default function EnginesPage() {
                               <p className={`text-2xl font-sora font-bold ${colors.text}`}>
                                 {stat.value}
                               </p>
-                              <p className="text-slate-700 dark:text-slate-400 text-xs">{stat.label}</p>
+                              <p className="text-slate-900 dark:text-slate-300 text-xs">{stat.label}</p>
                             </motion.div>
                           ))}
                         </div>
@@ -225,7 +225,7 @@ export default function EnginesPage() {
                 Together
               </span>
             </h2>
-            <p className="text-lg md:text-xl text-slate-700 dark:text-slate-200 leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-900 dark:text-slate-200 leading-relaxed">
               Our engines don&apos;t operate in isolation. They share data, learn from each other, and <span className="text-emerald-pro-600">continuously optimize</span> the entire funnel.
             </p>
           </motion.div>
@@ -299,7 +299,7 @@ export default function EnginesPage() {
                 }`}>
                   {combo.title}
                 </h3>
-                <p className="text-slate-700 dark:text-slate-200 text-sm leading-relaxed group-hover:text-slate-900 dark:group-hover:text-white/80 transition-colors">
+                <p className="text-slate-900 dark:text-slate-200 text-sm leading-relaxed group-hover:text-slate-900 dark:group-hover:text-white/80 transition-colors">
                   {combo.description}
                 </p>
 

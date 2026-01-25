@@ -108,7 +108,7 @@ export function ValuePillars() {
               XGrowthOS
             </span>
           </h2>
-          <p className="text-lg text-slate-700 dark:text-slate-400">
+          <p className="text-lg text-slate-900 dark:text-slate-300">
             Our AI-first approach delivers predictable pipeline growth with industry-leading deliverability and conversion rates.
           </p>
         </motion.div>
@@ -141,7 +141,7 @@ export function ValuePillars() {
                 <h3 className="text-xl font-sora font-semibold text-slate-900 dark:text-white mb-2 group-hover:text-emerald-pro-600 transition-colors">
                   {pillar.title}
                 </h3>
-                <p className="text-slate-700 dark:text-slate-400 text-sm leading-relaxed group-hover:text-silver/80 transition-colors">
+                <p className="text-slate-900 dark:text-slate-300 text-sm leading-relaxed group-hover:text-silver/80 transition-colors">
                   {pillar.description}
                 </p>
               </motion.div>

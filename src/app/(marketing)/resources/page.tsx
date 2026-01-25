@@ -82,7 +82,7 @@ export default function ResourcesPage() {
                 Your Growth
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-700/90 dark:text-slate-200/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-slate-900/90 dark:text-slate-200/90 max-w-3xl mx-auto leading-relaxed">
               Guides, templates, and tools to help you <span className="text-emerald-pro-500 font-semibold">master B2B lead generation</span>.
             </p>
           </motion.div>
@@ -129,7 +129,7 @@ export default function ResourcesPage() {
                       </h2>
 
                       {/* Description */}
-                      <p className="text-slate-700 dark:text-slate-200 text-sm mb-4 group-hover:text-slate-900 dark:group-hover:text-white/80 transition-colors">
+                      <p className="text-slate-900 dark:text-slate-200 text-sm mb-4 group-hover:text-slate-900 dark:group-hover:text-white/80 transition-colors">
                         {resource.description}
                       </p>
 

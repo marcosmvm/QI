@@ -104,7 +104,7 @@ export default function ComparisonHubPage() {
               </span>
             </h1>
 
-            <p className="text-xl text-slate-700 dark:text-slate-400">
+            <p className="text-xl text-slate-900 dark:text-slate-300">
               See how our AI-powered approach compares to traditional lead
               generation agencies.
             </p>
@@ -134,7 +134,7 @@ export default function ComparisonHubPage() {
                   <h3 className="text-lg font-sora font-semibold text-slate-900 dark:text-white mb-1">
                     XGrowthOS vs {competitor.name}
                   </h3>
-                  <p className="text-sm text-slate-700 dark:text-slate-400 mb-4">
+                  <p className="text-sm text-slate-900 dark:text-slate-300 mb-4">
                     {competitor.description}
                   </p>
 
@@ -142,7 +142,7 @@ export default function ComparisonHubPage() {
                     {competitor.differentiators.map((diff, i) => (
                       <div
                         key={i}
-                        className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200"
+                        className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-200"
                       >
                         <CheckCircle className="h-4 w-4 text-emerald-pro-400 flex-shrink-0" />
                         {diff}
@@ -177,7 +177,7 @@ export default function ComparisonHubPage() {
             <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Why Companies Switch to XGrowthOS
             </h2>
-            <p className="text-slate-700 dark:text-slate-400 mb-6">
+            <p className="text-slate-900 dark:text-slate-300 mb-6">
               Traditional agencies rely on manual processes that can&apos;t match the
               speed, personalization, and optimization that AI delivers.
             </p>
@@ -187,7 +187,7 @@ export default function ComparisonHubPage() {
                 <p className="text-3xl font-sora font-bold text-emerald-pro-600 mb-2">
                   3x
                 </p>
-                <p className="text-sm text-slate-700 dark:text-slate-200">
+                <p className="text-sm text-slate-900 dark:text-slate-200">
                   Faster campaign deployment
                 </p>
               </div>
@@ -195,13 +195,13 @@ export default function ComparisonHubPage() {
                 <p className="text-3xl font-sora font-bold text-emerald-pro-400 mb-2">
                   40%
                 </p>
-                <p className="text-sm text-slate-700 dark:text-slate-200">Lower cost per meeting</p>
+                <p className="text-sm text-slate-900 dark:text-slate-200">Lower cost per meeting</p>
               </div>
               <div>
                 <p className="text-3xl font-sora font-bold text-emerald-pro-500 mb-2">
                   24/7
                 </p>
-                <p className="text-sm text-slate-700 dark:text-slate-200">Continuous optimization</p>
+                <p className="text-sm text-slate-900 dark:text-slate-200">Continuous optimization</p>
               </div>
             </div>
           </motion.div>

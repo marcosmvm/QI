@@ -44,7 +44,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   <div>
                     <button
                       onClick={() => toggleExpanded(item.label)}
-                      className="w-full flex items-center justify-between p-3 text-left text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:bg-light-bg-secondary dark:hover:bg-graphite/50 rounded-lg transition-colors"
+                      className="w-full flex items-center justify-between p-3 text-left text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:bg-light-bg-secondary dark:hover:bg-graphite/50 rounded-lg transition-colors"
                     >
                       <span className="font-medium">{item.label}</span>
                       <ChevronDown
@@ -59,7 +59,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                       <div className="mt-2 ml-4 space-y-1">
                         {item.dropdown.sections.map((section) => (
                           <div key={section.title} className="mb-4">
-                            <p className="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-400">
+                            <p className="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-slate-300">
                               {section.title}
                             </p>
                             {section.items.map((subItem) => (
@@ -67,7 +67,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                                 key={subItem.label}
                                 href={subItem.href}
                                 onClick={onClose}
-                                className="flex items-center gap-2 px-3 py-2 text-sm text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:bg-light-bg-secondary dark:hover:bg-graphite/50 rounded-lg transition-colors"
+                                className="flex items-center gap-2 px-3 py-2 text-sm text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:bg-light-bg-secondary dark:hover:bg-graphite/50 rounded-lg transition-colors"
                               >
                                 {subItem.icon && <subItem.icon className="h-4 w-4" />}
                                 <span>{subItem.label}</span>
@@ -87,7 +87,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   <Link
                     href={item.href}
                     onClick={onClose}
-                    className="block p-3 font-medium text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:bg-light-bg-secondary dark:hover:bg-graphite/50 rounded-lg transition-colors"
+                    className="block p-3 font-medium text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:bg-light-bg-secondary dark:hover:bg-graphite/50 rounded-lg transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -109,14 +109,14 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           <div className="mt-6 space-y-3">
             <a
               href={`mailto:${contactInfo.email}`}
-              className="flex items-center gap-3 p-3 text-sm text-slate-700 dark:text-slate-400 hover:text-emerald-pro-600 dark:hover:text-xgrowth-500 rounded-lg transition-colors"
+              className="flex items-center gap-3 p-3 text-sm text-slate-900 dark:text-slate-300 hover:text-emerald-pro-600 dark:hover:text-xgrowth-500 rounded-lg transition-colors"
             >
               <Mail className="h-4 w-4" />
               {contactInfo.email}
             </a>
             <a
               href={`tel:${contactInfo.phone}`}
-              className="flex items-center gap-3 p-3 text-sm text-slate-700 dark:text-slate-400 hover:text-emerald-pro-600 dark:hover:text-xgrowth-500 rounded-lg transition-colors"
+              className="flex items-center gap-3 p-3 text-sm text-slate-900 dark:text-slate-300 hover:text-emerald-pro-600 dark:hover:text-xgrowth-500 rounded-lg transition-colors"
             >
               <Phone className="h-4 w-4" />
               {contactInfo.phone}

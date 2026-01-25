@@ -27,7 +27,7 @@ export default function CookiePolicyPage() {
             <h1 className="text-4xl md:text-5xl font-sora font-bold text-slate-900 dark:text-white mb-6">
               <span className="text-gradient headline-underline">Cookie Policy</span>
             </h1>
-            <p className="text-slate-700 dark:text-slate-200">
+            <p className="text-slate-900 dark:text-slate-200">
               Last updated: January 2024
             </p>
           </motion.div>
@@ -40,39 +40,39 @@ export default function CookiePolicyPage() {
         <Container size="md">
           <div className="prose prose-lg prose-invert max-w-none">
             <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-4">What Are Cookies</h2>
-            <p className="text-slate-700 dark:text-slate-200 mb-6">
+            <p className="text-slate-900 dark:text-slate-200 mb-6">
               Cookies are small text files stored on your device when you visit our website. They help us provide a better experience and understand how you use our services.
             </p>
 
             <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-4">Types of Cookies We Use</h2>
 
             <h3 className="text-xl font-sora font-semibold text-slate-900 dark:text-white mb-3">Essential Cookies</h3>
-            <p className="text-slate-700 dark:text-slate-200 mb-4">
+            <p className="text-slate-900 dark:text-slate-200 mb-4">
               Required for the website to function. These cannot be disabled.
             </p>
 
             <h3 className="text-xl font-sora font-semibold text-slate-900 dark:text-white mb-3">Analytics Cookies</h3>
-            <p className="text-slate-700 dark:text-slate-200 mb-4">
+            <p className="text-slate-900 dark:text-slate-200 mb-4">
               Help us understand how visitors interact with our website through tools like Google Analytics.
             </p>
 
             <h3 className="text-xl font-sora font-semibold text-slate-900 dark:text-white mb-3">Marketing Cookies</h3>
-            <p className="text-slate-700 dark:text-slate-200 mb-6">
+            <p className="text-slate-900 dark:text-slate-200 mb-6">
               Used to deliver relevant advertisements and track campaign performance.
             </p>
 
             <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-4">Managing Cookies</h2>
-            <p className="text-slate-700 dark:text-slate-200 mb-6">
+            <p className="text-slate-900 dark:text-slate-200 mb-6">
               You can control cookies through your browser settings. Note that disabling certain cookies may affect website functionality.
             </p>
 
             <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-4">Third-Party Cookies</h2>
-            <p className="text-slate-700 dark:text-slate-200 mb-6">
+            <p className="text-slate-900 dark:text-slate-200 mb-6">
               We use services from third parties that may set their own cookies. These include analytics providers and advertising partners.
             </p>
 
             <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-4">Contact</h2>
-            <p className="text-slate-700 dark:text-slate-200">
+            <p className="text-slate-900 dark:text-slate-200">
               For questions about our cookie practices, contact privacy@xgrowthos.com
             </p>
           </div>

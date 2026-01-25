@@ -135,12 +135,12 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
                   "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200",
                   isActive(item.href)
                     ? "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20"
-                    : "text-slate-700 dark:text-slate-200 hover:bg-light-bg-secondary dark:bg-midnight-blue/50 hover:text-slate-900 dark:hover:text-white border border-transparent"
+                    : "text-slate-900 dark:text-slate-200 hover:bg-light-bg-secondary dark:hover:bg-midnight-blue/50 hover:text-emerald-pro-600 dark:hover:text-white border border-transparent"
                 )}
               >
                 <item.icon className={cn(
                   "h-4 w-4",
-                  isActive(item.href) ? "text-emerald-pro-600" : "text-slate-700 dark:text-slate-400"
+                  isActive(item.href) ? "text-emerald-pro-600" : "text-slate-900 dark:text-slate-400"
                 )} />
                 <span>{item.name}</span>
               </Link>
@@ -159,12 +159,12 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
                   "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200",
                   isActive(item.href)
                     ? "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20"
-                    : "text-slate-700 dark:text-slate-200 hover:bg-light-bg-secondary dark:bg-midnight-blue/50 hover:text-slate-900 dark:hover:text-white border border-transparent"
+                    : "text-slate-900 dark:text-slate-200 hover:bg-light-bg-secondary dark:hover:bg-midnight-blue/50 hover:text-emerald-pro-600 dark:hover:text-white border border-transparent"
                 )}
               >
                 <item.icon className={cn(
                   "h-4 w-4",
-                  isActive(item.href) ? "text-emerald-pro-600" : "text-slate-700 dark:text-slate-400"
+                  isActive(item.href) ? "text-emerald-pro-600" : "text-slate-900 dark:text-slate-400"
                 )} />
                 <span>{item.name}</span>
               </Link>
@@ -184,13 +184,13 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
               <p className="text-sm font-medium text-slate-900 dark:text-white truncate">
                 {isLoading ? "Loading..." : profile?.full_name || "User"}
               </p>
-              <p className="text-xs text-slate-700 dark:text-slate-400 truncate capitalize">
+              <p className="text-xs text-slate-900 dark:text-slate-300 truncate capitalize">
                 {isLoading ? "" : profile?.role || "client"}
               </p>
             </div>
             <button
               onClick={handleSignOut}
-              className="p-2 rounded-lg text-slate-700 dark:text-slate-400 hover:text-energy-orange hover:bg-energy-orange/10 transition-colors"
+              className="p-2 rounded-lg text-slate-900 dark:text-slate-300 hover:text-energy-orange hover:bg-energy-orange/10 transition-colors"
               title="Sign out"
             >
               <LogOut className="h-4 w-4" />

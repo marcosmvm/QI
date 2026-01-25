@@ -14,7 +14,7 @@ const statusConfig = {
   draft: {
     label: "Draft",
     dot: "bg-steel",
-    text: "text-slate-700 dark:text-slate-400",
+    text: "text-slate-900 dark:text-slate-300",
   },
   active: {
     label: "Active",
@@ -41,7 +41,7 @@ export function CampaignTable({ campaigns }: CampaignTableProps) {
       <div className="flex items-center justify-between px-6 py-4 border-b border-border-default dark:border-graphite">
         <div>
           <h3 className="text-2xl font-semibold text-slate-900 dark:text-white">Campaigns</h3>
-          <p className="text-sm text-slate-700 dark:text-slate-400">{campaigns.length} active</p>
+          <p className="text-sm text-slate-900 dark:text-slate-300">{campaigns.length} active</p>
         </div>
         <Link
           href="/dashboard/campaigns"
@@ -55,25 +55,25 @@ export function CampaignTable({ campaigns }: CampaignTableProps) {
         <table className="w-full">
           <thead>
             <tr className="border-b border-border-default dark:border-graphite">
-              <th className="px-4 py-4 text-left text-xs font-medium text-slate-700 dark:text-slate-400 uppercase tracking-wide">
+              <th className="px-4 py-4 text-left text-xs font-medium text-slate-900 dark:text-slate-300 uppercase tracking-wide">
                 Campaign
               </th>
-              <th className="px-4 py-4 text-left text-xs font-medium text-slate-700 dark:text-slate-400 uppercase tracking-wide">
+              <th className="px-4 py-4 text-left text-xs font-medium text-slate-900 dark:text-slate-300 uppercase tracking-wide">
                 Status
               </th>
-              <th className="px-4 py-4 text-left text-xs font-medium text-slate-700 dark:text-slate-400 uppercase tracking-wide">
+              <th className="px-4 py-4 text-left text-xs font-medium text-slate-900 dark:text-slate-300 uppercase tracking-wide">
                 Sent
               </th>
-              <th className="px-4 py-4 text-left text-xs font-medium text-slate-700 dark:text-slate-400 uppercase tracking-wide">
+              <th className="px-4 py-4 text-left text-xs font-medium text-slate-900 dark:text-slate-300 uppercase tracking-wide">
                 Opens
               </th>
-              <th className="px-4 py-4 text-left text-xs font-medium text-slate-700 dark:text-slate-400 uppercase tracking-wide">
+              <th className="px-4 py-4 text-left text-xs font-medium text-slate-900 dark:text-slate-300 uppercase tracking-wide">
                 Replies
               </th>
-              <th className="px-4 py-4 text-left text-xs font-medium text-slate-700 dark:text-slate-400 uppercase tracking-wide">
+              <th className="px-4 py-4 text-left text-xs font-medium text-slate-900 dark:text-slate-300 uppercase tracking-wide">
                 Delivery
               </th>
-              <th className="px-4 py-4 text-right text-xs font-medium text-slate-700 dark:text-slate-400 uppercase tracking-wide">
+              <th className="px-4 py-4 text-right text-xs font-medium text-slate-900 dark:text-slate-300 uppercase tracking-wide">
                 Actions
               </th>
             </tr>
@@ -147,24 +147,24 @@ export function CampaignTable({ campaigns }: CampaignTableProps) {
                   <td className="px-4 py-3">
                     <div className="flex items-center justify-end gap-1">
                       {campaign.status === "active" ? (
-                        <button className="p-1.5 text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white rounded transition-colors">
+                        <button className="p-1.5 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white rounded transition-colors">
                           <Pause className="h-4 w-4" />
                         </button>
                       ) : campaign.status === "paused" || campaign.status === "draft" ? (
-                        <button className="p-1.5 text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white rounded transition-colors">
+                        <button className="p-1.5 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white rounded transition-colors">
                           <Play className="h-4 w-4" />
                         </button>
                       ) : null}
                       <Link
                         href={`/dashboard/campaigns/${campaign.id}`}
-                        className="p-1.5 text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white rounded transition-colors"
+                        className="p-1.5 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white rounded transition-colors"
                       >
                         <Eye className="h-4 w-4" />
                       </Link>
-                      <button className="p-1.5 text-slate-700 dark:text-slate-400 hover:text-alert-red rounded transition-colors">
+                      <button className="p-1.5 text-slate-900 dark:text-slate-300 hover:text-alert-red rounded transition-colors">
                         <Trash2 className="h-4 w-4" />
                       </button>
-                      <button className="p-1.5 text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white rounded transition-colors">
+                      <button className="p-1.5 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white rounded transition-colors">
                         <MoreHorizontal className="h-4 w-4" />
                       </button>
                     </div>

@@ -53,7 +53,7 @@ export default function TestimonialsPage() {
                 Founding Partners
               </span>
             </h1>
-            <p className="text-xl text-slate-700 dark:text-slate-200 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-900 dark:text-slate-200 max-w-2xl mx-auto">
               We&apos;re building something special. Here&apos;s what we promise to every founding partner who joins us.
             </p>
           </motion.div>
@@ -89,7 +89,7 @@ export default function TestimonialsPage() {
                 <div>
                   <p className="font-semibold text-slate-900 dark:text-white text-lg">Marcos Matthews</p>
                   <p className="text-emerald-pro-600 text-sm font-medium">Founder & CEO</p>
-                  <div className="flex items-center gap-3 mt-1 text-slate-700 dark:text-slate-400 text-xs">
+                  <div className="flex items-center gap-3 mt-1 text-slate-900 dark:text-slate-300 text-xs">
                     <span className="flex items-center gap-1">
                       <MapPin className="h-3 w-3" />
                       Los Angeles, CA
@@ -119,7 +119,7 @@ export default function TestimonialsPage() {
             <h2 className="text-3xl md:text-4xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Our Promise to You
             </h2>
-            <p className="text-slate-700 dark:text-slate-200 max-w-2xl mx-auto">
+            <p className="text-slate-900 dark:text-slate-200 max-w-2xl mx-auto">
               These aren&apos;t marketing claims—they&apos;re commitments we stand behind.
             </p>
           </motion.div>
@@ -140,7 +140,7 @@ export default function TestimonialsPage() {
                   </div>
                 </div>
                 <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-3">{commitment.title}</h3>
-                <p className="text-slate-700 dark:text-slate-200">{commitment.description}</p>
+                <p className="text-slate-900 dark:text-slate-200">{commitment.description}</p>
               </motion.div>
             ))}
           </div>
@@ -160,7 +160,7 @@ export default function TestimonialsPage() {
             <h2 className="text-3xl md:text-4xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Why Join as a Founding Partner?
             </h2>
-            <p className="text-slate-700 dark:text-slate-200 max-w-2xl mx-auto">
+            <p className="text-slate-900 dark:text-slate-200 max-w-2xl mx-auto">
               Early adopters get exclusive benefits that won&apos;t be available later.
             </p>
           </motion.div>
@@ -185,7 +185,7 @@ export default function TestimonialsPage() {
                 <CheckCircle className="h-6 w-6 text-emerald-pro-400 flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold text-slate-900 dark:text-white mb-1">{benefit.title}</h4>
-                  <p className="text-slate-700 dark:text-slate-400 text-sm">{benefit.description}</p>
+                  <p className="text-slate-900 dark:text-slate-300 text-sm">{benefit.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -206,7 +206,7 @@ export default function TestimonialsPage() {
             <h2 className="text-3xl font-sora font-bold text-slate-900 dark:text-white mb-4">
               Ready to Be a Founding Partner?
             </h2>
-            <p className="text-slate-700 dark:text-slate-200 mb-8 max-w-xl mx-auto">
+            <p className="text-slate-900 dark:text-slate-200 mb-8 max-w-xl mx-auto">
               Limited spots available. Book a call to discuss if we&apos;re a fit for each other.
             </p>
             <Link href="/contact">

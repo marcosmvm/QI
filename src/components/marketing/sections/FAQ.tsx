@@ -88,7 +88,7 @@ export function FAQ() {
               Questions
             </span>
           </h2>
-          <p className="text-lg text-slate-700 dark:text-slate-400">
+          <p className="text-lg text-slate-900 dark:text-slate-300">
             Everything you need to know about working with XGrowthOS.
           </p>
         </motion.div>
@@ -116,7 +116,7 @@ export function FAQ() {
                     </Accordion.Trigger>
                   </Accordion.Header>
                   <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                    <div className="px-6 pb-5 text-slate-700 dark:text-slate-400 leading-relaxed">
+                    <div className="px-6 pb-5 text-slate-900 dark:text-slate-300 leading-relaxed">
                       {faq.answer}
                     </div>
                   </Accordion.Content>

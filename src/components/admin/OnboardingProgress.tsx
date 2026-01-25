@@ -90,12 +90,12 @@ export function OnboardingProgress({
               {isCompleted ? (
                 <CheckCircle2 className="h-4 w-4 text-emerald-pro-400 flex-shrink-0" />
               ) : (
-                <Circle className="h-4 w-4 text-slate-700 dark:text-slate-400 flex-shrink-0" />
+                <Circle className="h-4 w-4 text-slate-900 dark:text-slate-300 flex-shrink-0" />
               )}
               <span
                 className={cn(
                   "text-xs font-medium truncate",
-                  isCompleted ? "text-emerald-pro-400" : "text-slate-700 dark:text-slate-400"
+                  isCompleted ? "text-emerald-pro-400" : "text-slate-900 dark:text-slate-300"
                 )}
               >
                 {step.label}
@@ -135,7 +135,7 @@ export function OnboardingProgressBar({
           style={{ width: `${progressPercent}%` }}
         />
       </div>
-      <span className="text-xs text-slate-700 dark:text-slate-400">
+      <span className="text-xs text-slate-900 dark:text-slate-300">
         {completedSteps}/{totalSteps}
       </span>
     </div>

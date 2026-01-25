@@ -76,9 +76,9 @@ export default function AdminAnalyticsClient({
       {/* Header */}
       <motion.div variants={itemVariants} className="flex items-center justify-between mb-8">
         <div>
-          <p className="text-sm text-slate-700 dark:text-slate-400 mb-1">Admin / <span className="text-emerald-pro-600">Analytics</span></p>
+          <p className="text-sm text-slate-900 dark:text-slate-300 mb-1">Admin / <span className="text-emerald-pro-600">Analytics</span></p>
           <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">Analytics</h1>
-          <p className="text-slate-700 dark:text-slate-400 mt-1">
+          <p className="text-slate-900 dark:text-slate-300 mt-1">
             Platform-wide performance metrics and insights
           </p>
         </div>
@@ -122,7 +122,7 @@ export default function AdminAnalyticsClient({
       {/* Secondary Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         <div className="glass-premium p-4">
-          <div className="flex items-center gap-2 text-slate-700 dark:text-slate-400 mb-2">
+          <div className="flex items-center gap-2 text-slate-900 dark:text-slate-300 mb-2">
             <Building2 className="h-4 w-4" />
             <span className="text-xs">Total Clients</span>
           </div>
@@ -131,7 +131,7 @@ export default function AdminAnalyticsClient({
           </p>
         </div>
         <div className="glass-premium p-4">
-          <div className="flex items-center gap-2 text-slate-700 dark:text-slate-400 mb-2">
+          <div className="flex items-center gap-2 text-slate-900 dark:text-slate-300 mb-2">
             <BarChart3 className="h-4 w-4" />
             <span className="text-xs">Active Campaigns</span>
           </div>
@@ -140,7 +140,7 @@ export default function AdminAnalyticsClient({
           </p>
         </div>
         <div className="glass-premium p-4">
-          <div className="flex items-center gap-2 text-slate-700 dark:text-slate-400 mb-2">
+          <div className="flex items-center gap-2 text-slate-900 dark:text-slate-300 mb-2">
             <Users className="h-4 w-4" />
             <span className="text-xs">Qualified Leads</span>
           </div>
@@ -149,14 +149,14 @@ export default function AdminAnalyticsClient({
           </p>
         </div>
         <div className="glass-premium p-4">
-          <div className="flex items-center gap-2 text-slate-700 dark:text-slate-400 mb-2">
+          <div className="flex items-center gap-2 text-slate-900 dark:text-slate-300 mb-2">
             <Calendar className="h-4 w-4" />
             <span className="text-xs">This Week</span>
           </div>
           <p className="text-2xl font-sora font-bold text-slate-900 dark:text-white">
             {weeklyTrend.thisWeek.toLocaleString()}
           </p>
-          <p className="text-xs text-slate-700 dark:text-slate-400">emails sent</p>
+          <p className="text-xs text-slate-900 dark:text-slate-300">emails sent</p>
         </div>
       </div>
 
@@ -168,8 +168,8 @@ export default function AdminAnalyticsClient({
           </h2>
           {topCampaigns.length === 0 ? (
             <div className="text-center py-8">
-              <BarChart3 className="h-10 w-10 text-slate-700 dark:text-slate-400 mx-auto mb-3" />
-              <p className="text-slate-700 dark:text-slate-400 text-sm">No campaign data yet</p>
+              <BarChart3 className="h-10 w-10 text-slate-900 dark:text-slate-300 mx-auto mb-3" />
+              <p className="text-slate-900 dark:text-slate-300 text-sm">No campaign data yet</p>
             </div>
           ) : (
             <div className="space-y-3">
@@ -179,21 +179,21 @@ export default function AdminAnalyticsClient({
                   className="flex items-center justify-between p-3 bg-white dark:bg-deep-space/50 border border-border-default dark:border-graphite/30 rounded-lg"
                 >
                   <div className="flex items-center gap-3">
-                    <span className="text-sm font-mono text-slate-700 dark:text-slate-400 w-6">
+                    <span className="text-sm font-mono text-slate-900 dark:text-slate-300 w-6">
                       #{index + 1}
                     </span>
                     <div>
                       <p className="text-sm font-medium text-slate-900 dark:text-white">
                         {campaign.name}
                       </p>
-                      <p className="text-xs text-slate-700 dark:text-slate-400">{campaign.org}</p>
+                      <p className="text-xs text-slate-900 dark:text-slate-300">{campaign.org}</p>
                     </div>
                   </div>
                   <div className="text-right">
                     <p className="text-sm font-medium text-emerald-pro-400">
                       {campaign.replyRate.toFixed(1)}%
                     </p>
-                    <p className="text-xs text-slate-700 dark:text-slate-400">reply rate</p>
+                    <p className="text-xs text-slate-900 dark:text-slate-300">reply rate</p>
                   </div>
                 </div>
               ))}
@@ -208,8 +208,8 @@ export default function AdminAnalyticsClient({
           </h2>
           {clientPerformance.length === 0 ? (
             <div className="text-center py-8">
-              <Building2 className="h-10 w-10 text-slate-700 dark:text-slate-400 mx-auto mb-3" />
-              <p className="text-slate-700 dark:text-slate-400 text-sm">No client data yet</p>
+              <Building2 className="h-10 w-10 text-slate-900 dark:text-slate-300 mx-auto mb-3" />
+              <p className="text-slate-900 dark:text-slate-300 text-sm">No client data yet</p>
             </div>
           ) : (
             <div className="space-y-3">
@@ -222,22 +222,22 @@ export default function AdminAnalyticsClient({
                     <p className="text-sm font-medium text-slate-900 dark:text-white">
                       {client.name}
                     </p>
-                    <p className="text-xs text-slate-700 dark:text-slate-400">
+                    <p className="text-xs text-slate-900 dark:text-slate-300">
                       {client.sent.toLocaleString()} emails sent
                     </p>
                   </div>
                   <div className="flex items-center gap-4">
                     <div className="text-right">
-                      <p className="text-sm text-slate-700 dark:text-slate-200">
+                      <p className="text-sm text-slate-900 dark:text-slate-200">
                         {client.openRate.toFixed(1)}%
                       </p>
-                      <p className="text-xs text-slate-700 dark:text-slate-400">open</p>
+                      <p className="text-xs text-slate-900 dark:text-slate-300">open</p>
                     </div>
                     <div className="text-right">
                       <p className="text-sm text-emerald-pro-400">
                         {client.replyRate.toFixed(1)}%
                       </p>
-                      <p className="text-xs text-slate-700 dark:text-slate-400">reply</p>
+                      <p className="text-xs text-slate-900 dark:text-slate-300">reply</p>
                     </div>
                   </div>
                 </div>
@@ -299,9 +299,9 @@ function StatCard({
         )}
       </div>
       <p className="text-2xl font-sora font-bold text-slate-900 dark:text-white">{value}</p>
-      <p className="text-xs text-slate-700 dark:text-slate-400 mt-1">{label}</p>
+      <p className="text-xs text-slate-900 dark:text-slate-300 mt-1">{label}</p>
       {target && (
-        <p className="text-xs text-slate-700 dark:text-slate-400 mt-1">Target: {target}%</p>
+        <p className="text-xs text-slate-900 dark:text-slate-300 mt-1">Target: {target}%</p>
       )}
     </div>
   );

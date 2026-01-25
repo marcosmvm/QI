@@ -98,7 +98,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
                 {service.tagline}
               </p>
 
-              <p className="text-lg text-slate-700/90 dark:text-slate-200/90 mb-10 leading-relaxed">
+              <p className="text-lg text-slate-900/90 dark:text-slate-200/90 mb-10 leading-relaxed">
                 {service.longDescription}
               </p>
 
@@ -139,7 +139,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
                     <p className={`stat-number text-3xl md:text-4xl ${colors.text}`}>
                       {stat.value}
                     </p>
-                    <p className="text-slate-700 dark:text-slate-400 text-sm mt-2">{stat.label}</p>
+                    <p className="text-slate-900 dark:text-slate-300 text-sm mt-2">{stat.label}</p>
                   </motion.div>
                 ))}
               </div>
@@ -165,7 +165,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
               What&apos;s{" "}
               <span className={`headline-underline ${colors.text}`}>Included</span>
             </h2>
-            <p className="text-lg md:text-xl text-slate-700/90 dark:text-slate-200/90">
+            <p className="text-lg md:text-xl text-slate-900/90 dark:text-slate-200/90">
               Everything you get with our {service.name.toLowerCase()} service.
             </p>
           </motion.div>
@@ -186,7 +186,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
                 <h3 className={`text-lg font-sora font-semibold text-slate-900 dark:text-white mb-3 group-hover:${colors.text} transition-colors`}>
                   {feature.title}
                 </h3>
-                <p className="text-slate-700 dark:text-slate-200 text-sm leading-relaxed group-hover:text-slate-900 dark:group-hover:text-white/80 transition-colors">
+                <p className="text-slate-900 dark:text-slate-200 text-sm leading-relaxed group-hover:text-slate-900 dark:group-hover:text-white/80 transition-colors">
                   {feature.description}
                 </p>
               </motion.div>
@@ -209,7 +209,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
               How It{" "}
               <span className={`headline-underline ${colors.text}`}>Works</span>
             </h2>
-            <p className="text-lg md:text-xl text-slate-700/90 dark:text-slate-200/90">
+            <p className="text-lg md:text-xl text-slate-900/90 dark:text-slate-200/90">
               Our proven process for delivering results.
             </p>
           </motion.div>
@@ -243,7 +243,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
                     <h3 className={`text-xl md:text-2xl font-sora font-semibold text-slate-900 dark:text-white mb-3 group-hover:${colors.text} transition-colors`}>
                       {step.title}
                     </h3>
-                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed group-hover:text-slate-900 dark:group-hover:text-white/80 transition-colors">
+                    <p className="text-slate-900 dark:text-slate-200 leading-relaxed group-hover:text-slate-900 dark:group-hover:text-white/80 transition-colors">
                       {step.description}
                     </p>
                   </div>
@@ -268,7 +268,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
                 Why Choose{" "}
                 <span className={`headline-underline ${colors.text}`}>XGrowthOS</span>
               </h2>
-              <p className="text-lg md:text-xl text-slate-700/90 dark:text-slate-200/90 mb-10">
+              <p className="text-lg md:text-xl text-slate-900/90 dark:text-slate-200/90 mb-10">
                 The benefits of working with us for {service.name.toLowerCase()}.
               </p>
 
@@ -285,7 +285,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
                     <div className={`flex-shrink-0 w-8 h-8 rounded-full ${colors.bg} border ${colors.border} flex items-center justify-center group-hover:scale-110 transition-transform`}>
                       <CheckCircle className={`h-5 w-5 ${colors.text}`} />
                     </div>
-                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed group-hover:text-slate-900 dark:group-hover:text-white transition-colors">{benefit}</span>
+                    <span className="text-slate-900 dark:text-slate-200 text-lg leading-relaxed group-hover:text-slate-900 dark:group-hover:text-white transition-colors">{benefit}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -304,7 +304,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
               <h3 className="text-2xl lg:text-3xl font-sora font-bold text-slate-900 dark:text-white mb-4">
                 Ready to get started?
               </h3>
-              <p className="text-slate-700 dark:text-slate-200 text-lg mb-8">
+              <p className="text-slate-900 dark:text-slate-200 text-lg mb-8">
                 Book a call with our team to discuss how {service.name.toLowerCase()} can help grow your business.
               </p>
               <Link href="/contact">
@@ -365,7 +365,7 @@ export function ServiceDetailPage({ serviceId }: ServiceDetailPageProps) {
                       </Accordion.Trigger>
                     </Accordion.Header>
                     <Accordion.Content className="overflow-hidden data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
-                      <div className="px-6 pb-6 text-slate-700 dark:text-slate-200 leading-relaxed border-t border-border-default dark:border-graphite/30 pt-4">
+                      <div className="px-6 pb-6 text-slate-900 dark:text-slate-200 leading-relaxed border-t border-border-default dark:border-graphite/30 pt-4">
                         {faq.answer}
                       </div>
                     </Accordion.Content>

@@ -173,7 +173,7 @@ export function Hero() {
                 <span>Check your inbox for the B2B Cold Email Playbook!</span>
               </div>
             )}
-            <p className="text-slate-700 dark:text-slate-400 text-xs mt-2">Get our free B2B Cold Email Playbook. No spam, unsubscribe anytime.</p>
+            <p className="text-slate-900 dark:text-slate-300 text-xs mt-2">Get our free B2B Cold Email Playbook. No spam, unsubscribe anytime.</p>
           </motion.div>
 
           {/* Hero Stats Grid */}
@@ -193,7 +193,7 @@ export function Hero() {
               >
                 <stat.icon className="w-6 h-6 text-emerald-pro-600 dark:text-xgrowth-500 mx-auto mb-2 group-hover:scale-110 transition-transform" />
                 <div className="stat-number text-2xl md:text-3xl">{stat.value}</div>
-                <div className="text-slate-700 dark:text-slate-400 text-sm mt-1">{stat.label}</div>
+                <div className="text-slate-900 dark:text-slate-300 text-sm mt-1">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -205,14 +205,14 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.7 }}
             className="pt-8 border-t border-emerald-pro-600/10 dark:border-xgrowth-500/10"
           >
-            <p className="text-slate-700 dark:text-slate-400 text-sm mb-4">Built for B2B companies in</p>
+            <p className="text-slate-900 dark:text-slate-300 text-sm mb-4">Built for B2B companies in</p>
             <div className="flex flex-wrap justify-center items-center gap-3">
               {["SaaS", "B2B Tech", "Healthcare", "Finance", "Professional Services"].map((industry) => (
                 <motion.span
                   key={industry}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="px-4 py-2 text-sm text-slate-700 dark:text-slate-400 bg-light-bg-secondary dark:bg-midnight-blue/40 rounded-lg border border-border-default dark:border-graphite/30"
+                  className="px-4 py-2 text-sm text-slate-900 dark:text-slate-300 bg-light-bg-secondary dark:bg-midnight-blue/40 rounded-lg border border-border-default dark:border-graphite/30"
                 >
                   {industry}
                 </motion.span>

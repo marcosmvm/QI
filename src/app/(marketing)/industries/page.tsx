@@ -27,7 +27,7 @@ function getCardColor(id: string) {
 function TrustBadge({ label }: { label: string }) {
   return (
     <div className="bg-light-bg-secondary dark:bg-midnight-blue border border-border-default dark:border-graphite rounded-lg px-6 py-3">
-      <span className="text-slate-700 dark:text-slate-200 text-sm">{label}</span>
+      <span className="text-slate-900 dark:text-slate-200 text-sm">{label}</span>
     </div>
   );
 }
@@ -66,7 +66,7 @@ export default function IndustriesPage() {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg text-slate-700 dark:text-slate-200 max-w-3xl mx-auto mb-12">
+            <p className="text-lg text-slate-900 dark:text-slate-200 max-w-3xl mx-auto mb-12">
               We understand the unique challenges of B2B sales across verticals. Our
               AI-powered cold email campaigns are tailored to each industry&apos;s specific
               buyer personas and decision-making processes.
@@ -117,7 +117,7 @@ export default function IndustriesPage() {
                         <div className={`w-12 h-12 ${colors.iconBg} rounded-lg flex items-center justify-center transition-all duration-200 group-hover:bg-emerald-pro-600/10 group-hover:border group-hover:border-emerald-pro-600/30`}>
                           <Icon className={`h-5 w-5 ${colors.text} transition-all duration-200 group-hover:text-emerald-pro-600 group-hover:scale-110`} />
                         </div>
-                        <ArrowRight className="h-5 w-5 text-slate-700 dark:text-slate-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:text-emerald-pro-600 transition-all duration-200" />
+                        <ArrowRight className="h-5 w-5 text-slate-900 dark:text-slate-300 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:text-emerald-pro-600 transition-all duration-200" />
                       </div>
 
                       {/* Title */}
@@ -131,7 +131,7 @@ export default function IndustriesPage() {
                       </p>
 
                       {/* Description */}
-                      <p className="text-slate-700 dark:text-slate-400 text-sm leading-relaxed">
+                      <p className="text-slate-900 dark:text-slate-300 text-sm leading-relaxed">
                         {industry.shortDescription}
                       </p>
                     </div>
@@ -183,7 +183,7 @@ export default function IndustriesPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">
               Ready to <span className="headline-underline text-gradient">Dominate Your Industry</span>?
             </h2>
-            <p className="text-lg text-slate-700 dark:text-slate-200 mb-10">
+            <p className="text-lg text-slate-900 dark:text-slate-200 mb-10">
               Join hundreds of B2B companies using our AI-powered cold email system to book more qualified meetings and accelerate growth.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -197,7 +197,7 @@ export default function IndustriesPage() {
               {/* Brand Board v1.0 - Ghost Button */}
               <Link
                 href="/case-studies"
-                className="text-slate-700 dark:text-slate-400 px-6 py-3 rounded-lg font-medium hover:text-slate-900 dark:hover:text-white hover:bg-light-bg-secondary dark:hover:bg-graphite transition-all duration-200"
+                className="text-slate-900 dark:text-slate-300 px-6 py-3 rounded-lg font-medium hover:text-slate-900 dark:hover:text-white hover:bg-light-bg-secondary dark:hover:bg-graphite transition-all duration-200"
               >
                 View Case Studies
               </Link>

@@ -156,7 +156,7 @@ export function CampaignsTable({ campaigns, clients }: CampaignsTableProps) {
       {/* Search and Filter Bar */}
       <div className="flex items-center gap-4 mb-6">
         <div className="relative flex-1 max-w-md">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-700 dark:text-slate-400" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-900 dark:text-slate-300" />
           <input
             type="text"
             placeholder="Search campaigns or clients..."
@@ -165,12 +165,12 @@ export function CampaignsTable({ campaigns, clients }: CampaignsTableProps) {
               setSearchQuery(e.target.value);
               setCurrentPage(1);
             }}
-            className="w-full h-10 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space pl-10 pr-4 text-slate-900 dark:text-white placeholder:text-slate-700 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 transition-colors"
+            className="w-full h-10 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space pl-10 pr-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 transition-colors"
           />
           {searchQuery && (
             <button
               onClick={() => setSearchQuery("")}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
             >
               <X className="h-4 w-4" />
             </button>
@@ -183,7 +183,7 @@ export function CampaignsTable({ campaigns, clients }: CampaignsTableProps) {
             "flex items-center gap-2 px-4 py-2 border rounded-lg transition-colors",
             showFilters || hasActiveFilters
               ? "border-emerald-pro-600/50 text-emerald-pro-600 bg-emerald-pro-600/10"
-              : "border-border-default dark:border-graphite text-slate-700 dark:text-slate-200 hover:bg-light-bg-secondary dark:bg-midnight-blue/30"
+              : "border-border-default dark:border-graphite text-slate-900 dark:text-slate-200 hover:bg-light-bg-secondary dark:bg-midnight-blue/30"
           )}
         >
           <Filter className="h-4 w-4" />
@@ -196,7 +196,7 @@ export function CampaignsTable({ campaigns, clients }: CampaignsTableProps) {
         {hasActiveFilters && (
           <button
             onClick={clearFilters}
-            className="text-sm text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
+            className="text-sm text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
           >
             Clear all
           </button>
@@ -208,7 +208,7 @@ export function CampaignsTable({ campaigns, clients }: CampaignsTableProps) {
         <div className="flex items-center gap-4 mb-6 p-4 bg-light-bg-secondary dark:bg-midnight-blue/20 border border-border-default dark:border-graphite/30 rounded-lg">
           {/* Status Filter */}
           <div className="flex items-center gap-2">
-            <label className="text-xs text-slate-700 dark:text-slate-400">Status:</label>
+            <label className="text-xs text-slate-900 dark:text-slate-300">Status:</label>
             <select
               value={statusFilter}
               onChange={(e) => {
@@ -227,7 +227,7 @@ export function CampaignsTable({ campaigns, clients }: CampaignsTableProps) {
 
           {/* Client Filter */}
           <div className="flex items-center gap-2">
-            <label className="text-xs text-slate-700 dark:text-slate-400">Client:</label>
+            <label className="text-xs text-slate-900 dark:text-slate-300">Client:</label>
             <select
               value={clientFilter}
               onChange={(e) => {
@@ -247,7 +247,7 @@ export function CampaignsTable({ campaigns, clients }: CampaignsTableProps) {
 
           {/* Health Filter */}
           <div className="flex items-center gap-2">
-            <label className="text-xs text-slate-700 dark:text-slate-400">Health:</label>
+            <label className="text-xs text-slate-900 dark:text-slate-300">Health:</label>
             <select
               value={healthFilter}
               onChange={(e) => {
@@ -268,7 +268,7 @@ export function CampaignsTable({ campaigns, clients }: CampaignsTableProps) {
 
       {/* Results count */}
       <div className="flex items-center justify-between mb-4">
-        <p className="text-sm text-slate-700 dark:text-slate-400">
+        <p className="text-sm text-slate-900 dark:text-slate-300">
           Showing {paginatedCampaigns.length} of {filteredCampaigns.length} campaigns
           {filteredCampaigns.length !== campaigns.length && (
             <span> (filtered from {campaigns.length} total)</span>
@@ -316,13 +316,13 @@ export function CampaignsTable({ campaigns, clients }: CampaignsTableProps) {
                 currentOrder={sortOrder}
                 onSort={handleSort}
               />
-              <th className="text-left text-xs font-medium text-slate-700 dark:text-slate-400 uppercase tracking-wider px-6 py-4">
+              <th className="text-left text-xs font-medium text-slate-900 dark:text-slate-300 uppercase tracking-wider px-6 py-4">
                 Open Rate
               </th>
-              <th className="text-left text-xs font-medium text-slate-700 dark:text-slate-400 uppercase tracking-wider px-6 py-4">
+              <th className="text-left text-xs font-medium text-slate-900 dark:text-slate-300 uppercase tracking-wider px-6 py-4">
                 Reply Rate
               </th>
-              <th className="text-right text-xs font-medium text-slate-700 dark:text-slate-400 uppercase tracking-wider px-6 py-4">
+              <th className="text-right text-xs font-medium text-slate-900 dark:text-slate-300 uppercase tracking-wider px-6 py-4">
                 Actions
               </th>
             </tr>
@@ -331,7 +331,7 @@ export function CampaignsTable({ campaigns, clients }: CampaignsTableProps) {
             {paginatedCampaigns.length === 0 ? (
               <tr>
                 <td colSpan={8} className="px-6 py-12 text-center">
-                  <p className="text-slate-700 dark:text-slate-400">No campaigns match your filters</p>
+                  <p className="text-slate-900 dark:text-slate-300">No campaigns match your filters</p>
                   <button
                     onClick={clearFilters}
                     className="text-emerald-pro-600 hover:underline text-sm mt-2"
@@ -354,7 +354,7 @@ export function CampaignsTable({ campaigns, clients }: CampaignsTableProps) {
                       {campaign.name}
                     </Link>
                     {campaign.targetIndustry && (
-                      <p className="text-xs text-slate-700 dark:text-slate-400 mt-0.5">
+                      <p className="text-xs text-slate-900 dark:text-slate-300 mt-0.5">
                         {campaign.targetIndustry}
                       </p>
                     )}
@@ -362,7 +362,7 @@ export function CampaignsTable({ campaigns, clients }: CampaignsTableProps) {
                   <td className="px-6 py-4">
                     <Link
                       href={`/admin/clients/${campaign.clientId}`}
-                      className="text-sm text-slate-700 dark:text-slate-200 hover:text-emerald-pro-600 transition-colors"
+                      className="text-sm text-slate-900 dark:text-slate-200 hover:text-emerald-pro-600 transition-colors"
                     >
                       {campaign.clientName}
                     </Link>
@@ -377,7 +377,7 @@ export function CampaignsTable({ campaigns, clients }: CampaignsTableProps) {
                     />
                   </td>
                   <td className="px-6 py-4">
-                    <span className="text-sm text-slate-700 dark:text-slate-200">
+                    <span className="text-sm text-slate-900 dark:text-slate-200">
                       {campaign.totalSent.toLocaleString()}
                     </span>
                   </td>
@@ -388,7 +388,7 @@ export function CampaignsTable({ campaigns, clients }: CampaignsTableProps) {
                         campaign.openRate !== null && campaign.openRate >= 30
                           ? "text-emerald-pro-400"
                           : campaign.openRate !== null && campaign.openRate >= 15
-                          ? "text-slate-700 dark:text-slate-200"
+                          ? "text-slate-900 dark:text-slate-200"
                           : "text-energy-orange"
                       )}
                     >
@@ -404,7 +404,7 @@ export function CampaignsTable({ campaigns, clients }: CampaignsTableProps) {
                         campaign.replyRate !== null && campaign.replyRate >= 3
                           ? "text-emerald-pro-400"
                           : campaign.replyRate !== null && campaign.replyRate >= 1
-                          ? "text-slate-700 dark:text-slate-200"
+                          ? "text-slate-900 dark:text-slate-200"
                           : "text-energy-orange"
                       )}
                     >
@@ -432,7 +432,7 @@ export function CampaignsTable({ campaigns, clients }: CampaignsTableProps) {
                       ) : null}
                       <Link
                         href={`/admin/campaigns/${campaign.id}`}
-                        className="p-2 rounded-lg text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-colors"
+                        className="p-2 rounded-lg text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-colors"
                         title="View details"
                       >
                         <Eye className="h-4 w-4" />
@@ -450,7 +450,7 @@ export function CampaignsTable({ campaigns, clients }: CampaignsTableProps) {
       {totalPages > 1 && (
         <div className="flex items-center justify-between mt-4">
           <div className="flex items-center gap-2">
-            <span className="text-sm text-slate-700 dark:text-slate-400">Show:</span>
+            <span className="text-sm text-slate-900 dark:text-slate-300">Show:</span>
             <select
               value={pageSize}
               onChange={(e) => {
@@ -471,19 +471,19 @@ export function CampaignsTable({ campaigns, clients }: CampaignsTableProps) {
             <button
               onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
               disabled={currentPage === 1}
-              className="p-2 rounded-lg border border-border-default dark:border-graphite text-slate-700 dark:text-slate-400 hover:bg-light-bg-secondary dark:bg-midnight-blue/30 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="p-2 rounded-lg border border-border-default dark:border-graphite text-slate-900 dark:text-slate-300 hover:bg-light-bg-secondary dark:bg-midnight-blue/30 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               <ChevronLeft className="h-4 w-4" />
             </button>
 
-            <span className="text-sm text-slate-700 dark:text-slate-200 px-3">
+            <span className="text-sm text-slate-900 dark:text-slate-200 px-3">
               Page {currentPage} of {totalPages}
             </span>
 
             <button
               onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
               disabled={currentPage === totalPages}
-              className="p-2 rounded-lg border border-border-default dark:border-graphite text-slate-700 dark:text-slate-400 hover:bg-light-bg-secondary dark:bg-midnight-blue/30 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="p-2 rounded-lg border border-border-default dark:border-graphite text-slate-900 dark:text-slate-300 hover:bg-light-bg-secondary dark:bg-midnight-blue/30 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               <ChevronRight className="h-4 w-4" />
             </button>
@@ -515,7 +515,7 @@ function SortableHeader({
         onClick={() => onSort(field)}
         className={cn(
           "flex items-center gap-1 text-xs font-medium uppercase tracking-wider transition-colors",
-          isActive ? "text-emerald-pro-600" : "text-slate-700 dark:text-slate-400 hover:text-slate-700 dark:text-slate-200"
+          isActive ? "text-emerald-pro-600" : "text-slate-900 dark:text-slate-300 hover:text-slate-900 dark:text-slate-200"
         )}
       >
         {label}
@@ -534,7 +534,7 @@ function SortableHeader({
 function CampaignStatusBadge({ status }: { status: string }) {
   const styles: Record<string, string> = {
     active: "bg-emerald-pro-400/10 text-emerald-pro-400 border-emerald-pro-400/30",
-    draft: "bg-steel/10 text-slate-700 dark:text-slate-400 border-steel/30",
+    draft: "bg-steel/10 text-slate-900 dark:text-slate-300 border-steel/30",
     paused: "bg-energy-orange/10 text-energy-orange border-energy-orange/30",
     completed: "bg-emerald-pro-600/10 text-emerald-pro-600 border-emerald-pro-600/30",
   };
@@ -579,7 +579,7 @@ function HealthBadge({
     },
     unknown: {
       icon: HelpCircle,
-      color: "text-slate-700 dark:text-slate-400",
+      color: "text-slate-900 dark:text-slate-300",
       bg: "bg-steel/10",
       border: "border-steel/30",
     },

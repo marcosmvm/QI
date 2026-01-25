@@ -88,7 +88,7 @@ export default function BlogPage() {
                 Blog
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-700/90 dark:text-slate-200/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-slate-900/90 dark:text-slate-200/90 max-w-3xl mx-auto leading-relaxed">
               Expert insights on <span className="text-emerald-pro-600 font-semibold">B2B lead generation</span>, deliverability, AI, and <span className="text-emerald-pro-500 font-semibold">sales development</span>.
             </p>
           </motion.div>
@@ -123,12 +123,12 @@ export default function BlogPage() {
                     </h2>
 
                     {/* Excerpt */}
-                    <p className="text-slate-700 dark:text-slate-200 text-sm mb-4 line-clamp-2 group-hover:text-slate-900 dark:group-hover:text-white/80 transition-colors">
+                    <p className="text-slate-900 dark:text-slate-200 text-sm mb-4 line-clamp-2 group-hover:text-slate-900 dark:group-hover:text-white/80 transition-colors">
                       {post.excerpt}
                     </p>
 
                     {/* Meta */}
-                    <div className="flex items-center justify-between text-slate-700 dark:text-slate-400 text-xs">
+                    <div className="flex items-center justify-between text-slate-900 dark:text-slate-300 text-xs">
                       <div className="flex items-center gap-1">
                         <Calendar className="h-3 w-3" />
                         {post.date}

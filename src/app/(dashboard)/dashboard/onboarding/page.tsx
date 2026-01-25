@@ -178,7 +178,7 @@ export default function OnboardingPage() {
     >
       {/* Page Header */}
       <motion.div variants={itemVariants} className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-400 mb-2">
+        <div className="flex items-center gap-2 text-sm text-slate-900 dark:text-slate-300 mb-2">
           <Link href="/dashboard" className="hover:text-emerald-pro-600 transition-colors">
             Portal
           </Link>
@@ -188,7 +188,7 @@ export default function OnboardingPage() {
         <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white">
           Welcome to XGrowthOS
         </h1>
-        <p className="text-slate-700 dark:text-slate-400 mt-1">
+        <p className="text-slate-900 dark:text-slate-300 mt-1">
           Let&apos;s get your account set up and ready to launch campaigns
         </p>
       </motion.div>
@@ -215,7 +215,7 @@ export default function OnboardingPage() {
                       ? "bg-emerald-pro-600 dark:bg-xgrowth-500 text-white dark:text-green-950"
                       : currentStep > step.id
                       ? "bg-emerald-pro-400 dark:bg-xgrowth-400 text-white dark:text-green-950"
-                      : "bg-graphite text-slate-700 dark:text-slate-400"
+                      : "bg-graphite text-slate-900 dark:text-slate-300"
                   )}
                 >
                   {currentStep > step.id ? (
@@ -231,7 +231,7 @@ export default function OnboardingPage() {
                       ? "text-emerald-pro-600"
                       : currentStep > step.id
                       ? "text-emerald-pro-400"
-                      : "text-slate-700 dark:text-slate-400"
+                      : "text-slate-900 dark:text-slate-300"
                   )}
                 >
                   {step.name}
@@ -266,7 +266,7 @@ export default function OnboardingPage() {
               <h2 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-3">
                 Welcome to the Future of Outreach
               </h2>
-              <p className="text-slate-700 dark:text-slate-200 max-w-lg mx-auto">
+              <p className="text-slate-900 dark:text-slate-200 max-w-lg mx-auto">
                 You&apos;re about to unlock AI-powered cold email campaigns that deliver
                 real results. Let&apos;s get you set up in just a few minutes.
               </p>
@@ -297,7 +297,7 @@ export default function OnboardingPage() {
                   <p className="text-sm font-medium text-slate-900 dark:text-white">
                     This will only take about 5 minutes
                   </p>
-                  <p className="text-xs text-slate-700 dark:text-slate-400 mt-1">
+                  <p className="text-xs text-slate-900 dark:text-slate-300 mt-1">
                     We&apos;ll guide you through connecting your email, uploading your
                     ideal customer profile, and reviewing your first campaign.
                   </p>
@@ -325,13 +325,13 @@ export default function OnboardingPage() {
                 <h2 className="text-xl font-sora font-semibold text-slate-900 dark:text-white">
                   Company Profile
                 </h2>
-                <p className="text-slate-700 dark:text-slate-400">Tell us about your business</p>
+                <p className="text-slate-900 dark:text-slate-300">Tell us about your business</p>
               </div>
             </div>
 
             <div className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">
+                <label className="block text-sm font-medium text-slate-900 dark:text-slate-200 mb-2">
                   Company Name *
                 </label>
                 <input
@@ -339,12 +339,12 @@ export default function OnboardingPage() {
                   value={formData.companyName}
                   onChange={handleChange}
                   placeholder="Your company name"
-                  className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-700 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                  className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">
+                <label className="block text-sm font-medium text-slate-900 dark:text-slate-200 mb-2">
                   <Globe className="inline h-4 w-4 mr-1" />
                   Company Website
                 </label>
@@ -353,13 +353,13 @@ export default function OnboardingPage() {
                   value={formData.domain}
                   onChange={handleChange}
                   placeholder="example.com"
-                  className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-700 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                  className="w-full h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">
+                  <label className="block text-sm font-medium text-slate-900 dark:text-slate-200 mb-2">
                     Industry *
                   </label>
                   <select
@@ -377,7 +377,7 @@ export default function OnboardingPage() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">
+                  <label className="block text-sm font-medium text-slate-900 dark:text-slate-200 mb-2">
                     <Users className="inline h-4 w-4 mr-1" />
                     Company Size *
                   </label>
@@ -398,7 +398,7 @@ export default function OnboardingPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">
+                <label className="block text-sm font-medium text-slate-900 dark:text-slate-200 mb-2">
                   <Target className="inline h-4 w-4 mr-1" />
                   Target Market
                 </label>
@@ -446,7 +446,7 @@ export default function OnboardingPage() {
                 <h2 className="text-xl font-sora font-semibold text-slate-900 dark:text-white">
                   Connect Your Email
                 </h2>
-                <p className="text-slate-700 dark:text-slate-400">
+                <p className="text-slate-900 dark:text-slate-300">
                   Link your Instantly account for email delivery
                 </p>
               </div>
@@ -460,7 +460,7 @@ export default function OnboardingPage() {
                     <p className="text-sm font-medium text-slate-900 dark:text-white">
                       Why Instantly?
                     </p>
-                    <p className="text-xs text-slate-700 dark:text-slate-400 mt-1">
+                    <p className="text-xs text-slate-900 dark:text-slate-300 mt-1">
                       Instantly provides enterprise-grade email infrastructure with
                       built-in warmup, rotation, and deliverability optimization.
                       Your API key connects our AI engines to your sending accounts.
@@ -470,7 +470,7 @@ export default function OnboardingPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">
+                <label className="block text-sm font-medium text-slate-900 dark:text-slate-200 mb-2">
                   Instantly API Key
                 </label>
                 <div className="flex gap-3">
@@ -480,7 +480,7 @@ export default function OnboardingPage() {
                     value={formData.instantlyApiKey}
                     onChange={handleChange}
                     placeholder="Enter your Instantly API key"
-                    className="flex-1 h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-700 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                    className="flex-1 h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                     disabled={connectionStatus.instantly === "connected"}
                   />
                   <Button
@@ -523,7 +523,7 @@ export default function OnboardingPage() {
               </div>
 
               <div className="bg-light-bg-secondary dark:bg-midnight-blue/50 border border-border-default dark:border-graphite/30 rounded-lg p-4">
-                <p className="text-sm text-slate-700 dark:text-slate-400">
+                <p className="text-sm text-slate-900 dark:text-slate-300">
                   Don&apos;t have an Instantly account?{" "}
                   <a
                     href="https://instantly.ai"
@@ -566,7 +566,7 @@ export default function OnboardingPage() {
                 <h2 className="text-xl font-sora font-semibold text-slate-900 dark:text-white">
                   Define Your Ideal Customer
                 </h2>
-                <p className="text-slate-700 dark:text-slate-400">
+                <p className="text-slate-900 dark:text-slate-300">
                   Help our AI understand who to target
                 </p>
               </div>
@@ -580,7 +580,7 @@ export default function OnboardingPage() {
                     <p className="text-sm font-medium text-slate-900 dark:text-white">
                       What is an ICP?
                     </p>
-                    <p className="text-xs text-slate-700 dark:text-slate-400 mt-1">
+                    <p className="text-xs text-slate-900 dark:text-slate-300 mt-1">
                       Your Ideal Customer Profile defines the companies and decision-makers
                       most likely to buy from you. This helps our AI Architect engine craft
                       highly targeted campaigns.
@@ -590,7 +590,7 @@ export default function OnboardingPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">
+                <label className="block text-sm font-medium text-slate-900 dark:text-slate-200 mb-2">
                   Google Sheet with Lead Data (Optional)
                 </label>
                 <div className="flex gap-3">
@@ -599,7 +599,7 @@ export default function OnboardingPage() {
                     value={formData.googleSheetId}
                     onChange={handleChange}
                     placeholder="Paste Google Sheet URL or ID"
-                    className="flex-1 h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-700 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                    className="flex-1 h-11 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                     disabled={connectionStatus.googleSheets === "connected"}
                   />
                   <Button
@@ -640,12 +640,12 @@ export default function OnboardingPage() {
                   <div className="w-full border-t border-border-default dark:border-graphite/50" />
                 </div>
                 <div className="relative flex justify-center text-xs">
-                  <span className="px-3 bg-light-bg-secondary dark:bg-midnight-blue/60 text-slate-700 dark:text-slate-400">OR</span>
+                  <span className="px-3 bg-light-bg-secondary dark:bg-midnight-blue/60 text-slate-900 dark:text-slate-300">OR</span>
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">
+                <label className="block text-sm font-medium text-slate-900 dark:text-slate-200 mb-2">
                   Describe Your Ideal Customer
                 </label>
                 <textarea
@@ -654,9 +654,9 @@ export default function OnboardingPage() {
                   onChange={handleChange}
                   placeholder="E.g., VP of Sales at SaaS companies with 50-200 employees, based in the US, using Salesforce..."
                   rows={4}
-                  className="w-full rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-700 dark:text-slate-400 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 resize-none"
+                  className="w-full rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 resize-none"
                 />
-                <p className="text-xs text-slate-700 dark:text-slate-400 mt-2">
+                <p className="text-xs text-slate-900 dark:text-slate-300 mt-2">
                   Include: job titles, industries, company sizes, locations, technologies used, pain points
                 </p>
               </div>
@@ -690,7 +690,7 @@ export default function OnboardingPage() {
                 <h2 className="text-xl font-sora font-semibold text-slate-900 dark:text-white">
                   Ready to Launch
                 </h2>
-                <p className="text-slate-700 dark:text-slate-400">Review your setup and get started</p>
+                <p className="text-slate-900 dark:text-slate-300">Review your setup and get started</p>
               </div>
             </div>
 
@@ -726,7 +726,7 @@ export default function OnboardingPage() {
                     <p className="text-sm font-medium text-slate-900 dark:text-white">
                       What happens next?
                     </p>
-                    <ul className="text-xs text-slate-700 dark:text-slate-400 mt-2 space-y-1">
+                    <ul className="text-xs text-slate-900 dark:text-slate-300 mt-2 space-y-1">
                       <li>• Your account will be activated immediately</li>
                       <li>• Our Guardian engine will verify your domain health</li>
                       <li>• You can create your first campaign from the dashboard</li>
@@ -782,7 +782,7 @@ function FeatureCard({
         <Icon className="h-5 w-5 text-emerald-pro-600" />
       </div>
       <p className="text-sm font-medium text-slate-900 dark:text-white">{title}</p>
-      <p className="text-xs text-slate-700 dark:text-slate-400 mt-1">{description}</p>
+      <p className="text-xs text-slate-900 dark:text-slate-300 mt-1">{description}</p>
     </div>
   );
 }
@@ -805,7 +805,7 @@ function SummaryCard({
       <div className="space-y-2">
         {items.map((item, i) => (
           <div key={i} className="flex items-center justify-between text-sm">
-            <span className="text-slate-700 dark:text-slate-400">{item.label}</span>
+            <span className="text-slate-900 dark:text-slate-300">{item.label}</span>
             <span
               className={cn(
                 "font-medium",
