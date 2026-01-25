@@ -184,7 +184,7 @@ export default async function DashboardPage() {
   // If user has no organization, show welcome message
   if (!organizationId) {
     return (
-      <div className="min-h-screen bg-white dark:bg-deep-space p-8 flex items-center justify-center relative overflow-hidden">
+      <div className="min-h-screen bg-bg p-8 flex items-center justify-center relative overflow-hidden">
         {/* Background gradient effects */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-pro-600/5 rounded-full blur-3xl" />
@@ -196,13 +196,13 @@ export default async function DashboardPage() {
           <div className="relative h-24 w-24 mx-auto mb-6">
             <div className="absolute inset-0 rounded-full border border-emerald-pro-600/20 animate-pulse" />
             <div className="absolute inset-2 rounded-full border border-emerald-pro-500/20" />
-            <div className="absolute inset-4 rounded-full bg-gradient-to-br from-midnight-blue/80 to-deep-space border border-emerald-pro-600/30 flex items-center justify-center">
+            <div className="absolute inset-4 rounded-full bg-gradient-to-br from-emerald-pro-600/10 to-emerald-pro-500/5 dark:from-emerald-pro-600/20 dark:to-emerald-pro-500/10 border border-emerald-pro-600/30 flex items-center justify-center">
               <Users className="h-8 w-8 text-emerald-pro-600" />
             </div>
           </div>
 
           <h1 className="text-2xl font-sora font-bold text-slate-900 dark:text-white mb-3">Welcome to XGrowthOS</h1>
-          <p className="text-slate-900 dark:text-slate-300 mb-8 leading-relaxed">
+          <p className="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
             Your account is being set up. Our team will reach out shortly to complete your onboarding and get your first campaigns running.
           </p>
 

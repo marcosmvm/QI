@@ -200,7 +200,7 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
           {/* Main Content */}
           <div className="col-span-2 space-y-6">
             {/* Lead Header Card */}
-            <div className="rounded-2xl border border-emerald-pro-600/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+            <div className="rounded-2xl card-base p-6">
               <div className="flex items-start justify-between mb-6">
                 <div className="flex items-center gap-4">
                   <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-emerald-pro-500 to-violet-dark flex items-center justify-center text-xl font-bold text-slate-900 dark:text-white shadow-glow-violet">
@@ -335,7 +335,7 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
 
             {/* Activity Timeline */}
             {activeTab === "activity" && (
-              <div className="rounded-2xl border border-emerald-pro-600/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+              <div className="rounded-2xl card-base p-6">
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-6">Activity Timeline</h3>
                 <div className="space-y-4">
                   {activityTimeline.map((activity, index) => {
@@ -394,7 +394,7 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
 
             {/* Email History */}
             {activeTab === "emails" && (
-              <div className="rounded-2xl border border-emerald-pro-600/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+              <div className="rounded-2xl card-base p-6">
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Email History</h3>
                   <Button size="sm" className="bg-emerald-pro-600/10 text-emerald-pro-600 hover:bg-emerald-pro-600/20 border border-emerald-pro-600/20">
@@ -447,7 +447,7 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
 
             {/* Notes */}
             {activeTab === "notes" && (
-              <div className="rounded-2xl border border-emerald-pro-600/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-6">
+              <div className="rounded-2xl card-base p-6">
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Notes</h3>
                   <Button size="sm" className="bg-emerald-pro-600/10 text-emerald-pro-600 hover:bg-emerald-pro-600/20 border border-emerald-pro-600/20">
@@ -466,7 +466,7 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Contact Info */}
-            <div className="rounded-2xl border border-emerald-pro-600/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-5">
+            <div className="rounded-2xl card-base p-5">
               <h3 className="font-semibold text-slate-900 dark:text-white mb-4">Contact Information</h3>
               <div className="space-y-3">
                 <div className="flex items-center gap-3 p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-emerald-pro-600/10">
@@ -519,7 +519,7 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
             </div>
 
             {/* Company Info */}
-            <div className="rounded-2xl border border-emerald-pro-600/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-5">
+            <div className="rounded-2xl card-base p-5">
               <h3 className="font-semibold text-slate-900 dark:text-white mb-4">Company Details</h3>
               <div className="space-y-3">
                 <div className="flex items-center justify-between p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-emerald-pro-600/10">
@@ -569,7 +569,7 @@ export default function LeadDetailPage({ params }: { params: { id: string } }) {
             </div>
 
             {/* Campaign Info */}
-            <div className="rounded-2xl border border-emerald-pro-600/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-5">
+            <div className="rounded-2xl card-base p-5">
               <h3 className="font-semibold text-slate-900 dark:text-white mb-4">Campaign Info</h3>
               <div className="space-y-3">
                 <div className="p-3 rounded-lg bg-white dark:bg-deep-space/50 border border-emerald-pro-600/10">

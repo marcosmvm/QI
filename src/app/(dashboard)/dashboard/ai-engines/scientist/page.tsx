@@ -275,7 +275,7 @@ export default function ScientistPage() {
             return (
               <div
                 key={metric.label}
-                className="rounded-xl border border-emerald-pro-600/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-4 hover:border-emerald-pro-600/20 transition-all"
+                className="rounded-xl card-base p-4 hover:border-emerald-pro-600/20 transition-all"
               >
                 <div className="flex items-center justify-between mb-2">
                   <p className="text-xs text-slate-900 dark:text-slate-300">{metric.label}</p>
@@ -391,7 +391,7 @@ export default function ScientistPage() {
             {/* Quick Stats Sidebar */}
             <div className="space-y-4">
               {/* Active Tests Summary */}
-              <div className="rounded-xl border border-emerald-pro-600/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-5">
+              <div className="rounded-xl card-base p-5">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-pro-400/10 border border-emerald-pro-400/20">
                     <Beaker className="h-5 w-5 text-emerald-pro-400" />
@@ -421,7 +421,7 @@ export default function ScientistPage() {
               </div>
 
               {/* Recent Wins */}
-              <div className="rounded-xl border border-emerald-pro-600/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-5">
+              <div className="rounded-xl card-base p-5">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-pro-500/10 border border-emerald-pro-500/20">
                     <Target className="h-5 w-5 text-emerald-pro-500" />
@@ -613,7 +613,7 @@ export default function ScientistPage() {
               return (
                 <div
                   key={rec.id}
-                  className="rounded-xl border border-emerald-pro-600/10 bg-gradient-to-br from-midnight-blue/80 to-deep-space/90 p-5 hover:border-emerald-pro-600/20 transition-all"
+                  className="rounded-xl card-base p-5 hover:border-emerald-pro-600/20 transition-all"
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center gap-3">
