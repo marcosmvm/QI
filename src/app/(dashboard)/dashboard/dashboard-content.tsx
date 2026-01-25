@@ -112,7 +112,7 @@ export function DashboardContent({
           title="Emails Sent"
           value={totals.sent}
           icon={Mail}
-          accent="cyan"
+          accent="emerald"
           delay={0}
         />
         <MetricsCard
@@ -120,7 +120,7 @@ export function DashboardContent({
           value={openRate.toFixed(1)}
           suffix="%"
           icon={MousePointerClick}
-          accent="violet"
+          accent="sky"
           delay={0.1}
         />
         <MetricsCard
@@ -128,7 +128,7 @@ export function DashboardContent({
           value={replyRate.toFixed(1)}
           suffix="%"
           icon={Reply}
-          accent="mint"
+          accent="emerald"
           delay={0.2}
         />
         <MetricsCard
@@ -136,7 +136,7 @@ export function DashboardContent({
           value={deliverability.toFixed(1)}
           suffix="%"
           icon={TrendingUp}
-          accent="orange"
+          accent="amber"
           delay={0.3}
         />
       </div>

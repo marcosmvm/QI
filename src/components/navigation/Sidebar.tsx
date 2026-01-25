@@ -110,16 +110,16 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
   };
 
   return (
-    <aside className="fixed left-0 top-0 z-40 h-screen w-64 bg-white dark:bg-deep-space border-r border-border-default dark:border-graphite/50">
+    <aside className="fixed left-0 top-0 z-40 h-screen w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800">
       <div className="flex h-full flex-col">
         {/* Logo */}
-        <div className="flex h-16 items-center px-6 border-b border-border-default dark:border-graphite/50">
+        <div className="flex h-16 items-center px-6 border-b border-slate-200 dark:border-slate-800">
           <Link href={variant === "admin" ? "/admin" : "/dashboard"} className="flex items-center gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-pro-600/10 border border-emerald-pro-600/30">
-              <Zap className="h-5 w-5 text-emerald-pro-600" />
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-100 dark:bg-green-500/10 border border-emerald-200 dark:border-green-500/30">
+              <Zap className="h-5 w-5 text-emerald-600 dark:text-green-400" />
             </div>
             <span className="text-lg font-sora font-semibold text-slate-900 dark:text-white">
-              <span className="text-emerald-pro-600 dark:text-xgrowth-500">X</span>GrowthOS
+              <span className="text-emerald-600 dark:text-green-400">X</span>GrowthOS
             </span>
           </Link>
         </div>
@@ -134,13 +134,13 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
                 className={cn(
                   "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200",
                   isActive(item.href)
-                    ? "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20"
-                    : "text-slate-900 dark:text-slate-200 hover:bg-light-bg-secondary dark:hover:bg-midnight-blue/50 hover:text-emerald-pro-600 dark:hover:text-white border border-transparent"
+                    ? "bg-emerald-100 dark:bg-green-500/10 text-emerald-700 dark:text-green-400 border border-emerald-200 dark:border-green-500/20"
+                    : "text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-white border border-transparent"
                 )}
               >
                 <item.icon className={cn(
                   "h-4 w-4",
-                  isActive(item.href) ? "text-emerald-pro-600" : "text-slate-900 dark:text-slate-400"
+                  isActive(item.href) ? "text-emerald-600 dark:text-green-400" : "text-slate-500 dark:text-slate-400"
                 )} />
                 <span>{item.name}</span>
               </Link>
@@ -149,7 +149,7 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
         </nav>
 
         {/* Bottom Navigation */}
-        <div className="px-3 py-4 border-t border-border-default dark:border-graphite/50">
+        <div className="px-3 py-4 border-t border-slate-200 dark:border-slate-800">
           <div className="space-y-1">
             {bottomNav.map((item) => (
               <Link
@@ -158,13 +158,13 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
                 className={cn(
                   "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200",
                   isActive(item.href)
-                    ? "bg-emerald-pro-600/10 text-emerald-pro-600 border border-emerald-pro-600/20"
-                    : "text-slate-900 dark:text-slate-200 hover:bg-light-bg-secondary dark:hover:bg-midnight-blue/50 hover:text-emerald-pro-600 dark:hover:text-white border border-transparent"
+                    ? "bg-emerald-100 dark:bg-green-500/10 text-emerald-700 dark:text-green-400 border border-emerald-200 dark:border-green-500/20"
+                    : "text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-emerald-600 dark:hover:text-white border border-transparent"
                 )}
               >
                 <item.icon className={cn(
                   "h-4 w-4",
-                  isActive(item.href) ? "text-emerald-pro-600" : "text-slate-900 dark:text-slate-400"
+                  isActive(item.href) ? "text-emerald-600 dark:text-green-400" : "text-slate-500 dark:text-slate-400"
                 )} />
                 <span>{item.name}</span>
               </Link>
@@ -173,10 +173,10 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
         </div>
 
         {/* User Profile */}
-        <div className="border-t border-border-default dark:border-graphite/50 p-4">
+        <div className="border-t border-slate-200 dark:border-slate-800 p-4">
           <div className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-full bg-emerald-pro-500/20 border border-emerald-pro-500/30 flex items-center justify-center">
-              <span className="text-sm font-medium text-emerald-pro-500">
+            <div className="h-9 w-9 rounded-full bg-emerald-100 dark:bg-green-500/10 border border-emerald-200 dark:border-green-500/30 flex items-center justify-center">
+              <span className="text-sm font-medium text-emerald-600 dark:text-green-400">
                 {isLoading ? "..." : getInitials(profile?.full_name)}
               </span>
             </div>
@@ -184,13 +184,13 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
               <p className="text-sm font-medium text-slate-900 dark:text-white truncate">
                 {isLoading ? "Loading..." : profile?.full_name || "User"}
               </p>
-              <p className="text-xs text-slate-900 dark:text-slate-300 truncate capitalize">
+              <p className="text-xs text-slate-500 dark:text-slate-400 truncate capitalize">
                 {isLoading ? "" : profile?.role || "client"}
               </p>
             </div>
             <button
               onClick={handleSignOut}
-              className="p-2 rounded-lg text-slate-900 dark:text-slate-300 hover:text-energy-orange hover:bg-energy-orange/10 transition-colors"
+              className="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 transition-colors"
               title="Sign out"
             >
               <LogOut className="h-4 w-4" />

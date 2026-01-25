@@ -90,7 +90,7 @@ export default function AnalyticsPage() {
           title="Total Sent"
           value={36000}
           change={18.5}
-          accent="cyan"
+          accent="emerald"
           delay={0}
         />
         <MetricsCard
@@ -98,7 +98,7 @@ export default function AnalyticsPage() {
           value={34.2}
           suffix="%"
           change={4.2}
-          accent="violet"
+          accent="sky"
           delay={0.1}
         />
         <MetricsCard
@@ -106,14 +106,14 @@ export default function AnalyticsPage() {
           value={3.8}
           suffix="%"
           change={12.1}
-          accent="mint"
+          accent="emerald"
           delay={0.2}
         />
         <MetricsCard
           title="Leads Generated"
           value={1500}
           change={22.3}
-          accent="orange"
+          accent="amber"
           delay={0.3}
         />
       </div>

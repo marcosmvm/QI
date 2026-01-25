@@ -319,7 +319,7 @@ export default function LeadsPage() {
             value={547}
             change={23}
             icon={Users}
-            accent="cyan"
+            accent="emerald"
             delay={0}
           />
           <MetricsCard
@@ -327,7 +327,7 @@ export default function LeadsPage() {
             value={45}
             change={8}
             icon={Target}
-            accent="mint"
+            accent="emerald"
             delay={0.1}
           />
           <MetricsCard
@@ -335,7 +335,7 @@ export default function LeadsPage() {
             value={78}
             change={12}
             icon={Mail}
-            accent="violet"
+            accent="sky"
             delay={0.2}
           />
           <MetricsCard
@@ -343,7 +343,7 @@ export default function LeadsPage() {
             value={12}
             change={3}
             icon={Calendar}
-            accent="orange"
+            accent="amber"
             delay={0.3}
           />
           <MetricsCard
@@ -352,7 +352,7 @@ export default function LeadsPage() {
             suffix="%"
             change={0.5}
             icon={TrendingUp}
-            accent="cyan"
+            accent="emerald"
             delay={0.4}
           />
         </div>

@@ -22,9 +22,9 @@ const commitments = [
 
 export function Testimonials() {
   return (
-    <section className="py-24 relative bg-white dark:bg-transparent">
+    <section className="py-24 relative bg-white dark:bg-slate-900/50">
       {/* Subtle background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-light-bg-secondary/20 dark:via-midnight-blue/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-50/50 dark:via-slate-900/50 to-transparent" />
 
       <Container className="relative z-10">
         {/* Section Header */}
@@ -41,7 +41,7 @@ export function Testimonials() {
               Founder
             </span>
           </h2>
-          <p className="text-lg text-slate-900 dark:text-slate-300">
+          <p className="text-lg text-slate-600 dark:text-slate-400">
             Built by someone who understands your pipeline challenges.
           </p>
         </motion.div>
@@ -55,10 +55,10 @@ export function Testimonials() {
             transition={{ duration: 0.5 }}
             className="relative"
           >
-            <div className="relative p-8 md:p-12 rounded-3xl border border-border-default dark:border-graphite/50 bg-white dark:bg-midnight-blue/40 backdrop-blur-sm shadow-soft dark:shadow-none">
+            <div className="relative p-8 md:p-12 rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 backdrop-blur-sm shadow-sm">
               {/* Quote Icon */}
-              <div className="absolute -top-6 left-8 p-4 rounded-2xl bg-white dark:bg-midnight-blue border border-border-default dark:border-graphite/50 backdrop-blur-sm shadow-soft dark:shadow-none">
-                <Quote className="h-6 w-6 text-emerald-pro-600 dark:text-xgrowth-500" />
+              <div className="absolute -top-6 left-8 p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 backdrop-blur-sm shadow-sm">
+                <Quote className="h-6 w-6 text-emerald-600 dark:text-green-400" />
               </div>
 
               {/* Quote */}
@@ -69,13 +69,13 @@ export function Testimonials() {
               {/* Author */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-pro-600 to-emerald-pro-500 dark:from-xgrowth-500 dark:to-xgrowth-400 flex items-center justify-center text-white dark:text-green-950 font-bold text-xl">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-600 to-sky-500 flex items-center justify-center text-white font-bold text-xl">
                     MM
                   </div>
                   <div>
                     <p className="font-semibold text-slate-900 dark:text-white text-lg">{founderMission.author}</p>
-                    <p className="text-emerald-pro-600 dark:text-xgrowth-500 text-sm font-medium">{founderMission.title}</p>
-                    <div className="flex items-center gap-3 mt-1 text-slate-900 dark:text-slate-300 text-xs">
+                    <p className="text-emerald-600 dark:text-green-400 text-sm font-medium">{founderMission.title}</p>
+                    <div className="flex items-center gap-3 mt-1 text-slate-500 dark:text-slate-400 text-xs">
                       <span className="flex items-center gap-1">
                         <MapPin className="h-3 w-3" />
                         {founderMission.location}
@@ -108,15 +108,15 @@ export function Testimonials() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: 0.3 + index * 0.1 }}
-                  className="p-6 rounded-2xl border border-border-default dark:border-graphite/50 bg-white dark:bg-deep-space/50 hover:border-emerald-pro-600/30 dark:hover:border-xgrowth-500/30 transition-colors text-center shadow-soft dark:shadow-none"
+                  className="p-6 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 hover:border-emerald-300 dark:hover:border-green-500/30 transition-colors text-center shadow-sm"
                 >
                   <div className="flex justify-center mb-4">
-                    <div className="p-3 rounded-xl bg-emerald-pro-600/10 dark:bg-xgrowth-500/10 border border-emerald-pro-600/20 dark:border-xgrowth-500/20">
-                      <item.icon className="h-6 w-6 text-emerald-pro-600 dark:text-xgrowth-500" />
+                    <div className="p-3 rounded-xl bg-emerald-100 dark:bg-green-500/10 border border-emerald-200 dark:border-green-500/20">
+                      <item.icon className="h-6 w-6 text-emerald-600 dark:text-green-400" />
                     </div>
                   </div>
                   <h4 className="text-slate-900 dark:text-white font-semibold mb-2">{item.title}</h4>
-                  <p className="text-slate-900 dark:text-slate-300 text-sm">{item.description}</p>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm">{item.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -130,16 +130,16 @@ export function Testimonials() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="mt-12 text-center"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-pro-600/10 dark:bg-xgrowth-500/10 border border-emerald-pro-600/30 dark:border-xgrowth-500/30 text-emerald-pro-600 dark:text-xgrowth-500 text-sm font-medium mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 dark:bg-green-500/10 border border-emerald-200 dark:border-green-500/30 text-emerald-700 dark:text-green-400 text-sm font-medium mb-4">
               <Rocket className="h-4 w-4" />
               Limited Founding Partner Spots Available
             </div>
-            <p className="text-slate-900 dark:text-slate-300 mb-6 max-w-xl mx-auto">
+            <p className="text-slate-600 dark:text-slate-400 mb-6 max-w-xl mx-auto">
               Join our founding partner program and lock in exclusive rates while helping shape the future of B2B outreach automation.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-pro-600 dark:bg-xgrowth-500 text-white dark:text-green-950 font-semibold hover:bg-emerald-pro-700 dark:hover:bg-xgrowth-400 hover:shadow-glow-emerald dark:hover:shadow-glow-green hover:-translate-y-0.5 transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-sky-500 text-white font-semibold hover:from-emerald-700 hover:to-sky-600 hover:shadow-glow-green hover:-translate-y-0.5 transition-all"
             >
               Become a Founding Partner
             </Link>

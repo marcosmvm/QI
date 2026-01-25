@@ -270,28 +270,28 @@ export default function AppointmentsPage() {
             title="Today's Meetings"
             value={2}
             icon={Calendar}
-            accent="cyan"
+            accent="emerald"
             delay={0}
           />
           <MetricsCard
             title="This Week"
             value={8}
             icon={CalendarDays}
-            accent="violet"
+            accent="sky"
             delay={0.1}
           />
           <MetricsCard
             title="Pending Confirmation"
             value={3}
             icon={AlertCircle}
-            accent="orange"
+            accent="amber"
             delay={0.2}
           />
           <MetricsCard
             title="Completed This Month"
             value={24}
             icon={CheckCircle2}
-            accent="mint"
+            accent="emerald"
             delay={0.3}
           />
           <MetricsCard
@@ -299,7 +299,7 @@ export default function AppointmentsPage() {
             value={94}
             suffix="%"
             icon={TrendingUp}
-            accent="cyan"
+            accent="emerald"
             delay={0.4}
           />
         </div>

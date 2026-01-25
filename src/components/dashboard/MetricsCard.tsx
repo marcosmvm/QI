@@ -8,10 +8,10 @@ import { motion, useInView } from 'framer-motion'
 
 // ============================================
 // XGROWTHOS - PREMIUM METRICS CARD
-// Brand Board v2.0 - With Enhanced Animations
+// Brand Board - Greens + Blues Theme
 // ============================================
 
-type AccentColor = 'cyan' | 'violet' | 'mint' | 'orange'
+type AccentColor = 'emerald' | 'sky' | 'slate' | 'amber'
 
 interface MetricsCardProps {
   title: string
@@ -28,10 +28,10 @@ interface MetricsCardProps {
 }
 
 const accentClasses: Record<AccentColor, string> = {
-  cyan: 'accent-cyan',
-  violet: 'accent-violet',
-  mint: 'accent-mint',
-  orange: 'accent-orange',
+  emerald: 'border-l-emerald-500',
+  sky: 'border-l-sky-500',
+  slate: 'border-l-slate-500',
+  amber: 'border-l-amber-500',
 }
 
 export function MetricsCard({
@@ -43,7 +43,7 @@ export function MetricsCard({
   icon: Icon,
   loading = false,
   className,
-  accent = 'cyan',
+  accent = 'emerald',
   delay = 0,
 }: MetricsCardProps) {
   const [displayValue, setDisplayValue] = useState(0)
@@ -105,21 +105,21 @@ export function MetricsCard({
       : Minus
 
   const trendColor = change && change > 0
-    ? 'text-emerald-pro-400'
+    ? 'text-emerald-500 dark:text-green-400'
     : change && change < 0
-      ? 'text-alert-red'
-      : 'text-slate-900 dark:text-slate-300'
+      ? 'text-red-500'
+      : 'text-slate-500 dark:text-slate-400'
 
   if (loading) {
     return (
-      <div className={cn("metric-card-premium p-6", accentClasses[accent], className)}>
+      <div className={cn("p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 border-l-4", accentClasses[accent], className)}>
         <div className="flex justify-between items-start">
           <div className="space-y-3 flex-1">
-            <div className="skeleton-premium h-3 w-24" />
-            <div className="skeleton-premium h-9 w-32" />
-            <div className="skeleton-premium h-3 w-20" />
+            <div className="h-3 w-24 bg-slate-200 dark:bg-slate-700 rounded animate-pulse" />
+            <div className="h-9 w-32 bg-slate-200 dark:bg-slate-700 rounded animate-pulse" />
+            <div className="h-3 w-20 bg-slate-200 dark:bg-slate-700 rounded animate-pulse" />
           </div>
-          <div className="skeleton-premium h-10 w-10 rounded-lg" />
+          <div className="h-10 w-10 bg-slate-200 dark:bg-slate-700 rounded-lg animate-pulse" />
         </div>
       </div>
     )
@@ -136,19 +136,19 @@ export function MetricsCard({
         ease: [0.16, 1, 0.3, 1]
       }}
       className={cn(
-        "metric-card-premium p-6 group",
+        "p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 border-l-4 group hover:shadow-sm transition-all",
         accentClasses[accent],
         className
       )}
     >
       <div className="flex justify-between items-start">
         <div>
-          <p className="text-xs font-medium text-slate-900 dark:text-slate-300 uppercase tracking-wide mb-2">
+          <p className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">
             {title}
           </p>
           <p className="text-3xl font-bold text-slate-900 dark:text-white metric-value">
             {formatValue(displayValue)}
-            {suffix && <span className="text-lg text-slate-900 dark:text-slate-300 ml-1">{suffix}</span>}
+            {suffix && <span className="text-lg text-slate-500 dark:text-slate-400 ml-1">{suffix}</span>}
           </p>
           {change !== undefined && (
             <motion.div
@@ -161,12 +161,12 @@ export function MetricsCard({
               <span className="font-medium">
                 {change > 0 ? '+' : ''}{change}%
               </span>
-              <span className="text-slate-900 dark:text-slate-300 ml-1 text-xs">{changeLabel}</span>
+              <span className="text-slate-500 dark:text-slate-400 ml-1 text-xs">{changeLabel}</span>
             </motion.div>
           )}
         </div>
         {Icon && (
-          <div className="w-10 h-10 rounded-lg bg-graphite/50 flex items-center justify-center text-slate-900 dark:text-slate-300 group-hover:text-emerald-pro-600 group-hover:bg-emerald-pro-600/10 group-hover:border group-hover:border-emerald-pro-600/30 transition-all duration-200">
+          <div className="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 group-hover:text-emerald-600 dark:group-hover:text-green-400 group-hover:bg-emerald-100 dark:group-hover:bg-green-500/10 transition-all duration-200">
             <Icon className="w-5 h-5 transition-transform duration-200 group-hover:scale-110" />
           </div>
         )}

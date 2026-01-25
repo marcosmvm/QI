@@ -289,13 +289,13 @@ export default function ReportsPage() {
             title="Reports Generated"
             value={24}
             change={12}
-            accent="cyan"
+            accent="emerald"
             delay={0}
           />
           <MetricsCard
             title="Scheduled Reports"
             value={4}
-            accent="violet"
+            accent="sky"
             delay={0.1}
           />
           <MetricsCard
@@ -303,7 +303,7 @@ export default function ReportsPage() {
             value={33.5}
             suffix="%"
             change={2.3}
-            accent="mint"
+            accent="emerald"
             delay={0.2}
           />
           <MetricsCard
@@ -311,7 +311,7 @@ export default function ReportsPage() {
             value={3.6}
             suffix="%"
             change={0.4}
-            accent="orange"
+            accent="amber"
             delay={0.3}
           />
         </div>

@@ -39,9 +39,9 @@ export function Hero() {
   };
 
   return (
-    <section className="hero-enhanced relative min-h-[100vh] flex items-center overflow-hidden pt-20 bg-white dark:bg-deep-space">
+    <section className="hero-enhanced relative min-h-[100vh] flex items-center overflow-hidden pt-20 bg-bg dark:bg-slate-900">
       {/* Enhanced Background Effects - Light Mode */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-light-bg-secondary/30 dark:via-deep-space/30 to-light-bg-tertiary/50 dark:to-midnight-blue/50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-50/50 dark:via-slate-900/50 to-emerald-50/30 dark:to-slate-900/80" />
 
       {/* Hero-specific ambient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full blur-[200px] bg-[radial-gradient(circle,rgba(5,150,105,0.05)_0%,transparent_60%)] dark:bg-[radial-gradient(circle,rgba(34,197,94,0.08)_0%,transparent_60%)]" />
@@ -49,17 +49,17 @@ export function Hero() {
       {/* Floating geometric shapes */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <motion.div
-          className="absolute top-20 left-10 w-20 h-20 border border-emerald-pro-600/20 dark:border-xgrowth-500/20 rounded-lg"
+          className="absolute top-20 left-10 w-20 h-20 border border-emerald-600/20 dark:border-green-500/20 rounded-lg"
           animate={{ rotate: 360, y: [0, -20, 0] }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         />
         <motion.div
-          className="absolute top-40 right-20 w-16 h-16 border border-emerald-pro-500/20 dark:border-xgrowth-400/20 rounded-full"
+          className="absolute top-40 right-20 w-16 h-16 border border-sky-500/20 dark:border-sky-400/20 rounded-full"
           animate={{ rotate: -360, scale: [1, 1.2, 1] }}
           transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
         />
         <motion.div
-          className="absolute bottom-40 left-20 w-12 h-12 border border-emerald-pro-400/20 dark:border-xgrowth-300/20"
+          className="absolute bottom-40 left-20 w-12 h-12 border border-emerald-400/20 dark:border-green-400/20"
           style={{ clipPath: "polygon(50% 0%, 100% 100%, 0% 100%)" }}
           animate={{ rotate: 180, y: [0, 15, 0] }}
           transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
@@ -73,10 +73,10 @@ export function Hero() {
             initial={{ opacity: 0, y: 30, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-pro-600/10 dark:bg-xgrowth-500/10 border border-emerald-pro-600/30 dark:border-xgrowth-500/30 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 dark:bg-green-500/10 border border-emerald-200 dark:border-green-500/30 mb-8"
           >
-            <Rocket className="w-4 h-4 text-emerald-pro-600 dark:text-xgrowth-500" />
-            <span className="text-sm font-medium text-emerald-pro-600 dark:text-xgrowth-500">Now Accepting Founding Partners</span>
+            <Rocket className="w-4 h-4 text-emerald-600 dark:text-green-400" />
+            <span className="text-sm font-medium text-emerald-700 dark:text-green-400">Now Accepting Founding Partners</span>
           </motion.div>
 
           {/* Main Headline - Updated per audit */}
@@ -98,9 +98,9 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-xl md:text-2xl text-slate-800 dark:text-slate-200 max-w-3xl mx-auto mb-8 leading-relaxed"
+            className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto mb-8 leading-relaxed"
           >
-            Our <span className="text-emerald-pro-600 dark:text-xgrowth-500 font-semibold">5 proprietary AI engines</span> handle compliance, personalization, and optimization—so your cold emails actually get read.
+            Our <span className="text-emerald-600 dark:text-green-400 font-semibold">5 proprietary AI engines</span> handle compliance, personalization, and optimization—so your cold emails actually get read.
           </motion.p>
 
           {/* Value Props */}
@@ -111,8 +111,8 @@ export function Hero() {
             className="flex flex-wrap justify-center gap-6 mb-12"
           >
             {valueProps.map((prop, i) => (
-              <div key={i} className="flex items-center gap-2 text-slate-800 dark:text-slate-200">
-                <CheckCircle className="h-4 w-4 text-emerald-pro-500 dark:text-xgrowth-400" />
+              <div key={i} className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+                <CheckCircle className="h-4 w-4 text-emerald-500 dark:text-green-400" />
                 <span className="text-sm">{prop}</span>
               </div>
             ))}
@@ -135,7 +135,7 @@ export function Hero() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-emerald-pro-600/30 dark:border-xgrowth-500/30 hover:border-emerald-pro-600/60 dark:hover:border-xgrowth-500/60 text-slate-900 dark:text-white hover:text-emerald-pro-600 dark:hover:text-xgrowth-500 bg-emerald-pro-600/5 dark:bg-xgrowth-500/5 hover:bg-emerald-pro-600/10 dark:hover:bg-xgrowth-500/10 px-8 py-6 text-lg transition-all backdrop-blur-sm"
+                className="border-emerald-200 dark:border-green-500/30 hover:border-emerald-300 dark:hover:border-green-500/60 text-slate-700 dark:text-white hover:text-emerald-600 dark:hover:text-green-400 bg-emerald-50/50 dark:bg-green-500/5 hover:bg-emerald-100 dark:hover:bg-green-500/10 px-8 py-6 text-lg transition-all backdrop-blur-sm"
               >
                 See How It Works
               </Button>
@@ -156,24 +156,24 @@ export function Hero() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email for a free guide"
-                  className="flex-1 px-4 py-3 rounded-lg bg-white dark:bg-midnight-blue/60 border border-border-default dark:border-graphite/50 text-slate-900 dark:text-white placeholder:text-slate-500 dark:placeholder:text-slate-400 focus:outline-none focus:border-emerald-pro-600/50 dark:focus:border-xgrowth-500/50 text-sm"
+                  className="flex-1 px-4 py-3 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:border-emerald-500 dark:focus:border-green-500 text-sm"
                   required
                 />
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="px-5 py-3 bg-emerald-pro-600 dark:bg-xgrowth-500 hover:bg-emerald-pro-700 dark:hover:bg-xgrowth-400 text-white dark:text-green-950 font-medium rounded-lg transition-colors text-sm whitespace-nowrap disabled:opacity-50"
+                  className="px-5 py-3 bg-gradient-to-r from-emerald-600 to-sky-500 hover:from-emerald-700 hover:to-sky-600 text-white font-medium rounded-lg transition-colors text-sm whitespace-nowrap disabled:opacity-50"
                 >
                   {isSubmitting ? "..." : "Get Guide"}
                 </button>
               </form>
             ) : (
-              <div className="flex items-center justify-center gap-2 text-emerald-pro-500 dark:text-xgrowth-400">
+              <div className="flex items-center justify-center gap-2 text-emerald-600 dark:text-green-400">
                 <CheckCircle className="h-5 w-5" />
                 <span>Check your inbox for the B2B Cold Email Playbook!</span>
               </div>
             )}
-            <p className="text-slate-900 dark:text-slate-300 text-xs mt-2">Get our free B2B Cold Email Playbook. No spam, unsubscribe anytime.</p>
+            <p className="text-slate-500 dark:text-slate-400 text-xs mt-2">Get our free B2B Cold Email Playbook. No spam, unsubscribe anytime.</p>
           </motion.div>
 
           {/* Hero Stats Grid */}
@@ -189,11 +189,11 @@ export function Hero() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                className="stat-display group"
+                className="p-4 rounded-xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 group"
               >
-                <stat.icon className="w-6 h-6 text-emerald-pro-600 dark:text-xgrowth-500 mx-auto mb-2 group-hover:scale-110 transition-transform" />
-                <div className="stat-number text-2xl md:text-3xl">{stat.value}</div>
-                <div className="text-slate-900 dark:text-slate-300 text-sm mt-1">{stat.label}</div>
+                <stat.icon className="w-6 h-6 text-emerald-600 dark:text-green-400 mx-auto mb-2 group-hover:scale-110 transition-transform" />
+                <div className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">{stat.value}</div>
+                <div className="text-slate-600 dark:text-slate-400 text-sm mt-1">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -203,16 +203,16 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="pt-8 border-t border-emerald-pro-600/10 dark:border-xgrowth-500/10"
+            className="pt-8 border-t border-slate-200 dark:border-slate-800"
           >
-            <p className="text-slate-900 dark:text-slate-300 text-sm mb-4">Built for B2B companies in</p>
+            <p className="text-slate-500 dark:text-slate-400 text-sm mb-4">Built for B2B companies in</p>
             <div className="flex flex-wrap justify-center items-center gap-3">
               {["SaaS", "B2B Tech", "Healthcare", "Finance", "Professional Services"].map((industry) => (
                 <motion.span
                   key={industry}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="px-4 py-2 text-sm text-slate-900 dark:text-slate-300 bg-light-bg-secondary dark:bg-midnight-blue/40 rounded-lg border border-border-default dark:border-graphite/30"
+                  className="px-4 py-2 text-sm text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700"
                 >
                   {industry}
                 </motion.span>
@@ -223,7 +223,7 @@ export function Hero() {
       </Container>
 
       {/* Bottom Gradient Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white dark:from-deep-space to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-bg dark:from-slate-900 to-transparent pointer-events-none" />
     </section>
   );
 }

@@ -284,21 +284,21 @@ export default function ArchitectPage() {
             title="Active Campaigns"
             value={12}
             icon={Play}
-            accent="mint"
+            accent="emerald"
             delay={0}
           />
           <MetricsCard
             title="Total Sequences"
             value={34}
             icon={GitBranch}
-            accent="cyan"
+            accent="emerald"
             delay={0.1}
           />
           <MetricsCard
             title="AI Variants Generated"
             value={156}
             icon={Sparkles}
-            accent="violet"
+            accent="sky"
             delay={0.2}
           />
           <MetricsCard
@@ -306,7 +306,7 @@ export default function ArchitectPage() {
             value={8.4}
             suffix="%"
             icon={MessageSquare}
-            accent="orange"
+            accent="amber"
             delay={0.3}
           />
         </div>

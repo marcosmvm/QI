@@ -295,27 +295,27 @@ export default function CampaignsPage() {
             title="Total Campaigns"
             value={mockCampaigns.length}
             change={12}
-            accent="cyan"
+            accent="emerald"
             delay={0}
           />
           <MetricsCard
             title="Active"
             value={activeCampaigns}
-            accent="mint"
+            accent="emerald"
             delay={0.1}
           />
           <MetricsCard
             title="Total Sent"
             value={totalSent}
             change={8.5}
-            accent="violet"
+            accent="sky"
             delay={0.2}
           />
           <MetricsCard
             title="Total Replies"
             value={totalReplies}
             change={15.2}
-            accent="orange"
+            accent="amber"
             delay={0.3}
           />
           <MetricsCard
@@ -323,7 +323,7 @@ export default function CampaignsPage() {
             value={avgOpenRate}
             suffix="%"
             change={2.3}
-            accent="cyan"
+            accent="emerald"
             delay={0.4}
           />
         </div>

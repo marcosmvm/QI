@@ -63,7 +63,7 @@ export function ProcessSteps() {
   return (
     <section className="py-24 relative">
       {/* Subtle background effect */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-midnight-blue/30 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-50/50 dark:via-slate-900/50 to-transparent" />
 
       <Container className="relative z-10">
         {/* Section Header */}
@@ -80,7 +80,7 @@ export function ProcessSteps() {
               Works
             </span>
           </h2>
-          <p className="text-lg text-slate-900 dark:text-slate-300">
+          <p className="text-lg text-slate-600 dark:text-slate-400">
             Our proven 5-step process transforms cold outreach into a predictable meeting machine.
           </p>
         </motion.div>
@@ -96,7 +96,7 @@ export function ProcessSteps() {
           {/* Connection Line - Animated gradient */}
           <div className="absolute left-8 top-0 bottom-0 w-px hidden md:block overflow-hidden">
             <motion.div
-              className="h-full w-full bg-gradient-to-b from-emerald-pro-600 via-emerald-pro-500 to-emerald-pro-600"
+              className="h-full w-full bg-gradient-to-b from-emerald-600 via-sky-500 to-emerald-600"
               initial={{ scaleY: 0 }}
               whileInView={{ scaleY: 1 }}
               viewport={{ once: true }}
@@ -114,21 +114,21 @@ export function ProcessSteps() {
               >
                 {/* Step Icon */}
                 <div className="relative z-10 flex-shrink-0">
-                  <div className="w-16 h-16 rounded-2xl bg-light-bg-secondary dark:bg-midnight-blue/60 backdrop-blur-sm border border-border-default dark:border-graphite/50 flex items-center justify-center group-hover:border-emerald-pro-600/40 group-hover:shadow-glow-cyan-sm transition-all duration-300">
-                    <step.icon className="h-7 w-7 text-emerald-pro-600 group-hover:scale-110 transition-transform duration-300" />
+                  <div className="w-16 h-16 rounded-2xl bg-white dark:bg-slate-800 backdrop-blur-sm border border-slate-200 dark:border-slate-700 flex items-center justify-center group-hover:border-emerald-300 dark:group-hover:border-green-500/40 group-hover:shadow-sm transition-all duration-300">
+                    <step.icon className="h-7 w-7 text-emerald-600 dark:text-green-400 group-hover:scale-110 transition-transform duration-300" />
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 pb-8">
-                  <div className="p-5 rounded-xl bg-light-bg-secondary dark:bg-midnight-blue/30 backdrop-blur-sm border border-border-default dark:border-graphite/30 group-hover:border-emerald-pro-600/30 group-hover:bg-light-bg-secondary dark:bg-midnight-blue/50 transition-all duration-300">
+                  <div className="p-5 rounded-xl bg-white dark:bg-slate-800/50 backdrop-blur-sm border border-slate-200 dark:border-slate-700 group-hover:border-emerald-200 dark:group-hover:border-green-500/30 transition-all duration-300">
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="text-emerald-pro-600 font-mono text-sm font-semibold">{step.number}</span>
-                      <h3 className="text-xl md:text-2xl font-sora font-semibold text-slate-900 dark:text-white group-hover:text-emerald-pro-600 transition-colors">
+                      <span className="text-emerald-600 dark:text-green-400 font-mono text-sm font-semibold">{step.number}</span>
+                      <h3 className="text-xl md:text-2xl font-sora font-semibold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-green-400 transition-colors">
                         {step.title}
                       </h3>
                     </div>
-                    <p className="text-slate-900 dark:text-slate-300 max-w-2xl group-hover:text-silver/80 transition-colors">
+                    <p className="text-slate-600 dark:text-slate-400 max-w-2xl transition-colors">
                       {step.description}
                     </p>
                   </div>

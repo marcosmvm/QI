@@ -73,7 +73,7 @@ export function CTABanner({
       />
 
       {/* Glass Panel Background - Enhanced */}
-      <div className="absolute inset-0 bg-gradient-to-b from-light-bg-secondary/50 dark:from-midnight-blue/50 via-light-bg-secondary/30 dark:via-midnight-blue/30 to-light-bg-secondary/50 dark:to-midnight-blue/50 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-50/50 dark:from-slate-900/50 via-white/30 dark:via-slate-900/30 to-slate-50/50 dark:to-slate-900/50 backdrop-blur-sm" />
 
       {/* Border Lines - Enhanced with Animation */}
       <motion.div
@@ -112,7 +112,7 @@ export function CTABanner({
         {Array.from({ length: 8 }).map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-emerald-pro-600 rounded-full"
+            className="absolute w-1 h-1 bg-emerald-600 dark:bg-green-400 rounded-full"
             style={{
               left: `${10 + i * 12}%`,
               top: '50%',
@@ -146,9 +146,9 @@ export function CTABanner({
             whileInView={{ scale: 1, rotate: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1, type: "spring", stiffness: 200 }}
-            className="icon-container-animated mx-auto mb-10"
+            className="w-16 h-16 rounded-2xl bg-emerald-100 dark:bg-green-500/10 border border-emerald-200 dark:border-green-500/20 flex items-center justify-center mx-auto mb-10"
           >
-            <Calendar className="w-8 h-8 text-emerald-pro-600" />
+            <Calendar className="w-8 h-8 text-emerald-600 dark:text-green-400" />
           </motion.div>
 
           {/* Headline - Enhanced */}
@@ -168,7 +168,7 @@ export function CTABanner({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-lg md:text-xl text-slate-900/90 dark:text-slate-200/90 mb-12 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed"
           >
             {description}
           </motion.p>
@@ -182,16 +182,16 @@ export function CTABanner({
             className="flex flex-col sm:flex-row gap-5 justify-center"
           >
             <Link href={primaryCTA.href}>
-              <button className="cta-magnetic group">
+              <Button size="lg" className="px-8 py-6 text-lg">
                 {primaryCTA.text}
-                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </button>
+                <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
             </Link>
             <Link href={secondaryCTA.href}>
               <Button
                 variant="outline"
                 size="lg"
-                className="border-emerald-pro-600/30 dark:border-xgrowth-500/30 hover:border-emerald-pro-600/60 dark:hover:border-xgrowth-500/60 text-slate-900 dark:text-white hover:text-emerald-pro-600 dark:hover:text-xgrowth-500 bg-emerald-pro-600/5 dark:bg-xgrowth-500/5 hover:bg-emerald-pro-600/10 dark:hover:bg-xgrowth-500/10 px-8 py-6 text-lg transition-all backdrop-blur-sm"
+                className="border-emerald-200 dark:border-green-500/30 hover:border-emerald-300 dark:hover:border-green-500/60 text-slate-700 dark:text-white hover:text-emerald-600 dark:hover:text-green-400 bg-emerald-50/50 dark:bg-green-500/5 hover:bg-emerald-100 dark:hover:bg-green-500/10 px-8 py-6 text-lg transition-all backdrop-blur-sm"
               >
                 <Sparkles className="mr-2 h-5 w-5" />
                 {secondaryCTA.text}

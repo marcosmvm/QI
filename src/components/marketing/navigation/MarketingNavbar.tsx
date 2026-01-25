@@ -38,7 +38,7 @@ export function MarketingNavbar() {
         className={cn(
           "sticky top-0 z-50 transition-all duration-300 border-b",
           isScrolled
-            ? "bg-white/80 dark:bg-deep-space/80 backdrop-blur-xl border-border-default shadow-soft"
+            ? "bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-slate-200 dark:border-slate-700 shadow-sm"
             : "bg-transparent border-transparent"
         )}
       >
@@ -61,8 +61,8 @@ export function MarketingNavbar() {
                       className={cn(
                         "flex items-center gap-1 text-sm font-medium transition-colors duration-150",
                         activeDropdown === item.label
-                          ? "text-emerald-pro-600 dark:text-xgrowth-500"
-                          : "text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"
+                          ? "text-emerald-600 dark:text-green-400"
+                          : "text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
                       )}
                     >
                       {item.label}
@@ -79,8 +79,8 @@ export function MarketingNavbar() {
                       className={cn(
                         "text-sm font-medium transition-colors duration-150",
                         pathname === item.href || pathname.startsWith(item.href + "/")
-                          ? "text-emerald-pro-600 dark:text-xgrowth-500"
-                          : "text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white"
+                          ? "text-emerald-600 dark:text-green-400"
+                          : "text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
                       )}
                     >
                       {item.label}
@@ -103,14 +103,14 @@ export function MarketingNavbar() {
               {/* Ghost Button for Login */}
               <Link
                 href="/login"
-                className="hidden lg:block text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white font-medium px-4 py-2 rounded-lg hover:bg-light-bg-secondary dark:hover:bg-graphite/50 transition-all duration-200"
+                className="hidden lg:block text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white font-medium px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-200"
               >
                 Login
               </Link>
               {/* Primary Button with Glow */}
               <Link
                 href="/contact"
-                className="hidden lg:block bg-emerald-pro-600 dark:bg-xgrowth-500 text-white dark:text-green-950 px-6 py-2.5 rounded-lg font-semibold transition-all duration-300 hover:bg-emerald-pro-700 dark:hover:bg-xgrowth-400 hover:shadow-glow-emerald dark:hover:shadow-glow-green hover:-translate-y-0.5 active:translate-y-0"
+                className="hidden lg:block bg-gradient-to-r from-emerald-600 to-sky-500 text-white px-6 py-2.5 rounded-lg font-semibold transition-all duration-300 hover:from-emerald-700 hover:to-sky-600 hover:shadow-glow-green hover:-translate-y-0.5 active:translate-y-0"
               >
                 Book a Call
               </Link>
@@ -118,7 +118,7 @@ export function MarketingNavbar() {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 text-slate-900 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:bg-light-bg-secondary dark:hover:bg-graphite/50 rounded-lg transition-all duration-150"
+                className="lg:hidden p-2 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-all duration-150"
               >
                 {isMobileMenuOpen ? (
                   <X className="h-6 w-6" />

@@ -24,8 +24,7 @@ export function MegaMenu({ sections, featured }: MegaMenuProps) {
   return (
     <div className="absolute top-full left-0 pt-2 z-[100]">
       <div
-        className="bg-white/95 dark:bg-midnight-blue/95 backdrop-blur-xl border border-border-default dark:border-graphite/50 rounded-2xl overflow-hidden min-w-[600px]"
-        style={{ boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(5, 150, 105, 0.1)' }}
+        className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden min-w-[600px] shadow-lg"
       >
         <div className="p-6">
           <div className={cn(
@@ -34,7 +33,7 @@ export function MegaMenu({ sections, featured }: MegaMenuProps) {
           )}>
             {sections.map((section) => (
               <div key={section.title}>
-                <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-900 dark:text-slate-300 mb-4">
+                <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-4">
                   {section.title}
                 </h3>
                 <ul className="space-y-1">
@@ -42,26 +41,26 @@ export function MegaMenu({ sections, featured }: MegaMenuProps) {
                     <li key={item.label}>
                       <Link
                         href={item.href}
-                        className="group flex items-start gap-3 p-2 -mx-2 rounded-lg hover:bg-light-bg-secondary dark:hover:bg-graphite/50 transition-colors"
+                        className="group flex items-start gap-3 p-2 -mx-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                       >
                         {item.icon && (
                           <div className="flex-shrink-0 mt-0.5">
-                            <item.icon className="h-4 w-4 text-slate-900 dark:text-slate-300 group-hover:text-emerald-pro-600 dark:group-hover:text-xgrowth-500 transition-colors" />
+                            <item.icon className="h-4 w-4 text-slate-500 dark:text-slate-400 group-hover:text-emerald-600 dark:group-hover:text-green-400 transition-colors" />
                           </div>
                         )}
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2">
-                            <span className="text-sm font-medium text-slate-900 dark:text-slate-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
+                            <span className="text-sm font-medium text-slate-700 dark:text-slate-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
                               {item.label}
                             </span>
                             {item.badge && (
-                              <span className="px-1.5 py-0.5 text-[10px] font-semibold bg-emerald-pro-600/10 dark:bg-xgrowth-500/10 text-emerald-pro-600 dark:text-xgrowth-500 rounded">
+                              <span className="px-1.5 py-0.5 text-[10px] font-semibold bg-emerald-100 dark:bg-green-500/20 text-emerald-700 dark:text-green-400 rounded">
                                 {item.badge}
                               </span>
                             )}
                           </div>
                           {item.description && (
-                            <p className="text-xs text-slate-900 dark:text-slate-300 mt-0.5 line-clamp-2">
+                            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 line-clamp-2">
                               {item.description}
                             </p>
                           )}
@@ -78,16 +77,16 @@ export function MegaMenu({ sections, featured }: MegaMenuProps) {
               <div className="col-span-1">
                 <Link
                   href={featured.href}
-                  className="group block h-full p-4 rounded-xl bg-light-bg-secondary dark:bg-graphite/30 border border-border-default dark:border-graphite hover:border-emerald-pro-600/50 dark:hover:border-xgrowth-500/50 transition-all"
+                  className="group block h-full p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:border-emerald-300 dark:hover:border-green-500/50 transition-all"
                 >
                   <div className="flex flex-col h-full">
                     <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-2">
                       {featured.title}
                     </h4>
-                    <p className="text-xs text-slate-900 dark:text-slate-300 flex-1">
+                    <p className="text-xs text-slate-600 dark:text-slate-400 flex-1">
                       {featured.description}
                     </p>
-                    <div className="flex items-center gap-1 mt-4 text-xs font-medium text-emerald-pro-600 dark:text-xgrowth-500 group-hover:gap-2 transition-all">
+                    <div className="flex items-center gap-1 mt-4 text-xs font-medium text-emerald-600 dark:text-green-400 group-hover:gap-2 transition-all">
                       Learn more
                       <ArrowRight className="h-3 w-3" />
                     </div>
