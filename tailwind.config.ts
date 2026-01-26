@@ -91,9 +91,25 @@ const config: Config = {
           subtle: "var(--border-subtle)",
         },
 
+        // Light mode specific colors (for components that need explicit light mode colors)
+        light: {
+          bg: {
+            DEFAULT: "#F9FBFF",
+            secondary: "#F1F5F9",
+            tertiary: "#E2E8F0",
+          },
+          surface: "#FFFFFF",
+        },
+
+        // Foreground colors (for StatusBadge and similar)
+        foreground: {
+          DEFAULT: "var(--text-primary)",
+          muted: "var(--text-muted)",
+          secondary: "var(--text-secondary)",
+        },
+
         // Component-specific (shadcn compatibility)
         background: "var(--bg)",
-        foreground: "var(--text-primary)",
         card: {
           DEFAULT: "var(--bg-surface)",
           foreground: "var(--text-primary)",

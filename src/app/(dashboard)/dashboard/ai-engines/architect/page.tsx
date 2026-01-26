@@ -346,7 +346,7 @@ export default function ArchitectPage() {
                   placeholder="Search campaigns..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="h-10 w-80 rounded-xl border border-emerald-pro-600/20 bg-light-bg-secondary dark:bg-midnight-blue/50 pl-10 pr-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-2 focus:ring-emerald-pro-600/20 transition-all"
+                  className="h-10 w-80 rounded-xl border border-emerald-pro-600/20 bg-light-bg-secondary dark:bg-midnight-blue/50 pl-10 pr-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-2 focus:ring-emerald-pro-600/20 transition-all"
                 />
               </div>
               <div className="flex items-center gap-2">
@@ -469,7 +469,7 @@ export default function ArchitectPage() {
                 <input
                   type="text"
                   placeholder="Search sequences..."
-                  className="h-10 w-80 rounded-xl border border-emerald-pro-600/20 bg-light-bg-secondary dark:bg-midnight-blue/50 pl-10 pr-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-2 focus:ring-emerald-pro-600/20 transition-all"
+                  className="h-10 w-80 rounded-xl border border-emerald-pro-600/20 bg-light-bg-secondary dark:bg-midnight-blue/50 pl-10 pr-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-2 focus:ring-emerald-pro-600/20 transition-all"
                 />
               </div>
               <Button
@@ -570,7 +570,7 @@ export default function ArchitectPage() {
                     <input
                       type="text"
                       placeholder="e.g., VP of Sales at SaaS companies"
-                      className="w-full h-10 rounded-xl border border-emerald-pro-600/20 bg-white dark:bg-deep-space/50 px-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none transition-all"
+                      className="w-full h-10 rounded-xl border border-emerald-pro-600/20 bg-white dark:bg-deep-space/50 px-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-emerald-pro-600/50 focus:outline-none transition-all"
                     />
                   </div>
 
@@ -581,7 +581,7 @@ export default function ArchitectPage() {
                     <textarea
                       rows={3}
                       placeholder="e.g., Struggling with long sales cycles..."
-                      className="w-full rounded-xl border border-emerald-pro-600/20 bg-white dark:bg-deep-space/50 px-4 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none transition-all resize-none"
+                      className="w-full rounded-xl border border-emerald-pro-600/20 bg-white dark:bg-deep-space/50 px-4 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-emerald-pro-600/50 focus:outline-none transition-all resize-none"
                     />
                   </div>
 

@@ -162,7 +162,7 @@ export function SupportInbox({ conversations, teamMembers }: SupportInboxProps) 
                 placeholder="Search conversations..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full h-9 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space pl-9 pr-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none"
+                className="w-full h-9 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space pl-9 pr-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-emerald-pro-600/50 focus:outline-none"
               />
             </div>
 
@@ -373,7 +373,7 @@ export function SupportInbox({ conversations, teamMembers }: SupportInboxProps) 
                     onChange={(e) => setReplyContent(e.target.value)}
                     placeholder="Type your reply..."
                     rows={3}
-                    className="flex-1 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space p-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none resize-none"
+                    className="flex-1 rounded-lg border border-border-default dark:border-graphite bg-white dark:bg-deep-space p-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-emerald-pro-600/50 focus:outline-none resize-none"
                   />
                   <button
                     disabled={!replyContent.trim()}

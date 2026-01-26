@@ -184,7 +184,7 @@ export default function NewClientPage() {
                   onChange={handleChange}
                   placeholder="Enter company name"
                   required
-                  className="w-full h-11 rounded-lg input-base px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                  className="w-full h-11 rounded-lg input-base px-4 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                 />
               </div>
 
@@ -198,7 +198,7 @@ export default function NewClientPage() {
                   value={formData.domain}
                   onChange={handleChange}
                   placeholder="example.com"
-                  className="w-full h-11 rounded-lg input-base px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                  className="w-full h-11 rounded-lg input-base px-4 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                 />
               </div>
 
@@ -271,7 +271,7 @@ export default function NewClientPage() {
                 onChange={handleChange}
                 placeholder="contact@example.com"
                 required
-                className="w-full h-11 rounded-lg input-base px-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                className="w-full h-11 rounded-lg input-base px-4 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
               />
               <p className="text-xs text-slate-900 dark:text-slate-300 mt-2">
                 An invitation will be sent to this email address
@@ -339,7 +339,7 @@ export default function NewClientPage() {
                     value={formData.monthlyFee}
                     onChange={handleChange}
                     placeholder="0"
-                    className="w-full h-11 rounded-lg input-base pl-8 pr-4 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
+                    className="w-full h-11 rounded-lg input-base pl-8 pr-4 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50"
                   />
                 </div>
                 <p className="text-xs text-slate-900 dark:text-slate-300 mt-2">
@@ -371,7 +371,7 @@ export default function NewClientPage() {
               onChange={handleChange}
               placeholder="Any relevant notes about this client..."
               rows={4}
-              className="w-full rounded-lg input-base px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-900 dark:text-slate-300 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 resize-none"
+              className="w-full rounded-lg input-base px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-emerald-pro-600/50 focus:outline-none focus:ring-1 focus:ring-emerald-pro-600/50 resize-none"
             />
           </div>
 

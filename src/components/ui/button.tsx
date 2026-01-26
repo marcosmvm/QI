@@ -19,7 +19,7 @@ const buttonVariants = cva(
           "bg-gradient-to-r from-emerald-600 to-sky-500 text-white shadow-sm hover:from-emerald-700 hover:to-sky-600 hover:-translate-y-0.5 active:translate-y-0 dark:from-emerald-500 dark:to-sky-400 dark:hover:from-emerald-400 dark:hover:to-sky-300",
         // Destructive - Red actions
         destructive:
-          "bg-red-500 text-white hover:bg-red-600 dark:bg-red-500 dark:text-slate-950",
+          "bg-red-500 text-white hover:bg-red-600 dark:bg-red-600 dark:text-white dark:hover:bg-red-500",
         // Outline - Secondary actions
         outline:
           "border border-emerald-200 text-emerald-700 bg-transparent hover:bg-emerald-50 dark:border-emerald-500/60 dark:text-emerald-300 dark:hover:bg-emerald-500/10",

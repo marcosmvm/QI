@@ -110,7 +110,7 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
   };
 
   return (
-    <aside className="fixed left-0 top-0 z-40 h-screen w-64 bg-bg-surface border-r border-border">
+    <aside className="fixed left-0 top-0 z-40 h-screen w-64 bg-card border-r border-border">
       <div className="flex h-full flex-col">
         {/* Logo */}
         <div className="flex h-16 items-center px-6 border-b border-border">
@@ -135,7 +135,7 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
                   "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200",
                   isActive(item.href)
                     ? "bg-emerald-100 dark:bg-green-500/10 text-emerald-700 dark:text-green-400 border border-emerald-200 dark:border-green-500/20"
-                    : "text-slate-600 dark:text-slate-300 hover:bg-bg-subtle dark:hover:bg-slate-800 hover:text-primary border border-transparent"
+                    : "text-slate-600 dark:text-slate-300 hover:bg-muted dark:hover:bg-slate-800 hover:text-primary border border-transparent"
                 )}
               >
                 <item.icon className={cn(
@@ -159,7 +159,7 @@ export function Sidebar({ variant = "client" }: SidebarProps) {
                   "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200",
                   isActive(item.href)
                     ? "bg-emerald-100 dark:bg-green-500/10 text-emerald-700 dark:text-green-400 border border-emerald-200 dark:border-green-500/20"
-                    : "text-slate-600 dark:text-slate-300 hover:bg-bg-subtle dark:hover:bg-slate-800 hover:text-primary border border-transparent"
+                    : "text-slate-600 dark:text-slate-300 hover:bg-muted dark:hover:bg-slate-800 hover:text-primary border border-transparent"
                 )}
               >
                 <item.icon className={cn(

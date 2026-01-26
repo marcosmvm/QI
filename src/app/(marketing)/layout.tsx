@@ -7,7 +7,7 @@ export default function MarketingLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-bg dark:bg-slate-900 relative overflow-hidden">
+    <div className="min-h-screen bg-bg dark:bg-deep-space relative overflow-hidden">
       {/* Subtle Background Gradient */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
         {/* Primary Emerald Orb - Top Left */}

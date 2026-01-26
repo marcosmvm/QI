@@ -56,7 +56,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-bg dark:bg-slate-900 flex">
+    <div className="min-h-screen bg-bg dark:bg-deep-space flex">
       {/* Left side - Branding */}
       <div className="hidden lg:flex lg:w-1/2 flex-col justify-between p-12 relative overflow-hidden bg-gradient-to-br from-emerald-50 to-sky-50 dark:from-slate-900 dark:to-slate-800">
         {/* Background effects */}
